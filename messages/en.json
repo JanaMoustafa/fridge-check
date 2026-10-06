@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "title": "Fridge Check — cook with what you have",
+    "description": "Add the ingredients in your fridge and find recipes that use them, with exactly what's missing."
+  },
+  "common": {
+    "appName": "Fridge Check",
+    "skipToContent": "Skip to main content",
+    "close": "Close"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "find": "Find recipes",
+    "saved": "Saved",
+    "shopping": "Shopping list"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية",
+    "cookiesBlocked": "Your browser is blocking cookies for this site, so the language can't be changed. Allow cookies for this site and try again."
+  },
+  "settings": {
+    "open": "Open settings",
+    "title": "Settings",
+    "description": "Choose how Fridge Check looks and behaves.",
+    "theme": {
+      "label": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "Match system"
+    }
+  },
+  "find": {
+    "metaTitle": "Find recipes",
+    "heading": "What's in your fridge?",
+    "intro": "Add what you have and we'll find recipes that use it — and tell you exactly what's missing."
+  },
+  "saved": {
+    "metaTitle": "Saved recipes",
+    "heading": "Saved recipes",
+    "emptyTitle": "Nothing saved yet",
+    "emptyBody": "Tap the heart on any recipe to keep it here. Saved recipes stay available even offline.",
+    "emptyCta": "Find recipes"
+  },
+  "shopping": {
+    "metaTitle": "Shopping list",
+    "heading": "Shopping list",
+    "emptyTitle": "Your list is empty",
+    "emptyBody": "Open a recipe and add the ingredients you're missing.",
+    "emptyCta": "Find recipes"
+  },
+  "footer": {
+    "data": "Recipe data and photos from <link>TheMealDB</link>"
+  },
+  "notFound": {
+    "metaTitle": "Page not found",
+    "heading": "We couldn't find that page",
+    "body": "The link may be broken, or the page may have moved.",
+    "cta": "Back to recipes"
+  },
+  "error": {
+    "heading": "Something went wrong",
+    "body": "Please try again. If it keeps happening, reload the page.",
+    "retry": "Try again"
+  }
+}

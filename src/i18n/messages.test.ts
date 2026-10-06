@@ -1,0 +1,69 @@
+import { describe, expect, it } from 'vitest'
+import { createTranslator } from 'next-intl'
+import ar from '../../messages/ar.json'
+import en from '../../messages/en.json'
+import { formats } from '@/lib/i18n/formats'
+
+type Tree = { [key: string]: string | Tree }
+
+function flatten(tree: Tree, prefix = ''): Record<string, string> {
+  return Object.entries(tree).reduce<Record<string, string>>((acc, [key, value]) => {
+    const path = prefix ? `${prefix}.${key}` : key
+    if (typeof value === 'string') acc[path] = value
+    else Object.assign(acc, flatten(value, path))
+    return acc
+  }, {})
+}
+
+/** Argument and tag names used by an ICU message, e.g. {count}, <link>. */
+function placeholders(message: string): string[] {
+  const args = [...message.matchAll(/\{\s*([A-Za-z_]\w*)/g)].map((m) => `{${m[1]}}`)
+  const tags = [...message.matchAll(/<([A-Za-z_]\w*)>/g)].map((m) => `<${m[1]}>`)
+  return [...new Set([...args, ...tags])].sort()
+}
+
+const flatEn = flatten(en as Tree)
+const flatAr = flatten(ar as Tree)
+
+describe('translation catalogs', () => {
+  it('have exactly the same keys in English and Arabic', () => {
+    expect(Object.keys(flatAr).sort()).toEqual(Object.keys(flatEn).sort())
+  })
+
+  it.each(Object.keys(flatEn))('%s uses the same placeholders in both languages', (key) => {
+    expect(placeholders(flatAr[key] ?? '')).toEqual(placeholders(flatEn[key] ?? ''))
+  })
+
+  it('never leave an Arabic message empty or untranslated', () => {
+    const allowedIdentical = new Set(['common.appName', 'language.en', 'language.ar'])
+    for (const [key, value] of Object.entries(flatAr)) {
+      expect(value.trim(), key).not.toBe('')
+      if (!allowedIdentical.has(key)) expect(value, key).not.toBe(flatEn[key])
+    }
+  })
+
+  it('never use a bare # in Arabic (digits must be forced to latn)', () => {
+    for (const [key, value] of Object.entries(flatAr)) {
+      expect(value.includes('#'), key).toBe(false)
+    }
+  })
+
+  it.each([
+    ['en', en],
+    ['ar', ar],
+  ] as const)('every %s message compiles', (locale, messages) => {
+    const t = createTranslator({
+      locale,
+      messages,
+      formats,
+      onError: (error) => {
+        throw error
+      },
+    })
+    const values = { count: 3, link: (chunks: string) => chunks }
+    for (const key of Object.keys(flatEn)) {
+      // @ts-expect-error -- keys come from a runtime walk of the catalog
+      expect(() => t.rich(key, values), key).not.toThrow()
+    }
+  })
+})

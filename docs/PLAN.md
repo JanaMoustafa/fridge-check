@@ -1,0 +1,76 @@
+# Fridge Check — implementation plan (approved 2026-10-06)
+
+The product spec is the original brief; this file records the decisions that refine or deviate from it.
+Every deviation below was flagged to and approved by the project owner before implementation.
+
+## Owner decisions
+
+| Topic         | Decision                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| Languages     | Full English **and** Arabic from Phase 1 (not a stub).                                   |
+| Arabic digits | Western digits (1, 2, 3) — `numberingSystem: 'latn'` everywhere.                         |
+| Spoonacular   | No key yet. Adapter is built against the official docs and tested with MSW.              |
+| Usage         | Personal / educational. TheMealDB free key `1` is the default (`THEMEALDB_API_KEY`).     |
+| Repo          | Public: `github.com/JanaMoustafa/fridge-check`. Commit + push at the end of every phase. |
+| Runtime       | Node 24 LTS (`.nvmrc`), pnpm 10 (`packageManager`).                                      |
+
+## Approved deviations from the spec
+
+| #   | Spec                                                                | Decision                                                                                                                                                                                                                                                         | Reason                                                                                                      |
+| --- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1   | next-intl, English first, Arabic stub; owner asked for localStorage | next-intl without i18n routing. Locale lives in the `NEXT_LOCALE` cookie (server-readable) **and** is mirrored to `localStorage` (`fc:locale`). No `/en` `/ar` prefixes.                                                                                         | The server cannot read localStorage; a cookie gives correct `lang`/`dir` on first paint (no LTR→RTL flash). |
+| 2   | —                                                                   | Arabic mode translates UI, canonical ingredient names, diets, cuisines, units. Recipe titles/steps/raw measures stay English inside `lang="en"` + bidi isolation, with a localized "Recipe text available in English only" note.                                 | Source data is English-only; machine translation would violate "don't invent".                              |
+| 3   | English-only normalizer                                             | Arabic normalization (NFKD + strip marks, ة→ه, ى→ي, tatweel, Arabic comma/semicolon, Arabic-Indic digits) + MSA & Egyptian aliases → canonical IDs. URLs always store canonical IDs.                                                                             | Arabic input must match; shared links work in both languages.                                               |
+| 4   | Local dataset via client dynamic import AND server proxy            | All search on the server. `data/recipes.json` is imported only from `server-only` modules.                                                                                                                                                                       | Fallback is server-side anyway; dataset never reaches the browser.                                          |
+| 5   | — (owner: flawless animation)                                       | No animation library: CSS (`@starting-style`, `linear()` springs, keyframes) + React `<ViewTransition>` / `addTransitionType` + `<Link transitionTypes>`.                                                                                                        | 0 KB JS vs ~40 KB gz for Motion layout animations; protects Lighthouse ≥ 90.                                |
+| 6   | Latest stable                                                       | Next 16.4.0, React 19.3.0, Tailwind 4.3.3, **TypeScript 6.0.3** (TS 7 has no compiler API → typescript-eslint breaks), ESLint 10 + eslint-config-next 16.4.0. Never below Next 16.3.8.                                                                           | Compatibility verified.                                                                                     |
+| 7   | Cook time / servings / "Quickest"                                   | Show only when present. "Quickest" sort offered only when results carry times. Unknown times sort last.                                                                                                                                                          | TheMealDB has no time/servings fields.                                                                      |
+| 8   | "Accurate" diet tags via classifier                                 | Conservative classifier + `data/diet-overrides.json` (every local recipe reviewed against its ingredient list). Reviewed ⇒ `dietsEstimated: false`. Allergy disclaimer always shown.                                                                             | Keyword classifiers mislabel (eggplant/"egg", butter beans, stock cubes).                                   |
+| 9   | 24 h detail cache, full favorite snapshots                          | Spoonacular: cache ≤ 1 h, favorites store only `{id, title, imageUrl}` + refetch; "Powered by spoonacular" backlink. Local/TheMealDB keep spec TTLs.                                                                                                             | Spoonacular ToS (Apr 2026).                                                                                 |
+| 10  | `diet=…`; `findByIngredients` without filters                       | Always `complexSearch`; diets `vegetarian, vegan, gluten free, pescetarian`; Dairy-free → `intolerances=dairy`; key via `x-api-key` header; `sort=min-missing-ingredients`.                                                                                      | Dairy-free is not a Spoonacular diet; findByIngredients lacks diets/time.                                   |
+| 11  | MealDB: intersect per-ingredient results                            | Union, rank by distinct user-ingredient hits, look up top 40, re-score. Canonical → all TheMealDB name variants.                                                                                                                                                 | Intersection is usually empty; filter matches exact names, indexes slots 1–11 only.                         |
+| 12  | `used/(used+missing)`, weights 1.0/0.8                              | `matchScore = Σw / N` over deduped non-staple recipe ingredients (exact 1, family 0.8). Specific forms stay canonical (`chicken breast`) with `chicken` as family. `userIngredientsUsed` = distinct user items matched (card text + sort). Fixed pipeline order. | Weights never entered the formula; synonym chicken breast→chicken made 0.8 unreachable.                     |
+| 13  | `/recipe/[id]` with `local:12`                                      | `/recipe/[source]/[id]?i=…`                                                                                                                                                                                                                                      | No colons in segments; mirrors the API route; `?i=` makes have/need deterministic on shared links.          |
+| 14  | CSP via next.config                                                 | Per-request nonce CSP in `src/proxy.ts`; other headers in `next.config.ts`.                                                                                                                                                                                      | Strict CSP needs a nonce for the pre-paint script.                                                          |
+| 15  | next/image remotePatterns                                           | Custom loader → TheMealDB `/small` `/medium` `/large` variants and Spoonacular fixed sizes.                                                                                                                                                                      | Vercel Hobby: 5K transformations/month then 402.                                                            |
+| 16  | In-memory per-IP limiter                                            | In-memory limiter (documented as per-instance, best effort) + CDN `s-maxage` on canonical search URLs. Disabled under `NODE_ENV=test`.                                                                                                                           | Serverless instances don't share memory.                                                                    |
+| 17  | Misc                                                                | Storage prefix `fc:` (not `ptp:`); import merges by id; notice text "Showing results from our built-in collection"; axe across theme × locale; unit conversion only for cleanly parsed mass↔mass / volume↔volume; bottom tab bar < 768 px.                       | Clarity / correctness.                                                                                      |
+
+## Architecture
+
+```
+Chip input ─ normalize (shared engine, EN+AR) ─▶ canonical IDs ─▶ URL ?i=&diet=&sort=
+  ▼ TanStack useInfiniteQuery ['search', v, ids, diets, staples, sort]   (persisted to sessionStorage)
+GET /api/recipes/search   (Zod, rate limit, Cache-Control s-maxage on canonical URLs)
+  ▼ provider registry (RECIPE_PROVIDER) → Spoonacular | MealDB | Local
+  │   402 / 429 / error / 8 s timeout → LocalProvider + notice code
+  ▼ matching engine re-scores every result (same staples/families rules for all providers)
+Cards ─▶ /recipe/[source]/[id]?i=…  (server component, provider.getById, cached)
+Favorites + shopping list: localStorage (Zod, in-memory fallback, cross-tab sync)
+```
+
+## Folder map
+
+```
+data/            recipes.json · seed-allowlist.json · diet-overrides.json
+messages/        en.json · ar.json
+scripts/         seed-local-recipes.ts · check-client-bundle.ts · check-logical-css.ts
+src/app/         layout · page (Find) · recipe/[source]/[id] · saved · shopping-list · api/recipes/…
+src/proxy.ts     nonce CSP
+src/i18n/        config · request (cookie → locale) · format helpers
+src/lib/         matching/ · providers/ (server-only) · storage/ · units/ · text/ · server/ · search-params
+src/components/  ui/ · layout/ · search/ · recipe/ · saved/ · shopping/
+src/hooks/       React glue (kept out of src/lib so lib stays pure for the 90 % coverage gate)
+tests/           e2e/ · msw/ · fixtures/
+```
+
+## Phases (each ends with lint + typecheck + tests → commit → push → summary)
+
+1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.
+2. Matching engine — EN + AR normalization, synonyms, families, staples, scoring, sorting, diet classifier, ≥ 100 tests, benchmark.
+3. Local data — seed script, ~180 recipes (~70 MENA), diet review overrides, Arabic names for every ingredient/cuisine, LocalProvider.
+4. Core UI — combobox chip input, results grid + all states, URL sync, detail page, animations.
+5. Favorites + shopping list — storage layer, Saved page, receipt list, export/import.
+6. Remote providers — proxy routes, MealDB + Spoonacular adapters, caching, rate limit, fallback, MSW tests.
+7. Hardening — e2e (theme × locale), axe, security headers, performance, print styles, PWA.
+8. Docs + deploy — README (Mermaid), env docs, Vercel config, measured Lighthouse scores.

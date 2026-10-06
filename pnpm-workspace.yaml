@@ -1,0 +1,9 @@
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
+  - '@swc/core'
+  - '@parcel/watcher'
+peerDependencyRules:
+  allowedVersions:
+    eslint: '10'
+    msw: '3'

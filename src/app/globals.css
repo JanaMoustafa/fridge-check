@@ -1,0 +1,516 @@
+@import 'tailwindcss';
+
+/* `dark:` must follow the app theme (data-theme), not only the OS preference. */
+@custom-variant dark {
+  &:where([data-theme='dark'], [data-theme='dark'] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme='light']), :root:not([data-theme='light']) *) {
+      @slot;
+    }
+  }
+}
+
+/* ── Semantic tokens (see docs/DESIGN.md). Components never use raw hex. ── */
+:root {
+  color-scheme: light;
+  --c-bg: #edf2ef;
+  --c-surface: #ffffff;
+  --c-surface-2: #e1e9e4;
+  --c-fg: #14211b;
+  --c-fg-muted: #4e5d56;
+  --c-primary: #5a2d82;
+  --c-on-primary: #ffffff;
+  --c-primary-soft: #ece3f4;
+  --c-accent: #b8124f;
+  --c-on-accent: #ffffff;
+  --c-have: #1b6b3a;
+  --c-have-soft: #ddf0e3;
+  --c-missing: #8a4b00;
+  --c-missing-soft: #fcebd2;
+  --c-danger: #b3261e;
+  --c-on-danger: #ffffff;
+  --c-ring: #5a2d82;
+  --c-line: #d3ddd7;
+  --c-line-strong: #6e7e76;
+  --c-highlight: rgb(255 255 255 / 0.9);
+
+  /* Motion */
+  --dur-press: 90ms;
+  --dur-exit: 140ms;
+  --dur-enter: 220ms;
+  --dur-move: 400ms;
+
+  /* Direction-aware motion: every horizontal offset is calc(var(--dir) * N). */
+  --dir: 1;
+  --origin-start: left;
+}
+
+:root[dir='rtl'] {
+  --dir: -1;
+  --origin-start: right;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --c-bg: #121916;
+    --c-surface: #1a231f;
+    --c-surface-2: #24302b;
+    --c-fg: #e9f0ec;
+    --c-fg-muted: #a3b1aa;
+    --c-primary: #cfb2ec;
+    --c-on-primary: #26113a;
+    --c-primary-soft: #33264a;
+    --c-accent: #ff8db3;
+    --c-on-accent: #3d0a1c;
+    --c-have: #7dd89c;
+    --c-have-soft: #173a26;
+    --c-missing: #f4be6a;
+    --c-missing-soft: #3d2c12;
+    --c-danger: #ff968c;
+    --c-on-danger: #410e0a;
+    --c-ring: #cfb2ec;
+    --c-line: #2e3b35;
+    --c-line-strong: #728379;
+    --c-highlight: rgb(255 255 255 / 0.06);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --c-bg: #121916;
+  --c-surface: #1a231f;
+  --c-surface-2: #24302b;
+  --c-fg: #e9f0ec;
+  --c-fg-muted: #a3b1aa;
+  --c-primary: #cfb2ec;
+  --c-on-primary: #26113a;
+  --c-primary-soft: #33264a;
+  --c-accent: #ff8db3;
+  --c-on-accent: #3d0a1c;
+  --c-have: #7dd89c;
+  --c-have-soft: #173a26;
+  --c-missing: #f4be6a;
+  --c-missing-soft: #3d2c12;
+  --c-danger: #ff968c;
+  --c-on-danger: #410e0a;
+  --c-ring: #cfb2ec;
+  --c-line: #2e3b35;
+  --c-line-strong: #728379;
+  --c-highlight: rgb(255 255 255 / 0.06);
+}
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-fg: var(--c-fg);
+  --color-fg-muted: var(--c-fg-muted);
+  --color-primary: var(--c-primary);
+  --color-on-primary: var(--c-on-primary);
+  --color-primary-soft: var(--c-primary-soft);
+  --color-accent: var(--c-accent);
+  --color-on-accent: var(--c-on-accent);
+  --color-have: var(--c-have);
+  --color-have-soft: var(--c-have-soft);
+  --color-missing: var(--c-missing);
+  --color-missing-soft: var(--c-missing-soft);
+  --color-danger: var(--c-danger);
+  --color-on-danger: var(--c-on-danger);
+  --color-ring: var(--c-ring);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-highlight: var(--c-highlight);
+
+  --font-sans: var(--font-latin), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --radius-chip: 12px;
+  --radius-btn: 12px;
+  --radius-card: 20px;
+
+  --ease-arrive: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-depart: cubic-bezier(0.4, 0, 1, 1);
+  --ease-move: cubic-bezier(0.65, 0, 0.35, 1);
+  /* Springs precomputed as linear() curves (docs/DESIGN.md). */
+  --ease-spring-snappy: linear(
+    0,
+    0.052,
+    0.171,
+    0.313,
+    0.463,
+    0.601,
+    0.719,
+    0.815,
+    0.888,
+    0.941,
+    0.978,
+    1.002,
+    1.016,
+    1.023,
+    1.024,
+    1.023,
+    1.02,
+    1.017,
+    1.013,
+    1.01,
+    1.007,
+    1.005,
+    1.003,
+    1.001,
+    1
+  );
+  --ease-spring-pop: linear(
+    0,
+    0.163,
+    0.497,
+    0.847,
+    1.1,
+    1.22,
+    1.229,
+    1.167,
+    1.083,
+    1.008,
+    0.961,
+    0.944,
+    0.95,
+    0.969,
+    0.988,
+    1.004,
+    1.012,
+    1.013,
+    1.01,
+    1.005,
+    1.001,
+    0.998,
+    0.997,
+    0.997,
+    1
+  );
+  --ease-spring-soft: linear(
+    0,
+    0.038,
+    0.124,
+    0.232,
+    0.345,
+    0.453,
+    0.552,
+    0.638,
+    0.711,
+    0.772,
+    0.822,
+    0.863,
+    0.895,
+    0.92,
+    0.94,
+    0.956,
+    0.967,
+    0.976,
+    0.983,
+    0.988,
+    0.991,
+    0.994,
+    0.996,
+    0.997,
+    1
+  );
+
+  --animate-rise-in: rise-in var(--dur-enter) var(--ease-arrive) both;
+
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      translate: 0 8px;
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 5.5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Keep focused controls clear of the fixed mobile tab bar (WCAG 2.4.11 focus not obscured). */
+  @media (width < 48rem) {
+    html {
+      scroll-padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+    }
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Per-language font stacks: next/font's Arial fallback covers Arabic, so a shared stack would
+     render Arabic in Arial. English passages inside Arabic UI carry lang="en" and switch back. */
+  :lang(en) {
+    font-family: var(--font-latin), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  }
+  :lang(ar) {
+    font-family: var(--font-arabic), var(--font-latin), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0;
+  }
+
+  /* Fustat's Arabic glyphs sit lower than Bricolage's x-height: scale Arabic text by 1.125 and
+     open the leading so diacritics never clip. */
+  :root:lang(ar) {
+    --text-xs: 0.84375rem;
+    --text-xs--line-height: 1.6;
+    --text-sm: 0.984375rem;
+    --text-sm--line-height: 1.7;
+    --text-base: 1.125rem;
+    --text-base--line-height: 1.75;
+    --text-lg: 1.265625rem;
+    --text-lg--line-height: 1.7;
+    --text-xl: 1.40625rem;
+    --text-xl--line-height: 1.55;
+    --text-2xl: 1.6875rem;
+    --text-2xl--line-height: 1.45;
+    --text-3xl: 2.109375rem;
+    --text-3xl--line-height: 1.4;
+    --text-4xl: 2.53125rem;
+    --text-4xl--line-height: 1.35;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  :lang(en):is(h1, h2) {
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  button,
+  a,
+  [role='button'] {
+    touch-action: manipulation;
+  }
+}
+
+/* ── View transitions (React <ViewTransition> + Next <Link transitionTypes>) ── */
+::view-transition {
+  pointer-events: none;
+}
+
+/* Root snapshot never animates; page content and named elements carry the motion. */
+::view-transition-old(root) {
+  display: none;
+}
+::view-transition-new(root) {
+  animation: none;
+}
+
+/* The header is an anchor: it never slides. */
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* Language switch: whole-page crossfade, no slide (the layout itself mirrors).
+   React may collapse ::view-transition to 0×0 when the root itself is not animating (e.g. under
+   reduced motion), which would blank the page for a few frames: keep it viewport-sized. */
+:root:active-view-transition-type(locale)::view-transition {
+  width: 100vw !important;
+  height: 100dvh !important;
+}
+:root:active-view-transition-type(locale)::view-transition-old(root),
+:root:active-view-transition-type(locale)::view-transition-old(site-header) {
+  display: block;
+  animation: 120ms var(--ease-depart) both vt-fade-out;
+}
+:root:active-view-transition-type(locale)::view-transition-new(root),
+:root:active-view-transition-type(locale)::view-transition-new(site-header) {
+  animation: 200ms var(--ease-arrive) 60ms both vt-fade-in;
+}
+::view-transition-old(.locale) {
+  animation: 120ms var(--ease-depart) both vt-fade-out;
+}
+::view-transition-new(.locale) {
+  animation: 200ms var(--ease-arrive) 60ms both vt-fade-in;
+}
+
+/* Tab to tab: same level, so crossfade with a small rise. */
+::view-transition-old(.nav-tab) {
+  animation: var(--dur-exit) var(--ease-depart) both vt-fade-out;
+}
+::view-transition-new(.nav-tab) {
+  animation: var(--dur-enter) var(--ease-arrive) var(--dur-exit) both vt-rise-in;
+}
+
+/* Deeper / back: 60px slide toward inline-start (forward) or inline-end (back), mirrored in RTL. */
+::view-transition-old(.nav-forward) {
+  --slide: calc(var(--dir) * -60px);
+  animation:
+    150ms var(--ease-depart) both vt-fade-out,
+    var(--dur-move) var(--ease-move) both vt-slide-to;
+}
+::view-transition-new(.nav-forward) {
+  --slide: calc(var(--dir) * 60px);
+  animation:
+    210ms var(--ease-arrive) 150ms both vt-fade-in,
+    var(--dur-move) var(--ease-move) both vt-slide-from;
+}
+::view-transition-old(.nav-back) {
+  --slide: calc(var(--dir) * 60px);
+  animation:
+    150ms var(--ease-depart) both vt-fade-out,
+    var(--dur-move) var(--ease-move) both vt-slide-to;
+}
+::view-transition-new(.nav-back) {
+  --slide: calc(var(--dir) * -60px);
+  animation:
+    210ms var(--ease-arrive) 150ms both vt-fade-in,
+    var(--dur-move) var(--ease-move) both vt-slide-from;
+}
+
+/* Active-tab pill morphs between tabs, above the anchored bars; the link labels stay above the pill. */
+::view-transition-group(.tab-indicator) {
+  z-index: 101;
+  animation-duration: 280ms;
+  animation-timing-function: var(--ease-move);
+}
+.nav-link {
+  view-transition-class: nav-link;
+}
+::view-transition-group(.nav-link) {
+  z-index: 102;
+  animation: none;
+}
+::view-transition-old(.nav-link) {
+  display: none;
+}
+::view-transition-new(.nav-link) {
+  animation: none;
+}
+:root:active-view-transition-type(locale)::view-transition-old(.nav-link) {
+  display: block;
+  animation: 120ms var(--ease-depart) both vt-fade-out;
+}
+:root:active-view-transition-type(locale)::view-transition-new(.nav-link) {
+  animation: 200ms var(--ease-arrive) 60ms both vt-fade-in;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes vt-rise-in {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+}
+@keyframes vt-slide-to {
+  to {
+    translate: var(--slide) 0;
+  }
+}
+@keyframes vt-slide-from {
+  from {
+    translate: var(--slide) 0;
+  }
+}
+
+/* ── Reduced motion: no movement, only short fades. State never depends on animation end. ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+  :root:active-view-transition-type(locale)::view-transition-old(root),
+  :root:active-view-transition-type(locale)::view-transition-new(root) {
+    animation-duration: 120ms !important;
+  }
+}
+
+/* Mobile tab bar is anchored like the header. */
+::view-transition-group(bottom-tabs) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(bottom-tabs) {
+  display: none;
+}
+::view-transition-new(bottom-tabs) {
+  animation: none;
+}
+
+/* ── Settings: bottom sheet below md, inline-end panel from md (Radix sets data-state). ── */
+.settings-overlay[data-state='open'] {
+  animation: vt-fade-in var(--dur-enter) var(--ease-arrive);
+}
+.settings-overlay[data-state='closed'] {
+  animation: vt-fade-out 200ms var(--ease-depart) forwards;
+}
+.settings-sheet[data-state='open'] {
+  animation: sheet-up 480ms var(--ease-spring-soft);
+}
+.settings-sheet[data-state='closed'] {
+  animation: sheet-down 200ms var(--ease-depart) forwards;
+}
+@media (min-width: 48rem) {
+  .settings-sheet[data-state='open'] {
+    animation: panel-in 480ms var(--ease-spring-soft);
+  }
+  .settings-sheet[data-state='closed'] {
+    animation: panel-out 200ms var(--ease-depart) forwards;
+  }
+}
+@keyframes sheet-up {
+  from {
+    translate: 0 100%;
+  }
+}
+@keyframes sheet-down {
+  to {
+    translate: 0 100%;
+  }
+}
+@keyframes panel-in {
+  from {
+    translate: calc(var(--dir) * 100%) 0;
+  }
+}
+@keyframes panel-out {
+  to {
+    translate: calc(var(--dir) * 100%) 0;
+  }
+}
