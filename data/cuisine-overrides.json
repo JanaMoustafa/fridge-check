@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "recipes": {
+    "53251": {
+      "cuisine": "Turkish",
+      "reason": "Turkish lahmacun: TheMealDB files it under Vietnam; the title and the dish are Turkish."
+    },
+    "53358": {
+      "cuisine": "Arabian",
+      "reason": "Chicken Mandi: TheMealDB files it under India; mandi comes from Yemen and Saudi Arabia (owner decision 2026-10-06)."
+    },
+    "53359": {
+      "cuisine": "Arabian",
+      "reason": "Beef Mandi: TheMealDB files it under India; mandi comes from Yemen and Saudi Arabia (owner decision 2026-10-06)."
+    }
+  }
+}

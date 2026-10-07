@@ -19,3 +19,16 @@ export async function hasHorizontalScroll(page: Page) {
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
   )
 }
+
+/** Waits for running finite animations (e.g. the empty-state rise-in) so axe measures the
+ *  settled page: mid-fade text is semi-transparent and would read as low contrast. */
+export async function settleAnimations(page: Page) {
+  await page.evaluate(() =>
+    Promise.all(
+      document
+        .getAnimations()
+        .filter((animation) => animation.effect?.getComputedTiming().iterations !== Infinity)
+        .map((animation) => animation.finished.catch(() => undefined)),
+    ),
+  )
+}

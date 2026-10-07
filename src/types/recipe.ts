@@ -69,6 +69,39 @@ export const RecipeDetailSchema = RecipeSummarySchema.safeExtend({
 })
 export type RecipeDetail = z.infer<typeof RecipeDetailSchema>
 
+/**
+ * A recipe as stored in data/recipes.json (seeded from TheMealDB by scripts/seed-local-recipes.ts):
+ * RecipeDetail without the per-search match fields, plus provenance for re-seeding and dedupe.
+ * TheMealDB has no cook time or servings, so those are absent rather than invented.
+ */
+export const LocalRecipeSchema = z.object({
+  id: z.string().regex(/^local:\d+$/),
+  mealDbId: z.string().regex(/^\d+$/),
+  title: z.string().trim().min(1),
+  imageUrl: z.url({ protocol: /^https$/, hostname: /^www\.themealdb\.com$/ }),
+  /** TheMealDB category, e.g. "Vegetarian", "Dessert". */
+  category: z.string().min(1),
+  /** English cuisine label, e.g. "Egyptian"; translated in the UI by its slug. */
+  cuisine: z.string().min(1),
+  diets: z.array(DietSchema),
+  /** False only when a person reviewed the tags (data/diet-overrides.json). */
+  dietsEstimated: z.boolean(),
+  ingredients: z.array(IngredientSchema).min(1),
+  instructions: z.array(z.string().trim().min(1)).min(1),
+  sourceUrl: z.url({ protocol: /^https?$/ }).optional(),
+  attribution: z.string().min(1),
+})
+export type LocalRecipe = z.infer<typeof LocalRecipeSchema>
+
+export const LOCAL_RECIPE_MIN = 150
+export const LOCAL_RECIPE_MAX = 200
+
+export const LocalRecipeCollectionSchema = z.object({
+  version: z.literal(1),
+  recipes: z.array(LocalRecipeSchema).min(LOCAL_RECIPE_MIN).max(LOCAL_RECIPE_MAX),
+})
+export type LocalRecipeCollection = z.infer<typeof LocalRecipeCollectionSchema>
+
 export const MAX_INGREDIENTS = 20
 export const MAX_INGREDIENT_LENGTH = 40
 

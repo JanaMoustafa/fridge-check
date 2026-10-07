@@ -1,5 +1,6 @@
 import { isCanonicalName } from './canonical'
 import { ARABIC_ALIASES } from './config/arabic-aliases'
+import { ARABIC_DISPLAY_ALIASES } from './config/arabic-display-aliases'
 
 /** Arabic, Arabic Supplement, Arabic Extended-A and both presentation-form blocks. U+FEFF (the
  *  byte-order mark) sits at the end of Presentation Forms-B but is not a letter, so it is left out. */
@@ -306,7 +307,20 @@ export function buildArabicAliasIndex(
   return { exact, articleFree }
 }
 
-const INDEX = buildArabicAliasIndex(ARABIC_ALIASES)
+/** Concatenates alias groups that may share canonical keys. */
+function mergeAliasGroups(
+  ...tables: ReadonlyArray<Readonly<Record<string, readonly string[]>>>
+): Record<string, string[]> {
+  const merged: Record<string, string[]> = {}
+  for (const table of tables) {
+    for (const [canonical, phrases] of Object.entries(table)) {
+      merged[canonical] = [...(merged[canonical] ?? []), ...phrases]
+    }
+  }
+  return merged
+}
+
+const INDEX = buildArabicAliasIndex(mergeAliasGroups(ARABIC_ALIASES, ARABIC_DISPLAY_ALIASES))
 const ENTRIES: ReadonlyArray<readonly [string, string]> = Object.freeze(
   [...INDEX.exact].map(([phrase, canonical]) => Object.freeze([phrase, canonical] as const)),
 )

@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
-import { setLocaleCookie } from './helpers'
+import { setLocaleCookie, settleAnimations } from './helpers'
 
 const PAGES = ['/', '/saved', '/shopping-list', '/does-not-exist']
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice']
@@ -14,6 +14,7 @@ for (const locale of ['en', 'ar'] as const) {
         test(`${path} has no axe violations`, async ({ page, context, baseURL }) => {
           await setLocaleCookie(context, baseURL!, locale)
           await page.goto(path)
+          await settleAnimations(page)
           const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze()
           expect(
             results.violations.map((v) => ({
@@ -32,6 +33,7 @@ for (const locale of ['en', 'ar'] as const) {
           .getByRole('button', { name: locale === 'ar' ? 'فتح الإعدادات' : 'Open settings' })
           .click()
         await expect(page.getByRole('dialog')).toBeVisible()
+        await settleAnimations(page)
         const results = await new AxeBuilder({ page })
           .withTags(WCAG_TAGS)
           .include('[role="dialog"]')

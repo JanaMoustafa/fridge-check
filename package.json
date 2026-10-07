@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm validate:data && next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "next typegen && tsc --noEmit",
@@ -15,7 +15,9 @@
     "test:coverage": "vitest run --coverage",
     "e2e": "playwright test",
     "check:css": "tsx scripts/check-logical-css.ts",
-    "check:bundle": "tsx scripts/check-client-bundle.ts"
+    "check:bundle": "tsx scripts/check-client-bundle.ts",
+    "seed": "tsx scripts/seed-local-recipes.ts",
+    "validate:data": "tsx scripts/validate-data.ts"
   },
   "dependencies": {
     "@tanstack/query-async-storage-persister": "5.104.1",

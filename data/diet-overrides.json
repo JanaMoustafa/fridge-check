@@ -1,0 +1,842 @@
+{
+  "version": 1,
+  "recipes": {
+    "52764": {
+      "title": "Garides Saganaki",
+      "diets": ["gluten-free", "pescatarian"]
+    },
+    "52765": {
+      "title": "Chicken Enchilada Casserole",
+      "diets": []
+    },
+    "52770": {
+      "title": "Spaghetti Bolognese",
+      "diets": []
+    },
+    "52771": {
+      "title": "Spicy Arrabiata Penne",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "Agree. Penne rules out gluten-free, Parmigiano-Reggiano rules out vegan and dairy-free, and there is no meat in the ingredients or steps. Parmigiano-Reggiano is always made with calf rennet, which the given vegetarian definition does not mention; the rennet question applies to the whole dataset and needs one project-wide decision."
+    },
+    "52775": {
+      "title": "Vegan Lasagna",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "52777": {
+      "title": "Mediterranean Pasta Salad",
+      "diets": ["pescatarian"]
+    },
+    "52779": {
+      "title": "Cream Cheese Tart",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "52780": {
+      "title": "Potato Gratin with Chicken",
+      "diets": [],
+      "note": "Agree. Chicken breast, bacon and chicken stock rule out everything but dairy-free and gluten-free. Crème fraîche and Parmesan rule out dairy-free, and the chicken stock (could be a cube) rules out gluten-free."
+    },
+    "52782": {
+      "title": "Lamb tomato and sweet spices",
+      "diets": ["gluten-free", "dairy-free"]
+    },
+    "52783": {
+      "title": "Rigatoni with fennel sausage sauce",
+      "diets": []
+    },
+    "52784": {
+      "title": "Smoky Lentil Chili with Squash",
+      "diets": ["dairy-free", "pescatarian"],
+      "note": "Steps add Worcestershire sauce (not in ingredient list, not stated vegan): anchovies rule out vegetarian/vegan, malt vinegar rules out gluten-free."
+    },
+    "52794": {
+      "title": "Vegan Chocolate Cake",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
+      "note": "Agree. Flax eggs, almond milk, coconut sugar and cacao are all plant-based, and the steps decorate with 'vegan chocolate'. Self-raising flour rules out gluten-free."
+    },
+    "52797": {
+      "title": "Spicy North African Potato Salad",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "52802": {
+      "title": "Fish pie",
+      "diets": ["pescatarian"]
+    },
+    "52803": {
+      "title": "Beef Wellington",
+      "diets": []
+    },
+    "52807": {
+      "title": "Baingan Bharta",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. Every ingredient is a plant, oil or spice, and the steps use only oil. Rotis or bread appear only as a serving suggestion, not as part of the dish."
+    },
+    "52810": {
+      "title": "Osso Buco alla Milanese",
+      "diets": []
+    },
+    "52811": {
+      "title": "Ribollita",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "52812": {
+      "title": "Beef Brisket Pot Roast",
+      "diets": ["dairy-free"]
+    },
+    "52813": {
+      "title": "Kentucky Fried Chicken",
+      "diets": ["dairy-free"],
+      "note": "Agree. Chicken, egg white and flour block the other tags. The coating is flour, sugar and spices, the steps add no butter or milk, and the frying oil is neutral."
+    },
+    "52815": {
+      "title": "French Lentils With Garlic and Thyme",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52816": {
+      "title": "Roasted Eggplant With Tahini, Pine Nuts, and Lentils",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52817": {
+      "title": "Stovetop Eggplant With Harissa, Chickpeas, and Cumin Yogurt",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "52818": {
+      "title": "Chicken Fajita Mac and Cheese",
+      "diets": [],
+      "note": "Agree. Chicken, chicken stock, macaroni, heavy cream and cheddar rule out every tag."
+    },
+    "52819": {
+      "title": "Cajun spiced fish tacos",
+      "diets": ["pescatarian"]
+    },
+    "52821": {
+      "title": "Laksa King Prawn Noodles",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "52822": {
+      "title": "Toad In The Hole",
+      "diets": []
+    },
+    "52823": {
+      "title": "Salmon Prawn Risotto",
+      "diets": ["pescatarian"],
+      "note": "Agree. Salmon and prawns allow pescatarian only. Butter and Parmesan rule out dairy-free. The 1 litre of vegetable stock could be from a cube, so gluten-free is not claimed, which is deliberately conservative."
+    },
+    "52824": {
+      "title": "Beef Sunday Roast",
+      "diets": []
+    },
+    "52826": {
+      "title": "Braised Beef Chilli",
+      "diets": ["dairy-free"],
+      "note": "Chorizo is a processed sausage; some brands contain gluten, so gluten-free is not claimed."
+    },
+    "52829": {
+      "title": "Grilled Mac and Cheese Sandwich",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "52830": {
+      "title": "Crock Pot Chicken Baked Tacos",
+      "diets": [],
+      "note": "CHANGE: remove gluten-free. The classifier is too lax here. '1 bottle Vinaigrette Dressing' is a commercial bottled dressing that may contain malt vinegar or soy sauce, and '12 Hard Taco Shells' are commercial shells that can contain wheat or be made on shared lines. Green salsa and shredded Mexican cheese are also processed products. The recipe never says gluten-free, so under the conservative rule the tag is not claimed. Chicken and dairy (cheese, sour cream, milk) already block the other tags. The refried beans were flagged as meat because of possible lard, which is right but makes no difference here."
+    },
+    "52832": {
+      "title": "Coq au vin",
+      "diets": []
+    },
+    "52835": {
+      "title": "Fettucine alfredo",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "52836": {
+      "title": "Seafood fideuà",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "52837": {
+      "title": "Pilchard puttanesca",
+      "diets": ["pescatarian"],
+      "note": "Agree. Pilchards make it pescatarian. Spaghetti rules out gluten-free and Parmesan rules out dairy-free."
+    },
+    "52838": {
+      "title": "Venetian Duck Ragu",
+      "diets": []
+    },
+    "52839": {
+      "title": "Chilli prawn linguine",
+      "diets": ["pescatarian"]
+    },
+    "52840": {
+      "title": "Clam chowder",
+      "diets": []
+    },
+    "52841": {
+      "title": "Creamy Tomato Soup",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "Agree. Whole milk rules out vegan and dairy-free, and the vegetable stock cubes (assumed to contain gluten) rule out gluten-free. 'Serve with cheesy sausage rolls' is only a serving suggestion, so it is not counted."
+    },
+    "52842": {
+      "title": "Broccoli & Stilton soup",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "52843": {
+      "title": "Lamb Tagine",
+      "diets": ["dairy-free"]
+    },
+    "52844": {
+      "title": "Lasagne",
+      "diets": []
+    },
+    "52845": {
+      "title": "Turkey Meatloaf",
+      "diets": [],
+      "note": "CHANGE: remove dairy-free. The classifier is too lax here. '85g Breadcrumbs' is an unspecified commercial bread product, and shop-bought breadcrumbs and bread often contain milk powder or whey (and seasoned crumbs contain cheese). The barbecue sauce is also unspecified. Under the conservative rule, dairy-free is not claimed. Turkey mince, egg, Worcestershire sauce (anchovy) and breadcrumbs (gluten) block the rest."
+    },
+    "52846": {
+      "title": "Chicken & mushroom Hotpot",
+      "diets": []
+    },
+    "52847": {
+      "title": "Pork Cassoulet",
+      "diets": ["dairy-free"]
+    },
+    "52848": {
+      "title": "Bean & Sausage Hotpot",
+      "diets": ["dairy-free"]
+    },
+    "52850": {
+      "title": "Chicken Couscous",
+      "diets": ["dairy-free"],
+      "note": "Agree. Chicken and chicken stock rule out the meat-free tags, and couscous rules out gluten-free. Nothing in the ingredients or steps is dairy."
+    },
+    "52852": {
+      "title": "Tuna Nicoise",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52863": {
+      "title": "Vegetarian Casserole",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "52864": {
+      "title": "Mushroom & Chestnut Rotolo",
+      "diets": ["vegetarian", "dairy-free", "pescatarian"],
+      "note": "Lasagne sheets are often egg pasta (not stated egg-free) and white wine may be fined with animal products, so vegan is not safe."
+    },
+    "52866": {
+      "title": "Squash linguine",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
+      "note": "Agree. Squash, garlic, olive oil, sage and dried pack linguine (durum wheat, not egg pasta) make it vegan. Linguine rules out gluten-free."
+    },
+    "52867": {
+      "title": "Vegetarian Chilli",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "52869": {
+      "title": "Tahini Lentils",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52870": {
+      "title": "Chickpea Fajitas",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "52872": {
+      "title": "Spanish Tortilla",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "Agree. Eggs and butter rule out vegan and dairy-free. The baguette is served as part of the recipe (garlic and tomato bread), so gluten-free is correctly not claimed."
+    },
+    "52873": {
+      "title": "Beef Dumpling Stew",
+      "diets": []
+    },
+    "52874": {
+      "title": "Beef and Mustard Pie",
+      "diets": []
+    },
+    "52875": {
+      "title": "Chicken Ham and Leek Pie",
+      "diets": []
+    },
+    "52879": {
+      "title": "Chicken Parmentier",
+      "diets": [],
+      "note": "Agree. Chicken, chicken stock, butter, double cream, egg yolks and Gruyère rule out every tag."
+    },
+    "52882": {
+      "title": "Three Fish Pie",
+      "diets": ["pescatarian"]
+    },
+    "52887": {
+      "title": "Kedgeree",
+      "diets": ["gluten-free", "pescatarian"]
+    },
+    "52903": {
+      "title": "French Onion Soup",
+      "diets": []
+    },
+    "52908": {
+      "title": "Ratatouille",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. It is all vegetables, olive oil, basil, red wine vinegar and sugar, and the steps add nothing else."
+    },
+    "52911": {
+      "title": "Summer Pistou",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "52912": {
+      "title": "Three-cheese souffles",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "52914": {
+      "title": "Boulangère Potatoes",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "52915": {
+      "title": "French Omelette",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"],
+      "note": "Agree. Eggs, butter, Parmesan and Gruyère rule out vegan and dairy-free, and there is no gluten. The rennet caveat on Parmesan and Gruyère is the same project-wide question as in Arrabiata."
+    },
+    "52918": {
+      "title": "Fish Stew with Rouille",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "52919": {
+      "title": "Fennel Dauphinoise",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "52921": {
+      "title": "Provençal Omelette Cake",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "52922": {
+      "title": "Prawn & Fennel Bisque",
+      "diets": ["pescatarian"],
+      "note": "Agree. Prawns and fish stock make it pescatarian. Double cream rules out dairy-free (and the garnish prawns are cooked in butter in the steps). The fish stock could be from a cube, so gluten-free is not claimed (conservative)."
+    },
+    "52942": {
+      "title": "Roast fennel and aubergine paella",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "52945": {
+      "title": "Kung Pao Chicken",
+      "diets": ["dairy-free"]
+    },
+    "52946": {
+      "title": "Kung Po Prawns",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "52947": {
+      "title": "Ma Po Tofu",
+      "diets": ["dairy-free"],
+      "note": "Agree. Minced beef rules out the meat-free tags. Doubanjiang (usually made with wheat flour) and soy sauce rule out gluten-free. There is no dairy. Separately, for the normalization owner: '1 tbs Pepper' was mapped to black pepper, but the steps call it 'pepper flakes' (chili flakes)."
+    },
+    "52948": {
+      "title": "Wontons",
+      "diets": ["dairy-free"]
+    },
+    "52949": {
+      "title": "Sweet and Sour Pork",
+      "diets": ["dairy-free"]
+    },
+    "52950": {
+      "title": "Szechuan Beef",
+      "diets": ["dairy-free"]
+    },
+    "52951": {
+      "title": "General Tsos Chicken",
+      "diets": ["dairy-free"],
+      "note": "Agree. Chicken, chicken stock, egg and honey block the other diets, and plain flour, soy sauce and gochujang rule out gluten-free. The steps also add hoisin and sherry. Duck sauce, gochujang and hoisin contain no dairy."
+    },
+    "52952": {
+      "title": "Beef Lo Mein",
+      "diets": ["dairy-free"]
+    },
+    "52953": {
+      "title": "Shrimp Chow Fun",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "52954": {
+      "title": "Hot and Sour Soup",
+      "diets": ["dairy-free"]
+    },
+    "52957": {
+      "title": "Fruit and Cream Cheese Breakfast Pastries",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "Agree. Cream cheese rules out vegan and dairy-free. Puff pastry and flour rule out gluten-free, and commercial puff pastry often contains butter."
+    },
+    "52959": {
+      "title": "Baked salmon with fennel & tomatoes",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52960": {
+      "title": "Salmon Avocado Salad",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52962": {
+      "title": "Salmon Eggs Eggs Benedict",
+      "diets": ["pescatarian"]
+    },
+    "52963": {
+      "title": "Shakshuka",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"],
+      "note": "Agree. Eggs and feta rule out vegan and dairy-free. 'Serve with crusty bread' is only a serving suggestion, so the dish itself is gluten-free."
+    },
+    "52969": {
+      "title": "Chakchouka",
+      "diets": ["vegetarian", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52971": {
+      "title": "Kafteji",
+      "diets": ["vegetarian", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52972": {
+      "title": "Tunisian Lamb Soup",
+      "diets": ["dairy-free"]
+    },
+    "52973": {
+      "title": "Leblebi Soup",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
+      "note": "Agree. Chickpeas, vegetable stock, spices, harissa and lime are all plant-based. The vegetable stock is assumed to contain gluten, so gluten-free is not claimed (conservative)."
+    },
+    "52974": {
+      "title": "Keleya Zaara",
+      "diets": ["gluten-free"]
+    },
+    "52975": {
+      "title": "Tuna and Egg Briks",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "52977": {
+      "title": "Corba",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "52978": {
+      "title": "Kumpir",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"],
+      "note": "Agree. Butter and cheese rule out vegan and dairy-free. The salami in the steps is only a description of Turkish street toppings and is not part of the recipe."
+    },
+    "52982": {
+      "title": "Spaghetti alla Carbonara",
+      "diets": []
+    },
+    "52987": {
+      "title": "Lasagna Sandwiches",
+      "diets": []
+    },
+    "53006": {
+      "title": "Moussaka",
+      "diets": ["gluten-free"]
+    },
+    "53008": {
+      "title": "Stuffed Lamb Tomatoes",
+      "diets": ["dairy-free"],
+      "note": "Agree. Lamb and chicken stock rule out the meat-free tags, and the stock is assumed to contain gluten. There is no dairy. Crusty bread is only a serving suggestion."
+    },
+    "53009": {
+      "title": "Lamb and Lemon Souvlaki",
+      "diets": ["dairy-free"]
+    },
+    "53012": {
+      "title": "Gigantes Plaki",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53013": {
+      "title": "Big Mac",
+      "diets": []
+    },
+    "53014": {
+      "title": "Pizza Express Margherita",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "Agree. Mozzarella rules out vegan and dairy-free, and plain flour rules out gluten-free. The dough is just water, sugar, yeast, flour, salt and oil."
+    },
+    "53016": {
+      "title": "Chick-Fil-A Sandwich",
+      "diets": []
+    },
+    "53025": {
+      "title": "Ful Medames",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53026": {
+      "title": "Tamiya",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53027": {
+      "title": "Koshari",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
+      "note": "Agree. Lentils, rice, dried macaroni, chickpeas, onion and oil are all plant-based. Macaroni rules out gluten-free, and the steps also toss the onions in flour, which is not in the ingredient list but does not change the outcome."
+    },
+    "53028": {
+      "title": "Shawarma",
+      "diets": []
+    },
+    "53029": {
+      "title": "Mulukhiyah",
+      "diets": ["gluten-free", "dairy-free"]
+    },
+    "53030": {
+      "title": "Feteer Meshaltet",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53031": {
+      "title": "Egyptian Fatteh",
+      "diets": [],
+      "note": "Agree. Beef, a chicken stock cube, butter, noodles and pita rule out every tag."
+    },
+    "53033": {
+      "title": "Japanese gohan rice",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53040": {
+      "title": "Spring onion and prawn empanadas",
+      "diets": ["pescatarian"]
+    },
+    "53047": {
+      "title": "Moroccan Carrot Soup",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53064": {
+      "title": "Fettuccine Alfredo",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "Agree. Cream, butter and Parmesan rule out vegan and dairy-free, and fettuccine rules out gluten-free. The rennet caveat applies to the Parmesan."
+    },
+    "53067": {
+      "title": "Stuffed Bell Peppers with Quinoa and Black Beans",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "53074": {
+      "title": "Grilled eggplant with coconut milk",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53079": {
+      "title": "Fish Soup (Ukha)",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53085": {
+      "title": "15-minute chicken & halloumi burgers",
+      "diets": [],
+      "note": "Agree. Chicken, halloumi (cheese), sour cream, mayonnaise and buns rule out every tag."
+    },
+    "53091": {
+      "title": "Falafel Pita Sandwich with Tahini Sauce",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53093": {
+      "title": "Syrian Spaghetti",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53094": {
+      "title": "Baba Ghanoush",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "53095": {
+      "title": "Syrian Rice with Meat",
+      "diets": [],
+      "note": "Agree. Ground beef, chicken stock and butter rule out every tag."
+    },
+    "53103": {
+      "title": "Barramundi with Moroccan spices",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53122": {
+      "title": "Fiskesuppe (Creamy Norwegian Fish Soup)",
+      "diets": ["pescatarian"]
+    },
+    "53142": {
+      "title": "Spiced tortilla",
+      "diets": ["vegetarian", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53144": {
+      "title": "Gambas al ajillo",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. It is only prawns, garlic, olive oil, chillies and parsley."
+    },
+    "53147": {
+      "title": "Arroz con gambas y calamar",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53158": {
+      "title": "Air fryer patatas bravas",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53169": {
+      "title": "Ajo blanco",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53171": {
+      "title": "Salt cod tortilla",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. Salt cod and eggs, with potatoes, onion, oil and parsley, and no dairy or gluten."
+    },
+    "53172": {
+      "title": "Patatas bravas",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53173": {
+      "title": "Quick gazpacho",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53174": {
+      "title": "Prawns with Romesco sauce",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53178": {
+      "title": "Fried calamari",
+      "diets": ["dairy-free", "pescatarian"],
+      "note": "Agree. Squid makes it pescatarian, and plain flour rules out gluten-free. Mayonnaise is egg and oil, so it is still dairy-free. The bread in the steps is only used to test the oil temperature."
+    },
+    "53180": {
+      "title": "Garlicky prawns with sherry",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53182": {
+      "title": "Spanish seafood rice",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53191": {
+      "title": "Pad Thai",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53215": {
+      "title": "Shakshouka",
+      "diets": ["vegetarian", "gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. Tomato, olive oil, eggs, garlic and seasoning only. Flatbread is only a serving suggestion."
+    },
+    "53216": {
+      "title": "Knafeh",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53217": {
+      "title": "Shawarma chuck roast wrap",
+      "diets": [],
+      "note": "Steps spread an unspecified \"garlic sauce\" on the pita; shop/takeaway garlic sauce is often yogurt-based, so dairy-free cannot be claimed (gluten-free already blocked by beef stock and pita)."
+    },
+    "53218": {
+      "title": "Chicken Shawarma with homemade garlic herb yoghurt sauce",
+      "diets": [],
+      "note": "Steps serve it on flatbreads (wheat) with crumble fries and feta, so not gluten-free."
+    },
+    "53219": {
+      "title": "Shakshuka Feta Cheese",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"],
+      "note": "Agree. Eggs and feta rule out vegan and dairy-free. Plain tomato sauce is accepted as gluten-free. 'Serve with fresh bread' is only a serving suggestion."
+    },
+    "53220": {
+      "title": "kabse",
+      "diets": ["dairy-free"],
+      "note": "Step 1 adds a Maggi stock cube that is not in the ingredient list; stock cubes are assumed to contain gluten (Maggi cubes typically list wheat), so gluten-free is dropped."
+    },
+    "53221": {
+      "title": "Mamoul (Eid biscuits)",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53222": {
+      "title": "Vegetarian Shakshuka",
+      "diets": ["vegetarian", "dairy-free", "pescatarian"]
+    },
+    "53223": {
+      "title": "Mutabbaq",
+      "diets": [],
+      "note": "Agree. Meat, egg, filo and melted butter rule out every tag. Separately, for the normalization owner: '500g Mincemeat' here means minced meat (the steps say 'minced meat'), but it was normalized to 'mincemeat', the British sweet suet mix. The diet result is still correct, but users with ground beef or lamb will not match this recipe."
+    },
+    "53224": {
+      "title": "Pistachio Kunafa Chocolate Cake and Cupcakes",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53225": {
+      "title": "Yemeni Lahsa (Elite Shakshuka)",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "\"Liquid cheese\" is a commercial processed cheese sauce/spread that may be thickened with wheat flour or starch and is not labelled gluten-free, so gluten-free is not claimed."
+    },
+    "53226": {
+      "title": "Shawarma bread",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53236": {
+      "title": "Vietnamese-style veggie hotpot",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
+      "note": "Agree. All ingredients are plant-based. Soy sauce and vegetable stock rule out gluten-free. The jasmine rice is listed only to serve."
+    },
+    "53251": {
+      "title": "Turkish lahmacun",
+      "diets": ["dairy-free"]
+    },
+    "53254": {
+      "title": "Ezme",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53255": {
+      "title": "Grilled aubergines with spicy chickpeas & walnut sauce",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "53256": {
+      "title": "Cacik",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"],
+      "note": "Agree. Yogurt rules out vegan and dairy-free. The rest is cucumber, mint, garlic, lemon and oil."
+    },
+    "53259": {
+      "title": "Smoked aubergine purée",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "53266": {
+      "title": "Falafel",
+      "diets": ["vegetarian", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53267": {
+      "title": "Aubergine couscous salad",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53269": {
+      "title": "Hummus",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"],
+      "note": "Agree. Greek yogurt (unusual in hummus, but it is in the source) rules out vegan and dairy-free. Chickpeas, tahini, garlic and lemon are gluten-free."
+    },
+    "53273": {
+      "title": "Roast aubergine with goat's cheese & toasted flatbread",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53278": {
+      "title": "Aubergine & hummus grills",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53282": {
+      "title": "Algerian Carrots",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53283": {
+      "title": "Chtitha Batata (Algerian Potato Stew)",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. Potatoes, spices, garlic, chilli, olive oil, tomato purée and water only."
+    },
+    "53284": {
+      "title": "Algerian Bouzgene Berber Bread with Roasted Pepper Sauce",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53286": {
+      "title": "Khobz el Dar (Algerian Semolina Bread)",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53288": {
+      "title": "Algerian Flafla (Bell Pepper Salad)",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53290": {
+      "title": "Cheese Borek",
+      "diets": ["vegetarian", "pescatarian"],
+      "note": "Agree. Egg, Gouda, Emmental and butter rule out vegan and dairy-free, and phyllo rules out gluten-free. Separately, for the normalization owner: '3/4 teaspoon Red Pepper' was normalized to bell pepper, but the steps say 'crushed red pepper' (chili flakes)."
+    },
+    "53307": {
+      "title": "Beetroot & red cabbage sauerkraut",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53352": {
+      "title": "Jamaican Instant Pot Rice and Beans",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53358": {
+      "title": "Chicken Mandi",
+      "diets": ["gluten-free", "dairy-free"]
+    },
+    "53359": {
+      "title": "Beef Mandi",
+      "diets": ["dairy-free"],
+      "note": "Agree, but the classifier got this right only by luck. The ingredient list has no beef (a TheMealDB gap), although the steps cook beef pieces; '5 Cups Beef Stock' is what blocked the meat-free tags. The stock also rules out gluten-free. Dairy-free is kept because the listed fat is '3 tablespoons Oil'; the steps say 'ghee/oil' and an optional 'butter/oil', so oil is the recipe's own choice. Separately, for the seed owner: users with beef will not match this recipe, and the spice mix in the steps (coriander, cumin, cinnamon) is also not in the list."
+    },
+    "53369": {
+      "title": "Silken Tofu with Sesame Soy Sauce",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53371": {
+      "title": "Sichuan Style Stir-Fried Chinese Long Beans",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53377": {
+      "title": "Napa Cabbage with Dried Shrimp",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53378": {
+      "title": "Sesame Cucumber Salad",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. Cucumber, salt, sesame oil, rice vinegar (seasoned rice vinegar in the steps, which is gluten-free), basil, chilli flakes and sesame seeds."
+    },
+    "53383": {
+      "title": "Ramen Noodles with Boiled Egg",
+      "diets": [],
+      "note": "\"1 Packet Noodles\" for a ramen-in-broth dish is a commercial instant-noodle packet whose seasoning commonly contains chicken/beef/pork/seafood extracts and sometimes milk; the recipe never says it is plain or vegetarian, so vegetarian, pescatarian and dairy-free are not claimed."
+    },
+    "53397": {
+      "title": "Haft Mewa Recipe",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53398": {
+      "title": "Kadu Borani",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "53400": {
+      "title": "Mastawa Lamb and Rice",
+      "diets": ["gluten-free"],
+      "note": "Agree. Lamb rules out the meat-free tags and yoghurt rules out dairy-free. Rice, chickpeas, orange, herbs and spices are gluten-free. Nan bread is only a serving suggestion."
+    },
+    "53405": {
+      "title": "Tavë me Presh ska Mish Meatless Leek Bake",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53415": {
+      "title": "Torrijas",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53422": {
+      "title": "Num E (Sticky Rice Balls in Sugar Syrup and Coconut Cream)",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53428": {
+      "title": "Camaro Grelhado Com Molho Cru (Grilled Prawns with Green Onion Sauce)",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. Prawns with garlic, spring onion, cumin, salt, white vinegar and water."
+    },
+    "53431": {
+      "title": "Corn on the cob with lime, green chilli and coconut butter",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53434": {
+      "title": "Koulenje",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53440": {
+      "title": "Balchi di Pisca",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53451": {
+      "title": "Bangladeshi fish curry with daikon",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. White fish, daikon, oil, garlic, onion, ground spices, chillies, coriander and lime. There is no dairy or gluten in the ingredients or steps, and the rice is only served alongside."
+    },
+    "53473": {
+      "title": "Curried Spinach from Botswana",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53479": {
+      "title": "Smoky tomato pepper salsa",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53486": {
+      "title": "Easy White Bean Soup",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
+      "note": "Steps add Vegeta (bouillon seasoning, not in ingredient list); bouillon is assumed to contain gluten."
+    },
+    "53506": {
+      "title": "Rice and Beans",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
+      "note": "Agree. Kidney beans, coconut milk, onion, Scotch bonnet and seasoning. Separately, for the seed owner: the steps add rice, but the ingredient list does not include it, so the rice does not help this recipe match."
+    },
+    "53536": {
+      "title": "Black Beans Hotpot",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53573": {
+      "title": "Papaya salad",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53576": {
+      "title": "Carrot and Bean Fritters",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    }
+  }
+}

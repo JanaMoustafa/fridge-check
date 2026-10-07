@@ -1,0 +1,519 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "local:53027",
+      "mealDbId": "53027",
+      "title": "Koshari",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/4er7mj1598733193.jpg",
+      "category": "Vegetarian",
+      "cuisine": "Egyptian",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
+      "dietsEstimated": false,
+      "ingredients": [
+        {
+          "raw": "1 1/2 cups Brown Lentils",
+          "name": "brown lentil",
+          "amount": 1.5,
+          "unit": "cup"
+        },
+        {
+          "raw": "1 1/2 cups Rice",
+          "name": "rice",
+          "amount": 1.5,
+          "unit": "cup"
+        },
+        {
+          "raw": "1/2 tsp Coriander",
+          "name": "coriander",
+          "amount": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "raw": "2 cups Macaroni",
+          "name": "macaroni",
+          "amount": 2,
+          "unit": "cup"
+        },
+        {
+          "raw": "Can Chickpeas",
+          "name": "chickpea"
+        },
+        {
+          "raw": "1 large Onion",
+          "name": "onion",
+          "amount": 1
+        },
+        {
+          "raw": "Sprinking Salt",
+          "name": "salt"
+        },
+        {
+          "raw": "1/2 cup Vegetable Oil",
+          "name": "vegetable oil",
+          "amount": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "instructions": [
+        "Cook the lentils. Bring lentils and 4 cups of water to a boil in a medium pot or saucepan over high heat. Reduce the heat to low and cook until lentils are just tender (15-17 minutes). Drain from water and season with a little salt. (Note: when the lentils are ready, they should not be fully cooked. They should be only par-cooked and still have a bite to them as they need to finish cooking with the rice).",
+        "Now, for the rice. Drain the rice from its soaking water. Combine the par-cooked lentils and the rice in the saucepan over medium-high heat with 1 tbsp cooking oil, salt, pepper, and coriander. Cook for 3 minutes, stirring regularly. Add warm water to cover the rice and lentil mixture by about 1 1/2 inches (you’ll probably use about 3 cups of water here). Bring to a boil; the water should reduce a bit. Now cover and cook until all the liquid has been absorbed and both the rice and lentils are well cooked through (about 20 minutes). Keep covered and undisturbed for 5 minutes or so.",
+        "Now make the pasta. While the rice and lentils are cooking, make the pasta according to package instructions by adding the elbow pasta to boiling water with a dash of salt and a little oil. Cook until the pasta is al dente. Drain.",
+        "Cover the chickpeas and warm in the microwave briefly before serving.",
+        "Make the crispy onion topping.",
+        "Sprinkle the onion rings with salt, then toss them in the flour to coat. Shake off excess flour.",
+        "In a large skillet, heat the cooking oil over medium-high heat, cook the onion rings, stirring often, until they turn a nice caramelized brown. Onions must be crispy, but not burned (15-20 minutes)."
+      ],
+      "sourceUrl": "https://www.themediterraneandish.com/egyptian-koshari-recipe/",
+      "attribution": "TheMealDB"
+    },
+    {
+      "id": "local:53025",
+      "mealDbId": "53025",
+      "title": "Ful Medames",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/lvn2d51598732465.jpg",
+      "category": "Vegetarian",
+      "cuisine": "Egyptian",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
+      "dietsEstimated": false,
+      "ingredients": [
+        {
+          "raw": "2 cups Broad Beans",
+          "name": "fava bean",
+          "amount": 2,
+          "unit": "cup"
+        },
+        {
+          "raw": "1/3 cup Parsley",
+          "name": "parsley",
+          "amount": 0.3333333333333333,
+          "unit": "cup"
+        },
+        {
+          "raw": "Dash Olive Oil",
+          "name": "olive oil"
+        },
+        {
+          "raw": "3 Lemons",
+          "name": "lemon",
+          "amount": 3
+        },
+        {
+          "raw": "4 Garlic Clove",
+          "name": "garlic",
+          "amount": 4
+        },
+        {
+          "raw": "Sprinking Cumin",
+          "name": "cumin"
+        }
+      ],
+      "instructions": [
+        "As the cooking time varies depending on the quality and age of the beans, it is good to cook them in advance and to reheat them when you are ready to serve. Cook the drained beans in a fresh portion of unsalted water in a large saucepan with the lid on until tender, adding water to keep them covered, and salt when the beans have softened. They take 2–2 1/2 hours of gentle simmering. When the beans are soft, let the liquid reduce. It is usual to take out a ladle or two of the beans and to mash them with some of the cooking liquid, then stir this back into the beans. This is to thicken the sauce.",
+        "Serve the beans in soup bowls sprinkled with chopped parsley and accompanied by Arab bread.",
+        "Pass round the dressing ingredients for everyone to help themselves: a bottle of extra-virgin olive oil, the quartered lemons, salt and pepper, a little saucer with the crushed garlic, one with chili-pepper flakes, and one with ground cumin.",
+        "The beans are eaten gently crushed with the fork, so that they absorb the dressing.",
+        "Optional Garnishes",
+        "Peel hard-boiled eggs—1 per person—to cut up in the bowl with the beans.",
+        "Top the beans with a chopped cucumber-and-tomato salad and thinly sliced mild onions or scallions. Otherwise, pass round a good bunch of scallions and quartered tomatoes and cucumbers cut into sticks.",
+        "Serve with tahina cream sauce (page 65) or salad (page 67), with pickles and sliced onions soaked in vinegar for 30 minutes.",
+        "Another way of serving ful medames is smothered in a garlicky tomato sauce (see page 464).",
+        "In Syria and Lebanon, they eat ful medames with yogurt or feta cheese, olives, and small cucumbers.",
+        "Variations",
+        "A traditional way of thickening the sauce is to throw a handful of red lentils (1/4 cup) into the water at the start of the cooking.",
+        "In Iraq, large brown beans are used instead of the small Egyptian ones, in a dish called badkila, which is also sold for breakfast in the street."
+      ],
+      "sourceUrl": "https://www.epicurious.com/recipes/food/views/ful-medames-352993",
+      "attribution": "TheMealDB"
+    },
+    {
+      "id": "local:52963",
+      "mealDbId": "52963",
+      "title": "Shakshuka",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/g373701551450225.jpg",
+      "category": "Vegetarian",
+      "cuisine": "Egyptian",
+      "diets": ["vegetarian", "gluten-free", "pescatarian"],
+      "dietsEstimated": false,
+      "ingredients": [
+        {
+          "raw": "1 tbs Olive Oil",
+          "name": "olive oil",
+          "amount": 1,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "2 chopped Red Onions",
+          "name": "red onion",
+          "amount": 2
+        },
+        {
+          "raw": "1 finely chopped Red Chilli",
+          "name": "chili",
+          "amount": 1
+        },
+        {
+          "raw": "1 clove Garlic",
+          "name": "garlic",
+          "amount": 1,
+          "unit": "clove"
+        },
+        {
+          "raw": "Chopped Coriander",
+          "name": "coriander"
+        },
+        {
+          "raw": "800g Cherry Tomatoes",
+          "name": "cherry tomato",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "raw": "1 tbs Caster Sugar",
+          "name": "sugar",
+          "amount": 1,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "4 Eggs",
+          "name": "egg",
+          "amount": 4
+        },
+        {
+          "raw": "Spinkling Feta",
+          "name": "feta"
+        }
+      ],
+      "instructions": [
+        "Heat the oil in a frying pan that has a lid, then soften the onions, chilli, garlic and coriander stalks for 5 mins until soft. Stir in the tomatoes and sugar, then bubble for 8-10 mins until thick. Can be frozen for 1 month.",
+        "Using the back of a large spoon, make 4 dips in the sauce, then crack an egg into each one. Put a lid on the pan, then cook over a low heat for 6-8 mins, until the eggs are done to your liking. Scatter with the coriander leaves and serve with crusty bread."
+      ],
+      "sourceUrl": "https://www.bbcgoodfood.com/recipes/7573/spicy-tomato-baked-eggs",
+      "attribution": "TheMealDB"
+    },
+    {
+      "id": "local:53029",
+      "mealDbId": "53029",
+      "title": "Mulukhiyah",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/x372ug1598733932.jpg",
+      "category": "Beef",
+      "cuisine": "Egyptian",
+      "diets": ["gluten-free", "dairy-free"],
+      "dietsEstimated": false,
+      "ingredients": [
+        {
+          "raw": "800g Mulukhiyah",
+          "name": "molokhia",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "raw": "1 chopped Onion",
+          "name": "onion",
+          "amount": 1
+        },
+        {
+          "raw": "300g Beef",
+          "name": "beef",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "raw": "1 tsp Salt",
+          "name": "salt",
+          "amount": 1,
+          "unit": "tsp"
+        },
+        {
+          "raw": "1 Litre Water",
+          "name": "water",
+          "amount": 1,
+          "unit": "l"
+        },
+        {
+          "raw": "1 Garlic Clove",
+          "name": "garlic",
+          "amount": 1
+        },
+        {
+          "raw": "1/2 cup Olive Oil",
+          "name": "olive oil",
+          "amount": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "instructions": [
+        "Saute the onions in the 3-4 tablespoons olive oil",
+        "Add the beef cubes or the chicken cutlets, sear for 3-4 min on each side",
+        "Add 1 liter of water or just enough to cover the meat",
+        "Cook over medium heat until the meat is done (I usually do this in the pressure cooker and press them for 5 min)",
+        "Add the frozen mulukhyia and stir until it thaws completely and then comes to a boil",
+        "In another pan add the 1/4 to 1/2 cup of olive oil and the cloves of garlic and cook over medium low heat until you can smell the garlic (don’t brown it, it will become bitter)",
+        "Add the oil and garlic to the mulukhyia and lower the heat and simmer for 5-10 minutes",
+        "Add salt to taste",
+        "Serve with a generous amount of lemon juice.",
+        "You can serve it with some short grain rice or some pita bread"
+      ],
+      "sourceUrl": "https://chefindisguise.com/2017/05/15/mulukhiyah-a-stew-fit-for-royals/",
+      "attribution": "TheMealDB"
+    },
+    {
+      "id": "local:53218",
+      "mealDbId": "53218",
+      "title": "Chicken Shawarma with homemade garlic herb yoghurt sauce",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/hcg6l91763596970.jpg",
+      "category": "Chicken",
+      "cuisine": "Saudi Arabian",
+      "diets": ["gluten-free"],
+      "dietsEstimated": false,
+      "ingredients": [
+        {
+          "raw": "1kg Chicken Breast",
+          "name": "chicken breast",
+          "amount": 1,
+          "unit": "kg"
+        },
+        {
+          "raw": "2 cloves minced Garlic",
+          "name": "garlic",
+          "amount": 2,
+          "unit": "clove"
+        },
+        {
+          "raw": "1 tblsp Ground Coriander",
+          "name": "ground coriander",
+          "amount": 1,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "1 tblsp Ground Cumin",
+          "name": "cumin",
+          "amount": 1,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "1 tblsp Ground Cardomom",
+          "name": "cardamom",
+          "amount": 1,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "1 tsp Cayenne Pepper",
+          "name": "cayenne pepper",
+          "amount": 1,
+          "unit": "tsp"
+        },
+        {
+          "raw": "2 tsp Smoked Paprika",
+          "name": "smoked paprika",
+          "amount": 2,
+          "unit": "tsp"
+        },
+        {
+          "raw": "2 tsp Salt",
+          "name": "salt",
+          "amount": 2,
+          "unit": "tsp"
+        },
+        {
+          "raw": "2 tblsp Lemon Juice",
+          "name": "lemon",
+          "amount": 2,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "3 tablespoons Olive Oil",
+          "name": "olive oil",
+          "amount": 3,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "1 cup Greek Yogurt",
+          "name": "greek yogurt",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "raw": "1 clove peeled crushed Garlic",
+          "name": "garlic",
+          "amount": 1,
+          "unit": "clove"
+        },
+        {
+          "raw": "1 tsp Cumin",
+          "name": "cumin",
+          "amount": 1,
+          "unit": "tsp"
+        },
+        {
+          "raw": "Splash Lemon Juice",
+          "name": "lemon"
+        }
+      ],
+      "instructions": [
+        "Start by cutting your chicken up into reasonably small slices. Grab your ziplock bag and dump the freshly sliced chicken inside.",
+        "Add garlic, coriander, cumin, cardomom, cayenne pepper, paprika, salt, pepper, lemon juice and olive oil to the bag. Close the bag and mix thoroughly. Place in fridge for 10-12 hours (shorter is fine but longer is better).",
+        "Once ready to cook, heat your fry pan to medium-high and add a tiny bit of olive oil. Fry one side of all of your flatbreads until slightly toasty. Remove from pan, add enough oil to coat the fry pan. Put crumble fries into air fryer on 180 for 15 minutes shaking occasionally.",
+        "The pan should be pretty hot by now, add the chicken in 2 batches (unless you have a big fry pan) to avoid overcrowding. The chicken should get a nice sear and darker colour which is perfect. Cook for a further 5-8 minutes or until cooked through. Repeat with next chicken batch.",
+        "While chicken is cooking, place your Greek yoghurt into a bowl. Combine garlic, finely chopped mint and parsley, squeeze or so of lemon and cumin. Combine and add salt to taste. In a small bowl, combine 1tsp garlic powder, paprika, cumin, onion powder, oregano, dried parsley, cayenne pepper (optional) mix and leave aside for fries.",
+        "Season fries immediately once cooked and add salt to taste. Once the chicken is complete, serve immediately by laying out your flatbread, spreading the sauce evenly over the bread, add lettuce, onion, tomato, fries, chicken, feta and more sauce on top. Serve immediately."
+      ],
+      "sourceUrl": "https://cookpad.com/eng/recipes/24343467?ref=search&search_term=saudi+arabia",
+      "attribution": "TheMealDB"
+    },
+    {
+      "id": "local:52982",
+      "mealDbId": "52982",
+      "title": "Spaghetti alla Carbonara",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
+      "category": "Pasta",
+      "cuisine": "Italian",
+      "diets": [],
+      "dietsEstimated": false,
+      "ingredients": [
+        {
+          "raw": "320g Spaghetti",
+          "name": "spaghetti",
+          "amount": 320,
+          "unit": "g"
+        },
+        {
+          "raw": "6 Egg Yolks",
+          "name": "egg yolk",
+          "amount": 6
+        },
+        {
+          "raw": "As required Salt",
+          "name": "salt"
+        },
+        {
+          "raw": "150g Bacon",
+          "name": "bacon",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "raw": "50g Pecorino",
+          "name": "pecorino",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "raw": "As required Black Pepper",
+          "name": "black pepper"
+        }
+      ],
+      "instructions": [
+        "Put a large saucepan of water on to boil.",
+        "Finely chop the 100g pancetta, having first removed any rind. Finely grate 50g pecorino cheese and 50g parmesan and mix them together.",
+        "Beat the 3 large eggs in a medium bowl and season with a little freshly grated black pepper. Set everything aside.",
+        "Add 1 tsp salt to the boiling water, add 350g spaghetti and when the water comes back to the boil, cook at a constant simmer, covered, for 10 minutes or until al dente (just cooked).",
+        "Squash 2 peeled plump garlic cloves with the blade of a knife, just to bruise it.",
+        "While the spaghetti is cooking, fry the pancetta with the garlic. Drop 50g unsalted butter into a large frying pan or wok and, as soon as the butter has melted, tip in the pancetta and garlic.",
+        "Leave to cook on a medium heat for about 5 minutes, stirring often, until the pancetta is golden and crisp. The garlic has now imparted its flavour, so take it out with a slotted spoon and discard.",
+        "Keep the heat under the pancetta on low. When the pasta is ready, lift it from the water with a pasta fork or tongs and put it in the frying pan with the pancetta. Don’t worry if a little water drops in the pan as well (you want this to happen) and don’t throw the pasta water away yet.",
+        "Mix most of the cheese in with the eggs, keeping a small handful back for sprinkling over later.",
+        "Take the pan of spaghetti and pancetta off the heat. Now quickly pour in the eggs and cheese. Using the tongs or a long fork, lift up the spaghetti so it mixes easily with the egg mixture, which thickens but doesn’t scramble, and everything is coated.",
+        "Add extra pasta cooking water to keep it saucy (several tablespoons should do it). You don’t want it wet, just moist. Season with a little salt, if needed.",
+        "Use a long-pronged fork to twist the pasta on to the serving plate or bowl. Serve immediately with a little sprinkling of the remaining cheese and a grating of black pepper. If the dish does get a little dry before serving, splash in some more hot pasta water and the glossy sauciness will be revived."
+      ],
+      "sourceUrl": "https://www.bbcgoodfood.com/recipes/ultimate-spaghetti-carbonara-recipe",
+      "attribution": "TheMealDB"
+    },
+    {
+      "id": "local:52959",
+      "mealDbId": "52959",
+      "title": "Baked salmon with fennel & tomatoes",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/1548772327.jpg",
+      "category": "Seafood",
+      "cuisine": "British",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"],
+      "dietsEstimated": false,
+      "ingredients": [
+        {
+          "raw": "2 medium Fennel",
+          "name": "fennel",
+          "amount": 2
+        },
+        {
+          "raw": "2 tbs chopped Parsley",
+          "name": "parsley",
+          "amount": 2,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "Juice of 1 Lemon",
+          "name": "lemon"
+        },
+        {
+          "raw": "175g Cherry Tomatoes",
+          "name": "cherry tomato",
+          "amount": 175,
+          "unit": "g"
+        },
+        {
+          "raw": "1 tbs Olive Oil",
+          "name": "olive oil",
+          "amount": 1,
+          "unit": "tbsp"
+        },
+        {
+          "raw": "350g Salmon",
+          "name": "salmon",
+          "amount": 350,
+          "unit": "g"
+        },
+        {
+          "raw": "to serve Black Olives",
+          "name": "black olive"
+        }
+      ],
+      "instructions": [
+        "Heat oven to 180C/fan 160C/gas 4. Trim the fronds from the fennel and set aside. Cut the fennel bulbs in half, then cut each half into 3 wedges. Cook in boiling salted water for 10 mins, then drain well. Chop the fennel fronds roughly, then mix with the parsley and lemon zest.",
+        "Spread the drained fennel over a shallow ovenproof dish, then add the tomatoes. Drizzle with olive oil, then bake for 10 mins. Nestle the salmon among the veg, sprinkle with lemon juice, then bake 15 mins more until the fish is just cooked. Scatter over the parsley and serve."
+      ],
+      "sourceUrl": "https://www.bbcgoodfood.com/recipes/7745/baked-salmon-with-fennel-and-tomatoes",
+      "attribution": "TheMealDB"
+    },
+    {
+      "id": "local:52958",
+      "mealDbId": "52958",
+      "title": "Peanut Butter Cookies",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/1544384070.jpg",
+      "category": "Dessert",
+      "cuisine": "American",
+      "diets": ["vegetarian", "gluten-free", "dairy-free", "pescatarian"],
+      "dietsEstimated": true,
+      "ingredients": [
+        {
+          "raw": "1 cup Peanut Butter",
+          "name": "peanut butter",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "raw": "1/2 cup Sugar",
+          "name": "sugar",
+          "amount": 0.5,
+          "unit": "cup"
+        },
+        {
+          "raw": "1 Egg",
+          "name": "egg",
+          "amount": 1
+        }
+      ],
+      "instructions": [
+        "Preheat oven to 350ºF (180ºC).",
+        "In a large bowl, mix together the peanut butter, sugar, and egg.",
+        "Scoop out a spoonful of dough and roll it into a ball. Place the cookie balls onto a nonstick baking sheet.",
+        "For extra decoration and to make them cook more evenly, flatten the cookie balls by pressing a fork down on top of them, then press it down again at a 90º angle to make a criss-cross pattern.",
+        "Bake for 8-10 minutes or until the bottom of the cookies are golden brown.",
+        "Remove from baking sheet and cool.",
+        "Enjoy!"
+      ],
+      "sourceUrl": "https://tasty.co/recipe/3-ingredient-peanut-butter-cookies",
+      "attribution": "TheMealDB"
+    }
+  ]
+}

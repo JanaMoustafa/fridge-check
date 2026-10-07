@@ -95,7 +95,8 @@ export const ARABIC_ALIASES = {
   cabbage: ['كرنب', 'ملفوف', 'كرنب أبيض', 'ملفوف أبيض'],
   'red cabbage': ['كرنب أحمر', 'ملفوف أحمر'],
   spinach: ['سبانخ'],
-  lettuce: ['خس', 'خسة', 'خس رومي', 'خس آيسبرج', 'خس كابوتشي'],
+  // Iceberg has its own canonical (display alias in arabic-display-aliases.ts).
+  lettuce: ['خس', 'خسة', 'خس رومي', 'خس كابوتشي'],
   arugula: ['جرجير', 'روكا'],
   molokhia: ['ملوخية', 'ملوخيا', 'ملوخية ورق'],
   'vine leaf': ['ورق عنب', 'أوراق عنب', 'ورقة عنب', 'ورق عنب مخلل', 'ورق دوالي'],
@@ -599,7 +600,9 @@ export const ARABIC_ALIASES = {
   pickle: ['مخلل', 'مخللات', 'خيار مخلل', 'طرشي'],
   ketchup: ['كاتشب', 'كاتشاب', 'كتشب', 'كاتشب طماطم'],
   mayonnaise: ['مايونيز', 'مايونيز خفيف'],
-  mustard: ['مستردة', 'مسطردة', 'خردل', 'مستردة ديجون'],
+  // Dijon has its own canonical (display alias in arabic-display-aliases.ts); it is a family
+  // child of mustard, so recipes that need plain mustard still give it credit.
+  mustard: ['مستردة', 'مسطردة', 'خردل'],
   tahini: ['طحينة', 'طحينه', 'طحينية', 'طحينة خام', 'طحينة سمسم'],
   // Bare هريسة is left out: in Egypt it is a semolina dessert.
   harissa: ['هريسة حارة', 'هريسة تونسية', 'معجون هريسة'],
