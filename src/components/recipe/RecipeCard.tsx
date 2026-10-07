@@ -11,6 +11,7 @@ import { rememberReturn } from '@/lib/navigation/return-to'
 import { recipeHref, recipeViewName } from '@/lib/search/links'
 import type { RecipeSummary } from '@/types/recipe'
 import { DietBadges } from './DietBadges'
+import { HeartButton } from './HeartButton'
 import { PantryMeter } from './PantryMeter'
 
 export const CARD_IMAGE_SIZES =
@@ -38,6 +39,9 @@ export function RecipeCard({ recipe, pantry, priority = false, index }: RecipeCa
       style={{ '--stagger': Math.min(index, 8) } as React.CSSProperties}
       className="recipe-card group @container relative flex flex-col overflow-hidden rounded-card bg-surface shadow-[inset_0_1px_0_var(--color-highlight),0_0_0_1px_var(--color-line)]"
     >
+      <div className="absolute inset-e-2 top-2 z-10">
+        <HeartButton recipe={recipe} className="bg-surface/90 shadow-sm backdrop-blur-sm" />
+      </div>
       <div className="relative aspect-[4/3] overflow-hidden bg-surface-2">
         {recipe.imageUrl && (
           <ViewTransition name={recipeViewName(recipe.id)} share="morph" default="none">

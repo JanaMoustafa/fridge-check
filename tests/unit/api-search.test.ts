@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server'
 import { describe, expect, it } from 'vitest'
+import { GET as getDetail } from '@/app/api/recipes/[provider]/[id]/route'
 import { GET } from '@/app/api/recipes/search/route'
 import { createLocalProvider } from '@/lib/providers/local'
 import { searchRecipes } from '@/lib/server/search'
@@ -58,5 +59,24 @@ describe('searchRecipes paging', () => {
     const second = await searchRecipes(provider, { ...query, page: 2 })
     const ids = [...first.results, ...second.results, ...third.results].map((r) => r.id)
     expect(new Set(ids).size).toBe(45)
+  })
+})
+
+describe('GET /api/recipes/[provider]/[id]', () => {
+  const call = (provider: string, id: string) =>
+    getDetail(new NextRequest(new URL(`http://localhost/api/recipes/${provider}/${id}`)), {
+      params: Promise.resolve({ provider, id }),
+    })
+
+  it('returns a cacheable recipe', async () => {
+    const response = await call('local', '53027')
+    expect(response.status).toBe(200)
+    expect(response.headers.get('cache-control')).toContain('s-maxage=86400')
+    expect(await response.json()).toMatchObject({ id: 'local:53027', title: 'Koshari' })
+  })
+
+  it('answers 404 for an unknown recipe and 400 for a malformed id', async () => {
+    expect((await call('local', '99999999')).status).toBe(404)
+    expect((await call('pantry', '1')).status).toBe(400)
   })
 })

@@ -37,7 +37,7 @@ test.describe('find recipes', () => {
     await page.goto('/?i=tomato,onion,garlic')
     await expect(cards(page).first()).toBeVisible()
     await openFilters(page)
-    await page.getByRole('button', { name: 'Vegan' }).click()
+    await page.getByRole('button', { name: 'Vegan', exact: true }).click()
     await expect(page).toHaveURL(/diet=vegan/)
     await expect(cards(page).first()).toBeVisible()
     const count = await cards(page).count()
@@ -93,7 +93,7 @@ test.describe('find recipes', () => {
     await page.goto('/?i=egg,tomato&diet=vegetarian&sort=best')
     await expect(chips(page)).toHaveCount(2)
     await openFilters(page)
-    await expect(page.getByRole('button', { name: 'Vegetarian' })).toHaveAttribute(
+    await expect(page.getByRole('button', { name: 'Vegetarian', exact: true })).toHaveAttribute(
       'aria-pressed',
       'true',
     )

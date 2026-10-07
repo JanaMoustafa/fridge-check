@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { fetchSearchPage, SearchRequestError, searchQueryKey } from './client'
+import { fetchRecipeDetail, fetchSearchPage, SearchRequestError, searchQueryKey } from './client'
 
 const params = {
   ingredients: ['tomato', 'egg'],
@@ -50,5 +50,48 @@ describe('searchQueryKey', () => {
     expect(searchQueryKey({ ...params, diets: ['vegan', 'dairy-free'] })).toEqual(
       searchQueryKey({ ...params, ingredients: ['egg', 'tomato'], diets: ['dairy-free', 'vegan'] }),
     )
+  })
+})
+
+describe('fetchRecipeDetail', () => {
+  const detail = {
+    id: 'local:1',
+    source: 'local',
+    title: 'Koshari',
+    diets: [],
+    dietsEstimated: false,
+    usedIngredients: [],
+    missingIngredients: [],
+    matchedUserIngredients: [],
+    matchScore: 0,
+    ingredients: [{ raw: '1 cup Rice', name: 'rice' }],
+    instructions: ['Cook.'],
+  }
+
+  it('fetches and validates a recipe', async () => {
+    const fetchImpl = fakeFetch(200, detail)
+    await expect(fetchRecipeDetail('local:1', { fetchImpl })).resolves.toMatchObject({
+      title: 'Koshari',
+    })
+    expect(fetchImpl).toHaveBeenCalledWith('/api/recipes/local/1', expect.anything())
+  })
+
+  it('rejects an invalid id without a request', async () => {
+    const fetchImpl = fakeFetch(200, detail)
+    await expect(fetchRecipeDetail('nope', { fetchImpl })).rejects.toBeInstanceOf(
+      SearchRequestError,
+    )
+    expect(fetchImpl).not.toHaveBeenCalled()
+  })
+
+  it('throws the API error code on failure', async () => {
+    const fetchImpl = fakeFetch(404, { error: { code: 'not-found', message: 'x' } })
+    await expect(fetchRecipeDetail('local:9', { fetchImpl })).rejects.toMatchObject({
+      code: 'not-found',
+    })
+    const broken = vi.fn(async () => new Response('oops', { status: 500 }))
+    await expect(fetchRecipeDetail('local:9', { fetchImpl: broken })).rejects.toMatchObject({
+      code: 'unknown',
+    })
   })
 })

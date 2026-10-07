@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import { ViewTransition } from 'react'
 import { cx } from '@/lib/cx'
 import { NAV_ITEMS, isActive } from './nav-items'
+import { NavCount } from './NavCount'
 
 /** Mobile primary navigation (< md): thumb-reachable, icon + label, safe-area aware. */
 export function BottomTabBar() {
@@ -42,6 +43,7 @@ export function BottomTabBar() {
                       />
                     </ViewTransition>
                   )}
+                  <NavCount tab={labelKey} className="absolute inset-e-1 -top-1.5 z-10" />
                   <Icon
                     aria-hidden="true"
                     className="relative size-5"

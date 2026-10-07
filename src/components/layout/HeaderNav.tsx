@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import { ViewTransition } from 'react'
 import { cx } from '@/lib/cx'
 import { NAV_ITEMS, isActive } from './nav-items'
+import { NavCount } from './NavCount'
 
 /** Route links (not an ARIA tablist): each tab is a page. Shown from md up; BottomTabBar covers mobile. */
 export function HeaderNav() {
@@ -39,6 +40,7 @@ export function HeaderNav() {
                   </ViewTransition>
                 )}
                 {t(labelKey)}
+                <NavCount tab={labelKey} className="ms-1.5" />
               </Link>
             </li>
           )

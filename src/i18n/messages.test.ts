@@ -74,6 +74,10 @@ describe('translation catalogs', () => {
       amount: '240 ml',
       site: 'example.com',
       title: 'Koshari',
+      query: 'soup',
+      added: 2,
+      updated: 1,
+      recipes: 'Koshari',
       link: (chunks: string) => chunks,
     }
     for (const key of Object.keys(flatEn)) {

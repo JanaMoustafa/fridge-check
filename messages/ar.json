@@ -12,7 +12,9 @@
     "label": "التنقل الرئيسي",
     "find": "ابحث عن وصفات",
     "saved": "المحفوظة",
-    "shopping": "قائمة التسوق"
+    "shopping": "قائمة التسوق",
+    "savedCount": "{count, plural, zero {لا توجد وصفات محفوظة} one {وصفة محفوظة واحدة} two {وصفتان محفوظتان} few {{count, number, latn} وصفات محفوظة} many {{count, number, latn} وصفة محفوظة} other {{count, number, latn} وصفة محفوظة}}",
+    "shoppingCount": "{count, plural, zero {لا شيء لشرائه} one {عنصر واحد للشراء} two {عنصران للشراء} few {{count, number, latn} عناصر للشراء} many {{count, number, latn} عنصرًا للشراء} other {{count, number, latn} عنصر للشراء}}"
   },
   "language": {
     "label": "اللغة",
@@ -71,14 +73,46 @@
     "heading": "الوصفات المحفوظة",
     "emptyTitle": "لا توجد وصفات محفوظة بعد",
     "emptyBody": "اضغط على القلب في أي وصفة لتحفظها هنا. تبقى الوصفات المحفوظة متاحة حتى دون اتصال بالإنترنت.",
-    "emptyCta": "ابحث عن وصفات"
+    "emptyCta": "ابحث عن وصفات",
+    "search": "ابحث في الوصفات المحفوظة",
+    "sortLabel": "الترتيب",
+    "sortRecent": "الأحدث حفظًا",
+    "sortTitle": "أبجديًا",
+    "count": "{count, plural, zero {لا توجد وصفات محفوظة} one {وصفة محفوظة واحدة} two {وصفتان محفوظتان} few {{count, number, latn} وصفات محفوظة} many {{count, number, latn} وصفة محفوظة} other {{count, number, latn} وصفة محفوظة}}",
+    "noMatches": "لا توجد وصفات محفوظة تطابق «{query}».",
+    "export": "تصدير",
+    "import": "استيراد",
+    "importDone": "تم استيراد {added, number, latn} جديدة وتحديث {updated, number, latn}.",
+    "importInvalid": "{count, plural, one {تم تخطي إدخال واحد غير صالح.} two {تم تخطي إدخالين غير صالحين.} few {تم تخطي {count, number, latn} إدخالات غير صالحة.} many {تم تخطي {count, number, latn} إدخالًا غير صالح.} other {تم تخطي {count, number, latn} إدخال غير صالح.}}",
+    "importTooLarge": "هذا الملف أكبر من أن يكون ملف تصدير من Fridge Check.",
+    "importUnreadable": "هذا الملف ليس ملف تصدير للمفضلة من Fridge Check.",
+    "savedCopy": "اعرض النسخة المحفوظة",
+    "hideSavedCopy": "أخفِ النسخة المحفوظة",
+    "noSavedCopy": "نحتفظ بعنوان هذه الوصفة وصورتها فقط."
   },
   "shopping": {
     "metaTitle": "قائمة التسوق",
     "heading": "قائمة التسوق",
     "emptyTitle": "قائمتك فارغة",
     "emptyBody": "افتح أي وصفة وأضف المكونات التي تنقصك.",
-    "emptyCta": "ابحث عن وصفات"
+    "emptyCta": "ابحث عن وصفات",
+    "viewLabel": "طريقة العرض",
+    "combined": "مجمّعة",
+    "byRecipe": "حسب الوصفة",
+    "remaining": "{count, plural, zero {انتهيت من كل شيء} one {بقي عنصر واحد} two {بقي عنصران} few {بقيت {count, number, latn} عناصر} many {بقي {count, number, latn} عنصرًا} other {بقي {count, number, latn} عنصر}}",
+    "usedIn": "لوصفة: {recipes}",
+    "copy": "انسخ القائمة",
+    "copied": "تم نسخ القائمة.",
+    "copyFailed": "تعذر النسخ. حدد القائمة وانسخها يدويًا.",
+    "share": "مشاركة",
+    "clearChecked": "احذف ما تم شراؤه",
+    "addMissing": "أضف الناقص إلى قائمة التسوق",
+    "addedCount": "{count, plural, one {تمت إضافة عنصر واحد إلى قائمة التسوق.} two {تمت إضافة عنصرين إلى قائمة التسوق.} few {تمت إضافة {count, number, latn} عناصر إلى قائمة التسوق.} many {تمت إضافة {count, number, latn} عنصرًا إلى قائمة التسوق.} other {تمت إضافة {count, number, latn} عنصر إلى قائمة التسوق.}}",
+    "alreadyAdded": "هذه المكونات موجودة بالفعل في قائمة التسوق.",
+    "nothingMissing": "لا شيء لشرائه — لديك كل المكونات.",
+    "undo": "تراجع",
+    "undone": "تمت إزالتها مرة أخرى.",
+    "viewList": "اعرض القائمة"
   },
   "footer": {
     "data": "بيانات الوصفات وصورها من <link>TheMealDB</link>"
@@ -251,5 +285,15 @@
     "pint": "باينت",
     "quart": "كوارت",
     "gallon": "جالون"
+  },
+  "favorites": {
+    "save": "احفظ {title} في المفضلة",
+    "unsave": "أزل {title} من المفضلة",
+    "saved": "تم حفظ {title}.",
+    "removed": "تمت إزالة {title} من المفضلة."
+  },
+  "storage": {
+    "unavailable": "لا يسمح متصفحك بحفظ البيانات، لذا ستبقى المفضلة وقائمة التسوق محفوظتين حتى تغلق هذه الصفحة فقط.",
+    "dismiss": "إغلاق"
   }
 }

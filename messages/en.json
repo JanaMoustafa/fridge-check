@@ -12,7 +12,9 @@
     "label": "Main navigation",
     "find": "Find recipes",
     "saved": "Saved",
-    "shopping": "Shopping list"
+    "shopping": "Shopping list",
+    "savedCount": "{count, plural, one {# saved recipe} other {# saved recipes}}",
+    "shoppingCount": "{count, plural, one {# item to buy} other {# items to buy}}"
   },
   "language": {
     "label": "Language",
@@ -71,14 +73,46 @@
     "heading": "Saved recipes",
     "emptyTitle": "Nothing saved yet",
     "emptyBody": "Tap the heart on any recipe to keep it here. Saved recipes stay available even offline.",
-    "emptyCta": "Find recipes"
+    "emptyCta": "Find recipes",
+    "search": "Search saved recipes",
+    "sortLabel": "Sort",
+    "sortRecent": "Recently saved",
+    "sortTitle": "A–Z",
+    "count": "{count, plural, one {# saved recipe} other {# saved recipes}}",
+    "noMatches": "No saved recipes match “{query}”.",
+    "export": "Export",
+    "import": "Import",
+    "importDone": "Imported {added, number} new and {updated, number} updated.",
+    "importInvalid": "{count, plural, one {# entry was skipped because it wasn't valid.} other {# entries were skipped because they weren't valid.}}",
+    "importTooLarge": "That file is too large to be a Fridge Check export.",
+    "importUnreadable": "That file isn't a Fridge Check favorites export.",
+    "savedCopy": "Show saved copy",
+    "hideSavedCopy": "Hide saved copy",
+    "noSavedCopy": "Only the title and photo are kept for this recipe."
   },
   "shopping": {
     "metaTitle": "Shopping list",
     "heading": "Shopping list",
     "emptyTitle": "Your list is empty",
     "emptyBody": "Open a recipe and add the ingredients you're missing.",
-    "emptyCta": "Find recipes"
+    "emptyCta": "Find recipes",
+    "viewLabel": "Show",
+    "combined": "Combined",
+    "byRecipe": "By recipe",
+    "remaining": "{count, plural, =0 {All done} one {# item left} other {# items left}}",
+    "usedIn": "For: {recipes}",
+    "copy": "Copy list",
+    "copied": "List copied.",
+    "copyFailed": "Couldn't copy. Select the list and copy it instead.",
+    "share": "Share",
+    "clearChecked": "Clear checked",
+    "addMissing": "Add missing to shopping list",
+    "addedCount": "{count, plural, one {Added # item to your shopping list.} other {Added # items to your shopping list.}}",
+    "alreadyAdded": "These are already on your shopping list.",
+    "nothingMissing": "Nothing to buy — you have everything.",
+    "undo": "Undo",
+    "undone": "Removed them again.",
+    "viewList": "View list"
   },
   "footer": {
     "data": "Recipe data and photos from <link>TheMealDB</link>"
@@ -251,5 +285,15 @@
     "pint": "pint",
     "quart": "quart",
     "gallon": "gallon"
+  },
+  "favorites": {
+    "save": "Save {title} to favorites",
+    "unsave": "Remove {title} from favorites",
+    "saved": "Saved {title}.",
+    "removed": "Removed {title} from favorites."
+  },
+  "storage": {
+    "unavailable": "Your browser isn't letting us save data, so favorites and your shopping list will be kept only until you close this tab.",
+    "dismiss": "Dismiss"
   }
 }

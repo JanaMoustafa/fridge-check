@@ -7,6 +7,7 @@ import { BottomTabBar } from '@/components/layout/BottomTabBar'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { SkipLink } from '@/components/layout/SkipLink'
+import { StorageNotice } from '@/components/layout/StorageNotice'
 import { PREPAINT_SCRIPT } from '@/lib/boot/prepaint-script'
 import { directionOf } from '@/lib/i18n/locale'
 import { getSiteUrl } from '@/lib/site-url'
@@ -72,6 +73,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
           <AppProviders dir={dir}>
             <SkipLink />
             <SiteHeader />
+            <StorageNotice />
             <main
               id="main"
               tabIndex={-1}

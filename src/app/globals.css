@@ -611,3 +611,60 @@
     display: none;
   }
 }
+
+/* Hibiscus heart: saving pops (spring) and sends out 6 particles; unsaving is a quiet fade. */
+.heart-pop {
+  animation: heart-pop 560ms var(--ease-spring-pop);
+}
+@keyframes heart-pop {
+  from {
+    scale: 0.6;
+  }
+}
+.heart-burst > span {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  animation: heart-particle 360ms var(--ease-arrive) forwards;
+}
+@keyframes heart-particle {
+  from {
+    opacity: 1;
+    transform: rotate(var(--angle)) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateY(-18px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heart-burst {
+    display: none;
+  }
+}
+
+/* Thermal-receipt shopping list: dashed rules and a zigzag torn bottom edge. */
+.receipt {
+  --tooth: 10px;
+  padding-block-end: calc(var(--tooth) + 1rem);
+  mask:
+    conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / var(--tooth)
+      100%,
+    linear-gradient(#000 0 0) top / 100% calc(100% - var(--tooth)) no-repeat;
+  mask-composite: add;
+}
+
+/* Count badges pop when the number changes (keyed remount). */
+.count-badge {
+  animation: badge-pop 400ms var(--ease-spring-pop);
+}
+@keyframes badge-pop {
+  50% {
+    scale: 1.2;
+  }
+}

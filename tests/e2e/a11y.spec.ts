@@ -35,6 +35,37 @@ for (const locale of ['en', 'ar'] as const) {
         })
       }
 
+      test('saved and shopping pages with content have no axe violations', async ({
+        page,
+        context,
+        baseURL,
+      }) => {
+        await setLocaleCookie(context, baseURL!, locale)
+        await page.goto('/recipe/local/53027')
+        await page
+          .getByRole('button', { name: /Koshari/ })
+          .first()
+          .click()
+        await page
+          .getByRole('button', {
+            name: locale === 'ar' ? 'أضف الناقص إلى قائمة التسوق' : 'Add missing to shopping list',
+          })
+          .click()
+        for (const path of ['/saved', '/shopping-list']) {
+          await page.goto(path)
+          await page.waitForLoadState('networkidle')
+          await settleAnimations(page)
+          const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze()
+          expect(
+            results.violations.map((v) => ({
+              path,
+              id: v.id,
+              nodes: v.nodes.map((n) => n.target),
+            })),
+          ).toEqual([])
+        }
+      })
+
       test('settings dialog has no axe violations', async ({ page, context, baseURL }) => {
         await setLocaleCookie(context, baseURL!, locale)
         await page.goto('/')

@@ -7,7 +7,9 @@ import { ViewTransition } from 'react'
 import { PageTransition } from '@/components/layout/PageTransition'
 import { IngredientLabelsProvider } from '@/components/providers/IngredientLabels'
 import { BackLink } from '@/components/recipe/BackLink'
+import { AddMissingButton } from '@/components/recipe/AddMissingButton'
 import { DietBadges } from '@/components/recipe/DietBadges'
+import { HeartButton } from '@/components/recipe/HeartButton'
 import { HaveNeedPanel } from '@/components/recipe/HaveNeedPanel'
 import { IngredientList } from '@/components/recipe/IngredientList'
 import { RecipeActions } from '@/components/recipe/RecipeActions'
@@ -85,13 +87,16 @@ export default async function RecipePage({ params, searchParams }: Props) {
                 </ViewTransition>
               )}
               <header className="space-y-3">
-                <h1
-                  lang="en"
-                  dir="ltr"
-                  className="text-start text-[clamp(1.75rem,1.2rem+2.4vw,2.75rem)] leading-tight font-extrabold"
-                >
-                  {recipe.title}
-                </h1>
+                <div className="flex items-start justify-between gap-3">
+                  <h1
+                    lang="en"
+                    dir="ltr"
+                    className="text-start text-[clamp(1.75rem,1.2rem+2.4vw,2.75rem)] leading-tight font-extrabold"
+                  >
+                    {recipe.title}
+                  </h1>
+                  <HeartButton recipe={recipe} className="shrink-0 print:hidden" />
+                </div>
                 <div className="flex flex-wrap items-center gap-2 text-sm text-fg-muted">
                   {cuisine && (
                     <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 font-semibold">
@@ -103,7 +108,14 @@ export default async function RecipePage({ params, searchParams }: Props) {
                 <DietBadges diets={recipe.diets} estimated={recipe.dietsEstimated} />
                 {locale === 'ar' && <p className="text-sm text-fg-muted">{t('englishOnly')}</p>}
               </header>
-              <RecipeActions title={recipe.title} />
+              <div className="flex flex-wrap items-start gap-2">
+                <AddMissingButton
+                  recipe={{ id: recipe.id, title: recipe.title }}
+                  withStaples={data.withStaples.missingIngredients}
+                  withoutStaples={data.withoutStaples.missingIngredients}
+                />
+                <RecipeActions title={recipe.title} />
+              </div>
 
               <div className="lg:hidden">
                 <HaveNeedPanel
