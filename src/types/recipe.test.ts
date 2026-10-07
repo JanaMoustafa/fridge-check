@@ -91,7 +91,7 @@ describe('SearchParamsSchema', () => {
       ingredients: ['tomato'],
       diets: [],
       assumeStaples: true,
-      sort: 'best',
+      sort: 'fewest-missing',
     })
   })
 

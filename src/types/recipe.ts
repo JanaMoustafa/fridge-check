@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { CANONICAL_NAME_MAX_LENGTH, CANONICAL_NAME_PATTERN } from '@/lib/matching/canonical'
 
 export const DIETS = ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'pescatarian'] as const
 export const DietSchema = z.enum(DIETS)
@@ -16,8 +17,8 @@ export type SortKey = z.infer<typeof SortKeySchema>
 export const CanonicalNameSchema = z
   .string()
   .min(1)
-  .max(60)
-  .regex(/^[a-z0-9][a-z0-9 '-]*$/, 'canonical names are lowercase ASCII')
+  .max(CANONICAL_NAME_MAX_LENGTH)
+  .regex(CANONICAL_NAME_PATTERN, 'canonical names are lowercase ASCII')
 
 export const IngredientSchema = z.object({
   /** Original text, e.g. "2 large ripe tomatoes, diced". */
@@ -46,7 +47,8 @@ export const RecipeSummarySchema = z
     usedIngredients: z.array(CanonicalNameSchema),
     /** Recipe-side canonical names not matched; staples excluded. */
     missingIngredients: z.array(CanonicalNameSchema),
-    /** Distinct user ingredients that matched at least one recipe ingredient (card text + sort). */
+    /** User ingredients the recipe uses (card text + sort): a maximum matching in which each recipe
+     *  ingredient credits at most one user item; independent of chip order. */
     matchedUserIngredients: z.array(CanonicalNameSchema),
     /** Σ weights / non-staple ingredient count, weights: exact 1.0, family 0.8. */
     matchScore: z.number().min(0).max(1),
@@ -74,6 +76,7 @@ export const SearchParamsSchema = z.object({
   ingredients: z.array(CanonicalNameSchema.max(MAX_INGREDIENT_LENGTH)).min(1).max(MAX_INGREDIENTS),
   diets: z.array(DietSchema).default([]),
   assumeStaples: z.boolean().default(true),
-  sort: SortKeySchema.default('best'),
+  // Spec default ordering: fewest missing → highest score → most of your ingredients → quickest.
+  sort: SortKeySchema.default('fewest-missing'),
 })
 export type SearchParams = z.infer<typeof SearchParamsSchema>
