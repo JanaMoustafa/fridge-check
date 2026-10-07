@@ -2,7 +2,14 @@ import AxeBuilder from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 import { setLocaleCookie, settleAnimations } from './helpers'
 
-const PAGES = ['/', '/saved', '/shopping-list', '/does-not-exist']
+const PAGES = [
+  '/',
+  '/?i=tomato,onion,garlic,rice',
+  '/recipe/local/53027?i=rice,onion,lentil',
+  '/saved',
+  '/shopping-list',
+  '/does-not-exist',
+]
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice']
 
 for (const locale of ['en', 'ar'] as const) {
@@ -14,6 +21,8 @@ for (const locale of ['en', 'ar'] as const) {
         test(`${path} has no axe violations`, async ({ page, context, baseURL }) => {
           await setLocaleCookie(context, baseURL!, locale)
           await page.goto(path)
+          // Results arrive after load: wait for them, then for their entrance animations.
+          await page.waitForLoadState('networkidle')
           await settleAnimations(page)
           const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze()
           expect(

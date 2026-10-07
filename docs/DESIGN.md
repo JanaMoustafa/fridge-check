@@ -66,8 +66,8 @@ only decorates it; every horizontal offset is `calc(var(--dir) * Npx)` with `--d
 | Moment                   | Technique                                                                                          |
 | ------------------------ | -------------------------------------------------------------------------------------------------- |
 | Chip add — "magnet snap" | `@starting-style` drop −6 px + scale .92 → spring-snappy; paste cascades 30 ms (cap 10)            |
-| Chip remove              | `<ViewTransition exit="chip-out" update="chip-move">`, 4° tilt toward inline-end, 140 ms           |
-| Results re-rank          | first 24 cards named; `update="card-move"` spring-soft; enter rise 8 px after 140 ms               |
+| Chip remove              | instant — no view transition (see note below)                                                      |
+| Results                  | cards rise in with a 40 ms stagger (CSS); re-ranking is instant (see note below)                   |
 | Pantry meter fill        | segment hollow-dashed saffron → solid parsley, scaleX .4→1, 30 ms inline stagger                   |
 | Heart save               | spring-pop + 6 hibiscus particles (360 ms); unsave = 140 ms fade                                   |
 | List → detail            | shared-element photo morph (400 ms, 3 px mid-flight blur) + 60 px × `--dir` slide; header anchored |
@@ -76,6 +76,12 @@ only decorates it; every horizontal offset is `calc(var(--dir) * Npx)` with `--d
 | Skeleton shimmer         | sweeps in reading direction; skeletons only after 150 ms                                           |
 | Language switch          | root crossfade only (no slide — the layout itself mirrors)                                         |
 | Theme switch             | instant                                                                                            |
+
+**No view transitions for in-page updates.** React starts a document view transition for any
+transition that touches a `<ViewTransition>`; keystrokes typed while one is in flight can be lost
+(reproduced with fast typing after adding a chip). View transitions are therefore used only for
+navigation (page slides, the photo morph, the tab indicator, the language crossfade); chips and
+result cards animate with plain CSS that never blocks input.
 
 `prefers-reduced-motion: reduce`: no translate/scale/rotate, particles, staggers or shimmer; view-transition
 durations 0 except a ≤ 120 ms opacity crossfade; every transform utility sits behind `motion-safe:`.

@@ -514,3 +514,100 @@
     translate: calc(var(--dir) * 100%) 0;
   }
 }
+
+/* ── Find screen motion (docs/DESIGN.md "Motion") ── */
+
+/* Chip add: "magnet snap" — drops 6px onto the fridge door with a slight spring. */
+.chip {
+  transition:
+    opacity var(--dur-enter) var(--ease-arrive),
+    translate 370ms var(--ease-spring-snappy),
+    scale 370ms var(--ease-spring-snappy);
+}
+@starting-style {
+  .chip {
+    opacity: 0;
+    translate: 0 -6px;
+    scale: 0.92;
+  }
+}
+
+/* First reveal: a short stagger (40ms × index, capped at 8 cards). */
+.recipe-card {
+  animation: rise-in var(--dur-enter) var(--ease-arrive) both;
+  animation-delay: calc(var(--stagger, 0) * 40ms);
+}
+
+/* Photo morph list ↔ detail, with a small mid-flight blur to hide interpolation. */
+::view-transition-group(.morph) {
+  animation-duration: var(--dur-move);
+  animation-timing-function: var(--ease-move);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+@keyframes via-blur {
+  30% {
+    filter: blur(3px);
+  }
+}
+
+/* Pantry meter: segments fill from inline-start with a 30ms stagger. */
+.meter-segment {
+  transform-origin: var(--origin-start);
+  animation: meter-fill var(--dur-enter) var(--ease-arrive) both;
+  animation-delay: calc(var(--i, 0) * 30ms);
+}
+@keyframes meter-fill {
+  from {
+    scale: 0.4 1;
+    opacity: 0.4;
+  }
+}
+
+/* Skeleton shimmer sweeps in reading direction. */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-2);
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-surface) 60%, transparent),
+    transparent
+  );
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer {
+  from {
+    translate: calc(var(--dir) * -100%) 0;
+  }
+  to {
+    translate: calc(var(--dir) * 100%) 0;
+  }
+}
+
+/* Suggestions, tooltips and the "what's missing" panel fade and rise in. */
+.suggestions:not([hidden]),
+.tooltip[data-state='delayed-open'],
+.tooltip[data-state='instant-open'],
+.collapsible-content[data-state='open'] {
+  animation: rise-in-small 180ms var(--ease-arrive);
+}
+@keyframes rise-in-small {
+  from {
+    opacity: 0;
+    translate: 0 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    display: none;
+  }
+}

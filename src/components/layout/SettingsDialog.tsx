@@ -3,6 +3,7 @@
 import { Settings, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Dialog } from 'radix-ui'
+import { PreferenceSettings } from '@/components/settings/PreferenceSettings'
 import { ThemeSelector } from '@/components/settings/ThemeSelector'
 
 /** Bottom sheet on small screens, inline-end side panel from md up. */
@@ -35,7 +36,10 @@ export function SettingsDialog() {
               <X aria-hidden="true" className="size-5" />
             </Dialog.Close>
           </div>
-          <ThemeSelector />
+          <div className="space-y-8">
+            <ThemeSelector />
+            <PreferenceSettings />
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

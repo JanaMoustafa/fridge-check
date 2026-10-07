@@ -1239,6 +1239,23 @@ export const CORE_CANONICALS: readonly string[] = [
   'knafeh',
   'falafel',
   'food coloring',
+  // Products used by the seeded recipes (data/recipes.json) that no table above produces.
+  'chinese sesame sauce',
+  'duck sauce',
+  'enchilada sauce',
+  'fajita seasoning',
+  'fromage frais',
+  'green papaya',
+  'horseradish',
+  'liquid cheese',
+  'longan',
+  'malai',
+  'mincemeat',
+  'mixed grain',
+  'oreo cream biscuit',
+  'pickle juice',
+  'red pepper paste',
+  'sticky rice flour',
 ]
 
 /** Every name the engine treats as canonical: the core list plus everything the tables produce. */

@@ -7,6 +7,7 @@ import { normalizeIngredient } from '@/lib/matching/normalize'
 import { STAPLES } from '@/lib/matching/staples'
 import { CORE_CANONICALS } from '@/lib/matching/synonyms'
 import { ingredientLabel, loadArabicIngredientNames } from './ingredient-names'
+import { arabicIngredientNamesFor } from './ingredient-names.server'
 
 const table: Readonly<Record<string, string>> = arabicNames
 
@@ -24,6 +25,11 @@ describe('ingredientLabel', () => {
 
   it('loads the Arabic table on demand', async () => {
     expect(await loadArabicIngredientNames()).toEqual(table)
+  })
+
+  it('only sends the Arabic table to Arabic pages', async () => {
+    expect(await arabicIngredientNamesFor('ar')).toEqual(table)
+    expect(await arabicIngredientNamesFor('en')).toBeUndefined()
   })
 })
 

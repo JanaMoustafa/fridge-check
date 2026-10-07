@@ -4,6 +4,7 @@ import cuisineOverridesFile from '../../../data/cuisine-overrides.json'
 import dietOverridesFile from '../../../data/diet-overrides.json'
 import recipesFile from '../../../data/recipes.json'
 import allowlistFile from '../../../data/seed-allowlist.json'
+import { CANONICAL_NAMES } from '@/lib/matching/synonyms'
 import { datasetStats } from './collection'
 import { CUISINE_LABELS } from './cuisines'
 import {
@@ -27,6 +28,13 @@ describe('data/recipes.json', () => {
     const ids = recipes.map((recipe) => recipe.mealDbId)
     expect(ids).toEqual(Object.keys(allowlist.recipes))
     expect(ids).toEqual([...ids].sort((a, b) => Number(a) - Number(b)))
+  })
+
+  it('uses only ingredient names the engine knows (so they can be suggested and typed)', () => {
+    const unknown = recipes.flatMap((recipe) =>
+      recipe.ingredients.map(({ name }) => name).filter((name) => !CANONICAL_NAMES.has(name)),
+    )
+    expect([...new Set(unknown)]).toEqual([])
   })
 
   it('labels every recipe with a known cuisine', () => {

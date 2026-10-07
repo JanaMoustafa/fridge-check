@@ -18,6 +18,11 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  images: {
+    // Providers' own resized images (see the loader); never the Vercel optimizer.
+    loader: 'custom',
+    loaderFile: './src/lib/images/loader.ts',
+  },
   turbopack: {
     rules: {
       '*.css': {

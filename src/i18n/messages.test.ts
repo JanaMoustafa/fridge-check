@@ -17,7 +17,9 @@ function flatten(tree: Tree, prefix = ''): Record<string, string> {
 
 /** Argument and tag names used by an ICU message, e.g. {count}, <link>. */
 function placeholders(message: string): string[] {
-  const args = [...message.matchAll(/\{\s*([A-Za-z_]\w*)/g)].map((m) => `{${m[1]}}`)
+  // An argument reference is `{name}` or `{name, type…}`; plural branch text like `{No recipes}`
+  // is not an argument.
+  const args = [...message.matchAll(/\{\s*([A-Za-z_]\w*)\s*[,}]/g)].map((m) => `{${m[1]}}`)
   const tags = [...message.matchAll(/<([A-Za-z_]\w*)>/g)].map((m) => `<${m[1]}>`)
   return [...new Set([...args, ...tags])].sort()
 }
@@ -60,7 +62,20 @@ describe('translation catalogs', () => {
         throw error
       },
     })
-    const values = { count: 3, link: (chunks: string) => chunks }
+    // Sample values for every argument used in the catalogs (numbers for plurals and numbers).
+    const values = {
+      count: 3,
+      used: 2,
+      missing: 1,
+      max: 20,
+      minutes: 30,
+      name: 'tomato',
+      input: 'tomatos',
+      amount: '240 ml',
+      site: 'example.com',
+      title: 'Koshari',
+      link: (chunks: string) => chunks,
+    }
     for (const key of Object.keys(flatEn)) {
       // @ts-expect-error -- keys come from a runtime walk of the catalog
       expect(() => t.rich(key, values), key).not.toThrow()
