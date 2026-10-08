@@ -67,6 +67,17 @@ Free features (search, favorites, shopping list) stay account-free and unchanged
 | Gating          | Server-side `isPro()` on every Pro route and section; free users get a placeholder preview (no real numbers in the page).                                                                                                                                                                                                  |
 | Order           | Pro first (light Vercel + Neon deploy), then Phases 7–8.                                                                                                                                                                                                                                                                   |
 
+Nutrition data (`data/nutrition/`, rebuilt with `pnpm seed:nutrition`): 341 ingredients reviewed
+against FoodData Central (314 SR Legacy foods, 27 with no fitting food and a reason; `minor` ones
+are spice blends or flavourings left out in small amounts). Lines are weighed only through USDA
+weights (cup, spoon, clove, slice, sheet, "1 leek"…), weights printed in the line ("1 (400g)
+tin") or standard definitions (pinch = 1/16 tsp, dash = 1/8 tsp). Canned and dried forms use
+their own food when a line names them. Left out and listed on the page: unmeasured herbs,
+spices and low-energy foods, loose amounts (drizzle, knob, dusting), "to serve" items and frying
+oil (with a warning that real numbers are higher). Anything else that cannot be weighed makes
+the recipe "nutrition not available". Result: 140 of 195 built-in recipes complete. Spoonacular
+recipes use Spoonacular's own nutrition (owner decision 2026-10-08).
+
 Before charging real customers: a TheMealDB supporter key (the free key is for development and
 education only), likely a paid Spoonacular plan, XPay live approval, privacy policy and terms.
 

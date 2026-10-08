@@ -22,7 +22,7 @@ export interface Quantity {
 }
 
 /** Grams per unit. */
-const GRAMS: Partial<Record<Unit, number>> = {
+export const GRAMS: Partial<Record<Unit, number>> = {
   mg: 0.001,
   g: 1,
   kg: 1000,
@@ -35,7 +35,7 @@ const GRAMS: Partial<Record<Unit, number>> = {
  * so a cup reads 240 ml, not 236.6 ml. TheMealDB's pints are in British recipes (568 ml, the
  * imperial pint); its quarts and gallons are in American ones.
  */
-const MILLILITRES: Partial<Record<Unit, number>> = {
+export const MILLILITRES: Partial<Record<Unit, number>> = {
   ml: 1,
   cl: 10,
   dl: 100,

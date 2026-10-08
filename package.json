@@ -17,6 +17,7 @@
     "check:css": "tsx scripts/check-logical-css.ts",
     "check:bundle": "tsx scripts/check-client-bundle.ts",
     "seed": "tsx scripts/seed-local-recipes.ts",
+    "seed:nutrition": "tsx --env-file-if-exists=.env.local scripts/seed-nutrition.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "db:migrate": "tsx --env-file-if-exists=.env.local scripts/db-migrate.ts"
   },

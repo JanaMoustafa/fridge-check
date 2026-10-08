@@ -26,6 +26,27 @@ function files(recipes = Array.from({ length: 150 }, (_, i) => recipe(1000 + i))
       ),
     },
     arabicNames: { lentil: 'عدس' },
+    fdcMapping: {
+      version: 1,
+      foods: {
+        lentil: { fdcId: 172420, description: 'Lentils, raw' },
+        sumac: { fdcId: null, reason: 'No FDC food', minor: true },
+      },
+    },
+    nutritionFoods: {
+      version: 1,
+      source: 'USDA FoodData Central',
+      foods: {
+        lentil: {
+          fdcId: 172420,
+          description: 'Lentils, raw',
+          dataType: 'SR Legacy',
+          per100g: { kcal: 352, proteinG: 24.6, fatG: 1.1, carbsG: 63.4 },
+          portions: { cup: 192 },
+        },
+      },
+      minorWithoutFood: ['sumac'],
+    },
   }
 }
 
@@ -57,5 +78,41 @@ describe('findDataProblems', () => {
     expect(findDataProblems({ ...files(), dietOverrides: { version: 2 } })[0]?.problem).toMatch(
       /diet-overrides\.json/,
     )
+  })
+  it('reports ingredients with no nutrition mapping, and a stale foods.json', () => {
+    const recipes = Array.from({ length: 150 }, (_, i) => recipe(1000 + i))
+    recipes[0] = recipe(1000, { ingredients: [{ raw: '1 Onion', name: 'onion' }] })
+    const base = files(recipes)
+    const problems = findDataProblems({
+      ...base,
+      arabicNames: { lentil: 'عدس', onion: 'بصل' },
+    }).map((p) => p.problem)
+    expect(problems).toEqual(['ingredient "onion" has no entry in nutrition/fdc-mapping.json'])
+
+    const changedId = structuredClone(files())
+    changedId.fdcMapping.foods.lentil.fdcId = 999
+    expect(findDataProblems(changedId).map((p) => p.problem)).toEqual([
+      'nutrition/foods.json is out of date for "lentil" (run pnpm seed:nutrition)',
+    ])
+
+    const minorChanged = structuredClone(files())
+    minorChanged.nutritionFoods.minorWithoutFood = []
+    expect(findDataProblems(minorChanged).map((p) => p.problem)).toEqual([
+      'nutrition/foods.json is out of date for "sumac" (run pnpm seed:nutrition)',
+    ])
+
+    const extra = structuredClone(files())
+    ;(extra.nutritionFoods.foods as Record<string, unknown>).leek =
+      extra.nutritionFoods.foods.lentil
+    expect(findDataProblems(extra).map((p) => p.problem)).toEqual([
+      'nutrition/foods.json is out of date for "leek" (run pnpm seed:nutrition)',
+    ])
+  })
+
+  it('reports malformed nutrition files', () => {
+    expect(findDataProblems({ ...files(), fdcMapping: { version: 2 } })[0]?.problem).toMatch(
+      /fdc-mapping\.json/,
+    )
+    expect(findDataProblems({ ...files(), nutritionFoods: {} })[0]?.problem).toMatch(/foods\.json/)
   })
 })
