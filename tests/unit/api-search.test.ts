@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server'
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { GET as getDetail } from '@/app/api/recipes/[provider]/[id]/route'
 import { GET } from '@/app/api/recipes/search/route'
 import { createLocalProvider } from '@/lib/providers/local'
@@ -44,6 +44,7 @@ describe('searchRecipes paging', () => {
     title: `Dish ${i}`,
   }))
   const provider = createLocalProvider(() => many)
+  const registry = { primary: provider, local: provider }
   const query = {
     ingredients: [base[0]!.ingredients[0]!.name],
     diets: [],
@@ -52,11 +53,11 @@ describe('searchRecipes paging', () => {
   }
 
   it('slices pages of 20 and reports hasMore', async () => {
-    const first = await searchRecipes(provider, { ...query, page: 1 })
-    const third = await searchRecipes(provider, { ...query, page: 3 })
+    const first = await searchRecipes(registry, { ...query, page: 1 })
+    const third = await searchRecipes(registry, { ...query, page: 3 })
     expect([first.total, first.results.length, first.hasMore]).toEqual([45, 20, true])
     expect([third.results.length, third.hasMore]).toEqual([5, false])
-    const second = await searchRecipes(provider, { ...query, page: 2 })
+    const second = await searchRecipes(registry, { ...query, page: 2 })
     const ids = [...first.results, ...second.results, ...third.results].map((r) => r.id)
     expect(new Set(ids).size).toBe(45)
   })
@@ -78,5 +79,34 @@ describe('GET /api/recipes/[provider]/[id]', () => {
   it('answers 404 for an unknown recipe and 400 for a malformed id', async () => {
     expect((await call('local', '99999999')).status).toBe(404)
     expect((await call('pantry', '1')).status).toBe(400)
+  })
+})
+
+describe('rate limiting', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs()
+  })
+
+  it('answers 429 with Retry-After once a client passes the per-minute limit', async () => {
+    vi.stubEnv('NODE_ENV', 'production')
+    const from = (ip: string) =>
+      new NextRequest(new URL('http://localhost/api/recipes/search?ingredients=rice'), {
+        headers: { 'x-real-ip': ip },
+      })
+    // RATE_LIMIT_PER_MINUTE defaults to 60.
+    for (let i = 0; i < 60; i++) expect((await GET(from('203.0.113.7'))).status).toBe(200)
+    const limited = await GET(from('203.0.113.7'))
+    expect(limited.status).toBe(429)
+    expect(Number(limited.headers.get('retry-after'))).toBeGreaterThan(0)
+    expect(ApiErrorSchema.parse(await limited.json()).error.code).toBe('rate-limited')
+    expect((await GET(from('203.0.113.8'))).status).toBe(200)
+    // The detail route shares the same budget.
+    const detail = await getDetail(
+      new NextRequest(new URL('http://localhost/api/recipes/local/53027'), {
+        headers: { 'x-real-ip': '203.0.113.7' },
+      }),
+      { params: Promise.resolve({ provider: 'local', id: '53027' }) },
+    )
+    expect(detail.status).toBe(429)
   })
 })

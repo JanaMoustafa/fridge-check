@@ -1,13 +1,15 @@
 import type { NextRequest } from 'next/server'
-import { getRecipeProvider } from '@/lib/providers/registry'
+import { getRegistry } from '@/lib/providers/registry'
 import { parseSearchQuery } from '@/lib/search/query'
+import { searchCacheControl } from '@/lib/server/cache-control'
+import { checkRateLimit } from '@/lib/server/rate-limit'
 import { searchRecipes } from '@/lib/server/search'
 import type { ApiError } from '@/types/api'
 
-// Identical searches share one CDN entry (the client sends a canonical, sorted query string).
-const CACHE_CONTROL = 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400'
-
 export async function GET(request: NextRequest) {
+  const limited = checkRateLimit(request)
+  if (limited) return limited
+
   const parsed = parseSearchQuery(request.nextUrl.searchParams)
   if (!parsed.success) {
     const body: ApiError = {
@@ -24,8 +26,8 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const body = await searchRecipes(getRecipeProvider(), parsed.data)
-    return Response.json(body, { headers: { 'Cache-Control': CACHE_CONTROL } })
+    const body = await searchRecipes(getRegistry(), parsed.data)
+    return Response.json(body, { headers: { 'Cache-Control': searchCacheControl(body) } })
   } catch (error) {
     console.error('[api/recipes/search]', error instanceof Error ? error.message : error)
     const body: ApiError = { error: { code: 'internal', message: 'Search failed.' } }

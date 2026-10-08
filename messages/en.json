@@ -243,8 +243,10 @@
     "clearFilters": "Clear diet filters",
     "errorTitle": "We couldn't load recipes",
     "errorBody": "Check your connection and try again.",
+    "errorRateLimited": "You're searching very quickly. Wait a moment, then try again.",
     "retry": "Try again",
     "fallbackNotice": "Showing results from our built-in collection.",
+    "poweredBySpoonacular": "Recipes powered by <link>spoonacular</link>",
     "englishOnly": "Recipe names and steps are in English.",
     "time": "{minutes, number} min",
     "servings": "Serves {count, number}"
@@ -263,6 +265,7 @@
     "allergy": "Always check ingredient labels if you have a food allergy.",
     "source": "Original recipe: <link>{site}</link>",
     "attribution": "Recipe and photo from <link>TheMealDB</link>",
+    "poweredBySpoonacular": "Powered by <link>spoonacular</link>",
     "print": "Print",
     "share": "Share",
     "copied": "Link copied.",

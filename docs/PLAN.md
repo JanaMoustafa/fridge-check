@@ -38,6 +38,15 @@ Every deviation below was flagged to and approved by the project owner before im
 | 16  | In-memory per-IP limiter                                            | In-memory limiter (documented as per-instance, best effort) + CDN `s-maxage` on canonical search URLs. Disabled under `NODE_ENV=test`.                                                                                                                                                                                                                                                                                               | Serverless instances don't share memory.                                                                    |
 | 17  | Misc                                                                | Storage prefix `fc:` (not `ptp:`); import merges by id; notice text "Showing results from our built-in collection"; axe across theme × locale; unit conversion only for cleanly parsed mass↔mass / volume↔volume; bottom tab bar < 768 px.                                                                                                                                                                                           | Clarity / correctness.                                                                                      |
 
+## Implementation notes (within the approved decisions)
+
+- **Spoonacular 1 h limit** (#9): 30 min in server memory + 30 min at the CDN (`s-maxage=1800`, no stale serving). One `complexSearch` asks for 30 results (≈ 3 points), so the 150-point free plan allows ≈ 45 uncached searches a day. 402 → no calls until 00:00 UTC; 429 → pause for `Retry-After` (60 s default); 401/403 → pause 10 min. Every pause answers from the local collection.
+- **Fallback**: any failure of the configured remote provider (not only 402/429/timeout) answers from the local collection with `notice: "fallback-local"`, cached 60 s at the CDN so the remote source is retried soon. A `mealdb:<id>` detail whose meal is also local is served from the local copy when TheMealDB is down.
+- **Timeouts**: 8 s per request; a whole TheMealDB search (index + ≤ 24 `filter.php` + ≤ 40 `lookup.php`, 6 at a time) has a 10 s budget.
+- **Live TheMealDB diets**: meals that are in the reviewed local set keep their reviewed tags; any other meal claims no diet when its ingredient list looks incomplete and drops tags its title casts doubt on.
+- **Rate limit** (#16): also off when `RATE_LIMIT_PER_MINUTE=0`, which the e2e server uses (every test comes from one address). Key: `x-real-ip`, else the first `x-forwarded-for` address.
+- **Spoonacular HTML instructions**: converted to text by a small built-in converter (`src/lib/text/html-to-text.ts`); the text is only ever rendered as escaped React text. No HTML parser dependency.
+
 ## Architecture
 
 ```

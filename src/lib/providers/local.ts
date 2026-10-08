@@ -1,11 +1,8 @@
 import 'server-only'
-import { z } from 'zod'
+import type { z } from 'zod'
 import { getLocalRecipes } from '@/lib/data/local-recipes'
 import { rankRecipes, scoreRecipe, type MatchResult } from '@/lib/matching'
 import {
-  CanonicalNameSchema,
-  MAX_INGREDIENT_LENGTH,
-  MAX_INGREDIENTS,
   RecipeDetailSchema,
   RecipeSummarySchema,
   SearchParamsSchema,
@@ -14,16 +11,11 @@ import {
   type RecipeDetail,
   type RecipeSummary,
 } from '@/types/recipe'
+import { MatchContextSchema } from './records'
 import { RecipeNotFoundError, type MatchContext, type RecipeProvider } from './types'
 
 /** Returns already-validated recipes (getLocalRecipes validates data/recipes.json on load). */
 export type LoadLocalRecipes = () => Promise<LocalRecipe[]> | LocalRecipe[]
-
-/** The pantry on a detail page: the search's ingredient rules, but it may be empty. */
-const MatchContextSchema = z.object({
-  ingredients: z.array(CanonicalNameSchema.max(MAX_INGREDIENT_LENGTH)).max(MAX_INGREDIENTS),
-  assumeStaples: z.boolean(),
-})
 
 const NO_CONTEXT: MatchContext = { ingredients: [], assumeStaples: true }
 

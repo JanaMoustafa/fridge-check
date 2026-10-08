@@ -243,8 +243,10 @@
     "clearFilters": "امسح عوامل التصفية",
     "errorTitle": "تعذر تحميل الوصفات",
     "errorBody": "تحقق من اتصالك وحاول مرة أخرى.",
+    "errorRateLimited": "أنت تبحث بسرعة كبيرة. انتظر لحظة ثم حاول مرة أخرى.",
     "retry": "حاول مرة أخرى",
     "fallbackNotice": "نعرض نتائج من مجموعتنا المدمجة.",
+    "poweredBySpoonacular": "الوصفات بدعم من <link>spoonacular</link>",
     "englishOnly": "أسماء الوصفات وخطواتها باللغة الإنجليزية.",
     "time": "{minutes, number, latn} دقيقة",
     "servings": "{count, plural, one {تكفي شخصًا واحدًا} two {تكفي شخصين} few {تكفي {count, number, latn} أشخاص} many {تكفي {count, number, latn} شخصًا} other {تكفي {count, number, latn} شخص}}"
@@ -263,6 +265,7 @@
     "allergy": "تحقق دائمًا من ملصقات المكونات إذا كانت لديك حساسية من أي طعام.",
     "source": "الوصفة الأصلية: <link>{site}</link>",
     "attribution": "الوصفة والصورة من <link>TheMealDB</link>",
+    "poweredBySpoonacular": "بدعم من <link>spoonacular</link>",
     "print": "طباعة",
     "share": "مشاركة",
     "copied": "تم نسخ الرابط.",

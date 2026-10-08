@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useAnnounce } from '@/components/providers/Announcer'
 import { useRecipeSearch } from '@/hooks/useRecipeSearch'
 import { takeReturnScroll } from '@/lib/navigation/return-to'
+import { SearchRequestError } from '@/lib/search/client'
 import { useSettings } from '@/hooks/useSettings'
 import { parseSearchUrl, toSearchUrl, type SearchUrlState } from '@/lib/search/url-state'
 import { MAX_INGREDIENTS, type Diet, type SortKey } from '@/types/recipe'
@@ -172,6 +173,7 @@ export function FindExperience() {
           pantry={state.ingredients}
           pages={pages}
           status={query.status}
+          errorCode={query.error instanceof SearchRequestError ? query.error.code : undefined}
           hasNextPage={query.hasNextPage}
           isFetchingNextPage={query.isFetchingNextPage}
           onLoadMore={() => void query.fetchNextPage()}

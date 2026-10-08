@@ -14,6 +14,8 @@ interface ResultsProps {
   pantry: readonly string[]
   pages: readonly SearchResponse[] | undefined
   status: 'idle' | 'pending' | 'error' | 'success'
+  /** The API's error code when the search failed, e.g. "rate-limited". */
+  errorCode?: string
   hasNextPage: boolean
   isFetchingNextPage: boolean
   onLoadMore: () => void
@@ -43,7 +45,12 @@ export function Results(props: ResultsProps) {
   if (status === 'pending') return <Skeletons />
   if (status === 'error') {
     return (
-      <StateBlock icon={AlertTriangle} title={t('errorTitle')} body={t('errorBody')} role="alert">
+      <StateBlock
+        icon={AlertTriangle}
+        title={t('errorTitle')}
+        body={props.errorCode === 'rate-limited' ? t('errorRateLimited') : t('errorBody')}
+        role="alert"
+      >
         <button
           type="button"
           onClick={props.onRetry}
@@ -58,6 +65,7 @@ export function Results(props: ResultsProps) {
   const results = pages?.flatMap((page) => page.results) ?? []
   const total = pages?.[0]?.total ?? 0
   const notice = pages?.[0]?.notice
+  const provider = pages?.[0]?.provider
 
   return (
     <div className="@container space-y-4">
@@ -109,6 +117,23 @@ export function Results(props: ResultsProps) {
             {props.isFetchingNextPage ? t('loading') : t('loadMore')}
           </button>
         </div>
+      )}
+      {provider === 'spoonacular' && (
+        <p className="text-center text-sm text-fg-muted">
+          {t.rich('poweredBySpoonacular', {
+            link: (chunks) => (
+              <a
+                href="https://spoonacular.com/food-api"
+                target="_blank"
+                rel="noopener noreferrer"
+                lang="en"
+                className="font-semibold text-primary underline underline-offset-4"
+              >
+                {chunks}
+              </a>
+            ),
+          })}
+        </p>
       )}
     </div>
   )

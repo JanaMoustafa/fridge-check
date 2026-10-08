@@ -24,5 +24,8 @@ export default defineConfig({
     url: baseURL,
     reuseExistingServer: process.env.E2E_REUSE_SERVER === '1',
     timeout: 120_000,
+    // The suite never calls a live recipe API, and every test comes from one address, which the
+    // per-IP rate limit would otherwise throttle.
+    env: { RECIPE_PROVIDER: 'local', RATE_LIMIT_PER_MINUTE: '0' },
   },
 })

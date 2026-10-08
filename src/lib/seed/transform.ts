@@ -106,14 +106,34 @@ function fail(meal: MealDbMeal, reason: string): never {
   throw new Error(`Meal ${meal.idMeal} (${meal.strMeal.trim()}): ${reason}`)
 }
 
+/** A meal's recipe fields before validation, and what the conversion noticed on the way. */
+export interface ConvertedMeal {
+  fields: {
+    title: string
+    imageUrl: string | undefined
+    category: string | undefined
+    /** Undefined when TheMealDB's country has no label yet (the seed stops; live data omits it). */
+    cuisine: string | undefined
+    diets: Diet[]
+    dietsEstimated: boolean
+    ingredients: Ingredient[]
+    instructions: string[]
+    sourceUrl?: string
+    attribution: string
+  }
+  dropped: string[]
+  gaps: string[]
+  doubts: Diet[]
+}
+
 /**
- * One TheMealDB meal → a validated local recipe. Text is kept as published (trimmed; steps split
- * by splitSteps, which only changes layout). Diets come from the reviewed overrides when there is
- * one (dietsEstimated false), otherwise from the classifier on every line's raw text and name,
- * minus whatever an incomplete ingredient list makes doubtful. Throws, naming the meal, when the
- * meal cannot become a valid recipe (unknown country, no usable ingredient, no steps, bad image).
+ * One TheMealDB meal → recipe fields, shared by the seed (toLocalRecipe) and the live TheMealDB
+ * provider. Text is kept as published (trimmed; steps split by splitSteps, which only changes
+ * layout). Diets come from the reviewed overrides when there is one (dietsEstimated false),
+ * otherwise from the classifier on every line's raw text and name, minus whatever an incomplete
+ * ingredient list makes doubtful.
  */
-export function toLocalRecipe(meal: MealDbMeal, overrides: SeedOverrides): SeedRecipe {
+export function convertMeal(meal: MealDbMeal, overrides: SeedOverrides): ConvertedMeal {
   const title = meal.strMeal.trim()
   const ingredients: Ingredient[] = []
   const lines: Array<{ raw: string; name: string }> = []
@@ -131,12 +151,9 @@ export function toLocalRecipe(meal: MealDbMeal, overrides: SeedOverrides): SeedR
   }
 
   const country = meal.strCountry?.trim() ?? ''
-  const cuisine =
-    overrides.cuisineOverrides[meal.idMeal]?.cuisine ??
-    cuisineForCountry(country) ??
-    fail(meal, `no cuisine label for country "${country}" (add it to src/lib/seed/cuisines.ts)`)
+  const cuisine = overrides.cuisineOverrides[meal.idMeal]?.cuisine ?? cuisineForCountry(country)
 
-  const category = meal.strCategory?.trim()
+  const category = meal.strCategory?.trim() || undefined
   const titleBlockers = dietBlockers([title])
   const estimated = classifyDiets(lines)
   const { gaps, ruledOut } = findGaps(category ?? '', titleBlockers, estimated)
@@ -147,20 +164,36 @@ export function toLocalRecipe(meal: MealDbMeal, overrides: SeedOverrides): SeedR
   const doubts = reviewed ? [] : diets.filter((diet) => titleBlockers[diet].length > 0)
 
   const source = SourceUrlSchema.safeParse(meal.strSource?.trim())
-  const candidate = {
-    id: `local:${meal.idMeal}`,
-    mealDbId: meal.idMeal,
-    title,
-    imageUrl: meal.strMealThumb?.trim(),
-    category,
-    cuisine,
-    diets,
-    dietsEstimated: reviewed === undefined,
-    ingredients,
-    instructions: splitSteps(meal.strInstructions ?? ''),
-    ...(source.success ? { sourceUrl: source.data } : {}),
-    attribution: ATTRIBUTION,
+  return {
+    fields: {
+      title,
+      imageUrl: meal.strMealThumb?.trim() || undefined,
+      category,
+      cuisine,
+      diets,
+      dietsEstimated: reviewed === undefined,
+      ingredients,
+      instructions: splitSteps(meal.strInstructions ?? ''),
+      ...(source.success ? { sourceUrl: source.data } : {}),
+      attribution: ATTRIBUTION,
+    },
+    dropped,
+    gaps,
+    doubts,
   }
+}
+
+/**
+ * One TheMealDB meal → a validated local recipe. Throws, naming the meal, when the meal cannot
+ * become a valid recipe (unknown country, no usable ingredient, no steps, bad image).
+ */
+export function toLocalRecipe(meal: MealDbMeal, overrides: SeedOverrides): SeedRecipe {
+  const { fields, dropped, gaps, doubts } = convertMeal(meal, overrides)
+  const country = meal.strCountry?.trim() ?? ''
+  const cuisine =
+    fields.cuisine ??
+    fail(meal, `no cuisine label for country "${country}" (add it to src/lib/seed/cuisines.ts)`)
+  const candidate = { id: `local:${meal.idMeal}`, mealDbId: meal.idMeal, ...fields, cuisine }
   const result = LocalRecipeSchema.safeParse(candidate)
   if (!result.success) fail(meal, z.prettifyError(result.error).replace(/\n/g, ' '))
   return { recipe: result.data, dropped, gaps, doubts }

@@ -175,19 +175,26 @@ export default async function RecipePage({ params, searchParams }: Props) {
                   </p>
                 )}
                 <p>
-                  {t.rich('attribution', {
-                    link: (chunks) => (
-                      <a
-                        href="https://www.themealdb.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        lang="en"
-                        className="font-semibold text-primary underline underline-offset-4"
-                      >
-                        {chunks}
-                      </a>
-                    ),
-                  })}
+                  {t.rich(
+                    recipe.source === 'spoonacular' ? 'poweredBySpoonacular' : 'attribution',
+                    {
+                      link: (chunks) => (
+                        <a
+                          href={
+                            recipe.source === 'spoonacular'
+                              ? 'https://spoonacular.com/food-api'
+                              : 'https://www.themealdb.com'
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          lang="en"
+                          className="font-semibold text-primary underline underline-offset-4"
+                        >
+                          {chunks}
+                        </a>
+                      ),
+                    },
+                  )}
                 </p>
               </footer>
             </div>

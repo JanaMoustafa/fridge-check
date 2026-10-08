@@ -7,6 +7,7 @@ import {
   type PersistedClient,
 } from '@tanstack/react-query-persist-client'
 import { useState, type ReactNode } from 'react'
+import { SearchRequestError } from '@/lib/search/client'
 import {
   deserializePersistedCache,
   QUERY_CACHE_BUSTER,
@@ -28,7 +29,9 @@ export function QueryProvider({ children }: { children: ReactNode }) {
             staleTime: QUERY_CACHE_MAX_AGE,
             gcTime: QUERY_CACHE_MAX_AGE,
             refetchOnWindowFocus: false,
-            retry: 1,
+            // One retry for outages; a 4xx (bad input, rate limited) would only fail again.
+            retry: (failures, error) =>
+              failures < 1 && !(error instanceof SearchRequestError && error.status < 500),
           },
         },
       }),

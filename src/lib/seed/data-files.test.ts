@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { LocalRecipe } from '@/types/recipe'
 import {
+  consistentDiets,
   CuisineOverridesSchema,
   DietOverrideSchema,
   DietOverridesSchema,
@@ -86,6 +87,26 @@ describe('DietOverrideSchema', () => {
     })
     const keyed = { version: 1, recipes: { 'local:53027': koshari } }
     expect(DietOverridesSchema.safeParse(keyed).success).toBe(false)
+  })
+})
+
+describe('consistentDiets', () => {
+  it('keeps a consistent list as it is', () => {
+    const all = ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'pescatarian'] as const
+    expect(consistentDiets(all)).toEqual(all)
+    expect(consistentDiets([])).toEqual([])
+  })
+
+  it('drops tags whose implied tag is missing, transitively', () => {
+    expect(consistentDiets(['vegan', 'vegetarian', 'pescatarian'])).toEqual([
+      'vegetarian',
+      'pescatarian',
+    ])
+    // Without pescatarian, vegetarian goes, and with it vegan.
+    expect(consistentDiets(['vegan', 'vegetarian', 'dairy-free', 'gluten-free'])).toEqual([
+      'dairy-free',
+      'gluten-free',
+    ])
   })
 })
 

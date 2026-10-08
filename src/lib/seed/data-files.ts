@@ -34,7 +34,7 @@ export const CuisineOverridesSchema = z.object({
 export type CuisineOverrides = z.infer<typeof CuisineOverridesSchema>['recipes']
 
 /** Tags that imply others: a reviewed list must be consistent, like the classifier's output. */
-const DIET_IMPLICATIONS: ReadonlyArray<readonly [Diet, Diet]> = [
+export const DIET_IMPLICATIONS: ReadonlyArray<readonly [Diet, Diet]> = [
   ['vegan', 'vegetarian'],
   ['vegan', 'dairy-free'],
   ['vegetarian', 'pescatarian'],
@@ -66,6 +66,23 @@ export const DietOverridesSchema = z.object({
   recipes: z.record(MealDbIdSchema, DietOverrideSchema),
 })
 export type DietOverrides = z.infer<typeof DietOverridesSchema>['recipes']
+
+/**
+ * Drops every tag whose implied tag is missing (vegan without dairy-free, vegetarian without
+ * pescatarian), so removing one doubtful tag never leaves a contradiction behind.
+ */
+export function consistentDiets(diets: readonly Diet[]): Diet[] {
+  let kept = [...diets]
+  let changed = true
+  while (changed) {
+    const next = kept.filter((diet) =>
+      DIET_IMPLICATIONS.every(([tag, implied]) => tag !== diet || kept.includes(implied)),
+    )
+    changed = next.length !== kept.length
+    kept = next
+  }
+  return kept
+}
 
 /** Diets in DIETS order, the order the classifier returns them in. */
 export function sortDiets(diets: readonly Diet[]): Diet[] {
