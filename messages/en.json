@@ -422,5 +422,66 @@
       "consent": "Please agree so we can store your details."
     },
     "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first."
+  },
+  "nutrition": {
+    "title": "Nutrition",
+    "pro": "Pro",
+    "wholeRecipe": "Whole recipe",
+    "perServing": "Per serving ({servings, number, latn} servings)",
+    "kcal": "{value, number, latn} kcal",
+    "grams": "{value, number, latn} g",
+    "calories": "Calories",
+    "protein": "Protein",
+    "carbs": "Carbs",
+    "fat": "Fat",
+    "fiber": "Fiber",
+    "mealLegend": "Which meal is it?",
+    "mealShare": "{share, number, latn}% of your day",
+    "yourPortion": "Your portion",
+    "portionSummary": "About {kcal, number, latn} kcal: {percent, number, latn}% of the whole recipe.",
+    "ingredient": "Ingredient",
+    "amount": "Amount",
+    "energy": "Energy",
+    "aLittle": "a little",
+    "dayTitle": "This meal against your day",
+    "ofTarget": "{value, number, latn} of {target, number, latn}",
+    "percentOfDay": "{percent, number, latn}% of your day",
+    "mealShareMarker": "Meal's share of the day: {share, number, latn}%",
+    "perIngredient": "Per ingredient (whole recipe)",
+    "notCountedTitle": "Not counted",
+    "reasons": {
+      "small-amount": "small amount",
+      "served-separately": "served on the side",
+      "frying-oil": "frying oil"
+    },
+    "fryingWarning": "Oil for frying isn't counted. Fried food absorbs some of it, so the real numbers are a little higher.",
+    "noProfile": "Set up your nutrition profile to see how much of this recipe fits your day.",
+    "setUpProfile": "Set up nutrition profile",
+    "unavailableTitle": "Nutrition isn't available for this recipe",
+    "unavailableBody": "These ingredients can't be weighed from the recipe, so any numbers would be a guess:",
+    "comingSoon": "Nutrition for Spoonacular recipes is on its way.",
+    "lockedTitle": "See this recipe's nutrition with Pro",
+    "lockedBody": "Calories, protein, carbs and fat for the whole recipe and each ingredient, plus exactly how much of it fits your day.",
+    "upgrade": "Upgrade to Pro",
+    "price": "{price, number, latn} EGP for 30 days",
+    "source": "Values from USDA FoodData Central.",
+    "disclaimer": "General guidance, not medical advice."
+  },
+  "pro": {
+    "metaTitle": "Fridge Check Pro",
+    "title": "Fridge Check Pro",
+    "tagline": "Cook with what you have, eat what fits your day.",
+    "benefits": {
+      "nutrition": "Calories, protein, carbs and fat for every recipe and each ingredient",
+      "portions": "Your personal portion in grams for breakfast, lunch, dinner or snacks",
+      "progress": "See how each meal fits your daily targets"
+    },
+    "price": "{price, number, latn} EGP",
+    "period": "for 30 days",
+    "noAutoRenew": "A one-time payment: nothing renews automatically. We'll remind you before it ends.",
+    "signInToUpgrade": "Sign in to upgrade",
+    "youHavePro": "You have Pro until {date}.",
+    "comingSoon": "Payments open very soon.",
+    "unavailable": "Pro isn't available on this version of the app."
   }
 }

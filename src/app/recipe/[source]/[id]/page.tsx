@@ -14,6 +14,7 @@ import { HaveNeedPanel } from '@/components/recipe/HaveNeedPanel'
 import { IngredientList } from '@/components/recipe/IngredientList'
 import { RecipeActions } from '@/components/recipe/RecipeActions'
 import { RecipeUnavailable } from '@/components/recipe/RecipeUnavailable'
+import { NutritionSection } from '@/components/pro/NutritionSection'
 import { labelSlug } from '@/lib/i18n/cuisines'
 import { arabicIngredientNamesFor } from '@/lib/i18n/ingredient-names.server'
 import { recipeHref, recipeViewName } from '@/lib/search/links'
@@ -146,6 +147,8 @@ export default async function RecipePage({ params, searchParams }: Props) {
                 </h2>
                 <IngredientList ingredients={recipe.ingredients} />
               </section>
+
+              <NutritionSection recipe={recipe} returnTo={recipeHref(recipe.id, pantry)} />
 
               <section aria-labelledby="steps-heading">
                 <h2 id="steps-heading" className="mb-3 text-xl font-extrabold">

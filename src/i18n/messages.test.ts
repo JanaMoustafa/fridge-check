@@ -37,7 +37,15 @@ describe('translation catalogs', () => {
   })
 
   it('never leave an Arabic message empty or untranslated', () => {
-    const allowedIdentical = new Set(['common.appName', 'language.en', 'language.ar'])
+    // Brand names stay as they are in every language.
+    const allowedIdentical = new Set([
+      'common.appName',
+      'language.en',
+      'language.ar',
+      'nutrition.pro',
+      'pro.metaTitle',
+      'pro.title',
+    ])
     for (const [key, value] of Object.entries(flatAr)) {
       expect(value.trim(), key).not.toBe('')
       if (!allowedIdentical.has(key)) expect(value, key).not.toBe(flatEn[key])
@@ -85,6 +93,13 @@ describe('translation catalogs', () => {
       tdee: 2170,
       value: 120,
       total: 100,
+      servings: 4,
+      share: 35,
+      kcal: 700,
+      percent: 42,
+      target: 2000,
+      price: 200,
+      date: '8 November 2026',
       link: (chunks: string) => chunks,
     }
     for (const key of Object.keys(flatEn)) {

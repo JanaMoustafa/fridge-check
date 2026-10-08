@@ -68,6 +68,7 @@ export const SpoonacularRecipeSchema = z.object({
   dairyFree: z.boolean().nullish(),
   diets: z.array(z.string()).nullish(),
   cuisines: z.array(z.string()).nullish(),
+  dishTypes: z.array(z.string()).nullish(),
   analyzedInstructions: z.array(InstructionBlockSchema).nullish(),
   /** HTML; used only when analyzedInstructions has no steps. */
   instructions: z.string().nullish(),
@@ -166,6 +167,7 @@ export function toSpoonacularRecord(recipe: SpoonacularRecipe): RecipeRecord | n
     ...searchFieldsOf(recipe),
     instructions: stepsOf(recipe),
     cuisine: recipe.cuisines?.find((cuisine) => cuisine.trim() !== '')?.trim(),
+    category: recipe.dishTypes?.find((type) => type.trim() !== '')?.trim(),
     sourceUrl: sourceUrl.success ? sourceUrl.data : undefined,
     attribution: 'spoonacular',
   })

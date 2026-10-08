@@ -64,6 +64,8 @@ export const RecipeDetailSchema = RecipeSummarySchema.safeExtend({
   /** Ordered steps, plain text. */
   instructions: z.array(z.string().trim().min(1)).min(1),
   cuisine: z.string().min(1).optional(),
+  /** The source's category ("Breakfast", "Dessert", "main course"): picks the default meal. */
+  category: z.string().min(1).optional(),
   sourceUrl: z.url({ protocol: /^https?$/ }).optional(),
   attribution: z.string().min(1).optional(),
 })

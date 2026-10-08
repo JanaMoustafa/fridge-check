@@ -422,5 +422,66 @@
       "consent": "يُرجى الموافقة حتى نتمكن من حفظ تفاصيلك."
     },
     "disclaimer": "إرشادات عامة للبالغين الأصحاء، وليست نصيحة طبية. إذا كنتِ حاملًا أو مرضعًا أو لديك حالة صحية، فاستشر طبيبًا أو أخصائي تغذية أولًا."
+  },
+  "nutrition": {
+    "title": "القيم الغذائية",
+    "pro": "Pro",
+    "wholeRecipe": "الوصفة كاملة",
+    "perServing": "للحصة الواحدة ({servings, number, latn} حصص)",
+    "kcal": "{value, number, latn} سعرة",
+    "grams": "{value, number, latn} غ",
+    "calories": "السعرات",
+    "protein": "البروتين",
+    "carbs": "الكربوهيدرات",
+    "fat": "الدهون",
+    "fiber": "الألياف",
+    "mealLegend": "أي وجبة هي؟",
+    "mealShare": "{share, number, latn}% من يومك",
+    "yourPortion": "حصتك",
+    "portionSummary": "نحو {kcal, number, latn} سعرة: {percent, number, latn}% من الوصفة كاملة.",
+    "ingredient": "المكوّن",
+    "amount": "الكمية",
+    "energy": "الطاقة",
+    "aLittle": "قليل",
+    "dayTitle": "هذه الوجبة مقارنةً بيومك",
+    "ofTarget": "{value, number, latn} من {target, number, latn}",
+    "percentOfDay": "{percent, number, latn}% من يومك",
+    "mealShareMarker": "نصيب الوجبة من اليوم: {share, number, latn}%",
+    "perIngredient": "لكل مكوّن (الوصفة كاملة)",
+    "notCountedTitle": "غير محسوب",
+    "reasons": {
+      "small-amount": "كمية قليلة",
+      "served-separately": "يُقدَّم جانبًا",
+      "frying-oil": "زيت القلي"
+    },
+    "fryingWarning": "زيت القلي غير محسوب. يمتص الطعام المقلي جزءًا منه، لذا فالأرقام الحقيقية أعلى قليلًا.",
+    "noProfile": "أعِدّ ملفك الغذائي لترى كم من هذه الوصفة يناسب يومك.",
+    "setUpProfile": "إعداد الملف الغذائي",
+    "unavailableTitle": "القيم الغذائية غير متاحة لهذه الوصفة",
+    "unavailableBody": "لا يمكن وزن هذه المكوّنات من الوصفة، لذا ستكون أي أرقام مجرد تخمين:",
+    "comingSoon": "القيم الغذائية لوصفات Spoonacular قادمة قريبًا.",
+    "lockedTitle": "اطّلع على القيم الغذائية لهذه الوصفة مع Pro",
+    "lockedBody": "السعرات والبروتين والكربوهيدرات والدهون للوصفة كاملة ولكل مكوّن، والكمية التي تناسب يومك بالضبط.",
+    "upgrade": "الترقية إلى Pro",
+    "price": "{price, number, latn} جنيه لمدة 30 يومًا",
+    "source": "القيم من USDA FoodData Central.",
+    "disclaimer": "إرشادات عامة، وليست نصيحة طبية."
+  },
+  "pro": {
+    "metaTitle": "Fridge Check Pro",
+    "title": "Fridge Check Pro",
+    "tagline": "اطبخ بما لديك، وكُل ما يناسب يومك.",
+    "benefits": {
+      "nutrition": "السعرات والبروتين والكربوهيدرات والدهون لكل وصفة ولكل مكوّن",
+      "portions": "حصتك الشخصية بالجرام للإفطار أو الغداء أو العشاء أو الوجبات الخفيفة",
+      "progress": "اعرف كيف تناسب كل وجبة أهدافك اليومية"
+    },
+    "price": "{price, number, latn} جنيه",
+    "period": "لمدة 30 يومًا",
+    "noAutoRenew": "دفعة واحدة: لا يتجدد شيء تلقائيًا. سنذكّرك قبل انتهائها.",
+    "signInToUpgrade": "سجّل الدخول للترقية",
+    "youHavePro": "لديك Pro حتى {date}.",
+    "comingSoon": "سيُفتح الدفع قريبًا جدًا.",
+    "unavailable": "Pro غير متاح في هذه النسخة من التطبيق."
   }
 }

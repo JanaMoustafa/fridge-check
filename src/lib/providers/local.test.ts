@@ -248,6 +248,7 @@ describe('getById', () => {
       ingredients: koshari.ingredients,
       instructions: koshari.instructions,
       cuisine: 'Egyptian',
+      category: koshari.category,
       sourceUrl: 'https://www.themediterraneandish.com/egyptian-koshari-recipe/',
       attribution: 'TheMealDB',
     })

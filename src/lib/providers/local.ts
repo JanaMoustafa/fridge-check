@@ -56,6 +56,7 @@ function toDetail(recipe: LocalRecipe, match: MatchResult): RecipeDetail {
     ingredients: recipe.ingredients.map((ingredient) => ({ ...ingredient })),
     instructions: [...recipe.instructions],
     cuisine: recipe.cuisine,
+    category: recipe.category,
     sourceUrl: recipe.sourceUrl,
     attribution: recipe.attribution,
   }

@@ -82,6 +82,7 @@ export function toMealDbRecord(
     ingredients: fields.ingredients,
     instructions: fields.instructions,
     cuisine: fields.cuisine,
+    category: fields.category,
     sourceUrl: fields.sourceUrl,
     attribution: fields.attribution,
   })

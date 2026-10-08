@@ -131,6 +131,7 @@ export function scoreRecord(record: RecipeRecord, context: MatchContext): Recipe
     ingredients: record.ingredients.map((ingredient) => ({ ...ingredient })),
     instructions: [...record.instructions],
     cuisine: record.cuisine,
+    category: record.category,
     sourceUrl: record.sourceUrl,
     attribution: record.attribution,
   }

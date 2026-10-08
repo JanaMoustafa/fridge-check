@@ -19,7 +19,9 @@
     "seed": "tsx scripts/seed-local-recipes.ts",
     "seed:nutrition": "tsx --env-file-if-exists=.env.local scripts/seed-nutrition.ts",
     "validate:data": "tsx scripts/validate-data.ts",
-    "db:migrate": "tsx --env-file-if-exists=.env.local scripts/db-migrate.ts"
+    "db:migrate": "tsx --env-file-if-exists=.env.local scripts/db-migrate.ts",
+    "pro:grant": "tsx --env-file-if-exists=.env.local scripts/pro-grant.ts grant",
+    "pro:revoke": "tsx --env-file-if-exists=.env.local scripts/pro-grant.ts revoke"
   },
   "dependencies": {
     "@tanstack/query-async-storage-persister": "5.104.1",
