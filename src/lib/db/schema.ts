@@ -1,4 +1,6 @@
 import type { ColumnType, Generated, Insertable, Selectable, Updateable } from 'kysely'
+import type { ActivityLevel, Goal, Sex } from '@/lib/nutrition/calculator'
+import type { MealSplit } from '@/lib/nutrition/portions'
 
 /**
  * The database, table by table, for Kysely's typed queries. The four sign-in tables belong to
@@ -61,19 +63,7 @@ export interface VerificationTable {
 
 // --- Nutrition profile ------------------------------------------------------------------------
 
-export const SEXES = ['female', 'male'] as const
-export type Sex = (typeof SEXES)[number]
-
-export const ACTIVITY_LEVELS = ['sedentary', 'light', 'moderate', 'active', 'very_active'] as const
-export type ActivityLevel = (typeof ACTIVITY_LEVELS)[number]
-
-export const GOALS = ['lose_fat', 'maintain', 'gain_muscle'] as const
-export type Goal = (typeof GOALS)[number]
-
-export const MEALS = ['breakfast', 'lunch', 'dinner', 'snacks'] as const
-export type Meal = (typeof MEALS)[number]
-/** Percent of the day's calories per meal; the four add up to 100. */
-export type MealSplit = Record<Meal, number>
+// Allowed values come from the calculator, so the forms, formulas and database share one list.
 
 export interface NutritionProfileTable {
   user_id: string
