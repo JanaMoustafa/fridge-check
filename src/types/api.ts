@@ -20,7 +20,7 @@ export type SearchResponse = z.infer<typeof SearchResponseSchema>
 
 export const ApiErrorSchema = z.object({
   error: z.object({
-    code: z.enum(['invalid-request', 'not-found', 'rate-limited', 'internal']),
+    code: z.enum(['invalid-request', 'not-found', 'rate-limited', 'unavailable', 'internal']),
     message: z.string(),
     issues: z.array(z.object({ path: z.string(), message: z.string() })).optional(),
   }),

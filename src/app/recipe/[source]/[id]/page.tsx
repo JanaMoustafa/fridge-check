@@ -13,9 +13,10 @@ import { HeartButton } from '@/components/recipe/HeartButton'
 import { HaveNeedPanel } from '@/components/recipe/HaveNeedPanel'
 import { IngredientList } from '@/components/recipe/IngredientList'
 import { RecipeActions } from '@/components/recipe/RecipeActions'
+import { RecipeUnavailable } from '@/components/recipe/RecipeUnavailable'
 import { labelSlug } from '@/lib/i18n/cuisines'
 import { arabicIngredientNamesFor } from '@/lib/i18n/ingredient-names.server'
-import { recipeViewName } from '@/lib/search/links'
+import { recipeHref, recipeViewName } from '@/lib/search/links'
 import { parseSearchUrl, toSearchUrl } from '@/lib/search/url-state'
 import { loadRecipePage } from '@/lib/server/recipe'
 
@@ -32,10 +33,13 @@ function pantryFrom(query: Awaited<Props['searchParams']>): string[] {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { source, id } = await params
-  const data = await loadRecipePage(source, id, '')
-  if (!data) return {}
+  const result = await loadRecipePage(source, id, '')
+  if (result.kind === 'not-found') return {}
   const t = await getTranslations('recipe')
-  const { title, imageUrl } = data.recipe
+  if (result.kind === 'unavailable') {
+    return { title: t('unavailableMetaTitle'), robots: { index: false } }
+  }
+  const { title, imageUrl } = result.recipe
   return {
     title,
     description: t('metaDescription', { title }),
@@ -52,8 +56,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function RecipePage({ params, searchParams }: Props) {
   const [{ source, id }, query, locale] = await Promise.all([params, searchParams, getLocale()])
   const pantry = pantryFrom(query)
-  const data = await loadRecipePage(source, id, pantry.join(','))
-  if (!data) notFound()
+  const result = await loadRecipePage(source, id, pantry.join(','))
+  if (result.kind === 'not-found') notFound()
+  const backHref = `/${toSearchUrl({ ingredients: pantry, diets: [], sort: 'fewest-missing' })}`
+  if (result.kind === 'unavailable') {
+    return (
+      <RecipeUnavailable
+        source={result.source}
+        reason={result.reason}
+        retryAt={result.retryAt}
+        builtInHref={backHref}
+        retryHref={recipeHref(`${source}:${id}`, pantry)}
+      />
+    )
+  }
+  const data = result
 
   const [t, tc] = await Promise.all([getTranslations('recipe'), getTranslations('cuisine')])
   const { recipe } = data
@@ -63,7 +80,6 @@ export default async function RecipePage({ params, searchParams }: Props) {
       ? tc(cuisineKey as Parameters<typeof tc>[0])
       : recipe.cuisine
   const site = recipe.sourceUrl ? new URL(recipe.sourceUrl).hostname.replace(/^www\./, '') : null
-  const backHref = `/${toSearchUrl({ ingredients: pantry, diets: [], sort: 'fewest-missing' })}`
 
   return (
     <IngredientLabelsProvider names={await arabicIngredientNamesFor(locale)}>

@@ -271,7 +271,14 @@
     "copied": "Link copied.",
     "shareFailed": "Couldn't share. Copy the address from your browser instead.",
     "metaDescription": "{title}: ingredients, steps and what you're missing.",
-    "actions": "Recipe actions"
+    "actions": "Recipe actions",
+    "unavailableMetaTitle": "Recipe unavailable",
+    "unavailableQuotaTitle": "{source}'s daily limit is reached",
+    "unavailableQuotaBody": "This recipe will be available again after {time}. Until then, you can cook from our built-in collection.",
+    "unavailableTitle": "This recipe can't be loaded right now",
+    "unavailableBody": "{source} isn't responding. Try again in a few minutes, or cook from our built-in collection.",
+    "showBuiltIn": "Show built-in recipes",
+    "tryAgain": "Try again"
   },
   "unit": {
     "mg": "mg",

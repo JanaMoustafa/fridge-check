@@ -2,7 +2,14 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { ProviderError } from '@/lib/providers/http'
 import { localProvider } from '@/lib/providers/local'
 import { RecipeNotFoundError, type RecipeProvider } from '@/lib/providers/types'
-import { getRecipe, loadRecipePage } from './recipe'
+import { ApiErrorSchema } from '@/types/api'
+import {
+  getRecipe,
+  loadRecipePage,
+  recipePageResult,
+  unavailableFrom,
+  unavailableResponse,
+} from './recipe'
 
 const PANTRY = { ingredients: ['rice'], assumeStaples: true }
 
@@ -65,28 +72,108 @@ describe('getRecipe', () => {
 })
 
 describe('loadRecipePage', () => {
+  async function found(source: string, key: string, pantry: string) {
+    const result = await loadRecipePage(source, key, pantry)
+    if (result.kind !== 'found') throw new Error(`expected a recipe, got ${result.kind}`)
+    return result
+  }
+
   it('scores the recipe for the pantry with and without staples', async () => {
     // Koshari: brown lentil, rice, coriander, macaroni, chickpea, onion, salt, vegetable oil.
-    const data = await loadRecipePage('local', '53027', 'rice,onion,salt')
-    expect(data?.recipe.title).toBe('Koshari')
-    expect(data?.withStaples.usedIngredients).toEqual(['rice', 'onion'])
-    expect(data?.withStaples.missingIngredients).not.toContain('salt')
-    expect(data?.withoutStaples.usedIngredients).toEqual(
+    const data = await found('local', '53027', 'rice,onion,salt')
+    expect(data.recipe.title).toBe('Koshari')
+    expect(data.withStaples.usedIngredients).toEqual(['rice', 'onion'])
+    expect(data.withStaples.missingIngredients).not.toContain('salt')
+    expect(data.withoutStaples.usedIngredients).toEqual(
       expect.arrayContaining(['rice', 'onion', 'salt']),
     )
-    expect(data?.withoutStaples.missingIngredients).toContain('vegetable oil')
+    expect(data.withoutStaples.missingIngredients).toContain('vegetable oil')
   })
 
   it('treats an empty pantry as having nothing', async () => {
-    const data = await loadRecipePage('local', '53027', '')
-    expect(data?.withStaples.usedIngredients).toEqual([])
+    const data = await found('local', '53027', '')
+    expect(data.withStaples.usedIngredients).toEqual([])
   })
 
   it.each([
     ['an unknown id', 'local', '99999999'],
     ['a malformed id', 'local', 'a/b'],
     ['an unknown source', 'pantry', '53027'],
-  ])('returns null for %s', async (_label, source, key) => {
-    expect(await loadRecipePage(source, key, '')).toBeNull()
+  ])('reports not-found for %s', async (_label, source, key) => {
+    expect(await loadRecipePage(source, key, '')).toEqual({ kind: 'not-found' })
+  })
+})
+
+describe('recipePageResult when the source cannot answer', () => {
+  const only = (provider: RecipeProvider) => ({
+    local: localProvider,
+    forSource: (source: string) => (source === provider.id ? provider : undefined),
+  })
+
+  it('says when a used-up quota resets', async () => {
+    const quota = failing(
+      'spoonacular',
+      new ProviderError('spoonacular', 'quota', 'information', 402),
+    )
+    const result = await recipePageResult(only(quota), 'spoonacular', '715538', 'rice')
+    expect(result).toMatchObject({ kind: 'unavailable', source: 'spoonacular', reason: 'quota' })
+    const { retryAt } = result as { retryAt: number }
+    expect(new Date(retryAt).toISOString()).toMatch(/T00:00:00\.000Z$/)
+    expect(retryAt).toBeGreaterThan(Date.now())
+  })
+
+  it('reports an outage of TheMealDB for a meal that is not local', async () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => undefined)
+    const down = failing('mealdb', new ProviderError('mealdb', 'timeout', 'lookup.php'))
+    expect(await recipePageResult(only(down), 'mealdb', '1', '')).toEqual({
+      kind: 'unavailable',
+      source: 'mealdb',
+      reason: 'outage',
+    })
+  })
+
+  it('still fails loudly on a bug', async () => {
+    const broken = failing('spoonacular', new TypeError('bad mapping'))
+    await expect(recipePageResult(only(broken), 'spoonacular', '1', '')).rejects.toThrow(
+      'bad mapping',
+    )
+  })
+})
+
+describe('unavailableFrom', () => {
+  const NOW = Date.UTC(2026, 9, 8, 13, 0)
+
+  it('maps a used-up quota to the next 00:00 UTC, anything else to an outage', () => {
+    expect(unavailableFrom(new ProviderError('spoonacular', 'quota', 'x', 402), NOW)).toEqual({
+      source: 'spoonacular',
+      reason: 'quota',
+      retryAt: Date.UTC(2026, 9, 9),
+    })
+    expect(unavailableFrom(new ProviderError('spoonacular', 'rate-limit', 'x', 429), NOW)).toEqual({
+      source: 'spoonacular',
+      reason: 'outage',
+    })
+    expect(unavailableFrom(new Error('bug'), NOW)).toBeNull()
+  })
+})
+
+describe('unavailableResponse', () => {
+  const NOW = Date.UTC(2026, 9, 8, 23, 0)
+
+  it('answers 503 with Retry-After until the quota resets, never cached', async () => {
+    const response = unavailableResponse(
+      { source: 'spoonacular', reason: 'quota', retryAt: Date.UTC(2026, 9, 9) },
+      NOW,
+    )
+    expect(response.status).toBe(503)
+    expect(response.headers.get('retry-after')).toBe('3600')
+    expect(response.headers.get('cache-control')).toBe('no-store')
+    expect(ApiErrorSchema.parse(await response.json()).error.code).toBe('unavailable')
+  })
+
+  it('asks to retry in a minute after an outage', async () => {
+    const response = unavailableResponse({ source: 'mealdb', reason: 'outage' }, NOW)
+    expect(response.headers.get('retry-after')).toBe('60')
+    expect((await response.json()).error.message).toMatch(/not answering/)
   })
 })

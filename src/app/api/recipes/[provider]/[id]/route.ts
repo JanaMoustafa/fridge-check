@@ -2,7 +2,7 @@ import type { NextRequest } from 'next/server'
 import { splitRecipeId } from '@/lib/search/links'
 import { detailCacheControl } from '@/lib/server/cache-control'
 import { checkRateLimit } from '@/lib/server/rate-limit'
-import { getRecipe } from '@/lib/server/recipe'
+import { getRecipe, unavailableFrom, unavailableResponse } from '@/lib/server/recipe'
 import type { ApiError } from '@/types/api'
 
 function error(status: number, code: ApiError['error']['code'], message: string) {
@@ -28,6 +28,8 @@ export async function GET(
       headers: { 'Cache-Control': detailCacheControl(parts.source, recipe.source) },
     })
   } catch (caught) {
+    const unavailable = unavailableFrom(caught)
+    if (unavailable) return unavailableResponse(unavailable)
     console.error('[api/recipes/detail]', caught instanceof Error ? caught.message : caught)
     return error(500, 'internal', 'Could not load the recipe.')
   }

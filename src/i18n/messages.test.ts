@@ -78,6 +78,8 @@ describe('translation catalogs', () => {
       added: 2,
       updated: 1,
       recipes: 'Koshari',
+      source: 'Spoonacular',
+      time: '3:00 AM',
       link: (chunks: string) => chunks,
     }
     for (const key of Object.keys(flatEn)) {
