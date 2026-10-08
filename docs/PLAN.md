@@ -78,6 +78,17 @@ oil (with a warning that real numbers are higher). Anything else that cannot be 
 the recipe "nutrition not available". Result: 140 of 195 built-in recipes complete. Spoonacular
 recipes use Spoonacular's own nutrition (owner decision 2026-10-08).
 
+Billing implementation (step 5): checkout = XPay hosted page (`POST /checkout/sessions`, price
+inline at 20000 piasters, `{CHECKOUT_SESSION_ID}` in the redirect); a pending `payment` row is
+written when checkout starts and only our own rows are ever settled. `fulfillCheckout` is the
+one idempotent path that grants Pro (row lock; amount and currency must match): the webhook calls
+it, and the success page calls it with XPay's own answer about that user's session (server to
+server), so the page updates at once and local testing works without a tunnel. Paying while Pro
+extends from the current end date. "Cancel" on a prepaid pass turns off renewal reminders (Pro
+stays to the end of the period); reminders show on the account page in the last 5 days (no
+email service yet). A refund of the payment behind the current period ends Pro at once. At most
+5 unfinished checkouts per user per hour.
+
 Before charging real customers: a TheMealDB supporter key (the free key is for development and
 education only), likely a paid Spoonacular plan, XPay live approval, privacy policy and terms.
 

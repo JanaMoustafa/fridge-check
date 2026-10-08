@@ -1,22 +1,29 @@
 import { CheckCircle2, LogOut, UserRound } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import { DeleteAccountDialog } from '@/components/account/DeleteAccountDialog'
 import { GoogleSignInButton } from '@/components/account/GoogleSignInButton'
 import { TargetsCard } from '@/components/account/TargetsCard'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { buttonClasses } from '@/components/ui/button'
 import { getSignedInUser, isProConfigured } from '@/lib/auth/auth'
+import { getProAccess } from '@/lib/billing/access'
+import { PRO_PRICE_EGP } from '@/lib/billing/plan'
+import { daysLeft } from '@/lib/billing/subscription'
 import { getDb } from '@/lib/db/client'
+import { formatLongDate } from '@/lib/i18n/format-date'
 import { safeNext } from '@/lib/navigation/safe-next'
 import { getProfile } from '@/lib/server/profiles'
-import { signOutAction } from './actions'
+import { cancelRenewalAction, resumeRenewalAction, signOutAction } from './actions'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('account')
   return { title: t('metaTitle'), robots: { index: false } }
 }
+
+/** Days before the end of a Pro period when the account page starts reminding to renew. */
+const RENEWAL_REMINDER_DAYS = 5
 
 const card =
   'rounded-card bg-surface p-6 shadow-[inset_0_1px_0_var(--color-highlight),0_0_0_1px_var(--color-line)]'
@@ -67,7 +74,14 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
     )
   }
 
-  const profile = await getProfile(getDb(), user.id, new Date())
+  const now = new Date()
+  const [profile, access, tBilling, locale] = await Promise.all([
+    getProfile(getDb(), user.id, now),
+    getProAccess(getDb(), user.id, now),
+    getTranslations('billing'),
+    getLocale(),
+  ])
+  const remaining = access.periodEnd ? daysLeft(access.periodEnd, now) : 0
   return (
     <div className="mx-auto max-w-2xl space-y-6 py-4">
       <header className="flex items-center gap-4">
@@ -111,16 +125,49 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
         <p className="text-xs text-fg-muted">{t('disclaimer')}</p>
       </section>
 
-      <section
-        aria-labelledby="plan-title"
-        className={`${card} flex items-center justify-between gap-3`}
-      >
-        <h2 id="plan-title" className="text-lg font-extrabold">
-          {t('planTitle')}
-        </h2>
-        <span className="rounded-chip bg-surface-2 px-3 py-1 text-sm font-semibold">
-          {t('planFree')}
-        </span>
+      <section aria-labelledby="plan-title" className={`${card} space-y-4`}>
+        <div className="flex items-center justify-between gap-3">
+          <h2 id="plan-title" className="text-lg font-extrabold">
+            {t('planTitle')}
+          </h2>
+          <span
+            className={`rounded-chip px-3 py-1 text-sm font-semibold ${access.isPro ? 'bg-primary text-on-primary' : 'bg-surface-2'}`}
+          >
+            {access.isPro ? tBilling('planPro') : t('planFree')}
+          </span>
+        </div>
+        {access.isPro && access.periodEnd ? (
+          <>
+            <p>
+              {tBilling(access.cancelAtPeriodEnd ? 'proUntilCanceled' : 'proUntil', {
+                date: formatLongDate(access.periodEnd, locale),
+              })}
+            </p>
+            {!access.cancelAtPeriodEnd && remaining <= RENEWAL_REMINDER_DAYS && (
+              <p
+                role="status"
+                className="rounded-btn bg-missing-soft px-4 py-3 text-sm font-semibold"
+              >
+                {tBilling('endsSoon', { days: remaining })}
+              </p>
+            )}
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href="/pro" className={buttonClasses()}>
+                {tBilling('renew', { price: PRO_PRICE_EGP })}
+              </Link>
+              <form action={access.cancelAtPeriodEnd ? resumeRenewalAction : cancelRenewalAction}>
+                <button type="submit" className={buttonClasses({ variant: 'ghost' })}>
+                  {tBilling(access.cancelAtPeriodEnd ? 'resumeReminders' : 'cancelReminders')}
+                </button>
+              </form>
+            </div>
+            <p className="text-xs text-fg-muted">{tBilling('cancelNote')}</p>
+          </>
+        ) : (
+          <Link href="/pro" className={buttonClasses()}>
+            {tBilling('upgrade')}
+          </Link>
+        )}
       </section>
 
       <div className="flex flex-wrap items-center justify-between gap-3">

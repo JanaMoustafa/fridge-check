@@ -45,6 +45,7 @@ describe('translation catalogs', () => {
       'nutrition.pro',
       'pro.metaTitle',
       'pro.title',
+      'billing.planPro',
     ])
     for (const [key, value] of Object.entries(flatAr)) {
       expect(value.trim(), key).not.toBe('')
@@ -100,6 +101,7 @@ describe('translation catalogs', () => {
       target: 2000,
       price: 200,
       date: '8 November 2026',
+      days: 3,
       link: (chunks: string) => chunks,
     }
     for (const key of Object.keys(flatEn)) {

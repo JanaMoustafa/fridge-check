@@ -5,9 +5,12 @@ import { getLocale, getTranslations } from 'next-intl/server'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { buttonClasses } from '@/components/ui/button'
 import { getSignedInUser, isProConfigured } from '@/lib/auth/auth'
+import { CheckoutButton } from '@/components/billing/CheckoutButton'
 import { getProAccess } from '@/lib/billing/access'
+import { getXPay } from '@/lib/billing/config'
 import { PRO_PRICE_EGP } from '@/lib/billing/plan'
 import { getDb } from '@/lib/db/client'
+import { formatLongDate } from '@/lib/i18n/format-date'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pro')
@@ -29,13 +32,9 @@ export default async function ProPage() {
   }
   const user = await getSignedInUser()
   const access = user ? await getProAccess(getDb(), user.id, new Date()) : null
-  const until =
-    access?.isPro && access.periodEnd
-      ? new Intl.DateTimeFormat(locale === 'ar' ? 'ar-EG' : 'en-GB', {
-          dateStyle: 'long',
-          numberingSystem: 'latn',
-        }).format(access.periodEnd)
-      : null
+  const until = access?.isPro && access.periodEnd ? formatLongDate(access.periodEnd, locale) : null
+  const tBilling = await getTranslations('billing')
+  const payments = getXPay() !== null
 
   return (
     <div className="mx-auto max-w-xl space-y-6 py-4">
@@ -65,10 +64,16 @@ export default async function ProPage() {
         </p>
         <p className="text-center text-sm text-fg-muted">{t('noAutoRenew')}</p>
         <div className="text-center">
-          {until ? (
-            <p role="status" className="font-semibold text-have">
+          {until && (
+            <p role="status" className="mb-3 font-semibold text-have">
               {t('youHavePro', { date: until })}
             </p>
+          )}
+          {user && payments ? (
+            <div className="space-y-3">
+              <CheckoutButton label={tBilling(until ? 'renew' : 'pay', { price: PRO_PRICE_EGP })} />
+              <p className="text-xs text-fg-muted">{tBilling('secureNote')}</p>
+            </div>
           ) : user ? (
             <p className="font-semibold text-fg-muted">{t('comingSoon')}</p>
           ) : (

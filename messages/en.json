@@ -483,5 +483,36 @@
     "youHavePro": "You have Pro until {date}.",
     "comingSoon": "Payments open very soon.",
     "unavailable": "Pro isn't available on this version of the app."
+  },
+  "billing": {
+    "pay": "Pay {price, number, latn} EGP with XPay",
+    "renew": "Add 30 days ({price, number, latn} EGP)",
+    "redirecting": "Opening XPay…",
+    "secureNote": "You'll pay on XPay's secure page (card, Fawry or ValU). Your card details never reach Fridge Check.",
+    "errors": {
+      "unavailable": "Payments aren't available right now. Please try again later.",
+      "failed": "We couldn't open the payment page. Please try again.",
+      "tooMany": "You've started several payments in the last hour. Please finish one or try again later."
+    },
+    "successTitle": "Welcome to Pro!",
+    "successBody": "Your Pro access runs until {date}. Open any recipe to see its nutrition and your portions.",
+    "pendingTitle": "Confirming your payment…",
+    "pendingBody": "This usually takes a few seconds. This page updates by itself.",
+    "pendingFawry": "Paying with Fawry? Pay your reference at any Fawry outlet: Pro starts as soon as XPay confirms it.",
+    "failedTitle": "Your payment didn't go through",
+    "failedBody": "No money was taken. You can try again, or use another card or payment method.",
+    "tryAgain": "Try again",
+    "unknownTitle": "We couldn't find this payment",
+    "unknownBody": "If you were charged, it will appear on your account within a few minutes.",
+    "browseRecipes": "Find recipes",
+    "yourAccount": "Your account",
+    "planPro": "Pro",
+    "proUntil": "Pro until {date}",
+    "proUntilCanceled": "Pro until {date}. Renewal reminders are off.",
+    "endsSoon": "{days, plural, =0 {Your Pro ends today.} one {Your Pro ends tomorrow.} other {Your Pro ends in {days, number, latn} days.}} Renew to keep your portions.",
+    "upgrade": "Upgrade to Pro",
+    "cancelReminders": "Turn off renewal reminders",
+    "resumeReminders": "Turn reminders back on",
+    "cancelNote": "Nothing renews automatically: each 30 days is a separate payment."
   }
 }

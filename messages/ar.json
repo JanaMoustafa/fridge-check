@@ -483,5 +483,36 @@
     "youHavePro": "لديك Pro حتى {date}.",
     "comingSoon": "سيُفتح الدفع قريبًا جدًا.",
     "unavailable": "Pro غير متاح في هذه النسخة من التطبيق."
+  },
+  "billing": {
+    "pay": "ادفع {price, number, latn} جنيه عبر XPay",
+    "renew": "أضف 30 يومًا ({price, number, latn} جنيه)",
+    "redirecting": "جارٍ فتح XPay…",
+    "secureNote": "ستدفع على صفحة XPay الآمنة (بطاقة أو فوري أو ValU). لا تصل بيانات بطاقتك إلى Fridge Check أبدًا.",
+    "errors": {
+      "unavailable": "الدفع غير متاح الآن. حاول لاحقًا.",
+      "failed": "تعذّر فتح صفحة الدفع. حاول مرة أخرى.",
+      "tooMany": "بدأت عدة عمليات دفع خلال الساعة الماضية. أكمل واحدة أو حاول لاحقًا."
+    },
+    "successTitle": "مرحبًا بك في Pro!",
+    "successBody": "اشتراك Pro ساري حتى {date}. افتح أي وصفة لترى قيمها الغذائية وحصصك.",
+    "pendingTitle": "جارٍ تأكيد الدفع…",
+    "pendingBody": "يستغرق ذلك عادةً بضع ثوانٍ. تتحدّث هذه الصفحة تلقائيًا.",
+    "pendingFawry": "تدفع عبر فوري؟ ادفع الرقم المرجعي في أي منفذ فوري: يبدأ Pro فور تأكيد XPay للدفع.",
+    "failedTitle": "لم تكتمل عملية الدفع",
+    "failedBody": "لم يُخصم أي مبلغ. يمكنك المحاولة مرة أخرى أو استخدام بطاقة أو وسيلة دفع أخرى.",
+    "tryAgain": "حاول مرة أخرى",
+    "unknownTitle": "لم نعثر على عملية الدفع هذه",
+    "unknownBody": "إذا خُصم منك مبلغ، فسيظهر في حسابك خلال دقائق.",
+    "browseRecipes": "ابحث عن وصفات",
+    "yourAccount": "حسابك",
+    "planPro": "Pro",
+    "proUntil": "Pro حتى {date}",
+    "proUntilCanceled": "Pro حتى {date}. تذكيرات التجديد متوقفة.",
+    "endsSoon": "{days, plural, =0 {ينتهي Pro اليوم.} one {ينتهي Pro غدًا.} other {ينتهي Pro خلال {days, number, latn} أيام.}} جدّد للاحتفاظ بحصصك.",
+    "upgrade": "الترقية إلى Pro",
+    "cancelReminders": "إيقاف تذكيرات التجديد",
+    "resumeReminders": "إعادة تشغيل التذكيرات",
+    "cancelNote": "لا يتجدد شيء تلقائيًا: كل 30 يومًا دفعة منفصلة."
   }
 }
