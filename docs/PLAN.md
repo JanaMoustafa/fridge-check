@@ -114,6 +114,17 @@ education only), likely a paid Spoonacular plan, XPay live approval, privacy pol
   rejected in decision #15). Images use `loading="eager"` + `fetchPriority="high"` (Next 16
   deprecated `priority`). `experimental.inlineCss` was tried and had no effect with Turbopack.
 
+## Phase 8: docs and launch (2026-10-09)
+
+- **README** rewritten for the finished app: architecture and payment diagrams (Mermaid), setup,
+  every environment variable, every command, how to add recipes, ingredient names and nutrition
+  mappings, the XPay test flow, deployment, and Lighthouse scores measured on the live site.
+- **docs/LAUNCH.md**: what must happen outside the code before charging real customers. That means
+  replacing the keys shared during the build and leaving Vercel Hobby, which is non-commercial
+  only. It also covers publishing the Google sign-in, XPay live keys, the legal pages and one
+  real payment and refund.
+- **Dependencies.** `htmlparser2` removed (added in Phase 1, never used).
+
 ## Architecture
 
 ```
