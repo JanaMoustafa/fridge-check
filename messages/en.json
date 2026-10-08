@@ -305,5 +305,122 @@
   "storage": {
     "unavailable": "Your browser isn't letting us save data, so favorites and your shopping list will be kept only until you close this tab.",
     "dismiss": "Dismiss"
+  },
+  "account": {
+    "open": "Account",
+    "metaTitle": "Account",
+    "title": "Your account",
+    "signedOutTitle": "Personal nutrition with Pro",
+    "signedOutBody": "Sign in to set up your nutrition profile. With Pro, every recipe shows its calories, protein, carbs and fat, and how much of each ingredient fits your day.",
+    "signedOutNote": "Favorites and your shopping list keep working without an account.",
+    "continueWithGoogle": "Continue with Google",
+    "signingIn": "Opening Google…",
+    "signInFailed": "Couldn't start sign-in. Please try again.",
+    "privacy": "We only receive your name, email address and profile picture from Google.",
+    "unavailable": "Accounts aren't available on this version of the app.",
+    "signedInAs": "Signed in as {email}",
+    "targetsTitle": "Your daily targets",
+    "targetsMissing": "Set up your nutrition profile to get your daily calorie and protein, carbs and fat targets.",
+    "setUpProfile": "Set up nutrition profile",
+    "editProfile": "Edit profile",
+    "calories": "Calories",
+    "protein": "Protein",
+    "carbs": "Carbs",
+    "fat": "Fat",
+    "kcal": "{value, number, latn} kcal",
+    "grams": "{value, number, latn} g",
+    "energyDetail": "At rest you burn about {bmr, number, latn} kcal a day; with your activity, about {tdee, number, latn} kcal.",
+    "profileSaved": "Profile saved. Your targets are up to date.",
+    "planTitle": "Plan",
+    "planFree": "Free",
+    "signOut": "Sign out",
+    "deleteTitle": "Delete account",
+    "deleteBody": "This deletes your account, your nutrition profile and any Pro access. It can't be undone.",
+    "deleteOpen": "Delete account…",
+    "deleteConfirm": "Delete my account",
+    "cancel": "Cancel",
+    "deleted": "Your account and its data were deleted.",
+    "disclaimer": "General guidance for healthy adults, not medical advice."
+  },
+  "profile": {
+    "metaTitle": "Nutrition profile",
+    "title": "Your nutrition profile",
+    "welcome": "Welcome! A few details and we'll work out your daily targets.",
+    "intro": "We use these details only to estimate how much energy and protein you need each day. You can change or delete them at any time.",
+    "weight": "Weight",
+    "height": "Height",
+    "kg": "kg",
+    "cm": "cm",
+    "birthYear": "Year of birth",
+    "birthYearHint": "Targets are designed for adults aged 18 to 80.",
+    "sex": "Sex",
+    "sexHint": "The formula uses it: energy needs differ between female and male bodies.",
+    "sexes": {
+      "female": "Female",
+      "male": "Male"
+    },
+    "activity": "Activity level",
+    "activityLevels": {
+      "sedentary": {
+        "label": "Sedentary",
+        "hint": "Little or no exercise"
+      },
+      "light": {
+        "label": "Lightly active",
+        "hint": "Exercise 1–3 days a week"
+      },
+      "moderate": {
+        "label": "Moderately active",
+        "hint": "Exercise 3–5 days a week"
+      },
+      "active": {
+        "label": "Very active",
+        "hint": "Hard exercise 6–7 days a week"
+      },
+      "very_active": {
+        "label": "Extra active",
+        "hint": "Physical job or training twice a day"
+      }
+    },
+    "goal": "Goal",
+    "goals": {
+      "lose_fat": {
+        "label": "Lose fat",
+        "hint": "About 20% fewer calories than you burn"
+      },
+      "maintain": {
+        "label": "Maintain",
+        "hint": "Eat about what you burn"
+      },
+      "gain_muscle": {
+        "label": "Gain muscle",
+        "hint": "About 10% more calories than you burn"
+      }
+    },
+    "mealSplit": "Meal split",
+    "mealSplitHint": "How your day's calories are shared between meals. The four must add up to 100%.",
+    "meals": {
+      "breakfast": "Breakfast",
+      "lunch": "Lunch",
+      "dinner": "Dinner",
+      "snacks": "Snacks"
+    },
+    "mealSplitTotal": "Total: {total, number, latn}%",
+    "consent": "I agree to Fridge Check storing these health details to calculate my targets.",
+    "save": "Save and calculate",
+    "saving": "Saving…",
+    "errorSummary": "Please check the highlighted fields.",
+    "saveFailed": "Couldn't save your profile. Please try again.",
+    "errors": {
+      "required": "Please fill this in.",
+      "choose": "Please choose one.",
+      "weightRange": "Enter a weight between 30 and 300 kg.",
+      "heightRange": "Enter a height between 120 and 230 cm.",
+      "birthYearRange": "Enter a four-digit year, like 1990.",
+      "age": "Targets are designed for adults aged 18 to 80.",
+      "mealSplit": "The four meals must add up to 100%.",
+      "consent": "Please agree so we can store your details."
+    },
+    "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first."
   }
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { parseServerEnv, serverEnv } from './env'
+import { parseServerEnv, proConfig, serverEnv } from './env'
 
 describe('parseServerEnv', () => {
   it('defaults to the local provider with no keys', () => {
@@ -43,5 +43,32 @@ describe('parseServerEnv', () => {
 
   it('caches the process environment', () => {
     expect(serverEnv()).toBe(serverEnv())
+  })
+})
+
+describe('proConfig', () => {
+  const pro = {
+    DATABASE_URL: 'postgresql://u:p@db.example/neondb',
+    BETTER_AUTH_SECRET: 'x'.repeat(32),
+    BETTER_AUTH_URL: 'https://fridge-check.example',
+    GOOGLE_CLIENT_ID: 'id.apps.googleusercontent.com',
+    GOOGLE_CLIENT_SECRET: 'GOCSPX-secret',
+  }
+
+  it('is complete only with the database, auth secret and URL, and Google credentials', () => {
+    expect(proConfig(parseServerEnv(pro))).toEqual({
+      databaseUrl: pro.DATABASE_URL,
+      authSecret: pro.BETTER_AUTH_SECRET,
+      authUrl: pro.BETTER_AUTH_URL,
+      google: { clientId: pro.GOOGLE_CLIENT_ID, clientSecret: pro.GOOGLE_CLIENT_SECRET },
+    })
+    for (const key of Object.keys(pro)) {
+      expect(proConfig(parseServerEnv({ ...pro, [key]: '' })), key).toBeNull()
+    }
+  })
+
+  it('rejects a short auth secret or a URL that is not http(s)', () => {
+    expect(() => parseServerEnv({ ...pro, BETTER_AUTH_SECRET: 'short' })).toThrow()
+    expect(() => parseServerEnv({ ...pro, BETTER_AUTH_URL: 'ftp://x' })).toThrow()
   })
 })

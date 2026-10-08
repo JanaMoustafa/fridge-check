@@ -5,17 +5,33 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
-export const SECRET_NAMES = ['SPOONACULAR_API_KEY', 'THEMEALDB_API_KEY'] as const
+export const SECRET_NAMES = [
+  'SPOONACULAR_API_KEY',
+  'THEMEALDB_API_KEY',
+  'DATABASE_URL',
+  'GOOGLE_CLIENT_SECRET',
+  'XPAY_SECRET_KEY',
+  'XPAY_WEBHOOK_SECRET',
+] as const
+
+/**
+ * Secrets checked by value only: Better Auth's browser client names BETTER_AUTH_SECRET in a
+ * generic environment helper (it reads as undefined in a browser), so the name alone proves
+ * nothing; its value must still never appear.
+ */
+export const VALUE_ONLY_SECRETS = ['BETTER_AUTH_SECRET'] as const
 
 export function findLeaks(contents: string, needles: readonly string[]): string[] {
   return needles.filter((needle) => contents.includes(needle))
 }
 
 export function secretNeedles(env: Record<string, string | undefined>): string[] {
-  const values = SECRET_NAMES.map((name) => env[name]?.trim()).filter(
-    // Short values (e.g. TheMealDB's public test key "1") would match any bundle by accident.
-    (value): value is string => Boolean(value && value.length >= 8),
-  )
+  const values = [...SECRET_NAMES, ...VALUE_ONLY_SECRETS]
+    .map((name) => env[name]?.trim())
+    .filter(
+      // Short values (e.g. TheMealDB's public test key "1") would match any bundle by accident.
+      (value): value is string => Boolean(value && value.length >= 8),
+    )
   return [...SECRET_NAMES, ...values]
 }
 

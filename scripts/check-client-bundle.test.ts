@@ -21,4 +21,10 @@ describe('findLeaks', () => {
       'ci-canary-1234567',
     ])
   })
+
+  it('checks the auth secret by value only', () => {
+    const needles = secretNeedles({ BETTER_AUTH_SECRET: 'a-very-long-auth-secret-value' })
+    expect(needles).toContain('a-very-long-auth-secret-value')
+    expect(needles).not.toContain('BETTER_AUTH_SECRET')
+  })
 })
