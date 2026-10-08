@@ -85,7 +85,7 @@ export function PortionPlanner(props: PortionPlannerProps) {
   return (
     <section
       aria-labelledby={`${ids}-title`}
-      className="space-y-6 rounded-card bg-surface p-5 shadow-[inset_0_1px_0_var(--color-highlight),0_0_0_1px_var(--color-line)] sm:p-6"
+      className="space-y-6 rounded-card bg-surface p-5 shadow-[inset_0_1px_0_var(--color-highlight),0_0_0_1px_var(--color-line)] sm:p-6 print:break-inside-avoid"
     >
       <header className="flex items-center gap-2">
         <h2 id={`${ids}-title`} className="text-xl font-extrabold">

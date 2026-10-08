@@ -51,7 +51,8 @@ export function RecipeCard({ recipe, pantry, priority = false, index }: RecipeCa
               alt=""
               fill
               sizes={CARD_IMAGE_SIZES}
-              priority={priority}
+              loading={priority ? 'eager' : 'lazy'}
+              fetchPriority={priority ? 'high' : 'auto'}
               className="object-cover transition-transform duration-500 ease-[var(--ease-move)] motion-safe:group-hover:scale-[1.03]"
             />
           </ViewTransition>

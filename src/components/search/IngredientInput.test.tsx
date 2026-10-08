@@ -132,6 +132,8 @@ describe('IngredientInput', () => {
   })
 
   it('stops at 20 ingredients with a friendly message', async () => {
+    // Loaded up front, as in the other tests: under coverage the lazy load can outlast findBy's wait.
+    await loadEngine()
     const initial = Array.from({ length: MAX_INGREDIENTS }, (_, i) => ({ canonical: `item ${i}` }))
     render(<Harness initial={initial} />)
     await userEvent.type(input(), 'egg,')

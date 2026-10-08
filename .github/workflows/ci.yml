@@ -18,16 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      # Canary value: the bundle check fails if it ever reaches client code.
+      # Canary values: the bundle check fails if any of them ever reaches client code.
       SPOONACULAR_API_KEY: ci-canary-${{ github.run_id }}-not-a-real-key
+      GOOGLE_CLIENT_SECRET: ci-canary-google-${{ github.run_id }}
+      XPAY_SECRET_KEY: ci-canary-xpay-${{ github.run_id }}
+      XPAY_WEBHOOK_SECRET: ci-canary-webhook-${{ github.run_id }}
+      BETTER_AUTH_SECRET: ci-canary-auth-secret-${{ github.run_id }}-0123456789abcdef
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # Fails on any known vulnerability in what ships to production.
+      - run: pnpm audit --prod
       - run: pnpm lint
       - run: pnpm format:check
       - run: pnpm typecheck
@@ -35,7 +41,7 @@ jobs:
       - run: pnpm test:coverage
       - run: pnpm build
       - run: pnpm check:bundle
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: next-build
           path: .next
@@ -48,21 +54,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: next-build
           path: .next
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm e2e
       - if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-report
           path: playwright-report

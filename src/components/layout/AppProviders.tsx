@@ -1,5 +1,7 @@
 'use client'
 
+// First: configures Zod before any schema runs in the browser (see the module).
+import '@/lib/zod-config'
 import { Direction, Tooltip } from 'radix-ui'
 import type { ReactNode } from 'react'
 import { AnnouncerProvider } from '@/components/providers/Announcer'

@@ -102,6 +102,7 @@ describe('translation catalogs', () => {
       price: 200,
       date: '8 November 2026',
       days: 3,
+      url: 'https://fridge-check.example/recipe/local/1',
       link: (chunks: string) => chunks,
     }
     for (const key of Object.keys(flatEn)) {

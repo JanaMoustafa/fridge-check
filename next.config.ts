@@ -13,6 +13,8 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()',
   },
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' },
+  // Google sign-in and XPay checkout are full-page redirects, never pop-ups: no window is shared.
+  { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
 ]
 
 const nextConfig: NextConfig = {

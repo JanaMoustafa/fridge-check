@@ -38,4 +38,10 @@ describe('buildCsp', () => {
     expect(prod).toContain('upgrade-insecure-requests')
     expect(buildCsp('abc', { dev: false, https: false })).not.toContain('upgrade-insecure-requests')
   })
+
+  it('lets forms go only to this site and to XPay’s hosted checkout', () => {
+    expect(buildCsp('abc', { dev: false, https: true })).toContain(
+      "form-action 'self' https://checkout.xpay.app",
+    )
+  })
 })

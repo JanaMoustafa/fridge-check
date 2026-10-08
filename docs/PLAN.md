@@ -92,6 +92,28 @@ email service yet). A refund of the payment behind the current period ends Pro a
 Before charging real customers: a TheMealDB supporter key (the free key is for development and
 education only), likely a paid Spoonacular plan, XPay live approval, privacy policy and terms.
 
+## Phase 7: hardening (2026-10-09)
+
+- **Separate databases.** This Mac uses a local PostgreSQL 16 database (`fridge_check_dev`); the
+  live Neon database is reached only through explicit commands (`pnpm db:migrate:prod`,
+  `pnpm pro:grant:prod`, `pnpm pro:revoke:prod`), which read `PRODUCTION_DATABASE_URL` and warn.
+- **Security.** CSP `form-action` also allows XPay's hosted checkout (the no-JavaScript checkout
+  redirect); `Cross-Origin-Opener-Policy: same-origin`. Zod's `Function("")` probe disabled in the
+  browser (`z.config({ jitless: true })`) so the strict CSP no longer reports an eval violation.
+  `pnpm audit --prod` runs in CI; the one known advisory (braces, dev-only lint tooling, no fixed
+  release) is recorded in `pnpm-workspace.yaml` with its reason.
+- **CI.** GitHub Actions moved to their Node 24 majors (checkout v7, setup-node v7, pnpm v6,
+  upload-artifact v7, download-artifact v8); canary values for every server secret.
+- **Print.** Recipes print as one white column: smaller photo, no navigation, buttons, panels or
+  Pro preview; steps and rows never split across pages; a "Printed from Fridge Check" line.
+- **Installable.** `manifest.webmanifest` (name, colours, SVG icon); no service worker.
+- **Performance** (Lighthouse 13, mobile, simulated slow 4G, local production build): home
+  93 / 100 / 100 / 100, results 92 / 100 / 100 / 100, recipe 83–89 / 100 / 100 / 100
+  (performance / accessibility / best practices / SEO); CLS 0, TBT ≤ 40 ms. The recipe page's
+  LCP is TheMealDB's photo (remote JPEG; modern formats would need Vercel's image service,
+  rejected in decision #15). Images use `loading="eager"` + `fetchPriority="high"` (Next 16
+  deprecated `priority`). `experimental.inlineCss` was tried and had no effect with Turbopack.
+
 ## Architecture
 
 ```

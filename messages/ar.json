@@ -265,6 +265,7 @@
     "allergy": "تحقق دائمًا من ملصقات المكونات إذا كانت لديك حساسية من أي طعام.",
     "source": "الوصفة الأصلية: <link>{site}</link>",
     "attribution": "الوصفة والصورة من <link>TheMealDB</link>",
+    "printedFrom": "طُبعت من Fridge Check:",
     "poweredBySpoonacular": "بدعم من <link>spoonacular</link>",
     "print": "طباعة",
     "share": "مشاركة",

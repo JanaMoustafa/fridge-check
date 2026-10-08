@@ -13,7 +13,7 @@ export async function ProLockedPreview() {
   return (
     <section
       aria-labelledby="pro-locked-title"
-      className="relative overflow-hidden rounded-card bg-surface p-5 shadow-[inset_0_1px_0_var(--color-highlight),0_0_0_1px_var(--color-line)] sm:p-6"
+      className="relative overflow-hidden rounded-card bg-surface p-5 shadow-[inset_0_1px_0_var(--color-highlight),0_0_0_1px_var(--color-line)] sm:p-6 print:hidden"
     >
       <div aria-hidden="true" className="pointer-events-none space-y-3 blur-sm select-none">
         <div className="grid grid-cols-4 gap-2">

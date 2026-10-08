@@ -7,3 +7,8 @@ peerDependencyRules:
   allowedVersions:
     eslint: '10'
     msw: '3'
+auditConfig:
+  ignoreGhsas:
+    # braces <= 3.0.3 (no fixed release yet): denial of service on deeply nested glob patterns.
+    # Dev-only (eslint-config-next → fast-glob), fed only our own lint patterns; never shipped.
+    - GHSA-vfj7-8cjw-p6xm

@@ -265,6 +265,7 @@
     "allergy": "Always check ingredient labels if you have a food allergy.",
     "source": "Original recipe: <link>{site}</link>",
     "attribution": "Recipe and photo from <link>TheMealDB</link>",
+    "printedFrom": "Printed from Fridge Check:",
     "poweredBySpoonacular": "Powered by <link>spoonacular</link>",
     "print": "Print",
     "share": "Share",

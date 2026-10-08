@@ -3,15 +3,17 @@
  *   pnpm db:migrate            apply every pending migration
  *   pnpm db:migrate down       revert the most recent migration
  *   pnpm db:migrate status     list migrations and whether each is applied
+ *   pnpm db:migrate:prod [...]  the same against the live database (PRODUCTION_DATABASE_URL)
  */
 import { Kysely, PostgresDialect } from 'kysely'
 import { Pool } from 'pg'
 import { withStrictSsl } from '@/lib/db/connection'
+import { databaseUrl, withoutFlags } from './database-url'
 import { assertMigrated, createMigrator } from '@/lib/db/migrator'
 
-async function main(command: string) {
-  const connectionString = process.env.DATABASE_URL
-  if (!connectionString) throw new Error('DATABASE_URL is not set (add it to .env.local).')
+async function main(args: string[]) {
+  const connectionString = databaseUrl(args)
+  const command = withoutFlags(args)[0] ?? 'up'
   const db = new Kysely<unknown>({
     dialect: new PostgresDialect({
       pool: new Pool({ connectionString: withStrictSsl(connectionString), max: 1 }),
@@ -42,7 +44,7 @@ async function main(command: string) {
   }
 }
 
-main(process.argv[2] ?? 'up').catch((error: unknown) => {
+main(process.argv.slice(2)).catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : error)
   process.exitCode = 1
 })

@@ -668,3 +668,49 @@
     scale: 1.2;
   }
 }
+
+/* Print: a recipe card on paper. One column, white, no shadows or decoration; screens-only
+   parts (navigation, buttons, panels, the Pro preview) carry print:hidden in the markup. */
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  li,
+  tr,
+  figure {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit !important;
+  }
+}

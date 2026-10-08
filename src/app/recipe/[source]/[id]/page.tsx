@@ -20,6 +20,7 @@ import { arabicIngredientNamesFor } from '@/lib/i18n/ingredient-names.server'
 import { recipeHref, recipeViewName } from '@/lib/search/links'
 import { parseSearchUrl, toSearchUrl } from '@/lib/search/url-state'
 import { loadRecipePage } from '@/lib/server/recipe'
+import { getSiteUrl } from '@/lib/site-url'
 
 type Props = PageProps<'/recipe/[source]/[id]'>
 
@@ -87,16 +88,17 @@ export default async function RecipePage({ params, searchParams }: Props) {
       <PageTransition>
         <article className="recipe-page">
           <BackLink href={backHref} />
-          <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
+          <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10 print:block">
             <div className="min-w-0 space-y-6">
               {recipe.imageUrl && (
                 <ViewTransition name={recipeViewName(recipe.id)} share="morph" default="none">
-                  <div className="relative mx-auto aspect-[16/10] max-w-[700px] overflow-hidden rounded-card bg-surface-2 lg:mx-0">
+                  <div className="relative mx-auto aspect-[16/10] max-w-[700px] overflow-hidden rounded-card bg-surface-2 lg:mx-0 print:mx-0 print:max-w-[9cm]">
                     <Image
                       src={recipe.imageUrl}
                       alt={recipe.title}
                       fill
-                      priority
+                      loading="eager"
+                      fetchPriority="high"
                       sizes="(min-width: 1024px) 700px, 100vw"
                       className="object-cover"
                     />
@@ -134,7 +136,7 @@ export default async function RecipePage({ params, searchParams }: Props) {
                 <RecipeActions title={recipe.title} />
               </div>
 
-              <div className="lg:hidden">
+              <div className="lg:hidden print:hidden">
                 <HaveNeedPanel
                   withStaples={data.withStaples}
                   withoutStaples={data.withoutStaples}
@@ -176,6 +178,12 @@ export default async function RecipePage({ params, searchParams }: Props) {
               </p>
 
               <footer className="space-y-1 text-sm text-fg-muted">
+                <p className="hidden print:block">
+                  {t('printedFrom')}{' '}
+                  <span dir="ltr">
+                    {new URL(`/recipe/${source}/${id}`, getSiteUrl()).toString()}
+                  </span>
+                </p>
                 {site && recipe.sourceUrl && (
                   <p>
                     {t.rich('source', {
@@ -217,7 +225,7 @@ export default async function RecipePage({ params, searchParams }: Props) {
                 </p>
               </footer>
             </div>
-            <aside className="hidden lg:block">
+            <aside className="hidden lg:block print:hidden">
               <div className="sticky top-24">
                 <HaveNeedPanel
                   withStaples={data.withStaples}

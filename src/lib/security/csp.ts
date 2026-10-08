@@ -1,5 +1,8 @@
 export const IMAGE_HOSTS = ['https://www.themealdb.com', 'https://img.spoonacular.com'] as const
 
+/** Where a checkout form may send the browser: XPay Egypt's hosted payment page. */
+export const PAYMENT_HOSTS = ['https://checkout.xpay.app'] as const
+
 export function createNonce(): string {
   return Buffer.from(crypto.randomUUID()).toString('base64')
 }
@@ -16,7 +19,8 @@ export function buildCsp(nonce: string, { dev, https }: { dev: boolean; https: b
     `connect-src 'self'`,
     `object-src 'none'`,
     `base-uri 'self'`,
-    `form-action 'self'`,
+    // XPay's hosted checkout: without JavaScript, the checkout form's redirect goes there.
+    `form-action 'self' ${PAYMENT_HOSTS.join(' ')}`,
     `frame-ancestors 'none'`,
     `manifest-src 'self'`,
   ]

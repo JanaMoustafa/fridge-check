@@ -5,20 +5,22 @@
  *
  *   pnpm pro:grant <email> [days=30]   start (or extend from today) a Pro period
  *   pnpm pro:revoke <email>            end Pro now
+ * Add :prod (pnpm pro:grant:prod …) to act on the live database instead of this Mac's.
  */
 import { Kysely, PostgresDialect } from 'kysely'
 import { Pool } from 'pg'
 import { withStrictSsl } from '@/lib/db/connection'
 import type { Database } from '@/lib/db/schema'
+import { databaseUrl, withoutFlags } from './database-url'
 
 const DAY_MS = 24 * 60 * 60 * 1000
 
-async function main([command, email, daysText]: string[]) {
+async function main(args: string[]) {
+  const [command, email, daysText] = withoutFlags(args)
   if ((command !== 'grant' && command !== 'revoke') || !email) {
     throw new Error('Usage: pnpm pro:grant <email> [days] | pnpm pro:revoke <email>')
   }
-  const connectionString = process.env.DATABASE_URL
-  if (!connectionString) throw new Error('DATABASE_URL is not set (add it to .env.local).')
+  const connectionString = databaseUrl(args)
   const db = new Kysely<Database>({
     dialect: new PostgresDialect({
       pool: new Pool({ connectionString: withStrictSsl(connectionString), max: 1 }),
