@@ -18,6 +18,7 @@ import {
   SPOONACULAR_CACHE_MS,
   SpoonacularRecipeSchema,
   toSpoonacularRecord,
+  toSpoonacularSearchRecord,
 } from './spoonacular'
 import { RecipeNotFoundError } from './types'
 
@@ -39,15 +40,14 @@ function clock(start = Date.UTC(2026, 9, 7, 15, 0, 0)) {
 const record = (recipe: unknown) => toSpoonacularRecord(SpoonacularRecipeSchema.parse(recipe))
 
 describe('complexSearchQuery', () => {
-  it('asks for full recipes with the user’s ingredients, fewest missing first', () => {
+  it('asks for the recipes that use the most of the user’s ingredients, without steps', () => {
     expect(complexSearchQuery(params())).toEqual({
       includeIngredients: 'pasta,garlic',
       fillIngredients: 'true',
       addRecipeInformation: 'true',
-      addRecipeInstructions: 'true',
       instructionsRequired: 'true',
       ignorePantry: 'true',
-      sort: 'min-missing-ingredients',
+      sort: 'max-used-ingredients',
       number: String(RESULTS_PER_SEARCH),
     })
   })
@@ -164,6 +164,32 @@ describe('toSpoonacularRecord', () => {
     expect(
       record({ ...spoonacularRecipes.salad, analyzedInstructions: null, instructions: null }),
     ).toBeNull()
+  })
+})
+
+describe('toSpoonacularSearchRecord', () => {
+  it('keeps a search result that has no steps (cards never show them)', () => {
+    const { analyzedInstructions: _steps, ...withoutSteps } = spoonacularRecipes.salad
+    const recipe = SpoonacularRecipeSchema.parse(withoutSteps)
+    expect(toSpoonacularRecord(recipe)).toBeNull()
+    expect(toSpoonacularSearchRecord(recipe)).toEqual({
+      id: 'spoonacular:715538',
+      source: 'spoonacular',
+      title: 'Bruschetta Style Pork & Pasta Salad',
+      imageUrl: 'https://img.spoonacular.com/recipes/715538-312x231.jpg',
+      readyInMinutes: 35,
+      servings: 2,
+      diets: ['dairy-free'],
+      dietsEstimated: true,
+      ingredients: expect.arrayContaining([expect.objectContaining({ name: 'pasta' })]),
+    })
+  })
+
+  it('rejects a search result without a usable ingredient or title', () => {
+    const salad = { ...spoonacularRecipes.salad, extendedIngredients: [] }
+    expect(toSpoonacularSearchRecord(SpoonacularRecipeSchema.parse(salad))).toBeNull()
+    const untitled = { ...spoonacularRecipes.salad, title: '  ' }
+    expect(toSpoonacularSearchRecord(SpoonacularRecipeSchema.parse(untitled))).toBeNull()
   })
 })
 

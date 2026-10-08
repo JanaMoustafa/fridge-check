@@ -3,9 +3,11 @@ import { z } from 'zod'
 import { rankRecipes, scoreRecipe, type MatchResult } from '@/lib/matching'
 import {
   CanonicalNameSchema,
+  IngredientSchema,
   MAX_INGREDIENT_LENGTH,
   MAX_INGREDIENTS,
   RecipeDetailSchema,
+  RecipeSummarySchema,
   type Diet,
   type RecipeDetail,
   type RecipeSummary,
@@ -23,6 +25,26 @@ type MatchField = 'usedIngredients' | 'missingIngredients' | 'matchedUserIngredi
 
 /** A remote recipe before it is scored: what an API told us, mapped to our shape. */
 export type RecipeRecord = Omit<RecipeDetail, MatchField>
+
+/**
+ * What ranking needs: a card's fields plus the ingredient names to score. Search results can
+ * be this lighter shape (Spoonacular's are fetched without steps, which cost points and which
+ * cards never show); a full RecipeRecord is one too.
+ */
+export type SearchRecord = Pick<
+  RecipeRecord,
+  | 'id'
+  | 'source'
+  | 'title'
+  | 'imageUrl'
+  | 'readyInMinutes'
+  | 'servings'
+  | 'diets'
+  | 'dietsEstimated'
+  | 'ingredients'
+>
+
+const SearchIngredientsSchema = z.array(IngredientSchema).min(1)
 
 const UNSCORED: MatchResult = {
   usedIngredients: [],
@@ -48,7 +70,23 @@ export function parseRecord(candidate: RecipeRecord): RecipeRecord | null {
   return record
 }
 
-function toSummary(record: RecipeRecord, match: MatchResult): RecipeSummary {
+/** parseRecord for a search result: the summary schema, plus at least one ingredient. */
+export function parseSearchRecord(candidate: SearchRecord): SearchRecord | null {
+  const { ingredients, ...card } = candidate
+  const summary = RecipeSummarySchema.safeParse({ ...card, ...UNSCORED })
+  const lines = SearchIngredientsSchema.safeParse(ingredients)
+  if (!summary.success || !lines.success) return null
+  const {
+    usedIngredients: _used,
+    missingIngredients: _missing,
+    matchedUserIngredients: _matched,
+    matchScore: _score,
+    ...fields
+  } = summary.data
+  return { ...fields, ingredients: lines.data }
+}
+
+function toSummary(record: SearchRecord, match: MatchResult): RecipeSummary {
   return {
     id: record.id,
     source: record.source,
@@ -66,7 +104,7 @@ function toSummary(record: RecipeRecord, match: MatchResult): RecipeSummary {
 }
 
 /** AND logic, as for the local collection: a recipe passes when it carries every diet. */
-function hasDiets(record: RecipeRecord, diets: readonly Diet[]): boolean {
+function hasDiets(record: SearchRecord, diets: readonly Diet[]): boolean {
   return diets.every((diet) => record.diets.includes(diet))
 }
 
@@ -75,7 +113,7 @@ function hasDiets(record: RecipeRecord, diets: readonly Diet[]): boolean {
  * exactly the rules local ones are (whatever order or scores the API itself used).
  */
 export function rankRecords(
-  records: readonly RecipeRecord[],
+  records: readonly SearchRecord[],
   params: SearchParams,
 ): RecipeSummary[] {
   const eligible = records.filter((record) => hasDiets(record, params.diets))

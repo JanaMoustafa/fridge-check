@@ -10,9 +10,11 @@ import { fetchJson, ProviderError, type ProviderErrorKind } from './http'
 import {
   MatchContextSchema,
   parseRecord,
+  parseSearchRecord,
   rankRecords,
   scoreRecord,
   type RecipeRecord,
+  type SearchRecord,
 } from './records'
 import { createTtlCache } from './ttl-cache'
 import { RecipeNotFoundError, type RecipeProvider } from './types'
@@ -23,8 +25,11 @@ const BASE = 'https://api.spoonacular.com/'
  * most half an hour at the CDN (see searchCacheControl).
  */
 export const SPOONACULAR_CACHE_MS = 30 * 60 * 1000
-/** Each result costs points (free plan: 150 a day), so one search asks for enough for 2 pages. */
-export const RESULTS_PER_SEARCH = 30
+/**
+ * Every result costs points and the free plan has 50 a day, so one search asks for one page of
+ * results (paging beyond it never calls Spoonacular again).
+ */
+export const RESULTS_PER_SEARCH = 20
 /** After a 429 without Retry-After, and after an auth failure (a bad key will not fix itself). */
 const RATE_LIMIT_PAUSE_MS = 60 * 1000
 const AUTH_PAUSE_MS = 10 * 60 * 1000
@@ -133,10 +138,9 @@ function dietsOf(recipe: SpoonacularRecipe): Diet[] {
   return consistentDiets(sortDiets(diets))
 }
 
-/** One Spoonacular recipe → a record, or null when it is not a usable recipe. */
-export function toSpoonacularRecord(recipe: SpoonacularRecipe): RecipeRecord | null {
-  const sourceUrl = UrlSchema.safeParse(recipe.sourceUrl?.trim())
-  return parseRecord({
+/** The fields a card and the ranking need, shared by search results and full recipes. */
+function searchFieldsOf(recipe: SpoonacularRecipe): SearchRecord {
+  return {
     id: `spoonacular:${recipe.id}`,
     source: 'spoonacular',
     title: recipe.title.trim(),
@@ -147,6 +151,19 @@ export function toSpoonacularRecord(recipe: SpoonacularRecipe): RecipeRecord | n
     // Spoonacular computes its flags automatically; nobody here reviewed them.
     dietsEstimated: true,
     ingredients: ingredientsOf(recipe),
+  }
+}
+
+/** One complexSearch result (fetched without steps) → a search record, or null if unusable. */
+export function toSpoonacularSearchRecord(recipe: SpoonacularRecipe): SearchRecord | null {
+  return parseSearchRecord(searchFieldsOf(recipe))
+}
+
+/** One full Spoonacular recipe → a record, or null when it is not a usable recipe. */
+export function toSpoonacularRecord(recipe: SpoonacularRecipe): RecipeRecord | null {
+  const sourceUrl = UrlSchema.safeParse(recipe.sourceUrl?.trim())
+  return parseRecord({
+    ...searchFieldsOf(recipe),
     instructions: stepsOf(recipe),
     cuisine: recipe.cuisines?.find((cuisine) => cuisine.trim() !== '')?.trim(),
     sourceUrl: sourceUrl.success ? sourceUrl.data : undefined,
@@ -154,7 +171,13 @@ export function toSpoonacularRecord(recipe: SpoonacularRecipe): RecipeRecord | n
   })
 }
 
-/** complexSearch's query for a search, with the user's staples left out when they are assumed. */
+/**
+ * complexSearch's query for a search, with the user's staples left out when they are assumed.
+ * Spoonacular is asked for the recipes that use the most of the user's ingredients (owner
+ * decision 2026-10-08: "fewest missing" returned recipes using only 1–2 of them); the shared
+ * engine then orders them by the user's sort. Steps are not requested: cards never show them,
+ * and the recipe page fetches the full recipe anyway.
+ */
 export function complexSearchQuery(params: SearchParams): Record<string, string> | null {
   const wanted = params.ingredients.filter(
     (ingredient) => !(params.assumeStaples && isStaple(ingredient)),
@@ -167,10 +190,9 @@ export function complexSearchQuery(params: SearchParams): Record<string, string>
     ...(params.diets.includes('dairy-free') ? { intolerances: 'dairy' } : {}),
     fillIngredients: 'true',
     addRecipeInformation: 'true',
-    addRecipeInstructions: 'true',
     instructionsRequired: 'true',
     ignorePantry: String(params.assumeStaples),
-    sort: 'min-missing-ingredients',
+    sort: 'max-used-ingredients',
     number: String(RESULTS_PER_SEARCH),
   }
 }
@@ -196,7 +218,7 @@ export interface SpoonacularProviderOptions {
 export function createSpoonacularProvider(options: SpoonacularProviderOptions): RecipeProvider {
   const { apiKey, fetchImpl, now = Date.now } = options
   const cacheOptions = { ttlMs: SPOONACULAR_CACHE_MS, now }
-  const searchCache = createTtlCache<RecipeRecord[]>({ ...cacheOptions, maxEntries: 500 })
+  const searchCache = createTtlCache<SearchRecord[]>({ ...cacheOptions, maxEntries: 500 })
   const detailCache = createTtlCache<RecipeRecord | null>({ ...cacheOptions, maxEntries: 1_000 })
   let blocked: { until: number; kind: ProviderErrorKind } | undefined
 
@@ -233,7 +255,7 @@ export function createSpoonacularProvider(options: SpoonacularProviderOptions): 
       if (!body.success) throw new ProviderError('spoonacular', 'invalid-response', 'complexSearch')
       return body.data.results.flatMap((result) => {
         const recipe = SpoonacularRecipeSchema.safeParse(result)
-        const record = recipe.success ? toSpoonacularRecord(recipe.data) : null
+        const record = recipe.success ? toSpoonacularSearchRecord(recipe.data) : null
         return record ? [record] : []
       })
     })
