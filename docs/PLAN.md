@@ -49,6 +49,27 @@ Every deviation below was flagged to and approved by the project owner before im
 - **Rate limit** (#16): also off when `RATE_LIMIT_PER_MINUTE=0`, which the e2e server uses (every test comes from one address). Key: `x-real-ip`, else the first `x-forwarded-for` address.
 - **Spoonacular HTML instructions**: converted to text by a small built-in converter (`src/lib/text/html-to-text.ts`); the text is only ever rendered as escaped React text. No HTML parser dependency.
 
+## Pro tier (owner request 2026-10-08)
+
+Pro (200 EGP) adds a nutrition profile and Pro-only recipe nutrition with personalized portions.
+Free features (search, favorites, shopping list) stay account-free and unchanged.
+
+| Decision        | Choice                                                                                                                                                                                                                                                                                                                     |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Billing         | **Prepaid 30-day pass** via XPay Egypt hosted checkout + renewal reminder. XPay docs (Oct 2026): recurring prices are "not yet active for checkout", no saved cards or merchant-initiated charges. `subscription` keeps `xpay_subscription_id` etc. so auto-renewal can be added later.                                    |
+| Payment truth   | XPay webhooks only (`XPay-Signature: t=…,v1=…`, HMAC-SHA256 of `${t}.${rawBody}`, 5-min window). Grant Pro when `paymentStatus` is `paid` (from `checkout.session.completed` or, for Fawry, `checkout.session.async_payment_succeeded`). Events logged in `webhook_event`; idempotent by event id and checkout session id. |
+| Sign-in         | Google only (Better Auth). No passwords, no email service.                                                                                                                                                                                                                                                                 |
+| Data            | Postgres (Neon, Frankfurt) + Kysely; migrations in `src/lib/db/migrations`, each with `up` and `down` (`pnpm db:migrate [up\|down\|status]`). Integration tests run real Postgres in-process (PGlite). Vercel functions run in `fra1` next to the database.                                                                |
+| Nutrition data  | USDA FoodData Central (public domain) → data files with a reviewed ingredient mapping and gram conversions. No invented values: a recipe whose significant lines cannot be converted shows "nutrition not available".                                                                                                      |
+| Servings        | Built-in (TheMealDB) recipes: whole-recipe totals + personal portion. Spoonacular: also per serving.                                                                                                                                                                                                                       |
+| Portions        | Scale the whole recipe to the meal's calorie budget (meal split default 25/35/30/10), round to 5 g; show the macros against the daily targets.                                                                                                                                                                             |
+| Safety, privacy | Adults 18–80; calorie floor 1,200 (women) / 1,500 (men) kcal; birth year, not age; explicit consent for health data; "delete my data". Guidance, not medical advice.                                                                                                                                                       |
+| Gating          | Server-side `isPro()` on every Pro route and section; free users get a placeholder preview (no real numbers in the page).                                                                                                                                                                                                  |
+| Order           | Pro first (light Vercel + Neon deploy), then Phases 7–8.                                                                                                                                                                                                                                                                   |
+
+Before charging real customers: a TheMealDB supporter key (the free key is for development and
+education only), likely a paid Spoonacular plan, XPay live approval, privacy policy and terms.
+
 ## Architecture
 
 ```
