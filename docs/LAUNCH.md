@@ -33,8 +33,11 @@ Billing) before the first real payment.
 
 While Google's app is in "Testing", only the test users you added can sign in.
 
-1. Google Cloud → Google Auth Platform → **Branding**: app name "Fridge Check", support email,
-   and links to the home page and privacy policy (step 4).
+1. Google Cloud → Google Auth Platform → **Branding**: app name "Fridge Check", a support
+   email, and these links:
+   - home page: `https://fridge-check-sooty.vercel.app`
+   - privacy policy: `https://fridge-check-sooty.vercel.app/privacy`
+   - terms of service: `https://fridge-check-sooty.vercel.app/terms`
 2. **Audience** → **Publish app** → status "In production".
    - Fridge Check asks only for name, email and profile picture, so Google does not need to review
      the app.
@@ -42,8 +45,8 @@ While Google's app is in "Testing", only the test users you added can sign in.
 
 ### Switch XPay to live payments
 
-1. Finish XPay's account activation: the identity and payout (bank) details XPay asks for. XPay
-   may also check the site's terms and refund policy (step 4), so publish those first.
+1. Finish XPay's account activation: the identity and payout (bank) details XPay asks for. If
+   XPay asks for the site's policies, they are at `/terms`, `/privacy` and `/refunds`.
 2. In XPay's dashboard, switch to **live mode**:
    - **Developers → API keys:** create the live secret key (`sk_live_…`).
    - **Developers → Webhooks:** add the endpoint
@@ -58,28 +61,28 @@ While Google's app is in "Testing", only the test users you added can sign in.
    then redeploy.
 4. Keep the test keys only in `.env.local`, so your computer never charges real cards.
 
-### Publish the legal pages
+### Have the legal pages checked
 
-The site needs a **privacy policy**, **terms of use** and a **refund policy** before taking
-payments. They don't exist yet.
+The privacy policy, terms of use and refund policy are on the site in English and Arabic
+(`/privacy`, `/terms`, `/refunds`), linked from the footer, the sign-in card, the Pro page and the
+health-data consent box. They were drafted to match exactly what the app does, but they are not
+legal advice:
 
-- The privacy policy must cover:
-  - Google sign-in.
-  - Health data (weight, height, birth year, sex), stored only with consent and deleted with the
-    account.
-  - XPay for payments.
-  - Vercel and Neon (servers in Frankfurt, Germany).
-  - Browser storage for favorites and the shopping list.
-- Egypt's Personal Data Protection Law (No. 151 of 2020) treats health data as sensitive. Ask a
-  local lawyer whether you need a license or registration before collecting it.
-- The refund policy should match what the app does: a refund ends that Pro period immediately.
+- Ask a local lawyer to review both languages before the first real payment.
+- Egypt's Personal Data Protection Law (No. 151 of 2020) treats health data as sensitive and
+  limits sending personal data abroad (the database is in Germany). Ask whether you need a license
+  or registration before collecting it.
+- Ask whether the terms need a business name or address instead of the brand alone, and which
+  language prevails if the two versions differ.
+- The texts live in `src/lib/legal/` (one file per page, English and Arabic together). After any
+  change in meaning, update `LEGAL_UPDATED` in `src/lib/legal/document.ts`.
 
-Send the final texts and the pages can be added to the app in English and Arabic, with links in
-the footer and on the Pro page.
+**Refunds in practice:** when someone asks within 14 days, refund the **full** amount from XPay's
+dashboard. The app treats every refund as full and removes the Pro days that payment bought.
 
 ### Make one real payment
 
-After steps 1–4:
+After the steps above:
 
 1. Buy Pro with a real card on the live site and check the account page shows Pro.
 2. Refund it from XPay's dashboard and check Pro ends.

@@ -9,6 +9,9 @@ const PAGES = [
   '/saved',
   '/shopping-list',
   '/does-not-exist',
+  '/privacy',
+  '/terms',
+  '/refunds',
 ]
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice']
 

@@ -137,9 +137,11 @@ describe('IngredientInput', () => {
     const initial = Array.from({ length: MAX_INGREDIENTS }, (_, i) => ({ canonical: `item ${i}` }))
     render(<Harness initial={initial} />)
     await userEvent.type(input(), 'egg,')
+    // The visible message; on a slow run the screen-reader announcer may already repeat it too.
     expect(
       await screen.findByText(
         `You can add up to ${MAX_INGREDIENTS} ingredients. Remove one to add another.`,
+        { selector: 'p' },
       ),
     ).toBeInTheDocument()
   })

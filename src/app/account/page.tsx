@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from 'next-intl/server'
 import { DeleteAccountDialog } from '@/components/account/DeleteAccountDialog'
 import { GoogleSignInButton } from '@/components/account/GoogleSignInButton'
 import { TargetsCard } from '@/components/account/TargetsCard'
+import { legalLinks } from '@/components/legal/legal-links'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { buttonClasses } from '@/components/ui/button'
 import { getSignedInUser, isProConfigured } from '@/lib/auth/auth'
@@ -68,6 +69,7 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
           )}
           <GoogleSignInButton next={safeNext(param('next'))} />
           <p className="text-sm text-fg-muted">{t('privacy')}</p>
+          <p className="text-sm text-fg-muted">{t.rich('agree', legalLinks)}</p>
           <p className="text-sm text-fg-muted">{t('signedOutNote')}</p>
         </section>
       </div>

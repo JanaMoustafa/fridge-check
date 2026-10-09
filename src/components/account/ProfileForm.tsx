@@ -4,6 +4,7 @@ import { AlertCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useActionState, useId, useState } from 'react'
 import { saveProfileAction, type ProfileFormState } from '@/app/profile/actions'
+import { legalLinks } from '@/components/legal/legal-links'
 import { buttonClasses } from '@/components/ui/button'
 import { ACTIVITY_LEVELS, GOALS, SEXES } from '@/lib/nutrition/calculator'
 import { DEFAULT_MEAL_SPLIT, MEALS } from '@/lib/nutrition/portions'
@@ -231,6 +232,9 @@ export function ProfileForm({ initial, next }: ProfileFormProps) {
           <span className="text-sm">{t('consent')}</span>
         </label>
         <FieldError id={`${ids}-consent-error`} message={message('consent')} />
+        <p className="ms-8 mt-2 text-sm text-fg-muted">
+          {t.rich('privacyNote', { link: legalLinks.privacy })}
+        </p>
       </div>
 
       <div className="space-y-3">

@@ -117,6 +117,14 @@
   "footer": {
     "data": "Recipe data and photos from <link>TheMealDB</link>"
   },
+  "legal": {
+    "nav": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "refunds": "Refunds",
+    "updated": "Last updated {date}",
+    "onThisPage": "On this page"
+  },
   "notFound": {
     "metaTitle": "Page not found",
     "heading": "We couldn't find that page",
@@ -341,7 +349,8 @@
     "deleteConfirm": "Delete my account",
     "cancel": "Cancel",
     "deleted": "Your account and its data were deleted.",
-    "disclaimer": "General guidance for healthy adults, not medical advice."
+    "disclaimer": "General guidance for healthy adults, not medical advice.",
+    "agree": "By signing in, you agree to the <terms>terms of use</terms> and the <privacy>privacy policy</privacy>."
   },
   "profile": {
     "metaTitle": "Nutrition profile",
@@ -422,7 +431,8 @@
       "mealSplit": "The four meals must add up to 100%.",
       "consent": "Please agree so we can store your details."
     },
-    "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first."
+    "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first.",
+    "privacyNote": "How we use and protect these details: <link>privacy policy</link>."
   },
   "nutrition": {
     "title": "Nutrition",
@@ -483,7 +493,8 @@
     "signInToUpgrade": "Sign in to upgrade",
     "youHavePro": "You have Pro until {date}.",
     "comingSoon": "Payments open very soon.",
-    "unavailable": "Pro isn't available on this version of the app."
+    "unavailable": "Pro isn't available on this version of the app.",
+    "agree": "By paying, you agree to the <terms>terms of use</terms>. Changed your mind? A full refund within {days, number, latn} days: see the <refunds>refund policy</refunds>."
   },
   "billing": {
     "pay": "Pay {price, number, latn} EGP with XPay",

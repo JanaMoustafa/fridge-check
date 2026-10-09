@@ -125,6 +125,21 @@ education only), likely a paid Spoonacular plan, XPay live approval, privacy pol
   real payment and refund.
 - **Dependencies.** `htmlparser2` removed (added in Phase 1, never used).
 
+## Legal pages (owner request 2026-10-09)
+
+- **Owner decisions:** the pages name the brand only ("Fridge Check"), with
+  jana.sabry.abdelwahhab@gmail.com as the public contact; Pro has a full refund on request within
+  14 days of each payment.
+- **Pages:** `/privacy`, `/terms`, `/refunds` in English and Arabic, written to match what the
+  app actually does. They are linked from the footer, the sign-in card, the Pro page and the
+  consent box. The text is plain data in `src/lib/legal/`, not in `messages/*.json`, because the
+  message catalogs are sent to the browser on every page. A test checks that both languages have
+  the same sections, lists and links.
+- **Refund fix:** a refund used to end all Pro when it was for a renewal, and to change nothing
+  when it was for the first of two passes. It now removes the unused days of the refunded payment
+  from the end of Pro, and a second refund of the same payment changes nothing.
+- **Not legal advice:** a lawyer should review both languages before launch (docs/LAUNCH.md).
+
 ## Architecture
 
 ```

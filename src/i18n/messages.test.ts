@@ -104,6 +104,9 @@ describe('translation catalogs', () => {
       days: 3,
       url: 'https://fridge-check.example/recipe/local/1',
       link: (chunks: string) => chunks,
+      terms: (chunks: string) => chunks,
+      privacy: (chunks: string) => chunks,
+      refunds: (chunks: string) => chunks,
     }
     for (const key of Object.keys(flatEn)) {
       // @ts-expect-error -- keys come from a runtime walk of the catalog

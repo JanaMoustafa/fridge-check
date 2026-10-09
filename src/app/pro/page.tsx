@@ -6,11 +6,13 @@ import { EmptyState } from '@/components/ui/EmptyState'
 import { buttonClasses } from '@/components/ui/button'
 import { getSignedInUser, isProConfigured } from '@/lib/auth/auth'
 import { CheckoutButton } from '@/components/billing/CheckoutButton'
+import { legalLinks } from '@/components/legal/legal-links'
 import { getProAccess } from '@/lib/billing/access'
 import { getXPay } from '@/lib/billing/config'
 import { PRO_PRICE_EGP } from '@/lib/billing/plan'
 import { getDb } from '@/lib/db/client'
 import { formatLongDate } from '@/lib/i18n/format-date'
+import { REFUND_WINDOW_DAYS } from '@/lib/legal/document'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pro')
@@ -73,6 +75,9 @@ export default async function ProPage() {
             <div className="space-y-3">
               <CheckoutButton label={tBilling(until ? 'renew' : 'pay', { price: PRO_PRICE_EGP })} />
               <p className="text-xs text-fg-muted">{tBilling('secureNote')}</p>
+              <p className="text-xs text-fg-muted">
+                {t.rich('agree', { ...legalLinks, days: REFUND_WINDOW_DAYS })}
+              </p>
             </div>
           ) : user ? (
             <p className="font-semibold text-fg-muted">{t('comingSoon')}</p>

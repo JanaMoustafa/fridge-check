@@ -122,6 +122,45 @@ test.describe('app shell', () => {
     await expect(page.getByRole('heading', { name: "We couldn't find that page" })).toBeVisible()
   })
 
+  test('the footer links to the privacy, terms and refund pages in both languages', async ({
+    browser,
+    baseURL,
+  }) => {
+    const pages = {
+      en: [
+        ['Privacy', 'Privacy policy'],
+        ['Terms', 'Terms of use'],
+        ['Refunds', 'Refund policy'],
+      ],
+      ar: [
+        ['الخصوصية', 'سياسة الخصوصية'],
+        ['الشروط', 'شروط الاستخدام'],
+        ['الاسترداد', 'سياسة الاسترداد'],
+      ],
+    } as const
+    for (const locale of ['en', 'ar'] as const) {
+      // A fresh context per locale: no localStorage mirror from the other language.
+      const context = await browser.newContext({ baseURL })
+      await setLocaleCookie(context, baseURL!, locale)
+      const page = await context.newPage()
+      for (const [link, title] of pages[locale]) {
+        await page.goto('/')
+        const legal = page.getByRole('contentinfo').getByRole('navigation')
+        await legal.getByRole('link', { name: link, exact: true }).click()
+        await expect(page.getByRole('heading', { level: 1, name: title })).toBeVisible()
+        await expect(page).toHaveTitle(new RegExp(title))
+      }
+      // The section index jumps to its section.
+      await page
+        .getByRole('navigation', { name: locale === 'en' ? 'On this page' : 'في هذه الصفحة' })
+        .getByRole('link')
+        .first()
+        .click()
+      await expect(page).toHaveURL(/\/refunds#window$/)
+      await context.close()
+    }
+  })
+
   test('CSP and nonces cover 404s for unknown paths too', async ({ request }) => {
     for (const path of ['/api/does-not-exist', '/favicon.ico', '/icons/x', '/robots.txt']) {
       const response = await request.get(path)
@@ -239,7 +278,7 @@ test.describe('app shell', () => {
         const context = await browser.newContext({ viewport: { width, height: 800 } })
         await setLocaleCookie(context, baseURL!, locale)
         const page = await context.newPage()
-        for (const path of ['/', '/saved', '/shopping-list']) {
+        for (const path of ['/', '/saved', '/shopping-list', '/privacy']) {
           await page.goto(new URL(path, baseURL).toString())
           await expect(page.locator('html')).toHaveAttribute('lang', locale)
           await page.evaluate(() => document.fonts.ready)

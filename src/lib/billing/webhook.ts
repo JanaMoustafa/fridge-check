@@ -161,8 +161,10 @@ async function settleUnpaid(
 }
 
 /**
- * A refund cancels what that payment bought: the payment is marked refunded and, if it paid for
- * the user's current period, Pro ends now.
+ * A refund takes back what that payment bought: the payment is marked refunded and the days it
+ * paid for that are still unused come off the end of the user's Pro. Refunding the only pass ends
+ * Pro now; refunding an early renewal removes just its 30 days. Refunds are always for the full
+ * amount (the refund policy), so a second refund of the same payment changes nothing.
  */
 async function applyRefund(db: Kysely<Database>, object: Record<string, unknown>, now: Date) {
   const refund = RefundSchema.parse(object)
@@ -175,20 +177,34 @@ async function applyRefund(db: Kysely<Database>, object: Record<string, unknown>
     else throw new Error(`Refund ${refund.id} names no payment`)
     const payment = await query.forUpdate().executeTakeFirst()
     if (!payment) throw new Error(`Refund ${refund.id}: unknown payment`)
+    if (payment.status === 'refunded') return
     await trx
       .updateTable('payment')
       .set({ status: 'refunded', updated_at: now })
       .where('id', '=', payment.id)
       .execute()
-    if (payment.user_id !== null) {
-      await trx
-        .updateTable('subscription')
-        .set({ status: 'expired', current_period_end: now, updated_at: now })
-        .where('user_id', '=', payment.user_id)
-        .where('xpay_checkout_session_id', '=', payment.xpay_checkout_session_id)
-        .where('current_period_end', '>', now)
-        .execute()
-    }
+    if (payment.user_id === null || !payment.period_start || !payment.period_end) return
+
+    const unusedMs =
+      payment.period_end.getTime() - Math.max(payment.period_start.getTime(), now.getTime())
+    if (unusedMs <= 0) return
+    const current = await trx
+      .selectFrom('subscription')
+      .selectAll()
+      .where('user_id', '=', payment.user_id)
+      .forUpdate()
+      .executeTakeFirst()
+    if (!current || current.current_period_end <= now) return
+    const end = new Date(current.current_period_end.getTime() - unusedMs)
+    await trx
+      .updateTable('subscription')
+      .set(
+        end > now
+          ? { current_period_end: end, updated_at: now }
+          : { status: 'expired', current_period_end: now, updated_at: now },
+      )
+      .where('id', '=', current.id)
+      .execute()
   })
 }
 

@@ -226,6 +226,72 @@ describe('XPay events', () => {
     )
   })
 
+  /** Pays cs_1 now and renews early with cs_2 on day 3: Pro until day 60. */
+  async function payTwice() {
+    await recordCheckoutStarted(db, 'u1', 'cs_1', NOW)
+    await handleXPayEvent(db, event('evt_1', 'checkout.session.completed', session('cs_1')), NOW)
+    await recordCheckoutStarted(db, 'u1', 'cs_2', later(3))
+    await handleXPayEvent(
+      db,
+      event('evt_2', 'checkout.session.completed', session('cs_2')),
+      later(3),
+    )
+  }
+  const refunded = (eventId: string, sessionId: string, at: Date) =>
+    handleXPayEvent(
+      db,
+      event(eventId, 'refund.created', { id: `re_${eventId}`, checkoutSessionId: sessionId }),
+      at,
+    )
+
+  it('refunding an early renewal removes only the 30 days it bought', async () => {
+    await payTwice()
+    await refunded('evt_3', 'cs_2', later(5))
+    const access = await getProAccess(db, 'u1', later(5))
+    expect(access.isPro).toBe(true)
+    expect(access.periodEnd?.toISOString()).toBe(later(30).toISOString())
+  })
+
+  it('refunding the first pass after a renewal removes its unused days', async () => {
+    await payTwice()
+    // Day 5: cs_1 has 25 unused days; the renewal's 30 days move up behind the 5 used ones.
+    await refunded('evt_3', 'cs_1', later(5))
+    expect((await getProAccess(db, 'u1', later(5))).periodEnd?.toISOString()).toBe(
+      later(35).toISOString(),
+    )
+  })
+
+  it('applies a refund of the same payment only once', async () => {
+    await payTwice()
+    await refunded('evt_3', 'cs_2', later(5))
+    await refunded('evt_4', 'cs_2', later(6))
+    expect((await getProAccess(db, 'u1', later(6))).periodEnd?.toISOString()).toBe(
+      later(30).toISOString(),
+    )
+  })
+
+  it('a refund of a pass that already ran out changes nothing else', async () => {
+    await recordCheckoutStarted(db, 'u1', 'cs_1', NOW)
+    await handleXPayEvent(db, event('evt_1', 'checkout.session.completed', session('cs_1')), NOW)
+    await recordCheckoutStarted(db, 'u1', 'cs_2', later(40))
+    await handleXPayEvent(
+      db,
+      event('evt_2', 'checkout.session.completed', session('cs_2')),
+      later(40),
+    )
+    await refunded('evt_3', 'cs_1', later(41))
+    expect((await getProAccess(db, 'u1', later(41))).periodEnd?.toISOString()).toBe(
+      later(70).toISOString(),
+    )
+  })
+
+  it('rejects a refund that names no payment, or one it does not know', async () => {
+    await expect(
+      handleXPayEvent(db, event('evt_1', 'refund.created', { id: 're_1' }), NOW),
+    ).rejects.toThrow(/names no payment/)
+    await expect(refunded('evt_2', 'cs_unknown', NOW)).rejects.toThrow(/unknown payment/)
+  })
+
   it('refuses an amount or currency that does not match, and records the error', async () => {
     await recordCheckoutStarted(db, 'u1', 'cs_1', NOW)
     await expect(

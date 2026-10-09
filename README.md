@@ -176,7 +176,8 @@ data/                 recipes.json · seed-allowlist · diet/cuisine overrides �
 docs/                 PLAN.md (decisions) · DESIGN.md (visual system) · LAUNCH.md (go-live checklist)
 messages/             en.json · ar.json
 scripts/              seeds, data validation, migrations, Pro testing tool, CSS and bundle checks
-src/app/              pages, route handlers (api/recipes, api/auth, api/webhooks/xpay), manifest
+src/app/              pages (incl. privacy · terms · refunds), route handlers (api/recipes,
+                      api/auth, api/webhooks/xpay), manifest
 src/components/       search · recipe · pro · billing · account · saved · shopping · layout · ui
 src/lib/matching/     ingredient normalisation (EN + AR), synonyms, families, staples, scoring
 src/lib/providers/    local · TheMealDB · Spoonacular adapters, registry with fallback
@@ -255,8 +256,11 @@ The app ships with 195 real recipes from [TheMealDB](https://www.themealdb.com) 
     code, so Pro appears even before the webhook arrives.
 - **Server-side gate:** every Pro feature checks `getProUser()` on the server. Free users are sent
   no nutrition numbers at all, only a locked preview.
-- **Cancel** turns off renewal reminders; Pro stays until the period ends. A refund of the current
-  period ends Pro immediately.
+- **Cancel** turns off renewal reminders; Pro stays until the period ends.
+- **Refunds:** a full refund on request within 14 days of each payment
+  ([refund policy](https://fridge-check-sooty.vercel.app/refunds)), made from XPay's dashboard. A refund removes the
+  unused days that payment bought: refunding the only pass ends Pro now, refunding a renewal
+  removes just its 30 days.
 - **Checkout limit:** 5 checkout starts per user per hour.
 
 **Testing in XPay test mode** (test keys, no real money):
@@ -294,6 +298,10 @@ database in Frankfurt.
 - **Before charging real customers:** follow [docs/LAUNCH.md](docs/LAUNCH.md).
 
 ## Security and privacy
+
+The privacy policy, terms of use and refund policy are at `/privacy`, `/terms` and `/refunds`, in
+English and Arabic. Their text lives in `src/lib/legal/` (a test keeps both languages in step);
+bump `LEGAL_UPDATED` in `src/lib/legal/document.ts` whenever their meaning changes.
 
 - **Content-Security-Policy** with a per-request nonce, `strict-dynamic` and no `eval`; forms may
   post only to this site and XPay's checkout. Also HSTS, `nosniff`, `X-Frame-Options: DENY`,
