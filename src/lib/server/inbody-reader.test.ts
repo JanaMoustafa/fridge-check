@@ -1,6 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { readInbodyPhoto, type MessagesClient } from './inbody-reader'
+import { keyShape, readInbodyPhoto, type MessagesClient } from './inbody-reader'
 
 const image = { mediaType: 'image/jpeg' as const, base64: 'aGVsbG8=' }
 const replying = (response: unknown): MessagesClient => ({
@@ -38,6 +38,7 @@ describe('readInbodyPhoto', () => {
       reason: 'unreadable',
     })
     const headers = new Headers()
+    vi.spyOn(console, 'error').mockImplementation(() => undefined)
     expect(
       await readInbodyPhoto(
         image,
@@ -94,5 +95,17 @@ describe('photo reading switch', () => {
   it('is on with a key', async () => {
     const reader = await freshReader('sk-ant-test')
     expect(reader.photoReadingEnabled()).toBe(true)
+  })
+})
+
+describe('keyShape', () => {
+  it('describes a key for the logs without revealing it', () => {
+    const key = `sk-ant-api03-${'x'.repeat(95)}`
+    expect(keyShape(key)).toBe('API key, 108 characters')
+    expect(keyShape(key)).not.toContain('xxxx')
+    expect(keyShape('sk-ant-admin01-abc')).toMatch(/^Admin key/)
+    expect(keyShape('"sk-ant-api03-abc"')).toMatch(/^not an Anthropic API key format.*quotes/)
+    expect(keyShape('ANTHROPIC_API_KEY=sk-ant-api03-abc')).toMatch(/quotes, spaces or "="/)
+    expect(keyShape(undefined)).toBe('no key')
   })
 })

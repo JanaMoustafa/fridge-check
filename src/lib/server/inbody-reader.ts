@@ -65,6 +65,13 @@ export async function readInbodyPhoto(
       error instanceof Anthropic.AuthenticationError ||
       error instanceof Anthropic.PermissionDeniedError
     ) {
+      // The key is set but Anthropic turned it away: say how, never what the key is.
+      console.error(
+        '[inbody] Anthropic refused the API key:',
+        error.status,
+        error.type ?? '',
+        keyShape(serverEnv().ANTHROPIC_API_KEY),
+      )
       return { ok: false, reason: 'not_configured' }
     }
     if (error instanceof Anthropic.BadRequestError) return { ok: false, reason: 'unreadable' }
@@ -74,6 +81,21 @@ export async function readInbodyPhoto(
     )
     return { ok: false, reason: 'upstream' }
   }
+}
+
+/**
+ * What kind of key is set, for the logs: its documented prefix, its length and stray characters
+ * from pasting. Never any of the secret part.
+ */
+export function keyShape(key: string | undefined): string {
+  if (!key) return 'no key'
+  const kind = key.startsWith('sk-ant-api')
+    ? 'API key'
+    : key.startsWith('sk-ant-admin')
+      ? 'Admin key (cannot call Claude; create an API key)'
+      : 'not an Anthropic API key format'
+  const stray = /["'`\s=]/.test(key) ? ', contains quotes, spaces or "="' : ''
+  return `${kind}, ${key.length} characters${stray}`
 }
 
 let client: Anthropic | undefined
