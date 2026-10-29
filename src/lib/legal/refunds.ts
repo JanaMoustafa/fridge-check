@@ -7,8 +7,8 @@ const REPLY_WORKING_DAYS = 5
 
 const en: LegalDocument = {
   title: 'Refund policy',
-  description: `A full refund within ${REFUND_WINDOW_DAYS} days of paying for Fridge Check Pro.`,
-  intro: `Changed your mind about Fridge Check Pro? You can get your money back in full within ${REFUND_WINDOW_DAYS} days of paying, for any reason.`,
+  description: `A full refund within ${REFUND_WINDOW_DAYS} days of paying for BiteDoneRight Pro.`,
+  intro: `Changed your mind about BiteDoneRight Pro? You can get your money back in full within ${REFUND_WINDOW_DAYS} days of paying, for any reason.`,
   sections: [
     {
       id: 'window',
@@ -22,7 +22,7 @@ const en: LegalDocument = {
       id: 'how',
       heading: 'How to ask',
       blocks: [
-        `Email ${EMAIL_LINK} from the email address of your Fridge Check account (or tell us which address it is), with the date you paid. We reply within ${REPLY_WORKING_DAYS} working days.`,
+        `Email ${EMAIL_LINK} from the email address of your BiteDoneRight account (or tell us which address it is), with the date you paid. We reply within ${REPLY_WORKING_DAYS} working days.`,
       ],
     },
     {
@@ -64,8 +64,8 @@ const en: LegalDocument = {
 
 const ar: LegalDocument = {
   title: 'سياسة الاسترداد',
-  description: `استرداد كامل خلال ${REFUND_WINDOW_DAYS} يومًا من الدفع مقابل اشتراك Fridge Check Pro.`,
-  intro: `غيّرت رأيك بشأن Fridge Check Pro؟ يمكنك استرداد أموالك كاملةً خلال ${REFUND_WINDOW_DAYS} يومًا من الدفع، لأي سبب.`,
+  description: `استرداد كامل خلال ${REFUND_WINDOW_DAYS} يومًا من الدفع مقابل اشتراك BiteDoneRight Pro.`,
+  intro: `غيّرت رأيك بشأن BiteDoneRight Pro؟ يمكنك استرداد أموالك كاملةً خلال ${REFUND_WINDOW_DAYS} يومًا من الدفع، لأي سبب.`,
   sections: [
     {
       id: 'window',
@@ -79,7 +79,7 @@ const ar: LegalDocument = {
       id: 'how',
       heading: 'كيف تطلب الاسترداد',
       blocks: [
-        `راسلنا على ${EMAIL_LINK} من البريد الإلكتروني لحسابك في Fridge Check (أو أخبرنا به)، مع تاريخ الدفع. سنرد خلال ${REPLY_WORKING_DAYS} أيام عمل.`,
+        `راسلنا على ${EMAIL_LINK} من البريد الإلكتروني لحسابك في BiteDoneRight (أو أخبرنا به)، مع تاريخ الدفع. سنرد خلال ${REPLY_WORKING_DAYS} أيام عمل.`,
       ],
     },
     {

@@ -4,7 +4,7 @@ export const THEME_STORAGE_KEY = 'fc:theme'
 export const DEFAULT_THEME: Theme = 'system'
 
 /** Page canvas colours (`--c-bg`) used for the browser chrome (`theme-color`). */
-export const THEME_COLORS = { light: '#edf2ef', dark: '#121916' } as const
+export const THEME_COLORS = { light: '#f7f4ea', dark: '#161d1a' } as const
 /** Script-owned theme-color meta. Next re-inserts its own media-keyed metas on navigation, so a
  *  forced theme is expressed by one extra media-less meta placed first in <head> (first match wins). */
 export const THEME_COLOR_META_ID = 'fc-theme-color'

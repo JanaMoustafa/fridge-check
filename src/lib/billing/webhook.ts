@@ -3,6 +3,7 @@ import { createHmac, timingSafeEqual } from 'node:crypto'
 import type { Kysely } from 'kysely'
 import { z } from 'zod'
 import type { Database } from '@/lib/db/schema'
+import { trialEnd } from './access'
 import { PRO_CURRENCY, PRO_PERIOD_DAYS, PRO_PLAN, PRO_PRICE_MINOR } from './plan'
 import { CheckoutSessionSchema, type CheckoutSession } from './xpay'
 
@@ -112,7 +113,14 @@ export async function fulfillCheckout(
       current !== undefined &&
       (current.status === 'active' || current.status === 'canceled') &&
       current.current_period_end > now
-    const start = stillPro ? current.current_period_end : now
+    // Paying during the free trial adds the paid days after the trial, never instead of it.
+    const owner = await trx
+      .selectFrom('user')
+      .select('createdAt')
+      .where('id', '=', payment.user_id)
+      .executeTakeFirst()
+    let start = stillPro ? current.current_period_end : now
+    if (owner && trialEnd(owner.createdAt) > start) start = trialEnd(owner.createdAt)
     const end = new Date(start.getTime() + PRO_PERIOD_DAYS * DAY_MS)
     const period = {
       plan: PRO_PLAN,
@@ -120,7 +128,7 @@ export async function fulfillCheckout(
       cancel_at_period_end: false,
       xpay_customer_id: session.customerId ?? current?.xpay_customer_id ?? null,
       xpay_checkout_session_id: session.id,
-      current_period_start: stillPro ? current.current_period_start : now,
+      current_period_start: stillPro ? current.current_period_start : start,
       current_period_end: end,
     }
     await trx

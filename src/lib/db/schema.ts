@@ -152,6 +152,13 @@ export interface WebhookEventTable {
   error: string | null
 }
 
+/** A member's phone number (optional), apart from the health profile. */
+export interface MemberContactTable {
+  user_id: string
+  phone: string | null
+  updated_at: UpdatedAt
+}
+
 export interface Database {
   user: UserTable
   session: SessionTable
@@ -161,6 +168,7 @@ export interface Database {
   subscription: SubscriptionTable
   payment: PaymentTable
   webhook_event: WebhookEventTable
+  member_contact: MemberContactTable
 }
 
 export type NutritionProfileRow = Selectable<NutritionProfileTable>

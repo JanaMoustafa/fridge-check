@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { DeleteAccountDialog } from '@/components/account/DeleteAccountDialog'
+import { DetailsForm } from '@/components/account/DetailsForm'
 import { GoogleSignInButton } from '@/components/account/GoogleSignInButton'
 import { TargetsCard } from '@/components/account/TargetsCard'
 import { legalLinks } from '@/components/legal/legal-links'
@@ -15,6 +16,7 @@ import { daysLeft } from '@/lib/billing/subscription'
 import { getDb } from '@/lib/db/client'
 import { formatLongDate } from '@/lib/i18n/format-date'
 import { safeNext } from '@/lib/navigation/safe-next'
+import { getDetails } from '@/lib/server/details'
 import { getProfile } from '@/lib/server/profiles'
 import { cancelRenewalAction, resumeRenewalAction, signOutAction } from './actions'
 
@@ -62,6 +64,9 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
         <section className={`${card} space-y-4`}>
           <h1 className="text-2xl font-extrabold">{t('signedOutTitle')}</h1>
           <p className="text-fg-muted">{t('signedOutBody')}</p>
+          <p className="rounded-btn bg-primary-soft px-4 py-3 text-sm font-semibold text-primary">
+            {t('trialPitch')}
+          </p>
           {param('signin') === 'failed' && (
             <p role="alert" className="text-sm font-semibold text-danger">
               {t('signInFailed')}
@@ -77,11 +82,12 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
   }
 
   const now = new Date()
-  const [profile, access, tBilling, locale] = await Promise.all([
+  const [profile, access, tBilling, locale, details] = await Promise.all([
     getProfile(getDb(), user.id, now),
     getProAccess(getDb(), user.id, now),
     getTranslations('billing'),
     getLocale(),
+    getDetails(getDb(), user.id),
   ])
   const remaining = access.periodEnd ? daysLeft(access.periodEnd, now) : 0
   return (
@@ -102,6 +108,14 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
       </header>
 
       {param('saved') === 'profile' && <Notice>{t('profileSaved')}</Notice>}
+      {param('saved') === 'details' && <Notice>{t('detailsSaved')}</Notice>}
+
+      <section aria-labelledby="details-title" className={`${card} space-y-4`}>
+        <h2 id="details-title" className="text-lg font-extrabold">
+          {t('detailsTitle')}
+        </h2>
+        <DetailsForm initial={details ?? { name: user.name, phone: null }} />
+      </section>
 
       <section aria-labelledby="targets-title" className={`${card} space-y-4`}>
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -135,10 +149,28 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
           <span
             className={`rounded-chip px-3 py-1 text-sm font-semibold ${access.isPro ? 'bg-primary text-on-primary' : 'bg-surface-2'}`}
           >
-            {access.isPro ? tBilling('planPro') : t('planFree')}
+            {access.onTrial
+              ? tBilling('planTrial')
+              : access.isPro
+                ? tBilling('planPro')
+                : t('planFree')}
           </span>
         </div>
-        {access.isPro && access.periodEnd ? (
+        {access.onTrial && access.trialEndsAt ? (
+          <>
+            <p>{tBilling('trialUntil', { date: formatLongDate(access.trialEndsAt, locale) })}</p>
+            <p
+              role="status"
+              className="rounded-btn bg-highlight-soft px-4 py-3 text-sm font-semibold text-fg"
+            >
+              {tBilling('trialDaysLeft', { days: daysLeft(access.trialEndsAt, now) })}
+            </p>
+            <Link href="/pro" className={buttonClasses()}>
+              {tBilling('pay', { price: PRO_PRICE_EGP })}
+            </Link>
+            <p className="text-xs text-fg-muted">{tBilling('payAfterTrial')}</p>
+          </>
+        ) : access.isPro && access.periodEnd ? (
           <>
             <p>
               {tBilling(access.cancelAtPeriodEnd ? 'proUntilCanceled' : 'proUntil', {

@@ -24,7 +24,8 @@ beforeEach(async () => {
       email: 't@example.com',
       emailVerified: true,
       image: null,
-      createdAt: NOW,
+      // Signed up 60 days ago: the free trial is over unless a test says otherwise.
+      createdAt: new Date(NOW.getTime() - 60 * DAY),
       updatedAt: NOW,
     })
     .execute()
@@ -54,6 +55,8 @@ describe('getProAccess', () => {
       status: null,
       periodEnd: null,
       cancelAtPeriodEnd: false,
+      onTrial: false,
+      trialEndsAt: new Date(NOW.getTime() - 30 * DAY),
     })
   })
 
@@ -79,5 +82,43 @@ describe('getProAccess', () => {
   it.each(['past_due', 'expired'] as const)('is not Pro when %s', async (status) => {
     await subscribe(status, 10)
     expect(await getProAccess(db, 'u1', NOW)).toMatchObject({ isPro: false, status })
+  })
+
+  it('gives every Pro feature free for the first 30 days after sign-up', async () => {
+    await db
+      .updateTable('user')
+      .set({ createdAt: new Date(NOW.getTime() - 3 * DAY) })
+      .execute()
+    expect(await getProAccess(db, 'u1', NOW)).toMatchObject({
+      isPro: true,
+      onTrial: true,
+      trialEndsAt: new Date(NOW.getTime() + 27 * DAY),
+    })
+    // Day 31: the trial is over.
+    expect(await getProAccess(db, 'u1', new Date(NOW.getTime() + 28 * DAY))).toMatchObject({
+      isPro: false,
+      onTrial: false,
+    })
+  })
+
+  it('a paid period during the trial counts as paid, not trial', async () => {
+    await db
+      .updateTable('user')
+      .set({ createdAt: new Date(NOW.getTime() - 3 * DAY) })
+      .execute()
+    await subscribe('active', 10)
+    expect(await getProAccess(db, 'u1', NOW)).toMatchObject({
+      isPro: true,
+      onTrial: false,
+      status: 'active',
+    })
+  })
+
+  it('an unknown account has no trial', async () => {
+    expect(await getProAccess(db, 'nobody', NOW)).toMatchObject({
+      isPro: false,
+      onTrial: false,
+      trialEndsAt: null,
+    })
   })
 })

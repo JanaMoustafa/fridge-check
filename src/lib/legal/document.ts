@@ -14,11 +14,11 @@ export const LEGAL_PATHS: Record<LegalPage, `/${string}`> = {
 }
 
 /** Who runs the site, as named in the legal pages (owner decision: the brand, no personal name). */
-export const LEGAL_OPERATOR = 'Fridge Check'
+export const LEGAL_OPERATOR = 'BiteDoneRight'
 /** Public contact for privacy questions and refund requests (owner decision). */
 export const LEGAL_EMAIL = 'jana.sabry.abdelwahhab@gmail.com'
 /** When the documents last changed; update it with every change to their meaning. */
-export const LEGAL_UPDATED = new Date('2026-10-09T12:00:00Z')
+export const LEGAL_UPDATED = new Date('2026-10-29T12:00:00Z')
 /** Full refund on request within this many days of a payment (owner decision). */
 export const REFUND_WINDOW_DAYS = 14
 

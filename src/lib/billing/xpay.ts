@@ -66,7 +66,7 @@ export function checkoutSessionBody({ userId, email, name, siteUrl, locale }: Ch
           currency: PRO_CURRENCY,
           unitAmount: PRO_PRICE_MINOR,
           productData: {
-            name: `Fridge Check Pro — ${PRO_PERIOD_DAYS} days`,
+            name: `BiteDoneRight Pro — ${PRO_PERIOD_DAYS} days`,
             description:
               locale === 'ar' ? 'القيم الغذائية وحصصك الشخصية' : 'Nutrition and personal portions',
           },

@@ -63,11 +63,11 @@ describe('pre-paint script', () => {
     expect(attrs.get('data-theme')).toBe('dark')
     expect(head[0]?.id).toBe('fc-theme-color')
     expect(head[0]?.attrs.get('name')).toBe('theme-color')
-    expect(head[0]?.attrs.get('content')).toBe('#121916')
+    expect(head[0]?.attrs.get('content')).toBe('#161d1a')
   })
 
   it('uses the light canvas colour for a forced light theme', () => {
-    expect(run({ local: { 'fc:theme': 'light' } }).head[0]?.attrs.get('content')).toBe('#edf2ef')
+    expect(run({ local: { 'fc:theme': 'light' } }).head[0]?.attrs.get('content')).toBe('#f7f4ea')
   })
 
   it('ignores system or invalid stored themes', () => {

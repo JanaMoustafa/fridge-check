@@ -5,6 +5,8 @@ import { redirect } from 'next/navigation'
 import { getAuth, getSignedInUser } from '@/lib/auth/auth'
 import { cancelRenewal, resumeRenewal } from '@/lib/billing/subscription'
 import { getDb } from '@/lib/db/client'
+import { parseDetailsForm, type DetailsErrors } from '@/lib/account/details'
+import { saveDetails } from '@/lib/server/details'
 import { deleteAccount } from '@/lib/server/profiles'
 
 /** Ends the session and clears its cookie. */
@@ -40,4 +42,32 @@ export async function resumeRenewalAction(): Promise<void> {
   if (!user) redirect('/account')
   await resumeRenewal(getDb(), user.id, new Date())
   redirect('/account')
+}
+
+export interface DetailsFormState {
+  errors?: DetailsErrors
+  values?: Record<string, string>
+  failed?: boolean
+}
+
+/** Saves the signed-in member's name and phone (the session decides whose). */
+export async function saveDetailsAction(
+  _previous: DetailsFormState,
+  formData: FormData,
+): Promise<DetailsFormState> {
+  const user = await getSignedInUser()
+  if (!user) redirect('/account')
+  const form = {
+    name: String(formData.get('name') ?? ''),
+    phone: String(formData.get('phone') ?? ''),
+  }
+  const parsed = parseDetailsForm(form)
+  if (!parsed.ok) return { errors: parsed.errors, values: form }
+  try {
+    await saveDetails(getDb(), user.id, parsed.values, new Date())
+  } catch (error) {
+    console.error('[details] save failed', error instanceof Error ? error.message : error)
+    return { failed: true, values: form }
+  }
+  redirect('/account?saved=details')
 }

@@ -1,4 +1,4 @@
-import { PRO_PERIOD_DAYS, PRO_PRICE_EGP } from '@/lib/billing/plan'
+import { PRO_PERIOD_DAYS, PRO_PRICE_EGP, TRIAL_DAYS } from '@/lib/billing/plan'
 import type { Locale } from '@/lib/i18n/locale'
 import {
   EMAIL_LINK,
@@ -10,14 +10,14 @@ import {
 
 const en: LegalDocument = {
   title: 'Terms of use',
-  description: 'The rules for using Fridge Check and buying Fridge Check Pro.',
-  intro: `These terms apply when you use Fridge Check, which is run by ${LEGAL_OPERATOR} (“we”, “us”). By using the site, creating an account or paying for Pro, you agree to them. Please also read our [privacy policy](${LEGAL_PATHS.privacy}) and [refund policy](${LEGAL_PATHS.refunds}).`,
+  description: 'The rules for using BiteDoneRight and buying BiteDoneRight Pro.',
+  intro: `These terms apply when you use BiteDoneRight, which is run by ${LEGAL_OPERATOR} (“we”, “us”). By using the site, creating an account or paying for Pro, you agree to them. Please also read our [privacy policy](${LEGAL_PATHS.privacy}) and [refund policy](${LEGAL_PATHS.refunds}).`,
   sections: [
     {
       id: 'service',
-      heading: 'What Fridge Check is',
+      heading: 'What BiteDoneRight is',
       blocks: [
-        'Fridge Check suggests recipes based on the ingredients you have, using recipes from TheMealDB and Spoonacular. The free features need no account. Fridge Check Pro adds a nutrition profile, nutrition values for recipes and personal portion sizes.',
+        'BiteDoneRight suggests recipes based on the ingredients you have, using recipes from TheMealDB and Spoonacular. The free features need no account. BiteDoneRight Pro adds a nutrition profile, nutrition values for recipes and personal portion sizes.',
       ],
     },
     {
@@ -52,7 +52,7 @@ const en: LegalDocument = {
         {
           list: [
             'You need a Google account to sign in, and you must be 18 or older.',
-            'Keep your Google account secure: anyone who can sign in to it can use your Fridge Check account.',
+            'Keep your Google account secure: anyone who can sign in to it can use your BiteDoneRight account.',
             'You can delete your account at any time from your account page.',
           ],
         },
@@ -60,10 +60,11 @@ const en: LegalDocument = {
     },
     {
       id: 'pro',
-      heading: 'Fridge Check Pro',
+      heading: 'BiteDoneRight Pro',
       blocks: [
         {
           list: [
+            `Every new account gets every Pro feature free for its first ${TRIAL_DAYS} days, with no card needed. If you pay during the trial, the paid days start when the trial ends.`,
             `Pro costs ${PRO_PRICE_EGP} EGP for ${PRO_PERIOD_DAYS} days. The price is shown before you pay, and you pay once: nothing renews or charges you automatically.`,
             'Payments are handled by XPay. Pro starts as soon as XPay confirms your payment (with Fawry, once you have paid your reference).',
             `If you pay again while you still have Pro, the new ${PRO_PERIOD_DAYS} days start when your current ones end.`,
@@ -84,7 +85,7 @@ const en: LegalDocument = {
             'use automated tools to copy recipes or send large numbers of requests;',
             'try to get around the payment, the limits or the security of the site;',
             'share or resell Pro access, or use someone else’s account;',
-            'use Fridge Check for anything illegal.',
+            'use BiteDoneRight for anything illegal.',
           ],
         },
         'We may limit or suspend access for anyone who does. If we suspend a Pro account through no fault of yours, we refund its unused days.',
@@ -94,28 +95,28 @@ const en: LegalDocument = {
       id: 'content',
       heading: 'Content and credits',
       blocks: [
-        'The Fridge Check name, design and software belong to us. Recipes and photos belong to their owners and are shown from TheMealDB and Spoonacular. Nutrition values come from USDA FoodData Central, which is in the public domain.',
+        'The BiteDoneRight name, design and software belong to us. Recipes and photos belong to their owners and are shown from TheMealDB and Spoonacular. Nutrition values come from USDA FoodData Central, which is in the public domain.',
       ],
     },
     {
       id: 'availability',
       heading: 'Availability and changes',
       blocks: [
-        'We work to keep Fridge Check available but can’t promise it always will be. The recipe services we depend on have their own limits: for example, when Spoonacular’s daily limit is reached, searches use our built-in recipes until it resets. We may change or improve features at any time.',
+        'We work to keep BiteDoneRight available but can’t promise it always will be. The recipe services we depend on have their own limits: for example, when Spoonacular’s daily limit is reached, searches use our built-in recipes until it resets. We may change or improve features at any time.',
       ],
     },
     {
       id: 'liability',
       heading: 'Liability',
       blocks: [
-        'Fridge Check is provided as it is. As far as the law allows, we are not liable for indirect losses, and our total liability to you is limited to what you paid us in the 12 months before the claim. Nothing in these terms limits your rights under Egyptian consumer protection law.',
+        'BiteDoneRight is provided as it is. As far as the law allows, we are not liable for indirect losses, and our total liability to you is limited to what you paid us in the 12 months before the claim. Nothing in these terms limits your rights under Egyptian consumer protection law.',
       ],
     },
     {
       id: 'changes',
       heading: 'Changes to these terms',
       blocks: [
-        'We may update these terms. We will change the date at the top of this page and announce important changes on the site before they take effect. If you keep using Fridge Check after a change takes effect, the new terms apply.',
+        'We may update these terms. We will change the date at the top of this page and announce important changes on the site before they take effect. If you keep using BiteDoneRight after a change takes effect, the new terms apply.',
       ],
     },
     {
@@ -130,14 +131,14 @@ const en: LegalDocument = {
 
 const ar: LegalDocument = {
   title: 'شروط الاستخدام',
-  description: 'قواعد استخدام Fridge Check وشراء اشتراك Fridge Check Pro.',
-  intro: `تسري هذه الشروط عند استخدامك Fridge Check، الذي يديره ${LEGAL_OPERATOR} («نحن»). باستخدامك الموقع أو إنشاء حساب أو الدفع مقابل Pro فإنك توافق عليها. يُرجى أيضًا قراءة [سياسة الخصوصية](${LEGAL_PATHS.privacy}) و[سياسة الاسترداد](${LEGAL_PATHS.refunds}).`,
+  description: 'قواعد استخدام BiteDoneRight وشراء اشتراك BiteDoneRight Pro.',
+  intro: `تسري هذه الشروط عند استخدامك BiteDoneRight، الذي يديره ${LEGAL_OPERATOR} («نحن»). باستخدامك الموقع أو إنشاء حساب أو الدفع مقابل Pro فإنك توافق عليها. يُرجى أيضًا قراءة [سياسة الخصوصية](${LEGAL_PATHS.privacy}) و[سياسة الاسترداد](${LEGAL_PATHS.refunds}).`,
   sections: [
     {
       id: 'service',
-      heading: 'ما هو Fridge Check',
+      heading: 'ما هو BiteDoneRight',
       blocks: [
-        'يقترح Fridge Check وصفات بناءً على المكونات المتوفرة لديك، مستعينًا بوصفات من TheMealDB وSpoonacular. لا تحتاج الميزات المجانية إلى حساب. ويضيف Fridge Check Pro ملفًا غذائيًا وقيمًا غذائية للوصفات وأحجام حصص شخصية.',
+        'يقترح BiteDoneRight وصفات بناءً على المكونات المتوفرة لديك، مستعينًا بوصفات من TheMealDB وSpoonacular. لا تحتاج الميزات المجانية إلى حساب. ويضيف BiteDoneRight Pro ملفًا غذائيًا وقيمًا غذائية للوصفات وأحجام حصص شخصية.',
       ],
     },
     {
@@ -172,7 +173,7 @@ const ar: LegalDocument = {
         {
           list: [
             'تحتاج إلى حساب Google لتسجيل الدخول، ويجب أن يكون عمرك 18 عامًا أو أكثر.',
-            'حافظ على أمان حسابك في Google: فكل من يستطيع الدخول إليه يستطيع استخدام حسابك في Fridge Check.',
+            'حافظ على أمان حسابك في Google: فكل من يستطيع الدخول إليه يستطيع استخدام حسابك في BiteDoneRight.',
             'يمكنك حذف حسابك في أي وقت من صفحة حسابك.',
           ],
         },
@@ -180,10 +181,11 @@ const ar: LegalDocument = {
     },
     {
       id: 'pro',
-      heading: 'Fridge Check Pro',
+      heading: 'BiteDoneRight Pro',
       blocks: [
         {
           list: [
+            `يحصل كل حساب جديد على كل ميزات Pro مجانًا خلال أول ${TRIAL_DAYS} يومًا، دون الحاجة إلى بطاقة. وإذا دفعت أثناء التجربة، تبدأ الأيام المدفوعة عند انتهائها.`,
             `سعر اشتراك Pro هو ${PRO_PRICE_EGP} جنيه مقابل ${PRO_PERIOD_DAYS} يومًا. يظهر السعر قبل الدفع، وتدفع مرة واحدة: لا يتجدد شيء ولا يُخصم منك أي مبلغ تلقائيًا.`,
             'تتولى XPay معالجة المدفوعات. يبدأ Pro فور تأكيد XPay للدفع (وفي حالة فوري، بعد دفع الرقم المرجعي).',
             `إذا دفعت مجددًا وما زال لديك Pro، تبدأ الأيام الـ ${PRO_PERIOD_DAYS} الجديدة عند انتهاء أيامك الحالية.`,
@@ -204,7 +206,7 @@ const ar: LegalDocument = {
             'استخدام أدوات آلية لنسخ الوصفات أو إرسال أعداد كبيرة من الطلبات؛',
             'محاولة التحايل على الدفع أو الحدود أو أمان الموقع؛',
             'مشاركة اشتراك Pro أو إعادة بيعه، أو استخدام حساب شخص آخر؛',
-            'استخدام Fridge Check في أي غرض غير قانوني.',
+            'استخدام BiteDoneRight في أي غرض غير قانوني.',
           ],
         },
         'قد نقيّد أو نوقف وصول من يفعل ذلك. وإذا أوقفنا حساب Pro دون خطأ منك، نرد قيمة أيامه غير المستخدمة.',
@@ -214,28 +216,28 @@ const ar: LegalDocument = {
       id: 'content',
       heading: 'المحتوى وحقوقه',
       blocks: [
-        'اسم Fridge Check وتصميمه وبرمجياته ملك لنا. الوصفات والصور ملك لأصحابها وتُعرض من TheMealDB وSpoonacular. والقيم الغذائية مأخوذة من قاعدة بيانات USDA FoodData Central، وهي ملك عام.',
+        'اسم BiteDoneRight وتصميمه وبرمجياته ملك لنا. الوصفات والصور ملك لأصحابها وتُعرض من TheMealDB وSpoonacular. والقيم الغذائية مأخوذة من قاعدة بيانات USDA FoodData Central، وهي ملك عام.',
       ],
     },
     {
       id: 'availability',
       heading: 'التوفر والتغييرات',
       blocks: [
-        'نعمل على إبقاء Fridge Check متاحًا، لكن لا نضمن توفره دائمًا. ولخدمات الوصفات التي نعتمد عليها حدودها الخاصة: فمثلًا، عند بلوغ الحد اليومي لـ Spoonacular يعتمد البحث على وصفاتنا المدمجة حتى يُعاد ضبطه. وقد نغيّر الميزات أو نحسّنها في أي وقت.',
+        'نعمل على إبقاء BiteDoneRight متاحًا، لكن لا نضمن توفره دائمًا. ولخدمات الوصفات التي نعتمد عليها حدودها الخاصة: فمثلًا، عند بلوغ الحد اليومي لـ Spoonacular يعتمد البحث على وصفاتنا المدمجة حتى يُعاد ضبطه. وقد نغيّر الميزات أو نحسّنها في أي وقت.',
       ],
     },
     {
       id: 'liability',
       heading: 'المسؤولية',
       blocks: [
-        'يُقدَّم Fridge Check كما هو. وفي الحدود التي يسمح بها القانون، لا نتحمل المسؤولية عن الخسائر غير المباشرة، ولا تتجاوز مسؤوليتنا الإجمالية تجاهك ما دفعته لنا خلال الاثني عشر شهرًا السابقة للمطالبة. ولا يحدّ أي شيء في هذه الشروط من حقوقك بموجب قانون حماية المستهلك المصري.',
+        'يُقدَّم BiteDoneRight كما هو. وفي الحدود التي يسمح بها القانون، لا نتحمل المسؤولية عن الخسائر غير المباشرة، ولا تتجاوز مسؤوليتنا الإجمالية تجاهك ما دفعته لنا خلال الاثني عشر شهرًا السابقة للمطالبة. ولا يحدّ أي شيء في هذه الشروط من حقوقك بموجب قانون حماية المستهلك المصري.',
       ],
     },
     {
       id: 'changes',
       heading: 'تغيير هذه الشروط',
       blocks: [
-        'قد نحدّث هذه الشروط. سنغيّر التاريخ أعلى هذه الصفحة ونعلن عن التغييرات المهمة على الموقع قبل سريانها. وإذا واصلت استخدام Fridge Check بعد سريان التغيير، تسري عليك الشروط الجديدة.',
+        'قد نحدّث هذه الشروط. سنغيّر التاريخ أعلى هذه الصفحة ونعلن عن التغييرات المهمة على الموقع قبل سريانها. وإذا واصلت استخدام BiteDoneRight بعد سريان التغيير، تسري عليك الشروط الجديدة.',
       ],
     },
     {

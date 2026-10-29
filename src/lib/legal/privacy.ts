@@ -3,8 +3,8 @@ import { EMAIL_LINK, LEGAL_OPERATOR, LEGAL_PATHS, type LegalDocument } from './d
 
 const en: LegalDocument = {
   title: 'Privacy policy',
-  description: 'What Fridge Check collects, why, who receives it, and how to delete it.',
-  intro: `Fridge Check works without an account, and then we store nothing about you on our servers. This policy explains what happens when you search, when you sign in and when you buy Pro. Questions: ${EMAIL_LINK}.`,
+  description: 'What BiteDoneRight collects, why, who receives it, and how to delete it.',
+  intro: `BiteDoneRight works without an account, and then we store nothing about you on our servers. This policy explains what happens when you search, when you sign in and when you buy Pro. Questions: ${EMAIL_LINK}.`,
   sections: [
     {
       id: 'who',
@@ -15,7 +15,7 @@ const en: LegalDocument = {
     },
     {
       id: 'without-account',
-      heading: 'Using Fridge Check without an account',
+      heading: 'Using BiteDoneRight without an account',
       blocks: [
         'You can search, open recipes, save favorites and keep a shopping list without signing in.',
         {
@@ -38,6 +38,7 @@ const en: LegalDocument = {
           list: [
             'From Google we receive your name, email address, profile picture and Google account ID. We also store the sign-in tokens Google issues, and never use them to access anything else in your Google account.',
             'Each sign-in creates a session that ends when you sign out or after 30 days without a visit. We store it with the IP address and browser it came from, to recognise and protect sessions, and a cookie keeps you signed in.',
+            'If you add a phone number on your account page, we store it only to contact you about your account. It is optional, and you can remove it at any time.',
           ],
         },
       ],
@@ -75,7 +76,7 @@ const en: LegalDocument = {
       id: 'sharing',
       heading: 'Who receives data',
       blocks: [
-        'We never sell personal data. These companies process it for us, only to run Fridge Check:',
+        'We never sell personal data. These companies process it for us, only to run BiteDoneRight:',
         {
           list: [
             'Vercel (hosting): every request to the site. Our server code runs in Frankfurt, Germany.',
@@ -94,7 +95,7 @@ const en: LegalDocument = {
       blocks: [
         {
           list: [
-            'Account, nutrition profile and Pro status: until you delete your account.',
+            'Account, phone number, nutrition profile and Pro status: until you delete your account.',
             'Sessions: until you sign out, or 30 days without a visit.',
             'Payment records: as long as the law requires for financial records, even after you delete your account, but no longer linked to it.',
             'Hosting logs: for a short time, under Vercel’s own policy.',
@@ -127,7 +128,7 @@ const en: LegalDocument = {
       id: 'security',
       heading: 'Security',
       blocks: [
-        'Connections to the site and to our database are encrypted, payment and sign-in secrets stay on the server, and only the people who run Fridge Check can access the database.',
+        'Connections to the site and to our database are encrypted, payment and sign-in secrets stay on the server, and only the people who run BiteDoneRight can access the database.',
       ],
     },
     {
@@ -142,8 +143,8 @@ const en: LegalDocument = {
 
 const ar: LegalDocument = {
   title: 'سياسة الخصوصية',
-  description: 'ما يجمعه Fridge Check، ولماذا، ومن يتلقاه، وكيف تحذفه.',
-  intro: `يعمل Fridge Check دون حساب، وفي هذه الحالة لا نخزّن عنك شيئًا على خوادمنا. توضح هذه السياسة ما يحدث عندما تبحث، وعندما تسجّل الدخول، وعندما تشتري Pro. للأسئلة: ${EMAIL_LINK}.`,
+  description: 'ما يجمعه BiteDoneRight، ولماذا، ومن يتلقاه، وكيف تحذفه.',
+  intro: `يعمل BiteDoneRight دون حساب، وفي هذه الحالة لا نخزّن عنك شيئًا على خوادمنا. توضح هذه السياسة ما يحدث عندما تبحث، وعندما تسجّل الدخول، وعندما تشتري Pro. للأسئلة: ${EMAIL_LINK}.`,
   sections: [
     {
       id: 'who',
@@ -154,7 +155,7 @@ const ar: LegalDocument = {
     },
     {
       id: 'without-account',
-      heading: 'استخدام Fridge Check دون حساب',
+      heading: 'استخدام BiteDoneRight دون حساب',
       blocks: [
         'يمكنك البحث وفتح الوصفات وحفظ المفضلة والاحتفاظ بقائمة تسوّق دون تسجيل الدخول.',
         {
@@ -177,6 +178,7 @@ const ar: LegalDocument = {
           list: [
             'نتلقى من Google اسمك وبريدك الإلكتروني وصورة ملفك الشخصي ومعرّف حسابك في Google. ونخزّن أيضًا رموز الدخول التي تصدرها Google، ولا نستخدمها أبدًا للوصول إلى أي شيء آخر في حسابك على Google.',
             'ينشئ كل تسجيل دخول جلسةً تنتهي عند تسجيل خروجك أو بعد 30 يومًا دون زيارة. نخزّنها مع عنوان IP والمتصفح اللذين جاءت منهما لنتعرّف على الجلسات ونحميها، ويُبقيك ملف تعريف ارتباط مسجّلًا الدخول.',
+            'إذا أضفت رقم هاتف في صفحة حسابك، نحفظه فقط للتواصل معك بشأن حسابك. إضافته اختيارية ويمكنك حذفه في أي وقت.',
           ],
         },
       ],
@@ -214,7 +216,7 @@ const ar: LegalDocument = {
       id: 'sharing',
       heading: 'من يتلقى البيانات',
       blocks: [
-        'لا نبيع البيانات الشخصية أبدًا. تعالجها الشركات التالية نيابةً عنا، ولتشغيل Fridge Check فقط:',
+        'لا نبيع البيانات الشخصية أبدًا. تعالجها الشركات التالية نيابةً عنا، ولتشغيل BiteDoneRight فقط:',
         {
           list: [
             'Vercel (الاستضافة): كل طلب يصل إلى الموقع. وتعمل برمجيات خادمنا في فرانكفورت بألمانيا.',
@@ -233,7 +235,7 @@ const ar: LegalDocument = {
       blocks: [
         {
           list: [
-            'الحساب والملف الغذائي وحالة Pro: حتى تحذف حسابك.',
+            'الحساب ورقم الهاتف والملف الغذائي وحالة Pro: حتى تحذف حسابك.',
             'الجلسات: حتى تسجّل الخروج، أو 30 يومًا دون زيارة.',
             'سجلات الدفع: المدة التي يفرضها القانون للسجلات المالية، حتى بعد حذف حسابك، لكنها لا تعود مرتبطة به.',
             'سجلات الاستضافة: لفترة قصيرة وفق سياسة Vercel.',
@@ -266,7 +268,7 @@ const ar: LegalDocument = {
       id: 'security',
       heading: 'الأمان',
       blocks: [
-        'الاتصال بالموقع وبقاعدة بياناتنا مشفّر، وتبقى أسرار الدفع وتسجيل الدخول على الخادم، ولا يصل إلى قاعدة البيانات إلا القائمون على Fridge Check.',
+        'الاتصال بالموقع وبقاعدة بياناتنا مشفّر، وتبقى أسرار الدفع وتسجيل الدخول على الخادم، ولا يصل إلى قاعدة البيانات إلا القائمون على BiteDoneRight.',
       ],
     },
     {

@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "Fridge Check — اطبخ بما لديك",
-    "description": "أضف المكونات الموجودة في ثلاجتك واعثر على وصفات تستخدمها، مع معرفة ما ينقصك بالضبط."
+    "title": "BiteDoneRight: كُل صح وتمرّن صح",
+    "description": "اعثر على وصفات مما في ثلاجتك، مع قيم غذائية وحصص تناسب أهدافك."
   },
   "common": {
-    "appName": "Fridge Check",
+    "appName": "BiteDoneRight",
     "skipToContent": "انتقل إلى المحتوى الرئيسي",
     "close": "إغلاق"
   },
@@ -25,7 +25,7 @@
   "settings": {
     "open": "فتح الإعدادات",
     "title": "الإعدادات",
-    "description": "اختر مظهر Fridge Check وطريقة عمله.",
+    "description": "اختر مظهر BiteDoneRight وطريقة عمله.",
     "theme": {
       "label": "المظهر",
       "light": "فاتح",
@@ -84,8 +84,8 @@
     "import": "استيراد",
     "importDone": "تم استيراد {added, number, latn} جديدة وتحديث {updated, number, latn}.",
     "importInvalid": "{count, plural, one {تم تخطي إدخال واحد غير صالح.} two {تم تخطي إدخالين غير صالحين.} few {تم تخطي {count, number, latn} إدخالات غير صالحة.} many {تم تخطي {count, number, latn} إدخالًا غير صالح.} other {تم تخطي {count, number, latn} إدخال غير صالح.}}",
-    "importTooLarge": "هذا الملف أكبر من أن يكون ملف تصدير من Fridge Check.",
-    "importUnreadable": "هذا الملف ليس ملف تصدير للمفضلة من Fridge Check.",
+    "importTooLarge": "هذا الملف أكبر من أن يكون ملف تصدير من BiteDoneRight.",
+    "importUnreadable": "هذا الملف ليس ملف تصدير للمفضلة من BiteDoneRight.",
     "savedCopy": "اعرض النسخة المحفوظة",
     "hideSavedCopy": "أخفِ النسخة المحفوظة",
     "noSavedCopy": "نحتفظ بعنوان هذه الوصفة وصورتها فقط."
@@ -273,7 +273,7 @@
     "allergy": "تحقق دائمًا من ملصقات المكونات إذا كانت لديك حساسية من أي طعام.",
     "source": "الوصفة الأصلية: <link>{site}</link>",
     "attribution": "الوصفة والصورة من <link>TheMealDB</link>",
-    "printedFrom": "طُبعت من Fridge Check:",
+    "printedFrom": "طُبعت من BiteDoneRight:",
     "poweredBySpoonacular": "بدعم من <link>spoonacular</link>",
     "print": "طباعة",
     "share": "مشاركة",
@@ -350,7 +350,25 @@
     "cancel": "إلغاء",
     "deleted": "تم حذف حسابك وبياناته.",
     "disclaimer": "إرشادات عامة للبالغين الأصحاء، وليست نصيحة طبية.",
-    "agree": "بتسجيل الدخول، فإنك توافق على <terms>شروط الاستخدام</terms> و<privacy>سياسة الخصوصية</privacy>."
+    "agree": "بتسجيل الدخول، فإنك توافق على <terms>شروط الاستخدام</terms> و<privacy>سياسة الخصوصية</privacy>.",
+    "trialPitch": "الحسابات الجديدة تحصل على كل ميزات Pro مجانًا لمدة 30 يومًا، دون الحاجة إلى بطاقة.",
+    "detailsTitle": "بياناتك",
+    "detailsName": "الاسم بالكامل",
+    "detailsPhone": "رقم الهاتف",
+    "detailsPhoneHint": "اختياري. نستخدمه فقط للتواصل معك بشأن حسابك.",
+    "detailsSave": "حفظ البيانات",
+    "detailsSaving": "جارٍ الحفظ…",
+    "detailsSaved": "تم حفظ بياناتك.",
+    "detailsFailed": "تعذّر حفظ بياناتك. حاول مرة أخرى.",
+    "detailsErrors": {
+      "name": {
+        "required": "اكتب اسمك.",
+        "tooLong": "استخدم 80 حرفًا أو أقل."
+      },
+      "phone": {
+        "invalid": "اكتب رقم هاتف من 7 إلى 15 رقمًا، مثل ‎+20 100 123 4567."
+      }
+    }
   },
   "profile": {
     "metaTitle": "الملف الغذائي",
@@ -416,7 +434,7 @@
       "snacks": "الوجبات الخفيفة"
     },
     "mealSplitTotal": "المجموع: {total, number, latn}%",
-    "consent": "أوافق على أن يحفظ Fridge Check هذه التفاصيل الصحية لحساب أهدافي.",
+    "consent": "أوافق على أن يحفظ BiteDoneRight هذه التفاصيل الصحية لحساب أهدافي.",
     "save": "احفظ واحسب",
     "saving": "جارٍ الحفظ…",
     "errorSummary": "يُرجى مراجعة الحقول المحدّدة.",
@@ -479,8 +497,8 @@
     "disclaimer": "إرشادات عامة، وليست نصيحة طبية."
   },
   "pro": {
-    "metaTitle": "Fridge Check Pro",
-    "title": "Fridge Check Pro",
+    "metaTitle": "BiteDoneRight Pro",
+    "title": "BiteDoneRight Pro",
     "tagline": "اطبخ بما لديك، وكُل ما يناسب يومك.",
     "benefits": {
       "nutrition": "السعرات والبروتين والكربوهيدرات والدهون لكل وصفة ولكل مكوّن",
@@ -494,13 +512,15 @@
     "youHavePro": "لديك Pro حتى {date}.",
     "comingSoon": "سيُفتح الدفع قريبًا جدًا.",
     "unavailable": "Pro غير متاح في هذه النسخة من التطبيق.",
-    "agree": "بالدفع، فإنك توافق على <terms>شروط الاستخدام</terms>. غيّرت رأيك؟ استرداد كامل خلال {days, number, latn} يومًا: راجع <refunds>سياسة الاسترداد</refunds>."
+    "agree": "بالدفع، فإنك توافق على <terms>شروط الاستخدام</terms>. غيّرت رأيك؟ استرداد كامل خلال {days, number, latn} يومًا: راجع <refunds>سياسة الاسترداد</refunds>.",
+    "trialPitch": "الحسابات الجديدة تحصل على كل ميزات Pro مجانًا لمدة 30 يومًا، دون الحاجة إلى بطاقة.",
+    "youHaveTrial": "تجربة مجانية: كل الميزات متاحة حتى {date}."
   },
   "billing": {
     "pay": "ادفع {price, number, latn} جنيه عبر XPay",
     "renew": "أضف 30 يومًا ({price, number, latn} جنيه)",
     "redirecting": "جارٍ فتح XPay…",
-    "secureNote": "ستدفع على صفحة XPay الآمنة (بطاقة أو فوري أو ValU). لا تصل بيانات بطاقتك إلى Fridge Check أبدًا.",
+    "secureNote": "ستدفع على صفحة XPay الآمنة (بطاقة أو فوري أو ValU). لا تصل بيانات بطاقتك إلى BiteDoneRight أبدًا.",
     "errors": {
       "unavailable": "الدفع غير متاح الآن. حاول لاحقًا.",
       "failed": "تعذّر فتح صفحة الدفع. حاول مرة أخرى.",
@@ -525,6 +545,10 @@
     "upgrade": "الترقية إلى Pro",
     "cancelReminders": "إيقاف تذكيرات التجديد",
     "resumeReminders": "إعادة تشغيل التذكيرات",
-    "cancelNote": "لا يتجدد شيء تلقائيًا: كل 30 يومًا دفعة منفصلة."
+    "cancelNote": "لا يتجدد شيء تلقائيًا: كل 30 يومًا دفعة منفصلة.",
+    "planTrial": "تجربة مجانية",
+    "trialUntil": "كل الميزات متاحة لك حتى {date}.",
+    "trialDaysLeft": "{days, plural, =0 {تنتهي تجربتك المجانية اليوم.} one {بقي يوم واحد في تجربتك المجانية.} two {بقي يومان في تجربتك المجانية.} few {بقيت {days, number, latn} أيام في تجربتك المجانية.} many {بقي {days, number, latn} يومًا في تجربتك المجانية.} other {بقي {days, number, latn} يوم في تجربتك المجانية.}}",
+    "payAfterTrial": "الدفع الآن يضيف 30 يومًا بعد انتهاء تجربتك المجانية."
   }
 }

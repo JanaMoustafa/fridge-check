@@ -12,3 +12,8 @@ auditConfig:
     # braces <= 3.0.3 (no fixed release yet): denial of service on deeply nested glob patterns.
     # Dev-only (eslint-config-next → fast-glob), fed only our own lint patterns; never shipped.
     - GHSA-vfj7-8cjw-p6xm
+overrides:
+  # Security floors for transitive copies (pnpm audit --prod): zod via @vercel/cli-config,
+  # undici via better-auth → jsdom.
+  zod: '>=4.6.6'
+  undici: '>=8.12.2 <9'

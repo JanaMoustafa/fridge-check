@@ -7,3 +7,5 @@ export const PRO_PRICE_EGP = 200
 export const PRO_PRICE_MINOR = PRO_PRICE_EGP * 100
 export const PRO_CURRENCY = 'EGP' as const
 export const PRO_PERIOD_DAYS = 30
+/** Every new account gets every Pro feature free for this many days from sign-up. */
+export const TRIAL_DAYS = 30

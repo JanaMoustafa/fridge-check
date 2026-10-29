@@ -34,7 +34,12 @@ export default async function ProPage() {
   }
   const user = await getSignedInUser()
   const access = user ? await getProAccess(getDb(), user.id, new Date()) : null
-  const until = access?.isPro && access.periodEnd ? formatLongDate(access.periodEnd, locale) : null
+  const until =
+    access?.isPro && !access.onTrial && access.periodEnd
+      ? formatLongDate(access.periodEnd, locale)
+      : null
+  const trialUntil =
+    access?.onTrial && access.trialEndsAt ? formatLongDate(access.trialEndsAt, locale) : null
   const tBilling = await getTranslations('billing')
   const payments = getXPay() !== null
 
@@ -65,16 +70,27 @@ export default async function ProPage() {
           <span className="text-fg-muted">{t('period')}</span>
         </p>
         <p className="text-center text-sm text-fg-muted">{t('noAutoRenew')}</p>
+        {!user && (
+          <p className="rounded-btn bg-primary-soft px-4 py-3 text-center text-sm font-semibold text-primary">
+            {t('trialPitch')}
+          </p>
+        )}
         <div className="text-center">
           {until && (
             <p role="status" className="mb-3 font-semibold text-have">
               {t('youHavePro', { date: until })}
             </p>
           )}
+          {trialUntil && (
+            <p role="status" className="mb-3 font-semibold text-have">
+              {t('youHaveTrial', { date: trialUntil })}
+            </p>
+          )}
           {user && payments ? (
             <div className="space-y-3">
               <CheckoutButton label={tBilling(until ? 'renew' : 'pay', { price: PRO_PRICE_EGP })} />
               <p className="text-xs text-fg-muted">{tBilling('secureNote')}</p>
+              {trialUntil && <p className="text-xs text-fg-muted">{tBilling('payAfterTrial')}</p>}
               <p className="text-xs text-fg-muted">
                 {t.rich('agree', { ...legalLinks, days: REFUND_WINDOW_DAYS })}
               </p>

@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "Fridge Check — cook with what you have",
-    "description": "Add the ingredients in your fridge and find recipes that use them, with exactly what's missing."
+    "title": "BiteDoneRight: eat right, train right",
+    "description": "Find recipes from what is in your fridge, with nutrition and portions sized to your own goals."
   },
   "common": {
-    "appName": "Fridge Check",
+    "appName": "BiteDoneRight",
     "skipToContent": "Skip to main content",
     "close": "Close"
   },
@@ -25,7 +25,7 @@
   "settings": {
     "open": "Open settings",
     "title": "Settings",
-    "description": "Choose how Fridge Check looks and behaves.",
+    "description": "Choose how BiteDoneRight looks and behaves.",
     "theme": {
       "label": "Theme",
       "light": "Light",
@@ -84,8 +84,8 @@
     "import": "Import",
     "importDone": "Imported {added, number} new and {updated, number} updated.",
     "importInvalid": "{count, plural, one {# entry was skipped because it wasn't valid.} other {# entries were skipped because they weren't valid.}}",
-    "importTooLarge": "That file is too large to be a Fridge Check export.",
-    "importUnreadable": "That file isn't a Fridge Check favorites export.",
+    "importTooLarge": "That file is too large to be a BiteDoneRight export.",
+    "importUnreadable": "That file isn't a BiteDoneRight favorites export.",
     "savedCopy": "Show saved copy",
     "hideSavedCopy": "Hide saved copy",
     "noSavedCopy": "Only the title and photo are kept for this recipe."
@@ -273,7 +273,7 @@
     "allergy": "Always check ingredient labels if you have a food allergy.",
     "source": "Original recipe: <link>{site}</link>",
     "attribution": "Recipe and photo from <link>TheMealDB</link>",
-    "printedFrom": "Printed from Fridge Check:",
+    "printedFrom": "Printed from BiteDoneRight:",
     "poweredBySpoonacular": "Powered by <link>spoonacular</link>",
     "print": "Print",
     "share": "Share",
@@ -350,7 +350,25 @@
     "cancel": "Cancel",
     "deleted": "Your account and its data were deleted.",
     "disclaimer": "General guidance for healthy adults, not medical advice.",
-    "agree": "By signing in, you agree to the <terms>terms of use</terms> and the <privacy>privacy policy</privacy>."
+    "agree": "By signing in, you agree to the <terms>terms of use</terms> and the <privacy>privacy policy</privacy>.",
+    "trialPitch": "New accounts get every Pro feature free for 30 days. No card needed.",
+    "detailsTitle": "Your details",
+    "detailsName": "Full name",
+    "detailsPhone": "Phone number",
+    "detailsPhoneHint": "Optional. Used only to contact you about your account.",
+    "detailsSave": "Save details",
+    "detailsSaving": "Saving…",
+    "detailsSaved": "Your details are saved.",
+    "detailsFailed": "Your details couldn't be saved. Try again.",
+    "detailsErrors": {
+      "name": {
+        "required": "Enter your name.",
+        "tooLong": "Use 80 characters or fewer."
+      },
+      "phone": {
+        "invalid": "Enter a phone number of 7 to 15 digits, for example +20 100 123 4567."
+      }
+    }
   },
   "profile": {
     "metaTitle": "Nutrition profile",
@@ -416,7 +434,7 @@
       "snacks": "Snacks"
     },
     "mealSplitTotal": "Total: {total, number, latn}%",
-    "consent": "I agree to Fridge Check storing these health details to calculate my targets.",
+    "consent": "I agree to BiteDoneRight storing these health details to calculate my targets.",
     "save": "Save and calculate",
     "saving": "Saving…",
     "errorSummary": "Please check the highlighted fields.",
@@ -479,8 +497,8 @@
     "disclaimer": "General guidance, not medical advice."
   },
   "pro": {
-    "metaTitle": "Fridge Check Pro",
-    "title": "Fridge Check Pro",
+    "metaTitle": "BiteDoneRight Pro",
+    "title": "BiteDoneRight Pro",
     "tagline": "Cook with what you have, eat what fits your day.",
     "benefits": {
       "nutrition": "Calories, protein, carbs and fat for every recipe and each ingredient",
@@ -494,13 +512,15 @@
     "youHavePro": "You have Pro until {date}.",
     "comingSoon": "Payments open very soon.",
     "unavailable": "Pro isn't available on this version of the app.",
-    "agree": "By paying, you agree to the <terms>terms of use</terms>. Changed your mind? A full refund within {days, number, latn} days: see the <refunds>refund policy</refunds>."
+    "agree": "By paying, you agree to the <terms>terms of use</terms>. Changed your mind? A full refund within {days, number, latn} days: see the <refunds>refund policy</refunds>.",
+    "trialPitch": "New accounts get every Pro feature free for 30 days. No card needed.",
+    "youHaveTrial": "Free trial: everything unlocked until {date}."
   },
   "billing": {
     "pay": "Pay {price, number, latn} EGP with XPay",
     "renew": "Add 30 days ({price, number, latn} EGP)",
     "redirecting": "Opening XPay…",
-    "secureNote": "You'll pay on XPay's secure page (card, Fawry or ValU). Your card details never reach Fridge Check.",
+    "secureNote": "You'll pay on XPay's secure page (card, Fawry or ValU). Your card details never reach BiteDoneRight.",
     "errors": {
       "unavailable": "Payments aren't available right now. Please try again later.",
       "failed": "We couldn't open the payment page. Please try again.",
@@ -525,6 +545,10 @@
     "upgrade": "Upgrade to Pro",
     "cancelReminders": "Turn off renewal reminders",
     "resumeReminders": "Turn reminders back on",
-    "cancelNote": "Nothing renews automatically: each 30 days is a separate payment."
+    "cancelNote": "Nothing renews automatically: each 30 days is a separate payment.",
+    "planTrial": "Free trial",
+    "trialUntil": "Every feature is unlocked until {date}.",
+    "trialDaysLeft": "{days, plural, =0 {Your free trial ends today.} one {1 day left in your free trial.} other {{days, number, latn} days left in your free trial.}}",
+    "payAfterTrial": "Paying now adds 30 days after your free trial ends."
   }
 }

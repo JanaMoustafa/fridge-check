@@ -15,25 +15,31 @@
 /* ── Semantic tokens (see docs/DESIGN.md). Components never use raw hex. ── */
 :root {
   color-scheme: light;
-  --c-bg: #edf2ef;
-  --c-surface: #ffffff;
-  --c-surface-2: #e1e9e4;
-  --c-fg: #14211b;
-  --c-fg-muted: #4e5d56;
-  --c-primary: #5a2d82;
+  /* BiteDoneRight palette: Forest #245c45 (buttons, headings), Sage #a8c3a0 (cards, secondary
+     backgrounds), Cream #f7f4ea (background), Soft Peach #f3b49f (highlights, progress),
+     Charcoal #25302b (text). Lighter and deeper steps of those keep small text at 4.5:1. */
+  --c-bg: #f7f4ea;
+  --c-surface: #e9eedf;
+  --c-surface-2: #cfdcc8;
+  --c-fg: #25302b;
+  --c-fg-muted: #4c5751;
+  --c-heading: #245c45;
+  --c-primary: #245c45;
   --c-on-primary: #ffffff;
-  --c-primary-soft: #ece3f4;
-  --c-accent: #b8124f;
+  --c-primary-soft: #d3e1cd;
+  --c-accent: #94462a;
   --c-on-accent: #ffffff;
-  --c-have: #1b6b3a;
-  --c-have-soft: #ddf0e3;
-  --c-missing: #8a4b00;
-  --c-missing-soft: #fcebd2;
+  --c-highlight-soft: #f3b49f;
+  --c-sage: #a8c3a0;
+  --c-have: #1f6b45;
+  --c-have-soft: #d3e1cd;
+  --c-missing: #94462a;
+  --c-missing-soft: #fbe3d8;
   --c-danger: #b3261e;
   --c-on-danger: #ffffff;
-  --c-ring: #5a2d82;
-  --c-line: #d3ddd7;
-  --c-line-strong: #6e7e76;
+  --c-ring: #245c45;
+  --c-line: #d2d9c6;
+  --c-line-strong: #67756b;
   --c-highlight: rgb(255 255 255 / 0.9);
 
   /* Motion */
@@ -55,50 +61,56 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --c-bg: #121916;
-    --c-surface: #1a231f;
-    --c-surface-2: #24302b;
-    --c-fg: #e9f0ec;
-    --c-fg-muted: #a3b1aa;
-    --c-primary: #cfb2ec;
-    --c-on-primary: #26113a;
-    --c-primary-soft: #33264a;
-    --c-accent: #ff8db3;
-    --c-on-accent: #3d0a1c;
-    --c-have: #7dd89c;
-    --c-have-soft: #173a26;
-    --c-missing: #f4be6a;
-    --c-missing-soft: #3d2c12;
+    --c-bg: #161d1a;
+    --c-surface: #1f2924;
+    --c-surface-2: #2b3730;
+    --c-fg: #f7f4ea;
+    --c-fg-muted: #bcc5b9;
+    --c-heading: #a8c3a0;
+    --c-primary: #a8c3a0;
+    --c-on-primary: #25302b;
+    --c-primary-soft: #26392e;
+    --c-accent: #f3b49f;
+    --c-on-accent: #25302b;
+    --c-highlight-soft: #f3b49f;
+    --c-sage: #4e6b55;
+    --c-have: #9fd4ad;
+    --c-have-soft: #1d3a29;
+    --c-missing: #f3b49f;
+    --c-missing-soft: #3f2a22;
     --c-danger: #ff968c;
     --c-on-danger: #410e0a;
-    --c-ring: #cfb2ec;
-    --c-line: #2e3b35;
-    --c-line-strong: #728379;
+    --c-ring: #a8c3a0;
+    --c-line: #2f3b34;
+    --c-line-strong: #7d8b80;
     --c-highlight: rgb(255 255 255 / 0.06);
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --c-bg: #121916;
-  --c-surface: #1a231f;
-  --c-surface-2: #24302b;
-  --c-fg: #e9f0ec;
-  --c-fg-muted: #a3b1aa;
-  --c-primary: #cfb2ec;
-  --c-on-primary: #26113a;
-  --c-primary-soft: #33264a;
-  --c-accent: #ff8db3;
-  --c-on-accent: #3d0a1c;
-  --c-have: #7dd89c;
-  --c-have-soft: #173a26;
-  --c-missing: #f4be6a;
-  --c-missing-soft: #3d2c12;
+  --c-bg: #161d1a;
+  --c-surface: #1f2924;
+  --c-surface-2: #2b3730;
+  --c-fg: #f7f4ea;
+  --c-fg-muted: #bcc5b9;
+  --c-heading: #a8c3a0;
+  --c-primary: #a8c3a0;
+  --c-on-primary: #25302b;
+  --c-primary-soft: #26392e;
+  --c-accent: #f3b49f;
+  --c-on-accent: #25302b;
+  --c-highlight-soft: #f3b49f;
+  --c-sage: #4e6b55;
+  --c-have: #9fd4ad;
+  --c-have-soft: #1d3a29;
+  --c-missing: #f3b49f;
+  --c-missing-soft: #3f2a22;
   --c-danger: #ff968c;
   --c-on-danger: #410e0a;
-  --c-ring: #cfb2ec;
-  --c-line: #2e3b35;
-  --c-line-strong: #728379;
+  --c-ring: #a8c3a0;
+  --c-line: #2f3b34;
+  --c-line-strong: #7d8b80;
   --c-highlight: rgb(255 255 255 / 0.06);
 }
 
@@ -111,6 +123,9 @@
   --color-primary: var(--c-primary);
   --color-on-primary: var(--c-on-primary);
   --color-primary-soft: var(--c-primary-soft);
+  --color-heading: var(--c-heading);
+  --color-highlight-soft: var(--c-highlight-soft);
+  --color-sage: var(--c-sage);
   --color-accent: var(--c-accent);
   --color-on-accent: var(--c-on-accent);
   --color-have: var(--c-have);
@@ -285,6 +300,7 @@
   h2,
   h3 {
     text-wrap: balance;
+    color: var(--color-heading);
   }
   :lang(en):is(h1, h2) {
     letter-spacing: -0.02em;

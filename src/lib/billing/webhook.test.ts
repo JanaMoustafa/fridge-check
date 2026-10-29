@@ -74,7 +74,7 @@ describe('XPay events', () => {
         email: 't@example.com',
         emailVerified: true,
         image: null,
-        createdAt: NOW,
+        createdAt: new Date('2026-01-01T00:00:00Z'), // signed up long ago: the free trial is over
         updatedAt: NOW,
       })
       .execute()
@@ -151,6 +151,19 @@ describe('XPay events', () => {
     )
     expect((await getProAccess(db, 'u1', later(25))).periodEnd?.toISOString()).toBe(
       later(60).toISOString(),
+    )
+  })
+
+  it('paying during the free trial adds the 30 days after the trial ends', async () => {
+    await db
+      .updateTable('user')
+      .set({ createdAt: new Date(NOW.getTime() - 10 * DAY) })
+      .execute()
+    await recordCheckoutStarted(db, 'u1', 'cs_1', NOW)
+    await handleXPayEvent(db, event('evt_1', 'checkout.session.completed', session('cs_1')), NOW)
+    // Trial ends on day 20; the paid 30 days run from there to day 50.
+    expect((await getProAccess(db, 'u1', NOW)).periodEnd?.toISOString()).toBe(
+      later(50).toISOString(),
     )
   })
 

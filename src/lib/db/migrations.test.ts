@@ -7,7 +7,13 @@ import { createTestDb } from '../../../tests/db/test-db'
 import { assertMigrated, createMigrator, MIGRATIONS } from './migrator'
 import type { Database } from './schema'
 
-const OUR_TABLES = ['nutrition_profile', 'payment', 'subscription', 'webhook_event']
+const OUR_TABLES = [
+  'member_contact',
+  'nutrition_profile',
+  'payment',
+  'subscription',
+  'webhook_event',
+]
 const AUTH_TABLES = ['account', 'session', 'user', 'verification']
 
 async function tables(db: Kysely<unknown>): Promise<string[]> {
@@ -33,7 +39,7 @@ describe('migrations', () => {
 
     // Reversible both ways: everything applies again on the emptied database.
     assertMigrated(await migrator.migrateToLatest())
-    expect(await tables(db)).toHaveLength(8)
+    expect(await tables(db)).toHaveLength(AUTH_TABLES.length + OUR_TABLES.length)
     await db.destroy()
   })
 

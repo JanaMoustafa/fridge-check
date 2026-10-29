@@ -16,7 +16,7 @@ import './globals.css'
 
 export async function generateMetadata(): Promise<Metadata> {
   const [locale, t] = await Promise.all([getLocale(), getTranslations('metadata')])
-  const appName = 'Fridge Check'
+  const appName = 'BiteDoneRight'
   return {
     metadataBase: getSiteUrl(),
     title: { default: t('title'), template: `%s · ${appName}` },
@@ -40,8 +40,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: 'cover',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#edf2ef' },
-    { media: '(prefers-color-scheme: dark)', color: '#121916' },
+    { media: '(prefers-color-scheme: light)', color: '#f7f4ea' },
+    { media: '(prefers-color-scheme: dark)', color: '#161d1a' },
   ],
 }
 

@@ -15,7 +15,7 @@ const DAY_S = 24 * 60 * 60
  */
 export function createAuth(config: ProConfig) {
   return betterAuth({
-    appName: 'Fridge Check',
+    appName: 'BiteDoneRight',
     baseURL: config.authUrl,
     secret: config.authSecret,
     database: { db: getDb(), type: 'postgres' },

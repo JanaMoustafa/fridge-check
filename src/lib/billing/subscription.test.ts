@@ -33,7 +33,7 @@ beforeEach(async () => {
       email: 't@example.com',
       emailVerified: true,
       image: null,
-      createdAt: NOW,
+      createdAt: new Date('2026-01-01T00:00:00Z'), // signed up long ago: the free trial is over
       updatedAt: NOW,
     })
     .execute()

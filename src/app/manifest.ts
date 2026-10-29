@@ -7,14 +7,14 @@ import type { MetadataRoute } from 'next'
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Fridge Check',
-    short_name: 'Fridge Check',
+    name: 'BiteDoneRight',
+    short_name: 'BiteDoneRight',
     description: 'Add the ingredients in your fridge and find recipes that use them.',
     start_url: '/',
     scope: '/',
     display: 'standalone',
-    background_color: '#edf2ef',
-    theme_color: '#edf2ef',
+    background_color: '#f7f4ea',
+    theme_color: '#f7f4ea',
     icons: [{ src: '/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
   }
 }
