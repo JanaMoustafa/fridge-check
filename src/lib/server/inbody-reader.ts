@@ -8,7 +8,11 @@ export type InbodyMediaType = (typeof INBODY_MEDIA_TYPES)[number]
 
 export type ReadOutcome =
   | { ok: true; result: ReadResult }
-  | { ok: false; reason: 'not_configured' | 'unreadable' | 'refused' | 'rate_limited' | 'upstream' }
+  | {
+      ok: false
+      reason:
+        'not_configured' | 'no_credit' | 'unreadable' | 'refused' | 'rate_limited' | 'upstream'
+    }
 
 /** Only the part of the SDK this module uses, so tests can pass a stand-in. */
 export interface MessagesClient {
@@ -52,13 +56,22 @@ export async function readInbodyPhoto(
         },
       ],
     })) as { stop_reason?: string; content?: ReplyBlock[] }
-    if (response.stop_reason === 'refusal') return { ok: false, reason: 'refused' }
     const text = (response.content ?? [])
       .filter((block) => block.type === 'text')
       .map((block) => block.text ?? '')
       .join('')
     const result = parseInbodyReply(text)
-    return result ? { ok: true, result } : { ok: false, reason: 'unreadable' }
+    if (response.stop_reason === 'refusal' || !result) {
+      // Why a photo gave no numbers: the shape of the reply, never the member's numbers.
+      console.warn(
+        '[inbody] no numbers from the photo:',
+        response.stop_reason,
+        `${(response.content ?? []).length} blocks, ${text.length} chars of text`,
+        result ? '' : 'no JSON in the reply',
+      )
+      return { ok: false, reason: response.stop_reason === 'refusal' ? 'refused' : 'unreadable' }
+    }
+    return { ok: true, result }
   } catch (error) {
     if (error instanceof Anthropic.RateLimitError) return { ok: false, reason: 'rate_limited' }
     if (
@@ -74,7 +87,12 @@ export async function readInbodyPhoto(
       )
       return { ok: false, reason: 'not_configured' }
     }
-    if (error instanceof Anthropic.BadRequestError) return { ok: false, reason: 'unreadable' }
+    if (error instanceof Anthropic.BadRequestError) {
+      // Anthropic's own wording (an API error, not the member's data), e.g. "credit balance is
+      // too low", which is the common one on a fresh account.
+      console.error('[inbody] Anthropic rejected the request:', error.message)
+      return { ok: false, reason: /credit/i.test(error.message) ? 'no_credit' : 'unreadable' }
+    }
     console.error(
       '[inbody] read failed',
       error instanceof Anthropic.APIError ? error.status : error,

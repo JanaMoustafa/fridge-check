@@ -39,6 +39,7 @@ describe('readInbodyPhoto', () => {
     })
     const headers = new Headers()
     vi.spyOn(console, 'error').mockImplementation(() => undefined)
+    vi.spyOn(console, 'warn').mockImplementation(() => undefined)
     expect(
       await readInbodyPhoto(
         image,
@@ -66,6 +67,23 @@ describe('readInbodyPhoto', () => {
       ok: false,
       reason: 'unreadable',
     })
+    expect(
+      await readInbodyPhoto(
+        image,
+        failing(
+          // As the SDK builds it from Anthropic's error body.
+          new Anthropic.BadRequestError(
+            400,
+            {
+              type: 'invalid_request_error',
+              message: 'Your credit balance is too low to access the Anthropic API.',
+            },
+            undefined,
+            headers,
+          ),
+        ),
+      ),
+    ).toEqual({ ok: false, reason: 'no_credit' })
     vi.spyOn(console, 'error').mockImplementation(() => undefined)
     expect(await readInbodyPhoto(image, failing(new Error('network')))).toEqual({
       ok: false,

@@ -16,6 +16,7 @@ export type ReadFailure =
   | 'too_large'
   | 'rate_limited'
   | 'not_configured'
+  | 'no_credit'
   | 'not_inbody'
   | 'unreadable'
   | 'refused'
@@ -32,6 +33,7 @@ const STATUS: Record<ReadFailure, number> = {
   too_large: 413,
   rate_limited: 429,
   not_configured: 503,
+  no_credit: 503,
   not_inbody: 422,
   unreadable: 422,
   refused: 422,
@@ -89,8 +91,13 @@ export async function handleReadRequest(
   const base64 = Buffer.from(await photo.arrayBuffer()).toString('base64')
   const outcome = await deps.read({ mediaType: photo.type, base64 })
   if (!outcome.ok) return fail(outcome.reason)
-  if (!outcome.result.isInBody) return fail('not_inbody')
-  if (outcome.result.found === 0) return fail('unreadable')
+  if (!outcome.result.isInBody || outcome.result.found === 0) {
+    console.warn('[inbody] photo read but unusable:', {
+      isInBody: outcome.result.isInBody,
+      found: outcome.result.found,
+    })
+    return fail(outcome.result.isInBody ? 'unreadable' : 'not_inbody')
+  }
   const body: ReadResponse = {
     ok: true,
     values: outcome.result.values,

@@ -597,6 +597,7 @@
         "too_large": "That photo is too large. Try a smaller one.",
         "rate_limited": "You've read several photos in a short time. Wait a while or type the numbers below.",
         "not_configured": "Reading photos isn't switched on yet. Type the numbers from your sheet below.",
+        "no_credit": "Photo reading is out of credit on our side. Type the numbers from your sheet below, and we'll fix it.",
         "not_inbody": "That doesn't look like an InBody result sheet. Try another photo or type the numbers below.",
         "unreadable": "We couldn't read the numbers on that photo. Try a sharper photo or type them below.",
         "refused": "We couldn't read that photo. Type the numbers from your sheet below.",

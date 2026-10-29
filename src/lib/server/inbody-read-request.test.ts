@@ -39,6 +39,8 @@ async function result(response: Response) {
 }
 
 describe('handleReadRequest', () => {
+  vi.spyOn(console, 'warn').mockImplementation(() => undefined)
+
   it('reads a photo for a signed-in Pro member', async () => {
     const d = deps()
     const response = await handleReadRequest(upload(jpeg()), d)
