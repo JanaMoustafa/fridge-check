@@ -207,10 +207,10 @@ export function PortionPlanner(props: PortionPlannerProps) {
                   </div>
                   <div
                     aria-hidden="true"
-                    className="relative mt-1.5 h-2.5 overflow-hidden rounded-full bg-surface-2"
+                    className="relative mt-1.5 h-2.5 overflow-hidden rounded-full bg-bg shadow-[inset_0_0_0_1px_var(--color-line)]"
                   >
                     <div
-                      className="h-full rounded-full bg-have motion-safe:transition-[width] motion-safe:duration-500"
+                      className="h-full rounded-full bg-highlight-soft motion-safe:transition-[width] motion-safe:duration-500"
                       style={{ width: `${Math.min(100, share * 100)}%` }}
                     />
                     <div

@@ -15,30 +15,31 @@
 /* ── Semantic tokens (see docs/DESIGN.md). Components never use raw hex. ── */
 :root {
   color-scheme: light;
-  /* BiteDoneRight palette: Forest #245c45 (buttons, headings), Sage #a8c3a0 (cards, secondary
-     backgrounds), Cream #f7f4ea (background), Soft Peach #f3b49f (highlights, progress),
-     Charcoal #25302b (text). Lighter and deeper steps of those keep small text at 4.5:1. */
+  /* BiteDoneRight palette: Forest #245c45 (buttons, headings), Sage #a8c3a0 (cards = a lighter
+     step, chips and secondary backgrounds = the exact sage), Cream #f7f4ea (background), Soft Peach
+     #f3b49f (highlights and progress; a lighter step behind selected items), Charcoal #25302b
+     (text). The steps keep small text at 4.5:1 or more. */
   --c-bg: #f7f4ea;
-  --c-surface: #e9eedf;
-  --c-surface-2: #cfdcc8;
+  --c-surface: #dae5d4;
+  --c-surface-2: #a8c3a0;
   --c-fg: #25302b;
   --c-fg-muted: #4c5751;
   --c-heading: #245c45;
   --c-primary: #245c45;
   --c-on-primary: #ffffff;
-  --c-primary-soft: #d3e1cd;
+  --c-primary-soft: #f8d3c5;
   --c-accent: #94462a;
   --c-on-accent: #ffffff;
   --c-highlight-soft: #f3b49f;
   --c-sage: #a8c3a0;
-  --c-have: #1f6b45;
-  --c-have-soft: #d3e1cd;
+  --c-have: #18573a;
+  --c-have-soft: #bcd2b4;
   --c-missing: #94462a;
   --c-missing-soft: #fbe3d8;
   --c-danger: #b3261e;
   --c-on-danger: #ffffff;
   --c-ring: #245c45;
-  --c-line: #d2d9c6;
+  --c-line: #c4cfba;
   --c-line-strong: #67756b;
   --c-highlight: rgb(255 255 255 / 0.9);
 
