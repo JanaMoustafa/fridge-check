@@ -554,17 +554,18 @@
       "mealKcal": "{kcal, number, latn} kcal · {protein, number, latn} g protein",
       "weigh": "What to weigh ({count, number, latn})",
       "aLittle": "a little",
-      "totals": "Today: {kcal, number, latn} kcal · {protein, number, latn} g protein · {fibre, number, latn} g fibre"
+      "totals": "Today: {kcal, number, latn} kcal · {protein, number, latn} g protein · {fibre, number, latn} g fibre",
+      "fibreTip": "To reach your {target, number, latn} g of fibre, add a piece of fruit or a large salad: they bring fibre for very few calories."
     },
     "plates": {
       "eggs-feta": "Eggs with feta, pita and salad",
       "yogurt-berries": "Greek yogurt with strawberries and almonds",
-      "hummus-plate": "Hummus plate with egg and vegetables",
-      "cheese-toast": "Cheese toast with egg and tomato",
+      "hummus-plate": "Hummus plate with eggs and vegetables",
+      "cheese-toast": "Cheese toast with eggs and tomato",
       "yogurt-orange": "Greek yogurt and an orange",
-      "almonds-strawberries": "Almonds and strawberries",
-      "hummus-carrot": "Hummus with carrot sticks",
-      "tuna-cucumber": "Tuna with cucumber and pita"
+      "chicken-wrap": "Chicken, cucumber and tomato in pita",
+      "tuna-cucumber": "Tuna with cucumber and pita",
+      "eggs-cucumber": "Boiled eggs with cucumber and carrot"
     },
     "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first.",
     "scan": {

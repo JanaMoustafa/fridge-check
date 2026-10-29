@@ -22,6 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const dateOf = (day: string) => new Date(`${day}T12:00:00Z`)
+/** Suggest fruit or salad when today's meals bring this much less fibre than the target. */
+const FIBRE_TIP_MARGIN_G = 2
 
 /**
  * Your Nutritionist: the member's daily targets (calories, macros, fibre, water), how they were
@@ -233,6 +235,9 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
             fibre: Math.round(plan.fibre.grams),
           })}
         </p>
+        {plan.fibre.grams < fibre - FIBRE_TIP_MARGIN_G && (
+          <p className="text-sm text-fg-muted">{t('plan.fibreTip', { target: fibre })}</p>
+        )}
       </section>
 
       <p className="text-xs text-fg-muted">{t('disclaimer')}</p>

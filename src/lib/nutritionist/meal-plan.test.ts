@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest'
+import foodsData from '../../../data/nutrition/foods.json'
 import { DEFAULT_MEAL_SPLIT, type Macros } from '@/lib/nutrition/portions'
 import {
   BREAKFASTS,
   buildDayPlan,
   dayIndexOf,
+  DINNER_CHOICES,
   recipePool,
   RECIPE_POOL_SIZE,
   seedOf,
@@ -138,5 +140,73 @@ describe('fibre', () => {
     expect(breakfast.kind === 'plate' && breakfast.plateId).toBe('eggs-feta')
     expect(day.fibre.complete).toBe(false)
     expect(day.fibre.grams).toBeGreaterThan(0)
+  })
+})
+
+describe('dinner choice', () => {
+  it('picks, of the spread candidates, the dinner that lands the day closest to its protein', () => {
+    const plan = (proteinG: number) =>
+      buildDayPlan({
+        targets: { ...TARGETS, proteinG },
+        split: DEFAULT_MEAL_SPLIT,
+        recipes: RECIPES,
+        foods: FOODS,
+        dayIndex: 3,
+        seed: 0,
+      })
+    const dinnerOf = (proteinG: number) => {
+      const dinner = plan(proteinG).meals[2]!
+      return dinner.kind === 'recipe' ? dinner.recipeId : null
+    }
+    const pool = recipePool(RECIPES)
+    const half = Math.floor(pool.length / 2)
+    const spread = Math.floor(pool.length / DINNER_CHOICES)
+    // Pool order is densest first, so sorting the candidates' positions ranks them by protein.
+    const candidates = Array.from(
+      { length: DINNER_CHOICES },
+      (_, i) => (3 + half + i * spread) % pool.length,
+    )
+      .sort((a, b) => a - b)
+      .map((index) => pool[index]!.id)
+    // A very high target wants the densest candidate; a very low one the leanest.
+    expect(dinnerOf(400)).toBe(candidates[0])
+    expect(dinnerOf(1)).toBe(candidates.at(-1))
+    const lunch = plan(150).meals[1]!
+    expect(lunch.kind === 'recipe' && candidates.includes(lunch.recipeId)).toBe(false)
+  })
+
+  it('never serves lunch again at dinner, even from a tiny pool', () => {
+    const day = buildDayPlan({
+      targets: TARGETS,
+      split: DEFAULT_MEAL_SPLIT,
+      recipes: RECIPES.slice(0, 2),
+      foods: FOODS,
+      dayIndex: 1,
+      seed: 0,
+    })
+    const [, lunch, dinner] = day.meals
+    expect(lunch!.kind === 'recipe' && dinner!.kind === 'recipe').toBe(true)
+    expect((lunch as { recipeId: string }).recipeId).not.toBe(
+      (dinner as { recipeId: string }).recipeId,
+    )
+  })
+})
+
+describe('plates', () => {
+  it('get at least a quarter of their calories from protein, with real food values', () => {
+    for (const plate of [...BREAKFASTS, ...SNACKS]) {
+      const totals = plate.foods.reduce(
+        (sum, [name, grams]) => {
+          const food = (foodsData.foods as Record<string, { per100g: Macros }>)[name]
+          expect(food, `${plate.id}: ${name}`).toBeDefined()
+          return {
+            kcal: sum.kcal + (food!.per100g.kcal * grams) / 100,
+            proteinG: sum.proteinG + (food!.per100g.proteinG * grams) / 100,
+          }
+        },
+        { kcal: 0, proteinG: 0 },
+      )
+      expect((totals.proteinG * 4) / totals.kcal, plate.id).toBeGreaterThanOrEqual(0.25)
+    }
   })
 })

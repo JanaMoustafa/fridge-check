@@ -178,10 +178,14 @@ tests/           e2e/ · msw/ · fixtures/
   A fourth tab, "Nutritionist", is in the navigation.
 - **Targets:** the latest scan's measured BMR replaces the estimate; the newest scan's weight
   updates the profile. Water is 35 ml/kg (+0.5 L on training days); fibre 14 g per 1,000 kcal.
-- **Meals:** lunch and dinner rotate through the 30 most protein-dense plan-friendly built-in
-  recipes (no pork, alcohol, desserts, sides or starters); breakfast and the snack are everyday
-  food plates. Every portion is scaled with the recipe pages' portion engine. Known gap: the
-  plan's protein can land below the target on some days (plates are light in protein).
+- **Meals:** lunch rotates through the 30 most protein-dense plan-friendly built-in recipes (no
+  pork, alcohol, desserts, sides or starters); dinner is the one of three recipes spread across
+  that pool that lands the day closest to its protein target (fat counts half). Breakfast and the
+  snack are everyday food plates with about 30 % of calories from protein (egg whites, chicken,
+  tuna, Greek yogurt). Every portion is scaled with the recipe pages' portion engine. Measured over
+  60 days for a 1,690 kcal / 150 g protein target: protein averages 143 g (lowest day 116 g);
+  fibre averages 18 g of 24 g, so the page suggests fruit or a salad when a day falls short; fat
+  runs above its share because the protein-dense recipes are fatty.
 - **Photo reading:** `POST /api/inbody/read` (signed-in Pro members, 10 reads an hour, 4 MB),
   Claude Opus 5.5 through the official SDK on the server. The photo is never stored. Without
   `ANTHROPIC_API_KEY` the scan page offers typed entry only.

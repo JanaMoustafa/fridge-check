@@ -1,6 +1,5 @@
 import type { NutritionTargets } from '@/lib/nutrition/calculator'
 import {
-  MEALS,
   planPortion,
   sumMacros,
   type Macros,
@@ -31,68 +30,73 @@ export interface FoodPlate {
   foods: ReadonlyArray<readonly [food: string, grams: number]>
 }
 
-/** Breakfasts from foods most kitchens in Egypt and the Gulf have. */
+/**
+ * Breakfasts from foods most kitchens in Egypt and the Gulf have. Each gets about 30 % of its
+ * calories from protein (egg whites do the heavy lifting), so the day can reach a high protein
+ * target alongside lunch and dinner.
+ */
 export const BREAKFASTS = [
   {
     id: 'eggs-feta',
     foods: [
       ['egg', 100],
-      ['pita', 60],
-      ['feta', 30],
-      ['tomato', 80],
-      ['cucumber', 80],
+      ['egg white', 100],
+      ['pita', 50],
+      ['feta', 25],
+      ['tomato', 120],
+      ['cucumber', 120],
     ],
   },
   {
     id: 'yogurt-berries',
     foods: [
-      ['greek yogurt', 200],
-      ['strawberry', 120],
-      ['almond', 15],
-      ['honey', 10],
+      ['greek yogurt', 250],
+      ['strawberry', 200],
+      ['almond', 10],
+      ['honey', 5],
     ],
   },
   {
     id: 'hummus-plate',
     foods: [
-      ['hummus', 60],
-      ['pita', 60],
-      ['egg', 50],
+      ['hummus', 40],
+      ['pita', 40],
+      ['egg', 100],
+      ['egg white', 100],
       ['cucumber', 80],
       ['tomato', 80],
+      ['carrot', 80],
     ],
   },
   {
     id: 'cheese-toast',
     foods: [
-      ['bread', 60],
-      ['cheddar', 30],
+      ['bread', 50],
+      ['cheddar', 20],
       ['egg', 50],
-      ['tomato', 100],
+      ['egg white', 100],
+      ['tomato', 150],
+      ['cucumber', 100],
     ],
   },
 ] as const satisfies readonly FoodPlate[]
 
+/** Snacks that each bring 13–19 g of protein at a typical 10 % share of the day. */
 export const SNACKS = [
   {
     id: 'yogurt-orange',
     foods: [
       ['greek yogurt', 170],
-      ['orange', 130],
+      ['orange', 150],
     ],
   },
   {
-    id: 'almonds-strawberries',
+    id: 'chicken-wrap',
     foods: [
-      ['almond', 20],
-      ['strawberry', 150],
-    ],
-  },
-  {
-    id: 'hummus-carrot',
-    foods: [
-      ['hummus', 50],
-      ['carrot', 120],
+      ['chicken breast', 60],
+      ['pita', 30],
+      ['cucumber', 100],
+      ['tomato', 80],
     ],
   },
   {
@@ -103,10 +107,21 @@ export const SNACKS = [
       ['pita', 30],
     ],
   },
+  {
+    id: 'eggs-cucumber',
+    foods: [
+      ['egg', 100],
+      ['cucumber', 100],
+      ['carrot', 80],
+    ],
+  },
 ] as const satisfies readonly FoodPlate[]
 
 /** How many of the most protein-dense recipes the lunch and dinner rotation draws from. */
 export const RECIPE_POOL_SIZE = 30
+/** How many recipes dinner chooses between, to bring the day's protein and fat closest to target. */
+export const DINNER_CHOICES = 3
+const FAT_MISS_WEIGHT = 0.5
 
 export type PlateId = (typeof BREAKFASTS)[number]['id'] | (typeof SNACKS)[number]['id']
 
@@ -165,25 +180,49 @@ export function buildDayPlan(input: DayPlanInput): DayPlan {
   if (pool.length < 2)
     throw new Error('The meal plan needs at least two recipes with complete nutrition')
   const turn = input.dayIndex + input.seed
-  const lunch = pick(pool, turn)
-  // Dinner sits half the pool away from lunch, so the two are never the same recipe.
-  const dinner = pick(pool, turn + Math.floor(pool.length / 2))
-  const breakfast = pick(BREAKFASTS, turn)
-  const snack = pick(SNACKS, turn + 1)
-
-  const meals: PlannedMeal[] = []
-  for (const meal of MEALS) {
-    if (meal === 'breakfast' || meal === 'snacks') {
-      const plate = meal === 'breakfast' ? breakfast : snack
-      const portion = planPortion(plateLines(plate, input.foods), input.targets, input.split, meal)
-      if (portion) meals.push({ meal, kind: 'plate', plateId: plate.id, portion })
-    } else {
-      const recipe = meal === 'lunch' ? lunch : dinner
-      const portion = planPortion(recipe.lines, input.targets, input.split, meal)
-      if (portion)
-        meals.push({ meal, kind: 'recipe', recipeId: recipe.id, title: recipe.title, portion })
-    }
+  const plated = (meal: Meal, plate: FoodPlate & { id: PlateId }): PlannedMeal | null => {
+    const portion = planPortion(plateLines(plate, input.foods), input.targets, input.split, meal)
+    return portion && { meal, kind: 'plate', plateId: plate.id, portion }
   }
+  const cooked = (meal: Meal, recipe: PlanRecipe): PlannedMeal | null => {
+    const portion = planPortion(recipe.lines, input.targets, input.split, meal)
+    return portion && { meal, kind: 'recipe', recipeId: recipe.id, title: recipe.title, portion }
+  }
+
+  const lunchRecipe = pick(pool, turn)
+  const breakfast = plated('breakfast', pick(BREAKFASTS, turn))
+  const lunch = cooked('lunch', lunchRecipe)
+  const snacks = plated('snacks', pick(SNACKS, turn + 1))
+  const proteinSoFar = [breakfast, lunch, snacks].reduce(
+    (total, meal) => total + (meal?.portion.totals.proteinG ?? 0),
+    0,
+  )
+  const fatSoFar = [breakfast, lunch, snacks].reduce(
+    (total, meal) => total + (meal?.portion.totals.fatG ?? 0),
+    0,
+  )
+  // Grams away from the day's protein and fat targets (calories are already set by the portion).
+  // Protein counts double: missing it costs muscle; a little extra fat only shifts the macros.
+  const miss = (meal: PlannedMeal) =>
+    Math.abs(proteinSoFar + meal.portion.totals.proteinG - input.targets.proteinG) +
+    FAT_MISS_WEIGHT * Math.abs(fatSoFar + meal.portion.totals.fatG - input.targets.fatG)
+  // Dinner: of a few recipes spread across the pool (starting half the pool away from lunch, and
+  // never lunch itself), the one that brings the day's protein and fat closest to the targets. The pool is
+  // sorted by protein density, so spreading the choices gives the day real options; the rotation
+  // still moves every day.
+  const half = Math.floor(pool.length / 2)
+  const spread = Math.max(1, Math.floor(pool.length / DINNER_CHOICES))
+  let dinner: PlannedMeal | null = null
+  for (let i = 0; i < DINNER_CHOICES; i++) {
+    const recipe = pick(pool, turn + half + i * spread)
+    if (recipe.id === lunchRecipe.id) continue
+    const meal = cooked('dinner', recipe)
+    if (meal && (dinner === null || miss(meal) < miss(dinner))) dinner = meal
+  }
+
+  const meals = [breakfast, lunch, dinner, snacks].filter(
+    (meal): meal is PlannedMeal => meal !== null,
+  )
   const lines = meals.flatMap((meal) => meal.portion.lines)
   const fibre = {
     grams: lines.reduce((total, line) => total + (line.macros.fiberG ?? 0), 0),

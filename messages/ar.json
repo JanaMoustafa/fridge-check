@@ -554,7 +554,8 @@
       "mealKcal": "{kcal, number, latn} سعرة · {protein, number, latn} غ بروتين",
       "weigh": "ما تزنه ({count, number, latn})",
       "aLittle": "قليل",
-      "totals": "اليوم: {kcal, number, latn} سعرة · {protein, number, latn} غ بروتين · {fibre, number, latn} غ ألياف"
+      "totals": "اليوم: {kcal, number, latn} سعرة · {protein, number, latn} غ بروتين · {fibre, number, latn} غ ألياف",
+      "fibreTip": "لتصل إلى {target, number, latn} غ من الألياف، أضف ثمرة فاكهة أو طبق سلطة كبيرًا: يمنحانك أليافًا بسعرات قليلة جدًا."
     },
     "plates": {
       "eggs-feta": "بيض مع جبنة فيتا وخبز شامي وسلطة",
@@ -562,9 +563,9 @@
       "hummus-plate": "طبق حمص مع بيض وخضار",
       "cheese-toast": "توست بالجبن مع بيض وطماطم",
       "yogurt-orange": "زبادي يوناني وبرتقالة",
-      "almonds-strawberries": "لوز وفراولة",
-      "hummus-carrot": "حمص مع أصابع الجزر",
-      "tuna-cucumber": "تونة مع خيار وخبز شامي"
+      "chicken-wrap": "صدر دجاج مع خيار وطماطم في خبز شامي",
+      "tuna-cucumber": "تونة مع خيار وخبز شامي",
+      "eggs-cucumber": "بيض مسلوق مع خيار وجزر"
     },
     "disclaimer": "إرشادات عامة للبالغين الأصحاء، وليست نصيحة طبية. إذا كنتِ حاملًا أو مرضعًا أو لديك حالة صحية، فاستشر طبيبًا أو أخصائي تغذية أولًا.",
     "scan": {
