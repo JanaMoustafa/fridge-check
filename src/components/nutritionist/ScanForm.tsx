@@ -2,7 +2,7 @@
 
 import { AlertCircle, Camera, CheckCircle2, LoaderCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { useActionState, useId, useState } from 'react'
+import { useActionState, useEffect, useId, useState } from 'react'
 import { saveScanAction, type ScanFormState } from '@/app/(app)/nutritionist/actions'
 import { buttonClasses } from '@/components/ui/button'
 import { SCAN_FIELDS, SCAN_LIMITS, type ScanField } from '@/lib/nutritionist/inbody'
@@ -69,9 +69,17 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
   }))
   const [source, setSource] = useState<'photo' | 'typed'>('typed')
   const [reading, setReading] = useState<Reading>({ state: 'idle' })
+  /** The chosen photo, shown while it is read and afterwards, to check the numbers against. */
+  const [preview, setPreview] = useState<string | null>(null)
+  /** Fields the photo filled, in form order: they light up one after another. */
+  const [landed, setLanded] = useState<string[]>([])
+
+  useEffect(() => () => void (preview && URL.revokeObjectURL(preview)), [preview])
   const errors = state.errors ?? {}
 
   async function readPhoto(file: File) {
+    setPreview(URL.createObjectURL(file))
+    setLanded([])
     setReading({ state: 'reading' })
     const photo = await shrink(file)
     if (!UPLOAD_TYPES.includes(photo.type)) {
@@ -97,6 +105,7 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
       for (const [field, value] of Object.entries(body.values)) if (value) next[field] = value
       return next
     })
+    setLanded((['scannedOn', ...SCAN_FIELDS] as const).filter((field) => body.values[field]))
     setSource('photo')
     setReading({ state: 'read', found: body.found })
   }
@@ -112,7 +121,7 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
     setValues((current) => ({ ...current, [field]: event.target.value }))
 
   const inputClasses =
-    'min-h-11 w-full rounded-btn border border-line-strong bg-surface px-3 text-base tabular-nums outline-none transition-colors focus-visible:border-primary aria-[invalid=true]:border-danger'
+    'field-land min-h-11 w-full rounded-btn border border-line-strong bg-surface px-3 text-base tabular-nums outline-none transition-colors focus-visible:border-primary aria-[invalid=true]:border-danger'
 
   const field = (
     name: ScanField | 'scannedOn',
@@ -176,6 +185,17 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
               }}
             />
           </label>
+          {preview && (
+            <div
+              data-reading={reading.state === 'reading' || undefined}
+              className="scan-preview relative max-w-xs overflow-hidden rounded-btn bg-surface-2"
+            >
+              {/* A local preview of the member's own photo: next/image adds nothing here. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={preview} alt={t('previewAlt')} className="max-h-64 w-full object-contain" />
+              <span aria-hidden="true" className="scan-preview-band" />
+            </div>
+          )}
           <div aria-live="polite">
             {reading.state === 'read' && (
               <p className="flex items-start gap-2 rounded-btn bg-have-soft px-4 py-3 text-sm font-semibold">
@@ -221,6 +241,8 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
               max={today}
               value={values.scannedOn ?? ''}
               onChange={set('scannedOn')}
+              data-landed={landed.includes('scannedOn') || undefined}
+              style={{ '--n': landed.indexOf('scannedOn') } as React.CSSProperties}
               aria-invalid={errors.scannedOn ? true : undefined}
               aria-describedby={errors.scannedOn ? `${ids}-scannedOn-error` : undefined}
               className={inputClasses}
@@ -239,6 +261,8 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
                   required={name === 'weightKg'}
                   value={values[name] ?? ''}
                   onChange={set(name)}
+                  data-landed={landed.includes(name) || undefined}
+                  style={{ '--n': landed.indexOf(name) } as React.CSSProperties}
                   aria-invalid={errors[name] ? true : undefined}
                   aria-describedby={errors[name] ? `${ids}-${name}-error` : undefined}
                   className={inputClasses}

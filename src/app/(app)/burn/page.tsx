@@ -1,10 +1,11 @@
-import { CheckCircle2, Clock, Flame } from 'lucide-react'
+import { Clock, Flame } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { ExerciseCard } from '@/components/burn/ExerciseCard'
 import { card, proGate } from '@/components/pro/ProGate'
+import { SuccessTick } from '@/components/ui/SuccessTick'
 import { EXERCISES } from '@/lib/burn/exercises'
 import {
   areaExercises,
@@ -71,7 +72,7 @@ export default async function BurnPage({ searchParams }: PageProps<'/burn'>) {
           role="status"
           className="flex items-start gap-2 rounded-btn bg-have-soft px-4 py-3 text-sm font-semibold"
         >
-          <CheckCircle2 aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-have" />
+          <SuccessTick className="mt-0.5 size-4 shrink-0 text-have" />
           {t('saved')}
         </p>
       )}
@@ -116,9 +117,14 @@ export default async function BurnPage({ searchParams }: PageProps<'/burn'>) {
         </p>
         <div>
           <h2 className="sr-only">{t('weekTitle')}</h2>
-          <ol className="grid grid-cols-7 gap-1">
+          <ol className={cx('grid grid-cols-7 gap-1', query.saved === '1' && 'week-intro')}>
             {schedule.map((key, day) => (
               <li
+                style={
+                  {
+                    '--n': key ? schedule.slice(0, day).filter(Boolean).length : 0,
+                  } as React.CSSProperties
+                }
                 key={day}
                 className={cx(
                   'flex flex-col items-center gap-1 rounded-btn py-2 text-xs font-semibold',
@@ -130,7 +136,7 @@ export default async function BurnPage({ searchParams }: PageProps<'/burn'>) {
                 <span
                   aria-hidden="true"
                   className={cx(
-                    'grid size-6 place-items-center rounded-full text-[0.6875rem]',
+                    'week-badge grid size-6 place-items-center rounded-full text-[0.6875rem]',
                     key ? 'bg-accent text-on-accent' : 'bg-transparent',
                   )}
                 >

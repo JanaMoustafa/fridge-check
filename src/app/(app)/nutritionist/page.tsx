@@ -1,7 +1,8 @@
-import { CalendarClock, CheckCircle2, Droplets, ScanLine } from 'lucide-react'
+import { CalendarClock, Droplets, ScanLine } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getLocale, getTranslations } from 'next-intl/server'
+import { SuccessTick } from '@/components/ui/SuccessTick'
 import { buttonClasses } from '@/components/ui/button'
 import { getDb } from '@/lib/db/client'
 import { formatLongDate } from '@/lib/i18n/format-date'
@@ -81,7 +82,7 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
           role="status"
           className="flex items-start gap-2 rounded-btn bg-have-soft px-4 py-3 text-sm font-semibold"
         >
-          <CheckCircle2 aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-have" />
+          <SuccessTick className="mt-0.5 size-4 shrink-0 text-have" />
           {t('savedScan')}
         </p>
       )}
@@ -159,7 +160,7 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
             </span>
           </p>
         </div>
-        <details className="group rounded-btn bg-bg px-4 py-3">
+        <details className="smooth-details group rounded-btn bg-bg px-4 py-3">
           <summary className="cursor-pointer font-semibold">{t('how.title')}</summary>
           <ul className="mt-3 list-disc space-y-2 ps-5 text-sm">
             <li>
@@ -217,7 +218,7 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
                   })}
                 </p>
               </div>
-              <details className="mt-2" open={meal.kind === 'plate'}>
+              <details className="smooth-details mt-2" open={meal.kind === 'plate'}>
                 <summary className="cursor-pointer text-sm font-semibold">
                   {t('plan.weigh', { count: meal.portion.lines.length })}
                 </summary>

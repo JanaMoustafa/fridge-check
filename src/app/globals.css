@@ -857,3 +857,193 @@
     transform: rotate(360deg);
   }
 }
+
+/* ---------------------------------------------------------------------------------------------
+ * Member moments (Emil Kowalski's "animate" recipes, on this file's tokens).
+ * ------------------------------------------------------------------------------------------- */
+
+/* Hold to delete a scan: the fill is a progress bar (linear, 2 s, deliberate); letting go snaps
+   it back fast. It fills from the reading direction's start. */
+.hold-delete-fill {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 200ms var(--ease-arrive);
+}
+[dir='rtl'] .hold-delete-fill {
+  clip-path: inset(0 0 0 100%);
+}
+.hold-delete[data-holding] .hold-delete-fill {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 2s linear;
+}
+.hold-delete {
+  transition: scale var(--dur-press) var(--ease-arrive);
+}
+.hold-delete[data-holding] {
+  scale: 0.97;
+}
+
+/* A ticked set: the colour changes at once, the tick comes down like a stamp. */
+.set-button {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    scale var(--dur-press) var(--ease-arrive);
+}
+.set-button:active {
+  scale: 0.95;
+}
+.set-stamp {
+  transition:
+    scale var(--dur-enter) var(--ease-spring-snappy),
+    opacity var(--dur-enter) var(--ease-arrive);
+  @starting-style {
+    scale: 1.35;
+    opacity: 0;
+  }
+}
+
+/* The rest dial: the ring drains over exactly the rest time (progress: linear), and gives one
+   small pulse when rest is over. */
+.rest-ring {
+  stroke-dasharray: 1;
+  animation: rest-drain linear forwards;
+}
+@keyframes rest-drain {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1;
+  }
+}
+.rest-dial[data-done] {
+  animation: rest-done 360ms var(--ease-spring-snappy);
+}
+@keyframes rest-done {
+  50% {
+    scale: 1.08;
+  }
+}
+
+/* Reading an InBody photo: a band passes over the member's own photo while Claude reads it. */
+.scan-preview-band {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 30%;
+  opacity: 0;
+  /* A soft wake behind a bright leading edge, like a scanner's light bar. */
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in oklab, var(--color-accent) 28%, transparent)
+  );
+  border-block-end: 3px solid var(--color-accent);
+  box-shadow: 0 6px 14px -4px color-mix(in oklab, var(--color-accent) 60%, transparent);
+  pointer-events: none;
+}
+.scan-preview[data-reading] .scan-preview-band {
+  opacity: 1;
+  animation: scan-sweep 1.6s var(--ease-move) infinite;
+}
+@keyframes scan-sweep {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(334%);
+  }
+}
+
+/* Fields the photo filled light up in form order, so it's clear which numbers it read. */
+.field-land[data-landed] {
+  animation: field-land 700ms var(--ease-arrive) both;
+  animation-delay: calc(var(--n) * 60ms);
+}
+@keyframes field-land {
+  from {
+    background-color: var(--color-highlight-soft);
+    border-color: var(--color-accent);
+  }
+}
+
+/* Rare success notices: the tick draws itself. */
+.success-tick-ring,
+.success-tick-check {
+  stroke-dasharray: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .success-tick-ring {
+    animation: tick-draw 400ms var(--ease-arrive) both;
+  }
+  .success-tick-check {
+    animation: tick-draw 300ms var(--ease-arrive) 260ms both;
+  }
+}
+
+/* A new programme: the training days light up in A, B, C order. */
+@media (prefers-reduced-motion: no-preference) {
+  .week-intro .week-badge {
+    animation: week-pop 320ms var(--ease-spring-snappy) both;
+    animation-delay: calc(200ms + var(--n) * 70ms);
+  }
+}
+@keyframes week-pop {
+  from {
+    scale: 0.9;
+    opacity: 0;
+  }
+}
+
+/* Expanding sections open and close instead of snapping (browsers without ::details-content
+   simply snap, as before). */
+.smooth-details {
+  interpolate-size: allow-keywords;
+}
+.smooth-details::details-content {
+  height: 0;
+  opacity: 0;
+  overflow: clip;
+  transition:
+    height var(--dur-enter) var(--ease-arrive),
+    opacity var(--dur-enter) var(--ease-arrive),
+    content-visibility var(--dur-enter) allow-discrete;
+}
+.smooth-details[open]::details-content {
+  height: auto;
+  opacity: 1;
+}
+
+/* Reduced motion: keep what explains state (fills, colour, the ring), drop movement. */
+@media (prefers-reduced-motion: reduce) {
+  .hold-delete[data-holding],
+  .set-button:active {
+    scale: none;
+  }
+  .set-stamp {
+    transition: opacity var(--dur-enter) var(--ease-arrive);
+    @starting-style {
+      scale: 1;
+    }
+  }
+  .rest-dial[data-done] {
+    animation: none;
+  }
+  .scan-preview[data-reading] .scan-preview-band {
+    animation: scan-breathe 1.6s ease-in-out infinite alternate;
+    transform: translateY(117%);
+  }
+  .smooth-details::details-content {
+    transition:
+      opacity var(--dur-enter) var(--ease-arrive),
+      content-visibility var(--dur-enter) allow-discrete;
+  }
+  .smooth-details[open]::details-content {
+    height: auto;
+  }
+}
+@keyframes scan-breathe {
+  from {
+    opacity: 0.25;
+  }
+}

@@ -608,6 +608,7 @@
         "upstream": "Reading failed. Try again in a moment, or type the numbers below."
       },
       "photoPrivacy": "Your photo is sent to Anthropic's Claude only to read the numbers. It isn't stored; only the numbers you save are kept.",
+      "previewAlt": "Your InBody photo",
       "numbersTitle": "Your numbers",
       "numbersBody": "Read from your photo or typed in. Only weight is required.",
       "numbersBodyTyped": "Type them from your InBody result sheet. Only weight is required.",
@@ -693,7 +694,8 @@
       "outcomeNote": "Bodies change at different speeds: these are realistic goals, not promises. Your next scans show how you're really doing.",
       "historyTitle": "Your scans",
       "nextDue": "Next scan due {date}.",
-      "delete": "Delete the scan from {date}",
+      "delete": "Hold to delete the scan from {date}",
+      "holdToDelete": "Hold to delete",
       "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first."
     }
   },

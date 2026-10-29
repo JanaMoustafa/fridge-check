@@ -1,9 +1,9 @@
-import { CheckCircle2, ScanLine, Trash2 } from 'lucide-react'
+import { CheckCircle2, ScanLine } from 'lucide-react'
 import type { Metadata } from 'next'
 import { getLocale, getTranslations } from 'next-intl/server'
+import { HoldToDelete } from '@/components/nutritionist/HoldToDelete'
 import { ProjectionChart } from '@/components/nutritionist/ProjectionChart'
 import { EmptyState } from '@/components/ui/EmptyState'
-import { buttonClasses } from '@/components/ui/button'
 import { getDb } from '@/lib/db/client'
 import { formatLongDate } from '@/lib/i18n/format-date'
 import { fatMassOf, fatPercentOf, nextScanDue } from '@/lib/nutritionist/inbody'
@@ -21,7 +21,6 @@ import {
   type Level,
 } from '@/lib/nutritionist/report'
 import { listScans } from '@/lib/server/inbody'
-import { deleteScanAction } from '../actions'
 import { BackTo, card, proGate } from '@/components/pro/ProGate'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -279,16 +278,11 @@ export default async function ReportPage({ searchParams }: PageProps<'/nutrition
               <li key={scan.id} className="rounded-btn bg-bg p-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-extrabold">{date(scan.scannedOn)}</h3>
-                  <form action={deleteScanAction}>
-                    <input type="hidden" name="id" value={scan.id} />
-                    <button
-                      type="submit"
-                      aria-label={t('delete', { date: date(scan.scannedOn) })}
-                      className={buttonClasses({ variant: 'ghost', size: 'icon' })}
-                    >
-                      <Trash2 aria-hidden="true" className="size-4" />
-                    </button>
-                  </form>
+                  <HoldToDelete
+                    id={scan.id}
+                    label={t('delete', { date: date(scan.scannedOn) })}
+                    hint={t('holdToDelete')}
+                  />
                 </div>
                 <dl className="mt-2 grid grid-cols-3 gap-2 text-sm tabular-nums">
                   <div>
