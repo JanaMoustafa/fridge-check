@@ -168,6 +168,25 @@ src/hooks/       React glue (kept out of src/lib so lib stays pure for the 90 % 
 tests/           e2e/ · msw/ · fixtures/
 ```
 
+## BiteDoneRight phase 2: Your Nutritionist (owner request 2026-10-29)
+
+- **Owner decisions:** members add an InBody result each month, from a photo (Claude reads the
+  numbers, the member checks them) or typed in; Pro feature, open during the 30-day trial.
+- **Pages:** `/nutritionist` (daily calories, macros, fibre, water, how they were worked out,
+  today's meals), `/nutritionist/scan` (photo or typed numbers), `/nutritionist/report` (where
+  the member is now, InBody-style bars, a six-month projection with monthly goals, scan history).
+  A fourth tab, "Nutritionist", is in the navigation.
+- **Targets:** the latest scan's measured BMR replaces the estimate; the newest scan's weight
+  updates the profile. Water is 35 ml/kg (+0.5 L on training days); fibre 14 g per 1,000 kcal.
+- **Meals:** lunch and dinner rotate through the 30 most protein-dense plan-friendly built-in
+  recipes (no pork, alcohol, desserts, sides or starters); breakfast and the snack are everyday
+  food plates. Every portion is scaled with the recipe pages' portion engine. Known gap: the
+  plan's protein can land below the target on some days (plates are light in protein).
+- **Photo reading:** `POST /api/inbody/read` (signed-in Pro members, 10 reads an hour, 4 MB),
+  Claude Opus 5.5 through the official SDK on the server. The photo is never stored. Without
+  `ANTHROPIC_API_KEY` the scan page offers typed entry only.
+- **Data:** migration 0005 adds `inbody_scan`; the privacy policy covers scans and Anthropic.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

@@ -18,13 +18,16 @@ const ServerEnvSchema = z.object({
   DATABASE_URL: Secret.optional(),
   /** Signs session cookies: at least 32 random characters (`openssl rand -base64 32`). */
   BETTER_AUTH_SECRET: z.string().trim().min(32).optional(),
-  /** The site's public origin, e.g. https://fridge-check-sooty.vercel.app (Google returns here). */
+  /** The site's public origin, e.g. https://bitedoneright-sooty.vercel.app (Google returns here). */
   BETTER_AUTH_URL: z.url({ protocol: /^https?$/ }).optional(),
   GOOGLE_CLIENT_ID: Secret.optional(),
   GOOGLE_CLIENT_SECRET: Secret.optional(),
   /** XPay Egypt secret key (sk_test_… / sk_live_…) and webhook signing secret (whsec_…). */
   XPAY_SECRET_KEY: Secret.optional(),
   XPAY_WEBHOOK_SECRET: Secret.optional(),
+  /** Anthropic API key: Your Nutritionist reads InBody photos with Claude. Optional; without it
+   * members type their numbers in. Read only on the server. */
+  ANTHROPIC_API_KEY: Secret.optional(),
 })
 export type ServerEnv = z.infer<typeof ServerEnvSchema>
 

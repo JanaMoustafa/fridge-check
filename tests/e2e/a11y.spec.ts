@@ -8,6 +8,7 @@ const PAGES = [
   '/recipe/local/53027?i=rice,onion,lentil',
   '/saved',
   '/shopping-list',
+  '/nutritionist',
   '/does-not-exist',
   '/privacy',
   '/terms',

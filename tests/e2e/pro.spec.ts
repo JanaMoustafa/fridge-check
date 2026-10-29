@@ -39,6 +39,27 @@ test.describe('Pro, signed out', () => {
     )
   })
 
+  test('Your Nutritionist asks signed-out visitors to sign in, then comes back', async ({
+    page,
+  }) => {
+    for (const path of ['/nutritionist', '/nutritionist/scan', '/nutritionist/report']) {
+      await page.goto(path)
+      await expect(page.getByRole('heading', { name: 'Your Nutritionist' }).first()).toBeAttached()
+      await expect(page.getByRole('link', { name: 'Sign in' })).toHaveAttribute(
+        'href',
+        `/account?next=${encodeURIComponent(path)}`,
+      )
+    }
+  })
+
+  test('the InBody photo reader refuses signed-out requests', async ({ request }) => {
+    const response = await request.post('/api/inbody/read', {
+      multipart: { photo: { name: 'sheet.jpg', mimeType: 'image/jpeg', buffer: Buffer.from('x') } },
+    })
+    expect(response.status()).toBe(401)
+    expect(await response.json()).toEqual({ ok: false, error: 'signed_out' })
+  })
+
   test('the header links to the account page', async ({ page }) => {
     await page.goto('/')
     await page.getByRole('link', { name: 'Account' }).click()
@@ -53,7 +74,7 @@ test.describe('Pro, signed out', () => {
   })
 
   for (const locale of ['en', 'ar'] as const) {
-    for (const path of ['/pro', '/account', '/pro/failed']) {
+    for (const path of ['/pro', '/account', '/pro/failed', '/nutritionist']) {
       test(`${path} (${locale}) has no axe violations`, async ({ page, context, baseURL }) => {
         await setLocaleCookie(context, baseURL!, locale)
         await page.goto(path)

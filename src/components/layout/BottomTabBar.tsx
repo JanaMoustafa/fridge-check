@@ -19,7 +19,7 @@ export function BottomTabBar() {
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden print:hidden"
       style={{ viewTransitionName: 'bottom-tabs' }}
     >
-      <ul className="mx-auto grid max-w-md grid-cols-3">
+      <ul className="mx-auto grid max-w-md grid-cols-4">
         {NAV_ITEMS.map(({ href, labelKey, icon: Icon }) => {
           const active = isActive(href, pathname)
           return (
@@ -30,7 +30,7 @@ export function BottomTabBar() {
                 aria-current={active ? 'page' : undefined}
                 style={{ viewTransitionName: `tab-link-${labelKey}` }}
                 className={cx(
-                  'nav-link relative flex min-h-16 flex-col items-center justify-center gap-1 px-2 text-xs font-semibold transition-colors duration-150',
+                  'nav-link relative flex min-h-16 flex-col items-center justify-center gap-1 px-0.5 text-xs font-semibold whitespace-nowrap transition-colors duration-150',
                   active ? 'text-primary' : 'text-fg-muted',
                 )}
               >

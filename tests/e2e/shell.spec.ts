@@ -114,6 +114,13 @@ test.describe('app shell', () => {
     await expect(nav.getByRole('link', { name: 'Saved' })).toHaveAttribute('aria-current', 'page')
     await nav.getByRole('link', { name: 'Shopping list' }).click()
     await expect(page.getByRole('heading', { level: 1, name: 'Shopping list' })).toBeVisible()
+    await nav.getByRole('link', { name: 'Nutritionist' }).click()
+    await expect(page).toHaveURL(/\/nutritionist$/)
+    await expect(page.getByRole('heading', { level: 1, name: 'Your Nutritionist' })).toBeAttached()
+    await expect(nav.getByRole('link', { name: 'Nutritionist' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    )
   })
 
   test('shows a helpful 404 page', async ({ page }) => {

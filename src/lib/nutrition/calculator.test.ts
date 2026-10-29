@@ -170,3 +170,27 @@ describe('ageFromBirthYear', () => {
     expect(ageFromBirthYear(1996, new Date('2026-12-31T23:00:00Z'))).toBe(30)
   })
 })
+
+describe('calculateTargets with a measured BMR (InBody)', () => {
+  const person = {
+    weightKg: 68,
+    heightCm: 165,
+    age: 32,
+    sex: 'female' as const,
+    activityLevel: 'moderate' as const,
+    goal: 'lose_fat' as const,
+  }
+
+  it('uses the measured BMR instead of the formula', () => {
+    // 1,360 × 1.55 = 2,108 → −20 % = 1,686 → 1,690 (nearest 10).
+    expect(calculateTargets(person, { bmrKcal: 1360 })).toMatchObject({
+      bmrKcal: 1360,
+      tdeeKcal: 2110,
+      calorieTargetKcal: 1690,
+    })
+  })
+
+  it('falls back to the formula when no BMR was measured', () => {
+    expect(calculateTargets(person, {})).toEqual(calculateTargets(person))
+  })
+})

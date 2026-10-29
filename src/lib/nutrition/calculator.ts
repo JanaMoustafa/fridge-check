@@ -101,13 +101,18 @@ export function bmr({ weightKg, heightCm, age, sex }: ProfileInput): number {
   return MIFFLIN.perKg * weightKg + MIFFLIN.perCm * heightCm - MIFFLIN.perYear * age + MIFFLIN[sex]
 }
 
-export function tdee(input: ProfileInput): number {
-  return bmr(input) * ACTIVITY_MULTIPLIERS[input.activityLevel]
+/** Measured values that replace an estimate, e.g. the BMR an InBody scan reports. */
+export interface Measured {
+  bmrKcal?: number
+}
+
+export function tdee(input: ProfileInput, measured: Measured = {}): number {
+  return (measured.bmrKcal ?? bmr(input)) * ACTIVITY_MULTIPLIERS[input.activityLevel]
 }
 
 /** The goal-adjusted target, kept at or above the floor (or at TDEE when TDEE is lower). */
-export function calorieTarget(input: ProfileInput): number {
-  const maintenance = tdee(input)
+export function calorieTarget(input: ProfileInput, measured: Measured = {}): number {
+  const maintenance = tdee(input, measured)
   const adjusted = maintenance * (1 + GOAL_CALORIE_ADJUSTMENT[input.goal])
   return Math.max(adjusted, Math.min(CALORIE_FLOOR_KCAL[input.sex], maintenance))
 }
@@ -136,12 +141,12 @@ export function assertValidProfile(input: ProfileInput): void {
 }
 
 /**
- * Daily targets: BMR → TDEE → goal-adjusted calories → protein (g/kg, capped), fat (share of
+ * Daily targets: BMR (measured by InBody when given, else Mifflin-St Jeor) → TDEE → goal-adjusted calories → protein (g/kg, capped), fat (share of
  * calories), carbs (the remainder, never negative). Energy is rounded to 10 kcal, grams to 1 g.
  */
-export function calculateTargets(input: ProfileInput): NutritionTargets {
+export function calculateTargets(input: ProfileInput, measured: Measured = {}): NutritionTargets {
   assertValidProfile(input)
-  const target = roundKcal(calorieTarget(input))
+  const target = roundKcal(calorieTarget(input, measured))
   const proteinG = Math.min(
     PROTEIN_G_PER_KG[input.goal] * input.weightKg,
     (MAX_PROTEIN_SHARE * target) / KCAL_PER_GRAM.protein,
@@ -150,8 +155,8 @@ export function calculateTargets(input: ProfileInput): NutritionTargets {
   const carbsKcal = target - proteinG * KCAL_PER_GRAM.protein - fatG * KCAL_PER_GRAM.fat
   return {
     formulaVersion: FORMULA_VERSION,
-    bmrKcal: Math.round(bmr(input)),
-    tdeeKcal: roundKcal(tdee(input)),
+    bmrKcal: Math.round(measured.bmrKcal ?? bmr(input)),
+    tdeeKcal: roundKcal(tdee(input, measured)),
     calorieTargetKcal: target,
     proteinG: Math.round(proteinG),
     fatG: Math.round(fatG),

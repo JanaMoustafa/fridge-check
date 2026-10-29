@@ -12,6 +12,7 @@ export const SECRET_NAMES = [
   'GOOGLE_CLIENT_SECRET',
   'XPAY_SECRET_KEY',
   'XPAY_WEBHOOK_SECRET',
+  'ANTHROPIC_API_KEY',
 ] as const
 
 /**

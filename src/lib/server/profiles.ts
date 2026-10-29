@@ -15,8 +15,24 @@ export interface StoredProfile {
   updatedAt: Date
 }
 
-function targetsFor(values: ProfileValues, today: Date): NutritionTargets {
-  return calculateTargets({ ...values, age: ageFromBirthYear(values.birthYear, today) })
+function targetsFor(values: ProfileValues, today: Date, bmrKcal: number | null): NutritionTargets {
+  return calculateTargets(
+    { ...values, age: ageFromBirthYear(values.birthYear, today) },
+    bmrKcal === null ? {} : { bmrKcal },
+  )
+}
+
+/** The BMR the member's latest InBody scan measured, if it has one. */
+async function measuredBmr(db: Kysely<Database>, userId: string): Promise<number | null> {
+  const row = await db
+    .selectFrom('inbody_scan')
+    .select('bmr_kcal')
+    .where('user_id', '=', userId)
+    .orderBy('scanned_on', 'desc')
+    .orderBy('created_at', 'desc')
+    .limit(1)
+    .executeTakeFirst()
+  return row?.bmr_kcal ?? null
 }
 
 function valuesOf(row: NutritionProfileRow): ProfileValues {
@@ -54,9 +70,9 @@ const targetColumns = (targets: NutritionTargets) => ({
 })
 
 /**
- * The user's profile, or null. Targets are recomputed from the stored answers on every read and
- * saved back when they differ, so they follow a new formula version and the user's age as years
- * pass without the user doing anything.
+ * The user's profile, or null. Targets are recomputed from the stored answers (and the BMR of the
+ * latest InBody scan, when it measured one) on every read and saved back when they differ, so they
+ * follow a new formula version, a new scan and the user's age without the user doing anything.
  */
 export async function getProfile(
   db: Kysely<Database>,
@@ -70,7 +86,7 @@ export async function getProfile(
     .executeTakeFirst()
   if (!row) return null
   const values = valuesOf(row)
-  const targets = targetsFor(values, today)
+  const targets = targetsFor(values, today, await measuredBmr(db, userId))
   if (JSON.stringify(targets) === JSON.stringify(targetsOf(row))) {
     return { values, targets, updatedAt: row.updated_at }
   }
@@ -89,7 +105,7 @@ export async function saveProfile(
   values: ProfileValues,
   now: Date,
 ): Promise<StoredProfile> {
-  const targets = targetsFor(values, now)
+  const targets = targetsFor(values, now, await measuredBmr(db, userId))
   const columns = {
     weight_kg: values.weightKg,
     height_cm: values.heightCm,

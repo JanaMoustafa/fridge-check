@@ -8,6 +8,7 @@ import { assertMigrated, createMigrator, MIGRATIONS } from './migrator'
 import type { Database } from './schema'
 
 const OUR_TABLES = [
+  'inbody_scan',
   'member_contact',
   'nutrition_profile',
   'payment',

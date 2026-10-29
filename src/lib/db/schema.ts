@@ -159,6 +159,23 @@ export interface MemberContactTable {
   updated_at: UpdatedAt
 }
 
+/** One InBody result a member recorded; the photo itself is never stored. */
+export interface InbodyScanTable {
+  id: Generated<string>
+  user_id: string
+  /** YYYY-MM-DD. Always selected as text (scanned_on::text): drivers turn dates into time-zone-shifted Dates. */
+  scanned_on: ColumnType<string, string, string>
+  weight_kg: number
+  smm_kg: number | null
+  bfm_kg: number | null
+  pbf: number | null
+  bmr_kcal: number | null
+  vfl: number | null
+  tbw_l: number | null
+  source: 'photo' | 'typed'
+  created_at: CreatedAt
+}
+
 export interface Database {
   user: UserTable
   session: SessionTable
@@ -169,6 +186,7 @@ export interface Database {
   payment: PaymentTable
   webhook_event: WebhookEventTable
   member_contact: MemberContactTable
+  inbody_scan: InbodyScanTable
 }
 
 export type NutritionProfileRow = Selectable<NutritionProfileTable>
@@ -176,3 +194,4 @@ export type NewNutritionProfile = Insertable<NutritionProfileTable>
 export type SubscriptionRow = Selectable<SubscriptionTable>
 export type SubscriptionUpdate = Updateable<SubscriptionTable>
 export type PaymentRow = Selectable<PaymentTable>
+export type InbodyScanRow = Selectable<InbodyScanTable>

@@ -23,6 +23,7 @@ jobs:
       GOOGLE_CLIENT_SECRET: ci-canary-google-${{ github.run_id }}
       XPAY_SECRET_KEY: ci-canary-xpay-${{ github.run_id }}
       XPAY_WEBHOOK_SECRET: ci-canary-webhook-${{ github.run_id }}
+      ANTHROPIC_API_KEY: ci-canary-anthropic-${{ github.run_id }}
       BETTER_AUTH_SECRET: ci-canary-auth-secret-${{ github.run_id }}-0123456789abcdef
     steps:
       - uses: actions/checkout@v7
