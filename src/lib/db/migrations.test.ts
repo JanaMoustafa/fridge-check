@@ -27,7 +27,8 @@ async function tables(db: Kysely<unknown>): Promise<string[]> {
   return result.rows.map((row) => row.name)
 }
 
-describe('migrations', () => {
+// Each test builds a fresh in-memory database and runs every migration: slow on shared CI runners.
+describe('migrations', { timeout: 30_000 }, () => {
   it('apply in order, and revert one by one back to an empty database', async () => {
     const db = new Kysely<unknown>({ dialect: new PGliteDialect(new PGlite()) })
     const migrator = createMigrator(db)
