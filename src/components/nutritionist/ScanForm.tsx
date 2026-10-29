@@ -95,6 +95,7 @@ export function ScanForm({ claudeBackup, today }: ScanFormProps) {
   /** The sheet's other numbers, saved with the scan for the report. */
   const [extra, setExtra] = useState<Extra>({})
   const ocr = useRef<Promise<OcrWorker> | null>(null)
+  const numbersHeading = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => () => void (preview && URL.revokeObjectURL(preview)), [preview])
   const errors = state.errors ?? {}
@@ -162,6 +163,9 @@ export function ScanForm({ claudeBackup, today }: ScanFormProps) {
     setLanded((['scannedOn', ...SCAN_FIELDS] as const).filter((field) => values[field]))
     setSource('photo')
     setReading({ state: 'read', found: coreFound, extras: Object.keys(read.extra).length })
+    // Bring the filled fields into view as they light up.
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    numbersHeading.current?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' })
   }
 
   const errorMessage = (field: ScanField | 'scannedOn') => {
@@ -254,6 +258,25 @@ export function ScanForm({ claudeBackup, today }: ScanFormProps) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={preview} alt={t('previewAlt')} className="max-h-64 w-full object-contain" />
               <span aria-hidden="true" className="scan-preview-band" />
+              {/* The reader's own progress; indeterminate while its files download the first time. */}
+              {(reading.state === 'preparing' || reading.state === 'reading') && (
+                <div
+                  role="progressbar"
+                  aria-label={t('ocrProgress')}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={reading.state === 'reading' ? reading.percent : undefined}
+                  data-indeterminate={reading.state === 'preparing' || undefined}
+                  className="scan-progress absolute inset-x-0 bottom-0 h-1.5 bg-bg/60"
+                  style={
+                    {
+                      '--p': reading.state === 'reading' ? reading.percent / 100 : 0,
+                    } as React.CSSProperties
+                  }
+                >
+                  <span className="scan-progress-fill block h-full bg-accent" />
+                </div>
+              )}
             </div>
           )}
           <div aria-live="polite">
@@ -261,7 +284,14 @@ export function ScanForm({ claudeBackup, today }: ScanFormProps) {
               <p className="flex items-start gap-2 rounded-btn bg-have-soft px-4 py-3 text-sm font-semibold">
                 <CheckCircle2 aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-have" />
                 {t('readDone', { found: reading.found })}
-                {reading.extras > 0 && <> {t('extrasRead', { count: reading.extras })}</>}
+                {reading.extras > 0 && (
+                  <>
+                    {' '}
+                    <span className="extras-pop inline-block rounded-chip bg-have-soft px-2 py-0.5 text-xs text-have">
+                      {t('extrasRead', { count: reading.extras })}
+                    </span>
+                  </>
+                )}
               </p>
             )}
             {reading.state === 'failed' && (
@@ -279,7 +309,9 @@ export function ScanForm({ claudeBackup, today }: ScanFormProps) {
         <input type="hidden" name="source" value={source} />
         <input type="hidden" name="extra" value={JSON.stringify(extra)} />
         <div className="space-y-1">
-          <h2 className="text-lg font-extrabold">{t('numbersTitle')}</h2>
+          <h2 ref={numbersHeading} className="scroll-mt-24 text-lg font-extrabold">
+            {t('numbersTitle')}
+          </h2>
           <p className="text-sm text-fg-muted">{t('numbersBody')}</p>
         </div>
         {(hasErrors || state.failed) && (

@@ -302,6 +302,19 @@ tests/           e2e/ · msw/ · fixtures/
   totals follow it; "Back to today's suggestion" clears it. Dinner's suggestion still lands the
   day closest to its protein target.
 
+## Motion for the scan and the meal chooser (impeccable + animate skills, 2026-10-30)
+
+- **Scan:** a progress bar under the photo shows the reader's own progress (shimmer while its
+  files download the first time), the page glides to "Your numbers" as the fields light up, and
+  the "also captured N more numbers" chip pops in after them.
+- **Chooser:** the Choose buttons show they are working (useFormStatus), the options fan in when
+  the list opens (stagger capped at twelve rows), the dish name crossfades to the new pick
+  (React ViewTransition keyed by option), and the day's totals flash once when they change. The
+  meal name is now the card's heading (the uppercase eyebrow was removed).
+- Reduced motion keeps the progress bar and state changes and drops the movement.
+- Note: DESIGN.md still describes the Fridge Check look (porcelain/aubergine); the code is the
+  authority. Refresh it when convenient.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

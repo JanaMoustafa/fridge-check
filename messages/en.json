@@ -704,7 +704,8 @@
       },
       "ocrPreparing": "Preparing the reader (first time only, about 8 MB)…",
       "ocrReading": "Reading your sheet… {percent, number, latn}%",
-      "extrasRead": "Also captured {count, plural, one {{count, number, latn} more number} other {{count, number, latn} more numbers}} for your report."
+      "extrasRead": "Also captured {count, plural, one {{count, number, latn} more number} other {{count, number, latn} more numbers}} for your report.",
+      "ocrProgress": "Reading progress"
     },
     "report": {
       "metaTitle": "Your report",

@@ -2,11 +2,13 @@ import { CalendarClock, Droplets, ScanLine } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getLocale, getTranslations } from 'next-intl/server'
+import { ViewTransition } from 'react'
 import { SuccessTick } from '@/components/ui/SuccessTick'
 import { buttonClasses } from '@/components/ui/button'
 import { getDb } from '@/lib/db/client'
 import { formatLongDate } from '@/lib/i18n/format-date'
 import { ingredientLabel, loadArabicIngredientNames } from '@/lib/i18n/ingredient-names'
+import { ChooseButton } from '@/components/nutritionist/ChooseButton'
 import { cx } from '@/lib/cx'
 import { isLocale } from '@/lib/i18n/locale'
 import { PROTEIN_G_PER_KG } from '@/lib/nutrition/calculator'
@@ -207,33 +209,41 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
           {plan.meals.map((meal) => (
             <li key={meal.meal} id={`meal-${meal.meal}`} className="rounded-btn bg-bg p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs font-bold tracking-wide text-primary uppercase">
-                  {tp(`meals.${meal.meal}`)}
-                </p>
-                <span className="rounded-chip bg-surface-2 px-2.5 py-0.5 text-xs font-semibold">
-                  {choices[meal.meal] ? t('plan.chosen') : t('plan.suggested')}
-                </span>
+                <h3 className="text-sm font-semibold text-primary">{tp(`meals.${meal.meal}`)}</h3>
+                <ViewTransition key={choices[meal.meal] ? 'pick' : 'suggested'}>
+                  <span
+                    className={cx(
+                      'rounded-chip px-2.5 py-0.5 text-xs font-semibold',
+                      choices[meal.meal] ? 'bg-have-soft text-have' : 'bg-surface-2',
+                    )}
+                  >
+                    {choices[meal.meal] ? t('plan.chosen') : t('plan.suggested')}
+                  </span>
+                </ViewTransition>
               </div>
-              <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-3">
-                <h3 className="font-extrabold">
-                  {meal.kind === 'recipe' ? (
-                    <Link
-                      href={recipeHref(meal.recipeId)}
-                      className="underline-offset-4 hover:underline"
-                    >
-                      {mealName(meal)}
-                    </Link>
-                  ) : (
-                    mealName(meal)
-                  )}
-                </h3>
-                <p className="text-sm text-fg-muted tabular-nums">
-                  {t('plan.mealKcal', {
-                    kcal: Math.round(meal.portion.totals.kcal),
-                    protein: Math.round(meal.portion.totals.proteinG),
-                  })}
-                </p>
-              </div>
+              {/* The dish crossfades to the new pick when the member chooses another. */}
+              <ViewTransition key={meal.kind === 'recipe' ? meal.recipeId : meal.plateId}>
+                <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-3">
+                  <p className="text-lg font-extrabold">
+                    {meal.kind === 'recipe' ? (
+                      <Link
+                        href={recipeHref(meal.recipeId)}
+                        className="underline-offset-4 hover:underline"
+                      >
+                        {mealName(meal)}
+                      </Link>
+                    ) : (
+                      mealName(meal)
+                    )}
+                  </p>
+                  <p className="text-sm text-fg-muted tabular-nums">
+                    {t('plan.mealKcal', {
+                      kcal: Math.round(meal.portion.totals.kcal),
+                      protein: Math.round(meal.portion.totals.proteinG),
+                    })}
+                  </p>
+                </div>
+              </ViewTransition>
               <details className="smooth-details mt-2">
                 <summary className="cursor-pointer text-sm font-semibold text-primary">
                   {t('plan.chooseAnother')} ·{' '}
@@ -245,12 +255,10 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
                       <form action={chooseMealAction}>
                         <input type="hidden" name="meal" value={meal.meal} />
                         <input type="hidden" name="optionId" value="suggested" />
-                        <button
-                          type="submit"
-                          className="min-h-11 w-full rounded-btn px-3 text-start text-sm font-semibold text-primary hover:bg-primary-soft"
-                        >
-                          {t('plan.backToSuggested')}
-                        </button>
+                        <ChooseButton
+                          label={t('plan.backToSuggested')}
+                          className="min-h-11 w-full justify-start border-0 text-sm text-primary hover:bg-primary-soft"
+                        />
                       </form>
                     </li>
                   )}
@@ -277,14 +285,7 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
                               })}
                             </span>
                           </span>
-                          {!current && (
-                            <button
-                              type="submit"
-                              className="min-h-9 shrink-0 rounded-btn border border-line-strong px-3 text-xs font-semibold"
-                            >
-                              {t('plan.choose')}
-                            </button>
-                          )}
+                          {!current && <ChooseButton label={t('plan.choose')} />}
                         </form>
                       </li>
                     )
@@ -309,7 +310,11 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
             </li>
           ))}
         </ol>
-        <p className="rounded-btn bg-surface-2 px-4 py-3 text-sm font-semibold tabular-nums">
+        {/* Re-mounted when the numbers change, so the line flashes once (.totals-flash). */}
+        <p
+          key={`${Math.round(plan.totals.kcal)}-${Math.round(plan.totals.proteinG)}`}
+          className="totals-flash rounded-btn bg-surface-2 px-4 py-3 text-sm font-semibold tabular-nums"
+        >
           {t('plan.totals', {
             kcal: Math.round(plan.totals.kcal),
             protein: Math.round(plan.totals.proteinG),

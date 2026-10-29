@@ -704,7 +704,8 @@
       },
       "ocrPreparing": "جارٍ تجهيز القارئ (أول مرة فقط، نحو 8 ميغابايت)…",
       "ocrReading": "جارٍ قراءة الورقة… {percent, number, latn}%",
-      "extrasRead": "والتقطنا أيضًا {count, plural, zero {{count, number, latn} رقم} one {رقمًا واحدًا إضافيًا} two {رقمين إضافيين} few {{count, number, latn} أرقام إضافية} many {{count, number, latn} رقمًا إضافيًا} other {{count, number, latn} رقم إضافي}} لتقريرك."
+      "extrasRead": "والتقطنا أيضًا {count, plural, zero {{count, number, latn} رقم} one {رقمًا واحدًا إضافيًا} two {رقمين إضافيين} few {{count, number, latn} أرقام إضافية} many {{count, number, latn} رقمًا إضافيًا} other {{count, number, latn} رقم إضافي}} لتقريرك.",
+      "ocrProgress": "تقدّم القراءة"
     },
     "report": {
       "metaTitle": "تقريرك",
