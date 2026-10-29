@@ -74,7 +74,7 @@ describe('ProfileForm', () => {
     }
     renderForm({ next: '/recipe/local/53027' })
     await userEvent.type(screen.getByLabelText('Weight'), '500')
-    await userEvent.click(screen.getByRole('button', { name: 'Save and calculate' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Save' }))
 
     const sent = action.calls.at(-1)!
     expect(sent.get('weightKg')).toBe('500')
@@ -95,7 +95,7 @@ describe('ProfileForm', () => {
   it('says when saving failed', async () => {
     action.result = { failed: true, values: {} }
     renderForm()
-    await userEvent.click(screen.getByRole('button', { name: 'Save and calculate' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Save' }))
     expect(await screen.findByRole('alert')).toHaveTextContent(
       'Couldn’t save your profile'.replace('’', "'"),
     )
@@ -104,7 +104,7 @@ describe('ProfileForm', () => {
   it('speaks Arabic', () => {
     renderForm({}, 'ar')
     expect(screen.getByLabelText('الوزن')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'احفظ واحسب' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'حفظ' })).toBeInTheDocument()
     expect(screen.getByText('المجموع: 100%')).toBeInTheDocument()
   })
 })

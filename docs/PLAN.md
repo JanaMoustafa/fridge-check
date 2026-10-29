@@ -230,6 +230,12 @@ tests/           e2e/ · msw/ · fixtures/
   (`tests/e2e/member.ts`); signed-out tests cover the intro page and the redirects. Fixed muted
   text on sage tiles (3.9:1) that only showed for members.
 
+## Targets live in Your Nutritionist only (owner request 2026-10-29)
+
+- The account page shows the profile's answers ("Your profile"), never calories or macros, and
+  links to Your Nutritionist for the daily targets. The profile form only saves ("Save"), and
+  saving lands in Your Nutritionist. Recipe portions still use the targets behind the scenes.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

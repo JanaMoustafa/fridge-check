@@ -15,8 +15,8 @@ export interface ProfileFormState {
 }
 
 /**
- * Saves the signed-in user's profile (the session decides whose; nothing in the form does),
- * recalculating their targets, then returns to `next` or the account page.
+ * Saves the signed-in user's profile (the session decides whose; nothing in the form does), then
+ * returns to `next` or Your Nutritionist, the one place the daily targets are shown.
  */
 export async function saveProfileAction(
   _previous: ProfileFormState,
@@ -38,5 +38,5 @@ export async function saveProfileAction(
     console.error('[profile] save failed', error instanceof Error ? error.message : error)
     return { failed: true, values: form }
   }
-  redirect(safeNext(form.next) ?? '/account?saved=profile')
+  redirect(safeNext(form.next) ?? '/nutritionist?saved=profile')
 }

@@ -77,13 +77,13 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
         <p className="text-fg-muted">{t('intro')}</p>
       </header>
 
-      {query.saved === 'scan' && (
+      {(query.saved === 'scan' || query.saved === 'profile') && (
         <p
           role="status"
           className="flex items-start gap-2 rounded-btn bg-have-soft px-4 py-3 text-sm font-semibold"
         >
           <SuccessTick className="mt-0.5 size-4 shrink-0 text-have" />
-          {t('savedScan')}
+          {t(query.saved === 'profile' ? 'savedProfile' : 'savedScan')}
         </p>
       )}
 

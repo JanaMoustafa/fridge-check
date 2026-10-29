@@ -345,18 +345,8 @@
     "privacy": "We only receive your name, email address and profile picture from Google.",
     "unavailable": "Accounts aren't available on this version of the app.",
     "signedInAs": "Signed in as {email}",
-    "targetsTitle": "Your daily targets",
-    "targetsMissing": "Set up your nutrition profile to get your daily calorie and protein, carbs and fat targets.",
     "setUpProfile": "Set up nutrition profile",
     "editProfile": "Edit profile",
-    "calories": "Calories",
-    "protein": "Protein",
-    "carbs": "Carbs",
-    "fat": "Fat",
-    "kcal": "{value, number, latn} kcal",
-    "grams": "{value, number, latn} g",
-    "energyDetail": "At rest you burn about {bmr, number, latn} kcal a day; with your activity, about {tdee, number, latn} kcal.",
-    "profileSaved": "Profile saved. Your targets are up to date.",
     "planTitle": "Plan",
     "planFree": "Free",
     "signOut": "Sign out",
@@ -366,7 +356,6 @@
     "deleteConfirm": "Delete my account",
     "cancel": "Cancel",
     "deleted": "Your account and its data were deleted.",
-    "disclaimer": "General guidance for healthy adults, not medical advice.",
     "agree": "By signing in, you agree to the <terms>terms of use</terms> and the <privacy>privacy policy</privacy>.",
     "trialPitch": "New accounts get every Pro feature free for 30 days. No card needed.",
     "detailsTitle": "Your details",
@@ -385,13 +374,18 @@
       "phone": {
         "invalid": "Enter a phone number of 7 to 15 digits, for example +20 100 123 4567."
       }
-    }
+    },
+    "profileTitle": "Your profile",
+    "profileMissing": "Set up your profile: your height, year of birth, sex, activity and goal.",
+    "targetsLive": "Your daily targets are in <link>Your Nutritionist</link>.",
+    "kg": "{value, number, latn} kg",
+    "cm": "{value, number, latn} cm"
   },
   "profile": {
     "metaTitle": "Nutrition profile",
     "title": "Your nutrition profile",
-    "welcome": "Welcome! A few details and we'll work out your daily targets.",
-    "intro": "We use these details only to estimate how much energy and protein you need each day. You can change or delete them at any time.",
+    "welcome": "Welcome! A few details about you, then Your Nutritionist works out your daily targets.",
+    "intro": "Your Nutritionist uses these details to work out your daily calories, protein, carbs and fat. You can change or delete them at any time.",
     "weight": "Weight",
     "height": "Height",
     "kg": "kg",
@@ -451,8 +445,8 @@
       "snacks": "Snacks"
     },
     "mealSplitTotal": "Total: {total, number, latn}%",
-    "consent": "I agree to BiteDoneRight storing these health details to calculate my targets.",
-    "save": "Save and calculate",
+    "consent": "I agree to BiteDoneRight storing these health details for my nutrition plan.",
+    "save": "Save",
     "saving": "Saving…",
     "errorSummary": "Please check the highlighted fields.",
     "saveFailed": "Couldn't save your profile. Please try again.",
@@ -530,6 +524,7 @@
     "setUpProfile": "Set up your profile",
     "back": "Your Nutritionist",
     "savedScan": "InBody results saved. Your targets and meals are updated.",
+    "savedProfile": "Profile saved. Your targets are updated.",
     "scanCard": {
       "title": "Your InBody",
       "none": "Upload your InBody results so your plan uses your measured metabolism and body composition, not an estimate.",

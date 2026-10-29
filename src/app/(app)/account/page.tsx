@@ -5,7 +5,7 @@ import { getLocale, getTranslations } from 'next-intl/server'
 import { DeleteAccountDialog } from '@/components/account/DeleteAccountDialog'
 import { DetailsForm } from '@/components/account/DetailsForm'
 import { GoogleSignInButton } from '@/components/account/GoogleSignInButton'
-import { TargetsCard } from '@/components/account/TargetsCard'
+import { ProfileSummary } from '@/components/account/ProfileSummary'
 import { legalLinks } from '@/components/legal/legal-links'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { buttonClasses } from '@/components/ui/button'
@@ -107,7 +107,6 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
         </div>
       </header>
 
-      {param('saved') === 'profile' && <Notice>{t('profileSaved')}</Notice>}
       {param('saved') === 'details' && <Notice>{t('detailsSaved')}</Notice>}
 
       <section aria-labelledby="details-title" className={`${card} space-y-4`}>
@@ -117,10 +116,10 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
         <DetailsForm initial={details ?? { name: user.name, phone: null }} />
       </section>
 
-      <section aria-labelledby="targets-title" className={`${card} space-y-4`}>
+      <section aria-labelledby="profile-title" className={`${card} space-y-4`}>
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="targets-title" className="text-lg font-extrabold">
-            {t('targetsTitle')}
+          <h2 id="profile-title" className="text-lg font-extrabold">
+            {t('profileTitle')}
           </h2>
           {profile && (
             <Link href="/profile" className={buttonClasses({ variant: 'secondary' })}>
@@ -129,16 +128,26 @@ export default async function AccountPage({ searchParams }: PageProps<'/account'
           )}
         </div>
         {profile ? (
-          <TargetsCard targets={profile.targets} />
+          <>
+            <ProfileSummary values={profile.values} />
+            <p className="text-sm text-fg-muted">
+              {t.rich('targetsLive', {
+                link: (chunks) => (
+                  <Link href="/nutritionist" className="font-semibold text-primary underline">
+                    {chunks}
+                  </Link>
+                ),
+              })}
+            </p>
+          </>
         ) : (
           <>
-            <p className="text-fg-muted">{t('targetsMissing')}</p>
+            <p className="text-fg-muted">{t('profileMissing')}</p>
             <Link href="/profile" className={buttonClasses()}>
               {t('setUpProfile')}
             </Link>
           </>
         )}
-        <p className="text-xs text-fg-muted">{t('disclaimer')}</p>
       </section>
 
       <section aria-labelledby="plan-title" className={`${card} space-y-4`}>
