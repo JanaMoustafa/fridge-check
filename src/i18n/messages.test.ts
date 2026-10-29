@@ -51,6 +51,7 @@ describe('translation catalogs', () => {
       'nutritionist.scan.units.percent',
       'burn.metaTitle',
       'burn.title',
+      'intro.burn.title',
       // Pure formats: a number and the work, the same in both languages.
       'burn.prescription',
       'burn.single',

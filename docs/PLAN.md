@@ -254,6 +254,21 @@ tests/           e2e/ · msw/ · fixtures/
   embedded videos can carry YouTube ads and can be removed by their owners (the page then shows
   the "video being chosen" note and the cues still work). Re-run the script to refresh.
 
+## Programme intros (owner request 2026-10-30)
+
+- **Owner decision:** an animated intro before each of Find recipes, Your Nutritionist and
+  BurnToReturn, playing every time (short and skippable) rather than once.
+- **Behaviour:** `FeatureIntro` (in the app chrome) shows a two-second scene on entering a
+  programme (fresh load or navigation from elsewhere), then clears itself; a tap, Skip or Escape
+  ends it at once. Moving between a programme's own pages (a recipe back to Find, the scan page
+  to the Nutritionist) doesn't replay it. Under reduced motion it never shows.
+- **Scenes:** Find: ingredient chips fly in and ring the plate; Nutritionist: three InBody-style
+  bars fill, then the tick; BurnToReturn: the flame draws and lights, the week's letters pop in.
+  CSS only, on the existing motion tokens; each scene's text is in both languages.
+- **Tests:** Playwright runs with reduced motion by default (so the intro never sits over a page
+  under test); `tests/e2e/intro.spec.ts` opts back in to check the intro plays, passes axe once
+  settled, skips, clears itself and doesn't replay within a programme.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

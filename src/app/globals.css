@@ -1047,3 +1047,124 @@
     opacity: 0.25;
   }
 }
+
+/* ---------------------------------------------------------------------------------------------
+ * Programme intros (FeatureIntro): a two-second scene on entering Find recipes, Your
+ * Nutritionist or BurnToReturn. One sequence each; a tap ends it. Off under reduced motion.
+ * ------------------------------------------------------------------------------------------- */
+.feature-intro {
+  animation: intro-in 220ms var(--ease-arrive) both;
+}
+.feature-intro[data-feature='find'] {
+  background: var(--color-surface);
+}
+.feature-intro[data-feature='nutritionist'] {
+  background: var(--color-surface-2);
+}
+.feature-intro[data-feature='burn'] {
+  background: var(--color-primary-soft);
+}
+.feature-intro[data-leaving] {
+  animation: intro-out 240ms var(--ease-depart) forwards;
+  pointer-events: none;
+}
+@keyframes intro-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes intro-out {
+  to {
+    opacity: 0;
+    scale: 1.04;
+  }
+}
+.intro-title {
+  animation: line-write 560ms var(--ease-arrive) 900ms both;
+}
+[dir='rtl'] .intro-title {
+  animation-name: line-write-rtl;
+}
+.intro-line {
+  animation: rise-in var(--dur-enter) var(--ease-arrive) 1350ms both;
+}
+
+/* Find: chips fly in and land in a ring; the plate gives a small click when the last lands. */
+.intro-chip {
+  /* Anchored at inline-start 50 %: the pull-back flips with the writing direction. */
+  translate: calc(var(--dir) * -50%) -50%;
+  animation: chip-fly 720ms var(--ease-spring-snappy) both;
+  animation-delay: calc(120ms + var(--i) * 110ms);
+}
+@keyframes chip-fly {
+  from {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+.intro-plate {
+  animation: plate-click 360ms var(--ease-spring-snappy) 900ms both;
+}
+@keyframes plate-click {
+  50% {
+    scale: 1.06;
+  }
+}
+
+/* Nutritionist: bars fill to their marks one after another, then the tick draws. */
+.intro-bar {
+  transform-origin: var(--origin-start);
+  animation: bar-fill 600ms var(--ease-arrive) both;
+  animation-delay: calc(150ms + var(--i) * 220ms);
+}
+@keyframes bar-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(var(--w));
+  }
+}
+.intro-tick path {
+  stroke-dasharray: 1;
+  animation: tick-draw 420ms var(--ease-arrive) 1050ms both;
+}
+
+/* Burn: the flame's outline draws, then it lights and its heart glows; the week's letters pop in. */
+.intro-flame-outer {
+  stroke-dasharray: 1;
+  fill-opacity: 0;
+  animation:
+    tick-draw 800ms var(--ease-move) 100ms both,
+    flame-light 400ms ease-out 850ms both;
+}
+.intro-flame-inner {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: flame-heart 420ms var(--ease-spring-snappy) 1050ms both;
+}
+@keyframes flame-light {
+  to {
+    fill-opacity: 1;
+  }
+}
+@keyframes flame-heart {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+}
+.intro-badge {
+  animation: week-pop 320ms var(--ease-spring-snappy) both;
+  animation-delay: calc(1150ms + var(--i) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-intro {
+    display: none;
+  }
+}

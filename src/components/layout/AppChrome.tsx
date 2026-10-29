@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { BottomTabBar } from './BottomTabBar'
+import { FeatureIntro } from './FeatureIntro'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 import { SkipLink } from './SkipLink'
@@ -10,6 +11,7 @@ export function AppChrome({ children }: { children: ReactNode }) {
   return (
     <>
       <SkipLink />
+      <FeatureIntro />
       <SiteHeader />
       <StorageNotice />
       <main

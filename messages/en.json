@@ -16,6 +16,22 @@
     "sameButton": "New here or coming back, it's the same button.",
     "trial": "Everything is free for your first 30 days."
   },
+  "intro": {
+    "skip": "Skip",
+    "find": {
+      "title": "Find recipes",
+      "line": "Tell us what's in your fridge. We'll find what you can cook.",
+      "chips": "Tomato · Onion · Garlic · Rice · Lentil · Egg"
+    },
+    "nutritionist": {
+      "title": "Your Nutritionist",
+      "line": "Your InBody, your targets, today's meals."
+    },
+    "burn": {
+      "title": "BurnToReturn",
+      "line": "Your programme for the week, one workout at a time."
+    }
+  },
   "nav": {
     "label": "Main navigation",
     "find": "Find recipes",

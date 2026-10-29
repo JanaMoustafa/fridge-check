@@ -16,6 +16,8 @@ export default defineConfig({
     baseURL,
     trace: 'retain-on-failure',
     storageState: 'tests/e2e/.auth/member.json',
+    // The programme intros play on every entry; tests opt back in where they test the intro.
+    reducedMotion: 'reduce',
   },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },
