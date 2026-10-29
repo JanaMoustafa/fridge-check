@@ -53,6 +53,7 @@ const en: LegalDocument = {
             'What we store: weight, height, birth year, sex, activity level, goal, how you split your day’s meals, the targets calculated from them, and when you gave consent.',
             'What we use it for: only to calculate your targets and your portions on recipe pages.',
             'InBody results you add in Your Nutritionist: the scan date, weight, skeletal muscle mass, body fat mass, percent body fat, basal metabolic rate, visceral fat level and total body water (whichever you enter), used only for your targets, meal plan and report.',
+            'If you use BurnToReturn: the training style and days you choose, used only to build your programme.',
             'If you add InBody results from a photo, the photo is sent to Anthropic (Claude) once, only to read the numbers for you to check. We don’t store the photo; Anthropic processes it under its commercial terms, which don’t allow training on it.',
             'We don’t share it with anyone, sell it or use it for advertising. It is stored on our database provider’s servers (see “Who receives data”).',
           ],
@@ -100,6 +101,7 @@ const en: LegalDocument = {
           list: [
             'Account, phone number, nutrition profile and Pro status: until you delete your account.',
             'InBody results: until you delete them on your report page, or delete your account.',
+            'BurnToReturn training style and days: until you change them or delete your account.',
             'Sessions: until you sign out, or 30 days without a visit.',
             'Payment records: as long as the law requires for financial records, even after you delete your account, but no longer linked to it.',
             'Hosting logs: for a short time, under Vercel’s own policy.',
@@ -197,6 +199,7 @@ const ar: LegalDocument = {
             'ما نخزّنه: الوزن والطول وسنة الميلاد والجنس ومستوى النشاط والهدف وطريقة توزيع وجبات يومك، والأهداف المحسوبة منها، ووقت موافقتك.',
             'فيمَ نستخدمه: لحساب أهدافك وحصصك في صفحات الوصفات فقط.',
             'نتائج InBody التي تضيفها في أخصائي التغذية: تاريخ القياس والوزن وكتلة العضلات الهيكلية وكتلة الدهون ونسبة الدهون ومعدل الأيض الأساسي ومستوى الدهون الحشوية وإجمالي ماء الجسم (ما تُدخله منها)، ونستخدمها فقط لأهدافك وخطة وجباتك وتقريرك.',
+            'إذا استخدمت BurnToReturn: أسلوب التمرين والأيام التي تختارها، ونستخدمها فقط لبناء برنامجك.',
             'إذا أضفت نتائج InBody من صورة، تُرسل الصورة إلى Anthropic (Claude) مرة واحدة فقط لقراءة الأرقام لتراجعها. لا نخزّن الصورة، وتعالجها Anthropic وفق شروطها التجارية التي لا تسمح بالتدريب عليها.',
             'لا نشاركه مع أحد ولا نبيعه ولا نستخدمه للإعلانات. ويُخزَّن على خوادم مزوّد قاعدة البيانات لدينا (انظر «من يتلقى البيانات»).',
           ],
@@ -244,6 +247,7 @@ const ar: LegalDocument = {
           list: [
             'الحساب ورقم الهاتف والملف الغذائي وحالة Pro: حتى تحذف حسابك.',
             'نتائج InBody: حتى تحذفها من صفحة تقريرك، أو تحذف حسابك.',
+            'أسلوب التمرين وأيامه في BurnToReturn: حتى تغيّرها أو تحذف حسابك.',
             'الجلسات: حتى تسجّل الخروج، أو 30 يومًا دون زيارة.',
             'سجلات الدفع: المدة التي يفرضها القانون للسجلات المالية، حتى بعد حذف حسابك، لكنها لا تعود مرتبطة به.',
             'سجلات الاستضافة: لفترة قصيرة وفق سياسة Vercel.',

@@ -176,6 +176,14 @@ export interface InbodyScanTable {
   created_at: CreatedAt
 }
 
+/** A member's BurnToReturn choice: style and training days (bit 0 = Sunday … bit 6 = Saturday). */
+export interface TrainingPlanTable {
+  user_id: string
+  style: 'calisthenics' | 'pilates' | 'gym' | 'crossfit'
+  days: number
+  updated_at: UpdatedAt
+}
+
 export interface Database {
   user: UserTable
   session: SessionTable
@@ -187,6 +195,7 @@ export interface Database {
   webhook_event: WebhookEventTable
   member_contact: MemberContactTable
   inbody_scan: InbodyScanTable
+  training_plan: TrainingPlanTable
 }
 
 export type NutritionProfileRow = Selectable<NutritionProfileTable>

@@ -1,14 +1,15 @@
-import { Heart, ReceiptText, Salad, Search, type LucideIcon } from 'lucide-react'
+import { Flame, Heart, ReceiptText, Salad, Search, type LucideIcon } from 'lucide-react'
 
 export interface NavItem {
-  href: '/' | '/nutritionist' | '/saved' | '/shopping-list'
-  labelKey: 'find' | 'nutritionist' | 'saved' | 'shopping'
+  href: '/' | '/nutritionist' | '/burn' | '/saved' | '/shopping-list'
+  labelKey: 'find' | 'nutritionist' | 'burn' | 'saved' | 'shopping'
   icon: LucideIcon
 }
 
 export const NAV_ITEMS: readonly NavItem[] = [
   { href: '/', labelKey: 'find', icon: Search },
   { href: '/nutritionist', labelKey: 'nutritionist', icon: Salad },
+  { href: '/burn', labelKey: 'burn', icon: Flame },
   { href: '/saved', labelKey: 'saved', icon: Heart },
   { href: '/shopping-list', labelKey: 'shopping', icon: ReceiptText },
 ]

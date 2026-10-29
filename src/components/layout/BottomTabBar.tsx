@@ -19,7 +19,7 @@ export function BottomTabBar() {
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden print:hidden"
       style={{ viewTransitionName: 'bottom-tabs' }}
     >
-      <ul className="mx-auto grid max-w-md grid-cols-4">
+      <ul className="mx-auto grid max-w-md grid-cols-5">
         {NAV_ITEMS.map(({ href, labelKey, icon: Icon }) => {
           const active = isActive(href, pathname)
           return (
@@ -50,7 +50,10 @@ export function BottomTabBar() {
                     strokeWidth={active ? 2.4 : 2}
                   />
                 </span>
-                {t(labelKey)}
+                {/* A short label fits five tabs on a phone; the full name (which contains it) is
+                    what screen readers and voice control use. */}
+                <span aria-hidden="true">{t(`short.${labelKey}`)}</span>
+                <span className="sr-only">{t(labelKey)}</span>
               </Link>
             </li>
           )

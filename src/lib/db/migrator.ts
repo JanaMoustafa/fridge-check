@@ -5,6 +5,7 @@ import * as nutritionProfile from './migrations/0002_nutrition_profile'
 import * as billing from './migrations/0003_billing'
 import * as memberContact from './migrations/0004_member_contact'
 import * as inbodyScan from './migrations/0005_inbody_scan'
+import * as trainingPlan from './migrations/0006_training_plan'
 
 /**
  * Every migration, in order. Listed here rather than read from disk, so the same list works in
@@ -16,6 +17,7 @@ export const MIGRATIONS: Readonly<Record<string, Migration>> = {
   '0003_billing': billing,
   '0004_member_contact': memberContact,
   '0005_inbody_scan': inbodyScan,
+  '0006_training_plan': trainingPlan,
 }
 
 export function createMigrator(db: Kysely<unknown>): Migrator {

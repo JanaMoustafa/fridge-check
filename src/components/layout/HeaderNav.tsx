@@ -27,7 +27,7 @@ export function HeaderNav() {
                 // Each link is captured above the moving pill during the tab-indicator morph.
                 style={{ viewTransitionName: `nav-link-${labelKey}` }}
                 className={cx(
-                  'nav-link relative flex min-h-11 items-center rounded-full px-4 text-sm font-semibold whitespace-nowrap transition-colors duration-150',
+                  'nav-link relative flex min-h-11 items-center rounded-full px-3 text-sm font-semibold whitespace-nowrap transition-colors duration-150 lg:px-4',
                   active ? 'text-primary' : 'text-fg-muted hover:text-fg',
                 )}
               >
@@ -39,7 +39,11 @@ export function HeaderNav() {
                     />
                   </ViewTransition>
                 )}
-                {t(labelKey)}
+                {/* Short labels until there is room for the full names (which contain them). */}
+                <span aria-hidden="true" className="lg:hidden">
+                  {t(`short.${labelKey}`)}
+                </span>
+                <span className="max-lg:sr-only">{t(labelKey)}</span>
                 <NavCount tab={labelKey} className="ms-1.5" />
               </Link>
             </li>

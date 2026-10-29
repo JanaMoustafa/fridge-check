@@ -12,10 +12,18 @@
     "label": "Main navigation",
     "find": "Find recipes",
     "nutritionist": "Nutritionist",
+    "burn": "BurnToReturn",
     "saved": "Saved",
     "shopping": "Shopping list",
     "savedCount": "{count, plural, one {# saved recipe} other {# saved recipes}}",
-    "shoppingCount": "{count, plural, one {# item to buy} other {# items to buy}}"
+    "shoppingCount": "{count, plural, one {# item to buy} other {# items to buy}}",
+    "short": {
+      "find": "Find",
+      "nutritionist": "Nutrition",
+      "burn": "Burn",
+      "saved": "Saved",
+      "shopping": "Shopping"
+    }
   },
   "language": {
     "label": "Language",
@@ -534,6 +542,7 @@
     "grams": "{value, number, latn} g",
     "waterValue": "{value, number, latn} L of water",
     "waterTraining": "+{extra, number, latn} L on training days",
+    "waterTrainingToday": "includes {extra, number, latn} L for today's workout",
     "how": {
       "title": "How we worked this out",
       "bmrMeasured": "At rest your body burns {bmr, number, latn} kcal a day, as your InBody measured on {date}.",
@@ -678,6 +687,121 @@
       "nextDue": "Next scan due {date}.",
       "delete": "Delete the scan from {date}",
       "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first."
+    }
+  },
+  "burn": {
+    "metaTitle": "BurnToReturn",
+    "title": "BurnToReturn",
+    "unavailable": "BurnToReturn isn't available on this version of the app.",
+    "signedOutTitle": "BurnToReturn",
+    "signedOutBody": "Sign in for your own training programme: calisthenics, pilates, gym or CrossFit, built around your goal, with how to do every exercise and what to avoid.",
+    "signIn": "Sign in",
+    "lockedTitle": "BurnToReturn is part of Pro",
+    "lockedBody": "A training programme for your goal and your week, with clear form cues and the mistakes to avoid for every exercise.",
+    "upgrade": "Upgrade to Pro",
+    "price": "{price, number, latn} EGP for 30 days",
+    "noProfileTitle": "First, a few details",
+    "noProfileBody": "Your goal and activity shape your programme: more sets to build muscle, shorter rests to burn fat. It takes a minute.",
+    "setUpProfile": "Set up your profile",
+    "back": "Your programme",
+    "styles": {
+      "calisthenics": {
+        "name": "Calisthenics",
+        "blurb": "Your body weight, anywhere. Floor space and a sturdy table."
+      },
+      "pilates": {
+        "name": "Pilates",
+        "blurb": "Slow, controlled mat work for core, posture and glutes. A mat is enough."
+      },
+      "gym": {
+        "name": "Gym",
+        "blurb": "Machines, dumbbells and barbells, with weights you build up week by week."
+      },
+      "crossfit": {
+        "name": "CrossFit",
+        "blurb": "Short, intense mixed workouts. Kettlebell, box, rower and a pull-up bar."
+      }
+    },
+    "workouts": {
+      "calisthenics": {
+        "a": "Legs and core",
+        "b": "Glutes, core and cardio",
+        "c": "Upper body and cardio"
+      },
+      "pilates": {
+        "a": "Core and legs",
+        "b": "Glutes and core",
+        "c": "Full body flow"
+      },
+      "gym": {
+        "a": "Legs and core",
+        "b": "Glutes and cardio",
+        "c": "Upper body and core"
+      },
+      "crossfit": {
+        "a": "Legs and conditioning",
+        "b": "Glutes, core and conditioning",
+        "c": "Upper body and core"
+      }
+    },
+    "letters": {
+      "a": "A",
+      "b": "B",
+      "c": "C"
+    },
+    "areas": {
+      "legs": "Legs",
+      "glutes": "Glutes",
+      "core": "Core",
+      "cardio": "Cardio",
+      "upper": "Upper body"
+    },
+    "changeStyle": "Change",
+    "todayEyebrow": "Today",
+    "restDay": "Rest day",
+    "restDayBody": "Recovery is part of the plan. Next: {day}, {workout}.",
+    "nextEyebrow": "Next workout · {day}",
+    "workoutMeta": "About {minutes, number, latn} min · {count, plural, one {{count, number, latn} exercise} other {{count, number, latn} exercises}}",
+    "weekTitle": "Your week",
+    "weekToday": "today",
+    "weekTraining": "{workout} workout",
+    "weekRest": "rest",
+    "filterLabel": "Show exercises",
+    "filterWorkout": "This workout",
+    "prescription": "{sets, number, latn} × {work}",
+    "single": "{work}",
+    "rest": "Rest {seconds, number, latn} s",
+    "disclaimer": "Stop if anything hurts. Warm up for 5 minutes first. General guidance, not medical advice.",
+    "setup": {
+      "metaTitle": "Choose your training",
+      "title": "How do you like to train?",
+      "intro": "Pick a style and your training days. Your programme covers legs, glutes, core, cardio and upper body across the week, matched to your goal.",
+      "styleLegend": "Training style",
+      "daysLegend": "Training days",
+      "daysHint": "Choose 2 to 6 days. Rest days matter as much as training days.",
+      "errors": {
+        "style": "Please choose a training style.",
+        "days": "Choose between 2 and 6 days."
+      },
+      "errorSummary": "Please check the highlighted choices.",
+      "save": "Build my programme",
+      "saving": "Saving…",
+      "saveFailed": "Couldn't save your choice. Please try again."
+    },
+    "saved": "Your programme is ready.",
+    "exercise": {
+      "videoTitle": "Guide video",
+      "videoSoon": "A short video of this exact exercise is on its way. Every video is checked by a coach before it appears here.",
+      "howTitle": "How to do it",
+      "avoidTitle": "Avoid",
+      "setsTitle": "Your sets",
+      "setsDone": "{done, number, latn} of {total, number, latn} done",
+      "setLabel": "Set {n, number, latn}",
+      "startRest": "Start rest timer",
+      "stopRest": "Stop timer",
+      "resting": "Rest: {seconds, number, latn} s left",
+      "restOver": "Rest over. Next set!",
+      "area": "Works: {area}"
     }
   },
   "pro": {

@@ -12,9 +12,11 @@ import { cairoDate, nextScanDue } from '@/lib/nutritionist/inbody'
 import type { PlannedMeal } from '@/lib/nutritionist/meal-plan'
 import { dailyFibreG, dailyWaterL, TRAINING_DAY_EXTRA_L } from '@/lib/nutritionist/report'
 import { recipeHref } from '@/lib/search/links'
+import { weekdayOf, weekSchedule } from '@/lib/burn/programme'
 import { latestScan } from '@/lib/server/inbody'
 import { mealPlanFor } from '@/lib/server/meal-plan'
-import { card, nutritionistGate } from './gate'
+import { getTrainingChoice } from '@/lib/server/training'
+import { card, proGate } from '@/components/pro/ProGate'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('nutritionist')
@@ -30,15 +32,16 @@ const FIBRE_TIP_MARGIN_G = 2
  * worked out, the InBody scan they come from, and today's meals sized to them.
  */
 export default async function NutritionistPage({ searchParams }: PageProps<'/nutritionist'>) {
-  const gate = await nutritionistGate('/nutritionist')
+  const gate = await proGate('/nutritionist', 'nutritionist')
   if (!gate.ready) return gate.page
   const { user, profile, now } = gate
-  const [t, tp, rawLocale, query, scan] = await Promise.all([
+  const [t, tp, rawLocale, query, scan, training] = await Promise.all([
     getTranslations('nutritionist'),
     getTranslations('profile'),
     getLocale(),
     searchParams,
     latestScan(getDb(), user.id),
+    getTrainingChoice(getDb(), user.id),
   ])
   const locale = isLocale(rawLocale) ? rawLocale : 'en'
   const today = cairoDate(now)
@@ -50,7 +53,9 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
   const food = (name: string) => ingredientLabel(name, locale, arabicNames)
   const due = scan ? nextScanDue(scan.scannedOn) : null
   const overdue = due !== null && due <= today
-  const water = dailyWaterL(values.weightKg)
+  // A BurnToReturn training day adds half a litre to today's water.
+  const trainingToday = training !== null && weekSchedule(training.days)[weekdayOf(today)] !== null
+  const water = dailyWaterL(values.weightKg) + (trainingToday ? TRAINING_DAY_EXTRA_L : 0)
   const fibre = dailyFibreG(targets.calorieTargetKcal)
 
   const tiles = [
@@ -148,7 +153,9 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
           <p>
             <span className="font-extrabold tabular-nums">{t('waterValue', { value: water })}</span>{' '}
             <span className="text-sm text-fg-muted">
-              {t('waterTraining', { extra: TRAINING_DAY_EXTRA_L })}
+              {t(trainingToday ? 'waterTrainingToday' : 'waterTraining', {
+                extra: TRAINING_DAY_EXTRA_L,
+              })}
             </span>
           </p>
         </div>

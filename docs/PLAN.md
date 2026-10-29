@@ -191,6 +191,27 @@ tests/           e2e/ · msw/ · fixtures/
   `ANTHROPIC_API_KEY` the scan page offers typed entry only.
 - **Data:** migration 0005 adds `inbody_scan`; the privacy policy covers scans and Anthropic.
 
+## BiteDoneRight phase 3: BurnToReturn (owner request 2026-10-29)
+
+- **Pro programme, open during the 30-day trial** like every Pro feature (one check:
+  `getProAccess().isPro`). Needs a nutrition profile: the goal shapes sets and rest.
+- **Setup** (`/burn/setup`): a style (calisthenics, pilates, gym, CrossFit) and 2–6 training days;
+  stored in `training_plan` (migration 0006; days as a bit mask, Sunday = bit 0).
+- **Programme** (`/burn`): workouts A, B and C per style (two or three body areas each, all five
+  areas across the week) fall on the training days in week order; today's workout or "rest day,
+  next is…", the week strip, and every exercise by area. Two exercises per area per workout,
+  rotating weekly where an area has more.
+- **Exercise** (`/burn/exercise/<id>`): sets × work and rest for the goal (building muscle: +1
+  set of strength work and +30 s rest; losing fat: 15 s less rest), how to do it, what to avoid,
+  and set ticks with a rest timer (kept on the device for the day). The guide video slot says a
+  coach-checked video is coming (phase 5).
+- **Library:** 43 exercises in `src/lib/burn/exercises.ts`, English and Arabic, from the approved
+  prototype plus five added to give every style at least two per area. Data in code, not the
+  message catalogs (sent to the browser on every page). A native-speaking coach should review the
+  Arabic exercise names.
+- **Links:** a training day adds 0.5 L to the Nutritionist's water target. Navigation has five tabs;
+  the phone tab bar (and the header below lg) shows short labels inside the full accessible names.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

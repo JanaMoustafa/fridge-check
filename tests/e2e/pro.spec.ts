@@ -39,12 +39,19 @@ test.describe('Pro, signed out', () => {
     )
   })
 
-  test('Your Nutritionist asks signed-out visitors to sign in, then comes back', async ({
+  test('the Pro programmes ask signed-out visitors to sign in, then come back', async ({
     page,
   }) => {
-    for (const path of ['/nutritionist', '/nutritionist/scan', '/nutritionist/report']) {
+    for (const [path, name] of [
+      ['/nutritionist', 'Your Nutritionist'],
+      ['/nutritionist/scan', 'Your Nutritionist'],
+      ['/nutritionist/report', 'Your Nutritionist'],
+      ['/burn', 'BurnToReturn'],
+      ['/burn/setup', 'BurnToReturn'],
+      ['/burn/exercise/c-squat', 'BurnToReturn'],
+    ] as const) {
       await page.goto(path)
-      await expect(page.getByRole('heading', { name: 'Your Nutritionist' }).first()).toBeAttached()
+      await expect(page.getByRole('heading', { name }).first()).toBeAttached()
       await expect(page.getByRole('link', { name: 'Sign in' })).toHaveAttribute(
         'href',
         `/account?next=${encodeURIComponent(path)}`,
@@ -74,7 +81,7 @@ test.describe('Pro, signed out', () => {
   })
 
   for (const locale of ['en', 'ar'] as const) {
-    for (const path of ['/pro', '/account', '/pro/failed', '/nutritionist']) {
+    for (const path of ['/pro', '/account', '/pro/failed', '/nutritionist', '/burn']) {
       test(`${path} (${locale}) has no axe violations`, async ({ page, context, baseURL }) => {
         await setLocaleCookie(context, baseURL!, locale)
         await page.goto(path)

@@ -49,6 +49,11 @@ describe('translation catalogs', () => {
       // A bare number and % sign: the same in both languages.
       'nutritionist.report.percent',
       'nutritionist.scan.units.percent',
+      'burn.metaTitle',
+      'burn.title',
+      // Pure formats: a number and the work, the same in both languages.
+      'burn.prescription',
+      'burn.single',
     ])
     for (const [key, value] of Object.entries(flatAr)) {
       expect(value.trim(), key).not.toBe('')
@@ -124,6 +129,14 @@ describe('translation catalogs', () => {
       month: 2,
       from: 33.2,
       to: 26.5,
+      day: 'Sunday',
+      workout: 'Legs and core',
+      sets: 3,
+      work: '15 reps',
+      seconds: 60,
+      done: 1,
+      n: 2,
+      area: 'Legs',
       url: 'https://fridge-check.example/recipe/local/1',
       link: (chunks: string) => chunks,
       terms: (chunks: string) => chunks,

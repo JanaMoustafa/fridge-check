@@ -22,7 +22,7 @@ import {
 } from '@/lib/nutritionist/report'
 import { listScans } from '@/lib/server/inbody'
 import { deleteScanAction } from '../actions'
-import { BackToNutritionist, card, nutritionistGate } from '../gate'
+import { BackTo, card, proGate } from '@/components/pro/ProGate'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('nutritionist.report')
@@ -41,11 +41,12 @@ const position = (percent: number) =>
  * to expect over six months with monthly goals, and every scan so far with what changed.
  */
 export default async function ReportPage({ searchParams }: PageProps<'/nutritionist/report'>) {
-  const gate = await nutritionistGate('/nutritionist/report')
+  const gate = await proGate('/nutritionist/report', 'nutritionist')
   if (!gate.ready) return gate.page
   const { user, profile } = gate
-  const [t, locale, query, scans] = await Promise.all([
+  const [t, tn, locale, query, scans] = await Promise.all([
     getTranslations('nutritionist.report'),
+    getTranslations('nutritionist'),
     getLocale(),
     searchParams,
     listScans(getDb(), user.id),
@@ -54,7 +55,7 @@ export default async function ReportPage({ searchParams }: PageProps<'/nutrition
   if (!latest) {
     return (
       <div className="mx-auto max-w-2xl space-y-6 py-4">
-        <BackToNutritionist />
+        <BackTo href="/nutritionist" label={tn('back')} />
         <h1 className="sr-only">{t('title')}</h1>
         <EmptyState
           icon={ScanLine}
@@ -108,7 +109,7 @@ export default async function ReportPage({ searchParams }: PageProps<'/nutrition
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 py-4">
-      <BackToNutritionist />
+      <BackTo href="/nutritionist" label={tn('back')} />
       <header className="space-y-2">
         <h1 className="text-2xl font-extrabold">{t('title')}</h1>
         <p className="text-fg-muted">{t('intro', { date: date(latest.scannedOn) })}</p>

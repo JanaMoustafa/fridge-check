@@ -10,17 +10,21 @@ import { PRO_PRICE_EGP } from '@/lib/billing/plan'
 import { getDb } from '@/lib/db/client'
 import { getProfile, type StoredProfile } from '@/lib/server/profiles'
 
-export type NutritionistGate =
+/** The Pro programmes; each has its own wording for the gate's messages. */
+export type ProProgramme = 'nutritionist' | 'burn'
+
+export type ProGateResult =
   | { ready: true; user: SignedInUser; profile: StoredProfile; now: Date }
   | { ready: false; page: ReactNode }
 
 /**
- * Who may see Your Nutritionist: a signed-in Pro member (trial included) with a nutrition profile.
- * Everyone else gets the one step that gets them there, coming back to `path` afterwards.
+ * Who may use a Pro programme: a signed-in Pro member (the free trial included) with a nutrition
+ * profile (the programmes are built from its goal and body). Everyone else gets the one step that
+ * gets them there, coming back to `path` afterwards.
  */
-export async function nutritionistGate(path: string): Promise<NutritionistGate> {
-  const t = await getTranslations('nutritionist')
-  const blocked = (page: ReactNode): NutritionistGate => ({
+export async function proGate(path: string, programme: ProProgramme): Promise<ProGateResult> {
+  const t = await getTranslations(programme)
+  const blocked = (page: ReactNode): ProGateResult => ({
     ready: false,
     page: (
       <div className="py-8">
@@ -79,16 +83,15 @@ export async function nutritionistGate(path: string): Promise<NutritionistGate> 
 export const card =
   'rounded-card bg-surface p-5 shadow-[inset_0_1px_0_var(--color-highlight),0_0_0_1px_var(--color-line)] sm:p-6'
 
-/** Back to the Nutritionist overview from its scan and report pages. */
-export async function BackToNutritionist() {
-  const t = await getTranslations('nutritionist')
+/** Back to a programme's main page from its inner pages. */
+export function BackTo({ href, label }: { href: string; label: string }) {
   return (
     <Link
-      href="/nutritionist"
+      href={href}
       className="inline-flex min-h-11 items-center gap-2 rounded-btn text-sm font-semibold text-primary print:hidden"
     >
       <ArrowLeft aria-hidden="true" className="size-4 rtl:-scale-x-100" />
-      {t('back')}
+      {label}
     </Link>
   )
 }

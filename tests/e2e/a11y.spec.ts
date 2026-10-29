@@ -9,6 +9,7 @@ const PAGES = [
   '/saved',
   '/shopping-list',
   '/nutritionist',
+  '/burn',
   '/does-not-exist',
   '/privacy',
   '/terms',

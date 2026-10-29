@@ -12,10 +12,18 @@
     "label": "التنقل الرئيسي",
     "find": "ابحث عن وصفات",
     "nutritionist": "التغذية",
+    "burn": "التمارين",
     "saved": "المحفوظة",
     "shopping": "قائمة التسوق",
     "savedCount": "{count, plural, zero {لا توجد وصفات محفوظة} one {وصفة محفوظة واحدة} two {وصفتان محفوظتان} few {{count, number, latn} وصفات محفوظة} many {{count, number, latn} وصفة محفوظة} other {{count, number, latn} وصفة محفوظة}}",
-    "shoppingCount": "{count, plural, zero {لا شيء لشرائه} one {عنصر واحد للشراء} two {عنصران للشراء} few {{count, number, latn} عناصر للشراء} many {{count, number, latn} عنصرًا للشراء} other {{count, number, latn} عنصر للشراء}}"
+    "shoppingCount": "{count, plural, zero {لا شيء لشرائه} one {عنصر واحد للشراء} two {عنصران للشراء} few {{count, number, latn} عناصر للشراء} many {{count, number, latn} عنصرًا للشراء} other {{count, number, latn} عنصر للشراء}}",
+    "short": {
+      "find": "ابحث",
+      "nutritionist": "التغذية",
+      "burn": "التمارين",
+      "saved": "المحفوظة",
+      "shopping": "التسوق"
+    }
   },
   "language": {
     "label": "اللغة",
@@ -534,6 +542,7 @@
     "grams": "{value, number, latn} غ",
     "waterValue": "{value, number, latn} لتر من الماء",
     "waterTraining": "+{extra, number, latn} لتر في أيام التمرين",
+    "waterTrainingToday": "منها {extra, number, latn} لتر لتمرين اليوم",
     "how": {
       "title": "كيف حسبنا ذلك",
       "bmrMeasured": "يحرق جسمك في الراحة {bmr, number, latn} سعرة يوميًا، كما قاسه جهاز InBody في {date}.",
@@ -678,6 +687,121 @@
       "nextDue": "القياس التالي في {date}.",
       "delete": "حذف قياس {date}",
       "disclaimer": "إرشادات عامة للبالغين الأصحاء، وليست نصيحة طبية. إذا كنتِ حاملًا أو مرضعًا أو لديك حالة صحية، فاستشر طبيبًا أو أخصائي تغذية أولًا."
+    }
+  },
+  "burn": {
+    "metaTitle": "BurnToReturn",
+    "title": "BurnToReturn",
+    "unavailable": "BurnToReturn غير متاح في هذا الإصدار من التطبيق.",
+    "signedOutTitle": "برنامج BurnToReturn",
+    "signedOutBody": "سجّل الدخول لتحصل على برنامج تمارين خاص بك: كاليستنكس أو بيلاتس أو جيم أو كروس فت، مبني على هدفك، مع طريقة أداء كل تمرين وما يجب تجنّبه.",
+    "signIn": "تسجيل الدخول",
+    "lockedTitle": "BurnToReturn جزء من Pro",
+    "lockedBody": "برنامج تمارين يناسب هدفك وأسبوعك، مع إرشادات واضحة لأداء كل تمرين والأخطاء التي يجب تجنّبها.",
+    "upgrade": "الترقية إلى Pro",
+    "price": "{price, number, latn} جنيه لمدة 30 يومًا",
+    "noProfileTitle": "أولًا، بعض التفاصيل",
+    "noProfileBody": "هدفك ونشاطك يحددان برنامجك: مجموعات أكثر لبناء العضلات، وراحة أقصر لحرق الدهون. يستغرق ذلك دقيقة.",
+    "setUpProfile": "إعداد ملفك",
+    "back": "برنامجك",
+    "styles": {
+      "calisthenics": {
+        "name": "كاليستنكس",
+        "blurb": "وزن جسمك في أي مكان. مساحة على الأرض وطاولة متينة."
+      },
+      "pilates": {
+        "name": "بيلاتس",
+        "blurb": "تمارين أرضية بطيئة ومتحكَّم بها للجذع والقوام والأرداف. تكفيك سجادة."
+      },
+      "gym": {
+        "name": "جيم",
+        "blurb": "أجهزة ودمبلز وبار، مع أوزان تزيدها أسبوعًا بعد أسبوع."
+      },
+      "crossfit": {
+        "name": "كروس فت",
+        "blurb": "تمارين قصيرة ومكثفة ومتنوعة. كيتلبل وصندوق وجهاز تجديف وعقلة."
+      }
+    },
+    "workouts": {
+      "calisthenics": {
+        "a": "الساقان والجذع",
+        "b": "الأرداف والجذع والكارديو",
+        "c": "الجزء العلوي والكارديو"
+      },
+      "pilates": {
+        "a": "الجذع والساقان",
+        "b": "الأرداف والجذع",
+        "c": "تدفق للجسم كله"
+      },
+      "gym": {
+        "a": "الساقان والجذع",
+        "b": "الأرداف والكارديو",
+        "c": "الجزء العلوي والجذع"
+      },
+      "crossfit": {
+        "a": "الساقان واللياقة",
+        "b": "الأرداف والجذع واللياقة",
+        "c": "الجزء العلوي والجذع"
+      }
+    },
+    "letters": {
+      "a": "أ",
+      "b": "ب",
+      "c": "ج"
+    },
+    "areas": {
+      "legs": "الساقان",
+      "glutes": "الأرداف",
+      "core": "الجذع",
+      "cardio": "كارديو",
+      "upper": "الجزء العلوي"
+    },
+    "changeStyle": "تغيير",
+    "todayEyebrow": "اليوم",
+    "restDay": "يوم راحة",
+    "restDayBody": "الراحة جزء من الخطة. التالي: {day}، {workout}.",
+    "nextEyebrow": "التمرين التالي · {day}",
+    "workoutMeta": "نحو {minutes, number, latn} دقيقة · {count, plural, zero {{count, number, latn} تمرين} one {تمرين واحد} two {تمرينان} few {{count, number, latn} تمارين} many {{count, number, latn} تمرينًا} other {{count, number, latn} تمرين}}",
+    "weekTitle": "أسبوعك",
+    "weekToday": "اليوم",
+    "weekTraining": "تمرين {workout}",
+    "weekRest": "راحة",
+    "filterLabel": "عرض التمارين",
+    "filterWorkout": "هذا التمرين",
+    "prescription": "{sets, number, latn} × {work}",
+    "single": "{work}",
+    "rest": "راحة {seconds, number, latn} ث",
+    "disclaimer": "توقّف إذا شعرت بأي ألم. قم بالإحماء 5 دقائق أولًا. إرشادات عامة، وليست نصيحة طبية.",
+    "setup": {
+      "metaTitle": "اختر تمرينك",
+      "title": "كيف تحب أن تتمرّن؟",
+      "intro": "اختر الأسلوب وأيام التمرين. يغطي برنامجك الساقين والأرداف والجذع والكارديو والجزء العلوي على مدار الأسبوع، بما يناسب هدفك.",
+      "styleLegend": "أسلوب التمرين",
+      "daysLegend": "أيام التمرين",
+      "daysHint": "اختر من يومين إلى 6 أيام. أيام الراحة مهمة مثل أيام التمرين.",
+      "errors": {
+        "style": "يُرجى اختيار أسلوب التمرين.",
+        "days": "اختر من يومين إلى 6 أيام."
+      },
+      "errorSummary": "يُرجى مراجعة الاختيارات المحدّدة.",
+      "save": "أنشئ برنامجي",
+      "saving": "جارٍ الحفظ…",
+      "saveFailed": "تعذّر حفظ اختيارك. حاول مجددًا."
+    },
+    "saved": "برنامجك جاهز.",
+    "exercise": {
+      "videoTitle": "فيديو إرشادي",
+      "videoSoon": "فيديو قصير لهذا التمرين بالتحديد في الطريق. يراجع مدرّب كل فيديو قبل ظهوره هنا.",
+      "howTitle": "طريقة الأداء",
+      "avoidTitle": "تجنّب",
+      "setsTitle": "مجموعاتك",
+      "setsDone": "أنجزت {done, number, latn} من {total, number, latn}",
+      "setLabel": "المجموعة {n, number, latn}",
+      "startRest": "ابدأ مؤقت الراحة",
+      "stopRest": "أوقف المؤقت",
+      "resting": "راحة: متبقٍّ {seconds, number, latn} ث",
+      "restOver": "انتهت الراحة. المجموعة التالية!",
+      "area": "يعمل على: {area}"
     }
   },
   "pro": {

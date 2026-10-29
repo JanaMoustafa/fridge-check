@@ -13,6 +13,7 @@ const OUR_TABLES = [
   'nutrition_profile',
   'payment',
   'subscription',
+  'training_plan',
   'webhook_event',
 ]
 const AUTH_TABLES = ['account', 'session', 'user', 'verification']

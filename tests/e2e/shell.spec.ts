@@ -121,6 +121,9 @@ test.describe('app shell', () => {
       'aria-current',
       'page',
     )
+    await nav.getByRole('link', { name: 'BurnToReturn' }).click()
+    await expect(page).toHaveURL(/\/burn$/)
+    await expect(page.getByRole('heading', { level: 1, name: 'BurnToReturn' })).toBeAttached()
   })
 
   test('shows a helpful 404 page', async ({ page }) => {
