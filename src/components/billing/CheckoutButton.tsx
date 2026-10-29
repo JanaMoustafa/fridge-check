@@ -3,7 +3,7 @@
 import { CreditCard } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useActionState } from 'react'
-import { startCheckoutAction, type CheckoutState } from '@/app/pro/actions'
+import { startCheckoutAction, type CheckoutState } from '@/app/(app)/pro/actions'
 import { buttonClasses } from '@/components/ui/button'
 
 /** Opens XPay's hosted checkout (a server action creates the session, then redirects). */

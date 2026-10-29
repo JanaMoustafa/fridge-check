@@ -3,11 +3,6 @@ import { headers } from 'next/headers'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { AppProviders } from '@/components/layout/AppProviders'
-import { BottomTabBar } from '@/components/layout/BottomTabBar'
-import { SiteFooter } from '@/components/layout/SiteFooter'
-import { SiteHeader } from '@/components/layout/SiteHeader'
-import { SkipLink } from '@/components/layout/SkipLink'
-import { StorageNotice } from '@/components/layout/StorageNotice'
 import { PREPAINT_SCRIPT } from '@/lib/boot/prepaint-script'
 import { directionOf } from '@/lib/i18n/locale'
 import { getSiteUrl } from '@/lib/site-url'
@@ -70,20 +65,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
       </head>
       <body className="flex min-h-dvh flex-col antialiased">
         <NextIntlClientProvider>
-          <AppProviders dir={dir}>
-            <SkipLink />
-            <SiteHeader />
-            <StorageNotice />
-            <main
-              id="main"
-              tabIndex={-1}
-              className="mx-auto w-full max-w-[1440px] flex-1 px-4 pt-6 pb-12 outline-none sm:px-6 md:pt-10 md:pb-16 lg:px-8"
-            >
-              {children}
-            </main>
-            <SiteFooter />
-            <BottomTabBar />
-          </AppProviders>
+          <AppProviders dir={dir}>{children}</AppProviders>
         </NextIntlClientProvider>
       </body>
     </html>

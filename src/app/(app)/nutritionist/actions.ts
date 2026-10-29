@@ -28,7 +28,7 @@ export async function saveScanAction(
   formData: FormData,
 ): Promise<ScanFormState> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account?next=%2Fnutritionist%2Fscan')
+  if (!user) redirect('/welcome?next=%2Fnutritionist%2Fscan')
   const now = new Date()
   if (!(await getProAccess(getDb(), user.id, now)).isPro) redirect('/pro')
 
@@ -57,7 +57,7 @@ export async function saveScanAction(
 /** Deletes one of the signed-in member's own scans. */
 export async function deleteScanAction(formData: FormData): Promise<void> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account?next=%2Fnutritionist%2Freport')
+  if (!user) redirect('/welcome?next=%2Fnutritionist%2Freport')
   const id = formData.get('id')
   if (typeof id === 'string') await deleteScan(getDb(), user.id, id)
   redirect('/nutritionist/report?deleted=1')

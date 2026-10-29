@@ -3,7 +3,7 @@
 import { AlertCircle, Camera, CheckCircle2, LoaderCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useActionState, useId, useState } from 'react'
-import { saveScanAction, type ScanFormState } from '@/app/nutritionist/actions'
+import { saveScanAction, type ScanFormState } from '@/app/(app)/nutritionist/actions'
 import { buttonClasses } from '@/components/ui/button'
 import { SCAN_FIELDS, SCAN_LIMITS, type ScanField } from '@/lib/nutritionist/inbody'
 import type { ReadFailure, ReadResponse } from '@/lib/server/inbody-read-request'

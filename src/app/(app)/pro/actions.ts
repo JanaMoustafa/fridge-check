@@ -18,7 +18,7 @@ export interface CheckoutState {
  */
 export async function startCheckoutAction(): Promise<CheckoutState> {
   const user = await getSignedInUser()
-  if (!user) redirect(`/account?next=${encodeURIComponent('/pro')}`)
+  if (!user) redirect(`/welcome?next=${encodeURIComponent('/pro')}`)
   const xpay = getXPay()
   const site = siteUrl()
   if (!xpay || !site) return { error: 'unavailable' }

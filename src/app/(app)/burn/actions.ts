@@ -20,7 +20,7 @@ export async function saveTrainingAction(
   formData: FormData,
 ): Promise<TrainingFormState> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account?next=%2Fburn%2Fsetup')
+  if (!user) redirect('/welcome?next=%2Fburn%2Fsetup')
   const now = new Date()
   if (!(await getProAccess(getDb(), user.id, now)).isPro) redirect('/pro')
 

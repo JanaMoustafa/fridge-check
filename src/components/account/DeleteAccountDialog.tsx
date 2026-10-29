@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { AlertDialog } from 'radix-ui'
 import { useFormStatus } from 'react-dom'
-import { deleteAccountAction } from '@/app/account/actions'
+import { deleteAccountAction } from '@/app/(app)/account/actions'
 import { buttonClasses } from '@/components/ui/button'
 
 function ConfirmButton() {

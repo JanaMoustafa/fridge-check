@@ -43,7 +43,7 @@ export async function proGate(path: string, programme: ProProgramme): Promise<Pr
         icon={UserRound}
         title={t('signedOutTitle')}
         body={t('signedOutBody')}
-        action={{ href: `/account?next=${encodeURIComponent(path)}`, label: t('signIn') }}
+        action={{ href: `/welcome?next=${encodeURIComponent(path)}`, label: t('signIn') }}
       />,
     )
   }

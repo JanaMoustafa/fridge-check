@@ -23,7 +23,7 @@ export async function ExerciseCard({
   return (
     <Link
       href={`/burn/exercise/${exercise.id}`}
-      className="flex min-h-16 items-center gap-3 rounded-btn bg-bg px-4 py-3 transition-colors hover:bg-surface-2"
+      className="flex min-h-16 items-center gap-3 rounded-btn bg-bg px-4 py-3 transition-colors hover:bg-primary-soft"
     >
       <span className="min-w-0 flex-1">
         <span className="block font-extrabold">{say(exercise.name, locale)}</span>

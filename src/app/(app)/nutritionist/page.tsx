@@ -139,7 +139,7 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
               key={tile.key}
               className={`rounded-btn bg-surface-2 px-3 py-2 ${'wide' in tile ? 'col-span-2 sm:col-span-4' : ''}`}
             >
-              <dt className="text-xs font-semibold text-fg-muted">{t(tile.key)}</dt>
+              <dt className="text-xs font-semibold text-fg">{t(tile.key)}</dt>
               <dd
                 className={`font-extrabold tabular-nums ${'wide' in tile ? 'text-3xl' : 'text-lg'}`}
               >
@@ -152,7 +152,7 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
           <Droplets aria-hidden="true" className="size-6 shrink-0 text-primary" />
           <p>
             <span className="font-extrabold tabular-nums">{t('waterValue', { value: water })}</span>{' '}
-            <span className="text-sm text-fg-muted">
+            <span className="text-sm text-fg">
               {t(trainingToday ? 'waterTrainingToday' : 'waterTraining', {
                 extra: TRAINING_DAY_EXTRA_L,
               })}

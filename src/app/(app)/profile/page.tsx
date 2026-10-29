@@ -20,11 +20,11 @@ export default async function ProfilePage({ searchParams }: PageProps<'/profile'
   const query = await searchParams
   const next = safeNext(typeof query.next === 'string' ? query.next : undefined)
   const user = await getSignedInUser()
-  if (!user) redirect(`/account?next=${encodeURIComponent('/profile')}`)
+  if (!user) redirect(`/welcome?next=${encodeURIComponent('/profile')}`)
 
   const profile = await getProfile(getDb(), user.id, new Date())
   const welcome = query.welcome === '1'
-  if (welcome && profile) redirect(next ?? '/account')
+  if (welcome && profile) redirect(next ?? '/')
 
   const t = await getTranslations('profile')
   return (

@@ -23,7 +23,7 @@ export async function saveProfileAction(
   formData: FormData,
 ): Promise<ProfileFormState> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account')
+  if (!user) redirect('/welcome')
 
   const form = Object.fromEntries(
     [...formData.entries()].filter(

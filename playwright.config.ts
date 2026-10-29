@@ -9,9 +9,13 @@ export default defineConfig({
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
+  // Signs the suite in as a test member where accounts are on (see tests/e2e/member.ts).
+  globalSetup: './tests/e2e/global-setup.ts',
+  globalTeardown: './tests/e2e/global-teardown.ts',
   use: {
     baseURL,
     trace: 'retain-on-failure',
+    storageState: 'tests/e2e/.auth/member.json',
   },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },

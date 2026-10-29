@@ -212,6 +212,24 @@ tests/           e2e/ · msw/ · fixtures/
 - **Links:** a training day adds 0.5 L to the Nutritionist's water target. Navigation has five tabs;
   the phone tab bar (and the header below lg) shows short labels inside the full accessible names.
 
+## Intro page and sign-in to enter (owner request 2026-10-29)
+
+- **Owner decision:** the app opens on an intro page (the mark, one line, Google sign-in); members
+  sign in to enter. Google is the only sign-in, so one button serves new and returning members.
+- **Entry rule** (`src/lib/auth/entry.ts`, run by `src/proxy.ts`): with accounts on, every page
+  except `/welcome`, `/privacy`, `/terms`, `/refunds` and `/pro` (plus auth and payment callbacks
+  and site files) needs a session cookie; pages redirect to `/welcome?next=…`, APIs answer 401.
+  Pages still check the session itself. Without accounts (CI) the app stays open.
+- **Layout:** app pages live in the `(app)` route group with the header, footer and tab bar
+  (`AppChrome`); `/welcome` stands alone. Sign-out and account deletion land on the intro page.
+- **Signature animation** (frontend-design and ui-ux-pro-max skills): the mark drawn large takes
+  its three bites (pieces of the plate flying out), then ticks itself while "Every bite, done
+  right." is written in step; it ends as the logo. One CSS sequence, no loops; reduced motion
+  shows the end state; the plate turns while Google opens.
+- **Tests:** e2e signs in as a throwaway member in the local database where accounts are on
+  (`tests/e2e/member.ts`); signed-out tests cover the intro page and the redirects. Fixed muted
+  text on sage tiles (3.9:1) that only showed for members.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

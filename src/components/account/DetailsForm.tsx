@@ -3,7 +3,7 @@
 import { AlertCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useActionState, useId } from 'react'
-import { saveDetailsAction, type DetailsFormState } from '@/app/account/actions'
+import { saveDetailsAction, type DetailsFormState } from '@/app/(app)/account/actions'
 import { buttonClasses } from '@/components/ui/button'
 import type { MemberDetails } from '@/lib/account/details'
 

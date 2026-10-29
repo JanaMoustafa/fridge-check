@@ -4,14 +4,14 @@ import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it, vi } from 'vitest'
 import ar from '../../../messages/ar.json'
 import en from '../../../messages/en.json'
-import type { ProfileFormState } from '@/app/profile/actions'
+import type { ProfileFormState } from '@/app/(app)/profile/actions'
 import { ProfileForm } from './ProfileForm'
 
 const action = vi.hoisted(() => ({
   result: {} as ProfileFormState,
   calls: [] as FormData[],
 }))
-vi.mock('@/app/profile/actions', () => ({
+vi.mock('@/app/(app)/profile/actions', () => ({
   saveProfileAction: async (_state: ProfileFormState, formData: FormData) => {
     action.calls.push(formData)
     return action.result

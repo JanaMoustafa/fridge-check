@@ -20,7 +20,7 @@ export async function TargetsCard({ targets }: { targets: NutritionTargets }) {
       <dl className="grid grid-cols-3 gap-2">
         {macros.map(([key, grams]) => (
           <div key={key} className="rounded-btn bg-surface-2 px-3 py-2">
-            <dt className="text-xs font-semibold text-fg-muted">{t(key)}</dt>
+            <dt className="text-xs font-semibold text-fg">{t(key)}</dt>
             <dd className="text-lg font-extrabold tabular-nums">{t('grams', { value: grams })}</dd>
           </div>
         ))}

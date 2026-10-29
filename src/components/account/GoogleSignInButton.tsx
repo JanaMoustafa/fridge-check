@@ -33,7 +33,14 @@ function GoogleMark() {
  * visitors who never sign in never load it. After Google, the profile page decides where to go
  * (onboarding the first time, otherwise `next`).
  */
-export function GoogleSignInButton({ next }: { next: string | null }) {
+export function GoogleSignInButton({
+  next,
+  prominent = false,
+}: {
+  next: string | null
+  /** The intro page's main action: full width and primary. */
+  prominent?: boolean
+}) {
   const t = useTranslations('account')
   const [state, setState] = useState<'idle' | 'pending' | 'failed'>('idle')
 
@@ -45,7 +52,7 @@ export function GoogleSignInButton({ next }: { next: string | null }) {
       const { error } = await createAuthClient().signIn.social({
         provider: 'google',
         callbackURL,
-        errorCallbackURL: '/account?signin=failed',
+        errorCallbackURL: '/welcome?signin=failed',
       })
       if (error) setState('failed')
     } catch {
@@ -60,7 +67,11 @@ export function GoogleSignInButton({ next }: { next: string | null }) {
         onClick={signIn}
         disabled={state === 'pending'}
         aria-busy={state === 'pending' || undefined}
-        className={buttonClasses({ variant: 'secondary', className: 'w-full sm:w-auto' })}
+        className={buttonClasses(
+          prominent
+            ? { className: 'min-h-14 w-full text-base' }
+            : { variant: 'secondary', className: 'w-full sm:w-auto' },
+        )}
       >
         <GoogleMark />
         {state === 'pending' ? t('signingIn') : t('continueWithGoogle')}

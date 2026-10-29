@@ -731,3 +731,129 @@
     color: inherit !important;
   }
 }
+
+/* ---------------------------------------------------------------------------------------------
+ * Intro page (/welcome): the mark takes its three bites, crumbs fall from each, then the tick
+ * draws itself "done right" and the headline is written in step with it. One sequence, no loops;
+ * its end state is the logo, which is all reduced-motion visitors see. While Google sign-in
+ * opens, the plate turns.
+ * ------------------------------------------------------------------------------------------- */
+.bite-plate {
+  overflow: visible;
+}
+.bite-plate-disc {
+  transform-box: view-box;
+  transform-origin: 80px 84px;
+}
+.bite-plate-bite,
+.bite-plate-crumb {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.bite-plate-crumb {
+  opacity: 0;
+}
+.bite-plate-tick {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bite-plate-bite {
+    animation: bite-in 280ms cubic-bezier(0.3, 1.5, 0.5, 1) both;
+    animation-delay: calc(350ms + var(--i) * 300ms);
+  }
+  .bite-plate-disc {
+    animation: plate-jolt 900ms ease-out 350ms both;
+  }
+  .bite-plate-crumb {
+    animation: crumb-fall 900ms cubic-bezier(0.3, 0.1, 0.6, 1) both;
+    animation-delay: calc(400ms + var(--i) * 300ms);
+  }
+  .bite-plate-tick {
+    animation: tick-draw 520ms cubic-bezier(0.65, 0, 0.35, 1) 1.35s both;
+  }
+  .welcome-line {
+    animation: line-write 640ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: calc(450ms + var(--line) * 950ms);
+  }
+  [dir='rtl'] .welcome-line {
+    animation-name: line-write-rtl;
+  }
+  .welcome:has([aria-busy='true']) .bite-plate-disc {
+    animation: plate-turn 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+}
+
+@keyframes bite-in {
+  from {
+    transform: scale(0);
+  }
+}
+/* A small recoil each time a bite lands (bites at 0 %, 33 % and 66 % of the run). */
+@keyframes plate-jolt {
+  0%,
+  14%,
+  33%,
+  47%,
+  66%,
+  80%,
+  100% {
+    transform: none;
+  }
+  6% {
+    transform: translate(-3px, 3px) rotate(-1.4deg);
+  }
+  39% {
+    transform: translate(-2px, 2px) rotate(-1deg);
+  }
+  72% {
+    transform: translate(-2px, 2px) rotate(-0.7deg);
+  }
+}
+/* A piece of the plate: kicked up and out of the bite, then falling away. */
+@keyframes crumb-fall {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.3);
+  }
+  12% {
+    opacity: 1;
+  }
+  35% {
+    transform: translate(calc(var(--dx) * 0.55), -14px) scale(1) rotate(40deg);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.85) rotate(120deg);
+  }
+}
+@keyframes tick-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes line-write {
+  from {
+    clip-path: inset(-0.25em 100% -0.25em -0.25em);
+  }
+  to {
+    clip-path: inset(-0.25em -0.25em -0.25em -0.25em);
+  }
+}
+@keyframes line-write-rtl {
+  from {
+    clip-path: inset(-0.25em -0.25em -0.25em 100%);
+  }
+  to {
+    clip-path: inset(-0.25em -0.25em -0.25em -0.25em);
+  }
+}
+@keyframes plate-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}

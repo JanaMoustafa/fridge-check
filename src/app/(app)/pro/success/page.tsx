@@ -28,7 +28,7 @@ export default async function CheckoutSuccessPage({ searchParams }: PageProps<'/
   const query = await searchParams
   const sessionId = typeof query.session === 'string' ? query.session : ''
   const user = await getSignedInUser()
-  if (!user) redirect(`/account?next=${encodeURIComponent(`/pro/success?session=${sessionId}`)}`)
+  if (!user) redirect(`/welcome?next=${encodeURIComponent(`/pro/success?session=${sessionId}`)}`)
 
   const [t, locale] = await Promise.all([getTranslations('billing'), getLocale()])
   const db = getDb()

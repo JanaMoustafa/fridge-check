@@ -3,7 +3,7 @@
 import { AlertCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useActionState, useId } from 'react'
-import { saveTrainingAction, type TrainingFormState } from '@/app/burn/actions'
+import { saveTrainingAction, type TrainingFormState } from '@/app/(app)/burn/actions'
 import { buttonClasses } from '@/components/ui/button'
 import { STYLES } from '@/lib/burn/types'
 

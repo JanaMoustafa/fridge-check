@@ -98,7 +98,7 @@ export default async function ProPage() {
           ) : user ? (
             <p className="font-semibold text-fg-muted">{t('comingSoon')}</p>
           ) : (
-            <Link href={`/account?next=${encodeURIComponent('/pro')}`} className={buttonClasses()}>
+            <Link href={`/welcome?next=${encodeURIComponent('/pro')}`} className={buttonClasses()}>
               {t('signInToUpgrade')}
             </Link>
           )}

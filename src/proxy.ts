@@ -1,7 +1,24 @@
 import { NextResponse, type NextRequest } from 'next/server'
+import { entryDecision, SESSION_COOKIES, signInRequired } from '@/lib/auth/entry'
 import { buildCsp, createNonce } from '@/lib/security/csp'
 
 export function proxy(request: NextRequest) {
+  const entry = entryDecision({
+    pathname: request.nextUrl.pathname,
+    search: request.nextUrl.search,
+    hasSession: SESSION_COOKIES.some((name) => request.cookies.get(name)?.value),
+    required: signInRequired(process.env),
+  })
+  if (entry.kind === 'welcome') {
+    return NextResponse.redirect(new URL(entry.location, request.url))
+  }
+  if (entry.kind === 'unauthorized') {
+    return Response.json(
+      { error: { code: 'signed-out', message: 'Sign in to use BiteDoneRight.' } },
+      { status: 401, headers: { 'Cache-Control': 'no-store' } },
+    )
+  }
+
   const nonce = createNonce()
   const csp = buildCsp(nonce, {
     dev: process.env.NODE_ENV === 'development',

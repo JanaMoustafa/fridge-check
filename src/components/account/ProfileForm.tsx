@@ -3,7 +3,7 @@
 import { AlertCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useActionState, useId, useState } from 'react'
-import { saveProfileAction, type ProfileFormState } from '@/app/profile/actions'
+import { saveProfileAction, type ProfileFormState } from '@/app/(app)/profile/actions'
 import { legalLinks } from '@/components/legal/legal-links'
 import { buttonClasses } from '@/components/ui/button'
 import { ACTIVITY_LEVELS, GOALS, SEXES } from '@/lib/nutrition/calculator'

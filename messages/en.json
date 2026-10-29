@@ -8,6 +8,14 @@
     "skipToContent": "Skip to main content",
     "close": "Close"
   },
+  "welcome": {
+    "metaTitle": "BiteDoneRight: every bite, done right",
+    "headlineA": "Every bite,",
+    "headlineB": "done right.",
+    "body": "Your InBody results become a meal plan, a training programme and a monthly progress report, all made for your body.",
+    "sameButton": "New here or coming back, it's the same button.",
+    "trial": "Everything is free for your first 30 days."
+  },
   "nav": {
     "label": "Main navigation",
     "find": "Find recipes",

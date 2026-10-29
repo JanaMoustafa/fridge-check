@@ -13,7 +13,7 @@ import { deleteAccount } from '@/lib/server/profiles'
 export async function signOutAction(): Promise<void> {
   const auth = getAuth()
   if (auth) await auth.api.signOut({ headers: await headers() }).catch(() => undefined)
-  redirect('/account')
+  redirect('/welcome')
 }
 
 /**
@@ -22,24 +22,24 @@ export async function signOutAction(): Promise<void> {
  */
 export async function deleteAccountAction(): Promise<void> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account')
+  if (!user) redirect('/welcome')
   await deleteAccount(getDb(), user.id)
   const auth = getAuth()
   if (auth) await auth.api.signOut({ headers: await headers() }).catch(() => undefined)
-  redirect('/account?deleted=1')
+  redirect('/welcome?deleted=1')
 }
 
 /** Turns renewal reminders off: Pro stays until the paid period ends (nothing auto-renews). */
 export async function cancelRenewalAction(): Promise<void> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account')
+  if (!user) redirect('/welcome')
   await cancelRenewal(getDb(), user.id, new Date())
   redirect('/account')
 }
 
 export async function resumeRenewalAction(): Promise<void> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account')
+  if (!user) redirect('/welcome')
   await resumeRenewal(getDb(), user.id, new Date())
   redirect('/account')
 }
@@ -56,7 +56,7 @@ export async function saveDetailsAction(
   formData: FormData,
 ): Promise<DetailsFormState> {
   const user = await getSignedInUser()
-  if (!user) redirect('/account')
+  if (!user) redirect('/welcome')
   const form = {
     name: String(formData.get('name') ?? ''),
     phone: String(formData.get('phone') ?? ''),

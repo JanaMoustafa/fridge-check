@@ -54,7 +54,8 @@ function Totals({ macros, label }: { macros: Macros; label: string }) {
         </div>
         {MACROS.map((macro) => (
           <div key={macro} className="rounded-btn bg-surface-2 px-3 py-2">
-            <dt className="text-xs font-semibold text-fg-muted">{t(macro)}</dt>
+            {/* Full-strength text: muted grey on sage falls below 4.5:1. */}
+            <dt className="text-xs font-semibold text-fg">{t(macro)}</dt>
             <dd className="text-lg font-extrabold tabular-nums">
               {t('grams', { value: round(macros[MACRO_KEY[macro]]) })}
             </dd>
