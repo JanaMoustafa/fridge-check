@@ -118,7 +118,7 @@ export default async function RecipePage({ params, searchParams }: Props) {
                 </div>
                 <div className="flex flex-wrap items-center gap-2 text-sm text-fg-muted">
                   {cuisine && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 font-semibold">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 font-semibold text-fg">
                       <Globe aria-hidden="true" className="size-3.5" />
                       {cuisine}
                     </span>
