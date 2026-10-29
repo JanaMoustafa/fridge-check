@@ -5,3 +5,6 @@ test-results
 pnpm-lock.yaml
 data/recipes.json
 node_modules
+
+# Vendored on-device OCR builds
+public/ocr

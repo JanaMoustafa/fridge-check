@@ -19,7 +19,10 @@ export function buildCsp(nonce: string, { dev, https }: { dev: boolean; https: b
   const directives = [
     `default-src 'self'`,
     // 'unsafe-eval' is only needed by React's development tooling.
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${dev ? ` 'unsafe-eval'` : ''}`,
+    // 'wasm-unsafe-eval': the on-device OCR (Tesseract) compiles WebAssembly.
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'wasm-unsafe-eval'${dev ? ` 'unsafe-eval'` : ''}`,
+    // The OCR runs in a web worker served from this site.
+    `worker-src 'self' blob:`,
     // Nonces cannot cover style attributes (next/image sizing, CSS custom properties), so inline styles stay allowed.
     `style-src 'self' 'unsafe-inline'`,
     `img-src 'self' data: blob: ${IMAGE_HOSTS.join(' ')}`,

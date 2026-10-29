@@ -5,6 +5,9 @@ import pluginQuery from '@tanstack/eslint-plugin-query'
 import prettier from 'eslint-config-prettier/flat'
 
 const eslintConfig = defineConfig([
+  // Vendored on-device OCR (Tesseract) builds: third-party, minified.
+  { ignores: ['public/ocr/**'] },
+
   ...nextVitals,
   ...nextTs,
   ...pluginQuery.configs['flat/recommended'],

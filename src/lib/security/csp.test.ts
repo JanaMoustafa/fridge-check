@@ -14,8 +14,9 @@ describe('buildCsp', () => {
   const prod = buildCsp('abc', { dev: false, https: true })
 
   it('allows only nonce-bearing scripts in production', () => {
-    expect(prod).toContain(`script-src 'self' 'nonce-abc' 'strict-dynamic'`)
-    expect(prod).not.toContain('unsafe-eval')
+    expect(prod).toContain(`script-src 'self' 'nonce-abc' 'strict-dynamic' 'wasm-unsafe-eval'`)
+    expect(prod).toContain(`worker-src 'self' blob:`)
+    expect(prod).not.toContain(" 'unsafe-eval'")
   })
 
   it('allows unsafe-eval only in development', () => {

@@ -601,10 +601,10 @@
       "title": "Upload your InBody results",
       "intro": "Add a new scan each month. Your targets, water and meals update as soon as you save it.",
       "photoTitle": "From a photo",
-      "photoBody": "Take a clear photo of the whole result sheet. We'll read the numbers for you to check.",
+      "photoBody": "Take a clear, straight photo of the whole result sheet in good light. It's read on your phone and never uploaded.",
       "choosePhoto": "Choose or take a photo",
       "reading": "Reading your sheet…",
-      "readDone": "We read {found, plural, one {{found, number, latn} number} other {{found, number, latn} numbers}}. Check each one against your sheet, fill in anything missing, then save.",
+      "readDone": "We read {found, plural, one {{found, number, latn} number} other {{found, number, latn} numbers}} off your sheet. Check each one against it, fill in anything missing, then save.",
       "readErrors": {
         "signed_out": "You've been signed out. Sign in again to read a photo.",
         "not_pro": "Reading photos is part of Pro.",
@@ -617,9 +617,10 @@
         "not_inbody": "That doesn't look like an InBody result sheet. Try another photo or type the numbers below.",
         "unreadable": "We couldn't read the numbers on that photo. Try a sharper photo or type them below.",
         "refused": "We couldn't read that photo. Type the numbers from your sheet below.",
-        "upstream": "Reading failed. Try again in a moment, or type the numbers below."
+        "upstream": "Reading failed. Try again in a moment, or type the numbers below.",
+        "ocr_failed": "The reader couldn't start on this device. Type the numbers from your sheet below."
       },
-      "photoPrivacy": "Your photo is sent to Anthropic's Claude only to read the numbers. It isn't stored; only the numbers you save are kept.",
+      "photoPrivacy": "Your photo stays on your device: the reading happens in your browser. Only the numbers you save are kept.",
       "previewAlt": "Your InBody photo",
       "numbersTitle": "Your numbers",
       "numbersBody": "Read from your photo or typed in. Only weight is required.",
@@ -649,7 +650,10 @@
         "percent": "%",
         "kcal": "kcal",
         "litre": "L"
-      }
+      },
+      "ocrPreparing": "Preparing the reader (first time only, about 8 MB)…",
+      "ocrReading": "Reading your sheet… {percent, number, latn}%",
+      "extrasRead": "Also captured {count, plural, one {{count, number, latn} more number} other {{count, number, latn} more numbers}} for your report."
     },
     "report": {
       "metaTitle": "Your report",
@@ -708,7 +712,45 @@
       "nextDue": "Next scan due {date}.",
       "delete": "Hold to delete the scan from {date}",
       "holdToDelete": "Hold to delete",
-      "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first."
+      "disclaimer": "General guidance for healthy adults, not medical advice. If you're pregnant, breastfeeding or managing a health condition, ask a doctor or dietitian first.",
+      "sheetTitle": "Everything on your sheet",
+      "sheetIntro": "The other numbers your InBody printed, as read from your photo."
+    },
+    "extras": {
+      "heightCm": "Height",
+      "age": "Age",
+      "bmi": "BMI",
+      "proteinKg": "Protein",
+      "mineralsKg": "Minerals",
+      "icwL": "Intracellular water",
+      "ecwL": "Extracellular water",
+      "ffmKg": "Fat-free mass",
+      "bcmKg": "Body cell mass",
+      "bmcKg": "Bone mineral content",
+      "whr": "Waist-hip ratio",
+      "vfaCm2": "Visceral fat area",
+      "obesityDegree": "Obesity degree",
+      "smi": "Skeletal muscle index",
+      "inbodyScore": "InBody score",
+      "targetWeightKg": "Target weight",
+      "weightControlKg": "Weight control",
+      "fatControlKg": "Fat control",
+      "muscleControlKg": "Muscle control",
+      "leanRightArmKg": "Lean mass, right arm",
+      "leanLeftArmKg": "Lean mass, left arm",
+      "leanTrunkKg": "Lean mass, trunk",
+      "leanRightLegKg": "Lean mass, right leg",
+      "leanLeftLegKg": "Lean mass, left leg"
+    },
+    "extraUnits": {
+      "kg": "{value, number, latn} kg",
+      "litre": "{value, number, latn} L",
+      "percent": "{value, number, latn}%",
+      "cm": "{value, number, latn} cm",
+      "cm2": "{value, number, latn} cm²",
+      "points": "{value, number, latn} / 100",
+      "plain": "{value, number, latn}",
+      "years": "{value, number, latn} years"
     }
   },
   "burn": {

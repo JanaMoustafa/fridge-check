@@ -1,11 +1,14 @@
 import 'server-only'
 import { sql, type Kysely } from 'kysely'
 import type { Database } from '@/lib/db/schema'
+import type { Extra } from '@/lib/nutritionist/inbody-extra'
 import type { ScanValues } from '@/lib/nutritionist/inbody'
 
 export interface StoredScan extends ScanValues {
   id: string
   source: 'photo' | 'typed'
+  /** The sheet's other numbers, when read from a photo. */
+  extra: Extra
   createdAt: Date
 }
 
@@ -20,6 +23,7 @@ const columns = [
   'vfl',
   'tbw_l',
   'source',
+  'extra',
   'created_at',
 ] as const
 
@@ -34,6 +38,7 @@ type Row = {
   vfl: number | null
   tbw_l: number | null
   source: 'photo' | 'typed'
+  extra: Record<string, number>
   created_at: Date
 }
 
@@ -48,6 +53,7 @@ const toScan = (row: Row): StoredScan => ({
   vfl: row.vfl,
   tbwL: row.tbw_l,
   source: row.source,
+  extra: row.extra as Extra,
   createdAt: row.created_at,
 })
 
@@ -85,6 +91,7 @@ export async function saveScan(
   values: ScanValues,
   source: 'photo' | 'typed',
   now: Date,
+  extra: Extra = {},
 ): Promise<void> {
   await db.transaction().execute(async (trx) => {
     await trx
@@ -100,6 +107,7 @@ export async function saveScan(
         vfl: values.vfl,
         tbw_l: values.tbwL,
         source,
+        extra,
         created_at: now,
       })
       .execute()

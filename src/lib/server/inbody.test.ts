@@ -60,8 +60,13 @@ beforeEach(async () => {
 describe('InBody scans', () => {
   it('saves scans and lists them newest first, with the date as written', async () => {
     await saveScan(db, 'u1', scan('2026-09-27', 70), 'typed', NOW)
-    await saveScan(db, 'u1', scan('2026-10-27', 68, 1360), 'photo', NOW)
+    await saveScan(db, 'u1', scan('2026-10-27', 68, 1360), 'photo', NOW, {
+      inbodyScore: 71,
+      bmi: 25,
+    })
     const scans = await listScans(db, 'u1')
+    expect(scans[0]?.extra).toEqual({ inbodyScore: 71, bmi: 25 })
+    expect(scans[1]?.extra).toEqual({})
     expect(scans.map((s) => [s.scannedOn, s.weightKg, s.source])).toEqual([
       ['2026-10-27', 68, 'photo'],
       ['2026-09-27', 70, 'typed'],

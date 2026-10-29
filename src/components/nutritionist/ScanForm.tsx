@@ -2,14 +2,26 @@
 
 import { AlertCircle, Camera, CheckCircle2, LoaderCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { useActionState, useEffect, useId, useState } from 'react'
+import { useActionState, useEffect, useId, useRef, useState } from 'react'
 import { saveScanAction, type ScanFormState } from '@/app/(app)/nutritionist/actions'
 import { buttonClasses } from '@/components/ui/button'
 import { SCAN_FIELDS, SCAN_LIMITS, type ScanField } from '@/lib/nutritionist/inbody'
+import type { Worker as OcrWorker } from 'tesseract.js'
+import type { Extra } from '@/lib/nutritionist/inbody-extra'
+import { parseInbodyText } from '@/lib/nutritionist/inbody-ocr'
 import type { ReadFailure, ReadResponse } from '@/lib/server/inbody-read-request'
 
-/** Long side of the photo sent for reading: plenty for printed numbers, small to upload. */
-const MAX_SIDE_PX = 1600
+/** Long side of the photo given to the reader: printed numbers need the detail; ~3 s to read. */
+const MAX_SIDE_PX = 3200
+/** The on-device OCR's files, served by this site (public/ocr) so the photo never leaves the phone. */
+const OCR = {
+  workerPath: '/ocr/worker.min.js',
+  corePath: '/ocr/tesseract-core-simd-lstm.wasm.js',
+  langPath: '/ocr',
+  gzip: true,
+} as const
+/** With fewer core numbers than this read on the device, the optional Claude reader has a go. */
+const BACKUP_BELOW = 3
 const UPLOAD_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
 
 const UNITS: Record<ScanField, 'kg' | 'percent' | 'kcal' | 'litre' | null> = {
@@ -24,9 +36,10 @@ const UNITS: Record<ScanField, 'kg' | 'percent' | 'kcal' | 'litre' | null> = {
 
 type Reading =
   | { state: 'idle' }
-  | { state: 'reading' }
-  | { state: 'read'; found: number }
-  | { state: 'failed'; error: ReadFailure }
+  | { state: 'preparing' }
+  | { state: 'reading'; percent: number }
+  | { state: 'read'; found: number; extras: number }
+  | { state: 'failed'; error: ReadFailure | 'ocr_failed' }
 
 /** A smaller JPEG of the photo; the original when the browser can't decode it (it may still read). */
 async function shrink(file: File): Promise<Blob> {
@@ -36,10 +49,15 @@ async function shrink(file: File): Promise<Blob> {
     const canvas = document.createElement('canvas')
     canvas.width = Math.round(bitmap.width * scale)
     canvas.height = Math.round(bitmap.height * scale)
-    canvas.getContext('2d')?.drawImage(bitmap, 0, 0, canvas.width, canvas.height)
+    const context = canvas.getContext('2d')
+    if (context) {
+      // Flat grey with a little more contrast reads better than a warm, shadowed phone photo.
+      context.filter = 'grayscale(1) contrast(1.25)'
+      context.drawImage(bitmap, 0, 0, canvas.width, canvas.height)
+    }
     bitmap.close()
     const blob = await new Promise<Blob | null>((resolve) =>
-      canvas.toBlob(resolve, 'image/jpeg', 0.85),
+      canvas.toBlob(resolve, 'image/jpeg', 0.92),
     )
     if (blob) return blob
   } catch {
@@ -49,17 +67,18 @@ async function shrink(file: File): Promise<Blob> {
 }
 
 interface ScanFormProps {
-  /** Whether photo reading is switched on (an Anthropic key is set on the server). */
-  photoReading: boolean
+  /** Whether the server's Claude reader may have a second go when the device read too little. */
+  claudeBackup: boolean
   /** Today in Cairo, the latest date a scan can have. */
   today: string
 }
 
 /**
- * Adding an InBody result: a photo of the sheet is read into the fields for the member to check,
- * or they type the numbers. Only what they save is kept; the photo never is.
+ * Adding an InBody result: a photo of the sheet is read on the device (Tesseract OCR, no upload)
+ * into the fields for the member to check, or they type the numbers. Only what they save is
+ * kept; the photo never is.
  */
-export function ScanForm({ photoReading, today }: ScanFormProps) {
+export function ScanForm({ claudeBackup, today }: ScanFormProps) {
   const t = useTranslations('nutritionist.scan')
   const [state, action, pending] = useActionState<ScanFormState, FormData>(saveScanAction, {})
   const ids = useId()
@@ -73,41 +92,76 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
   const [preview, setPreview] = useState<string | null>(null)
   /** Fields the photo filled, in form order: they light up one after another. */
   const [landed, setLanded] = useState<string[]>([])
+  /** The sheet's other numbers, saved with the scan for the report. */
+  const [extra, setExtra] = useState<Extra>({})
+  const ocr = useRef<Promise<OcrWorker> | null>(null)
 
   useEffect(() => () => void (preview && URL.revokeObjectURL(preview)), [preview])
   const errors = state.errors ?? {}
 
+  function reader(): Promise<OcrWorker> {
+    ocr.current ??= import('tesseract.js').then(({ createWorker }) =>
+      createWorker('eng', 1, {
+        ...OCR,
+        logger: (m: { status: string; progress: number }) => {
+          if (m.status === 'recognizing text') {
+            setReading({ state: 'reading', percent: Math.round(m.progress * 100) })
+          }
+        },
+      }),
+    )
+    return ocr.current
+  }
+
   async function readPhoto(file: File) {
     setPreview(URL.createObjectURL(file))
     setLanded([])
-    setReading({ state: 'reading' })
+    setReading({ state: 'preparing' })
     const photo = await shrink(file)
     if (!UPLOAD_TYPES.includes(photo.type)) {
       setReading({ state: 'failed', error: 'bad_type' })
       return
     }
-    const form = new FormData()
-    form.set('photo', photo, 'inbody.jpg')
-    let body: ReadResponse
+    let read
     try {
-      const response = await fetch('/api/inbody/read', { method: 'POST', body: form })
-      body = (await response.json()) as ReadResponse
+      const worker = await reader()
+      setReading({ state: 'reading', percent: 0 })
+      const { data } = await worker.recognize(photo)
+      read = parseInbodyText(data.text)
     } catch {
-      setReading({ state: 'failed', error: 'upstream' })
+      setReading({ state: 'failed', error: 'ocr_failed' })
       return
     }
-    if (!body.ok) {
-      setReading({ state: 'failed', error: body.error })
+    const values: Record<string, string> = Object.fromEntries(
+      Object.entries(read.values).filter(([, value]) => value),
+    )
+    let coreFound = Object.keys(values).filter((field) => field !== 'scannedOn').length
+    // Too little read on the device: the server's Claude reader may do better (when it is set up).
+    if (claudeBackup && coreFound < BACKUP_BELOW) {
+      try {
+        const form = new FormData()
+        form.set('photo', photo, 'inbody.jpg')
+        const response = await fetch('/api/inbody/read', { method: 'POST', body: form })
+        const body = (await response.json()) as ReadResponse
+        if (body.ok) {
+          for (const [field, value] of Object.entries(body.values)) {
+            if (value && !values[field]) values[field] = value
+          }
+          coreFound = Object.keys(values).filter((field) => field !== 'scannedOn').length
+        }
+      } catch {
+        // The device's read stands.
+      }
+    }
+    if (coreFound === 0) {
+      setReading({ state: 'failed', error: read.isInBody ? 'unreadable' : 'not_inbody' })
       return
     }
-    setValues((current) => {
-      const next = { ...current }
-      for (const [field, value] of Object.entries(body.values)) if (value) next[field] = value
-      return next
-    })
-    setLanded((['scannedOn', ...SCAN_FIELDS] as const).filter((field) => body.values[field]))
+    setValues((current) => ({ ...current, ...values }))
+    setExtra(read.extra)
+    setLanded((['scannedOn', ...SCAN_FIELDS] as const).filter((field) => values[field]))
     setSource('photo')
-    setReading({ state: 'read', found: body.found })
+    setReading({ state: 'read', found: coreFound, extras: Object.keys(read.extra).length })
   }
 
   const errorMessage = (field: ScanField | 'scannedOn') => {
@@ -155,7 +209,7 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
   const hasErrors = Object.keys(errors).length > 0
   return (
     <div className="space-y-6">
-      {photoReading && (
+      {
         <section aria-labelledby={`${ids}-photo`} className="space-y-3 rounded-card bg-surface p-5">
           <h2 id={`${ids}-photo`} className="text-lg font-extrabold">
             {t('photoTitle')}
@@ -167,17 +221,21 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
                 'cursor-pointer has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-primary',
             })}
           >
-            {reading.state === 'reading' ? (
+            {reading.state === 'reading' || reading.state === 'preparing' ? (
               <LoaderCircle aria-hidden="true" className="size-4 animate-spin" />
             ) : (
               <Camera aria-hidden="true" className="size-4" />
             )}
-            {reading.state === 'reading' ? t('reading') : t('choosePhoto')}
+            {reading.state === 'preparing'
+              ? t('ocrPreparing')
+              : reading.state === 'reading'
+                ? t('ocrReading', { percent: reading.percent })
+                : t('choosePhoto')}
             <input
               type="file"
               accept="image/*"
               className="sr-only"
-              disabled={reading.state === 'reading'}
+              disabled={reading.state === 'reading' || reading.state === 'preparing'}
               onChange={(event) => {
                 const file = event.target.files?.[0]
                 event.target.value = ''
@@ -187,7 +245,9 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
           </label>
           {preview && (
             <div
-              data-reading={reading.state === 'reading' || undefined}
+              data-reading={
+                reading.state === 'reading' || reading.state === 'preparing' || undefined
+              }
               className="scan-preview relative max-w-xs overflow-hidden rounded-btn bg-surface-2"
             >
               {/* A local preview of the member's own photo: next/image adds nothing here. */}
@@ -201,6 +261,7 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
               <p className="flex items-start gap-2 rounded-btn bg-have-soft px-4 py-3 text-sm font-semibold">
                 <CheckCircle2 aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-have" />
                 {t('readDone', { found: reading.found })}
+                {reading.extras > 0 && <> {t('extrasRead', { count: reading.extras })}</>}
               </p>
             )}
             {reading.state === 'failed' && (
@@ -212,15 +273,14 @@ export function ScanForm({ photoReading, today }: ScanFormProps) {
           </div>
           <p className="text-xs text-fg-muted">{t('photoPrivacy')}</p>
         </section>
-      )}
+      }
 
       <form action={action} noValidate className="space-y-5">
         <input type="hidden" name="source" value={source} />
+        <input type="hidden" name="extra" value={JSON.stringify(extra)} />
         <div className="space-y-1">
           <h2 className="text-lg font-extrabold">{t('numbersTitle')}</h2>
-          <p className="text-sm text-fg-muted">
-            {t(photoReading ? 'numbersBody' : 'numbersBodyTyped')}
-          </p>
+          <p className="text-sm text-fg-muted">{t('numbersBody')}</p>
         </div>
         {(hasErrors || state.failed) && (
           <p

@@ -34,7 +34,14 @@ const nextConfig: NextConfig = {
     },
   },
   async headers() {
-    return [{ source: '/:path*', headers: securityHeaders }]
+    return [
+      { source: '/:path*', headers: securityHeaders },
+      // The on-device OCR's engine and model (public/ocr, ~8 MB): versioned with the app, cached for a year.
+      {
+        source: '/ocr/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
+    ]
   },
 }
 

@@ -269,6 +269,23 @@ tests/           e2e/ · msw/ · fixtures/
   under test); `tests/e2e/intro.spec.ts` opts back in to check the intro plays, passes axe once
   settled, skips, clears itself and doesn't replay within a programme.
 
+## InBody photos read on the device, free (owner request 2026-10-30)
+
+- **Owner decision:** a totally free reader that captures every number on the sheet.
+- **How:** Tesseract.js 7 (open source) runs in the member's browser from files this site serves
+  (`public/ocr`, ~8 MB, cached a year): the photo is never uploaded. The photo is shrunk to
+  3,200 px, flattened to grey with more contrast, read, and `parseInbodyText` turns the text into
+  the seven core numbers, the test date and 23 more (height, age, BMI, protein, minerals, water
+  split, fat-free mass, body cell mass, bone mineral, waist-hip ratio, visceral fat area, obesity
+  degree, SMI, InBody score, target weight, weight/fat/muscle control, segmental lean mass).
+  Extras are stored as JSON (`inbody_scan.extra`, migration 0007) and shown on the report as
+  "Everything on your sheet". CSP allows WebAssembly and a same-origin worker.
+- **Claude backup:** only if `ANTHROPIC_API_KEY` is set and the device read fewer than three core
+  numbers does the photo go to the server reader; its failures are silent (the device read stands).
+- **Tested** on a realistic InBody 270 sheet rendered from HTML and a tilted, tinted phone-style
+  capture: both read 7/7 core numbers in about 1.3 s. Real phone photos vary; the member always
+  checks the fields before saving, and the parser is pure and unit-tested for new sheet prints.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

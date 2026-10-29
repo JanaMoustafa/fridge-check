@@ -173,6 +173,12 @@ export interface InbodyScanTable {
   vfl: number | null
   tbw_l: number | null
   source: 'photo' | 'typed'
+  /** The sheet's other numbers by name (see src/lib/nutritionist/inbody-extra.ts). */
+  extra: ColumnType<
+    Record<string, number>,
+    Record<string, number> | undefined,
+    Record<string, number>
+  >
   created_at: CreatedAt
 }
 

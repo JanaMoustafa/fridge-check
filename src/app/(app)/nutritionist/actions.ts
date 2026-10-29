@@ -10,6 +10,7 @@ import {
   type ScanError,
   type ScanField,
 } from '@/lib/nutritionist/inbody'
+import { parseExtraJson } from '@/lib/nutritionist/inbody-extra'
 import { deleteScan, saveScan } from '@/lib/server/inbody'
 
 export interface ScanFormState {
@@ -33,7 +34,7 @@ export async function saveScanAction(
   if (!(await getProAccess(getDb(), user.id, now)).isPro) redirect('/pro')
 
   const form: Record<string, string> = {}
-  for (const name of [...SCAN_FIELDS, 'scannedOn', 'source']) {
+  for (const name of [...SCAN_FIELDS, 'scannedOn', 'source', 'extra']) {
     const value = formData.get(name)
     if (typeof value === 'string') form[name] = value
   }
@@ -46,6 +47,7 @@ export async function saveScanAction(
       parsed.values,
       form.source === 'photo' ? 'photo' : 'typed',
       now,
+      parseExtraJson(form.extra),
     )
   } catch (error) {
     console.error('[inbody] save failed', error instanceof Error ? error.message : error)

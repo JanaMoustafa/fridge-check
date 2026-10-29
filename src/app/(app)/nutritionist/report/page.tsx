@@ -7,6 +7,7 @@ import { EmptyState } from '@/components/ui/EmptyState'
 import { getDb } from '@/lib/db/client'
 import { formatLongDate } from '@/lib/i18n/format-date'
 import { fatMassOf, fatPercentOf, nextScanDue } from '@/lib/nutritionist/inbody'
+import { EXTRA_FIELD_NAMES, type ExtraField } from '@/lib/nutritionist/inbody-extra'
 import {
   bmiOf,
   changeBetween,
@@ -26,6 +27,37 @@ import { BackTo, card, proGate } from '@/components/pro/ProGate'
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('nutritionist.report')
   return { title: t('metaTitle'), robots: { index: false } }
+}
+
+/** How each of the sheet's other numbers is shown. */
+const EXTRA_UNITS: Record<
+  ExtraField,
+  'kg' | 'litre' | 'percent' | 'cm' | 'cm2' | 'points' | 'plain' | 'years'
+> = {
+  heightCm: 'cm',
+  age: 'years',
+  bmi: 'plain',
+  proteinKg: 'kg',
+  mineralsKg: 'kg',
+  icwL: 'litre',
+  ecwL: 'litre',
+  ffmKg: 'kg',
+  bcmKg: 'kg',
+  bmcKg: 'kg',
+  whr: 'plain',
+  vfaCm2: 'cm2',
+  obesityDegree: 'percent',
+  smi: 'plain',
+  inbodyScore: 'points',
+  targetWeightKg: 'kg',
+  weightControlKg: 'kg',
+  fatControlKg: 'kg',
+  muscleControlKg: 'kg',
+  leanRightArmKg: 'kg',
+  leanLeftArmKg: 'kg',
+  leanTrunkKg: 'kg',
+  leanRightLegKg: 'kg',
+  leanLeftLegKg: 'kg',
 }
 
 /** The bars' scale, as % of the typical value for the member's height and sex. */
@@ -68,6 +100,9 @@ export default async function ReportPage({ searchParams }: PageProps<'/nutrition
 
   const { values } = profile
   const date = (day: string) => formatLongDate(dateOf(day), locale)
+  const sheet = EXTRA_FIELD_NAMES.filter((name) => latest.extra[name] !== undefined).map(
+    (name) => [name, latest.extra[name]!] as const,
+  )
   const kg = (value: number) => t('kg', { value: one(value) })
   const fatKg = fatMassOf(latest)
   const pbf = fatPercentOf(latest)
@@ -201,6 +236,27 @@ export default async function ReportPage({ searchParams }: PageProps<'/nutrition
           </p>
         </div>
       </section>
+
+      {sheet.length > 0 && (
+        <section aria-labelledby="sheet-title" className={`${card} space-y-4`}>
+          <div className="space-y-1">
+            <h2 id="sheet-title" className="text-lg font-extrabold">
+              {t('sheetTitle')}
+            </h2>
+            <p className="text-sm text-fg-muted">{t('sheetIntro')}</p>
+          </div>
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3">
+            {sheet.map(([name, value]) => (
+              <div key={name}>
+                <dt className="text-xs font-semibold text-fg-muted">{tn(`extras.${name}`)}</dt>
+                <dd className="font-bold tabular-nums">
+                  {tn(`extraUnits.${EXTRA_UNITS[name]}`, { value })}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
       <section aria-labelledby="outcome-title" className={`${card} space-y-4`}>
         <h2 id="outcome-title" className="text-lg font-extrabold">

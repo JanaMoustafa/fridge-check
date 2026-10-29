@@ -49,6 +49,9 @@ describe('translation catalogs', () => {
       // A bare number and % sign: the same in both languages.
       'nutritionist.report.percent',
       'nutritionist.scan.units.percent',
+      'nutritionist.extraUnits.percent',
+      'nutritionist.extraUnits.points',
+      'nutritionist.extraUnits.plain',
       'burn.metaTitle',
       'burn.title',
       'intro.burn.title',

@@ -25,7 +25,7 @@ export default async function ScanPage() {
         <h1 className="text-2xl font-extrabold">{t('title')}</h1>
         <p className="text-fg-muted">{t('intro')}</p>
       </header>
-      <ScanForm photoReading={photoReadingEnabled()} today={cairoDate(gate.now)} />
+      <ScanForm claudeBackup={photoReadingEnabled()} today={cairoDate(gate.now)} />
     </div>
   )
 }
