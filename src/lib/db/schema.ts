@@ -190,6 +190,16 @@ export interface TrainingPlanTable {
   updated_at: UpdatedAt
 }
 
+/** A member's pick for a meal on a day (YYYY-MM-DD, Cairo), by option id. */
+export interface MealChoiceTable {
+  user_id: string
+  /** Always selected as text (day::text): drivers turn dates into time-zone-shifted Dates. */
+  day: ColumnType<string, string, string>
+  meal: 'breakfast' | 'lunch' | 'dinner' | 'snacks'
+  option_id: string
+  updated_at: UpdatedAt
+}
+
 export interface Database {
   user: UserTable
   session: SessionTable
@@ -202,6 +212,7 @@ export interface Database {
   member_contact: MemberContactTable
   inbody_scan: InbodyScanTable
   training_plan: TrainingPlanTable
+  meal_choice: MealChoiceTable
 }
 
 export type NutritionProfileRow = Selectable<NutritionProfileTable>

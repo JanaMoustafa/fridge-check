@@ -9,6 +9,7 @@ import type { Database } from './schema'
 
 const OUR_TABLES = [
   'inbody_scan',
+  'meal_choice',
   'member_contact',
   'nutrition_profile',
   'payment',

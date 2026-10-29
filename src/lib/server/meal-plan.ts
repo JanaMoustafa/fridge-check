@@ -1,15 +1,18 @@
 import 'server-only'
 import { getLocalRecipes } from '@/lib/data/local-recipes'
-import type { NutritionTargets } from '@/lib/nutrition/calculator'
 import type { Macros, MealSplit } from '@/lib/nutrition/portions'
 import { recipeNutrition } from '@/lib/nutrition/recipe-nutrition'
+import type { Meal } from '@/lib/nutrition/portions'
 import {
   BREAKFASTS,
   buildDayPlan,
   dayIndexOf,
+  mealOptions,
   SNACKS,
   seedOf,
   type DayPlan,
+  type DayPlanInput,
+  type MealOption,
   type PlanRecipe,
 } from '@/lib/nutritionist/meal-plan'
 import { isPlanFriendly } from '@/lib/nutritionist/plan-filters'
@@ -58,20 +61,43 @@ function planData(): Promise<PlanData> {
   return loaded
 }
 
-/** Today's meals for a member: the same all day, a new rotation tomorrow. */
-export async function mealPlanFor(
+async function inputFor(
   userId: string,
   date: string,
-  targets: Pick<NutritionTargets, 'calorieTargetKcal' | 'proteinG' | 'fatG' | 'carbsG'>,
+  targets: DayPlanInput['targets'],
   split: MealSplit,
-): Promise<DayPlan> {
+  choices?: Partial<Record<Meal, string>>,
+): Promise<DayPlanInput> {
   const { recipes, foods } = await planData()
-  return buildDayPlan({
+  return {
     targets,
     split,
     recipes,
     foods,
     dayIndex: dayIndexOf(date),
     seed: seedOf(userId),
-  })
+    choices,
+  }
+}
+
+/** Today's meals for a member: their picks where they made one, else the day's suggestion. */
+export async function mealPlanFor(
+  userId: string,
+  date: string,
+  targets: DayPlanInput['targets'],
+  split: MealSplit,
+  choices?: Partial<Record<Meal, string>>,
+): Promise<DayPlan> {
+  return buildDayPlan(await inputFor(userId, date, targets, split, choices))
+}
+
+/** Everything a member can pick for a meal, sized to their day. */
+export async function mealOptionsFor(
+  userId: string,
+  date: string,
+  targets: DayPlanInput['targets'],
+  split: MealSplit,
+  meal: Meal,
+): Promise<MealOption[]> {
+  return mealOptions(await inputFor(userId, date, targets, split), meal)
 }

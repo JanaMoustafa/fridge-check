@@ -105,6 +105,21 @@ export const SPELLINGS: Readonly<Record<string, string>> = {
  * normalizeEnglishIngredient. US names win where UK/US differ, except coriander and chickpea.
  */
 export const SYNONYMS: Readonly<Record<string, string>> = {
+  bananas: 'banana',
+  apples: 'apple',
+  dates: 'date',
+  'medjool dates': 'date',
+  'chia seeds': 'chia seed',
+  chia: 'chia seed',
+  'sweet potatoes': 'sweet potato',
+  olives: 'olive',
+  'black olives': 'olive',
+  'green olives': 'olive',
+  pears: 'pear',
+  grapes: 'grape',
+  'pumpkin seeds': 'pumpkin seed',
+  pepitas: 'pumpkin seed',
+  'ricotta cheese': 'ricotta',
   // Herbs
   cilantro: 'coriander',
   'cilantro leaf': 'coriander',
@@ -821,6 +836,9 @@ export const SYNONYMS: Readonly<Record<string, string>> = {
  * normalizer would otherwise drop ("bay leaf", "custard powder").
  */
 export const CORE_CANONICALS: readonly string[] = [
+  'chia seed',
+  'turkey breast',
+  'pumpkin seed',
   'chicken',
   'chicken breast',
   'chicken thigh',

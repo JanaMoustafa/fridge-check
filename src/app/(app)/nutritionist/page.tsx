@@ -7,15 +7,19 @@ import { buttonClasses } from '@/components/ui/button'
 import { getDb } from '@/lib/db/client'
 import { formatLongDate } from '@/lib/i18n/format-date'
 import { ingredientLabel, loadArabicIngredientNames } from '@/lib/i18n/ingredient-names'
+import { cx } from '@/lib/cx'
 import { isLocale } from '@/lib/i18n/locale'
 import { PROTEIN_G_PER_KG } from '@/lib/nutrition/calculator'
 import { cairoDate, nextScanDue } from '@/lib/nutritionist/inbody'
-import type { PlannedMeal } from '@/lib/nutritionist/meal-plan'
+import type { PlateId } from '@/lib/nutritionist/meal-plan'
 import { dailyFibreG, dailyWaterL, TRAINING_DAY_EXTRA_L } from '@/lib/nutritionist/report'
 import { recipeHref } from '@/lib/search/links'
 import { weekdayOf, weekSchedule } from '@/lib/burn/programme'
 import { latestScan } from '@/lib/server/inbody'
-import { mealPlanFor } from '@/lib/server/meal-plan'
+import { getMealChoices } from '@/lib/server/meal-choices'
+import { mealOptionsFor, mealPlanFor } from '@/lib/server/meal-plan'
+import { MEALS } from '@/lib/nutrition/portions'
+import { chooseMealAction } from './actions'
 import { getTrainingChoice } from '@/lib/server/training'
 import { card, proGate } from '@/components/pro/ProGate'
 
@@ -47,10 +51,16 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
   const locale = isLocale(rawLocale) ? rawLocale : 'en'
   const today = cairoDate(now)
   const { targets, values } = profile
-  const [plan, arabicNames] = await Promise.all([
-    mealPlanFor(user.id, today, targets, values.mealSplit),
+  const choices = await getMealChoices(getDb(), user.id, today)
+  const [plan, arabicNames, ...optionLists] = await Promise.all([
+    mealPlanFor(user.id, today, targets, values.mealSplit, choices),
     locale === 'ar' ? loadArabicIngredientNames() : Promise.resolve(undefined),
+    ...MEALS.map((meal) => mealOptionsFor(user.id, today, targets, values.mealSplit, meal)),
   ])
+  const optionsOf = Object.fromEntries(MEALS.map((meal, i) => [meal, optionLists[i]!])) as Record<
+    (typeof MEALS)[number],
+    (typeof optionLists)[number]
+  >
   const food = (name: string) => ingredientLabel(name, locale, arabicNames)
   const due = scan ? nextScanDue(scan.scannedOn) : null
   const overdue = due !== null && due <= today
@@ -67,8 +77,9 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
     { key: 'fibre', value: t('grams', { value: fibre }) },
   ] as const
 
-  const mealName = (meal: PlannedMeal) =>
-    meal.kind === 'recipe' ? meal.title : t(`plates.${meal.plateId}`)
+  const mealName = (
+    meal: { kind: 'recipe'; title: string } | { kind: 'plate'; plateId: PlateId },
+  ) => (meal.kind === 'recipe' ? meal.title : t(`plates.${meal.plateId}`))
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 py-4">
@@ -194,10 +205,15 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
         </div>
         <ol className="space-y-3">
           {plan.meals.map((meal) => (
-            <li key={meal.meal} className="rounded-btn bg-bg p-4">
-              <p className="text-xs font-bold tracking-wide text-primary uppercase">
-                {tp(`meals.${meal.meal}`)}
-              </p>
+            <li key={meal.meal} id={`meal-${meal.meal}`} className="rounded-btn bg-bg p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs font-bold tracking-wide text-primary uppercase">
+                  {tp(`meals.${meal.meal}`)}
+                </p>
+                <span className="rounded-chip bg-surface-2 px-2.5 py-0.5 text-xs font-semibold">
+                  {choices[meal.meal] ? t('plan.chosen') : t('plan.suggested')}
+                </span>
+              </div>
               <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-3">
                 <h3 className="font-extrabold">
                   {meal.kind === 'recipe' ? (
@@ -218,6 +234,63 @@ export default async function NutritionistPage({ searchParams }: PageProps<'/nut
                   })}
                 </p>
               </div>
+              <details className="smooth-details mt-2">
+                <summary className="cursor-pointer text-sm font-semibold text-primary">
+                  {t('plan.chooseAnother')} ·{' '}
+                  {t('plan.options', { count: optionsOf[meal.meal].length })}
+                </summary>
+                <ul className="meal-options mt-2 space-y-1">
+                  {choices[meal.meal] && (
+                    <li>
+                      <form action={chooseMealAction}>
+                        <input type="hidden" name="meal" value={meal.meal} />
+                        <input type="hidden" name="optionId" value="suggested" />
+                        <button
+                          type="submit"
+                          className="min-h-11 w-full rounded-btn px-3 text-start text-sm font-semibold text-primary hover:bg-primary-soft"
+                        >
+                          {t('plan.backToSuggested')}
+                        </button>
+                      </form>
+                    </li>
+                  )}
+                  {optionsOf[meal.meal].map((option, i) => {
+                    const current =
+                      option.optionId === (meal.kind === 'recipe' ? meal.recipeId : meal.plateId)
+                    return (
+                      <li key={option.optionId} style={{ '--i': i } as React.CSSProperties}>
+                        <form
+                          action={chooseMealAction}
+                          className={cx(
+                            'flex items-center gap-3 rounded-btn px-3 py-2',
+                            current && 'bg-primary-soft',
+                          )}
+                        >
+                          <input type="hidden" name="meal" value={meal.meal} />
+                          <input type="hidden" name="optionId" value={option.optionId} />
+                          <span className="min-w-0 flex-1">
+                            <span className="block text-sm font-semibold">{mealName(option)}</span>
+                            <span className="block text-xs text-fg-muted tabular-nums">
+                              {t('plan.optionMeta', {
+                                kcal: Math.round(option.portion.totals.kcal),
+                                protein: Math.round(option.portion.totals.proteinG),
+                              })}
+                            </span>
+                          </span>
+                          {!current && (
+                            <button
+                              type="submit"
+                              className="min-h-9 shrink-0 rounded-btn border border-line-strong px-3 text-xs font-semibold"
+                            >
+                              {t('plan.choose')}
+                            </button>
+                          )}
+                        </form>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </details>
               <details className="smooth-details mt-2" open={meal.kind === 'plate'}>
                 <summary className="cursor-pointer text-sm font-semibold">
                   {t('plan.weigh', { count: meal.portion.lines.length })}

@@ -286,6 +286,22 @@ tests/           e2e/ · msw/ · fixtures/
   capture: both read 7/7 core numbers in about 1.3 s. Real phone photos vary; the member always
   checks the fields before saving, and the parser is pure and unit-tested for new sheet prints.
 
+## Meal variety: 25–30 options per meal (owner request 2026-10-30)
+
+- **Owner decision:** 25–30 different recipes for each of breakfast, lunch, dinner and snacks, so
+  the member chooses.
+- **Pools:** lunch and dinner each have 30 built-in recipes (the 60 most protein-dense complete,
+  plan-friendly recipes, dealt alternately so no recipe is in both); breakfast and snacks have 26
+  food plates each, every plate with at least a fifth of its calories from protein. Sixteen
+  everyday foods were added to the ingredient data for the plates (oats, banana, apple, peanut
+  butter, cottage cheese, dates, chia, turkey breast, sweet potato, olives, pear, grapes,
+  pumpkin seeds, bulgur, ricotta…), with USDA values and Arabic names.
+- **Choosing:** each meal on the Nutritionist page shows the day's suggestion (or "Your pick")
+  and "Choose another · N options" with every option sized to the member's day (kcal and
+  protein). A pick is saved per day and meal (`meal_choice`, migration 0008) and the day's
+  totals follow it; "Back to today's suggestion" clears it. Dinner's suggestion still lands the
+  day closest to its protein target.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

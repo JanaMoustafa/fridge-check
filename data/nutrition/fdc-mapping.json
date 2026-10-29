@@ -23,6 +23,10 @@
       "description": "Fish, anchovy, european, canned in oil, drained solids",
       "note": "Recipe line uses a rinsed anchovy fillet, i.e. the canned/jarred product."
     },
+    "apple": {
+      "fdcId": 1750340,
+      "description": "Apples, fuji, with skin, raw"
+    },
     "apple cider vinegar": {
       "fdcId": 173469,
       "description": "Vinegar, cider"
@@ -64,6 +68,10 @@
     "balsamic vinegar": {
       "fdcId": 172241,
       "description": "Vinegar, balsamic"
+    },
+    "banana": {
+      "fdcId": 173944,
+      "description": "Bananas, raw"
     },
     "barbecue sauce": {
       "fdcId": 174523,
@@ -180,6 +188,10 @@
       "fdcId": 168833,
       "description": "Sugars, brown"
     },
+    "bulgur": {
+      "fdcId": 170287,
+      "description": "Bulgur, cooked"
+    },
     "bun": {
       "fdcId": 172796,
       "description": "Rolls, hamburger or hotdog, plain",
@@ -278,6 +290,10 @@
       "fdcId": 168434,
       "description": "Mushrooms, brown, italian, or crimini, raw",
       "note": "Chestnut mushrooms are cremini (brown) mushrooms."
+    },
+    "chia seed": {
+      "fdcId": 170554,
+      "description": "Seeds, chia seeds, dried"
     },
     "chicken": {
       "fdcId": 171447,
@@ -424,6 +440,10 @@
       "description": "Cornstarch",
       "note": "UK 'corn flour' and the 'starch' lines are cornstarch."
     },
+    "cottage cheese": {
+      "fdcId": 328841,
+      "description": "Cheese, cottage, lowfat, 2% milkfat"
+    },
     "couscous": {
       "fdcId": 169699,
       "description": "Couscous, dry"
@@ -459,6 +479,10 @@
       "fdcId": 170272,
       "description": "Chocolate, dark, 60-69% cacao solids",
       "note": "Unspecified cacao %; 60-69% sits between the 45-59% and 70-85% entries (546-598 kcal)."
+    },
+    "date": {
+      "fdcId": 168191,
+      "description": "Dates, medjool"
     },
     "dill": {
       "fdcId": 172233,
@@ -635,6 +659,10 @@
     "gouda": {
       "fdcId": 171241,
       "description": "Cheese, gouda"
+    },
+    "grape": {
+      "fdcId": 2346412,
+      "description": "Grapes, red, seedless, raw"
     },
     "greek yogurt": {
       "fdcId": 171304,
@@ -959,10 +987,18 @@
       "fdcId": 171326,
       "description": "Spices, nutmeg, ground"
     },
+    "oats": {
+      "fdcId": 2346396,
+      "description": "Oats, whole grain, rolled, old fashioned"
+    },
     "oil": {
       "fdcId": 171411,
       "description": "Oil, soybean, salad or cooking",
       "note": "Generic neutral vegetable cooking oil (soybean)."
+    },
+    "olive": {
+      "fdcId": 169094,
+      "description": "Olives, ripe, canned (small-extra large)"
     },
     "olive oil": {
       "fdcId": 171413,
@@ -1036,9 +1072,17 @@
       "fdcId": 172430,
       "description": "Peanuts, all types, raw"
     },
+    "peanut butter": {
+      "fdcId": 172470,
+      "description": "Peanut butter, smooth style, without salt"
+    },
     "peanut oil": {
       "fdcId": 171410,
       "description": "Oil, peanut, salad or cooking"
+    },
+    "pear": {
+      "fdcId": 169118,
+      "description": "Pears, raw"
     },
     "pecorino": {
       "fdcId": 171249,
@@ -1106,6 +1150,10 @@
       "fdcId": 168448,
       "description": "Pumpkin, raw"
     },
+    "pumpkin seed": {
+      "fdcId": 170557,
+      "description": "Seeds, pumpkin and squash seed kernels, roasted, without salt"
+    },
     "puy lentil": {
       "fdcId": 172420,
       "description": "Lentils, raw",
@@ -1172,6 +1220,10 @@
       "fdcId": 172237,
       "description": "Vinegar, distilled",
       "note": "No rice vinegar in SR Legacy; plain vinegars are nutritionally equivalent."
+    },
+    "ricotta": {
+      "fdcId": 171248,
+      "description": "Cheese, ricotta, part skim milk"
     },
     "rigatoni": {
       "fdcId": 169736,
@@ -1387,6 +1439,10 @@
       "reason": "No FDC food for Thai sweet chili sauce",
       "minor": true
     },
+    "sweet potato": {
+      "fdcId": 170134,
+      "description": "Sweet potato, cooked, baked in skin, flesh, with salt"
+    },
     "taco shell": {
       "fdcId": 172800,
       "description": "Taco shells, baked"
@@ -1448,6 +1504,10 @@
       "fdcId": 173709,
       "description": "Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",
       "note": "Lines point to canned tuna (\"1 can\", pasta salad); canned light tuna in water, drained."
+    },
+    "turkey breast": {
+      "fdcId": 174516,
+      "description": "Turkey, retail parts, breast, meat only, cooked, roasted"
     },
     "turmeric": {
       "fdcId": 172231,

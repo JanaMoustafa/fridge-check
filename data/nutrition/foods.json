@@ -85,6 +85,20 @@
         "can": 45
       }
     },
+    "apple": {
+      "fdcId": 1750340,
+      "description": "Apples, fuji, with skin, raw",
+      "dataType": "Foundation",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 58.20306,
+        "proteinG": 0.1484375,
+        "fatG": 0.1625,
+        "carbsG": 15.6511625,
+        "fiberG": 2.075
+      },
+      "portions": {}
+    },
     "apple cider vinegar": {
       "fdcId": 173469,
       "description": "Vinegar, cider",
@@ -252,6 +266,25 @@
         "tbsp": 16,
         "tsp": 5.3,
         "cup": 255
+      }
+    },
+    "banana": {
+      "fdcId": 173944,
+      "description": "Bananas, raw",
+      "dataType": "SR Legacy",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 89,
+        "proteinG": 1.09,
+        "fatG": 0.33,
+        "carbsG": 22.84,
+        "fiberG": 2.6
+      },
+      "portions": {
+        "large": 152,
+        "cup": 150,
+        "small": 101,
+        "medium": 118
       }
     },
     "barbecue sauce": {
@@ -667,6 +700,23 @@
         "tsp": 4.6
       }
     },
+    "bulgur": {
+      "fdcId": 170287,
+      "description": "Bulgur, cooked",
+      "dataType": "SR Legacy",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 83,
+        "proteinG": 3.08,
+        "fatG": 0.24,
+        "carbsG": 18.58,
+        "fiberG": 4.5
+      },
+      "portions": {
+        "cup": 182,
+        "tbsp": 8.4
+      }
+    },
     "bun": {
       "fdcId": 172796,
       "description": "Rolls, hamburger or hotdog, plain",
@@ -1010,6 +1060,20 @@
         "cup": 72,
         "piece": 20
       }
+    },
+    "chia seed": {
+      "fdcId": 170554,
+      "description": "Seeds, chia seeds, dried",
+      "dataType": "SR Legacy",
+      "category": "Nut and Seed Products",
+      "per100g": {
+        "kcal": 486,
+        "proteinG": 16.54,
+        "fatG": 30.74,
+        "carbsG": 42.12,
+        "fiberG": 34.4
+      },
+      "portions": {}
     },
     "chicken": {
       "fdcId": 171447,
@@ -1514,6 +1578,21 @@
         "cup": 128
       }
     },
+    "cottage cheese": {
+      "fdcId": 328841,
+      "description": "Cheese, cottage, lowfat, 2% milkfat",
+      "dataType": "Foundation",
+      "category": "Dairy and Egg Products",
+      "per100g": {
+        "kcal": 84,
+        "proteinG": 11,
+        "fatG": 2.3,
+        "carbsG": 4.31
+      },
+      "portions": {
+        "cup": 220
+      }
+    },
     "couscous": {
       "fdcId": 169699,
       "description": "Couscous, dry",
@@ -1646,6 +1725,22 @@
         "fiberG": 8
       },
       "portions": {}
+    },
+    "date": {
+      "fdcId": 168191,
+      "description": "Dates, medjool",
+      "dataType": "SR Legacy",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 277,
+        "proteinG": 1.81,
+        "fatG": 0.15,
+        "carbsG": 74.97,
+        "fiberG": 6.7
+      },
+      "portions": {
+        "piece": 24
+      }
     },
     "dill": {
       "fdcId": 172233,
@@ -2170,6 +2265,19 @@
         "fatG": 27.44,
         "carbsG": 2.22,
         "fiberG": 0
+      },
+      "portions": {}
+    },
+    "grape": {
+      "fdcId": 2346412,
+      "description": "Grapes, red, seedless, raw",
+      "dataType": "Foundation",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 77.151876,
+        "proteinG": 0.914375,
+        "fatG": 0.1638,
+        "carbsG": 20.196825
       },
       "portions": {}
     },
@@ -3235,6 +3343,19 @@
         "tsp": 2.2
       }
     },
+    "oats": {
+      "fdcId": 2346396,
+      "description": "Oats, whole grain, rolled, old fashioned",
+      "dataType": "Foundation",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 378.866123,
+        "proteinG": 13.49645,
+        "fatG": 5.89,
+        "carbsG": 68.65755
+      },
+      "portions": {}
+    },
     "oil": {
       "fdcId": 171411,
       "description": "Oil, soybean, salad or cooking",
@@ -3251,6 +3372,24 @@
         "tbsp": 13.6,
         "tsp": 4.5,
         "cup": 218
+      }
+    },
+    "olive": {
+      "fdcId": 169094,
+      "description": "Olives, ripe, canned (small-extra large)",
+      "dataType": "SR Legacy",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 116,
+        "proteinG": 0.84,
+        "fatG": 10.9,
+        "carbsG": 6.04,
+        "fiberG": 1.6
+      },
+      "portions": {
+        "tbsp": 8.4,
+        "large": 4.4,
+        "small": 3.2
       }
     },
     "olive oil": {
@@ -3509,6 +3648,23 @@
         "cup": 146
       }
     },
+    "peanut butter": {
+      "fdcId": 172470,
+      "description": "Peanut butter, smooth style, without salt",
+      "dataType": "SR Legacy",
+      "category": "Legumes and Legume Products",
+      "per100g": {
+        "kcal": 598,
+        "proteinG": 22.21,
+        "fatG": 51.36,
+        "carbsG": 22.31,
+        "fiberG": 5
+      },
+      "portions": {
+        "cup": 258,
+        "tbsp": 16
+      }
+    },
     "peanut oil": {
       "fdcId": 171410,
       "description": "Oil, peanut, salad or cooking",
@@ -3525,6 +3681,25 @@
         "tsp": 4.5,
         "cup": 216,
         "tbsp": 13.5
+      }
+    },
+    "pear": {
+      "fdcId": 169118,
+      "description": "Pears, raw",
+      "dataType": "SR Legacy",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 57,
+        "proteinG": 0.36,
+        "fatG": 0.14,
+        "carbsG": 15.23,
+        "fiberG": 3.1
+      },
+      "portions": {
+        "medium": 178,
+        "large": 230,
+        "cup": 161,
+        "small": 148
       }
     },
     "pecorino": {
@@ -3737,6 +3912,22 @@
         "cup": 116
       }
     },
+    "pumpkin seed": {
+      "fdcId": 170557,
+      "description": "Seeds, pumpkin and squash seed kernels, roasted, without salt",
+      "dataType": "SR Legacy",
+      "category": "Nut and Seed Products",
+      "per100g": {
+        "kcal": 574,
+        "proteinG": 29.84,
+        "fatG": 49.05,
+        "carbsG": 14.71,
+        "fiberG": 6.5
+      },
+      "portions": {
+        "cup": 118
+      }
+    },
     "puy lentil": {
       "fdcId": 172420,
       "description": "Lentils, raw",
@@ -3942,6 +4133,22 @@
         "tbsp": 14.9,
         "tsp": 5,
         "cup": 238
+      }
+    },
+    "ricotta": {
+      "fdcId": 171248,
+      "description": "Cheese, ricotta, part skim milk",
+      "dataType": "SR Legacy",
+      "category": "Dairy and Egg Products",
+      "per100g": {
+        "kcal": 138,
+        "proteinG": 11.39,
+        "fatG": 7.91,
+        "carbsG": 5.14,
+        "fiberG": 0
+      },
+      "portions": {
+        "cup": 248
       }
     },
     "rigatoni": {
@@ -4636,6 +4843,23 @@
         "cup": 200
       }
     },
+    "sweet potato": {
+      "fdcId": 170134,
+      "description": "Sweet potato, cooked, baked in skin, flesh, with salt",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 90,
+        "proteinG": 2.01,
+        "fatG": 0.15,
+        "carbsG": 20.71,
+        "fiberG": 3.3
+      },
+      "portions": {
+        "cup": 200,
+        "medium": 114
+      }
+    },
     "taco shell": {
       "fdcId": 172800,
       "description": "Taco shells, baked",
@@ -4861,6 +5085,22 @@
       "portions": {
         "can": 165,
         "cup": 154
+      }
+    },
+    "turkey breast": {
+      "fdcId": 174516,
+      "description": "Turkey, retail parts, breast, meat only, cooked, roasted",
+      "dataType": "SR Legacy",
+      "category": "Poultry Products",
+      "per100g": {
+        "kcal": 136,
+        "proteinG": 29.51,
+        "fatG": 1.97,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 863
       }
     },
     "turmeric": {
