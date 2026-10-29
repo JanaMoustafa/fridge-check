@@ -3,10 +3,12 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { SetTracker } from '@/components/burn/SetTracker'
+import { VideoGuide } from '@/components/burn/VideoGuide'
 import { BackTo, card, proGate } from '@/components/pro/ProGate'
 import { EXERCISES } from '@/lib/burn/exercises'
 import { prescriptionFor } from '@/lib/burn/programme'
 import { say } from '@/lib/burn/text'
+import { videoFor } from '@/lib/burn/videos'
 import { isLocale } from '@/lib/i18n/locale'
 import { cairoDate } from '@/lib/nutritionist/inbody'
 
@@ -32,6 +34,7 @@ export default async function ExercisePage({ params }: PageProps<'/burn/exercise
   const locale = isLocale(rawLocale) ? rawLocale : 'en'
   const { sets, restSeconds } = prescriptionFor(exercise, gate.profile.values.goal)
   const work = say(exercise.work, locale)
+  const video = videoFor(exercise.id)
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 py-4">
@@ -53,17 +56,21 @@ export default async function ExercisePage({ params }: PageProps<'/burn/exercise
         </div>
       </header>
 
-      <section
-        aria-labelledby="video-title"
-        className="flex items-start gap-3 rounded-card bg-primary-soft p-5"
-      >
-        <PlayCircle aria-hidden="true" className="size-8 shrink-0 text-accent" />
-        <div className="space-y-1">
-          <h2 id="video-title" className="font-extrabold">
-            {t('exercise.videoTitle')}
-          </h2>
-          <p className="text-sm">{t('exercise.videoSoon')}</p>
-        </div>
+      <section aria-labelledby="video-title" className="space-y-3">
+        <h2 id="video-title" className="text-lg font-extrabold">
+          {t('exercise.videoTitle')}
+        </h2>
+        {video ? (
+          <>
+            <VideoGuide video={video} />
+            <p className="text-xs text-fg-muted">{t('exercise.videoNote')}</p>
+          </>
+        ) : (
+          <div className="flex items-start gap-3 rounded-card bg-primary-soft p-5">
+            <PlayCircle aria-hidden="true" className="size-8 shrink-0 text-accent" />
+            <p className="text-sm">{t('exercise.videoSoon')}</p>
+          </div>
+        )}
       </section>
 
       <section aria-labelledby="how-title" className={`${card} space-y-3`}>

@@ -137,6 +137,8 @@ describe('translation catalogs', () => {
       done: 1,
       n: 2,
       area: 'Legs',
+      channel: 'Howcast',
+      duration: '1:05',
       url: 'https://fridge-check.example/recipe/local/1',
       link: (chunks: string) => chunks,
       terms: (chunks: string) => chunks,

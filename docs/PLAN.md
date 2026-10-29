@@ -236,6 +236,24 @@ tests/           e2e/ · msw/ · fixtures/
   links to Your Nutritionist for the daily targets. The profile form only saves ("Save"), and
   saving lands in Your Nutritionist. Recipe portions still use the targets behind the scenes.
 
+## BurnToReturn phase 5: full library and real-trainer videos (owner request 2026-10-30)
+
+- **Owner decisions:** 10–12 exercises each for legs, core, upper body and glutes and 3–6 for
+  cardio, in all four styles; a video of a real person (not AI-generated) for every exercise, two
+  minutes or under.
+- **Library:** 192 exercises (48 per style: 11 + 11 + 11 + 11 + 4) in `src/lib/burn/exercises/`,
+  one file per style, English and Arabic; the library test enforces the counts. A native-speaking
+  coach should still read the Arabic names.
+- **Videos:** public YouTube videos by fitness channels, chosen by
+  `scripts/find-exercise-videos.py` (yt-dlp search, length 12–120 s, YouTube's oEmbed as the
+  public-and-embeddable check) and listed with runners-up in `docs/burn-videos.md` for a coach to
+  review and swap. Data in `data/burn/videos.json`, validated at startup; the exercise page shows
+  YouTube's thumbnail and loads the privacy-enhanced player (youtube-nocookie.com) only on play.
+  CSP allows exactly those two hosts; the privacy policy names YouTube.
+- **Known limits:** the picks are judged from titles, channels and length, not by watching;
+  embedded videos can carry YouTube ads and can be removed by their owners (the page then shows
+  the "video being chosen" note and the cues still work). Re-run the script to refresh.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

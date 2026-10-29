@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { EXERCISES } from './exercises'
 import { WORKOUT_KEYS, WORKOUTS, workoutExercises } from './programme'
-import { AREAS, STYLES } from './types'
+import { AREAS, STYLES, type Area } from './types'
 
 const PREFIX = { calisthenics: 'c', pilates: 'p', gym: 'g', crossfit: 'x' } as const
 
@@ -15,16 +15,28 @@ describe('the exercise library', () => {
     }
   })
 
-  it('has at least two exercises for every area of every style, so each workout is full', () => {
+  it('has 10–12 exercises for each strength area and 3–6 for cardio, in every style', () => {
+    const range: Record<Area, [number, number]> = {
+      legs: [10, 12],
+      glutes: [10, 12],
+      core: [10, 12],
+      upper: [10, 12],
+      cardio: [3, 6],
+    }
     for (const style of STYLES) {
       for (const area of AREAS) {
         const count = EXERCISES.filter((e) => e.style === style && e.area === area).length
-        expect(count, `${style} ${area}`).toBeGreaterThanOrEqual(2)
+        const [low, high] = range[area]
+        expect(count, `${style} ${area}`).toBeGreaterThanOrEqual(low)
+        expect(count, `${style} ${area}`).toBeLessThanOrEqual(high)
       }
       for (const key of WORKOUT_KEYS) {
         const workout = workoutExercises(EXERCISES, style, key, 0)
         expect(workout.length, `${style} ${key}`).toBe(WORKOUTS[style][key].length * 2)
       }
+      // No two exercises of a style share a name.
+      const names = EXERCISES.filter((e) => e.style === style).map((e) => e.name.en.toLowerCase())
+      expect(new Set(names).size, style).toBe(names.length)
     }
   })
 

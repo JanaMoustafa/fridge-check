@@ -1,4 +1,12 @@
-export const IMAGE_HOSTS = ['https://www.themealdb.com', 'https://img.spoonacular.com'] as const
+export const IMAGE_HOSTS = [
+  'https://www.themealdb.com',
+  'https://img.spoonacular.com',
+  // Exercise video thumbnails (BurnToReturn), shown until the member presses play.
+  'https://i.ytimg.com',
+] as const
+
+/** The only frames the app embeds: YouTube's privacy-enhanced player for exercise videos. */
+export const FRAME_HOSTS = ['https://www.youtube-nocookie.com'] as const
 
 /** Where a checkout form may send the browser: XPay Egypt's hosted payment page. */
 export const PAYMENT_HOSTS = ['https://checkout.xpay.app'] as const
@@ -22,6 +30,7 @@ export function buildCsp(nonce: string, { dev, https }: { dev: boolean; https: b
     // XPay's hosted checkout: without JavaScript, the checkout form's redirect goes there.
     `form-action 'self' ${PAYMENT_HOSTS.join(' ')}`,
     `frame-ancestors 'none'`,
+    `frame-src ${FRAME_HOSTS.join(' ')}`,
     `manifest-src 'self'`,
   ]
   if (https) directives.push('upgrade-insecure-requests')

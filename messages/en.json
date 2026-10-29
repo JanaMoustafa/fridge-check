@@ -797,7 +797,12 @@
     "saved": "Your programme is ready.",
     "exercise": {
       "videoTitle": "Guide video",
-      "videoSoon": "A short video of this exact exercise is on its way. Every video is checked by a coach before it appears here.",
+      "videoSoon": "A video for this exercise is being chosen. Follow the cues below for now.",
+      "videoLang": "en",
+      "videoPlay": "Play video: {title}",
+      "videoCredit": "{channel} on YouTube · {duration}",
+      "videoWatch": "Watch on YouTube",
+      "videoNote": "Every video shows a real trainer and runs two minutes or under. YouTube may set cookies once you press play.",
       "howTitle": "How to do it",
       "avoidTitle": "Avoid",
       "setsTitle": "Your sets",

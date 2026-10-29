@@ -22,10 +22,14 @@ describe('buildCsp', () => {
     expect(buildCsp('abc', { dev: true, https: false })).toContain(`'unsafe-eval'`)
   })
 
-  it('limits images to self and the recipe providers', () => {
+  it('limits images to self, the recipe providers and YouTube thumbnails', () => {
     expect(prod).toContain(
-      `img-src 'self' data: blob: https://www.themealdb.com https://img.spoonacular.com`,
+      `img-src 'self' data: blob: https://www.themealdb.com https://img.spoonacular.com https://i.ytimg.com`,
     )
+  })
+
+  it('frames only YouTube’s privacy-enhanced player', () => {
+    expect(prod).toContain(`frame-src https://www.youtube-nocookie.com`)
   })
 
   it('forbids framing, plugins and foreign connections', () => {
