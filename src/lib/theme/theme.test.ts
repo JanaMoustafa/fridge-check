@@ -8,7 +8,7 @@ describe('theme helpers', () => {
   beforeEach(() => {
     document.documentElement.removeAttribute('data-theme')
     document.head.innerHTML =
-      '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f4ea">'
+      '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffe8d6">'
   })
 
   it('recognises valid themes', () => {
@@ -26,7 +26,7 @@ describe('theme helpers', () => {
     applyTheme(document, 'dark')
     expect(document.documentElement.getAttribute('data-theme')).toBe('dark')
     expect(document.head.firstElementChild).toBe(themeMeta())
-    expect(themeMeta()?.getAttribute('content')).toBe('#161d1a')
+    expect(themeMeta()?.getAttribute('content')).toBe('#2a2c3f')
     expect(themeMeta()?.hasAttribute('media')).toBe(false)
   })
 
@@ -34,7 +34,7 @@ describe('theme helpers', () => {
     applyTheme(document, 'dark')
     applyTheme(document, 'light')
     expect(document.querySelectorAll(`#${THEME_COLOR_META_ID}`)).toHaveLength(1)
-    expect(themeMeta()?.getAttribute('content')).toBe('#f7f4ea')
+    expect(themeMeta()?.getAttribute('content')).toBe('#ffe8d6')
   })
 
   it('removes the overrides for system', () => {

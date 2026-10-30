@@ -105,6 +105,8 @@ export const SPELLINGS: Readonly<Record<string, string>> = {
  * normalizeEnglishIngredient. US names win where UK/US differ, except coriander and chickpea.
  */
 export const SYNONYMS: Readonly<Record<string, string>> = {
+  'boneless chicken': 'chicken breast',
+  'boneless skinless chicken': 'chicken breast',
   bananas: 'banana',
   apples: 'apple',
   dates: 'date',
@@ -836,6 +838,15 @@ export const SYNONYMS: Readonly<Record<string, string>> = {
  * normalizer would otherwise drop ("bay leaf", "custard powder").
  */
 export const CORE_CANONICALS: readonly string[] = [
+  'chinese broccoli',
+  'massaman curry paste',
+  'egg roll',
+  'ginger cordial',
+  'panang curry paste',
+  'thai chili jam',
+  'rice flour pancake',
+  'pretzel',
+  'plum sauce',
   'chia seed',
   'turkey breast',
   'pumpkin seed',

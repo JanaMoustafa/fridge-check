@@ -8,6 +8,8 @@ describe('featureOf', () => {
     expect(featureOf('/nutritionist')).toBe('nutritionist')
     expect(featureOf('/nutritionist/scan')).toBe('nutritionist')
     expect(featureOf('/burn/exercise/c-squat')).toBe('burn')
+    expect(featureOf('/chef')).toBe('chef')
+    expect(featureOf('/chef/52764')).toBe('chef')
   })
 
   it('leaves the rest alone', () => {

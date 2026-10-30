@@ -32,11 +32,11 @@ describe('FeatureIntro', () => {
   })
   afterEach(() => vi.useRealTimers())
 
-  it('plays the programme intro on entry and clears itself after about two seconds', () => {
+  it('plays the programme intro on entry and clears itself after about three seconds', () => {
     reduce = false
     renderAt('/burn')
     expect(screen.getByRole('dialog', { name: 'BurnToReturn' })).toBeInTheDocument()
-    act(() => vi.advanceTimersByTime(2100 + 10))
+    act(() => vi.advanceTimersByTime(3400 + 10))
     expect(screen.getByRole('dialog')).toHaveAttribute('data-leaving', 'true')
     act(() => vi.advanceTimersByTime(240 + 10))
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()

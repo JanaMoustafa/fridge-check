@@ -18,6 +18,18 @@
       "diets": ["vegetarian", "pescatarian"],
       "note": "Agree. Penne rules out gluten-free, Parmigiano-Reggiano rules out vegan and dairy-free, and there is no meat in the ingredients or steps. Parmigiano-Reggiano is always made with calf rennet, which the given vegetarian definition does not mention; the rennet question applies to the whole dataset and needs one project-wide decision."
     },
+    "52772": {
+      "title": "Teriyaki Chicken Casserole",
+      "diets": ["dairy-free"]
+    },
+    "52773": {
+      "title": "Honey Teriyaki Salmon",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "52774": {
+      "title": "Pad See Ew",
+      "diets": ["dairy-free"]
+    },
     "52775": {
       "title": "Vegan Lasagna",
       "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
@@ -53,6 +65,10 @@
       "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
       "note": "Agree. Flax eggs, almond milk, coconut sugar and cacao are all plant-based, and the steps decorate with 'vegan chocolate'. Self-raising flour rules out gluten-free."
     },
+    "52796": {
+      "title": "Chicken Alfredo Primavera",
+      "diets": []
+    },
     "52797": {
       "title": "Spicy North African Potato Salad",
       "diets": ["vegetarian", "gluten-free", "pescatarian"]
@@ -64,11 +80,6 @@
     "52803": {
       "title": "Beef Wellington",
       "diets": []
-    },
-    "52807": {
-      "title": "Baingan Bharta",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
-      "note": "Agree. Every ingredient is a plant, oil or spice, and the steps use only oil. Rotis or bread appear only as a serving suggestion, not as part of the dish."
     },
     "52810": {
       "title": "Osso Buco alla Milanese",
@@ -86,6 +97,10 @@
       "title": "Kentucky Fried Chicken",
       "diets": ["dairy-free"],
       "note": "Agree. Chicken, egg white and flour block the other tags. The coating is flour, sugar and spices, the steps add no butter or milk, and the frying oil is neutral."
+    },
+    "52814": {
+      "title": "Thai Green Curry",
+      "diets": ["dairy-free"]
     },
     "52815": {
       "title": "French Lentils With Garlic and Thyme",
@@ -107,6 +122,10 @@
     "52819": {
       "title": "Cajun spiced fish tacos",
       "diets": ["pescatarian"]
+    },
+    "52820": {
+      "title": "Katsu Chicken curry",
+      "diets": ["dairy-free"]
     },
     "52821": {
       "title": "Laksa King Prawn Noodles",
@@ -130,6 +149,14 @@
       "diets": ["dairy-free"],
       "note": "Chorizo is a processed sausage; some brands contain gluten, so gluten-free is not claimed."
     },
+    "52827": {
+      "title": "Massaman Beef curry",
+      "diets": ["dairy-free"]
+    },
+    "52828": {
+      "title": "Vietnamese Grilled Pork (bun-thit-nuong)",
+      "diets": ["dairy-free"]
+    },
     "52829": {
       "title": "Grilled Mac and Cheese Sandwich",
       "diets": ["vegetarian", "pescatarian"]
@@ -138,6 +165,10 @@
       "title": "Crock Pot Chicken Baked Tacos",
       "diets": [],
       "note": "CHANGE: remove gluten-free. The classifier is too lax here. '1 bottle Vinaigrette Dressing' is a commercial bottled dressing that may contain malt vinegar or soy sauce, and '12 Hard Taco Shells' are commercial shells that can contain wheat or be made on shared lines. Green salsa and shredded Mexican cheese are also processed products. The recipe never says gluten-free, so under the conservative rule the tag is not claimed. Chicken and dairy (cheese, sour cream, milk) already block the other tags. The refried beans were flagged as meat because of possible lard, which is right but makes no difference here."
+    },
+    "52831": {
+      "title": "Chicken Karaage",
+      "diets": ["dairy-free"]
     },
     "52832": {
       "title": "Coq au vin",
@@ -236,6 +267,10 @@
     "52870": {
       "title": "Chickpea Fajitas",
       "diets": ["vegetarian", "gluten-free", "pescatarian"]
+    },
+    "52871": {
+      "title": "Yaki Udon",
+      "diets": ["dairy-free", "pescatarian"]
     },
     "52872": {
       "title": "Spanish Tortilla",
@@ -356,6 +391,14 @@
       "title": "Hot and Sour Soup",
       "diets": ["dairy-free"]
     },
+    "52955": {
+      "title": "Egg Drop Soup",
+      "diets": ["dairy-free"]
+    },
+    "52956": {
+      "title": "Chicken Congee",
+      "diets": ["gluten-free", "dairy-free"]
+    },
     "52957": {
       "title": "Fruit and Cream Cheese Breakfast Pastries",
       "diets": ["vegetarian", "pescatarian"],
@@ -368,6 +411,10 @@
     "52960": {
       "title": "Salmon Avocado Salad",
       "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "52961": {
+      "title": "Budino Di Ricotta",
+      "diets": ["vegetarian", "pescatarian"]
     },
     "52962": {
       "title": "Salmon Eggs Eggs Benedict",
@@ -419,6 +466,10 @@
     "52987": {
       "title": "Lasagna Sandwiches",
       "diets": []
+    },
+    "52997": {
+      "title": "Beef Banh Mi Bowls with Sriracha Mayo, Carrot & Pickled Cucumber",
+      "diets": ["dairy-free"]
     },
     "53006": {
       "title": "Moussaka",
@@ -480,17 +531,49 @@
       "diets": [],
       "note": "Agree. Beef, a chicken stock cube, butter, noodles and pita rule out every tag."
     },
+    "53032": {
+      "title": "Tonkatsu pork",
+      "diets": ["dairy-free"]
+    },
     "53033": {
       "title": "Japanese gohan rice",
       "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
     },
-    "53040": {
-      "title": "Spring onion and prawn empanadas",
-      "diets": ["pescatarian"]
+    "53034": {
+      "title": "Japanese Katsudon",
+      "diets": ["dairy-free"]
     },
     "53047": {
       "title": "Moroccan Carrot Soup",
       "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53048": {
+      "title": "Mee goreng mamak",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53049": {
+      "title": "Apam balik",
+      "diets": ["vegetarian", "pescatarian"]
+    },
+    "53050": {
+      "title": "Ayam Percik",
+      "diets": ["gluten-free", "dairy-free"]
+    },
+    "53051": {
+      "title": "Nasi lemak",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53052": {
+      "title": "Roti john",
+      "diets": ["dairy-free"]
+    },
+    "53053": {
+      "title": "Beef Rendang",
+      "diets": ["gluten-free", "dairy-free"]
+    },
+    "53054": {
+      "title": "Seri muka kuih",
+      "diets": ["vegetarian", "dairy-free", "pescatarian"]
     },
     "53064": {
       "title": "Fettuccine Alfredo",
@@ -501,13 +584,33 @@
       "title": "Stuffed Bell Peppers with Quinoa and Black Beans",
       "diets": ["vegetarian", "gluten-free", "pescatarian"]
     },
+    "53068": {
+      "title": "Beef Mechado",
+      "diets": ["dairy-free"]
+    },
+    "53069": {
+      "title": "Bistek",
+      "diets": ["dairy-free"]
+    },
+    "53070": {
+      "title": "Beef Caldereta",
+      "diets": ["dairy-free"]
+    },
+    "53071": {
+      "title": "Beef Asado",
+      "diets": []
+    },
+    "53072": {
+      "title": "Crispy Eggplant",
+      "diets": ["vegetarian", "dairy-free", "pescatarian"]
+    },
+    "53073": {
+      "title": "Eggplant Adobo",
+      "diets": ["dairy-free"]
+    },
     "53074": {
       "title": "Grilled eggplant with coconut milk",
       "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53079": {
-      "title": "Fish Soup (Ukha)",
-      "diets": ["dairy-free", "pescatarian"]
     },
     "53085": {
       "title": "15-minute chicken & halloumi burgers",
@@ -530,14 +633,6 @@
       "title": "Syrian Rice with Meat",
       "diets": [],
       "note": "Agree. Ground beef, chicken stock and butter rule out every tag."
-    },
-    "53103": {
-      "title": "Barramundi with Moroccan spices",
-      "diets": ["gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53122": {
-      "title": "Fiskesuppe (Creamy Norwegian Fish Soup)",
-      "diets": ["pescatarian"]
     },
     "53142": {
       "title": "Spiced tortilla",
@@ -594,6 +689,94 @@
       "title": "Pad Thai",
       "diets": ["gluten-free", "dairy-free", "pescatarian"]
     },
+    "53192": {
+      "title": "Panang chicken curry (kaeng panang gai)",
+      "diets": ["dairy-free"]
+    },
+    "53193": {
+      "title": "Drunken noodles (pad kee mao)",
+      "diets": ["dairy-free"]
+    },
+    "53194": {
+      "title": "Tom yum soup with prawns",
+      "diets": ["dairy-free"]
+    },
+    "53195": {
+      "title": "Thai curry noodle soup",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53196": {
+      "title": "Tom yum (hot & sour) soup with prawns",
+      "diets": ["dairy-free"]
+    },
+    "53197": {
+      "title": "Thai pork & peanut curry",
+      "diets": ["dairy-free"]
+    },
+    "53198": {
+      "title": "Thai fried rice with prawns & peas",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53199": {
+      "title": "Thai beef stir-fry",
+      "diets": ["dairy-free"]
+    },
+    "53200": {
+      "title": "Prawn stir-fry",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53201": {
+      "title": "Stir-fried chicken with chillies & basil",
+      "diets": ["dairy-free"]
+    },
+    "53202": {
+      "title": "Thai-style steamed fish",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53203": {
+      "title": "Thai rice noodle salad",
+      "diets": ["gluten-free", "dairy-free"]
+    },
+    "53204": {
+      "title": "Red curry chicken kebabs",
+      "diets": ["dairy-free"]
+    },
+    "53205": {
+      "title": "Thai prawn curry",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53206": {
+      "title": "Thai chicken cakes with sweet chilli sauce",
+      "diets": ["gluten-free", "dairy-free"]
+    },
+    "53207": {
+      "title": "Tom kha gai",
+      "diets": ["dairy-free"]
+    },
+    "53209": {
+      "title": "Spicy Thai prawn noodles",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53210": {
+      "title": "Thai pumpkin soup",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53211": {
+      "title": "Lemongrass beef stew with noodles",
+      "diets": ["dairy-free"]
+    },
+    "53212": {
+      "title": "Thai drumsticks",
+      "diets": ["dairy-free"]
+    },
+    "53213": {
+      "title": "Thai-style fish broth with greens",
+      "diets": ["dairy-free"]
+    },
+    "53214": {
+      "title": "Thai green chicken soup",
+      "diets": ["dairy-free"]
+    },
     "53215": {
       "title": "Shakshouka",
       "diets": ["vegetarian", "gluten-free", "dairy-free", "pescatarian"],
@@ -649,10 +832,102 @@
       "title": "Shawarma bread",
       "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
     },
+    "53227": {
+      "title": "Rice paper dumplings",
+      "diets": ["dairy-free"]
+    },
+    "53228": {
+      "title": "Vietnamese caramel trout",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53229": {
+      "title": "Steak & Vietnamese noodle salad",
+      "diets": ["dairy-free"]
+    },
+    "53230": {
+      "title": "Purple sprouting broccoli tempura with nuoc cham",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53231": {
+      "title": "Vietnamese lamb shanks with sweet potatoes",
+      "diets": ["dairy-free"]
+    },
+    "53232": {
+      "title": "Vietnamese chicken salad",
+      "diets": ["dairy-free"]
+    },
+    "53233": {
+      "title": "Salt & pepper squid",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53234": {
+      "title": "Salmon noodle soup",
+      "diets": ["dairy-free"]
+    },
+    "53235": {
+      "title": "Vietnamese-style caramel pork",
+      "diets": ["gluten-free", "dairy-free"]
+    },
     "53236": {
       "title": "Vietnamese-style veggie hotpot",
       "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
       "note": "Agree. All ingredients are plant-based. Soy sauce and vegetable stock rule out gluten-free. The jasmine rice is listed only to serve."
+    },
+    "53237": {
+      "title": "Vietnamese pork salad",
+      "diets": ["dairy-free"]
+    },
+    "53238": {
+      "title": "Beef pho",
+      "diets": ["dairy-free"]
+    },
+    "53239": {
+      "title": "Bang bang prawn salad",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53240": {
+      "title": "Tofu, greens & cashew stir-fry",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53241": {
+      "title": "Vietnamese veg parcels",
+      "diets": []
+    },
+    "53242": {
+      "title": "Barbecue pork buns",
+      "diets": ["dairy-free"]
+    },
+    "53243": {
+      "title": "Vietnamese prawn spiralized rolls",
+      "diets": ["gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53244": {
+      "title": "Prawn & noodle salad with crispy shallots",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53245": {
+      "title": "Noodle bowl salad",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53246": {
+      "title": "Tangy carrot, cabbage & onion salad",
+      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
+    },
+    "53247": {
+      "title": "Sea bass with sizzled ginger, chilli & spring onions",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53248": {
+      "title": "Salmon noodle wraps",
+      "diets": ["dairy-free", "pescatarian"]
+    },
+    "53249": {
+      "title": "Turkey Bánh mì",
+      "diets": ["dairy-free"]
+    },
+    "53250": {
+      "title": "Vegan banh mi",
+      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
     },
     "53251": {
       "title": "Turkish lahmacun",
@@ -722,14 +997,6 @@
       "diets": ["vegetarian", "pescatarian"],
       "note": "Agree. Egg, Gouda, Emmental and butter rule out vegan and dairy-free, and phyllo rules out gluten-free. Separately, for the normalization owner: '3/4 teaspoon Red Pepper' was normalized to bell pepper, but the steps say 'crushed red pepper' (chili flakes)."
     },
-    "53307": {
-      "title": "Beetroot & red cabbage sauerkraut",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53352": {
-      "title": "Jamaican Instant Pot Rice and Beans",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
     "53358": {
       "title": "Chicken Mandi",
       "diets": ["gluten-free", "dairy-free"]
@@ -739,13 +1006,53 @@
       "diets": ["dairy-free"],
       "note": "Agree, but the classifier got this right only by luck. The ingredient list has no beef (a TheMealDB gap), although the steps cook beef pieces; '5 Cups Beef Stock' is what blocked the meat-free tags. The stock also rules out gluten-free. Dairy-free is kept because the listed fat is '3 tablespoons Oil'; the steps say 'ghee/oil' and an optional 'butter/oil', so oil is the recipe's own choice. Separately, for the seed owner: users with beef will not match this recipe, and the spice mix in the steps (coriander, cumin, cinnamon) is also not in the list."
     },
+    "53365": {
+      "title": "Chinese Orange Chicken",
+      "diets": ["dairy-free"]
+    },
+    "53366": {
+      "title": "Beef and Broccoli Stir-Fry",
+      "diets": ["dairy-free"]
+    },
+    "53367": {
+      "title": "Chicken Fried Rice",
+      "diets": ["dairy-free"]
+    },
+    "53368": {
+      "title": "Singapore Noodles with Shrimp",
+      "diets": ["dairy-free"]
+    },
     "53369": {
       "title": "Silken Tofu with Sesame Soy Sauce",
       "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
     },
+    "53370": {
+      "title": "Egg Foo Young",
+      "diets": ["dairy-free"]
+    },
     "53371": {
       "title": "Sichuan Style Stir-Fried Chinese Long Beans",
       "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
+    },
+    "53372": {
+      "title": "Chinese Tomato Egg Stir Fry",
+      "diets": ["dairy-free"]
+    },
+    "53373": {
+      "title": "Air Fryer Egg Rolls",
+      "diets": ["dairy-free"]
+    },
+    "53374": {
+      "title": "Sichuan Eggplant",
+      "diets": ["dairy-free"]
+    },
+    "53375": {
+      "title": "Shrimp With Snow Peas",
+      "diets": ["dairy-free"]
+    },
+    "53376": {
+      "title": "Sweet and Sour Chicken",
+      "diets": ["gluten-free", "dairy-free"]
     },
     "53377": {
       "title": "Napa Cabbage with Dried Shrimp",
@@ -773,70 +1080,6 @@
       "title": "Mastawa Lamb and Rice",
       "diets": ["gluten-free"],
       "note": "Agree. Lamb rules out the meat-free tags and yoghurt rules out dairy-free. Rice, chickpeas, orange, herbs and spices are gluten-free. Nan bread is only a serving suggestion."
-    },
-    "53405": {
-      "title": "Tavë me Presh ska Mish Meatless Leek Bake",
-      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
-    },
-    "53415": {
-      "title": "Torrijas",
-      "diets": ["vegetarian", "pescatarian"]
-    },
-    "53422": {
-      "title": "Num E (Sticky Rice Balls in Sugar Syrup and Coconut Cream)",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53428": {
-      "title": "Camaro Grelhado Com Molho Cru (Grilled Prawns with Green Onion Sauce)",
-      "diets": ["gluten-free", "dairy-free", "pescatarian"],
-      "note": "Agree. Prawns with garlic, spring onion, cumin, salt, white vinegar and water."
-    },
-    "53431": {
-      "title": "Corn on the cob with lime, green chilli and coconut butter",
-      "diets": ["vegetarian", "pescatarian"]
-    },
-    "53434": {
-      "title": "Koulenje",
-      "diets": ["vegetarian", "pescatarian"]
-    },
-    "53440": {
-      "title": "Balchi di Pisca",
-      "diets": ["gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53451": {
-      "title": "Bangladeshi fish curry with daikon",
-      "diets": ["gluten-free", "dairy-free", "pescatarian"],
-      "note": "Agree. White fish, daikon, oil, garlic, onion, ground spices, chillies, coriander and lime. There is no dairy or gluten in the ingredients or steps, and the rice is only served alongside."
-    },
-    "53473": {
-      "title": "Curried Spinach from Botswana",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53479": {
-      "title": "Smoky tomato pepper salsa",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53486": {
-      "title": "Easy White Bean Soup",
-      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"],
-      "note": "Steps add Vegeta (bouillon seasoning, not in ingredient list); bouillon is assumed to contain gluten."
-    },
-    "53506": {
-      "title": "Rice and Beans",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"],
-      "note": "Agree. Kidney beans, coconut milk, onion, Scotch bonnet and seasoning. Separately, for the seed owner: the steps add rice, but the ingredient list does not include it, so the rice does not help this recipe match."
-    },
-    "53536": {
-      "title": "Black Beans Hotpot",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53573": {
-      "title": "Papaya salad",
-      "diets": ["vegetarian", "vegan", "gluten-free", "dairy-free", "pescatarian"]
-    },
-    "53576": {
-      "title": "Carrot and Bean Fritters",
-      "diets": ["vegetarian", "vegan", "dairy-free", "pescatarian"]
     }
   }
 }

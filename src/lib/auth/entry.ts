@@ -14,7 +14,8 @@ export const SESSION_COOKIES = ['better-auth.session_token', '__Secure-better-au
 export const WELCOME_PATH = '/welcome'
 
 const PUBLIC_PAGES = new Set([WELCOME_PATH, '/privacy', '/terms', '/refunds', '/pro'])
-const PUBLIC_PREFIXES = ['/api/auth/', '/api/webhooks/', '/_next/']
+// /ocr/: the on-device reader's engine and model, plain files a worker fetches.
+const PUBLIC_PREFIXES = ['/api/auth/', '/api/webhooks/', '/_next/', '/ocr/']
 const PUBLIC_FILES = /^\/(?:icon\.svg|manifest\.webmanifest|robots\.txt|sitemap\.xml|favicon\.ico)$/
 
 /** Whether accounts are switched on: the same settings sign-in itself needs. */

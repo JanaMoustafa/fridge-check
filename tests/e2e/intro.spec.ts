@@ -24,12 +24,12 @@ test.describe('programme intros', () => {
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   })
 
-  test('clear themselves after about two seconds, and do not replay within a programme', async ({
+  test('clear themselves after about three seconds, and do not replay within a programme', async ({
     page,
   }) => {
     await page.goto('/recipe/local/53027')
     await expect(page.getByRole('dialog', { name: 'Find recipes' })).toBeVisible()
-    await expect(page.getByRole('dialog')).toBeHidden({ timeout: 5000 })
+    await expect(page.getByRole('dialog')).toBeHidden({ timeout: 7000 })
     await page.getByRole('link', { name: 'Back to recipes' }).click()
     await expect(page).toHaveURL(/\/(\?.*)?$/)
     await expect(page.getByRole('dialog')).toHaveCount(0)

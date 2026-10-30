@@ -124,6 +124,9 @@ test.describe('app shell', () => {
     await nav.getByRole('link', { name: 'BurnToReturn' }).click()
     await expect(page).toHaveURL(/\/burn$/)
     await expect(page.getByRole('heading', { level: 1, name: 'BurnToReturn' })).toBeAttached()
+    await nav.getByRole('link', { name: 'Cooking Companion' }).click()
+    await expect(page).toHaveURL(/\/chef$/)
+    await expect(page.getByRole('heading', { level: 1, name: 'Cooking Companion' })).toBeAttached()
   })
 
   test('shows a helpful 404 page', async ({ page }) => {

@@ -55,6 +55,7 @@ describe('translation catalogs', () => {
       'burn.metaTitle',
       'burn.title',
       'intro.burn.title',
+      'intro.chef.title',
       // Pure formats: a number and the work, the same in both languages.
       'burn.prescription',
       'burn.single',

@@ -10,6 +10,8 @@ const PAGES = [
   '/shopping-list',
   '/nutritionist',
   '/burn',
+  '/chef',
+  '/chef/52764',
   '/does-not-exist',
   '/privacy',
   '/terms',

@@ -1,4 +1,4 @@
-# Fridge Check — design system
+# BiteDoneRight — design system
 
 Direction: **"cold shelf, warm food."** The interface is the inside of a clean fridge — cool porcelain-mint canvas,
 white enamel surfaces — so the food photography is the only warm thing on screen. Each screen has one bold element
@@ -10,37 +10,28 @@ Skills consulted: frontend-design, ui-ux-pro-max, design-system, ui-styling, rea
 
 ## Tokens
 
-Three layers: primitives (named after ingredients) → semantic tokens (below) → component aliases
-(`--chip-bg`, `--meter-have`, `--meter-missing`). Components never use raw hex.
-All text pairs ≥ 4.5:1 and UI boundaries/focus rings ≥ 3:1 (80 pairs computed with the WCAG formula, 0 failures).
+BiteDoneRight palette (owner, 2026-10-30): **Olive** `#6B705C`, **Sage Grey** `#A5A58D`, **Terracotta** `#CB997E`,
+**Peach Cream** `#FFE8D6`, **Navy** `#3D405B`. Steps are derived from these five; every text pair ≥ 4.5:1 and every
+boundary ≥ 3:1 (computed in the palette script; see the comment in `src/app/globals.css`).
 
-| Token              | Light                | Dark      | Use                                                      |
-| ------------------ | -------------------- | --------- | -------------------------------------------------------- |
-| `bg`               | `#EDF2EF` porcelain  | `#121916` | page canvas, `theme-color`                               |
-| `surface`          | `#FFFFFF` enamel     | `#1A231F` | cards, input panel, receipt                              |
-| `surface-2`        | `#E1E9E4`            | `#24302B` | magnet chips, skeletons, wells                           |
-| `text`             | `#14211B` herb-black | `#E9F0EC` | body                                                     |
-| `text-muted`       | `#4E5D56`            | `#A3B1AA` | secondary — solid hex, never opacity                     |
-| `primary`          | `#5A2D82` aubergine  | `#CFB2EC` | buttons, links, selected toggles, focus ring             |
-| `primary-contrast` | `#FFFFFF`            | `#26113A` | label on primary                                         |
-| `primary-soft`     | `#ECE3F4`            | `#33264A` | selected toggle background, active nav pill              |
-| `accent`           | `#B8124F` hibiscus   | `#FF8DB3` | saved heart, saved count                                 |
-| `accent-contrast`  | `#FFFFFF`            | `#3D0A1C` | label on accent                                          |
-| `have`             | `#1B6B3A` parsley    | `#7DD89C` | "You have", filled meter segments (+ check icon + words) |
-| `have-soft`        | `#DDF0E3`            | `#173A26` | have-chip tint                                           |
-| `missing`          | `#8A4B00` saffron    | `#F4BE6A` | "You need", dashed hollow segments (+ plus icon + words) |
-| `missing-soft`     | `#FCEBD2`            | `#3D2C12` | missing tint                                             |
-| `danger`           | `#B3261E` chili      | `#FF968C` | destructive only                                         |
-| `danger-contrast`  | `#FFFFFF`            | `#410E0A` | label on danger                                          |
-| `ring`             | `#5A2D82`            | `#CFB2EC` | 2 px focus outline, 2 px offset                          |
-| `border`           | `#D3DDD7`            | `#2E3B35` | decorative hairlines only                                |
-| `border-strong`    | `#6E7E76`            | `#728379` | boundaries of inputs/toggles (≥ 3:1)                     |
-
-Theme switching: `:root` = light; `@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) {…dark} }`;
-`:root[data-theme=dark] {…dark}`. `color-scheme` follows the theme.
-
-Radii signal role: chips 12 px "fridge magnet" tiles with a 2 px inset bottom lip, cards 20 px, buttons 12 px,
-full pills only for segmented toggles (EN | AR, sort). No grey drop shadows: depth = surface tint + 1 px enamel highlight.
+| Token            | Light     | Dark      | Use                                              |
+| ---------------- | --------- | --------- | ------------------------------------------------ |
+| `bg`             | `#FFE8D6` | `#2A2C3F` | page canvas (Peach Cream), `theme-color`         |
+| `surface`        | `#FFF6EE` | `#3D405B` | cards (a lighter cream; Navy in the dark)        |
+| `surface-2`      | `#E2E1D0` | `#4A4D68` | wells, chips, tiles (a sage tint)                |
+| `fg`             | `#3D405B` | `#FFE8D6` | body text (Navy)                                 |
+| `fg-muted`       | `#5C5F6B` | `#D6CFC3` | secondary text                                   |
+| `heading`        | `#555A48` | `#CDCFB6` | h1–h3 (Olive, a step darker for text)            |
+| `primary`        | `#5E634F` | `#C8C8B0` | buttons, links, the selected tab (Olive)         |
+| `primary-soft`   | `#E7E6D9` | `#464A60` | selected backgrounds, nav pill                   |
+| `accent`         | `#8A4E33` | `#E3B89C` | BurnToReturn, chips with text (Terracotta, dark) |
+| `highlight-soft` | `#F2D4BE` | `#5B4A42` | highlights and progress fills                    |
+| `sage`           | `#A5A58D` | `#6E6F5E` | decorative Sage Grey (meters, bars)              |
+| `have`           | `#555A48` | `#C8CCAC` | success, "You have"                              |
+| `missing`        | `#8A4E33` | `#E8BFA4` | "You need"                                       |
+| `danger`         | `#A4403A` | `#FF9C8C` | destructive only                                 |
+| `line`           | `#D9CFC0` | `#4A4D68` | hairlines                                        |
+| `line-strong`    | `#7A7D8C` | `#A0A3B3` | input and toggle boundaries (≥ 3:1)              |
 
 ## Type
 

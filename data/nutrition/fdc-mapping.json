@@ -69,6 +69,10 @@
       "fdcId": 172241,
       "description": "Vinegar, balsamic"
     },
+    "bamboo shoot": {
+      "fdcId": 169210,
+      "description": "Bamboo shoots, raw"
+    },
     "banana": {
       "fdcId": 173944,
       "description": "Bananas, raw"
@@ -130,6 +134,11 @@
       "description": "Peppers, sweet, red, raw",
       "note": "Lines are mostly red peppers; green/yellow differ by only a few kcal."
     },
+    "bird's eye chili": {
+      "fdcId": 170106,
+      "description": "Peppers, hot chili, red, raw",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "black bean": {
       "fdcId": 175188,
       "description": "Beans, black turtle, mature seeds, canned",
@@ -147,6 +156,10 @@
     "blackberry": {
       "fdcId": 173946,
       "description": "Blackberries, raw"
+    },
+    "bok choy": {
+      "fdcId": 170390,
+      "description": "Cabbage, chinese (pak-choi), raw"
     },
     "borlotti bean": {
       "fdcId": 173737,
@@ -167,6 +180,11 @@
       "fdcId": 168896,
       "description": "Wheat flour, white, bread, enriched"
     },
+    "bread mix": {
+      "fdcId": 168894,
+      "description": "Wheat flour, white, all-purpose, enriched, bleached",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "breadcrumb": {
       "fdcId": 174928,
       "description": "Bread, crumbs, dry, grated, plain"
@@ -183,6 +201,10 @@
       "fdcId": 172420,
       "description": "Lentils, raw",
       "note": "Dry lentils (generic brown/green)."
+    },
+    "brown rice": {
+      "fdcId": 2512380,
+      "description": "Rice, brown, long grain, unenriched, raw"
     },
     "brown sugar": {
       "fdcId": 168833,
@@ -211,8 +233,7 @@
     },
     "cajun seasoning": {
       "fdcId": null,
-      "reason": "No FDC food for Cajun seasoning (a salt/paprika/garlic/cayenne spice blend); no single spice is equivalent.",
-      "minor": true
+      "reason": "No FDC food for Cajun seasoning (a salt/paprika/garlic/cayenne spice blend); no single spice is equivalent."
     },
     "cannellini bean": {
       "fdcId": 175204,
@@ -304,9 +325,18 @@
       "fdcId": 171077,
       "description": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw"
     },
+    "chicken drumstick": {
+      "fdcId": 173614,
+      "description": "Chicken, broilers or fryers, dark meat, drumstick, meat only, raw",
+      "note": "SR Legacy record: the Foundation one works out to a negative macro."
+    },
     "chicken leg": {
       "fdcId": 172378,
       "description": "Chicken, broilers or fryers, leg, meat and skin, raw"
+    },
+    "chicken liver": {
+      "fdcId": 171060,
+      "description": "Chicken, liver, all classes, raw"
     },
     "chicken stock": {
       "fdcId": 174536,
@@ -347,6 +377,10 @@
       "fdcId": 171186,
       "description": "Sauce, hot chile, sriracha",
       "note": "Used as an Asian hot chilli sauce (ramen); sriracha is the closest standard SR Legacy entry."
+    },
+    "chinese broccoli": {
+      "fdcId": 169392,
+      "description": "Broccoli, chinese, cooked"
     },
     "chinese sesame sauce": {
       "fdcId": 170191,
@@ -426,6 +460,10 @@
       "description": "Coriander (cilantro) leaves, raw",
       "note": "Most lines are fresh leaves (handful/bunch/chopped); ground coriander has its own entry."
     },
+    "coriander seed": {
+      "fdcId": 170922,
+      "description": "Spices, coriander seed"
+    },
     "corn": {
       "fdcId": 169998,
       "description": "Corn, sweet, yellow, raw",
@@ -491,8 +529,7 @@
     },
     "doubanjiang": {
       "fdcId": null,
-      "reason": "No FDC entry for doubanjiang (fermented broad bean chilli paste).",
-      "minor": true
+      "reason": "No FDC entry for doubanjiang (fermented broad bean chilli paste)."
     },
     "dried apricot": {
       "fdcId": 173941,
@@ -514,6 +551,15 @@
     "egg": {
       "fdcId": 171287,
       "description": "Egg, whole, raw, fresh"
+    },
+    "egg roll": {
+      "fdcId": 172103,
+      "description": "Egg rolls, pork, refrigerated, heated",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
+    "egg roll wrapper": {
+      "fdcId": 172802,
+      "description": "Wonton wrappers (includes egg roll wrappers)"
     },
     "egg white": {
       "fdcId": 172183,
@@ -574,8 +620,7 @@
     },
     "fermented black bean": {
       "fdcId": null,
-      "reason": "No FDC food for fermented salted black soybeans (douchi).",
-      "minor": true
+      "reason": "No FDC food for fermented salted black soybeans (douchi)."
     },
     "feta": {
       "fdcId": 173420,
@@ -599,6 +644,11 @@
       "fdcId": 172885,
       "description": "Soup, stock, fish, home-prepared"
     },
+    "five spice powder": {
+      "fdcId": 171315,
+      "description": "Spices, allspice, ground",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "flax egg": {
       "fdcId": 169414,
       "description": "Seeds, flaxseed",
@@ -613,17 +663,19 @@
     },
     "food coloring": {
       "fdcId": null,
-      "reason": "No FDC food for food colouring; it is used in negligible amounts with no meaningful nutrition.",
-      "minor": true
+      "reason": "No FDC food for food colouring; it is used in negligible amounts with no meaningful nutrition."
     },
     "fromage frais": {
       "fdcId": null,
       "reason": "No FDC fromage frais or quark; fat content varies too widely to substitute."
     },
+    "galangal": {
+      "fdcId": 169231,
+      "description": "Ginger root, raw"
+    },
     "garam masala": {
       "fdcId": null,
-      "reason": "No FDC food for this spice blend",
-      "minor": true
+      "reason": "No FDC food for this spice blend"
     },
     "garlic": {
       "fdcId": 169230,
@@ -642,6 +694,11 @@
       "description": "Ginger root, raw",
       "note": "Fresh ginger root chosen since most lines are pieces/slices/minced; ground ginger has its own entry."
     },
+    "ginger cordial": {
+      "fdcId": 174846,
+      "description": "Beverages, carbonated, ginger ale",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "goat cheese": {
       "fdcId": 173435,
       "description": "Cheese, goat, soft type",
@@ -649,8 +706,7 @@
     },
     "gochujang": {
       "fdcId": null,
-      "reason": "No FDC food for gochujang (fermented chili-rice paste); miso or chili sauce are not equivalent.",
-      "minor": true
+      "reason": "No FDC food for gochujang (fermented chili-rice paste); miso or chili sauce are not equivalent."
     },
     "goose fat": {
       "fdcId": 173572,
@@ -675,6 +731,11 @@
     "green bean": {
       "fdcId": 169961,
       "description": "Beans, snap, green, raw"
+    },
+    "green curry paste": {
+      "fdcId": 170924,
+      "description": "Spices, curry powder",
+      "note": "Nearest USDA stand-in; the real item has no entry."
     },
     "green olive": {
       "fdcId": 169096,
@@ -707,6 +768,10 @@
       "fdcId": 174370,
       "description": "Lamb, ground, raw"
     },
+    "ground pork": {
+      "fdcId": 2514745,
+      "description": "Pork, ground, raw"
+    },
     "ground turkey": {
       "fdcId": 171505,
       "description": "Turkey, Ground, raw"
@@ -726,8 +791,7 @@
     },
     "harissa": {
       "fdcId": null,
-      "reason": "No FDC entry for harissa spice blend.",
-      "minor": true
+      "reason": "No FDC entry for harissa spice blend."
     },
     "hazelnut": {
       "fdcId": 170581,
@@ -737,6 +801,10 @@
       "fdcId": 170859,
       "description": "Cream, fluid, heavy whipping",
       "note": "Most lines say double cream, which is richer (~48% fat) than heavy whipping cream; this is the closest FDC cream."
+    },
+    "hoisin sauce": {
+      "fdcId": 172886,
+      "description": "Sauce, hoisin, ready-to-serve"
     },
     "honey": {
       "fdcId": 169640,
@@ -767,8 +835,7 @@
     },
     "italian seasoning": {
       "fdcId": null,
-      "reason": "No FDC food for this dried-herb blend",
-      "minor": true
+      "reason": "No FDC food for this dried-herb blend"
     },
     "jalapeno": {
       "fdcId": 168576,
@@ -785,8 +852,7 @@
     },
     "kabsa spice": {
       "fdcId": null,
-      "reason": "No FDC food for this spice blend.",
-      "minor": true
+      "reason": "No FDC food for this spice blend."
     },
     "kale": {
       "fdcId": 168421,
@@ -816,6 +882,15 @@
       "description": "Lamb, leg, whole (shank and sirloin), separable lean and fat, trimmed to 1/8\" fat, choice, raw",
       "note": "Diced leg meat; 1/8 inch trim reflects typical retail leg."
     },
+    "lamb shank": {
+      "fdcId": 172513,
+      "description": "Lamb, New Zealand, imported, fore-shank, separable lean and fat, raw"
+    },
+    "lamb stock": {
+      "fdcId": 172883,
+      "description": "Soup, stock, beef, home-prepared",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "lasagna sheet": {
       "fdcId": 169736,
       "description": "Pasta, dry, enriched",
@@ -829,6 +904,10 @@
       "fdcId": 167747,
       "description": "Lemon juice, raw",
       "note": "Most lines use the juice; entry has a '1 lemon yields 48 g' portion."
+    },
+    "lemongrass": {
+      "fdcId": 168573,
+      "description": "Lemon grass (citronella), raw"
     },
     "lentil": {
       "fdcId": 172420,
@@ -847,6 +926,10 @@
     "lime": {
       "fdcId": 168155,
       "description": "Limes, raw"
+    },
+    "lime leaf": {
+      "fdcId": null,
+      "reason": "An aromatic leaf removed before eating: negligible nutrition."
     },
     "linguine": {
       "fdcId": 169736,
@@ -874,8 +957,7 @@
     },
     "mahleb": {
       "fdcId": null,
-      "reason": "No FDC entry for mahleb (ground St Lucie cherry kernels).",
-      "minor": true
+      "reason": "No FDC entry for mahleb (ground St Lucie cherry kernels)."
     },
     "malai": {
       "fdcId": 170859,
@@ -885,6 +967,11 @@
     "marjoram": {
       "fdcId": 170928,
       "description": "Spices, marjoram, dried"
+    },
+    "massaman curry paste": {
+      "fdcId": 170924,
+      "description": "Spices, curry powder",
+      "note": "Nearest USDA stand-in; the real item has no entry."
     },
     "mayonnaise": {
       "fdcId": 171009,
@@ -911,8 +998,7 @@
     },
     "mirin": {
       "fdcId": null,
-      "reason": "No FDC mirin; sake differs (mirin is much sweeter)",
-      "minor": true
+      "reason": "No FDC mirin; sake differs (mirin is much sweeter)"
     },
     "mixed grain": {
       "fdcId": null,
@@ -922,6 +1008,10 @@
       "fdcId": 175179,
       "description": "Crustaceans, shrimp, raw",
       "note": "No seafood-mix entry; shrimp is the main component and squid/mussels have similar energy (~80-90 kcal/100g)."
+    },
+    "mixed vegetable": {
+      "fdcId": 170472,
+      "description": "Vegetables, mixed, frozen, cooked, boiled, drained, without salt"
     },
     "molasses": {
       "fdcId": 168820,
@@ -1017,6 +1107,10 @@
       "fdcId": 169097,
       "description": "Oranges, raw, all commercial varieties"
     },
+    "orange juice": {
+      "fdcId": 169098,
+      "description": "Orange juice, raw"
+    },
     "oregano": {
       "fdcId": 171328,
       "description": "Spices, oregano, dried"
@@ -1025,6 +1119,10 @@
       "fdcId": 172718,
       "description": "Cookies, chocolate sandwich, with creme filling, regular",
       "note": "Generic Oreo-type cookie (3 cookies = 36 g)."
+    },
+    "oyster mushroom": {
+      "fdcId": 1999627,
+      "description": "Mushroom, oyster"
     },
     "oyster sauce": {
       "fdcId": 174529,
@@ -1040,10 +1138,18 @@
       "description": "Rice, white, medium-grain, raw, unenriched",
       "note": "Paella rice (bomba/calasparra) is uncooked medium/short-grain white rice, unenriched."
     },
+    "palm sugar": {
+      "fdcId": 168833,
+      "description": "Sugars, brown"
+    },
+    "panang curry paste": {
+      "fdcId": 170924,
+      "description": "Spices, curry powder",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "pandan leaf": {
       "fdcId": null,
-      "reason": "No FDC food for pandan leaves.",
-      "minor": true
+      "reason": "No FDC food for pandan leaves."
     },
     "paprika": {
       "fdcId": 171329,
@@ -1104,12 +1210,19 @@
     },
     "pickle juice": {
       "fdcId": null,
-      "reason": "No FDC entry for pickle brine.",
-      "minor": true
+      "reason": "No FDC entry for pickle brine."
     },
     "pine nut": {
       "fdcId": 170591,
       "description": "Nuts, pine nuts, dried"
+    },
+    "pineapple": {
+      "fdcId": 2346398,
+      "description": "Pineapple, raw"
+    },
+    "pineapple juice": {
+      "fdcId": 168187,
+      "description": "Pineapple juice, canned or bottled, unsweetened, with added ascorbic acid"
     },
     "pistachio": {
       "fdcId": 170184,
@@ -1119,23 +1232,48 @@
       "fdcId": 174915,
       "description": "Bread, pita, white, enriched"
     },
+    "plum sauce": {
+      "fdcId": 172879,
+      "description": "Sauce, plum, ready-to-serve"
+    },
     "pomegranate molasses": {
       "fdcId": null,
-      "reason": "No FDC entry for pomegranate molasses (reduced pomegranate juice); cane molasses is a different food.",
-      "minor": true
+      "reason": "No FDC entry for pomegranate molasses (reduced pomegranate juice); cane molasses is a different food."
     },
     "pork": {
       "fdcId": 168316,
       "description": "Pork, fresh, composite of trimmed retail cuts (loin and shoulder blade), separable lean and fat, raw",
       "note": "Generic pork mapped to a raw lean-and-fat composite of loin and shoulder cuts."
     },
+    "pork chop": {
+      "fdcId": 168316,
+      "description": "Pork, fresh, composite of trimmed retail cuts (loin and shoulder blade), separable lean and fat, raw",
+      "note": "Chops stand in as plain pork: the USDA chop record works out to negative carbohydrate."
+    },
+    "pork shoulder": {
+      "fdcId": 169187,
+      "description": "Pork, Shoulder breast, boneless, separable lean and fat, raw"
+    },
+    "pork tenderloin": {
+      "fdcId": 2646169,
+      "description": "Pork, loin, tenderloin, boneless, raw"
+    },
     "potato": {
       "fdcId": 170026,
       "description": "Potatoes, flesh and skin, raw"
     },
+    "potato starch": {
+      "fdcId": 169698,
+      "description": "Cornstarch",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "powdered sugar": {
       "fdcId": 169656,
       "description": "Sugars, powdered"
+    },
+    "pretzel": {
+      "fdcId": 167555,
+      "description": "Snacks, pretzels, hard, plain, salted"
     },
     "prosciutto": {
       "fdcId": 168282,
@@ -1163,14 +1301,17 @@
       "fdcId": 168874,
       "description": "Quinoa, uncooked"
     },
+    "radish": {
+      "fdcId": 169276,
+      "description": "Radishes, raw"
+    },
     "raisin": {
       "fdcId": 168165,
       "description": "Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)"
     },
     "ras el hanout": {
       "fdcId": null,
-      "reason": "No FDC entry for the ras el hanout spice blend.",
-      "minor": true
+      "reason": "No FDC entry for the ras el hanout spice blend."
     },
     "raspberry": {
       "fdcId": 167755,
@@ -1182,8 +1323,7 @@
     },
     "red curry paste": {
       "fdcId": null,
-      "reason": "No FDC food for Thai red curry paste",
-      "minor": true
+      "reason": "No FDC food for Thai red curry paste"
     },
     "red onion": {
       "fdcId": 170000,
@@ -1192,8 +1332,7 @@
     },
     "red pepper paste": {
       "fdcId": null,
-      "reason": "No FDC entry for Turkish red pepper paste (biber salcasi).",
-      "minor": true
+      "reason": "No FDC entry for Turkish red pepper paste (biber salcasi)."
     },
     "red wine": {
       "fdcId": 173190,
@@ -1212,9 +1351,19 @@
       "description": "Rice, white, long-grain, regular, raw, enriched",
       "note": "Generic uncooked white rice."
     },
+    "rice flour pancake": {
+      "fdcId": 790214,
+      "description": "Flour, rice, white, unenriched",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "rice noodle": {
       "fdcId": 169742,
       "description": "Rice noodles, dry"
+    },
+    "rice paper": {
+      "fdcId": 790214,
+      "description": "Flour, rice, white, unenriched",
+      "note": "Nearest USDA stand-in; the real item has no entry."
     },
     "rice vinegar": {
       "fdcId": 172237,
@@ -1231,12 +1380,15 @@
     },
     "rose water": {
       "fdcId": null,
-      "reason": "No FDC food for rose water.",
-      "minor": true
+      "reason": "No FDC food for rose water."
     },
     "rosemary": {
       "fdcId": 173473,
       "description": "Rosemary, fresh"
+    },
+    "rum": {
+      "fdcId": 174817,
+      "description": "Alcoholic beverage, distilled, rum, 80 proof"
     },
     "rutabaga": {
       "fdcId": 168454,
@@ -1300,6 +1452,10 @@
       "description": "Peppers, hot chili, red, raw",
       "note": "No scotch bonnet entry; generic raw red hot chili used."
     },
+    "sea bass": {
+      "fdcId": 175142,
+      "description": "Fish, sea bass, mixed species, raw"
+    },
     "self-raising flour": {
       "fdcId": 168895,
       "description": "Wheat flour, white, all-purpose, self-rising, enriched"
@@ -1320,6 +1476,11 @@
       "fdcId": 170499,
       "description": "Shallots, raw"
     },
+    "shaoxing wine": {
+      "fdcId": 174837,
+      "description": "Alcoholic beverage, wine, table, white",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "sherry": {
       "fdcId": 175112,
       "description": "Alcoholic beverage, wine, dessert, dry",
@@ -1330,19 +1491,31 @@
       "description": "Vinegar, red wine",
       "note": "No FDC sherry vinegar; red wine vinegar is the closest wine vinegar (vinegars are ~18-20 kcal/100 g)."
     },
+    "shiitake mushroom": {
+      "fdcId": 1999628,
+      "description": "Mushrooms, shiitake"
+    },
     "shrimp": {
       "fdcId": 175179,
       "description": "Crustaceans, shrimp, raw"
     },
+    "shrimp paste": {
+      "fdcId": 174183,
+      "description": "Fish, anchovy, european, canned in oil, drained solids",
+      "note": "Nearest USDA stand-in; the real item has no entry."
+    },
     "sichuan pepper": {
       "fdcId": null,
-      "reason": "No FDC food for Sichuan pepper; black pepper is a different spice.",
-      "minor": true
+      "reason": "No FDC food for Sichuan pepper; black pepper is a different spice."
     },
     "silken tofu": {
       "fdcId": 174292,
       "description": "MORI-NU, Tofu, silken, soft",
       "note": "SR Legacy's only silken tofu entries are MORI-NU; soft is the typical silken style."
+    },
+    "sirloin steak": {
+      "fdcId": 2727574,
+      "description": "Beef, top sirloin steak, raw"
     },
     "smoked haddock": {
       "fdcId": 174199,
@@ -1357,6 +1530,14 @@
       "fdcId": 173687,
       "description": "Fish, salmon, chinook, smoked"
     },
+    "snow pea": {
+      "fdcId": 170010,
+      "description": "Peas, edible-podded, raw"
+    },
+    "soda water": {
+      "fdcId": 174842,
+      "description": "Beverages, carbonated, club soda"
+    },
     "sour cream": {
       "fdcId": 171257,
       "description": "Cream, sour, cultured"
@@ -1369,6 +1550,10 @@
     "soy sauce": {
       "fdcId": 174277,
       "description": "Soy sauce made from soy and wheat (shoyu)"
+    },
+    "soybean": {
+      "fdcId": 174271,
+      "description": "Soybeans, mature cooked, boiled, without salt"
     },
     "spaghetti": {
       "fdcId": 169736,
@@ -1390,8 +1575,11 @@
     },
     "star anise": {
       "fdcId": null,
-      "reason": "No FDC star anise; anise seed is a different spice",
-      "minor": true
+      "reason": "No FDC star anise; anise seed is a different spice"
+    },
+    "steak": {
+      "fdcId": 174763,
+      "description": "Beef, top sirloin, steak, separable lean only, trimmed to 1/8\" fat, choice, raw"
     },
     "sticky rice flour": {
       "fdcId": 169714,
@@ -1422,8 +1610,7 @@
     },
     "sumac": {
       "fdcId": null,
-      "reason": "No FDC food for sumac spice.",
-      "minor": true
+      "reason": "No FDC food for sumac spice."
     },
     "sunflower oil": {
       "fdcId": 171025,
@@ -1436,8 +1623,7 @@
     },
     "sweet chili sauce": {
       "fdcId": null,
-      "reason": "No FDC food for Thai sweet chili sauce",
-      "minor": true
+      "reason": "No FDC food for Thai sweet chili sauce"
     },
     "sweet potato": {
       "fdcId": 170134,
@@ -1451,6 +1637,10 @@
       "fdcId": 170189,
       "description": "Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)"
     },
+    "tamarind": {
+      "fdcId": 167763,
+      "description": "Tamarinds, raw"
+    },
     "taro": {
       "fdcId": 169308,
       "description": "Taro, raw"
@@ -1459,6 +1649,14 @@
       "fdcId": 170937,
       "description": "Spices, tarragon, dried",
       "note": "FoodData Central has only dried tarragon; recipes use a few fresh leaves, which count as a small amount either way."
+    },
+    "tempeh": {
+      "fdcId": 174272,
+      "description": "Tempeh"
+    },
+    "thai chili jam": {
+      "fdcId": 174066,
+      "description": "Sauce, sweet and sour, ready-to-serve"
     },
     "thyme": {
       "fdcId": 173470,
@@ -1495,6 +1693,10 @@
       "fdcId": 167535,
       "description": "Tortillas, ready-to-bake or -fry, flour, shelf stable"
     },
+    "trout": {
+      "fdcId": 173717,
+      "description": "Fish, trout, rainbow, farmed, raw"
+    },
     "truffle oil": {
       "fdcId": 171413,
       "description": "Oil, olive, salad or cooking",
@@ -1505,6 +1707,10 @@
       "description": "Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",
       "note": "Lines point to canned tuna (\"1 can\", pasta salad); canned light tuna in water, drained."
     },
+    "turkey": {
+      "fdcId": 171093,
+      "description": "Turkey, all classes, breast, meat and skin, raw"
+    },
     "turkey breast": {
       "fdcId": 174516,
       "description": "Turkey, retail parts, breast, meat only, cooked, roasted"
@@ -1512,6 +1718,10 @@
     "turmeric": {
       "fdcId": 172231,
       "description": "Spices, turmeric, ground"
+    },
+    "udon": {
+      "fdcId": 168905,
+      "description": "Noodles, chinese, chow mein"
     },
     "vanilla": {
       "fdcId": 173471,

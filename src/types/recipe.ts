@@ -91,12 +91,17 @@ export const LocalRecipeSchema = z.object({
   ingredients: z.array(IngredientSchema).min(1),
   instructions: z.array(z.string().trim().min(1)).min(1),
   sourceUrl: z.url({ protocol: /^https?$/ }).optional(),
+  /** A YouTube video of a person cooking this dish (TheMealDB's link), for Cooking Companion. */
+  videoId: z
+    .string()
+    .regex(/^[A-Za-z0-9_-]{11}$/)
+    .optional(),
   attribution: z.string().min(1),
 })
 export type LocalRecipe = z.infer<typeof LocalRecipeSchema>
 
 export const LOCAL_RECIPE_MIN = 150
-export const LOCAL_RECIPE_MAX = 200
+export const LOCAL_RECIPE_MAX = 300
 
 export const LocalRecipeCollectionSchema = z.object({
   version: z.literal(1),

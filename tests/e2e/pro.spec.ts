@@ -40,6 +40,7 @@ test.describe('Signed out', () => {
       '/profile',
       '/nutritionist/scan',
       '/burn/exercise/c-squat',
+      '/chef/52764',
       '/pro/success?session=cs_test_x',
     ]) {
       await page.goto(path)

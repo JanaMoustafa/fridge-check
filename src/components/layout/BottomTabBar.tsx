@@ -19,7 +19,7 @@ export function BottomTabBar() {
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden print:hidden"
       style={{ viewTransitionName: 'bottom-tabs' }}
     >
-      <ul className="mx-auto grid max-w-md grid-cols-5">
+      <ul className="mx-auto grid max-w-lg grid-cols-6">
         {NAV_ITEMS.map(({ href, labelKey, icon: Icon }) => {
           const active = isActive(href, pathname)
           return (

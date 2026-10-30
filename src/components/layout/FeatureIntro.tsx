@@ -6,7 +6,7 @@ import { useEffect, useState, useSyncExternalStore } from 'react'
 import { featureOf, type Feature } from '@/lib/navigation/feature-section'
 
 /** How long the intro stays before it clears itself (its animation fits inside this). */
-const SHOW_MS = 2100
+const SHOW_MS = 3400
 const LEAVE_MS = 240
 
 /** The find intro's plate: where each ingredient chip flies in from (x, y in rem) and lands. */
@@ -91,6 +91,7 @@ export function FeatureIntro() {
         {active === 'burn' && (
           <BurnScene letters={[tb('letters.a'), tb('letters.b'), tb('letters.c')]} />
         )}
+        {active === 'chef' && <ChefScene />}
         <h2 className="intro-title text-4xl font-extrabold tracking-tight text-heading">
           {t(`${active}.title`)}
         </h2>
@@ -205,5 +206,46 @@ function BurnScene({ letters }: { letters: string[] }) {
         ))}
       </div>
     </div>
+  )
+}
+
+/** A pan on the heat: three ingredients hop in one by one, then the steam rises. */
+function ChefScene() {
+  return (
+    <svg viewBox="0 0 200 160" aria-hidden="true" className="intro-pan w-56">
+      <g className="intro-pan-body">
+        <ellipse cx="90" cy="112" rx="62" ry="18" fill="var(--color-fg)" opacity="0.9" />
+        <ellipse cx="90" cy="106" rx="52" ry="12" fill="var(--color-surface-2)" />
+        <rect x="150" y="100" width="46" height="9" rx="4.5" fill="var(--color-fg)" opacity="0.9" />
+      </g>
+      {[
+        ['var(--color-accent)', 70, 0],
+        ['var(--color-primary)', 92, 1],
+        ['var(--color-highlight-soft)', 112, 2],
+      ].map(([fill, x, i]) => (
+        <circle
+          key={String(i)}
+          className="intro-ingredient"
+          style={{ '--i': i } as React.CSSProperties}
+          cx={Number(x)}
+          cy={104}
+          r={7}
+          fill={String(fill)}
+        />
+      ))}
+      {[76, 94, 112].map((x, i) => (
+        <path
+          key={x}
+          className="intro-steam"
+          style={{ '--i': i } as React.CSSProperties}
+          d={`M${x} 84c-6-8 6-14 0-22`}
+          pathLength={1}
+          fill="none"
+          stroke="var(--color-fg-muted)"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+      ))}
+    </svg>
   )
 }

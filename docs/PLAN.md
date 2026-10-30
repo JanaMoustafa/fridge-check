@@ -315,6 +315,25 @@ tests/           e2e/ · msw/ · fixtures/
 - Note: DESIGN.md still describes the Fridge Check look (porcelain/aubergine); the code is the
   authority. Refresh it when convenient.
 
+## New palette, slower intros, Cooking Companion (owner request 2026-10-30)
+
+- **Palette:** the owner's five colours (Olive #6b705c, Sage Grey #a5a58d, Terracotta #cb997e,
+  Peach Cream #ffe8d6, Navy #3d405b) replace the forest/sage/cream set. Peach Cream is the canvas,
+  a lighter cream the cards, a sage tint the wells; Navy the text; Olive (a step darker for text)
+  the buttons and headings; Terracotta (darker for text) the accent. Steps were computed so every
+  text pair clears 4.5:1 and every boundary 3:1 in light and dark (`docs/DESIGN.md` refreshed).
+- **Intros:** the programme intros now run about three seconds (owner: "too fast").
+- **Cooking Companion** (`/chef`, tab "Chef"): search any built-in dish by name with the focus
+  cuisines (Egyptian, Italian, Mexican, Moroccan, Saudi, Asian) one tap away; a dish page shows
+  a YouTube video of it being cooked (TheMealDB's link, loaded only on play), every ingredient
+  in grams for the whole recipe (as written beside it), the method, and a link to the recipe's
+  nutrition and portion. Its intro scene: a pan, three ingredients hop in, steam rises.
+- **Recipes:** 257 (from 195): the seed plan now takes everything TheMealDB has for the focus
+  cuisines (Italian 20, Chinese 27, Thai 26, Vietnamese 26, Saudi 12, Egyptian 8, Japanese 8,
+  Malaysian 8, Filipino 7, Mexican 6, Moroccan 6); 239 carry a cooking video. Every new recipe
+  got reviewed diet tags, Arabic ingredient names and USDA nutrition mappings (a few are nearest
+  stand-ins, noted in the mapping). A native speaker should still read the new Arabic names.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

@@ -32,6 +32,7 @@ export const MealDbMealSchema = z.object({
   strInstructions: TextSchema,
   strMealThumb: TextSchema,
   strSource: TextSchema,
+  strYoutube: TextSchema,
 })
 /** The schema validates the 40 slot fields too; TypeScript just cannot infer computed keys. */
 export type MealDbMeal = z.infer<typeof MealDbMealSchema> &

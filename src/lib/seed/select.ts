@@ -38,24 +38,32 @@ export interface SelectionPlan {
 /** The owner's quotas (docs/PLAN.md, "Local dataset quotas"). */
 export const SEED_PLAN: SelectionPlan = {
   quotas: {
+    // The owner's focus cuisines (2026-10-30): Egyptian, Italian, Mexican, Moroccan, Saudi and
+    // Asian get everything TheMealDB has; the rest keep their earlier shares.
     Egyptian: 'all',
     'Saudi Arabian': 'all',
     Arabian: 'all',
+    Italian: 'all',
+    Mexican: 'all',
+    Moroccan: 'all',
+    Chinese: 'all',
+    Japanese: 'all',
+    Thai: 'all',
+    Vietnamese: 'all',
+    Malaysian: 'all',
+    Filipino: 'all',
     British: 20,
     American: 15,
-    Italian: 18,
     French: 15,
     Spanish: 15,
-    Chinese: 15,
-    Mexican: 'all',
     Turkish: 12,
     Algerian: 6,
     Tunisian: 6,
-    Moroccan: 6,
     Syrian: 5,
     Greek: 5,
     Afghan: 3,
   },
+
   required: [
     // Saudi: the three shakshuka variants and Shawarma bread.
     '53215',
@@ -76,8 +84,8 @@ export const SEED_PLAN: SelectionPlan = {
   gates: { minIngredients: 4, minInstructionChars: 120, minSteps: 2 },
   // Feteer Meshaltet lists only staples (flour, water, salt, butter, oil) and is still wanted.
   relaxedGates: { minIngredients: 0, minInstructionChars: 0, minSteps: 1 },
-  targetTotal: 195,
-  minTotal: 190,
+  targetTotal: 257,
+  minTotal: 240,
   maxDessertShare: 0.1,
   maxDessertsPerCuisine: 4,
   targets: { vegetarian: 0.35, vegan: 0.12, seafood: 0.15, mena: 40 },

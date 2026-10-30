@@ -268,6 +268,22 @@
         "cup": 255
       }
     },
+    "bamboo shoot": {
+      "fdcId": 169210,
+      "description": "Bamboo shoots, raw",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 27,
+        "proteinG": 2.6,
+        "fatG": 0.3,
+        "carbsG": 5.2,
+        "fiberG": 2.2
+      },
+      "portions": {
+        "cup": 151
+      }
+    },
     "banana": {
       "fdcId": 173944,
       "description": "Bananas, raw",
@@ -487,6 +503,23 @@
         "small": 74
       }
     },
+    "bird's eye chili": {
+      "fdcId": 170106,
+      "description": "Peppers, hot chili, red, raw",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 40,
+        "proteinG": 1.87,
+        "fatG": 0.44,
+        "carbsG": 8.81,
+        "fiberG": 1.5
+      },
+      "portions": {
+        "piece": 45,
+        "cup": 150
+      }
+    },
     "black bean": {
       "fdcId": 175188,
       "description": "Beans, black turtle, mature seeds, canned",
@@ -554,6 +587,24 @@
         "cup": 144
       }
     },
+    "bok choy": {
+      "fdcId": 170390,
+      "description": "Cabbage, chinese (pak-choi), raw",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 13,
+        "proteinG": 1.5,
+        "fatG": 0.2,
+        "carbsG": 2.18,
+        "fiberG": 1
+      },
+      "portions": {
+        "head": 840,
+        "leaf": 14,
+        "cup": 70
+      }
+    },
     "borlotti bean": {
       "fdcId": 173737,
       "description": "Beans, cranberry (roman), mature seeds, canned",
@@ -619,6 +670,22 @@
         "cup": 137
       }
     },
+    "bread mix": {
+      "fdcId": 168894,
+      "description": "Wheat flour, white, all-purpose, enriched, bleached",
+      "dataType": "SR Legacy",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 364,
+        "proteinG": 10.33,
+        "fatG": 0.98,
+        "carbsG": 76.31,
+        "fiberG": 2.7
+      },
+      "portions": {
+        "cup": 125
+      }
+    },
     "breadcrumb": {
       "fdcId": 174928,
       "description": "Bread, crumbs, dry, grated, plain",
@@ -682,6 +749,20 @@
         "tbsp": 12,
         "cup": 192
       }
+    },
+    "brown rice": {
+      "fdcId": 2512380,
+      "description": "Rice, brown, long grain, unenriched, raw",
+      "dataType": "Foundation",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 368.3584745,
+        "proteinG": 7.25305,
+        "fatG": 3.306,
+        "carbsG": 76.68795,
+        "fiberG": 3.021
+      },
+      "portions": {}
     },
     "brown sugar": {
       "fdcId": 168833,
@@ -1107,6 +1188,22 @@
         "piece": 272
       }
     },
+    "chicken drumstick": {
+      "fdcId": 173614,
+      "description": "Chicken, broilers or fryers, dark meat, drumstick, meat only, raw",
+      "dataType": "SR Legacy",
+      "category": "Poultry Products",
+      "per100g": {
+        "kcal": 116,
+        "proteinG": 19.41,
+        "fatG": 3.71,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 122
+      }
+    },
     "chicken leg": {
       "fdcId": 172378,
       "description": "Chicken, broilers or fryers, leg, meat and skin, raw",
@@ -1121,6 +1218,22 @@
       },
       "portions": {
         "piece": 344
+      }
+    },
+    "chicken liver": {
+      "fdcId": 171060,
+      "description": "Chicken, liver, all classes, raw",
+      "dataType": "SR Legacy",
+      "category": "Poultry Products",
+      "per100g": {
+        "kcal": 119,
+        "proteinG": 16.92,
+        "fatG": 4.83,
+        "carbsG": 0.73,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 44
       }
     },
     "chicken stock": {
@@ -1255,6 +1368,22 @@
       },
       "portions": {
         "tsp": 6.5
+      }
+    },
+    "chinese broccoli": {
+      "fdcId": 169392,
+      "description": "Broccoli, chinese, cooked",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 22,
+        "proteinG": 1.14,
+        "fatG": 0.72,
+        "carbsG": 3.81,
+        "fiberG": 2.5
+      },
+      "portions": {
+        "cup": 88
       }
     },
     "chinese sesame sauce": {
@@ -1525,6 +1654,23 @@
       "portions": {
         "sprig": 2.22,
         "cup": 16
+      }
+    },
+    "coriander seed": {
+      "fdcId": 170922,
+      "description": "Spices, coriander seed",
+      "dataType": "SR Legacy",
+      "category": "Spices and Herbs",
+      "per100g": {
+        "kcal": 298,
+        "proteinG": 12.37,
+        "fatG": 17.77,
+        "carbsG": 54.99,
+        "fiberG": 41.9
+      },
+      "portions": {
+        "tbsp": 5,
+        "tsp": 1.8
       }
     },
     "corn": {
@@ -1825,6 +1971,38 @@
         "small": 38
       }
     },
+    "egg roll": {
+      "fdcId": 172103,
+      "description": "Egg rolls, pork, refrigerated, heated",
+      "dataType": "SR Legacy",
+      "category": "Meals, Entrees, and Side Dishes",
+      "per100g": {
+        "kcal": 227,
+        "proteinG": 9.94,
+        "fatG": 8.18,
+        "carbsG": 28.49,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 85
+      }
+    },
+    "egg roll wrapper": {
+      "fdcId": 172802,
+      "description": "Wonton wrappers (includes egg roll wrappers)",
+      "dataType": "SR Legacy",
+      "category": "Baked Products",
+      "per100g": {
+        "kcal": 291,
+        "proteinG": 9.8,
+        "fatG": 1.5,
+        "carbsG": 57.9,
+        "fiberG": 1.8
+      },
+      "portions": {
+        "piece": 32
+      }
+    },
     "egg white": {
       "fdcId": 172183,
       "description": "Egg, white, raw, fresh",
@@ -2121,6 +2299,23 @@
         "cup": 233
       }
     },
+    "five spice powder": {
+      "fdcId": 171315,
+      "description": "Spices, allspice, ground",
+      "dataType": "SR Legacy",
+      "category": "Spices and Herbs",
+      "per100g": {
+        "kcal": 263,
+        "proteinG": 6.09,
+        "fatG": 8.69,
+        "carbsG": 72.12,
+        "fiberG": 21.6
+      },
+      "portions": {
+        "tsp": 1.9,
+        "tbsp": 6
+      }
+    },
     "flax egg": {
       "fdcId": 169414,
       "description": "Seeds, flaxseed",
@@ -2154,6 +2349,24 @@
       },
       "portions": {
         "cup": 125
+      }
+    },
+    "galangal": {
+      "fdcId": 169231,
+      "description": "Ginger root, raw",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 80,
+        "proteinG": 1.82,
+        "fatG": 0.75,
+        "carbsG": 17.77,
+        "fiberG": 2
+      },
+      "portions": {
+        "slice": 2.2,
+        "cup": 96,
+        "tsp": 2
       }
     },
     "garlic": {
@@ -2221,6 +2434,23 @@
         "slice": 2.2,
         "cup": 96,
         "tsp": 2
+      }
+    },
+    "ginger cordial": {
+      "fdcId": 174846,
+      "description": "Beverages, carbonated, ginger ale",
+      "dataType": "SR Legacy",
+      "category": "Beverages",
+      "per100g": {
+        "kcal": 34,
+        "proteinG": 0,
+        "fatG": 0,
+        "carbsG": 8.76,
+        "fiberG": 0
+      },
+      "portions": {
+        "fl-oz": 30.5,
+        "can": 366
       }
     },
     "goat cheese": {
@@ -2312,6 +2542,23 @@
       "portions": {
         "piece": 5.5,
         "cup": 100
+      }
+    },
+    "green curry paste": {
+      "fdcId": 170924,
+      "description": "Spices, curry powder",
+      "dataType": "SR Legacy",
+      "category": "Spices and Herbs",
+      "per100g": {
+        "kcal": 325,
+        "proteinG": 14.29,
+        "fatG": 14.01,
+        "carbsG": 55.83,
+        "fiberG": 53.2
+      },
+      "portions": {
+        "tsp": 2,
+        "tbsp": 6.3
       }
     },
     "green olive": {
@@ -2430,6 +2677,19 @@
       },
       "portions": {}
     },
+    "ground pork": {
+      "fdcId": 2514745,
+      "description": "Pork, ground, raw",
+      "dataType": "Foundation",
+      "category": "Pork Products",
+      "per100g": {
+        "kcal": 233.442059,
+        "proteinG": 17.80625,
+        "fatG": 17.49,
+        "carbsG": 0
+      },
+      "portions": {}
+    },
     "ground turkey": {
       "fdcId": 171505,
       "description": "Turkey, Ground, raw",
@@ -2528,6 +2788,22 @@
         "cup": 120,
         "tbsp": 15,
         "fl-oz": 29.8
+      }
+    },
+    "hoisin sauce": {
+      "fdcId": 172886,
+      "description": "Sauce, hoisin, ready-to-serve",
+      "dataType": "SR Legacy",
+      "category": "Soups, Sauces, and Gravies",
+      "per100g": {
+        "kcal": 220,
+        "proteinG": 3.31,
+        "fatG": 3.39,
+        "carbsG": 44.08,
+        "fiberG": 2.8
+      },
+      "portions": {
+        "tbsp": 16
       }
     },
     "honey": {
@@ -2775,6 +3051,38 @@
       },
       "portions": {}
     },
+    "lamb shank": {
+      "fdcId": 172513,
+      "description": "Lamb, New Zealand, imported, fore-shank, separable lean and fat, raw",
+      "dataType": "SR Legacy",
+      "category": "Lamb, Veal, and Game Products",
+      "per100g": {
+        "kcal": 183,
+        "proteinG": 20.09,
+        "fatG": 11.38,
+        "carbsG": 0.09,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 115
+      }
+    },
+    "lamb stock": {
+      "fdcId": 172883,
+      "description": "Soup, stock, beef, home-prepared",
+      "dataType": "SR Legacy",
+      "category": "Soups, Sauces, and Gravies",
+      "per100g": {
+        "kcal": 13,
+        "proteinG": 1.97,
+        "fatG": 0.09,
+        "carbsG": 1.2,
+        "fiberG": 0
+      },
+      "portions": {
+        "cup": 240
+      }
+    },
     "lasagna sheet": {
       "fdcId": 169736,
       "description": "Pasta, dry, enriched",
@@ -2825,6 +3133,22 @@
         "piece": 48,
         "cup": 244,
         "fl-oz": 30.5
+      }
+    },
+    "lemongrass": {
+      "fdcId": 168573,
+      "description": "Lemon grass (citronella), raw",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 99,
+        "proteinG": 1.82,
+        "fatG": 0.49,
+        "carbsG": 25.31
+      },
+      "portions": {
+        "cup": 67,
+        "tbsp": 4.8
       }
     },
     "lentil": {
@@ -3013,6 +3337,23 @@
         "tsp": 0.6
       }
     },
+    "massaman curry paste": {
+      "fdcId": 170924,
+      "description": "Spices, curry powder",
+      "dataType": "SR Legacy",
+      "category": "Spices and Herbs",
+      "per100g": {
+        "kcal": 325,
+        "proteinG": 14.29,
+        "fatG": 14.01,
+        "carbsG": 55.83,
+        "fiberG": 53.2
+      },
+      "portions": {
+        "tsp": 2,
+        "tbsp": 6.3
+      }
+    },
     "mayonnaise": {
       "fdcId": 171009,
       "description": "Salad dressing, mayonnaise, regular",
@@ -3107,6 +3448,22 @@
         "carbsG": 0
       },
       "portions": {}
+    },
+    "mixed vegetable": {
+      "fdcId": 170472,
+      "description": "Vegetables, mixed, frozen, cooked, boiled, drained, without salt",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 65,
+        "proteinG": 2.86,
+        "fatG": 0.15,
+        "carbsG": 13.09,
+        "fiberG": 4.4
+      },
+      "portions": {
+        "cup": 182
+      }
     },
     "molasses": {
       "fdcId": 168820,
@@ -3468,6 +3825,24 @@
         "piece": 131
       }
     },
+    "orange juice": {
+      "fdcId": 169098,
+      "description": "Orange juice, raw (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 45,
+        "proteinG": 0.7,
+        "fatG": 0.2,
+        "carbsG": 10.4,
+        "fiberG": 0.2
+      },
+      "portions": {
+        "fl-oz": 31,
+        "piece": 86,
+        "cup": 248
+      }
+    },
     "oregano": {
       "fdcId": 171328,
       "description": "Spices, oregano, dried",
@@ -3499,6 +3874,20 @@
       "portions": {
         "piece": 12
       }
+    },
+    "oyster mushroom": {
+      "fdcId": 1999627,
+      "description": "Mushroom, oyster",
+      "dataType": "Foundation",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 33.31965,
+        "proteinG": 2.89875,
+        "fatG": 0.1875,
+        "carbsG": 6.94125,
+        "fiberG": 2.85
+      },
+      "portions": {}
     },
     "oyster sauce": {
       "fdcId": 174529,
@@ -3545,6 +3934,40 @@
       },
       "portions": {
         "cup": 195
+      }
+    },
+    "palm sugar": {
+      "fdcId": 168833,
+      "description": "Sugars, brown",
+      "dataType": "SR Legacy",
+      "category": "Sweets",
+      "per100g": {
+        "kcal": 380,
+        "proteinG": 0.12,
+        "fatG": 0,
+        "carbsG": 98.09,
+        "fiberG": 0
+      },
+      "portions": {
+        "cup": 220,
+        "tsp": 4.6
+      }
+    },
+    "panang curry paste": {
+      "fdcId": 170924,
+      "description": "Spices, curry powder",
+      "dataType": "SR Legacy",
+      "category": "Spices and Herbs",
+      "per100g": {
+        "kcal": 325,
+        "proteinG": 14.29,
+        "fatG": 14.01,
+        "carbsG": 55.83,
+        "fiberG": 53.2
+      },
+      "portions": {
+        "tsp": 2,
+        "tbsp": 6.3
       }
     },
     "paprika": {
@@ -3784,6 +4207,37 @@
         "piece": 0.17
       }
     },
+    "pineapple": {
+      "fdcId": 2346398,
+      "description": "Pineapple, raw",
+      "dataType": "Foundation",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 54.046596,
+        "proteinG": 0.4609375,
+        "fatG": 0.2113,
+        "carbsG": 14.0914625,
+        "fiberG": 0.9346
+      },
+      "portions": {}
+    },
+    "pineapple juice": {
+      "fdcId": 168187,
+      "description": "Pineapple juice, canned or bottled, unsweetened, with added ascorbic acid",
+      "dataType": "SR Legacy",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 53,
+        "proteinG": 0.36,
+        "fatG": 0.12,
+        "carbsG": 12.87,
+        "fiberG": 0.2
+      },
+      "portions": {
+        "fl-oz": 31.3,
+        "cup": 250
+      }
+    },
     "pistachio": {
       "fdcId": 170184,
       "description": "Nuts, pistachio nuts, raw",
@@ -3817,6 +4271,23 @@
         "large": 60
       }
     },
+    "plum sauce": {
+      "fdcId": 172879,
+      "description": "Sauce, plum, ready-to-serve",
+      "dataType": "SR Legacy",
+      "category": "Soups, Sauces, and Gravies",
+      "per100g": {
+        "kcal": 184,
+        "proteinG": 0.89,
+        "fatG": 1.04,
+        "carbsG": 42.81,
+        "fiberG": 0.7
+      },
+      "portions": {
+        "cup": 305,
+        "tbsp": 19
+      }
+    },
     "pork": {
       "fdcId": 168316,
       "description": "Pork, fresh, composite of trimmed retail cuts (loin and shoulder blade), separable lean and fat, raw",
@@ -3828,6 +4299,49 @@
         "fatG": 10.14,
         "carbsG": 0,
         "fiberG": 0
+      },
+      "portions": {}
+    },
+    "pork chop": {
+      "fdcId": 168316,
+      "description": "Pork, fresh, composite of trimmed retail cuts (loin and shoulder blade), separable lean and fat, raw",
+      "dataType": "SR Legacy",
+      "category": "Pork Products",
+      "per100g": {
+        "kcal": 177,
+        "proteinG": 20.08,
+        "fatG": 10.14,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {}
+    },
+    "pork shoulder": {
+      "fdcId": 169187,
+      "description": "Pork, Shoulder breast, boneless, separable lean and fat, raw",
+      "dataType": "SR Legacy",
+      "category": "Pork Products",
+      "per100g": {
+        "kcal": 127,
+        "proteinG": 22.54,
+        "fatG": 3.4,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 430
+      }
+    },
+    "pork tenderloin": {
+      "fdcId": 2646169,
+      "description": "Pork, loin, tenderloin, boneless, raw",
+      "dataType": "Foundation",
+      "category": "Pork Products",
+      "per100g": {
+        "kcal": 125.02117,
+        "proteinG": 21.58125,
+        "fatG": 3.899,
+        "carbsG": 0
       },
       "portions": {}
     },
@@ -3850,6 +4364,22 @@
         "medium": 213
       }
     },
+    "potato starch": {
+      "fdcId": 169698,
+      "description": "Cornstarch",
+      "dataType": "SR Legacy",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 381,
+        "proteinG": 0.26,
+        "fatG": 0.05,
+        "carbsG": 91.27,
+        "fiberG": 0.9
+      },
+      "portions": {
+        "cup": 128
+      }
+    },
     "powdered sugar": {
       "fdcId": 169656,
       "description": "Sugars, powdered",
@@ -3867,6 +4397,20 @@
         "tsp": 2.5,
         "tbsp": 8
       }
+    },
+    "pretzel": {
+      "fdcId": 167555,
+      "description": "Snacks, pretzels, hard, plain, salted",
+      "dataType": "SR Legacy",
+      "category": "Snacks",
+      "per100g": {
+        "kcal": 384,
+        "proteinG": 10.04,
+        "fatG": 2.93,
+        "carbsG": 80.39,
+        "fiberG": 3.4
+      },
+      "portions": {}
     },
     "prosciutto": {
       "fdcId": 168282,
@@ -3959,6 +4503,26 @@
       },
       "portions": {
         "cup": 170
+      }
+    },
+    "radish": {
+      "fdcId": 169276,
+      "description": "Radishes, raw",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 16,
+        "proteinG": 0.68,
+        "fatG": 0.1,
+        "carbsG": 3.4,
+        "fiberG": 1.6
+      },
+      "portions": {
+        "medium": 4.5,
+        "small": 2,
+        "cup": 116,
+        "slice": 1,
+        "large": 9
       }
     },
     "raisin": {
@@ -4103,6 +4667,20 @@
         "cup": 185
       }
     },
+    "rice flour pancake": {
+      "fdcId": 790214,
+      "description": "Flour, rice, white, unenriched",
+      "dataType": "Foundation",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 359,
+        "proteinG": 6.94,
+        "fatG": 1.3,
+        "carbsG": 79.8,
+        "fiberG": 0.5
+      },
+      "portions": {}
+    },
     "rice noodle": {
       "fdcId": 169742,
       "description": "Rice noodles, dry",
@@ -4114,6 +4692,20 @@
         "fatG": 0.56,
         "carbsG": 80.18,
         "fiberG": 1.6
+      },
+      "portions": {}
+    },
+    "rice paper": {
+      "fdcId": 790214,
+      "description": "Flour, rice, white, unenriched",
+      "dataType": "Foundation",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 359,
+        "proteinG": 6.94,
+        "fatG": 1.3,
+        "carbsG": 79.8,
+        "fiberG": 0.5
       },
       "portions": {}
     },
@@ -4182,6 +4774,22 @@
       "portions": {
         "tbsp": 1.7,
         "tsp": 0.7
+      }
+    },
+    "rum": {
+      "fdcId": 174817,
+      "description": "Alcoholic beverage, distilled, rum, 80 proof",
+      "dataType": "SR Legacy",
+      "category": "Beverages",
+      "per100g": {
+        "kcal": 231,
+        "proteinG": 0,
+        "fatG": 0,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "fl-oz": 27.8
       }
     },
     "rutabaga": {
@@ -4402,6 +5010,22 @@
         "cup": 150
       }
     },
+    "sea bass": {
+      "fdcId": 175142,
+      "description": "Fish, sea bass, mixed species, raw",
+      "dataType": "SR Legacy",
+      "category": "Finfish and Shellfish Products",
+      "per100g": {
+        "kcal": 97,
+        "proteinG": 18.43,
+        "fatG": 2,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "fillet": 129
+      }
+    },
     "self-raising flour": {
       "fdcId": 168895,
       "description": "Wheat flour, white, all-purpose, self-rising, enriched",
@@ -4485,6 +5109,23 @@
         "tbsp": 10
       }
     },
+    "shaoxing wine": {
+      "fdcId": 174837,
+      "description": "Alcoholic beverage, wine, table, white",
+      "dataType": "SR Legacy",
+      "category": "Beverages",
+      "per100g": {
+        "kcal": 82,
+        "proteinG": 0.07,
+        "fatG": 0,
+        "carbsG": 2.6,
+        "fiberG": 0
+      },
+      "portions": {
+        "fl-oz": 29.4,
+        "piece": 147
+      }
+    },
     "sherry": {
       "fdcId": 175112,
       "description": "Alcoholic beverage, wine, dessert, dry",
@@ -4519,6 +5160,20 @@
         "tsp": 5
       }
     },
+    "shiitake mushroom": {
+      "fdcId": 1999628,
+      "description": "Mushrooms, shiitake",
+      "dataType": "Foundation",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 36.3915875,
+        "proteinG": 2.414375,
+        "fatG": 0.195,
+        "carbsG": 8.170625,
+        "fiberG": 4.166
+      },
+      "portions": {}
+    },
     "shrimp": {
       "fdcId": 175179,
       "description": "Crustaceans, shrimp, raw",
@@ -4531,6 +5186,23 @@
         "carbsG": 0
       },
       "portions": {}
+    },
+    "shrimp paste": {
+      "fdcId": 174183,
+      "description": "Fish, anchovy, european, canned in oil, drained solids",
+      "dataType": "SR Legacy",
+      "category": "Finfish and Shellfish Products",
+      "per100g": {
+        "kcal": 210,
+        "proteinG": 28.89,
+        "fatG": 9.71,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 4,
+        "can": 45
+      }
     },
     "silken tofu": {
       "fdcId": 174292,
@@ -4547,6 +5219,19 @@
       "portions": {
         "slice": 84
       }
+    },
+    "sirloin steak": {
+      "fdcId": 2727574,
+      "description": "Beef, top sirloin steak, raw",
+      "dataType": "Foundation",
+      "category": "Beef Products",
+      "per100g": {
+        "kcal": 146.16307,
+        "proteinG": 21.975,
+        "fatG": 5.708,
+        "carbsG": 0.218
+      },
+      "portions": {}
     },
     "smoked haddock": {
       "fdcId": 174199,
@@ -4593,6 +5278,40 @@
       },
       "portions": {
         "cup": 136
+      }
+    },
+    "snow pea": {
+      "fdcId": 170010,
+      "description": "Peas, edible-podded, raw",
+      "dataType": "SR Legacy",
+      "category": "Vegetables and Vegetable Products",
+      "per100g": {
+        "kcal": 42,
+        "proteinG": 2.8,
+        "fatG": 0.2,
+        "carbsG": 7.55,
+        "fiberG": 2.6
+      },
+      "portions": {
+        "cup": 63,
+        "piece": 3.4
+      }
+    },
+    "soda water": {
+      "fdcId": 174842,
+      "description": "Beverages, carbonated, club soda",
+      "dataType": "SR Legacy",
+      "category": "Beverages",
+      "per100g": {
+        "kcal": 0,
+        "proteinG": 0,
+        "fatG": 0,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "can": 355,
+        "fl-oz": 29.6
       }
     },
     "sour cream": {
@@ -4645,6 +5364,23 @@
         "tbsp": 16,
         "tsp": 5.3,
         "cup": 255
+      }
+    },
+    "soybean": {
+      "fdcId": 174271,
+      "description": "Soybeans, mature cooked, boiled, without salt",
+      "dataType": "SR Legacy",
+      "category": "Legumes and Legume Products",
+      "per100g": {
+        "kcal": 172,
+        "proteinG": 18.21,
+        "fatG": 8.97,
+        "carbsG": 8.36,
+        "fiberG": 6
+      },
+      "portions": {
+        "cup": 172,
+        "tbsp": 10.7
       }
     },
     "spaghetti": {
@@ -4706,6 +5442,20 @@
         "proteinG": 15.58,
         "fatG": 1.38,
         "carbsG": 3.08,
+        "fiberG": 0
+      },
+      "portions": {}
+    },
+    "steak": {
+      "fdcId": 174763,
+      "description": "Beef, top sirloin, steak, separable lean only, trimmed to 1/8\" fat, choice, raw",
+      "dataType": "SR Legacy",
+      "category": "Beef Products",
+      "per100g": {
+        "kcal": 135,
+        "proteinG": 21.91,
+        "fatG": 4.62,
+        "carbsG": 0,
         "fiberG": 0
       },
       "portions": {}
@@ -4894,6 +5644,23 @@
         "tbsp": 15
       }
     },
+    "tamarind": {
+      "fdcId": 167763,
+      "description": "Tamarinds, raw",
+      "dataType": "SR Legacy",
+      "category": "Fruits and Fruit Juices",
+      "per100g": {
+        "kcal": 239,
+        "proteinG": 2.8,
+        "fatG": 0.6,
+        "carbsG": 62.5,
+        "fiberG": 5.1
+      },
+      "portions": {
+        "cup": 120,
+        "piece": 2
+      }
+    },
     "taro": {
       "fdcId": 169308,
       "description": "Taro, raw",
@@ -4925,6 +5692,37 @@
       "portions": {
         "tsp": 1.6,
         "tbsp": 1.8
+      }
+    },
+    "tempeh": {
+      "fdcId": 174272,
+      "description": "Tempeh",
+      "dataType": "SR Legacy",
+      "category": "Legumes and Legume Products",
+      "per100g": {
+        "kcal": 192,
+        "proteinG": 20.29,
+        "fatG": 10.8,
+        "carbsG": 7.64
+      },
+      "portions": {
+        "cup": 166
+      }
+    },
+    "thai chili jam": {
+      "fdcId": 174066,
+      "description": "Sauce, sweet and sour, ready-to-serve",
+      "dataType": "SR Legacy",
+      "category": "Soups, Sauces, and Gravies",
+      "per100g": {
+        "kcal": 154,
+        "proteinG": 0.27,
+        "fatG": 0.02,
+        "carbsG": 38.22,
+        "fiberG": 0.1
+      },
+      "portions": {
+        "tbsp": 17.5
       }
     },
     "thyme": {
@@ -5052,6 +5850,22 @@
         "piece": 49
       }
     },
+    "trout": {
+      "fdcId": 173717,
+      "description": "Fish, trout, rainbow, farmed, raw",
+      "dataType": "SR Legacy",
+      "category": "Finfish and Shellfish Products",
+      "per100g": {
+        "kcal": 141,
+        "proteinG": 19.94,
+        "fatG": 6.18,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "fillet": 79
+      }
+    },
     "truffle oil": {
       "fdcId": 171413,
       "description": "Oil, olive, salad or cooking",
@@ -5087,6 +5901,22 @@
         "cup": 154
       }
     },
+    "turkey": {
+      "fdcId": 171093,
+      "description": "Turkey, all classes, breast, meat and skin, raw",
+      "dataType": "SR Legacy",
+      "category": "Poultry Products",
+      "per100g": {
+        "kcal": 157,
+        "proteinG": 21.89,
+        "fatG": 7.02,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "portions": {
+        "piece": 2264
+      }
+    },
     "turkey breast": {
       "fdcId": 174516,
       "description": "Turkey, retail parts, breast, meat only, cooked, roasted",
@@ -5118,6 +5948,22 @@
       "portions": {
         "tsp": 3,
         "tbsp": 9.4
+      }
+    },
+    "udon": {
+      "fdcId": 168905,
+      "description": "Noodles, chinese, chow mein",
+      "dataType": "SR Legacy",
+      "category": "Cereal Grains and Pasta",
+      "per100g": {
+        "kcal": 471,
+        "proteinG": 10.88,
+        "fatG": 21.24,
+        "carbsG": 63.64,
+        "fiberG": 6.7
+      },
+      "portions": {
+        "cup": 56
       }
     },
     "vanilla": {
@@ -5560,28 +6406,5 @@
       }
     }
   },
-  "minorWithoutFood": [
-    "cajun seasoning",
-    "doubanjiang",
-    "fermented black bean",
-    "food coloring",
-    "garam masala",
-    "gochujang",
-    "harissa",
-    "italian seasoning",
-    "kabsa spice",
-    "mahleb",
-    "mirin",
-    "pandan leaf",
-    "pickle juice",
-    "pomegranate molasses",
-    "ras el hanout",
-    "red curry paste",
-    "red pepper paste",
-    "rose water",
-    "sichuan pepper",
-    "star anise",
-    "sumac",
-    "sweet chili sauce"
-  ]
+  "minorWithoutFood": []
 }

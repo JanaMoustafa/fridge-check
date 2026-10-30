@@ -30,6 +30,10 @@
     "burn": {
       "title": "BurnToReturn",
       "line": "Your programme for the week, one workout at a time."
+    },
+    "chef": {
+      "title": "Cooking Companion",
+      "line": "Your personal chef, to the rescue."
     }
   },
   "nav": {
@@ -37,6 +41,7 @@
     "find": "Find recipes",
     "nutritionist": "Nutritionist",
     "burn": "BurnToReturn",
+    "chef": "Cooking Companion",
     "saved": "Saved",
     "shopping": "Shopping list",
     "savedCount": "{count, plural, one {# saved recipe} other {# saved recipes}}",
@@ -46,7 +51,8 @@
       "nutritionist": "Nutrition",
       "burn": "Burn",
       "saved": "Saved",
-      "shopping": "Shopping"
+      "shopping": "Shopping",
+      "chef": "Chef"
     }
   },
   "language": {
@@ -979,5 +985,30 @@
     "trialUntil": "Every feature is unlocked until {date}.",
     "trialDaysLeft": "{days, plural, =0 {Your free trial ends today.} one {1 day left in your free trial.} other {{days, number, latn} days left in your free trial.}}",
     "payAfterTrial": "Paying now adds 30 days after your free trial ends."
+  },
+  "chef": {
+    "metaTitle": "Cooking Companion",
+    "title": "Cooking Companion",
+    "intro": "Type a dish and get the ingredients in grams, the steps, and a video of someone cooking it.",
+    "searchLabel": "What are you cooking?",
+    "searchPlaceholder": "Koshari, lasagne, tacos, tagine, kabsa, pad thai…",
+    "allCuisines": "All cuisines",
+    "asian": "Asian",
+    "results": "{count, plural, =0 {No dishes found} one {# dish} other {# dishes}}",
+    "noResults": "Nothing matches that. Try another spelling, or browse a cuisine.",
+    "videoTitle": "Watch it cooked",
+    "videoSoon": "A cooking video for this dish is being chosen.",
+    "videoCredit": "On YouTube",
+    "ingredientsTitle": "Ingredients, in grams",
+    "ingredientsIntro": "Weights are for the whole recipe as written.",
+    "ingredient": "Ingredient",
+    "grams": "Grams",
+    "asWritten": "As written",
+    "gramsValue": "{value, number, latn} g",
+    "stepsTitle": "Method",
+    "nutritionLink": "Calories, protein and your portion",
+    "back": "Cooking Companion",
+    "disclaimer": "Recipes and videos come from their original authors; cook with care and check doneness.",
+    "gramsUnderOne": "< 1 g"
   }
 }

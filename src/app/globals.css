@@ -15,32 +15,33 @@
 /* ── Semantic tokens (see docs/DESIGN.md). Components never use raw hex. ── */
 :root {
   color-scheme: light;
-  /* BiteDoneRight palette: Forest #245c45 (buttons, headings), Sage #a8c3a0 (cards = a lighter
-     step, chips and secondary backgrounds = the exact sage), Cream #f7f4ea (background), Soft Peach
-     #f3b49f (highlights and progress; a lighter step behind selected items), Charcoal #25302b
-     (text). The steps keep small text at 4.5:1 or more. */
-  --c-bg: #f7f4ea;
-  --c-surface: #dae5d4;
-  --c-surface-2: #a8c3a0;
-  --c-fg: #25302b;
-  --c-fg-muted: #4c5751;
-  --c-heading: #245c45;
-  --c-primary: #245c45;
+  /* BiteDoneRight palette (owner, 2026-10-30): Olive #6b705c, Sage Grey #a5a58d, Terracotta
+     #cb997e, Peach Cream #ffe8d6, Navy #3d405b. Peach Cream is the canvas, a lighter cream the
+     cards, a sage tint the wells; Navy is text; Olive (a step darker for text) the buttons and
+     headings; Terracotta (darker for text, the exact tone for fills) the accent. Every text pair
+     clears 4.5:1 and every boundary 3:1 (computed). */
+  --c-bg: #ffe8d6;
+  --c-surface: #fff6ee;
+  --c-surface-2: #e2e1d0;
+  --c-fg: #3d405b;
+  --c-fg-muted: #5c5f6b;
+  --c-heading: #555a48;
+  --c-primary: #5e634f;
   --c-on-primary: #ffffff;
-  --c-primary-soft: #f8d3c5;
-  --c-accent: #94462a;
+  --c-primary-soft: #e7e6d9;
+  --c-accent: #8a4e33;
   --c-on-accent: #ffffff;
-  --c-highlight-soft: #f3b49f;
-  --c-sage: #a8c3a0;
-  --c-have: #18573a;
-  --c-have-soft: #bcd2b4;
-  --c-missing: #94462a;
-  --c-missing-soft: #fbe3d8;
-  --c-danger: #b3261e;
+  --c-highlight-soft: #f2d4be;
+  --c-sage: #a5a58d;
+  --c-have: #555a48;
+  --c-have-soft: #e0e0cf;
+  --c-missing: #8a4e33;
+  --c-missing-soft: #f8e3d5;
+  --c-danger: #a4403a;
   --c-on-danger: #ffffff;
-  --c-ring: #245c45;
-  --c-line: #c4cfba;
-  --c-line-strong: #67756b;
+  --c-ring: #5e634f;
+  --c-line: #d9cfc0;
+  --c-line-strong: #7a7d8c;
   --c-highlight: rgb(255 255 255 / 0.9);
 
   /* Motion */
@@ -62,56 +63,56 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --c-bg: #161d1a;
-    --c-surface: #1f2924;
-    --c-surface-2: #2b3730;
-    --c-fg: #f7f4ea;
-    --c-fg-muted: #bcc5b9;
-    --c-heading: #a8c3a0;
-    --c-primary: #a8c3a0;
-    --c-on-primary: #25302b;
-    --c-primary-soft: #26392e;
-    --c-accent: #f3b49f;
-    --c-on-accent: #25302b;
-    --c-highlight-soft: #f3b49f;
-    --c-sage: #4e6b55;
-    --c-have: #9fd4ad;
-    --c-have-soft: #1d3a29;
-    --c-missing: #f3b49f;
-    --c-missing-soft: #3f2a22;
-    --c-danger: #ff968c;
-    --c-on-danger: #410e0a;
-    --c-ring: #a8c3a0;
-    --c-line: #2f3b34;
-    --c-line-strong: #7d8b80;
+    --c-bg: #2a2c3f;
+    --c-surface: #3d405b;
+    --c-surface-2: #4a4d68;
+    --c-fg: #ffe8d6;
+    --c-fg-muted: #d6cfc3;
+    --c-heading: #cdcfb6;
+    --c-primary: #c8c8b0;
+    --c-on-primary: #1f2130;
+    --c-primary-soft: #464a60;
+    --c-accent: #e3b89c;
+    --c-on-accent: #1f2130;
+    --c-highlight-soft: #5b4a42;
+    --c-sage: #6e6f5e;
+    --c-have: #c8ccac;
+    --c-have-soft: #434637;
+    --c-missing: #e8bfa4;
+    --c-missing-soft: #4d3b32;
+    --c-danger: #ff9c8c;
+    --c-on-danger: #3a0f0a;
+    --c-ring: #c8c8b0;
+    --c-line: #4a4d68;
+    --c-line-strong: #a0a3b3;
     --c-highlight: rgb(255 255 255 / 0.06);
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --c-bg: #161d1a;
-  --c-surface: #1f2924;
-  --c-surface-2: #2b3730;
-  --c-fg: #f7f4ea;
-  --c-fg-muted: #bcc5b9;
-  --c-heading: #a8c3a0;
-  --c-primary: #a8c3a0;
-  --c-on-primary: #25302b;
-  --c-primary-soft: #26392e;
-  --c-accent: #f3b49f;
-  --c-on-accent: #25302b;
-  --c-highlight-soft: #f3b49f;
-  --c-sage: #4e6b55;
-  --c-have: #9fd4ad;
-  --c-have-soft: #1d3a29;
-  --c-missing: #f3b49f;
-  --c-missing-soft: #3f2a22;
-  --c-danger: #ff968c;
-  --c-on-danger: #410e0a;
-  --c-ring: #a8c3a0;
-  --c-line: #2f3b34;
-  --c-line-strong: #7d8b80;
+  --c-bg: #2a2c3f;
+  --c-surface: #3d405b;
+  --c-surface-2: #4a4d68;
+  --c-fg: #ffe8d6;
+  --c-fg-muted: #d6cfc3;
+  --c-heading: #cdcfb6;
+  --c-primary: #c8c8b0;
+  --c-on-primary: #1f2130;
+  --c-primary-soft: #464a60;
+  --c-accent: #e3b89c;
+  --c-on-accent: #1f2130;
+  --c-highlight-soft: #5b4a42;
+  --c-sage: #6e6f5e;
+  --c-have: #c8ccac;
+  --c-have-soft: #434637;
+  --c-missing: #e8bfa4;
+  --c-missing-soft: #4d3b32;
+  --c-danger: #ff9c8c;
+  --c-on-danger: #3a0f0a;
+  --c-ring: #c8c8b0;
+  --c-line: #4a4d68;
+  --c-line-strong: #a0a3b3;
   --c-highlight: rgb(255 255 255 / 0.06);
 }
 
@@ -1049,7 +1050,7 @@
 }
 
 /* ---------------------------------------------------------------------------------------------
- * Programme intros (FeatureIntro): a two-second scene on entering Find recipes, Your
+ * Programme intros (FeatureIntro): a three-second scene on entering Find recipes, Your
  * Nutritionist or BurnToReturn. One sequence each; a tap ends it. Off under reduced motion.
  * ------------------------------------------------------------------------------------------- */
 .feature-intro {
@@ -1063,6 +1064,9 @@
 }
 .feature-intro[data-feature='burn'] {
   background: var(--color-primary-soft);
+}
+.feature-intro[data-feature='chef'] {
+  background: var(--color-highlight-soft);
 }
 .feature-intro[data-leaving] {
   animation: intro-out 240ms var(--ease-depart) forwards;
@@ -1080,21 +1084,21 @@
   }
 }
 .intro-title {
-  animation: line-write 560ms var(--ease-arrive) 900ms both;
+  animation: line-write 700ms var(--ease-arrive) 1500ms both;
 }
 [dir='rtl'] .intro-title {
   animation-name: line-write-rtl;
 }
 .intro-line {
-  animation: rise-in var(--dur-enter) var(--ease-arrive) 1350ms both;
+  animation: rise-in 320ms var(--ease-arrive) 2150ms both;
 }
 
 /* Find: chips fly in and land in a ring; the plate gives a small click when the last lands. */
 .intro-chip {
   /* Anchored at inline-start 50 %: the pull-back flips with the writing direction. */
   translate: calc(var(--dir) * -50%) -50%;
-  animation: chip-fly 720ms var(--ease-spring-snappy) both;
-  animation-delay: calc(120ms + var(--i) * 110ms);
+  animation: chip-fly 900ms var(--ease-spring-snappy) both;
+  animation-delay: calc(200ms + var(--i) * 180ms);
 }
 @keyframes chip-fly {
   from {
@@ -1107,7 +1111,7 @@
   }
 }
 .intro-plate {
-  animation: plate-click 360ms var(--ease-spring-snappy) 900ms both;
+  animation: plate-click 420ms var(--ease-spring-snappy) 1450ms both;
 }
 @keyframes plate-click {
   50% {
@@ -1118,8 +1122,8 @@
 /* Nutritionist: bars fill to their marks one after another, then the tick draws. */
 .intro-bar {
   transform-origin: var(--origin-start);
-  animation: bar-fill 600ms var(--ease-arrive) both;
-  animation-delay: calc(150ms + var(--i) * 220ms);
+  animation: bar-fill 800ms var(--ease-arrive) both;
+  animation-delay: calc(250ms + var(--i) * 360ms);
 }
 @keyframes bar-fill {
   from {
@@ -1131,7 +1135,7 @@
 }
 .intro-tick path {
   stroke-dasharray: 1;
-  animation: tick-draw 420ms var(--ease-arrive) 1050ms both;
+  animation: tick-draw 520ms var(--ease-arrive) 1650ms both;
 }
 
 /* Burn: the flame's outline draws, then it lights and its heart glows; the week's letters pop in. */
@@ -1139,13 +1143,13 @@
   stroke-dasharray: 1;
   fill-opacity: 0;
   animation:
-    tick-draw 800ms var(--ease-move) 100ms both,
-    flame-light 400ms ease-out 850ms both;
+    tick-draw 1200ms var(--ease-move) 150ms both,
+    flame-light 500ms ease-out 1350ms both;
 }
 .intro-flame-inner {
   transform-box: fill-box;
   transform-origin: 50% 100%;
-  animation: flame-heart 420ms var(--ease-spring-snappy) 1050ms both;
+  animation: flame-heart 520ms var(--ease-spring-snappy) 1650ms both;
 }
 @keyframes flame-light {
   to {
@@ -1159,8 +1163,8 @@
   }
 }
 .intro-badge {
-  animation: week-pop 320ms var(--ease-spring-snappy) both;
-  animation-delay: calc(1150ms + var(--i) * 90ms);
+  animation: week-pop 380ms var(--ease-spring-snappy) both;
+  animation-delay: calc(1900ms + var(--i) * 140ms);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1229,6 +1233,80 @@ details[open] > .meal-options > li {
   }
   .extras-pop,
   details[open] > .meal-options > li {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * Cooking Companion: the intro's pan, and lists that settle in as they appear.
+ * ------------------------------------------------------------------------------------------- */
+.intro-ingredient {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ingredient-hop 700ms var(--ease-spring-snappy) both;
+  animation-delay: calc(300ms + var(--i) * 320ms);
+}
+@keyframes ingredient-hop {
+  0% {
+    opacity: 0;
+    transform: translateY(-70px) scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
+  80% {
+    transform: translateY(-8px) scale(1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+.intro-pan-body {
+  transform-box: view-box;
+  transform-origin: 90px 110px;
+  animation: pan-shake 500ms var(--ease-move) 1550ms both;
+}
+@keyframes pan-shake {
+  25% {
+    transform: translateX(-5px) rotate(-1.5deg);
+  }
+  75% {
+    transform: translateX(4px) rotate(1deg);
+  }
+}
+.intro-steam {
+  stroke-dasharray: 1;
+  opacity: 0;
+  animation:
+    tick-draw 900ms var(--ease-arrive) both,
+    steam-rise 1300ms ease-out both;
+  animation-delay: calc(1900ms + var(--i) * 160ms);
+}
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    translate: 0 -10px;
+  }
+}
+.chef-results > li {
+  animation: rise-in-small var(--dur-enter) var(--ease-arrive) both;
+  animation-delay: calc(min(var(--i, 0), 10) * 30ms);
+}
+.chef-row {
+  animation: rise-in-small var(--dur-enter) var(--ease-arrive) both;
+  animation-delay: calc(min(var(--i, 0), 14) * 25ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .chef-results > li,
+  .chef-row {
     animation: none;
   }
 }

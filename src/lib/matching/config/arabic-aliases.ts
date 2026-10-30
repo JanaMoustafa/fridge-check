@@ -12,6 +12,18 @@
  * and the choice is noted next to the entry.
  */
 export const ARABIC_ALIASES = {
+  'bread mix': ['خليط خبز'],
+  'chinese broccoli': ['بروكلي صيني', 'غاي لان'],
+  'egg roll': ['رقائق لفائف البيض', 'لفائف البيض'],
+  'ginger cordial': ['شراب الزنجبيل'],
+  'green curry paste': ['معجون الكاري الأخضر'],
+  'massaman curry paste': ['معجون كاري مسمن'],
+  'panang curry paste': ['معجون كاري بانانغ'],
+  'thai chili jam': ['مربى الفلفل التايلاندي'],
+  'rice flour pancake': ['فطيرة دقيق الأرز'],
+  pretzel: ['بريتزل'],
+  'plum sauce': ['صلصة البرقوق'],
+  soybean: ['فول الصويا'],
   'chia seed': ['بذور الشيا', 'شيا'],
   'turkey breast': ['صدر ديك رومي'],
   'pumpkin seed': ['بذور اليقطين', 'لب أبيض', 'بذور القرع'],

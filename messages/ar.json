@@ -30,6 +30,10 @@
     "burn": {
       "title": "BurnToReturn",
       "line": "برنامجك للأسبوع، تمرينًا بعد تمرين."
+    },
+    "chef": {
+      "title": "رفيق الطبخ",
+      "line": "شيفك الخاص، جاهز للإنقاذ."
     }
   },
   "nav": {
@@ -37,6 +41,7 @@
     "find": "ابحث عن وصفات",
     "nutritionist": "التغذية",
     "burn": "التمارين",
+    "chef": "رفيق الطبخ",
     "saved": "المحفوظة",
     "shopping": "قائمة التسوق",
     "savedCount": "{count, plural, zero {لا توجد وصفات محفوظة} one {وصفة محفوظة واحدة} two {وصفتان محفوظتان} few {{count, number, latn} وصفات محفوظة} many {{count, number, latn} وصفة محفوظة} other {{count, number, latn} وصفة محفوظة}}",
@@ -46,7 +51,8 @@
       "nutritionist": "التغذية",
       "burn": "التمارين",
       "saved": "المحفوظة",
-      "shopping": "التسوق"
+      "shopping": "التسوق",
+      "chef": "الشيف"
     }
   },
   "language": {
@@ -979,5 +985,30 @@
     "trialUntil": "كل الميزات متاحة لك حتى {date}.",
     "trialDaysLeft": "{days, plural, =0 {تنتهي تجربتك المجانية اليوم.} one {بقي يوم واحد في تجربتك المجانية.} two {بقي يومان في تجربتك المجانية.} few {بقيت {days, number, latn} أيام في تجربتك المجانية.} many {بقي {days, number, latn} يومًا في تجربتك المجانية.} other {بقي {days, number, latn} يوم في تجربتك المجانية.}}",
     "payAfterTrial": "الدفع الآن يضيف 30 يومًا بعد انتهاء تجربتك المجانية."
+  },
+  "chef": {
+    "metaTitle": "رفيق الطبخ",
+    "title": "رفيق الطبخ",
+    "intro": "اكتب اسم الطبق لتحصل على المكونات بالغرام، وطريقة التحضير، وفيديو لشخص يطبخه.",
+    "searchLabel": "ماذا تطبخ؟",
+    "searchPlaceholder": "كشري، لازانيا، تاكو، طاجن، كبسة، باد تاي…",
+    "allCuisines": "كل المطابخ",
+    "asian": "آسيوي",
+    "results": "{count, plural, zero {لا توجد أطباق} one {طبق واحد} two {طبقان} few {{count, number, latn} أطباق} many {{count, number, latn} طبقًا} other {{count, number, latn} طبق}}",
+    "noResults": "لا يوجد ما يطابق ذلك. جرّب كتابة أخرى، أو تصفّح مطبخًا.",
+    "videoTitle": "شاهد طريقة طبخه",
+    "videoSoon": "يجري اختيار فيديو طبخ لهذا الطبق.",
+    "videoCredit": "على يوتيوب",
+    "ingredientsTitle": "المكونات بالغرام",
+    "ingredientsIntro": "الأوزان للوصفة كاملة كما كُتبت.",
+    "ingredient": "المكوّن",
+    "grams": "الغرامات",
+    "asWritten": "كما كُتب",
+    "gramsValue": "{value, number, latn} غ",
+    "stepsTitle": "طريقة التحضير",
+    "nutritionLink": "السعرات والبروتين وحصتك",
+    "back": "رفيق الطبخ",
+    "disclaimer": "الوصفات والفيديوهات من أصحابها الأصليين؛ اطبخ بحذر وتأكد من نضج الطعام.",
+    "gramsUnderOne": "< 1 غ"
   }
 }

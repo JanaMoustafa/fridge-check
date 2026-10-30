@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { LOCAL_RECIPE_MAX } from '@/types/recipe'
 import type { Diet, LocalRecipe } from '@/types/recipe'
 import { CUISINE_LABELS } from './cuisines'
 import {
@@ -289,7 +290,7 @@ describe('SEED_PLAN', () => {
     const fixed = Object.values(SEED_PLAN.quotas).filter((quota) => typeof quota === 'number')
     expect(fixed.reduce((sum, quota) => sum + quota, 0)).toBeLessThan(SEED_PLAN.minTotal)
     expect(SEED_PLAN.minTotal).toBeGreaterThanOrEqual(190)
-    expect(SEED_PLAN.targetTotal).toBeLessThanOrEqual(200)
+    expect(SEED_PLAN.targetTotal).toBeLessThanOrEqual(LOCAL_RECIPE_MAX)
   })
 
   it('requires the owner picks and excludes none of them', () => {

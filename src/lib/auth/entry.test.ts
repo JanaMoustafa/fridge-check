@@ -30,6 +30,7 @@ describe('isPublicPath', () => {
       '/manifest.webmanifest',
       '/icon.svg',
       '/_next/static/chunks/a.js',
+      '/ocr/worker.min.js',
     ]) {
       expect(isPublicPath(path), path).toBe(true)
     }

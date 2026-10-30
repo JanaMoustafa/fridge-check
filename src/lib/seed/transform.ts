@@ -193,8 +193,24 @@ export function toLocalRecipe(meal: MealDbMeal, overrides: SeedOverrides): SeedR
   const cuisine =
     fields.cuisine ??
     fail(meal, `no cuisine label for country "${country}" (add it to src/lib/seed/cuisines.ts)`)
-  const candidate = { id: `local:${meal.idMeal}`, mealDbId: meal.idMeal, ...fields, cuisine }
+  const videoId = youtubeId(meal.strYoutube)
+  const candidate = {
+    id: `local:${meal.idMeal}`,
+    mealDbId: meal.idMeal,
+    ...fields,
+    cuisine,
+    ...(videoId ? { videoId } : {}),
+  }
   const result = LocalRecipeSchema.safeParse(candidate)
   if (!result.success) fail(meal, z.prettifyError(result.error).replace(/\n/g, ' '))
   return { recipe: result.data, dropped, gaps, doubts }
+}
+
+/** The 11-character id of a YouTube link in any of its common forms; undefined when there is none. */
+export function youtubeId(link: string | null | undefined): string | undefined {
+  if (!link) return undefined
+  const match = /(?:v=|youtu\.be\/|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{11})(?![A-Za-z0-9_-])/.exec(
+    link,
+  )
+  return match?.[1]
 }
