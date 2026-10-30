@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
     loader: 'custom',
     loaderFile: './src/lib/images/loader.ts',
   },
+  experimental: {
+    // Builds compile from scratch: the build cache Vercel restores served a stale stylesheet
+    // (the old light theme) after globals.css changed. A full build takes under a minute.
+    turbopackFileSystemCacheForBuild: false,
+  },
   turbopack: {
     rules: {
       '*.css': {
