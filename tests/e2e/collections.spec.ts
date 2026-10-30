@@ -2,17 +2,14 @@ import { readFileSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
 
 const cards = (page: Page) => page.locator('article.recipe-card')
-const savedNav = (page: Page) =>
-  page
-    .getByRole('navigation', { name: 'Main navigation' })
-    .filter({ visible: true })
-    .getByRole('link', { name: /Saved/ })
+/** Find's link to the saved recipes, with its count. */
+const savedNav = (page: Page) => page.getByRole('main').getByRole('link', { name: /^Saved/ })
 
 test.describe('favorites', () => {
   test('a recipe favorited from the results appears in Saved and survives a reload', async ({
     page,
   }) => {
-    await page.goto('/?i=rice,lentil,onion')
+    await page.goto('/find?i=rice,lentil,onion')
     const card = cards(page).first()
     const title = (await card.getByRole('heading').textContent())!.trim()
     const heart = card.getByRole('button', { name: `Save ${title} to favorites` })

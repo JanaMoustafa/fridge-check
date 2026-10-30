@@ -67,7 +67,7 @@ export function SavedList() {
           icon={Heart}
           title={t('emptyTitle')}
           body={t('emptyBody')}
-          action={{ href: '/', label: t('emptyCta') }}
+          action={{ href: '/find', label: t('emptyCta') }}
         />
         <DataControls
           canExport={false}

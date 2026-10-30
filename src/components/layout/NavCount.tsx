@@ -5,19 +5,16 @@ import { useFavorites } from '@/hooks/useFavorites'
 import { useShoppingList } from '@/hooks/useShoppingList'
 import { cx } from '@/lib/cx'
 import { combine } from '@/lib/storage/shopping-list'
-import type { NavItem } from './nav-items'
 
-/** Count badge for a nav tab (saved recipes, items still to buy). Shown after hydration only. */
-export function NavCount({ tab, className }: { tab: NavItem['labelKey']; className?: string }) {
+/** Count badge for saved recipes or items still to buy. Shown after hydration only. */
+export function NavCount({ tab, className }: { tab: 'saved' | 'shopping'; className?: string }) {
   const t = useTranslations('nav')
   const favorites = useFavorites()
   const shopping = useShoppingList()
   const count =
     tab === 'saved'
       ? favorites?.length
-      : tab === 'shopping'
-        ? shopping && combine(shopping).filter((item) => !item.checked).length
-        : undefined
+      : shopping && combine(shopping).filter((item) => !item.checked).length
   if (!count) return null
   return (
     <>

@@ -60,7 +60,7 @@ export default async function RecipePage({ params, searchParams }: Props) {
   const pantry = pantryFrom(query)
   const result = await loadRecipePage(source, id, pantry.join(','))
   if (result.kind === 'not-found') notFound()
-  const backHref = `/${toSearchUrl({ ingredients: pantry, diets: [], sort: 'fewest-missing' })}`
+  const backHref = `/find${toSearchUrl({ ingredients: pantry, diets: [], sort: 'fewest-missing' })}`
   if (result.kind === 'unavailable') {
     return (
       <RecipeUnavailable

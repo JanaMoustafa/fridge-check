@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import en from '../../../messages/en.json'
 import { FeatureIntro } from './FeatureIntro'
 
-let pathname = '/'
+let pathname = '/find'
 vi.mock('next/navigation', () => ({ usePathname: () => pathname }))
 
 function renderAt(path: string) {
@@ -44,7 +44,7 @@ describe('FeatureIntro', () => {
 
   it('ends at once on Skip', () => {
     reduce = false
-    renderAt('/')
+    renderAt('/find')
     expect(screen.getByRole('dialog', { name: 'Find recipes' })).toBeInTheDocument()
     act(() => screen.getByRole('button', { name: 'Skip' }).click())
     act(() => vi.advanceTimersByTime(300))

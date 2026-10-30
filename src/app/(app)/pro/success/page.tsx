@@ -40,7 +40,7 @@ export default async function CheckoutSuccessPage({ searchParams }: PageProps<'/
 
   const links = (
     <div className="flex flex-wrap justify-center gap-3">
-      <Link href="/" className={buttonClasses()}>
+      <Link href="/find" className={buttonClasses()}>
         {t('browseRecipes')}
       </Link>
       <Link href="/account" className={buttonClasses({ variant: 'secondary' })}>

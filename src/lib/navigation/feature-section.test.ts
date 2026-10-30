@@ -3,7 +3,7 @@ import { featureOf } from './feature-section'
 
 describe('featureOf', () => {
   it('maps a page to its programme, recipe pages included', () => {
-    expect(featureOf('/')).toBe('find')
+    expect(featureOf('/find')).toBe('find')
     expect(featureOf('/recipe/local/53027')).toBe('find')
     expect(featureOf('/nutritionist')).toBe('nutritionist')
     expect(featureOf('/nutritionist/scan')).toBe('nutritionist')
@@ -14,6 +14,8 @@ describe('featureOf', () => {
 
   it('leaves the rest alone', () => {
     for (const path of [
+      '/',
+      '/finder',
       '/saved',
       '/shopping-list',
       '/account',

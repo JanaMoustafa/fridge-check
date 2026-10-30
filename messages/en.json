@@ -52,8 +52,10 @@
       "burn": "Burn",
       "saved": "Saved",
       "shopping": "Shopping",
-      "chef": "Chef"
-    }
+      "chef": "Chef",
+      "home": "Home"
+    },
+    "home": "Home"
   },
   "language": {
     "label": "Language",
@@ -162,7 +164,7 @@
     "metaTitle": "Page not found",
     "heading": "We couldn't find that page",
     "body": "The link may be broken, or the page may have moved.",
-    "cta": "Back to recipes"
+    "cta": "Go to the home screen"
   },
   "error": {
     "heading": "Something went wrong",
@@ -1067,5 +1069,42 @@
     "moreServings": "More servings",
     "servingsUnknown": "This recipe doesn’t say how many it serves: choose how many portions you’ll make.",
     "duration": "{hours} {minutes}"
+  },
+  "home": {
+    "greeting": {
+      "morning": "Good morning, {name}.",
+      "afternoon": "Good afternoon, {name}.",
+      "evening": "Good evening, {name}."
+    },
+    "greetingPlain": {
+      "morning": "Good morning.",
+      "afternoon": "Good afternoon.",
+      "evening": "Good evening."
+    },
+    "intro": "Your kitchen, your plan and your training, in one place. Where shall we start?",
+    "trial": "{days, plural, one {Last day of your free trial} other {{days, number, latn} days left in your free trial}}",
+    "find": {
+      "title": "Find recipes",
+      "body": "Tell us what’s in your fridge and we’ll find what you can cook.",
+      "prompt": "Tomatoes, rice, eggs…"
+    },
+    "nutritionist": {
+      "title": "Your Nutritionist",
+      "today": "Today: {kcal, number, latn} kcal and {protein, number, latn} g protein",
+      "start": "Upload your InBody results to get your daily plan."
+    },
+    "burn": {
+      "title": "BurnToReturn",
+      "today": "Today: {workout}",
+      "rest": "Rest day. Next workout {day}.",
+      "start": "Choose how you like to train."
+    },
+    "chef": {
+      "title": "Cooking Companion",
+      "body": "{count, number, latn} dishes, weighed in grams, each with a cooking video."
+    },
+    "saved": "Saved recipes",
+    "shopping": "Shopping list",
+    "open": "Open"
   }
 }

@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl'
 import { ViewTransition } from 'react'
 import { cx } from '@/lib/cx'
 import { NAV_ITEMS, isActive } from './nav-items'
-import { NavCount } from './NavCount'
 
 /** Mobile primary navigation (< md): thumb-reachable, icon + label, safe-area aware. */
 export function BottomTabBar() {
@@ -19,7 +18,7 @@ export function BottomTabBar() {
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden print:hidden"
       style={{ viewTransitionName: 'bottom-tabs' }}
     >
-      <ul className="mx-auto grid max-w-lg grid-cols-6">
+      <ul className="mx-auto grid max-w-lg grid-cols-5">
         {NAV_ITEMS.map(({ href, labelKey, icon: Icon }) => {
           const active = isActive(href, pathname)
           return (
@@ -43,7 +42,6 @@ export function BottomTabBar() {
                       />
                     </ViewTransition>
                   )}
-                  <NavCount tab={labelKey} className="absolute inset-e-1 -top-1.5 z-10" />
                   <Icon
                     aria-hidden="true"
                     className="relative size-5"

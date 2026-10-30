@@ -3,7 +3,7 @@ import { hasHorizontalScroll, htmlAttrs, setLocaleCookie } from './helpers'
 
 test.describe('app shell', () => {
   test('renders English, left-to-right, by default', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/find')
     await expect(
       page.getByRole('heading', { level: 1, name: "What's in your fridge?" }),
     ).toBeVisible()
@@ -34,7 +34,7 @@ test.describe('app shell', () => {
     page,
     context,
   }) => {
-    await page.goto('/')
+    await page.goto('/find')
     await page.getByRole('radio', { name: /AR/ }).click()
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
     await expect(page.locator('html')).toHaveAttribute('lang', 'ar')
@@ -112,14 +112,35 @@ test.describe('app shell', () => {
     await expect(page.locator('#main')).toBeFocused()
   })
 
-  test('navigates between tabs and marks the current page', async ({ page }) => {
+  test('opens on the home screen and navigates between tabs, marking the current page', async ({
+    page,
+  }) => {
     await page.goto('/')
     const nav = page.getByRole('navigation', { name: 'Main navigation' }).filter({ visible: true })
-    await nav.getByRole('link', { name: 'Saved' }).click()
+    await expect(nav.getByRole('link', { name: 'Home' })).toHaveAttribute('aria-current', 'page')
+    await expect(page.getByRole('link', { name: /Find recipes/ }).first()).toBeVisible()
+    await nav.getByRole('link', { name: 'Find recipes' }).click()
+    await expect(page).toHaveURL(/\/find$/)
+    await expect(
+      page.getByRole('heading', { level: 1, name: "What's in your fridge?" }),
+    ).toBeVisible()
+    // The lists made from recipes are one tap from Find (and from the home screen).
+    await page
+      .getByRole('main')
+      .getByRole('link', { name: /^Saved/ })
+      .click()
     await expect(page).toHaveURL(/\/saved$/)
     await expect(page.getByRole('heading', { level: 1, name: 'Saved recipes' })).toBeVisible()
-    await expect(nav.getByRole('link', { name: 'Saved' })).toHaveAttribute('aria-current', 'page')
-    await nav.getByRole('link', { name: 'Shopping list' }).click()
+    await expect(nav.getByRole('link', { name: 'Find recipes' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    )
+    await nav.getByRole('link', { name: 'Home' }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await page
+      .getByRole('main')
+      .getByRole('link', { name: /^Shopping list/ })
+      .click()
     await expect(page.getByRole('heading', { level: 1, name: 'Shopping list' })).toBeVisible()
     await nav.getByRole('link', { name: 'Nutritionist' }).click()
     await expect(page).toHaveURL(/\/nutritionist$/)
@@ -211,15 +232,15 @@ test.describe('app shell', () => {
     await second
       .getByRole('navigation', { name: 'التنقل الرئيسي' })
       .filter({ visible: true })
-      .getByRole('link', { name: 'المحفوظة' })
+      .getByRole('link', { name: 'ابحث عن وصفات' })
       .click()
-    await expect(second.getByRole('heading', { level: 1 })).toHaveText('الوصفات المحفوظة')
+    await expect(second.getByRole('heading', { level: 1 })).toHaveText('ماذا يوجد في ثلاجتك؟')
     await expect(second.locator('html')).toHaveAttribute('dir', 'rtl')
     await expect(second.getByRole('radio', { name: /AR/ })).toHaveAttribute('aria-checked', 'true')
   })
 
   test('the last language tap wins on a slow connection', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/find')
     // Delay server-component refreshes so the second tap lands while the first is pending.
     await page.route('**/*', async (route) => {
       if (route.request().headers()['rsc'] === '1') await new Promise((r) => setTimeout(r, 1200))
@@ -298,7 +319,7 @@ test.describe('app shell', () => {
         const context = await browser.newContext({ viewport: { width, height: 800 } })
         await setLocaleCookie(context, baseURL!, locale)
         const page = await context.newPage()
-        for (const path of ['/', '/saved', '/shopping-list', '/privacy']) {
+        for (const path of ['/', '/find', '/saved', '/shopping-list', '/privacy']) {
           await page.goto(new URL(path, baseURL).toString())
           await expect(page.locator('html')).toHaveAttribute('lang', locale)
           await page.evaluate(() => document.fonts.ready)

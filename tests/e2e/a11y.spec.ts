@@ -4,7 +4,8 @@ import { setLocaleCookie, settleAnimations } from './helpers'
 
 const PAGES = [
   '/',
-  '/?i=tomato,onion,garlic,rice',
+  '/find',
+  '/find?i=tomato,onion,garlic,rice',
   '/recipe/local/53027?i=rice,onion,lentil',
   '/saved',
   '/shopping-list',

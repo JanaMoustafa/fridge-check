@@ -36,7 +36,7 @@ export function ShoppingListView() {
         icon={ReceiptText}
         title={t('emptyTitle')}
         body={t('emptyBody')}
-        action={{ href: '/', label: t('emptyCta') }}
+        action={{ href: '/find', label: t('emptyCta') }}
       />
     )
   }

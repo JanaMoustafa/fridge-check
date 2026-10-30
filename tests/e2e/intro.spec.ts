@@ -7,7 +7,7 @@ test.describe('programme intros', () => {
   test.use({ reducedMotion: 'no-preference' })
 
   test('play on entering Find recipes, pass axe, and end on Skip', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/find')
     const intro = page.getByRole('dialog', { name: 'Find recipes' })
     await expect(intro).toBeVisible()
     // Axe reads the settled scene: text mid-fade would count as low contrast.
@@ -24,6 +24,12 @@ test.describe('programme intros', () => {
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   })
 
+  test('never play on the home screen', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await expect(page.getByRole('dialog')).toHaveCount(0)
+  })
+
   test('clear themselves after about three seconds, and do not replay within a programme', async ({
     page,
   }) => {
@@ -31,7 +37,7 @@ test.describe('programme intros', () => {
     await expect(page.getByRole('dialog', { name: 'Find recipes' })).toBeVisible()
     await expect(page.getByRole('dialog')).toBeHidden({ timeout: 7000 })
     await page.getByRole('link', { name: 'Back to recipes' }).click()
-    await expect(page).toHaveURL(/\/(\?.*)?$/)
+    await expect(page).toHaveURL(/\/find(\?.*)?$/)
     await expect(page.getByRole('dialog')).toHaveCount(0)
   })
 })

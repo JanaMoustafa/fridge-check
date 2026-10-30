@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl'
 import { ViewTransition } from 'react'
 import { cx } from '@/lib/cx'
 import { NAV_ITEMS, isActive } from './nav-items'
-import { NavCount } from './NavCount'
 
 /** Route links (not an ARIA tablist): each tab is a page. Shown from md up; BottomTabBar covers mobile. */
 export function HeaderNav() {
@@ -40,12 +39,11 @@ export function HeaderNav() {
                   </ViewTransition>
                 )}
                 {/* Short labels until there is room for the full names (which contain them):
-                    six full names plus the brand and toggles need ~1200px, so switch at xl. */}
+                    five full names plus the brand and toggles need ~1150px, so switch at xl. */}
                 <span aria-hidden="true" className="xl:hidden">
                   {t(`short.${labelKey}`)}
                 </span>
                 <span className="max-xl:sr-only">{t(labelKey)}</span>
-                <NavCount tab={labelKey} className="ms-1.5" />
               </Link>
             </li>
           )

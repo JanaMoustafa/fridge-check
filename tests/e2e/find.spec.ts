@@ -19,7 +19,7 @@ async function openFilters(page: Page) {
 
 test.describe('find recipes', () => {
   test('adding ingredients shows ranked results', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/find')
     await expect(page.getByRole('heading', { name: 'Start with what you have' })).toBeVisible()
     await addIngredients(page, 'tomatoes, onion, garlic')
     await expect(chips(page)).toHaveCount(3)
@@ -34,7 +34,7 @@ test.describe('find recipes', () => {
   })
 
   test('a diet filter updates the results and the URL', async ({ page }) => {
-    await page.goto('/?i=tomato,onion,garlic')
+    await page.goto('/find?i=tomato,onion,garlic')
     await expect(cards(page).first()).toBeVisible()
     await openFilters(page)
     await page.getByRole('button', { name: 'Vegan', exact: true }).click()
@@ -49,7 +49,7 @@ test.describe('find recipes', () => {
   test('opening a recipe and going back restores the list with no network request', async ({
     page,
   }) => {
-    await page.goto('/?i=tomato,onion,garlic,rice')
+    await page.goto('/find?i=tomato,onion,garlic,rice')
     // A card further down the list, so returning must restore a real scroll position.
     const card = cards(page).nth(5)
     await card.scrollIntoViewIfNeeded()
@@ -78,7 +78,7 @@ test.describe('find recipes', () => {
   })
 
   test('"Back to recipes" also returns without reloading the list', async ({ page }) => {
-    await page.goto('/?i=egg,tomato')
+    await page.goto('/find?i=egg,tomato')
     await cards(page).first().getByRole('link').click()
     await expect(page).toHaveURL(/\/recipe\//)
     const requests: string[] = []
@@ -90,7 +90,7 @@ test.describe('find recipes', () => {
   })
 
   test('a shared link restores ingredients and filters', async ({ page }) => {
-    await page.goto('/?i=egg,tomato&diet=vegetarian&sort=best')
+    await page.goto('/find?i=egg,tomato&diet=vegetarian&sort=best')
     await expect(chips(page)).toHaveCount(2)
     await openFilters(page)
     await expect(page.getByRole('button', { name: 'Vegetarian', exact: true })).toHaveAttribute(
@@ -105,7 +105,7 @@ test.describe('find recipes', () => {
 
   test('Arabic input resolves to the same ingredients', async ({ page, context, baseURL }) => {
     await setLocaleCookie(context, baseURL!, 'ar')
-    await page.goto('/')
+    await page.goto('/find')
     await addIngredients(page, 'طماطم، بصل، توم')
     await expect(chips(page)).toHaveCount(3)
     await expect(chips(page).first()).toContainText('طماطم')
@@ -115,11 +115,11 @@ test.describe('find recipes', () => {
 
   test('the whole flow works with the keyboard only', async ({ page, isMobile }) => {
     test.skip(isMobile, 'keyboard flow runs on desktop')
-    await page.goto('/')
+    await page.goto('/find')
     // Tab to the ingredient box.
     for (
       let i = 0;
-      i < 12 && !(await input(page).evaluate((el) => el === document.activeElement));
+      i < 20 && !(await input(page).evaluate((el) => el === document.activeElement));
       i++
     ) {
       await page.keyboard.press('Tab')
