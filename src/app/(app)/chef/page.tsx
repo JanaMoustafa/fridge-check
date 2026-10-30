@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import { ChefSearch, type ChefDish } from '@/components/chef/ChefSearch'
+import { foldForSearch } from '@/lib/chef/search'
+import { chefVideo, getChefRecipes } from '@/lib/data/chef-recipes'
 import { getLocalRecipes } from '@/lib/data/local-recipes'
 import { labelSlug } from '@/lib/i18n/cuisines'
+import { isLocale } from '@/lib/i18n/locale'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('chef')
@@ -11,25 +14,39 @@ export async function generateMetadata(): Promise<Metadata> {
 
 /** Cooking Companion: find a dish by name and get its ingredients in grams, the method and a video. */
 export default async function ChefPage() {
-  const [t, tc, recipes] = await Promise.all([
+  const [t, tc, rawLocale, recipes, chefRecipes] = await Promise.all([
     getTranslations('chef'),
     getTranslations('cuisine'),
+    getLocale(),
     getLocalRecipes(),
+    getChefRecipes(),
   ])
+  const locale = isLocale(rawLocale) ? rawLocale : 'en'
   const label = (cuisine: string) => {
     const slug = labelSlug(cuisine) as Parameters<typeof tc>[0]
     return tc.has(slug) ? tc(slug) : cuisine
   }
-  const dishes: ChefDish[] = recipes
-    .map((recipe) => ({
+  const dishes: ChefDish[] = [
+    ...chefRecipes.map((recipe) => {
+      const video = chefVideo(recipe, locale)
+      return {
+        id: recipe.id,
+        title: recipe.title[locale],
+        search: foldForSearch(`${recipe.title.en} ${recipe.title.ar}`),
+        cuisine: recipe.cuisine,
+        cuisineLabel: label(recipe.cuisine),
+        imageUrl: video ? `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg` : null,
+      }
+    }),
+    ...recipes.map((recipe) => ({
       id: recipe.mealDbId,
       title: recipe.title,
+      search: foldForSearch(recipe.title),
       cuisine: recipe.cuisine,
       cuisineLabel: label(recipe.cuisine),
       imageUrl: recipe.imageUrl,
-      hasVideo: Boolean(recipe.videoId),
-    }))
-    .sort((a, b) => a.title.localeCompare(b.title))
+    })),
+  ].sort((a, b) => a.title.localeCompare(b.title, locale))
   const labels = Object.fromEntries(
     ['Egyptian', 'Italian', 'Mexican', 'Moroccan', 'Saudi Arabian'].map((c) => [c, label(c)]),
   )

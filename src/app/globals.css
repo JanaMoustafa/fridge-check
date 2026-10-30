@@ -1,95 +1,12 @@
 @import 'tailwindcss';
 
-/* `dark:` must follow the app theme (data-theme), not only the OS preference. */
-@custom-variant dark {
-  &:where([data-theme='dark'], [data-theme='dark'] *) {
-    @slot;
-  }
-  @media (prefers-color-scheme: dark) {
-    &:where(:root:not([data-theme='light']), :root:not([data-theme='light']) *) {
-      @slot;
-    }
-  }
-}
-
 /* ── Semantic tokens (see docs/DESIGN.md). Components never use raw hex. ── */
 :root {
-  color-scheme: light;
-  /* BiteDoneRight palette (owner, 2026-10-30): Olive #6b705c, Sage Grey #a5a58d, Terracotta
-     #cb997e, Peach Cream #ffe8d6, Navy #3d405b. Peach Cream is the canvas, a lighter cream the
-     cards, a sage tint the wells; Navy is text; Olive (a step darker for text) the buttons and
-     headings; Terracotta (darker for text, the exact tone for fills) the accent. Every text pair
-     clears 4.5:1 and every boundary 3:1 (computed). */
-  --c-bg: #ffe8d6;
-  --c-surface: #fff6ee;
-  --c-surface-2: #e2e1d0;
-  --c-fg: #3d405b;
-  --c-fg-muted: #5c5f6b;
-  --c-heading: #555a48;
-  --c-primary: #5e634f;
-  --c-on-primary: #ffffff;
-  --c-primary-soft: #e7e6d9;
-  --c-accent: #8a4e33;
-  --c-on-accent: #ffffff;
-  --c-highlight-soft: #f2d4be;
-  --c-sage: #a5a58d;
-  --c-have: #555a48;
-  --c-have-soft: #e0e0cf;
-  --c-missing: #8a4e33;
-  --c-missing-soft: #f8e3d5;
-  --c-danger: #a4403a;
-  --c-on-danger: #ffffff;
-  --c-ring: #5e634f;
-  --c-line: #d9cfc0;
-  --c-line-strong: #7a7d8c;
-  --c-highlight: rgb(255 255 255 / 0.9);
-
-  /* Motion */
-  --dur-press: 90ms;
-  --dur-exit: 140ms;
-  --dur-enter: 220ms;
-  --dur-move: 400ms;
-
-  /* Direction-aware motion: every horizontal offset is calc(var(--dir) * N). */
-  --dir: 1;
-  --origin-start: left;
-}
-
-:root[dir='rtl'] {
-  --dir: -1;
-  --origin-start: right;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    color-scheme: dark;
-    --c-bg: #2a2c3f;
-    --c-surface: #3d405b;
-    --c-surface-2: #4a4d68;
-    --c-fg: #ffe8d6;
-    --c-fg-muted: #d6cfc3;
-    --c-heading: #cdcfb6;
-    --c-primary: #c8c8b0;
-    --c-on-primary: #1f2130;
-    --c-primary-soft: #464a60;
-    --c-accent: #e3b89c;
-    --c-on-accent: #1f2130;
-    --c-highlight-soft: #5b4a42;
-    --c-sage: #6e6f5e;
-    --c-have: #c8ccac;
-    --c-have-soft: #434637;
-    --c-missing: #e8bfa4;
-    --c-missing-soft: #4d3b32;
-    --c-danger: #ff9c8c;
-    --c-on-danger: #3a0f0a;
-    --c-ring: #c8c8b0;
-    --c-line: #4a4d68;
-    --c-line-strong: #a0a3b3;
-    --c-highlight: rgb(255 255 255 / 0.06);
-  }
-}
-
-:root[data-theme='dark'] {
+  /* Dark only (owner, 2026-10-30). BiteDoneRight palette: Olive #6b705c, Sage Grey #a5a58d,
+     Terracotta #cb997e, Peach Cream #ffe8d6, Navy #3d405b. A deep navy canvas, Navy cards and a
+     lighter navy for wells; Peach Cream is text; a pale olive the buttons and headings;
+     Terracotta lifted for text the accent. Every text pair clears 4.5:1 and every boundary 3:1
+     (computed). */
   color-scheme: dark;
   --c-bg: #2a2c3f;
   --c-surface: #3d405b;
@@ -114,6 +31,21 @@
   --c-line: #4a4d68;
   --c-line-strong: #a0a3b3;
   --c-highlight: rgb(255 255 255 / 0.06);
+
+  /* Motion */
+  --dur-press: 90ms;
+  --dur-exit: 140ms;
+  --dur-enter: 220ms;
+  --dur-move: 400ms;
+
+  /* Direction-aware motion: every horizontal offset is calc(var(--dir) * N). */
+  --dir: 1;
+  --origin-start: left;
+}
+
+:root[dir='rtl'] {
+  --dir: -1;
+  --origin-start: right;
 }
 
 @theme inline {

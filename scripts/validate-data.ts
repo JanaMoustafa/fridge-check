@@ -8,6 +8,7 @@ import { normalizeIngredient } from '@/lib/matching/normalize'
 import { FdcMappingSchema, NutritionFoodsSchema } from '@/lib/nutrition/data-files'
 import { DietOverridesSchema } from '@/lib/seed/data-files'
 import { LocalRecipeCollectionSchema } from '@/types/recipe'
+import { chefProblems } from './validate-chef'
 
 export interface DataProblem {
   recipe?: string
@@ -93,9 +94,11 @@ if (process.argv[1]?.endsWith('validate-data.ts')) {
     fdcMapping: read('data/nutrition/fdc-mapping.json'),
     nutritionFoods: read('data/nutrition/foods.json'),
   })
+  // Cooking Companion's own recipes: valid, every food in the nutrition table, sane energy.
+  problems.push(...chefProblems({ allowProposed: false }).problems)
   if (problems.length === 0) {
     console.log(
-      '✓ data/recipes.json is valid, reviewed and fully translated; nutrition data is current.',
+      '✓ data/recipes.json and data/chef are valid, reviewed and fully translated; nutrition data is current.',
     )
   } else {
     console.error(`✗ ${problems.length} data problem(s):`)

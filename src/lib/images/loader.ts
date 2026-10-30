@@ -28,5 +28,11 @@ export default function imageLoader({ src, width }: { src: string; width: number
   if (src.startsWith('https://www.themealdb.com/images/media/meals/'))
     return mealDbImage(src, width)
   if (src.startsWith('https://img.spoonacular.com/recipes/')) return spoonacularImage(src, width)
+  if (src.startsWith('https://i.ytimg.com/vi/')) return youTubeThumbnail(src, width)
   return src
+}
+
+/** YouTube thumbnails: mqdefault is 320 px wide (16:9); hqdefault (480 px) exists for every video. */
+export function youTubeThumbnail(src: string, width: number): string {
+  return src.replace(/\/[a-z]*default\.jpg$/, width <= 320 ? '/mqdefault.jpg' : '/hqdefault.jpg')
 }

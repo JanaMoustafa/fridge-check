@@ -83,16 +83,23 @@ test.describe('app shell', () => {
     expect(html).toMatch(/<html[^>]*lang="ar"[^>]*dir="rtl"/)
   })
 
-  test('the theme setting applies immediately and survives a reload', async ({ page }) => {
+  test('is dark whatever the device prefers', async ({ browser, baseURL }) => {
+    for (const colorScheme of ['light', 'dark'] as const) {
+      const context = await browser.newContext({ colorScheme })
+      const page = await context.newPage()
+      await page.goto(new URL('/', baseURL).toString())
+      const canvas = await page.evaluate(() => getComputedStyle(document.body).backgroundColor)
+      expect(canvas, colorScheme).toBe('rgb(42, 44, 63)')
+      await context.close()
+    }
+  })
+
+  test('settings offer no theme choice', async ({ page }) => {
     await page.goto('/')
     await page.getByRole('button', { name: 'Open settings' }).click()
     const dialog = page.getByRole('dialog', { name: 'Settings' })
-    await dialog.getByRole('radio', { name: 'Dark' }).click()
-    expect((await htmlAttrs(page)).theme).toBe('dark')
-    await page.keyboard.press('Escape')
-    await expect(dialog).toBeHidden()
-    await page.reload()
-    expect((await htmlAttrs(page)).theme).toBe('dark')
+    await expect(dialog.getByRole('switch').or(dialog.getByRole('checkbox')).first()).toBeVisible()
+    await expect(dialog.getByRole('radio', { name: /dark|light|match system/i })).toHaveCount(0)
   })
 
   test('the skip link moves focus to the main content', async ({ page, isMobile }) => {

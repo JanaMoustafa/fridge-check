@@ -33,7 +33,7 @@
     },
     "chef": {
       "title": "Cooking Companion",
-      "line": "Your personal chef, to the rescue."
+      "line": "Stress-free meals, delivered by your personal chef."
     }
   },
   "nav": {
@@ -64,13 +64,7 @@
   "settings": {
     "open": "Open settings",
     "title": "Settings",
-    "description": "Choose how BiteDoneRight looks and behaves.",
-    "theme": {
-      "label": "Theme",
-      "light": "Light",
-      "dark": "Dark",
-      "system": "Match system"
-    },
+    "description": "Choose how BiteDoneRight works for you.",
     "staples": "Assume I have basic staples",
     "staplesHint": "Salt, pepper, oil, sugar, flour, butter and water never count as missing.",
     "units": {
@@ -658,10 +652,10 @@
       "title": "Upload your InBody results",
       "intro": "Add a new scan each month. Your targets, water and meals update as soon as you save it.",
       "photoTitle": "From a photo",
-      "photoBody": "Take a clear, straight photo of the whole result sheet in good light. It's read on your phone and never uploaded.",
+      "photoBody": "Take a clear, straight photo of the whole result sheet in good light, flat on a table, with nothing covering the numbers. It’s read on your phone and never uploaded.",
       "choosePhoto": "Choose or take a photo",
       "reading": "Reading your sheet…",
-      "readDone": "We read {found, plural, one {{found, number, latn} number} other {{found, number, latn} numbers}} off your sheet. Check each one against it, fill in anything missing, then save.",
+      "readDone": "We read {found, plural, one {{found, number, latn} figure} other {{found, number, latn} figures}} off your sheet. Check each one against it, fill in anything missing, then save.",
       "readErrors": {
         "signed_out": "You've been signed out. Sign in again to read a photo.",
         "not_pro": "Reading photos is part of Pro.",
@@ -706,12 +700,28 @@
         "kg": "kg",
         "percent": "%",
         "kcal": "kcal",
-        "litre": "L"
+        "litre": "L",
+        "cm": "cm",
+        "cm2": "cm²",
+        "degree": "°",
+        "years": "yrs"
       },
       "ocrPreparing": "Preparing the reader (first time only, about 8 MB)…",
-      "ocrReading": "Reading your sheet… {percent, number, latn}%",
-      "extrasRead": "Also captured {count, plural, one {{count, number, latn} more number} other {{count, number, latn} more numbers}} for your report.",
-      "ocrProgress": "Reading progress"
+      "ocrProgress": "Reading progress",
+      "ocrStraightening": "Straightening your photo…",
+      "ocrReadingPass": "Reading the sheet ({pass, number, latn} of 2)… {percent, number, latn}%",
+      "ocrChecking": "Taking a closer look at a few figures…",
+      "calculatedRead": "{count, plural, one {One figure was} other {{count, number, latn} figures were}} worked out from the others, using InBody’s own formulas; they’re marked.",
+      "moreTitle": "Everything else on your sheet",
+      "moreBody": "Optional. Filled in from your photo where your sheet prints them: check them against it.",
+      "groups": {
+        "composition": "Body composition",
+        "measures": "Body and obesity measures",
+        "targets": "Score and targets",
+        "lean": "Lean mass by segment",
+        "fat": "Fat by segment"
+      },
+      "workedOut": "Worked out from your other figures"
     },
     "report": {
       "metaTitle": "Your report",
@@ -798,7 +808,26 @@
       "leanLeftArmKg": "Lean mass, left arm",
       "leanTrunkKg": "Lean mass, trunk",
       "leanRightLegKg": "Lean mass, right leg",
-      "leanLeftLegKg": "Lean mass, left leg"
+      "leanLeftLegKg": "Lean mass, left leg",
+      "slmKg": "Soft lean mass",
+      "ecwRatio": "ECW ratio (ECW/TBW)",
+      "phaseAngle": "Phase angle",
+      "recommendedKcal": "Recommended calorie intake",
+      "leanRightArmPct": "Lean mass, right arm (% of normal)",
+      "leanLeftArmPct": "Lean mass, left arm (% of normal)",
+      "leanTrunkPct": "Lean mass, trunk (% of normal)",
+      "leanRightLegPct": "Lean mass, right leg (% of normal)",
+      "leanLeftLegPct": "Lean mass, left leg (% of normal)",
+      "fatRightArmKg": "Fat, right arm",
+      "fatLeftArmKg": "Fat, left arm",
+      "fatTrunkKg": "Fat, trunk",
+      "fatRightLegKg": "Fat, right leg",
+      "fatLeftLegKg": "Fat, left leg",
+      "fatRightArmPct": "Fat, right arm (% of normal)",
+      "fatLeftArmPct": "Fat, left arm (% of normal)",
+      "fatTrunkPct": "Fat, trunk (% of normal)",
+      "fatRightLegPct": "Fat, right leg (% of normal)",
+      "fatLeftLegPct": "Fat, left leg (% of normal)"
     },
     "extraUnits": {
       "kg": "{value, number, latn} kg",
@@ -808,7 +837,9 @@
       "cm2": "{value, number, latn} cm²",
       "points": "{value, number, latn} / 100",
       "plain": "{value, number, latn}",
-      "years": "{value, number, latn} years"
+      "years": "{value, number, latn} years",
+      "degree": "{value, number, latn}°",
+      "kcal": "{value, number, latn} kcal"
     }
   },
   "burn": {
@@ -1009,6 +1040,32 @@
     "nutritionLink": "Calories, protein and your portion",
     "back": "Cooking Companion",
     "disclaimer": "Recipes and videos come from their original authors; cook with care and check doneness.",
-    "gramsUnderOne": "< 1 g"
+    "gramsUnderOne": "< 1 g",
+    "serves": "Serves {count, number, latn}",
+    "hours": "{count, number, latn} h",
+    "minutes": "{count, number, latn} min",
+    "nutritionTitle": "Nutrition",
+    "nutritionIntro": "Worked out from each ingredient’s weight with USDA food data.",
+    "nutrient": "Nutrient",
+    "perServing": "Per serving",
+    "wholeDish": "Whole dish",
+    "per100g": "Per 100 g",
+    "calories": "Calories",
+    "protein": "Protein",
+    "carbs": "Carbohydrates",
+    "fat": "Fat",
+    "fibre": "Fibre",
+    "kcalValue": "{value, number, latn} kcal",
+    "atLeast": "at least {value}",
+    "fibrePartial": "Fibre is a lower bound: one ingredient has no fibre value in the USDA data.",
+    "nutritionIncomplete": "This recipe gives no weight for {names}, so its nutrition can’t be worked out reliably.",
+    "videoBy": "Video by {channel} on YouTube",
+    "authoredNote": "Recipe written for BiteDoneRight. The video shows one cook’s version, so amounts may differ a little.",
+    "showMore": "Show more dishes",
+    "servingsLabel": "Servings",
+    "fewerServings": "Fewer servings",
+    "moreServings": "More servings",
+    "servingsUnknown": "This recipe doesn’t say how many it serves: choose how many portions you’ll make.",
+    "duration": "{hours} {minutes}"
   }
 }

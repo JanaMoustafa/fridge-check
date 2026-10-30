@@ -33,7 +33,7 @@
     },
     "chef": {
       "title": "رفيق الطبخ",
-      "line": "شيفك الخاص، جاهز للإنقاذ."
+      "line": "وجبات بلا عناء، يقدّمها لك شيفك الخاص."
     }
   },
   "nav": {
@@ -64,13 +64,7 @@
   "settings": {
     "open": "فتح الإعدادات",
     "title": "الإعدادات",
-    "description": "اختر مظهر BiteDoneRight وطريقة عمله.",
-    "theme": {
-      "label": "المظهر",
-      "light": "فاتح",
-      "dark": "داكن",
-      "system": "حسب الجهاز"
-    },
+    "description": "اختر طريقة عمل BiteDoneRight بما يناسبك.",
     "staples": "افترض أن لدي المكونات الأساسية",
     "staplesHint": "الملح والفلفل والزيت والسكر والدقيق والزبدة والماء لا تُحسب ضمن الناقص أبدًا.",
     "units": {
@@ -658,7 +652,7 @@
       "title": "ارفع نتائج InBody",
       "intro": "أضف قياسًا جديدًا كل شهر. تتحدّث أهدافك والماء ووجباتك فور الحفظ.",
       "photoTitle": "من صورة",
-      "photoBody": "التقط صورة واضحة ومستقيمة لورقة النتائج كاملة في إضاءة جيدة. تُقرأ على هاتفك ولا تُرفع إلى أي مكان.",
+      "photoBody": "التقط صورة واضحة ومستقيمة لورقة النتائج كاملة في إضاءة جيدة، وهي مسطحة على طاولة ولا شيء يغطي الأرقام. تُقرأ على هاتفك ولا تُرفع أبدًا.",
       "choosePhoto": "اختر صورة أو التقطها",
       "reading": "جارٍ قراءة الورقة…",
       "readDone": "قرأنا {found, plural, zero {{found, number, latn} رقم} one {رقمًا واحدًا} two {رقمين} few {{found, number, latn} أرقام} many {{found, number, latn} رقمًا} other {{found, number, latn} رقم}} من ورقتك. راجع كل رقم معها، وأكمل الناقص، ثم احفظ.",
@@ -706,12 +700,28 @@
         "kg": "كغ",
         "percent": "%",
         "kcal": "سعرة",
-        "litre": "لتر"
+        "litre": "لتر",
+        "cm": "سم",
+        "cm2": "سم²",
+        "degree": "°",
+        "years": "سنة"
       },
       "ocrPreparing": "جارٍ تجهيز القارئ (أول مرة فقط، نحو 8 ميغابايت)…",
-      "ocrReading": "جارٍ قراءة الورقة… {percent, number, latn}%",
-      "extrasRead": "والتقطنا أيضًا {count, plural, zero {{count, number, latn} رقم} one {رقمًا واحدًا إضافيًا} two {رقمين إضافيين} few {{count, number, latn} أرقام إضافية} many {{count, number, latn} رقمًا إضافيًا} other {{count, number, latn} رقم إضافي}} لتقريرك.",
-      "ocrProgress": "تقدّم القراءة"
+      "ocrProgress": "تقدّم القراءة",
+      "ocrStraightening": "جارٍ تقويم الصورة…",
+      "ocrReadingPass": "جارٍ قراءة الورقة ({pass, number, latn} من 2)… {percent, number, latn}%",
+      "ocrChecking": "جارٍ التدقيق في بعض الأرقام…",
+      "calculatedRead": "{count, plural, zero {لم يُحسب أي رقم} one {حُسب رقم واحد} two {حُسب رقمان} few {حُسبت {count, number, latn} أرقام} many {حُسب {count, number, latn} رقمًا} other {حُسب {count, number, latn} رقم}} من الأرقام الأخرى بمعادلات InBody نفسها، وعليها علامة.",
+      "moreTitle": "باقي الأرقام في ورقتك",
+      "moreBody": "اختيارية. تُملأ من صورتك حيث تطبعها ورقتك: راجعها معها.",
+      "groups": {
+        "composition": "تكوين الجسم",
+        "measures": "قياسات الجسم والسمنة",
+        "targets": "الدرجة والأهداف",
+        "lean": "الكتلة العضلية حسب الجزء",
+        "fat": "الدهون حسب الجزء"
+      },
+      "workedOut": "محسوب من أرقامك الأخرى"
     },
     "report": {
       "metaTitle": "تقريرك",
@@ -798,7 +808,26 @@
       "leanLeftArmKg": "الكتلة العضلية، الذراع اليسرى",
       "leanTrunkKg": "الكتلة العضلية، الجذع",
       "leanRightLegKg": "الكتلة العضلية، الساق اليمنى",
-      "leanLeftLegKg": "الكتلة العضلية، الساق اليسرى"
+      "leanLeftLegKg": "الكتلة العضلية، الساق اليسرى",
+      "slmKg": "الكتلة العضلية الطرية",
+      "ecwRatio": "نسبة الماء خارج الخلايا (ECW/TBW)",
+      "phaseAngle": "زاوية الطور",
+      "recommendedKcal": "السعرات اليومية الموصى بها",
+      "leanRightArmPct": "الكتلة العضلية، الذراع الأيمن (٪ من الطبيعي)",
+      "leanLeftArmPct": "الكتلة العضلية، الذراع الأيسر (٪ من الطبيعي)",
+      "leanTrunkPct": "الكتلة العضلية، الجذع (٪ من الطبيعي)",
+      "leanRightLegPct": "الكتلة العضلية، الساق اليمنى (٪ من الطبيعي)",
+      "leanLeftLegPct": "الكتلة العضلية، الساق اليسرى (٪ من الطبيعي)",
+      "fatRightArmKg": "الدهون، الذراع الأيمن",
+      "fatLeftArmKg": "الدهون، الذراع الأيسر",
+      "fatTrunkKg": "الدهون، الجذع",
+      "fatRightLegKg": "الدهون، الساق اليمنى",
+      "fatLeftLegKg": "الدهون، الساق اليسرى",
+      "fatRightArmPct": "الدهون، الذراع الأيمن (٪ من الطبيعي)",
+      "fatLeftArmPct": "الدهون، الذراع الأيسر (٪ من الطبيعي)",
+      "fatTrunkPct": "الدهون، الجذع (٪ من الطبيعي)",
+      "fatRightLegPct": "الدهون، الساق اليمنى (٪ من الطبيعي)",
+      "fatLeftLegPct": "الدهون، الساق اليسرى (٪ من الطبيعي)"
     },
     "extraUnits": {
       "kg": "{value, number, latn} كغ",
@@ -808,7 +837,9 @@
       "cm2": "{value, number, latn} سم²",
       "points": "{value, number, latn} / 100",
       "plain": "{value, number, latn}",
-      "years": "{value, number, latn} سنة"
+      "years": "{value, number, latn} سنة",
+      "degree": "{value, number, latn}°",
+      "kcal": "{value, number, latn} سعرة"
     }
   },
   "burn": {
@@ -1009,6 +1040,32 @@
     "nutritionLink": "السعرات والبروتين وحصتك",
     "back": "رفيق الطبخ",
     "disclaimer": "الوصفات والفيديوهات من أصحابها الأصليين؛ اطبخ بحذر وتأكد من نضج الطعام.",
-    "gramsUnderOne": "< 1 غ"
+    "gramsUnderOne": "< 1 غ",
+    "serves": "{count, plural, one {يكفي شخصًا واحدًا} two {يكفي شخصين} few {يكفي {count, number, latn} أشخاص} many {يكفي {count, number, latn} شخصًا} other {يكفي {count, number, latn} شخص}}",
+    "hours": "{count, plural, one {ساعة} two {ساعتان} few {{count, number, latn} ساعات} other {{count, number, latn} ساعة}}",
+    "minutes": "{count, plural, one {دقيقة} two {دقيقتان} few {{count, number, latn} دقائق} other {{count, number, latn} دقيقة}}",
+    "nutritionTitle": "القيم الغذائية",
+    "nutritionIntro": "محسوبة من وزن كل مكوّن ببيانات الأغذية الأمريكية (USDA).",
+    "nutrient": "العنصر",
+    "perServing": "للحصة الواحدة",
+    "wholeDish": "الطبق كاملًا",
+    "per100g": "لكل 100 غرام",
+    "calories": "السعرات الحرارية",
+    "protein": "البروتين",
+    "carbs": "الكربوهيدرات",
+    "fat": "الدهون",
+    "fibre": "الألياف",
+    "kcalValue": "{value, number, latn} سعرة",
+    "atLeast": "{value} على الأقل",
+    "fibrePartial": "الألياف حد أدنى: أحد المكونات ليس له قيمة ألياف في بيانات USDA.",
+    "nutritionIncomplete": "هذه الوصفة لا تذكر وزن {names}، لذلك لا يمكن حساب قيمها الغذائية بدقة.",
+    "videoBy": "فيديو من {channel} على يوتيوب",
+    "authoredNote": "وصفة مكتوبة لـ BiteDoneRight. يعرض الفيديو طريقة طاهٍ واحد، لذلك قد تختلف الكميات قليلًا.",
+    "showMore": "عرض المزيد من الأطباق",
+    "servingsLabel": "عدد الحصص",
+    "fewerServings": "حصص أقل",
+    "moreServings": "حصص أكثر",
+    "servingsUnknown": "لا تذكر هذه الوصفة عدد الحصص: اختر عدد الحصص التي ستقسّمها إليها.",
+    "duration": "{hours} و{minutes}"
   }
 }

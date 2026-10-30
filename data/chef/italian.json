@@ -1,0 +1,4624 @@
+[
+  {
+    "id": "it-cacio-e-pepe",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Cacio e Pepe (Pecorino & Black Pepper Spaghetti)",
+      "ar": "باستا كاتشو إي بيبي (سباغيتي بجبن البيكورينو والفلفل الأسود)"
+    },
+    "servings": 4,
+    "minutes": 20,
+    "ingredients": [
+      {
+        "food": "spaghetti",
+        "grams": 400,
+        "en": "400 g spaghetti or tonnarelli",
+        "ar": "400 غرام سباغيتي أو تونّاريلي"
+      },
+      {
+        "food": "pecorino",
+        "grams": 200,
+        "en": "200 g Pecorino Romano, very finely grated",
+        "ar": "200 غرام جبن بيكورينو رومانو مبشور ناعمًا جدًا"
+      },
+      {
+        "food": "black pepper",
+        "grams": 6,
+        "en": "2 tsp whole black peppercorns, coarsely crushed",
+        "ar": "ملعقتان صغيرتان من حبوب الفلفل الأسود، مجروشة خشنًا"
+      },
+      {
+        "food": "salt",
+        "grams": 12,
+        "en": "2 tsp salt, for the pasta water (less than usual: the cheese is salty)",
+        "ar": "ملعقتان صغيرتان ملح لماء سلق المكرونة (أقل من المعتاد لأن الجبن مالح)"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Bring about 3 litres of water to the boil and add the salt; use less water than usual so it turns starchy. Put the grated pecorino in a bowl.",
+        "Cook the spaghetti for 2 minutes less than the packet says.",
+        "Meanwhile, toast the crushed pepper in a large dry frying pan over medium heat for 1 minute until fragrant, then add a ladle of the pasta water and let it simmer.",
+        "Make the cheese cream: whisk a few tablespoons of warm (not boiling) pasta water into the pecorino, a little at a time, until it forms a smooth, thick paste.",
+        "Move the spaghetti into the pepper pan with tongs, add another splash of pasta water and cook for 2 minutes more, tossing, until al dente and most of the water is absorbed.",
+        "Take the pan off the heat and wait 30 seconds so it is not too hot, otherwise the cheese turns lumpy. Add the pecorino cream and toss quickly, adding splashes of pasta water until the sauce is glossy and coats every strand.",
+        "Serve at once with a little more pecorino and pepper on top."
+      ],
+      "ar": [
+        "أغلِ نحو 3 لترات من الماء وأضف الملح، واستخدم ماءً أقل من المعتاد ليصبح غنيًا بالنشا. ضع جبن البيكورينو المبشور في وعاء.",
+        "اسلق السباغيتي لمدة أقل بدقيقتين من المذكور على العبوة.",
+        "في هذه الأثناء، حمّص الفلفل المجروش في مقلاة كبيرة جافة على نار متوسطة لمدة دقيقة حتى تفوح رائحته، ثم أضف مغرفة من ماء سلق المكرونة واتركه يغلي بهدوء.",
+        "حضّر كريمة الجبن: اخفق البيكورينو مع بضع ملاعق من ماء السلق الدافئ (غير المغلي)، مضيفًا الماء تدريجيًا حتى تحصل على عجينة كريمية ناعمة وكثيفة.",
+        "انقل السباغيتي إلى مقلاة الفلفل بالملقط، وأضف قليلًا من ماء السلق، واطهها دقيقتين أخريين مع التقليب حتى تنضج مع بقاء قوامها متماسكًا ويتشرب معظم الماء.",
+        "ارفع المقلاة عن النار وانتظر 30 ثانية حتى لا تكون شديدة السخونة، وإلا تكتّل الجبن. أضف كريمة البيكورينو وقلّب بسرعة، مع إضافة رشات من ماء السلق حتى تصبح الصلصة لامعة وتغطي كل خيط من السباغيتي.",
+        "قدّمها فورًا مع قليل من البيكورينو والفلفل الأسود على الوجه."
+      ]
+    },
+    "videoSearch": {
+      "en": "cacio e pepe recipe",
+      "ar": "طريقة عمل باستا كاتشو إي بيبي"
+    },
+    "video": {
+      "en": {
+        "id": "eUpzJs-k0Hg",
+        "channel": "GialloZafferano"
+      },
+      "ar": {
+        "id": "RylEnk5gEF0",
+        "channel": "Waleed Alhaider"
+      }
+    }
+  },
+  {
+    "id": "it-spaghetti-aglio-olio-e-peperoncino",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Spaghetti Aglio, Olio e Peperoncino (Garlic, Olive Oil & Chilli Spaghetti)",
+      "ar": "سباغيتي أليو أوليو إي بيبيرونتشينو (بالثوم وزيت الزيتون والشطة)"
+    },
+    "servings": 4,
+    "minutes": 20,
+    "ingredients": [
+      {
+        "food": "spaghetti",
+        "grams": 400,
+        "en": "400 g spaghetti",
+        "ar": "400 غرام سباغيتي"
+      },
+      {
+        "food": "olive oil",
+        "grams": 84,
+        "en": "6 tbsp extra-virgin olive oil",
+        "ar": "6 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "garlic",
+        "grams": 15,
+        "en": "5 garlic cloves, thinly sliced",
+        "ar": "5 فصوص ثوم، مقطعة شرائح رفيعة"
+      },
+      {
+        "food": "chili flakes",
+        "grams": 2,
+        "en": "1 tsp dried chilli flakes, or 1–2 dried red chillies, crumbled",
+        "ar": "ملعقة صغيرة شطة مجروشة، أو 1-2 حبة فلفل أحمر حار مجفف مفتتة"
+      },
+      {
+        "food": "parsley",
+        "grams": 15,
+        "en": "Small bunch of flat-leaf parsley, finely chopped (about 15 g)",
+        "ar": "حزمة صغيرة من البقدونس، مفرومة ناعمًا (نحو 15 غرامًا)"
+      },
+      {
+        "food": "salt",
+        "grams": 18,
+        "en": "1 tbsp salt, for the pasta water",
+        "ar": "ملعقة كبيرة ملح لماء سلق المكرونة"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Bring a large pot of water to the boil, add the salt and cook the spaghetti for 1 minute less than the packet says.",
+        "While it cooks, put the olive oil, garlic and chilli in a large cold frying pan and set it over low heat.",
+        "Let the garlic sizzle gently for 3–4 minutes until it turns pale golden at the edges; do not let it brown or it will taste bitter. Take the pan off the heat.",
+        "Ladle about 120 ml of the pasta water into the pan (careful, it splutters) and swirl to make a cloudy sauce.",
+        "Drain the spaghetti, keeping another cup of the water, and add it to the pan over medium heat.",
+        "Toss for 1–2 minutes, adding splashes of pasta water until the oil and water come together into a light sauce that clings to the pasta.",
+        "Stir in the parsley, taste for salt and serve straight away."
+      ],
+      "ar": [
+        "أغلِ قدرًا كبيرًا من الماء، وأضف الملح، واسلق السباغيتي لمدة أقل بدقيقة من المذكور على العبوة.",
+        "أثناء سلقها، ضع زيت الزيتون والثوم والشطة في مقلاة كبيرة باردة، ثم ضعها على نار هادئة.",
+        "اترك الثوم يطهى بهدوء لمدة 3-4 دقائق حتى تصبح أطرافه ذهبية فاتحة، ولا تتركه يحمرّ كثيرًا حتى لا يصبح مذاقه مرًّا. ارفع المقلاة عن النار.",
+        "أضف إلى المقلاة نحو 120 مل من ماء سلق المكرونة (بحذر لأنه يتطاير)، وحرّك المقلاة لتتكون صلصة معكّرة.",
+        "صفِّ السباغيتي مع الاحتفاظ بكوب آخر من ماء السلق، وأضفها إلى المقلاة على نار متوسطة.",
+        "قلّبها لمدة 1-2 دقيقة، مع إضافة رشات من ماء السلق حتى يمتزج الزيت والماء في صلصة خفيفة تلتصق بالمكرونة.",
+        "أضف البقدونس، وتذوّق الملح، وقدّمها فورًا."
+      ]
+    },
+    "videoSearch": {
+      "en": "spaghetti aglio olio e peperoncino recipe",
+      "ar": "طريقة عمل سباغيتي أليو أوليو بالثوم وزيت الزيتون"
+    },
+    "video": {
+      "en": {
+        "id": "Wu_ZfLtgshk",
+        "channel": "Chef Jack Ovens"
+      },
+      "ar": {
+        "id": "OasXWEOuRX4",
+        "channel": "فلاش كوك flash cook "
+      }
+    }
+  },
+  {
+    "id": "it-trofie-al-pesto-genovese",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Trofie al Pesto Genovese (Basil Pesto Pasta with Potatoes & Green Beans)",
+      "ar": "تروفيه بصلصة البيستو جينوفيزي مع البطاطس والفاصوليا الخضراء"
+    },
+    "servings": 4,
+    "minutes": 35,
+    "ingredients": [
+      {
+        "food": "macaroni",
+        "grams": 350,
+        "en": "350 g trofie or linguine",
+        "ar": "350 غرامًا مكرونة تروفيه أو لينغويني"
+      },
+      {
+        "food": "potato",
+        "grams": 200,
+        "en": "1 medium potato, peeled and cut into thin slices",
+        "ar": "حبة بطاطس متوسطة، مقشرة ومقطعة شرائح رفيعة"
+      },
+      {
+        "food": "green bean",
+        "grams": 150,
+        "en": "150 g green beans, trimmed and cut into 3 cm pieces",
+        "ar": "150 غرامًا فاصوليا خضراء، منظفة ومقطعة قطعًا بطول 3 سم"
+      },
+      {
+        "food": "basil",
+        "grams": 50,
+        "en": "2 large bunches of fresh basil, leaves only (about 50 g)",
+        "ar": "حزمتان كبيرتان من الريحان الطازج، الأوراق فقط (نحو 50 غرامًا)"
+      },
+      {
+        "food": "pine nut",
+        "grams": 30,
+        "en": "3 tbsp pine nuts",
+        "ar": "3 ملاعق كبيرة صنوبر"
+      },
+      {
+        "food": "garlic",
+        "grams": 3,
+        "en": "1 small garlic clove",
+        "ar": "فص ثوم صغير"
+      },
+      {
+        "food": "parmesan",
+        "grams": 45,
+        "en": "45 g Parmesan, finely grated",
+        "ar": "45 غرامًا جبن بارميزان مبشور ناعمًا"
+      },
+      {
+        "food": "pecorino",
+        "grams": 20,
+        "en": "20 g Pecorino, finely grated",
+        "ar": "20 غرامًا جبن بيكورينو مبشور ناعمًا"
+      },
+      {
+        "food": "olive oil",
+        "grams": 84,
+        "en": "6 tbsp mild extra-virgin olive oil",
+        "ar": "6 ملاعق كبيرة زيت زيتون بكر ممتاز خفيف الطعم"
+      },
+      {
+        "food": "salt",
+        "grams": 20,
+        "en": "Coarse salt: a pinch for the pesto, 1 tbsp for the cooking water",
+        "ar": "ملح خشن: رشة للبيستو وملعقة كبيرة لماء السلق"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the pesto: crush the garlic with a pinch of coarse salt in a mortar (or a small food processor), then add the basil a handful at a time and grind with a circular motion until creamy. Add the pine nuts and crush them in.",
+        "Stir in the Parmesan and Pecorino, then pour in the olive oil in a thin stream, mixing until you have a thick green sauce. If using a processor, pulse briefly so the basil does not warm up and darken.",
+        "Bring a large pot of salted water to the boil. Add the potato and cook for 5 minutes.",
+        "Add the trofie and the green beans to the same pot and cook until the pasta is al dente (about 10–12 minutes for dried trofie).",
+        "Put the pesto in a large serving bowl and loosen it with 3–4 tablespoons of the hot cooking water.",
+        "Drain the pasta, potato and beans, tip them into the bowl and toss well so the pesto coats everything; the soft potato makes the sauce creamy. Add another splash of water if it looks dry.",
+        "Serve right away. Never cook the pesto: heat turns it dark and bitter."
+      ],
+      "ar": [
+        "حضّر البيستو: اهرس الثوم مع رشة ملح خشن في الهاون (أو في محضّرة طعام صغيرة)، ثم أضف الريحان على دفعات واهرسه بحركة دائرية حتى يصبح كريميًا. أضف الصنوبر واهرسه معه.",
+        "أضف البارميزان والبيكورينو، ثم صبّ زيت الزيتون على شكل خيط رفيع مع التقليب حتى تحصل على صلصة خضراء كثيفة. إذا استخدمت المحضّرة، فشغّلها على فترات قصيرة حتى لا يسخن الريحان ويغمق لونه.",
+        "أغلِ قدرًا كبيرًا من الماء المملح، وأضف البطاطس واسلقها لمدة 5 دقائق.",
+        "أضف التروفيه والفاصوليا الخضراء إلى القدر نفسه، واسلقها حتى تنضج المكرونة مع بقاء قوامها متماسكًا (نحو 10-12 دقيقة للتروفيه المجففة).",
+        "ضع البيستو في وعاء تقديم كبير، وخفّفه بـ3-4 ملاعق كبيرة من ماء السلق الساخن.",
+        "صفِّ المكرونة والبطاطس والفاصوليا، وأضفها إلى الوعاء وقلّب جيدًا حتى يغطيها البيستو؛ فالبطاطس الطرية تجعل الصلصة كريمية. أضف قليلًا من ماء السلق إذا بدت جافة.",
+        "قدّمها فورًا. لا تطهُ البيستو أبدًا، فالحرارة تجعله داكنًا ومرّ المذاق."
+      ]
+    },
+    "videoSearch": {
+      "en": "trofie al pesto genovese potatoes green beans recipe",
+      "ar": "طريقة عمل مكرونة بصلصة البيستو الإيطالية"
+    },
+    "video": {
+      "en": {
+        "id": "9waxhMUSy4Y",
+        "channel": "Piatto Recipes"
+      }
+    }
+  },
+  {
+    "id": "it-pasta-alla-norma",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Pasta alla Norma (Sicilian Eggplant & Tomato Pasta)",
+      "ar": "باستا ألا نورما (مكرونة صقلية بالباذنجان والطماطم)"
+    },
+    "servings": 4,
+    "minutes": 60,
+    "ingredients": [
+      {
+        "food": "rigatoni",
+        "grams": 400,
+        "en": "400 g rigatoni or penne",
+        "ar": "400 غرام مكرونة ريغاتوني أو بيني"
+      },
+      {
+        "food": "eggplant",
+        "grams": 600,
+        "en": "2 medium eggplants, cut into 2 cm cubes",
+        "ar": "حبتا باذنجان متوسطتان، مقطعتان مكعبات بحجم 2 سم"
+      },
+      {
+        "food": "salt",
+        "grams": 20,
+        "en": "Salt, for the eggplant, sauce and pasta water",
+        "ar": "ملح للباذنجان والصلصة وماء سلق المكرونة"
+      },
+      {
+        "food": "vegetable oil",
+        "grams": 60,
+        "en": "Vegetable oil, for frying (about 60 g is absorbed)",
+        "ar": "زيت نباتي للقلي (يتشرب الباذنجان نحو 60 غرامًا منه)"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil",
+        "ar": "ملعقتان كبيرتان زيت زيتون"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, lightly crushed",
+        "ar": "فصّا ثوم، مهروسان قليلًا"
+      },
+      {
+        "food": "tomato",
+        "grams": 800,
+        "en": "2 cans (400 g each) peeled plum tomatoes, crushed by hand",
+        "ar": "علبتان (400 غرام لكل منهما) طماطم مقشرة، مهروسة باليد"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of fresh basil leaves",
+        "ar": "حفنة من أوراق الريحان الطازج"
+      },
+      {
+        "food": "pecorino",
+        "grams": 80,
+        "en": "80 g ricotta salata or Pecorino, grated",
+        "ar": "80 غرامًا جبن ريكوتا سالاتا أو بيكورينو، مبشور"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Put the eggplant cubes in a colander, sprinkle with salt and leave for 30 minutes to draw out the bitter juices. Rinse and pat completely dry.",
+        "Meanwhile, warm the olive oil in a saucepan over medium-low heat, add the garlic and let it turn pale golden (2 minutes). Add the tomatoes and a pinch of salt and simmer for 20 minutes until thickened. Remove the garlic and stir in half the basil.",
+        "Heat 2 cm of vegetable oil in a frying pan to 175°C. Fry the eggplant in batches for 4–5 minutes until deep golden and soft, then drain on kitchen paper.",
+        "Cook the pasta in plenty of salted boiling water until al dente, keeping a cup of the cooking water.",
+        "Drain the pasta and toss it with the tomato sauce over low heat, adding a little pasta water if needed. Fold in most of the fried eggplant.",
+        "Serve topped with the remaining eggplant, a generous grating of ricotta salata and the rest of the basil."
+      ],
+      "ar": [
+        "ضع مكعبات الباذنجان في مصفاة، ورشّ عليها الملح، واتركها 30 دقيقة لتخرج عصارتها المرّة. اشطفها ثم جففها تمامًا بمناديل المطبخ.",
+        "في هذه الأثناء، سخّن زيت الزيتون في قدر على نار متوسطة إلى هادئة، وأضف الثوم واتركه حتى يصبح ذهبيًا فاتحًا (دقيقتان). أضف الطماطم ورشة ملح، واتركها تغلي بهدوء 20 دقيقة حتى تتكاثف. أخرج الثوم وأضف نصف الريحان.",
+        "سخّن الزيت النباتي بعمق 2 سم في مقلاة إلى 175 درجة مئوية. اقلِ الباذنجان على دفعات لمدة 4-5 دقائق حتى يصبح ذهبيًا داكنًا وطريًا، ثم صفّه على مناديل المطبخ.",
+        "اسلق المكرونة في كمية وفيرة من الماء المملح المغلي حتى تنضج مع بقاء قوامها متماسكًا، واحتفظ بكوب من ماء السلق.",
+        "صفِّ المكرونة وقلّبها مع صلصة الطماطم على نار هادئة، مع إضافة قليل من ماء السلق عند الحاجة. أضف معظم الباذنجان المقلي وقلّب برفق.",
+        "قدّمها مع باقي الباذنجان على الوجه، وكمية وفيرة من الريكوتا سالاتا المبشورة، وباقي الريحان."
+      ]
+    },
+    "videoSearch": {
+      "en": "pasta alla norma recipe",
+      "ar": "طريقة عمل باستا ألا نورما بالباذنجان"
+    },
+    "video": {
+      "en": {
+        "id": "dPb6PqPOpVg",
+        "channel": "Vincenzo's Plate"
+      },
+      "ar": {
+        "id": "63dg8ShLsmU",
+        "channel": "خالد الروضان"
+      }
+    }
+  },
+  {
+    "id": "it-pasta-e-fagioli",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Pasta e Fagioli (Italian Pasta & Bean Soup)",
+      "ar": "باستا إي فاجولي (شوربة المكرونة بالفاصوليا على الطريقة الإيطالية)"
+    },
+    "servings": 4,
+    "minutes": 50,
+    "ingredients": [
+      {
+        "food": "olive oil",
+        "grams": 56,
+        "en": "4 tbsp olive oil (3 for cooking, 1 to drizzle)",
+        "ar": "4 ملاعق كبيرة زيت زيتون (3 للطهي وواحدة للتقديم)"
+      },
+      {
+        "food": "onion",
+        "grams": 110,
+        "en": "1 medium onion, finely chopped",
+        "ar": "بصلة متوسطة، مفرومة ناعمًا"
+      },
+      {
+        "food": "carrot",
+        "grams": 70,
+        "en": "1 carrot, finely chopped",
+        "ar": "جزرة، مفرومة ناعمًا"
+      },
+      {
+        "food": "celery",
+        "grams": 50,
+        "en": "1 celery stalk, finely chopped",
+        "ar": "عود كرفس، مفروم ناعمًا"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, chopped",
+        "ar": "فصّا ثوم، مفرومان"
+      },
+      {
+        "food": "rosemary",
+        "grams": 2,
+        "en": "1 sprig fresh rosemary",
+        "ar": "عود إكليل الجبل (روزماري) طازج"
+      },
+      {
+        "food": "passata",
+        "grams": 200,
+        "en": "200 g tomato passata",
+        "ar": "200 غرام طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "borlotti bean",
+        "grams": 480,
+        "en": "2 cans (400 g each) borlotti beans, drained and rinsed (about 480 g drained)",
+        "ar": "علبتان (400 غرام لكل منهما) فاصوليا بورلوتي، مصفّاة ومغسولة (نحو 480 غرامًا بعد التصفية)"
+      },
+      {
+        "food": "vegetable stock",
+        "grams": 1200,
+        "en": "1.2 litres vegetable stock",
+        "ar": "1.2 لتر مرق خضار"
+      },
+      {
+        "food": "macaroni",
+        "grams": 200,
+        "en": "200 g ditalini or other small soup pasta",
+        "ar": "200 غرام مكرونة ديتاليني أو أي مكرونة صغيرة للشوربة"
+      },
+      {
+        "food": "parmesan",
+        "grams": 40,
+        "en": "40 g Parmesan, grated, to serve",
+        "ar": "40 غرامًا جبن بارميزان مبشور للتقديم"
+      },
+      {
+        "food": "salt",
+        "grams": 5,
+        "en": "Salt and black pepper, to taste",
+        "ar": "ملح وفلفل أسود حسب الرغبة"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Warm 3 tbsp olive oil in a heavy pot over medium heat. Add the onion, carrot and celery with a pinch of salt and cook gently for 8–10 minutes until soft but not browned.",
+        "Add the garlic and rosemary and cook for 1 minute, then stir in the passata and simmer for 5 minutes.",
+        "Add the beans and the stock, bring to the boil and simmer for 15 minutes. Remove the rosemary sprig.",
+        "Scoop out about a third of the beans with some liquid, blend until smooth (or mash with a fork) and stir back into the pot to thicken the soup.",
+        "Add the pasta straight to the pot and simmer, stirring often so it does not stick, until al dente (8–10 minutes). Add a splash of hot water if it gets too thick; it should be dense but still spoonable.",
+        "Season with salt and pepper, rest for 5 minutes off the heat, then serve with the Parmesan and a drizzle of the remaining olive oil."
+      ],
+      "ar": [
+        "سخّن 3 ملاعق كبيرة من زيت الزيتون في قدر ثقيل على نار متوسطة. أضف البصل والجزر والكرفس مع رشة ملح، واطهها بهدوء لمدة 8-10 دقائق حتى تذبل دون أن يتغير لونها.",
+        "أضف الثوم وإكليل الجبل وقلّب لمدة دقيقة، ثم أضف الباساتا واتركها تغلي بهدوء 5 دقائق.",
+        "أضف الفاصوليا والمرق، واتركه حتى يغلي، ثم اخفض النار واتركه 15 دقيقة. أخرج عود إكليل الجبل.",
+        "اغرف نحو ثلث الفاصوليا مع قليل من السائل، واهرسها في الخلاط حتى تنعم (أو بالشوكة)، ثم أعدها إلى القدر لتكثيف الشوربة.",
+        "أضف المكرونة مباشرة إلى القدر واتركها تغلي بهدوء مع التقليب المتكرر حتى لا تلتصق، إلى أن تنضج مع بقاء قوامها متماسكًا (8-10 دقائق). أضف قليلًا من الماء الساخن إذا ثقل القوام كثيرًا، فيجب أن تكون كثيفة لكن يسهل تناولها بالملعقة.",
+        "تبّلها بالملح والفلفل، واتركها 5 دقائق بعيدًا عن النار، ثم قدّمها مع البارميزان ورشّة من باقي زيت الزيتون."
+      ]
+    },
+    "videoSearch": {
+      "en": "pasta e fagioli recipe italian",
+      "ar": "طريقة عمل شوربة باستا إي فاجولي"
+    },
+    "video": {
+      "en": {
+        "id": "jVfypw2OuoU",
+        "channel": "Vito’s Italian Cucina | Authentic Italian Recipes"
+      }
+    }
+  },
+  {
+    "id": "it-gnocchi-alla-sorrentina",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Gnocchi alla Sorrentina (Baked Potato Gnocchi with Tomato & Mozzarella)",
+      "ar": "نيوكي ألا سورينتينا (نيوكي البطاطس بالطماطم والموتزاريلا في الفرن)"
+    },
+    "servings": 4,
+    "minutes": 90,
+    "ingredients": [
+      {
+        "food": "potato",
+        "grams": 800,
+        "en": "800 g floury potatoes, unpeeled",
+        "ar": "800 غرام بطاطس نشوية، بقشرها"
+      },
+      {
+        "food": "flour",
+        "grams": 200,
+        "en": "200 g plain (00) flour, including flour for dusting",
+        "ar": "200 غرام دقيق أبيض (نوع 00)، بما فيه دقيق الرشّ"
+      },
+      {
+        "food": "egg",
+        "grams": 50,
+        "en": "1 egg",
+        "ar": "بيضة واحدة"
+      },
+      {
+        "food": "salt",
+        "grams": 15,
+        "en": "Salt, for the gnocchi, sauce and cooking water",
+        "ar": "ملح للنيوكي والصلصة وماء السلق"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil",
+        "ar": "ملعقتان كبيرتان زيت زيتون"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, lightly crushed",
+        "ar": "فصّا ثوم، مهروسان قليلًا"
+      },
+      {
+        "food": "passata",
+        "grams": 700,
+        "en": "700 g tomato passata",
+        "ar": "700 غرام طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of fresh basil leaves",
+        "ar": "حفنة من أوراق الريحان الطازج"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 200,
+        "en": "200 g mozzarella, drained and diced",
+        "ar": "200 غرام جبن موتزاريلا، مصفّاة ومقطعة مكعبات"
+      },
+      {
+        "food": "parmesan",
+        "grams": 40,
+        "en": "40 g Parmesan, grated",
+        "ar": "40 غرامًا جبن بارميزان مبشور"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Boil the potatoes whole in their skins in salted water for 30–40 minutes until a knife slides in easily. Drain, peel while still hot and press through a potato ricer onto a floured board.",
+        "Let the potato cool for 5 minutes, then add a pinch of salt, the egg and most of the flour. Mix with your hands into a soft dough, adding flour only until it stops sticking; do not knead for long or the gnocchi will be heavy.",
+        "Cut the dough into pieces, roll each into a rope 2 cm thick and cut it into 2 cm pieces. Roll them over a fork if you like and lay them on a floured tray.",
+        "Make the sauce: warm the olive oil with the garlic over medium-low heat for 2 minutes, add the passata and a pinch of salt and simmer for 15–20 minutes. Remove the garlic and add half the basil.",
+        "Heat the oven to 220°C. Cook the gnocchi in boiling salted water in batches and lift them out with a slotted spoon about 30 seconds after they float.",
+        "Toss the gnocchi with the sauce, half the mozzarella and the remaining basil, torn, then spread in a baking dish (or small individual dishes). Top with the rest of the mozzarella and the Parmesan.",
+        "Bake for 10–15 minutes until the cheese is melted and bubbling with golden spots. Rest for 5 minutes before serving."
+      ],
+      "ar": [
+        "اسلق البطاطس كاملة بقشرها في ماء مملح لمدة 30-40 دقيقة حتى تدخل فيها السكين بسهولة. صفّها، وقشّرها وهي ساخنة، ثم اهرسها بمكبس البطاطس فوق سطح مرشوش بالدقيق.",
+        "اترك البطاطس 5 دقائق لتبرد قليلًا، ثم أضف رشة ملح والبيضة ومعظم الدقيق. اخلطها بيديك حتى تتكون عجينة طرية، وأضف الدقيق فقط حتى تتوقف عن الالتصاق، ولا تعجنها طويلًا حتى لا يصبح النيوكي ثقيلًا.",
+        "قسّم العجينة إلى قطع، ولفّ كل قطعة على شكل حبل بسمك 2 سم، ثم قطّعه قطعًا بطول 2 سم. مرّرها على ظهر شوكة إن أردت، ورصّها في صينية مرشوشة بالدقيق.",
+        "حضّر الصلصة: سخّن زيت الزيتون مع الثوم على نار متوسطة إلى هادئة لمدة دقيقتين، ثم أضف الباساتا ورشة ملح واتركها تغلي بهدوء 15-20 دقيقة. أخرج الثوم وأضف نصف الريحان.",
+        "سخّن الفرن على 220 درجة مئوية. اسلق النيوكي في ماء مغلي مملح على دفعات، وارفعه بالمصفاة بعد نحو 30 ثانية من طفوه على السطح.",
+        "قلّب النيوكي مع الصلصة ونصف الموتزاريلا وباقي الريحان مقطّعًا باليد، ثم وزّعه في طبق فرن (أو أطباق صغيرة فردية). غطِّه بباقي الموتزاريلا والبارميزان.",
+        "اخبزه لمدة 10-15 دقيقة حتى يذوب الجبن ويفور وتظهر عليه بقع ذهبية. اتركه 5 دقائق قبل التقديم."
+      ]
+    },
+    "videoSearch": {
+      "en": "gnocchi alla sorrentina recipe homemade",
+      "ar": "طريقة عمل نيوكي البطاطس بصلصة الطماطم والموتزاريلا"
+    },
+    "video": {
+      "en": {
+        "id": "bbay082qGZc",
+        "channel": "GialloZafferano"
+      }
+    }
+  },
+  {
+    "id": "it-ravioli-ricotta-e-spinaci",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Ravioli Ricotta e Spinaci (Spinach & Ricotta Ravioli with Butter and Sage)",
+      "ar": "رافيولي بالريكوتا والسبانخ مع صلصة الزبدة والمريمية"
+    },
+    "servings": 4,
+    "minutes": 100,
+    "ingredients": [
+      {
+        "food": "flour",
+        "grams": 300,
+        "en": "300 g 00 flour (or plain flour), including flour for dusting",
+        "ar": "300 غرام دقيق أبيض نوع 00 (أو دقيق عادي)، بما فيه دقيق الرشّ"
+      },
+      {
+        "food": "egg",
+        "grams": 150,
+        "en": "3 eggs, for the dough",
+        "ar": "3 بيضات للعجين"
+      },
+      {
+        "food": "spinach",
+        "grams": 400,
+        "en": "400 g fresh spinach, washed",
+        "ar": "400 غرام سبانخ طازجة، مغسولة"
+      },
+      {
+        "food": "ricotta",
+        "grams": 250,
+        "en": "250 g ricotta, well drained",
+        "ar": "250 غرامًا جبن ريكوتا، مصفّى جيدًا"
+      },
+      {
+        "food": "parmesan",
+        "grams": 80,
+        "en": "80 g Parmesan, grated (50 g for the filling, 30 g to serve)",
+        "ar": "80 غرامًا جبن بارميزان مبشور (50 غرامًا للحشوة و30 غرامًا للتقديم)"
+      },
+      {
+        "food": "egg yolk",
+        "grams": 17,
+        "en": "1 egg yolk, for the filling",
+        "ar": "صفار بيضة واحدة للحشوة"
+      },
+      {
+        "food": "nutmeg",
+        "grams": 0.5,
+        "en": "A pinch of ground nutmeg",
+        "ar": "رشة جوزة الطيب المطحونة"
+      },
+      {
+        "food": "salt",
+        "grams": 15,
+        "en": "Salt and black pepper (for the filling and the cooking water)",
+        "ar": "ملح وفلفل أسود (للحشوة وماء السلق)"
+      },
+      {
+        "food": "butter",
+        "grams": 60,
+        "en": "60 g butter",
+        "ar": "60 غرامًا زبدة"
+      },
+      {
+        "food": null,
+        "grams": 3,
+        "en": "10–12 fresh sage leaves",
+        "ar": "10-12 ورقة مريمية (ميرمية) طازجة"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the dough: heap the flour on a board, make a well, crack in the 3 eggs and beat them with a fork, drawing in the flour little by little. Knead for 8–10 minutes until smooth and elastic, wrap and rest for 30 minutes.",
+        "Make the filling: wilt the spinach in a dry pan with a pinch of salt for 2–3 minutes, cool, squeeze out every drop of water and chop finely. Mix with the ricotta, 50 g Parmesan, the egg yolk, nutmeg, salt and pepper.",
+        "Roll the dough out very thinly (about 1 mm, so you can almost see your hand through it) with a pasta machine or rolling pin into long sheets.",
+        "Place teaspoons of filling 4 cm apart on one sheet, brush a little water around them and cover with a second sheet. Press around each mound to push out the air, then cut into squares with a knife or pastry wheel and seal the edges well.",
+        "Lay the ravioli on a floured tray, not touching. Bring a large pot of salted water to a gentle boil and cook them in batches for 3–4 minutes, until they float and the edges are tender.",
+        "Meanwhile, melt the butter with the sage leaves in a large frying pan over medium heat and cook for 2–3 minutes until the butter turns light hazelnut-brown and the sage is crisp.",
+        "Lift the ravioli into the pan with a slotted spoon, add 2 tablespoons of the cooking water and toss gently. Serve with the remaining Parmesan."
+      ],
+      "ar": [
+        "حضّر العجين: ضع الدقيق على شكل كومة على سطح العمل، واصنع حفرة في وسطه، واكسر فيها البيضات الثلاث واخفقها بالشوكة مع ضم الدقيق تدريجيًا. اعجن لمدة 8-10 دقائق حتى تصبح العجينة ناعمة ومرنة، ثم لفّها واتركها ترتاح 30 دقيقة.",
+        "حضّر الحشوة: ذبّل السبانخ في مقلاة جافة مع رشة ملح لمدة 2-3 دقائق، ثم اتركها تبرد واعصرها جيدًا للتخلص من كل الماء وافرمها ناعمًا. اخلطها مع الريكوتا و50 غرامًا من البارميزان وصفار البيض وجوزة الطيب والملح والفلفل.",
+        "افرد العجين رقيقًا جدًا (نحو 1 مم بحيث تكاد ترى يدك من خلاله) بآلة المكرونة أو النشابة على شكل شرائح طويلة.",
+        "ضع ملاعق صغيرة من الحشوة على إحدى الشرائح بمسافة 4 سم بينها، وادهن حولها بقليل من الماء، ثم غطّها بشريحة ثانية. اضغط حول كل كومة لإخراج الهواء، ثم قطّعها مربعات بالسكين أو بعجلة المعجنات وأحكم إغلاق الأطراف.",
+        "رصّ الرافيولي في صينية مرشوشة بالدقيق دون أن تتلامس. أغلِ قدرًا كبيرًا من الماء المملح على غليان هادئ، واسلقها على دفعات لمدة 3-4 دقائق حتى تطفو وتطرى أطرافها.",
+        "في هذه الأثناء، ذوّب الزبدة مع أوراق المريمية في مقلاة كبيرة على نار متوسطة، واتركها 2-3 دقائق حتى يصبح لون الزبدة بنيًا فاتحًا بلون البندق وتقرمش أوراق المريمية.",
+        "انقل الرافيولي إلى المقلاة بالمصفاة، وأضف ملعقتين كبيرتين من ماء السلق، وقلّب برفق. قدّمها مع باقي البارميزان."
+      ]
+    },
+    "videoSearch": {
+      "en": "spinach and ricotta ravioli butter sage recipe",
+      "ar": "طريقة عمل رافيولي بالسبانخ والريكوتا"
+    },
+    "video": {
+      "en": {
+        "id": "8hjVvf4Rxnw",
+        "channel": "Lurpak Arabia"
+      }
+    }
+  },
+  {
+    "id": "it-tagliatelle-ai-funghi",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Tagliatelle ai Funghi (Egg Tagliatelle with Garlic Mushrooms)",
+      "ar": "تالياتيلي آي فونغي (تالياتيلي بالمشروم والثوم)"
+    },
+    "servings": 4,
+    "minutes": 30,
+    "ingredients": [
+      {
+        "food": "noodle",
+        "grams": 350,
+        "en": "350 g dried egg tagliatelle",
+        "ar": "350 غرامًا مكرونة تالياتيلي بالبيض مجففة"
+      },
+      {
+        "food": "chestnut mushroom",
+        "grams": 300,
+        "en": "300 g chestnut (cremini) mushrooms, sliced",
+        "ar": "300 غرام مشروم بني (كريميني)، مقطع شرائح"
+      },
+      {
+        "food": "wild mushroom",
+        "grams": 200,
+        "en": "200 g oyster or other wild mushrooms, torn into pieces",
+        "ar": "200 غرام مشروم محاري أو أي مشروم بري، مقطّع باليد"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "butter",
+        "grams": 30,
+        "en": "30 g butter",
+        "ar": "30 غرامًا زبدة"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, finely chopped",
+        "ar": "فصّا ثوم، مفرومان ناعمًا"
+      },
+      {
+        "food": "thyme",
+        "grams": 2,
+        "en": "A few sprigs fresh thyme, leaves only",
+        "ar": "بضعة أعواد زعتر طازج، الأوراق فقط"
+      },
+      {
+        "food": "parsley",
+        "grams": 15,
+        "en": "Small bunch of parsley, chopped",
+        "ar": "حزمة صغيرة من البقدونس، مفرومة"
+      },
+      {
+        "food": "parmesan",
+        "grams": 50,
+        "en": "50 g Parmesan, grated",
+        "ar": "50 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "salt",
+        "grams": 15,
+        "en": "Salt and black pepper (including the pasta water)",
+        "ar": "ملح وفلفل أسود (بما في ذلك ملح ماء السلق)"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Bring a large pot of salted water to the boil for the pasta.",
+        "Heat the olive oil in a large frying pan over high heat. Add the mushrooms in a single layer (in two batches if needed) and leave them for 2–3 minutes without stirring until browned underneath, then stir and cook for 3–4 minutes more until golden and their liquid has evaporated.",
+        "Lower the heat to medium, add the butter, garlic and thyme and cook for 1 minute until fragrant. Season with salt and pepper.",
+        "Meanwhile, cook the tagliatelle until al dente (usually 6–8 minutes for dried egg pasta), keeping a cup of the cooking water.",
+        "Transfer the tagliatelle to the mushroom pan with a ladle of the cooking water and toss over medium heat for 1 minute, until the pasta is coated in a light, glossy sauce.",
+        "Off the heat, add most of the Parmesan and the parsley and toss again, loosening with a little more water if needed. Serve with the remaining Parmesan."
+      ],
+      "ar": [
+        "أغلِ قدرًا كبيرًا من الماء المملح لسلق المكرونة.",
+        "سخّن زيت الزيتون في مقلاة كبيرة على نار عالية. أضف المشروم في طبقة واحدة (على دفعتين إذا لزم الأمر) واتركه 2-3 دقائق دون تقليب حتى يحمرّ من الأسفل، ثم قلّبه واطهه 3-4 دقائق أخرى حتى يصبح ذهبيًا ويتبخر ماؤه.",
+        "اخفض النار إلى متوسطة، وأضف الزبدة والثوم والزعتر وقلّب لمدة دقيقة حتى تفوح الرائحة. تبّل بالملح والفلفل.",
+        "في هذه الأثناء، اسلق التالياتيلي حتى تنضج مع بقاء قوامها متماسكًا (عادةً 6-8 دقائق للمكرونة المجففة بالبيض)، واحتفظ بكوب من ماء السلق.",
+        "انقل التالياتيلي إلى مقلاة المشروم مع مغرفة من ماء السلق، وقلّبها على نار متوسطة لمدة دقيقة حتى تكسوها صلصة خفيفة لامعة.",
+        "ارفعها عن النار، وأضف معظم البارميزان والبقدونس وقلّب مجددًا، مع إضافة قليل من ماء السلق إذا لزم الأمر. قدّمها مع باقي البارميزان."
+      ]
+    },
+    "videoSearch": {
+      "en": "tagliatelle ai funghi recipe",
+      "ar": "طريقة عمل مكرونة تالياتيلي بالمشروم"
+    },
+    "video": {
+      "en": {
+        "id": "OpXjhjEzm-c",
+        "channel": "Gennaro Contaldo"
+      }
+    }
+  },
+  {
+    "id": "it-spaghetti-alle-vongole",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Spaghetti alle Vongole (Clam Spaghetti, Wine-Free)",
+      "ar": "سباغيتي ألي فونغولي بالمحار (بدون نبيذ)"
+    },
+    "servings": 4,
+    "minutes": 90,
+    "ingredients": [
+      {
+        "food": "clam",
+        "grams": 180,
+        "en": "1 kg fresh small clams in the shell (about 180 g clam meat)",
+        "ar": "1 كيلوغرام محار صغير طازج بقشره (نحو 180 غرامًا من لحم المحار)"
+      },
+      {
+        "food": "salt",
+        "grams": 40,
+        "en": "Salt, for soaking the clams and for the pasta water",
+        "ar": "ملح لنقع المحار ولماء سلق المكرونة"
+      },
+      {
+        "food": "spaghetti",
+        "grams": 400,
+        "en": "400 g spaghetti or linguine",
+        "ar": "400 غرام سباغيتي أو لينغويني"
+      },
+      {
+        "food": "olive oil",
+        "grams": 70,
+        "en": "5 tbsp extra-virgin olive oil",
+        "ar": "5 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, thinly sliced",
+        "ar": "3 فصوص ثوم، مقطعة شرائح رفيعة"
+      },
+      {
+        "food": "chili",
+        "grams": 5,
+        "en": "1 small fresh red chilli, finely chopped",
+        "ar": "حبة فلفل أحمر حار صغيرة، مفرومة ناعمًا"
+      },
+      {
+        "food": "fish stock",
+        "grams": 120,
+        "en": "120 ml fish stock, in place of white wine",
+        "ar": "120 مل مرق سمك بدلًا من النبيذ الأبيض"
+      },
+      {
+        "food": "lemon",
+        "grams": 15,
+        "en": "1 tbsp lemon juice",
+        "ar": "ملعقة كبيرة عصير ليمون"
+      },
+      {
+        "food": "parsley",
+        "grams": 20,
+        "en": "Large handful of parsley, finely chopped",
+        "ar": "حفنة كبيرة من البقدونس، مفرومة ناعمًا"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Rinse the clams, then soak them in cold salted water (about 30 g salt per litre) for 1 hour so they spit out any sand. Throw away any with broken shells or that stay open when tapped, then drain and rinse.",
+        "Bring a large pot of salted water to the boil and cook the spaghetti for 2 minutes less than the packet says.",
+        "Meanwhile, heat the olive oil in a large, deep frying pan with a lid over medium heat. Add the garlic and chilli and cook for 1 minute until fragrant, without browning.",
+        "Turn the heat to high, add the clams and the fish stock, cover and cook for 3–4 minutes, shaking the pan, until the shells open. Throw away any that stay closed.",
+        "Lift out about half the clams and take them out of their shells if you like (keep the rest in their shells for serving). Keep the juices in the pan.",
+        "Drain the spaghetti, keeping a cup of the cooking water, and add it to the pan. Toss over high heat for 2 minutes so the pasta finishes cooking in the clam juices, adding a splash of pasta water if it looks dry.",
+        "Return all the clams, add the lemon juice and parsley, toss for 30 seconds and serve straight away."
+      ],
+      "ar": [
+        "اشطف المحار، ثم انقعه في ماء بارد مملح (نحو 30 غرامًا من الملح لكل لتر) لمدة ساعة حتى يُخرج ما فيه من رمل. تخلّص من أي محارة مكسورة القشرة أو تبقى مفتوحة عند النقر عليها، ثم صفّه واشطفه.",
+        "أغلِ قدرًا كبيرًا من الماء المملح، واسلق السباغيتي لمدة أقل بدقيقتين من المذكور على العبوة.",
+        "في هذه الأثناء، سخّن زيت الزيتون في مقلاة كبيرة عميقة لها غطاء على نار متوسطة. أضف الثوم والفلفل الحار وقلّب لمدة دقيقة حتى تفوح الرائحة دون أن يتغير لونه.",
+        "ارفع النار إلى عالية، وأضف المحار ومرق السمك، وغطِّ المقلاة واتركه 3-4 دقائق مع رجّ المقلاة حتى تتفتح القشور. تخلّص من أي محارة تبقى مغلقة.",
+        "أخرج نحو نصف المحار وانزع لحمه من القشر إن أردت (واترك الباقي بقشره للتقديم)، واحتفظ بالعصارة في المقلاة.",
+        "صفِّ السباغيتي مع الاحتفاظ بكوب من ماء السلق، وأضفها إلى المقلاة. قلّبها على نار عالية لمدة دقيقتين حتى يكتمل نضجها في عصارة المحار، مع إضافة قليل من ماء السلق إذا بدت جافة.",
+        "أعد كل المحار إلى المقلاة، وأضف عصير الليمون والبقدونس، وقلّب لمدة 30 ثانية، وقدّمها فورًا."
+      ]
+    },
+    "videoSearch": {
+      "en": "spaghetti alle vongole recipe",
+      "ar": "طريقة عمل سباغيتي بالمحار على الطريقة الإيطالية"
+    },
+    "video": {
+      "en": {
+        "id": "ltb27_0PiS4",
+        "channel": "Aden Films"
+      }
+    }
+  },
+  {
+    "id": "it-spaghetti-alla-puttanesca",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Spaghetti alla Puttanesca (Tomato, Olive, Caper & Anchovy Spaghetti)",
+      "ar": "سباغيتي بوتانيسكا (بالطماطم والزيتون والكبر والأنشوجة)"
+    },
+    "servings": 4,
+    "minutes": 30,
+    "ingredients": [
+      {
+        "food": "spaghetti",
+        "grams": 400,
+        "en": "400 g spaghetti",
+        "ar": "400 غرام سباغيتي"
+      },
+      {
+        "food": "olive oil",
+        "grams": 56,
+        "en": "4 tbsp extra-virgin olive oil",
+        "ar": "4 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, thinly sliced",
+        "ar": "3 فصوص ثوم، مقطعة شرائح رفيعة"
+      },
+      {
+        "food": "anchovy",
+        "grams": 24,
+        "en": "6 anchovy fillets in oil, drained and chopped",
+        "ar": "6 شرائح أنشوجة بالزيت، مصفّاة ومفرومة"
+      },
+      {
+        "food": "chili flakes",
+        "grams": 1,
+        "en": "½ tsp chilli flakes",
+        "ar": "نصف ملعقة صغيرة شطة مجروشة"
+      },
+      {
+        "food": "tomato",
+        "grams": 800,
+        "en": "2 cans (400 g each) peeled plum tomatoes, crushed by hand",
+        "ar": "علبتان (400 غرام لكل منهما) طماطم مقشرة، مهروسة باليد"
+      },
+      {
+        "food": "black olive",
+        "grams": 100,
+        "en": "100 g pitted black olives (Gaeta or Kalamata), halved",
+        "ar": "100 غرام زيتون أسود منزوع النوى (غايتا أو كالاماتا)، مقطع أنصافًا"
+      },
+      {
+        "food": "caper",
+        "grams": 20,
+        "en": "2 tbsp capers, rinsed",
+        "ar": "ملعقتان كبيرتان كبر (قبار)، مغسول"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "en": "1 tsp dried oregano",
+        "ar": "ملعقة صغيرة أوريغانو مجفف"
+      },
+      {
+        "food": "parsley",
+        "grams": 15,
+        "en": "Small bunch of parsley, chopped",
+        "ar": "حزمة صغيرة من البقدونس، مفرومة"
+      },
+      {
+        "food": "salt",
+        "grams": 18,
+        "en": "1 tbsp salt, for the pasta water",
+        "ar": "ملعقة كبيرة ملح لماء سلق المكرونة"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Bring a large pot of water to the boil with the salt.",
+        "Warm the olive oil in a large frying pan over medium-low heat. Add the garlic, anchovies and chilli and cook for 2 minutes, stirring, until the anchovies melt into the oil.",
+        "Add the tomatoes, raise the heat to medium and simmer for 10 minutes until slightly thickened.",
+        "Stir in the olives, capers and oregano and simmer for 5 minutes more. Taste before adding any salt: the olives, capers and anchovies are already salty.",
+        "Meanwhile, cook the spaghetti for 1 minute less than the packet says, keeping a cup of the cooking water.",
+        "Drain the spaghetti and toss it in the sauce over high heat for 1 minute, adding a splash of pasta water so the sauce coats every strand. Scatter with parsley and serve."
+      ],
+      "ar": [
+        "أغلِ قدرًا كبيرًا من الماء مع الملح.",
+        "سخّن زيت الزيتون في مقلاة كبيرة على نار متوسطة إلى هادئة. أضف الثوم والأنشوجة والشطة وقلّب لمدة دقيقتين حتى تذوب الأنشوجة في الزيت.",
+        "أضف الطماطم، وارفع النار إلى متوسطة، واتركها تغلي بهدوء 10 دقائق حتى تتكاثف قليلًا.",
+        "أضف الزيتون والكبر والأوريغانو واتركها 5 دقائق أخرى. تذوّق الصلصة قبل إضافة أي ملح، فالزيتون والكبر والأنشوجة مالحة أصلًا.",
+        "في هذه الأثناء، اسلق السباغيتي لمدة أقل بدقيقة من المذكور على العبوة، واحتفظ بكوب من ماء السلق.",
+        "صفِّ السباغيتي وقلّبها في الصلصة على نار عالية لمدة دقيقة، مع إضافة قليل من ماء السلق حتى تغطي الصلصة كل خيط. انثر البقدونس وقدّمها."
+      ]
+    },
+    "videoSearch": {
+      "en": "spaghetti alla puttanesca recipe",
+      "ar": "طريقة عمل مكرونة بوتانيسكا"
+    },
+    "video": {
+      "en": {
+        "id": "9i-KRU3wEok",
+        "channel": "RecipeTin Eats"
+      },
+      "ar": {
+        "id": "Pq3P5K8Ge9U",
+        "channel": "Sahar MZ"
+      }
+    }
+  },
+  {
+    "id": "it-pasta-al-forno",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Pasta al Forno (Baked Ziti with Ricotta & Mozzarella)",
+      "ar": "باستا آل فورنو (مكرونة زيتي بالفرن مع الريكوتا والموتزاريلا)"
+    },
+    "servings": 6,
+    "minutes": 70,
+    "ingredients": [
+      {
+        "food": "penne",
+        "grams": 500,
+        "en": "500 g ziti or penne",
+        "ar": "500 غرام مكرونة زيتي أو بيني"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil",
+        "ar": "ملعقتان كبيرتان زيت زيتون"
+      },
+      {
+        "food": "onion",
+        "grams": 110,
+        "en": "1 medium onion, finely chopped",
+        "ar": "بصلة متوسطة، مفرومة ناعمًا"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, finely chopped",
+        "ar": "فصّا ثوم، مفرومان ناعمًا"
+      },
+      {
+        "food": "passata",
+        "grams": 1000,
+        "en": "1 litre (about 1 kg) tomato passata",
+        "ar": "1 لتر (نحو 1 كيلوغرام) طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "en": "1 tsp dried oregano",
+        "ar": "ملعقة صغيرة أوريغانو مجفف"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of fresh basil leaves, torn",
+        "ar": "حفنة من أوراق الريحان الطازج، مقطعة باليد"
+      },
+      {
+        "food": "ricotta",
+        "grams": 250,
+        "en": "250 g ricotta",
+        "ar": "250 غرامًا جبن ريكوتا"
+      },
+      {
+        "food": "egg",
+        "grams": 50,
+        "en": "1 egg",
+        "ar": "بيضة واحدة"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 250,
+        "en": "250 g mozzarella, diced",
+        "ar": "250 غرامًا جبن موتزاريلا، مقطعة مكعبات"
+      },
+      {
+        "food": "parmesan",
+        "grams": 80,
+        "en": "80 g Parmesan, grated",
+        "ar": "80 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "salt",
+        "grams": 20,
+        "en": "Salt and black pepper (including the pasta water)",
+        "ar": "ملح وفلفل أسود (بما في ذلك ملح ماء السلق)"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Warm the olive oil in a saucepan over medium heat and cook the onion with a pinch of salt for 6–8 minutes until soft. Add the garlic for 1 minute, then the passata, oregano and half the basil. Simmer for 20 minutes and season with salt and pepper.",
+        "Heat the oven to 200°C. Cook the pasta in salted boiling water for 3 minutes less than the packet says (it finishes cooking in the oven) and drain.",
+        "Mix the ricotta with the egg, half the Parmesan and a pinch of salt and pepper.",
+        "Toss the pasta with two-thirds of the sauce and the rest of the basil.",
+        "Spread half the pasta in a 23 × 33 cm baking dish, dot with spoonfuls of the ricotta mixture and scatter with half the mozzarella. Cover with the rest of the pasta, then the remaining sauce, mozzarella and Parmesan.",
+        "Bake for 25–30 minutes until bubbling and golden on top. Rest for 10 minutes before cutting."
+      ],
+      "ar": [
+        "سخّن زيت الزيتون في قدر على نار متوسطة، وقلّب البصل مع رشة ملح لمدة 6-8 دقائق حتى يذبل. أضف الثوم لمدة دقيقة، ثم الباساتا والأوريغانو ونصف الريحان. اتركها تغلي بهدوء 20 دقيقة، وتبّلها بالملح والفلفل.",
+        "سخّن الفرن على 200 درجة مئوية. اسلق المكرونة في ماء مملح مغلي لمدة أقل بثلاث دقائق من المذكور على العبوة (سيكتمل نضجها في الفرن)، ثم صفّها.",
+        "اخلط الريكوتا مع البيضة ونصف البارميزان ورشة ملح وفلفل.",
+        "قلّب المكرونة مع ثلثي الصلصة وباقي الريحان.",
+        "وزّع نصف المكرونة في صينية فرن مقاس 23 × 33 سم، وضع فوقها ملاعق من خليط الريكوتا، وانثر نصف الموتزاريلا. غطِّها بباقي المكرونة، ثم باقي الصلصة والموتزاريلا والبارميزان.",
+        "اخبزها لمدة 25-30 دقيقة حتى تفور ويصبح وجهها ذهبيًا. اتركها 10 دقائق قبل التقطيع."
+      ]
+    },
+    "videoSearch": {
+      "en": "pasta al forno baked ziti ricotta mozzarella recipe",
+      "ar": "طريقة عمل مكرونة بالفرن بالريكوتا والموتزاريلا على الطريقة الإيطالية"
+    },
+    "video": {
+      "en": {
+        "id": "krs3bLat-QI",
+        "channel": "Laura in the Kitchen"
+      }
+    }
+  },
+  {
+    "id": "it-orecchiette-con-broccoli",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Orecchiette con Broccoli (Apulian Pasta with Broccoli, Garlic & Anchovy)",
+      "ar": "أوريكيتي بالبروكلي على طريقة بوليا (بالثوم والأنشوجة)"
+    },
+    "servings": 4,
+    "minutes": 30,
+    "ingredients": [
+      {
+        "food": "macaroni",
+        "grams": 400,
+        "en": "400 g dried orecchiette",
+        "ar": "400 غرام مكرونة أوريكيتي مجففة"
+      },
+      {
+        "food": "broccoli",
+        "grams": 600,
+        "en": "1 large head broccoli (or broccoli rabe), cut into small florets, stalk peeled and diced",
+        "ar": "رأس بروكلي كبير (أو براعم اللفت تشيمي دي رابا)، مقطع زهيرات صغيرة، مع تقشير الساق وتقطيعه مكعبات"
+      },
+      {
+        "food": "olive oil",
+        "grams": 70,
+        "en": "5 tbsp extra-virgin olive oil",
+        "ar": "5 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, thinly sliced",
+        "ar": "3 فصوص ثوم، مقطعة شرائح رفيعة"
+      },
+      {
+        "food": "anchovy",
+        "grams": 24,
+        "en": "6 anchovy fillets in oil, drained",
+        "ar": "6 شرائح أنشوجة بالزيت، مصفّاة"
+      },
+      {
+        "food": "chili flakes",
+        "grams": 1,
+        "en": "½ tsp chilli flakes",
+        "ar": "نصف ملعقة صغيرة شطة مجروشة"
+      },
+      {
+        "food": "breadcrumb",
+        "grams": 40,
+        "en": "40 g dry breadcrumbs",
+        "ar": "40 غرامًا بقسماط مطحون"
+      },
+      {
+        "food": "salt",
+        "grams": 18,
+        "en": "1 tbsp salt, for the cooking water",
+        "ar": "ملعقة كبيرة ملح لماء السلق"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Toast the breadcrumbs in a dry frying pan over medium heat, stirring, for 3–4 minutes until golden. Tip into a bowl.",
+        "Bring a large pot of salted water to the boil. Add the orecchiette and, 5 minutes before they are done, add the broccoli to the same pot.",
+        "Meanwhile, warm the olive oil in a large frying pan over medium-low heat. Add the garlic, anchovies and chilli and stir for 2–3 minutes until the anchovies dissolve and the garlic is pale gold.",
+        "Drain the pasta and broccoli, keeping a cup of the cooking water, and tip them into the frying pan.",
+        "Toss over medium heat for 2 minutes, crushing some of the broccoli with the spoon so it turns into a green sauce that clings to the pasta. Add a splash of the cooking water if needed.",
+        "Serve sprinkled with the toasted breadcrumbs."
+      ],
+      "ar": [
+        "حمّص البقسماط في مقلاة جافة على نار متوسطة مع التقليب لمدة 3-4 دقائق حتى يصبح ذهبيًا، ثم انقله إلى وعاء.",
+        "أغلِ قدرًا كبيرًا من الماء المملح، وأضف الأوريكيتي، وقبل نضجها بخمس دقائق أضف البروكلي إلى القدر نفسه.",
+        "في هذه الأثناء، سخّن زيت الزيتون في مقلاة كبيرة على نار متوسطة إلى هادئة. أضف الثوم والأنشوجة والشطة وقلّب لمدة 2-3 دقائق حتى تذوب الأنشوجة ويصبح الثوم ذهبيًا فاتحًا.",
+        "صفِّ المكرونة والبروكلي مع الاحتفاظ بكوب من ماء السلق، ثم أضفها إلى المقلاة.",
+        "قلّب على نار متوسطة لمدة دقيقتين، مع هرس بعض البروكلي بالملعقة ليتحول إلى صلصة خضراء تلتصق بالمكرونة. أضف قليلًا من ماء السلق إذا لزم الأمر.",
+        "قدّمها مرشوشة بالبقسماط المحمّص."
+      ]
+    },
+    "videoSearch": {
+      "en": "orecchiette with broccoli and anchovies recipe",
+      "ar": "طريقة عمل مكرونة أوريكيتي بالبروكلي"
+    },
+    "video": {
+      "en": {
+        "id": "s2pm7Pg2ybc",
+        "channel": "Tobie Puttock"
+      }
+    }
+  },
+  {
+    "id": "it-lasagne-alla-napoletana",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Lasagne alla Napoletana (Neapolitan Lasagna with Beef Meatballs instead of Pork)",
+      "ar": "لازانيا نابوليتانا بكرات اللحم البقري بدلًا من لحم الخنزير"
+    },
+    "servings": 8,
+    "minutes": 180,
+    "ingredients": [
+      {
+        "food": "lasagna sheet",
+        "grams": 400,
+        "en": "400 g dried lasagne sheets",
+        "ar": "400 غرام رقائق لازانيا مجففة"
+      },
+      {
+        "food": "ground beef",
+        "grams": 400,
+        "en": "400 g minced beef, for the meatballs",
+        "ar": "400 غرام لحم بقري مفروم لكرات اللحم"
+      },
+      {
+        "food": "egg",
+        "grams": 50,
+        "en": "1 egg, for the meatballs",
+        "ar": "بيضة واحدة لكرات اللحم"
+      },
+      {
+        "food": "breadcrumb",
+        "grams": 30,
+        "en": "30 g dry breadcrumbs",
+        "ar": "30 غرامًا بقسماط مطحون"
+      },
+      {
+        "food": "parsley",
+        "grams": 10,
+        "en": "Small handful of parsley, finely chopped",
+        "ar": "حفنة صغيرة من البقدونس، مفرومة ناعمًا"
+      },
+      {
+        "food": "parmesan",
+        "grams": 110,
+        "en": "110 g Parmesan, grated (30 g for the meatballs, 80 g for layering)",
+        "ar": "110 غرامات جبن بارميزان مبشور (30 غرامًا لكرات اللحم و80 غرامًا للطبقات)"
+      },
+      {
+        "food": "vegetable oil",
+        "grams": 40,
+        "en": "Vegetable oil, for frying the meatballs (about 40 g is absorbed)",
+        "ar": "زيت نباتي لقلي كرات اللحم (يُمتص منه نحو 40 غرامًا)"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil, for the sauce",
+        "ar": "ملعقتان كبيرتان زيت زيتون للصلصة"
+      },
+      {
+        "food": "onion",
+        "grams": 110,
+        "en": "1 medium onion, finely chopped",
+        "ar": "بصلة متوسطة، مفرومة ناعمًا"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, finely chopped (2 for the sauce, 1 for the meatballs)",
+        "ar": "3 فصوص ثوم، مفرومة ناعمًا (اثنان للصلصة وواحد لكرات اللحم)"
+      },
+      {
+        "food": "tomato paste",
+        "grams": 32,
+        "en": "2 tbsp tomato paste",
+        "ar": "ملعقتان كبيرتان معجون طماطم"
+      },
+      {
+        "food": "passata",
+        "grams": 1200,
+        "en": "1.2 kg tomato passata",
+        "ar": "1.2 كيلوغرام طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "water",
+        "grams": 200,
+        "en": "1 glass (200 ml) water",
+        "ar": "كوب (200 مل) ماء"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of fresh basil leaves",
+        "ar": "حفنة من أوراق الريحان الطازج"
+      },
+      {
+        "food": "ricotta",
+        "grams": 400,
+        "en": "400 g ricotta",
+        "ar": "400 غرام جبن ريكوتا"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 300,
+        "en": "300 g mozzarella (fior di latte or provola), diced",
+        "ar": "300 غرام جبن موتزاريلا (فيور دي لاتي أو بروفولا)، مقطعة مكعبات"
+      },
+      {
+        "food": "egg",
+        "grams": 150,
+        "en": "3 hard-boiled eggs, sliced",
+        "ar": "3 بيضات مسلوقة، مقطعة شرائح"
+      },
+      {
+        "food": "salt",
+        "grams": 20,
+        "en": "Salt and black pepper (including the pasta water)",
+        "ar": "ملح وفلفل أسود (بما في ذلك ملح ماء السلق)"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the sauce: warm the olive oil in a large pot over medium heat and cook the onion for 8 minutes until soft. Add 2 of the garlic cloves and the tomato paste and stir for 1 minute, then add the passata, basil, a glass of water and a pinch of salt. Simmer gently, half-covered, for 45 minutes until rich.",
+        "Make the meatballs: mix the beef with the egg, breadcrumbs, parsley, 30 g Parmesan, the last garlic clove, salt and pepper. Roll into small balls the size of a hazelnut.",
+        "Fry the meatballs in 1 cm of hot oil over medium-high heat for 4–5 minutes, shaking the pan, until browned all over. Drain on kitchen paper and add them to the sauce for its last 15 minutes.",
+        "Mix the ricotta with two ladles of the sauce (without meatballs) until creamy. Cook the lasagne sheets in salted boiling water for half the packet time (skip this if they are no-boil sheets) and lay them on a clean cloth.",
+        "Heat the oven to 190°C. Spread a ladle of sauce in a 25 × 35 cm baking dish and cover with a layer of pasta. Spread with some ricotta cream, scatter with meatballs, mozzarella, egg slices and Parmesan, and spoon over more sauce.",
+        "Repeat the layers 3–4 times, finishing with pasta covered with sauce and Parmesan.",
+        "Cover with foil and bake for 30 minutes, then uncover and bake for 15 minutes more until bubbling at the edges. Rest for at least 20 minutes before cutting so the layers hold."
+      ],
+      "ar": [
+        "حضّر الصلصة: سخّن زيت الزيتون في قدر كبير على نار متوسطة، وقلّب البصل لمدة 8 دقائق حتى يذبل. أضف فصّين من الثوم ومعجون الطماطم وقلّب لمدة دقيقة، ثم أضف الباساتا والريحان وكوبًا من الماء ورشة ملح. اتركها تغلي على نار هادئة مع تغطية القدر جزئيًا لمدة 45 دقيقة حتى تتركز.",
+        "حضّر كرات اللحم: اخلط اللحم مع البيضة والبقسماط والبقدونس و30 غرامًا من البارميزان وفص الثوم الأخير والملح والفلفل. شكّل الخليط كرات صغيرة بحجم حبة البندق.",
+        "اقلِ كرات اللحم في زيت ساخن بعمق 1 سم على نار متوسطة إلى عالية لمدة 4-5 دقائق مع رجّ المقلاة حتى يتحمّر لونها من كل الجهات. صفّها على مناديل المطبخ، ثم أضفها إلى الصلصة في آخر 15 دقيقة من طهيها.",
+        "اخلط الريكوتا مع مغرفتين من الصلصة (دون كرات اللحم) حتى تصبح كريمية. اسلق رقائق اللازانيا في ماء مملح مغلي لنصف المدة المذكورة على العبوة (تجاوز هذه الخطوة إذا كانت من النوع الذي لا يحتاج إلى سلق)، ثم افردها على قطعة قماش نظيفة.",
+        "سخّن الفرن على 190 درجة مئوية. وزّع مغرفة من الصلصة في قاع صينية فرن مقاس 25 × 35 سم، وغطِّها بطبقة من رقائق اللازانيا. ادهنها بقليل من كريمة الريكوتا، ثم وزّع كرات اللحم والموتزاريلا وشرائح البيض والبارميزان، وأضف المزيد من الصلصة.",
+        "كرّر الطبقات 3-4 مرات، وانتهِ بطبقة من رقائق اللازانيا مغطاة بالصلصة والبارميزان.",
+        "غطِّ الصينية بورق الألومنيوم واخبزها 30 دقيقة، ثم اكشفها واخبزها 15 دقيقة أخرى حتى تفور الأطراف. اتركها 20 دقيقة على الأقل قبل التقطيع حتى تتماسك الطبقات."
+      ]
+    },
+    "videoSearch": {
+      "en": "lasagna napoletana recipe with meatballs",
+      "ar": "طريقة عمل لازانيا نابوليتانا بكرات اللحم"
+    },
+    "video": {
+      "en": {
+        "id": "F6m9ZLwsA7Y",
+        "channel": "Pasta Grammar"
+      }
+    }
+  },
+  {
+    "id": "it-pasta-alla-genovese",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Pasta alla Genovese (Neapolitan Slow-Cooked Onion & Beef Sauce, Wine-Free)",
+      "ar": "باستا ألا جينوفيزي (مكرونة نابولي بصلصة البصل واللحم المطهوة ببطء، بدون نبيذ)"
+    },
+    "servings": 6,
+    "minutes": 240,
+    "ingredients": [
+      {
+        "food": "beef",
+        "grams": 600,
+        "en": "600 g beef chuck or shin, in 2–3 large pieces",
+        "ar": "600 غرام لحم بقري (كتف أو موزة)، مقطع إلى 2-3 قطع كبيرة"
+      },
+      {
+        "food": "onion",
+        "grams": 1200,
+        "en": "1.2 kg onions (about 10 medium), thinly sliced",
+        "ar": "1.2 كيلوغرام بصل (نحو 10 بصلات متوسطة)، مقطع شرائح رفيعة"
+      },
+      {
+        "food": "carrot",
+        "grams": 80,
+        "en": "1 carrot, finely chopped",
+        "ar": "جزرة، مفرومة ناعمًا"
+      },
+      {
+        "food": "celery",
+        "grams": 50,
+        "en": "1 celery stalk, finely chopped",
+        "ar": "عود كرفس، مفروم ناعمًا"
+      },
+      {
+        "food": "olive oil",
+        "grams": 70,
+        "en": "5 tbsp olive oil",
+        "ar": "5 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "bay leaf",
+        "grams": 0.5,
+        "en": "1 bay leaf",
+        "ar": "ورقة لورا (ورق غار) واحدة"
+      },
+      {
+        "food": "beef stock",
+        "grams": 500,
+        "en": "500 ml beef stock, in place of white wine",
+        "ar": "500 مل مرق لحم بدلًا من النبيذ الأبيض"
+      },
+      {
+        "food": "paccheri",
+        "grams": 500,
+        "en": "500 g ziti (broken by hand), paccheri or rigatoni",
+        "ar": "500 غرام مكرونة زيتي (مكسّرة باليد) أو باكيري أو ريغاتوني"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "en": "60 g Parmesan, grated",
+        "ar": "60 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "salt",
+        "grams": 20,
+        "en": "Salt and black pepper (including the pasta water)",
+        "ar": "ملح وفلفل أسود (بما في ذلك ملح ماء السلق)"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Heat the olive oil in a large heavy pot over medium heat. Add the carrot and celery and cook for 3 minutes, then add the beef pieces and brown them on all sides for 5 minutes.",
+        "Add all the onions, the bay leaf and a good pinch of salt. Stir, cover with the lid and cook over low heat for 30 minutes, until the onions release their liquid and collapse.",
+        "Uncover, pour in 250 ml of the stock and keep cooking very gently, partly covered, for 2½–3 hours. Stir every 15–20 minutes and add a splash of stock whenever it starts to stick. The onions should turn into a thick, sweet, amber-coloured cream.",
+        "Lift out the beef, shred it with two forks and return it to the sauce (or serve it on its own as a second course, as Neapolitans do). Remove the bay leaf and season with salt and plenty of pepper.",
+        "Cook the pasta in salted boiling water until al dente, keeping a cup of the cooking water.",
+        "Drain and toss the pasta with the sauce over low heat for 1–2 minutes, adding a little cooking water to loosen it. Serve with the Parmesan and a grind of black pepper."
+      ],
+      "ar": [
+        "سخّن زيت الزيتون في قدر كبير ثقيل على نار متوسطة. أضف الجزر والكرفس وقلّبهما 3 دقائق، ثم أضف قطع اللحم وحمّرها من كل الجهات لمدة 5 دقائق.",
+        "أضف البصل كله وورقة اللورا ورشة ملح وفيرة. قلّب، وغطِّ القدر، واتركه على نار هادئة 30 دقيقة حتى يُخرج البصل ماءه ويذبل تمامًا.",
+        "اكشف القدر، وأضف 250 مل من المرق، وواصل الطهي على نار هادئة جدًا مع تغطية القدر جزئيًا لمدة ساعتين ونصف إلى 3 ساعات. قلّب كل 15-20 دقيقة، وأضف قليلًا من المرق كلما بدأ يلتصق بالقاع. يجب أن يتحول البصل إلى كريمة كثيفة حلوة بلون كهرماني.",
+        "أخرج اللحم وفتّته بشوكتين وأعده إلى الصلصة (أو قدّمه وحده طبقًا ثانيًا كما يفعل أهل نابولي). أخرج ورقة اللورا، وتبّل بالملح وكمية وفيرة من الفلفل.",
+        "اسلق المكرونة في ماء مملح مغلي حتى تنضج مع بقاء قوامها متماسكًا، واحتفظ بكوب من ماء السلق.",
+        "صفّها وقلّبها مع الصلصة على نار هادئة لمدة 1-2 دقيقة، مع إضافة قليل من ماء السلق لتخفيفها. قدّمها مع البارميزان ورشة فلفل أسود."
+      ]
+    },
+    "videoSearch": {
+      "en": "pasta alla genovese neapolitan onion ragu recipe",
+      "ar": "طريقة عمل باستا جينوفيزي بالبصل واللحم"
+    },
+    "video": {
+      "en": {
+        "id": "tygCSchzn8M",
+        "channel": "Home Kitchen Italy"
+      }
+    }
+  },
+  {
+    "id": "it-risotto-ai-funghi",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Risotto ai Funghi (Mushroom Risotto, Wine-Free)",
+      "ar": "ريزوتو آي فونغي بالمشروم (بدون نبيذ)"
+    },
+    "servings": 4,
+    "minutes": 45,
+    "ingredients": [
+      {
+        "food": "paella rice",
+        "grams": 320,
+        "en": "320 g risotto rice (Arborio or Carnaroli)",
+        "ar": "320 غرامًا أرز ريزوتو (أربوريو أو كارنارولي)"
+      },
+      {
+        "food": "chestnut mushroom",
+        "grams": 250,
+        "en": "250 g chestnut (cremini) mushrooms, sliced",
+        "ar": "250 غرامًا مشروم بني (كريميني)، مقطع شرائح"
+      },
+      {
+        "food": "wild mushroom",
+        "grams": 150,
+        "en": "150 g oyster or other wild mushrooms, torn",
+        "ar": "150 غرامًا مشروم محاري أو أي مشروم بري، مقطّع باليد"
+      },
+      {
+        "food": "vegetable stock",
+        "grams": 1200,
+        "en": "1.2 litres hot vegetable stock",
+        "ar": "1.2 لتر مرق خضار ساخن"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil",
+        "ar": "ملعقتان كبيرتان زيت زيتون"
+      },
+      {
+        "food": "butter",
+        "grams": 40,
+        "en": "40 g butter, divided",
+        "ar": "40 غرامًا زبدة، مقسّمة"
+      },
+      {
+        "food": "shallot",
+        "grams": 80,
+        "en": "2 shallots (or 1 small onion), finely chopped",
+        "ar": "حبتا بصل شالوت (أو بصلة صغيرة)، مفرومة ناعمًا"
+      },
+      {
+        "food": "garlic",
+        "grams": 3,
+        "en": "1 garlic clove, finely chopped",
+        "ar": "فص ثوم، مفروم ناعمًا"
+      },
+      {
+        "food": "lemon",
+        "grams": 10,
+        "en": "2 tsp lemon juice, in place of wine",
+        "ar": "ملعقتان صغيرتان عصير ليمون بدلًا من النبيذ"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "en": "60 g Parmesan, grated",
+        "ar": "60 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "parsley",
+        "grams": 10,
+        "en": "Small handful of parsley, chopped",
+        "ar": "حفنة صغيرة من البقدونس، مفرومة"
+      },
+      {
+        "food": "salt",
+        "grams": 4,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Keep the stock hot in a saucepan over low heat.",
+        "Heat the olive oil and 10 g of the butter in a frying pan over high heat and cook the mushrooms for 6–8 minutes until golden and their liquid has evaporated. Add the garlic for the last minute, season and set aside.",
+        "In a wide, heavy pan, cook the shallots in another 10 g of butter over medium-low heat for 4–5 minutes until soft and translucent.",
+        "Add the rice and toast it for 2 minutes, stirring, until the grains look glassy at the edges. Add the lemon juice and stir until it evaporates.",
+        "Add a ladle of hot stock and stir until almost absorbed. Keep adding stock a ladle at a time, stirring often, for 16–18 minutes. Stir in two-thirds of the mushrooms halfway through.",
+        "When the rice is creamy but still has a slight bite, take the pan off the heat. Beat in the remaining 20 g butter and the Parmesan, cover and rest for 2 minutes. It should flow slowly when you tilt the pan; add a splash of stock if it is too thick.",
+        "Serve topped with the remaining mushrooms and the parsley."
+      ],
+      "ar": [
+        "أبقِ المرق ساخنًا في قدر على نار هادئة.",
+        "سخّن زيت الزيتون و10 غرامات من الزبدة في مقلاة على نار عالية، وقلّب المشروم لمدة 6-8 دقائق حتى يصبح ذهبيًا ويتبخر ماؤه. أضف الثوم في الدقيقة الأخيرة، وتبّل، ثم ضعه جانبًا.",
+        "في قدر عريض ثقيل، قلّب البصل في 10 غرامات أخرى من الزبدة على نار متوسطة إلى هادئة لمدة 4-5 دقائق حتى يذبل ويصبح شفافًا.",
+        "أضف الأرز وحمّصه لمدة دقيقتين مع التقليب حتى تبدو أطراف الحبوب لامعة شفافة. أضف عصير الليمون وقلّب حتى يتبخر.",
+        "أضف مغرفة من المرق الساخن وقلّب حتى يتشربها الأرز تقريبًا. واصل إضافة المرق مغرفة تلو الأخرى مع التقليب المتكرر لمدة 16-18 دقيقة. أضف ثلثي المشروم في منتصف المدة.",
+        "عندما يصبح الأرز كريميًا مع بقاء قوامه متماسكًا قليلًا، ارفع القدر عن النار. أضف باقي الزبدة (20 غرامًا) والبارميزان وقلّب بقوة، ثم غطِّه واتركه دقيقتين. يجب أن ينساب ببطء عند إمالة القدر؛ أضف قليلًا من المرق إذا كان كثيفًا.",
+        "قدّمه مع باقي المشروم والبقدونس على الوجه."
+      ]
+    },
+    "videoSearch": {
+      "en": "risotto ai funghi mushroom risotto recipe",
+      "ar": "طريقة عمل ريزوتو المشروم"
+    },
+    "video": {
+      "en": {
+        "id": "TIBsD4BHtd8",
+        "channel": "No Frills Kitchen"
+      },
+      "ar": {
+        "id": "Gub-BEOJl6U",
+        "channel": "ElWatan News - جريدة الوطن"
+      }
+    }
+  },
+  {
+    "id": "it-risotto-alla-milanese",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Risotto alla Milanese (Saffron Risotto, Wine-Free)",
+      "ar": "ريزوتو ألا ميلانيزي بالزعفران (بدون نبيذ)"
+    },
+    "servings": 4,
+    "minutes": 35,
+    "ingredients": [
+      {
+        "food": "paella rice",
+        "grams": 320,
+        "en": "320 g Carnaroli or Arborio rice",
+        "ar": "320 غرامًا أرز كارنارولي أو أربوريو"
+      },
+      {
+        "food": "beef stock",
+        "grams": 1200,
+        "en": "1.2 litres hot beef stock",
+        "ar": "1.2 لتر مرق لحم ساخن"
+      },
+      {
+        "food": "saffron",
+        "grams": 0.3,
+        "en": "A generous pinch of saffron threads (about 0.3 g)",
+        "ar": "رشة كبيرة من خيوط الزعفران (نحو 0.3 غرام)"
+      },
+      {
+        "food": "onion",
+        "grams": 80,
+        "en": "1 small onion, very finely chopped",
+        "ar": "بصلة صغيرة، مفرومة ناعمًا جدًا"
+      },
+      {
+        "food": "butter",
+        "grams": 60,
+        "en": "60 g cold butter, divided (20 g to start, 40 g to finish)",
+        "ar": "60 غرامًا زبدة باردة، مقسّمة (20 غرامًا للبداية و40 غرامًا للنهاية)"
+      },
+      {
+        "food": "white wine vinegar",
+        "grams": 5,
+        "en": "1 tsp white wine vinegar, in place of wine",
+        "ar": "ملعقة صغيرة خل عنب أبيض بدلًا من النبيذ"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "en": "60 g Parmesan, grated",
+        "ar": "60 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "salt",
+        "grams": 3,
+        "en": "Salt, to taste",
+        "ar": "ملح حسب الرغبة"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Keep the stock hot in a saucepan. Put the saffron in a cup with a ladle of the hot stock and leave it to steep.",
+        "Melt 20 g of the butter in a wide, heavy pan over medium-low heat and cook the onion for 5 minutes until soft and translucent, not browned.",
+        "Add the rice and toast for 2 minutes, stirring, until the grains are hot and glassy at the edges. Add the vinegar and stir until it evaporates.",
+        "Add the stock a ladle at a time, stirring often and waiting until each ladle is almost absorbed before adding the next.",
+        "After 10 minutes, pour in the saffron with its liquid. Keep cooking and adding stock for 6–8 minutes more, until the rice is tender with a slight bite and the risotto is creamy and golden-yellow.",
+        "Take off the heat, beat in the remaining cold butter and the Parmesan, taste for salt, cover and rest for 2 minutes. Serve on warm plates; it should spread gently on the plate."
+      ],
+      "ar": [
+        "أبقِ المرق ساخنًا في قدر. ضع الزعفران في كوب مع مغرفة من المرق الساخن واتركه لينقع.",
+        "ذوّب 20 غرامًا من الزبدة في قدر عريض ثقيل على نار متوسطة إلى هادئة، وقلّب البصل لمدة 5 دقائق حتى يذبل ويصبح شفافًا دون أن يتغير لونه.",
+        "أضف الأرز وحمّصه لمدة دقيقتين مع التقليب حتى تسخن الحبوب وتبدو أطرافها لامعة شفافة. أضف الخل وقلّب حتى يتبخر.",
+        "أضف المرق مغرفة تلو الأخرى مع التقليب المتكرر، وانتظر حتى يتشرب الأرز كل مغرفة تقريبًا قبل إضافة التالية.",
+        "بعد 10 دقائق، أضف الزعفران مع سائله. واصل الطهي وإضافة المرق لمدة 6-8 دقائق أخرى حتى ينضج الأرز مع بقاء قوامه متماسكًا قليلًا ويصبح الريزوتو كريميًا بلون أصفر ذهبي.",
+        "ارفعه عن النار، وأضف باقي الزبدة الباردة والبارميزان وقلّب بقوة، وتذوّق الملح، ثم غطِّه واتركه دقيقتين. قدّمه في أطباق دافئة، ويجب أن ينبسط برفق في الطبق."
+      ]
+    },
+    "videoSearch": {
+      "en": "risotto alla milanese saffron recipe",
+      "ar": "طريقة عمل ريزوتو ميلانيزي بالزعفران"
+    },
+    "video": {
+      "en": {
+        "id": "Tu9NKIDEirE",
+        "channel": "GialloZafferano"
+      },
+      "ar": {
+        "id": "pingo76rzCQ",
+        "channel": "Soss Cuisine"
+      }
+    }
+  },
+  {
+    "id": "it-risotto-primavera",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Risotto Primavera (Spring Vegetable Risotto, Wine-Free)",
+      "ar": "ريزوتو بريمافيرا بخضار الربيع (بدون نبيذ)"
+    },
+    "servings": 4,
+    "minutes": 45,
+    "ingredients": [
+      {
+        "food": "paella rice",
+        "grams": 320,
+        "en": "320 g risotto rice (Arborio or Carnaroli)",
+        "ar": "320 غرامًا أرز ريزوتو (أربوريو أو كارنارولي)"
+      },
+      {
+        "food": "vegetable stock",
+        "grams": 1300,
+        "en": "1.3 litres hot vegetable stock",
+        "ar": "1.3 لتر مرق خضار ساخن"
+      },
+      {
+        "food": "asparagus",
+        "grams": 200,
+        "en": "200 g asparagus, woody ends snapped off, cut into 3 cm pieces (tips kept aside)",
+        "ar": "200 غرام هليون، بعد كسر أطرافه الخشبية، مقطع قطعًا بطول 3 سم (مع الاحتفاظ بالرؤوس جانبًا)"
+      },
+      {
+        "food": "zucchini",
+        "grams": 200,
+        "en": "1 medium zucchini, finely diced",
+        "ar": "حبة كوسة متوسطة، مقطعة مكعبات صغيرة"
+      },
+      {
+        "food": "pea",
+        "grams": 150,
+        "en": "150 g frozen peas",
+        "ar": "150 غرامًا بازلاء (بسلة) مجمدة"
+      },
+      {
+        "food": "shallot",
+        "grams": 80,
+        "en": "2 shallots (or 1 small onion), finely chopped",
+        "ar": "حبتا بصل شالوت (أو بصلة صغيرة)، مفرومة ناعمًا"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil",
+        "ar": "ملعقتان كبيرتان زيت زيتون"
+      },
+      {
+        "food": "lemon",
+        "grams": 15,
+        "en": "1 tbsp lemon juice, in place of wine",
+        "ar": "ملعقة كبيرة عصير ليمون بدلًا من النبيذ"
+      },
+      {
+        "food": null,
+        "grams": 2,
+        "en": "Grated zest of ½ lemon",
+        "ar": "بشر نصف ليمونة"
+      },
+      {
+        "food": "butter",
+        "grams": 30,
+        "en": "30 g cold butter, to finish",
+        "ar": "30 غرامًا زبدة باردة للنهاية"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "en": "60 g Parmesan, grated",
+        "ar": "60 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "basil",
+        "grams": 5,
+        "en": "A few basil or mint leaves, torn",
+        "ar": "بضع أوراق ريحان أو نعناع، مقطعة باليد"
+      },
+      {
+        "food": "salt",
+        "grams": 4,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Keep the stock hot in a saucepan. Blanch the asparagus pieces and tips in the simmering stock for 2 minutes, lift them out with a slotted spoon and set aside.",
+        "Heat the olive oil in a wide, heavy pan over medium-low heat and cook the shallots for 4–5 minutes until soft and translucent.",
+        "Add the rice and toast for 2 minutes, stirring, until the grains look glassy at the edges. Add the lemon juice and stir until it evaporates.",
+        "Add the stock a ladle at a time, stirring often and letting each ladle be almost absorbed before adding the next.",
+        "After 10 minutes, stir in the zucchini. After 14 minutes, add the peas and the asparagus pieces (keep the tips for the top).",
+        "When the rice is tender with a slight bite (16–18 minutes in all), take the pan off the heat. Beat in the cold butter, Parmesan and lemon zest, season, cover and rest for 2 minutes.",
+        "Serve topped with the asparagus tips and the torn basil or mint."
+      ],
+      "ar": [
+        "أبقِ المرق ساخنًا في قدر. اسلق قطع الهليون ورؤوسه في المرق المغلي لمدة دقيقتين، ثم ارفعها بالمصفاة وضعها جانبًا.",
+        "سخّن زيت الزيتون في قدر عريض ثقيل على نار متوسطة إلى هادئة، وقلّب البصل لمدة 4-5 دقائق حتى يذبل ويصبح شفافًا.",
+        "أضف الأرز وحمّصه لمدة دقيقتين مع التقليب حتى تبدو أطراف الحبوب لامعة شفافة. أضف عصير الليمون وقلّب حتى يتبخر.",
+        "أضف المرق مغرفة تلو الأخرى مع التقليب المتكرر، واترك الأرز يتشرب كل مغرفة تقريبًا قبل إضافة التالية.",
+        "بعد 10 دقائق، أضف الكوسة. وبعد 14 دقيقة، أضف البازلاء وقطع الهليون (واحتفظ بالرؤوس للتزيين).",
+        "عندما ينضج الأرز مع بقاء قوامه متماسكًا قليلًا (16-18 دقيقة إجمالًا)، ارفع القدر عن النار. أضف الزبدة الباردة والبارميزان وبشر الليمون وقلّب بقوة، وتبّل، ثم غطِّه واتركه دقيقتين.",
+        "قدّمه مع رؤوس الهليون وأوراق الريحان أو النعناع المقطعة على الوجه."
+      ]
+    },
+    "videoSearch": {
+      "en": "risotto primavera spring vegetable risotto recipe",
+      "ar": "طريقة عمل ريزوتو بالخضار"
+    },
+    "video": {
+      "en": {
+        "id": "JjtPKmz-Ses",
+        "channel": "Citalia"
+      },
+      "ar": {
+        "id": "kdXrgfiwaGg",
+        "channel": "chef amgad gendy الشيف امجد جندى"
+      }
+    }
+  },
+  {
+    "id": "it-focaccia-genovese",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Focaccia Genovese (Ligurian Olive Oil Flatbread)",
+      "ar": "فوكاتشيا جينوفيزي (خبز ليغوريا بزيت الزيتون)"
+    },
+    "servings": 8,
+    "minutes": 240,
+    "ingredients": [
+      {
+        "food": "bread flour",
+        "grams": 500,
+        "en": "500 g strong bread flour",
+        "ar": "500 غرام دقيق خبز قوي (عالي البروتين)"
+      },
+      {
+        "food": "water",
+        "grams": 395,
+        "en": "350 ml lukewarm water for the dough, plus 3 tbsp for the brine",
+        "ar": "350 مل ماء فاتر للعجين، و3 ملاعق كبيرة للتغطية"
+      },
+      {
+        "food": "yeast",
+        "grams": 7,
+        "en": "1 sachet (7 g) instant dried yeast",
+        "ar": "كيس خميرة فورية جافة (7 غرامات)"
+      },
+      {
+        "food": "honey",
+        "grams": 7,
+        "en": "1 tsp honey or sugar",
+        "ar": "ملعقة صغيرة عسل أو سكر"
+      },
+      {
+        "food": "olive oil",
+        "grams": 112,
+        "en": "8 tbsp extra-virgin olive oil (3 for the dough, 2 for the tray, 3 for the brine)",
+        "ar": "8 ملاعق كبيرة زيت زيتون بكر ممتاز (3 للعجين و2 للصينية و3 للتغطية)"
+      },
+      {
+        "food": "salt",
+        "grams": 16,
+        "en": "2 tsp fine salt for the dough, plus 1 tsp coarse sea salt for the top",
+        "ar": "ملعقتان صغيرتان ملح ناعم للعجين، وملعقة صغيرة ملح بحري خشن للوجه"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Dissolve the yeast and honey in the 350 ml lukewarm water. Put the flour in a large bowl, pour in the water and mix, then add 3 tbsp olive oil and the fine salt.",
+        "Knead for 8–10 minutes (or 5 minutes in a stand mixer) until smooth, soft and slightly sticky. Cover and leave to rise in a warm place for 1½–2 hours, until doubled.",
+        "Pour 2 tbsp olive oil into a 30 × 40 cm baking tray. Turn the dough onto it and gently stretch it towards the corners with oiled fingers; if it springs back, rest it for 10 minutes and stretch again.",
+        "Cover and leave to rise for another 45–60 minutes, until puffy.",
+        "Heat the oven to 230°C. Whisk the last 3 tbsp olive oil with 3 tbsp water into a cloudy brine. Press your fingertips firmly into the dough all over to make deep dimples, pour the brine over and sprinkle with the coarse salt.",
+        "Leave for 15–20 minutes more, then bake on a low shelf for 18–22 minutes, until golden on top and crisp underneath, with the dimples still pale and moist.",
+        "Cool for 10 minutes on a rack and cut into 8 pieces. It is best eaten the same day."
+      ],
+      "ar": [
+        "ذوّب الخميرة والعسل في 350 مل من الماء الفاتر. ضع الدقيق في وعاء كبير، وصبّ عليه الماء واخلط، ثم أضف 3 ملاعق كبيرة من زيت الزيتون والملح الناعم.",
+        "اعجن لمدة 8-10 دقائق (أو 5 دقائق بالعجّانة) حتى تصبح العجينة ناعمة وطرية ولزجة قليلًا. غطِّها واتركها تتخمر في مكان دافئ لمدة ساعة ونصف إلى ساعتين حتى يتضاعف حجمها.",
+        "صبّ ملعقتين كبيرتين من زيت الزيتون في صينية مقاس 30 × 40 سم. ضع العجينة فيها وافردها برفق نحو الأركان بأصابع مدهونة بالزيت؛ وإذا انكمشت، فاتركها 10 دقائق ثم افردها مجددًا.",
+        "غطِّها واتركها تتخمر مرة أخرى لمدة 45-60 دقيقة حتى تنتفخ.",
+        "سخّن الفرن على 230 درجة مئوية. اخفق آخر 3 ملاعق كبيرة من زيت الزيتون مع 3 ملاعق كبيرة من الماء حتى يصبح الخليط معكّرًا. اضغط بأطراف أصابعك بقوة على سطح العجينة كله لتصنع حفرًا عميقة، ثم صبّ الخليط فوقها ورشّ الملح الخشن.",
+        "اتركها 15-20 دقيقة أخرى، ثم اخبزها على الرف السفلي لمدة 18-22 دقيقة حتى يصبح وجهها ذهبيًا وقاعها مقرمشًا، مع بقاء الحفر فاتحة اللون وطرية.",
+        "اتركها تبرد 10 دقائق على شبكة، ثم قطّعها 8 قطع. يُفضّل تناولها في اليوم نفسه."
+      ]
+    },
+    "videoSearch": {
+      "en": "focaccia genovese recipe",
+      "ar": "طريقة عمل خبز الفوكاتشيا الإيطالي"
+    },
+    "video": {
+      "en": {
+        "id": "RNycFp9C054",
+        "channel": "DW Food"
+      },
+      "ar": {
+        "id": "I1a_RiAKaR8",
+        "channel": "Chef Jacob الشيف يعقوب"
+      }
+    }
+  },
+  {
+    "id": "it-calzone-napoletano",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Calzone Napoletano (Ricotta, Mozzarella & Beef Salami instead of Pork)",
+      "ar": "كالزوني نابوليتانو بالريكوتا والموتزاريلا والسلامي البقري بدلًا من لحم الخنزير"
+    },
+    "servings": 4,
+    "minutes": 180,
+    "ingredients": [
+      {
+        "food": "bread flour",
+        "grams": 500,
+        "en": "500 g strong bread flour (or 00 pizza flour)",
+        "ar": "500 غرام دقيق خبز قوي (أو دقيق بيتزا نوع 00)"
+      },
+      {
+        "food": "water",
+        "grams": 325,
+        "en": "325 ml lukewarm water",
+        "ar": "325 مل ماء فاتر"
+      },
+      {
+        "food": "yeast",
+        "grams": 4,
+        "en": "4 g instant dried yeast (about 1 tsp)",
+        "ar": "4 غرامات خميرة فورية جافة (نحو ملعقة صغيرة)"
+      },
+      {
+        "food": "salt",
+        "grams": 12,
+        "en": "2 tsp salt",
+        "ar": "ملعقتان صغيرتان ملح"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil (1 for the dough, 1 for brushing)",
+        "ar": "ملعقتان كبيرتان زيت زيتون (واحدة للعجين وواحدة للدهن)"
+      },
+      {
+        "food": "ricotta",
+        "grams": 250,
+        "en": "250 g ricotta, drained",
+        "ar": "250 غرامًا جبن ريكوتا، مصفّى"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 200,
+        "en": "200 g mozzarella, well drained and diced",
+        "ar": "200 غرام جبن موتزاريلا، مصفّاة جيدًا ومقطعة مكعبات"
+      },
+      {
+        "food": "beef salami",
+        "grams": 100,
+        "en": "100 g beef salami, diced",
+        "ar": "100 غرام سلامي بقري، مقطع مكعبات"
+      },
+      {
+        "food": "parmesan",
+        "grams": 30,
+        "en": "30 g Parmesan, grated",
+        "ar": "30 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "black pepper",
+        "grams": 1,
+        "en": "½ tsp black pepper",
+        "ar": "نصف ملعقة صغيرة فلفل أسود"
+      },
+      {
+        "food": "basil",
+        "grams": 5,
+        "en": "A few basil leaves",
+        "ar": "بضع أوراق ريحان"
+      },
+      {
+        "food": "passata",
+        "grams": 100,
+        "en": "100 g tomato passata, for the top",
+        "ar": "100 غرام طماطم مهروسة مصفّاة (باساتا) للوجه"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the dough: dissolve the yeast in the water, add it to the flour and mix, then add the salt and 1 tbsp olive oil. Knead for 10 minutes until smooth and elastic.",
+        "Divide into 4 balls, put them on a floured tray, cover and leave to rise for 2 hours, until doubled.",
+        "Heat the oven as hot as it goes (250–275°C) with a baking tray or pizza stone inside. Mix the ricotta with the mozzarella, salami, Parmesan, pepper and torn basil.",
+        "On a floured surface, stretch each ball by hand into a 25 cm round. Spread a quarter of the filling over one half, leaving a 2 cm border.",
+        "Fold the other half over to make a half-moon, press the edges firmly together and roll them over to seal. Cut a small slit on top to let the steam out.",
+        "Brush with the remaining oil and spread a spoonful of passata on each. Slide onto the hot tray and bake for 12–15 minutes until puffed and golden brown.",
+        "Rest for 3–4 minutes before eating: the filling is very hot."
+      ],
+      "ar": [
+        "حضّر العجين: ذوّب الخميرة في الماء، وأضفه إلى الدقيق واخلط، ثم أضف الملح وملعقة كبيرة من زيت الزيتون. اعجن لمدة 10 دقائق حتى تصبح العجينة ناعمة ومرنة.",
+        "قسّمها إلى 4 كرات، وضعها في صينية مرشوشة بالدقيق، وغطِّها واتركها تتخمر ساعتين حتى يتضاعف حجمها.",
+        "سخّن الفرن على أعلى حرارة (250-275 درجة مئوية) مع صينية أو حجر بيتزا بداخله. اخلط الريكوتا مع الموتزاريلا والسلامي والبارميزان والفلفل والريحان المقطع.",
+        "على سطح مرشوش بالدقيق، افرد كل كرة باليد على شكل دائرة قطرها 25 سم. وزّع ربع الحشوة على نصف الدائرة، مع ترك حافة 2 سم.",
+        "اطوِ النصف الآخر فوقها لتصنع شكل هلال، واضغط الأطراف جيدًا ولفّها للداخل لإحكام إغلاقها. اصنع شقًا صغيرًا في الوجه ليخرج البخار.",
+        "ادهنها بباقي الزيت، وضع ملعقة من الباساتا على وجه كل قطعة. انقلها إلى الصينية الساخنة واخبزها لمدة 12-15 دقيقة حتى تنتفخ ويصبح لونها ذهبيًا بنيًا.",
+        "اتركها 3-4 دقائق قبل الأكل، فالحشوة تكون شديدة السخونة."
+      ]
+    },
+    "videoSearch": {
+      "en": "calzone napoletano recipe ricotta mozzarella",
+      "ar": "طريقة عمل الكالزوني الإيطالي"
+    },
+    "video": {
+      "en": {
+        "id": "VoKrX8Y0rb8",
+        "channel": "Vito Iacopelli"
+      }
+    }
+  },
+  {
+    "id": "it-sfincione-palermitano",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Sfincione Palermitano (Thick Sicilian Pizza with Onion, Tomato & Anchovy)",
+      "ar": "سفينتشوني باليرمو (بيتزا صقلية سميكة بالبصل والطماطم والأنشوجة)"
+    },
+    "servings": 8,
+    "minutes": 180,
+    "ingredients": [
+      {
+        "food": "flour",
+        "grams": 250,
+        "en": "250 g plain flour",
+        "ar": "250 غرامًا دقيق أبيض"
+      },
+      {
+        "food": "semolina",
+        "grams": 250,
+        "en": "250 g fine durum wheat semolina (semola rimacinata)",
+        "ar": "250 غرامًا سميد ناعم من القمح الصلب (سيمولا ريماتشيناتا)"
+      },
+      {
+        "food": "water",
+        "grams": 350,
+        "en": "350 ml lukewarm water",
+        "ar": "350 مل ماء فاتر"
+      },
+      {
+        "food": "yeast",
+        "grams": 7,
+        "en": "1 sachet (7 g) instant dried yeast",
+        "ar": "كيس خميرة فورية جافة (7 غرامات)"
+      },
+      {
+        "food": "sugar",
+        "grams": 4,
+        "en": "1 tsp sugar",
+        "ar": "ملعقة صغيرة سكر"
+      },
+      {
+        "food": "salt",
+        "grams": 12,
+        "en": "2 tsp salt, plus a pinch for the sauce",
+        "ar": "ملعقتان صغيرتان ملح، ورشة للصلصة"
+      },
+      {
+        "food": "olive oil",
+        "grams": 112,
+        "en": "8 tbsp olive oil (2 for the dough, 3 for the sauce, 1 for the tray, 2 for the top)",
+        "ar": "8 ملاعق كبيرة زيت زيتون (2 للعجين و3 للصلصة و1 للصينية و2 للوجه)"
+      },
+      {
+        "food": "onion",
+        "grams": 400,
+        "en": "2 large onions, thinly sliced",
+        "ar": "بصلتان كبيرتان، مقطعتان شرائح رفيعة"
+      },
+      {
+        "food": "tomato",
+        "grams": 400,
+        "en": "1 can (400 g) peeled tomatoes, crushed",
+        "ar": "علبة (400 غرام) طماطم مقشرة، مهروسة"
+      },
+      {
+        "food": "tomato paste",
+        "grams": 16,
+        "en": "1 tbsp tomato paste",
+        "ar": "ملعقة كبيرة معجون طماطم"
+      },
+      {
+        "food": "anchovy",
+        "grams": 32,
+        "en": "8 anchovy fillets in oil, drained and chopped",
+        "ar": "8 شرائح أنشوجة بالزيت، مصفّاة ومفرومة"
+      },
+      {
+        "food": "provolone",
+        "grams": 150,
+        "en": "150 g caciocavallo or provolone (100 g diced, 50 g grated)",
+        "ar": "150 غرامًا جبن كاتشوكافالو أو بروفولوني (100 غرام مكعبات و50 غرامًا مبشور)"
+      },
+      {
+        "food": "breadcrumb",
+        "grams": 60,
+        "en": "60 g dry breadcrumbs",
+        "ar": "60 غرامًا بقسماط مطحون"
+      },
+      {
+        "food": "oregano",
+        "grams": 2,
+        "en": "2 tsp dried oregano",
+        "ar": "ملعقتان صغيرتان أوريغانو مجفف"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Mix the flour, semolina, yeast and sugar, add the water and 2 tbsp olive oil and knead for 8 minutes, adding the salt halfway, until soft and slightly sticky. Cover and leave to rise for 1½ hours, until doubled.",
+        "Meanwhile, make the sauce: cook the onions in 3 tbsp olive oil with a pinch of salt over low heat for 15 minutes, until soft and sweet. Add half the anchovies, the tomatoes and the tomato paste and simmer for 20 minutes until thick. Let it cool.",
+        "Oil a 30 × 40 cm tray with 1 tbsp olive oil and stretch the dough in it with oiled fingers. Push the diced cheese and the remaining anchovies into the dough here and there. Cover and leave to rise for 40 minutes more.",
+        "Heat the oven to 220°C. Toast the breadcrumbs in a dry pan until golden, then mix with the grated cheese and the oregano.",
+        "Spread the onion and tomato sauce thickly over the dough right to the edges, scatter with the breadcrumb mixture and drizzle with the last 2 tbsp olive oil.",
+        "Bake on the lower shelf for 25–30 minutes, until the base is crisp and golden underneath. Rest for 10 minutes and cut into squares; it is also very good warm or at room temperature."
+      ],
+      "ar": [
+        "اخلط الدقيق والسميد والخميرة والسكر، وأضف الماء وملعقتين كبيرتين من زيت الزيتون، واعجن لمدة 8 دقائق مع إضافة الملح في منتصف العجن، حتى تصبح العجينة طرية ولزجة قليلًا. غطِّها واتركها تتخمر ساعة ونصفًا حتى يتضاعف حجمها.",
+        "في هذه الأثناء، حضّر الصلصة: قلّب البصل في 3 ملاعق كبيرة من زيت الزيتون مع رشة ملح على نار هادئة لمدة 15 دقيقة حتى يطرى ويحلو. أضف نصف الأنشوجة والطماطم ومعجون الطماطم، واتركها تغلي بهدوء 20 دقيقة حتى تتكاثف. اتركها تبرد.",
+        "ادهن صينية مقاس 30 × 40 سم بملعقة كبيرة من زيت الزيتون، وافرد العجينة فيها بأصابع مدهونة بالزيت. اغرس مكعبات الجبن وباقي الأنشوجة في العجينة هنا وهناك. غطِّها واتركها تتخمر 40 دقيقة أخرى.",
+        "سخّن الفرن على 220 درجة مئوية. حمّص البقسماط في مقلاة جافة حتى يصبح ذهبيًا، ثم اخلطه مع الجبن المبشور والأوريغانو.",
+        "وزّع صلصة البصل والطماطم بطبقة سميكة على العجينة حتى الأطراف، وانثر فوقها خليط البقسماط، ورشّ آخر ملعقتين كبيرتين من زيت الزيتون.",
+        "اخبزها على الرف السفلي لمدة 25-30 دقيقة حتى يصبح قاعها مقرمشًا ذهبيًا. اتركها 10 دقائق ثم قطّعها مربعات، وهي لذيذة أيضًا دافئة أو بحرارة الغرفة."
+      ]
+    },
+    "videoSearch": {
+      "en": "sfincione palermitano recipe",
+      "ar": "طريقة عمل بيتزا سفينتشوني الصقلية"
+    },
+    "video": {
+      "en": {
+        "id": "OQV3nSUaH2E",
+        "channel": "CityBite Notes"
+      }
+    }
+  },
+  {
+    "id": "it-piadina-romagnola",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Piadina Romagnola with Soft Cheese & Arugula (Olive Oil instead of Lard)",
+      "ar": "بيادينا رومانيولا بالجبن الطري والجرجير (بزيت الزيتون بدلًا من شحم الخنزير)"
+    },
+    "servings": 4,
+    "minutes": 50,
+    "ingredients": [
+      {
+        "food": "flour",
+        "grams": 400,
+        "en": "400 g plain flour",
+        "ar": "400 غرام دقيق أبيض"
+      },
+      {
+        "food": "olive oil",
+        "grams": 50,
+        "en": "50 g extra-virgin olive oil (about 3½ tbsp), in place of lard",
+        "ar": "50 غرامًا زيت زيتون بكر ممتاز (نحو 3 ملاعق كبيرة ونصف) بدلًا من الشحم"
+      },
+      {
+        "food": "water",
+        "grams": 180,
+        "en": "180 ml lukewarm water",
+        "ar": "180 مل ماء فاتر"
+      },
+      {
+        "food": "baking powder",
+        "grams": 4,
+        "en": "1 tsp baking powder",
+        "ar": "ملعقة صغيرة بيكنج بودر"
+      },
+      {
+        "food": "salt",
+        "grams": 9,
+        "en": "1½ tsp salt",
+        "ar": "ملعقة صغيرة ونصف ملح"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 200,
+        "en": "200 g soft fresh cheese (stracchino or fresh mozzarella)",
+        "ar": "200 غرام جبن طري طازج (ستراكينو أو موتزاريلا طازجة)"
+      },
+      {
+        "food": "arugula",
+        "grams": 60,
+        "en": "2 handfuls of arugula (rocket)",
+        "ar": "حفنتان من الجرجير"
+      },
+      {
+        "food": "cherry tomato",
+        "grams": 160,
+        "en": "160 g cherry tomatoes, halved",
+        "ar": "160 غرامًا طماطم كرزية، مقطعة أنصافًا"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Mix the flour, baking powder and salt in a bowl. Add the olive oil and the lukewarm water and knead for 5–6 minutes into a smooth, soft dough.",
+        "Wrap and rest for 30 minutes at room temperature.",
+        "Divide into 4 balls and roll each out on a lightly floured surface into a thin round about 23 cm across and 3 mm thick. Prick all over with a fork.",
+        "Heat a large, heavy frying pan (or a flat griddle) over medium-high heat without oil. Cook each piadina for 1½–2 minutes per side, pressing down any bubbles, until it has golden-brown spots.",
+        "While still hot, spread a quarter of the cheese over one half of each piadina, add the arugula, cherry tomatoes and a pinch of salt, then fold in half.",
+        "Serve warm, cut in half. Unfilled piadine keep for a day wrapped in a cloth; warm them for 30 seconds per side before filling."
+      ],
+      "ar": [
+        "اخلط الدقيق والبيكنج بودر والملح في وعاء. أضف زيت الزيتون والماء الفاتر واعجن لمدة 5-6 دقائق حتى تحصل على عجينة ناعمة وطرية.",
+        "لفّ العجينة واتركها ترتاح 30 دقيقة في حرارة الغرفة.",
+        "قسّمها إلى 4 كرات، وافرد كل كرة على سطح مرشوش بقليل من الدقيق على شكل دائرة رقيقة قطرها نحو 23 سم وسمكها 3 مم. اثقبها في كل مكان بالشوكة.",
+        "سخّن مقلاة كبيرة ثقيلة (أو صاجًا مسطحًا) على نار متوسطة إلى عالية دون زيت. اخبز كل بيادينا لمدة دقيقة ونصف إلى دقيقتين لكل جانب، مع الضغط على الفقاعات، حتى تظهر عليها بقع ذهبية بنية.",
+        "وهي ساخنة، وزّع ربع الجبن على نصف كل بيادينا، وأضف الجرجير والطماطم الكرزية ورشة ملح، ثم اطوها نصفين.",
+        "قدّمها دافئة مقطعة إلى نصفين. يمكن حفظ البيادينا غير المحشوة يومًا ملفوفة في قطعة قماش، وتُدفّأ 30 ثانية لكل جانب قبل حشوها."
+      ]
+    },
+    "videoSearch": {
+      "en": "piadina romagnola recipe",
+      "ar": "طريقة عمل خبز البيادينا الإيطالي"
+    },
+    "video": {
+      "en": {
+        "id": "8BZZJjewoos",
+        "channel": "Italia Squisita"
+      }
+    }
+  },
+  {
+    "id": "it-minestrone",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Minestrone (Italian Vegetable, Bean & Pasta Soup)",
+      "ar": "شوربة مينستروني (شوربة الخضار والفاصوليا والمكرونة الإيطالية)"
+    },
+    "servings": 6,
+    "minutes": 70,
+    "ingredients": [
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "onion",
+        "grams": 110,
+        "en": "1 medium onion, diced",
+        "ar": "بصلة متوسطة، مقطعة مكعبات صغيرة"
+      },
+      {
+        "food": "carrot",
+        "grams": 140,
+        "en": "2 carrots, diced",
+        "ar": "جزرتان، مقطعتان مكعبات صغيرة"
+      },
+      {
+        "food": "celery",
+        "grams": 100,
+        "en": "2 celery stalks, diced",
+        "ar": "عودا كرفس، مقطعان مكعبات صغيرة"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, chopped",
+        "ar": "فصّا ثوم، مفرومان"
+      },
+      {
+        "food": "potato",
+        "grams": 300,
+        "en": "2 medium potatoes, peeled and diced",
+        "ar": "حبتا بطاطس متوسطتان، مقشرتان ومقطعتان مكعبات"
+      },
+      {
+        "food": "zucchini",
+        "grams": 300,
+        "en": "2 zucchini, diced",
+        "ar": "حبتا كوسة، مقطعتان مكعبات"
+      },
+      {
+        "food": "green bean",
+        "grams": 150,
+        "en": "150 g green beans, cut into short pieces",
+        "ar": "150 غرامًا فاصوليا خضراء، مقطعة قطعًا قصيرة"
+      },
+      {
+        "food": "cabbage",
+        "grams": 200,
+        "en": "200 g Savoy cabbage or kale (cavolo nero), shredded",
+        "ar": "200 غرام كرنب (ملفوف) أو كرنب أجعد، مقطع شرائح"
+      },
+      {
+        "food": "tomato",
+        "grams": 400,
+        "en": "1 can (400 g) peeled tomatoes, chopped",
+        "ar": "علبة (400 غرام) طماطم مقشرة، مقطعة"
+      },
+      {
+        "food": "cannellini bean",
+        "grams": 240,
+        "en": "1 can (400 g) cannellini beans, drained (about 240 g)",
+        "ar": "علبة (400 غرام) فاصوليا بيضاء كانيليني، مصفّاة (نحو 240 غرامًا)"
+      },
+      {
+        "food": "vegetable stock",
+        "grams": 1500,
+        "en": "1.5 litres vegetable stock",
+        "ar": "1.5 لتر مرق خضار"
+      },
+      {
+        "food": "macaroni",
+        "grams": 120,
+        "en": "120 g ditalini or other small pasta",
+        "ar": "120 غرامًا مكرونة ديتاليني أو أي مكرونة صغيرة"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of basil leaves, torn",
+        "ar": "حفنة من أوراق الريحان، مقطعة باليد"
+      },
+      {
+        "food": "parsley",
+        "grams": 10,
+        "en": "A small handful of parsley, chopped",
+        "ar": "حفنة صغيرة من البقدونس، مفرومة"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "en": "60 g Parmesan, grated, to serve",
+        "ar": "60 غرامًا جبن بارميزان مبشور للتقديم"
+      },
+      {
+        "food": "salt",
+        "grams": 6,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Warm the olive oil in a large pot over medium heat. Add the onion, carrot and celery with a pinch of salt and cook gently for 10 minutes until soft. Add the garlic and cook for 1 minute.",
+        "Add the potatoes, zucchini and green beans and stir for 3–4 minutes so they take on the flavour of the base.",
+        "Add the tomatoes and the stock, bring to the boil, then lower the heat, cover and simmer for 25 minutes.",
+        "Add the cabbage and the cannellini beans and simmer for 10 minutes more, until all the vegetables are tender.",
+        "Add the pasta and cook, stirring now and then, until al dente (about 10 minutes). Add a little hot water if the soup gets too thick.",
+        "Stir in the basil and parsley and season with salt and pepper. Rest for 5 minutes and serve with the Parmesan. Minestrone tastes even better the next day."
+      ],
+      "ar": [
+        "سخّن زيت الزيتون في قدر كبير على نار متوسطة. أضف البصل والجزر والكرفس مع رشة ملح، واطهها بهدوء لمدة 10 دقائق حتى تذبل. أضف الثوم وقلّب لمدة دقيقة.",
+        "أضف البطاطس والكوسة والفاصوليا الخضراء، وقلّبها 3-4 دقائق لتكتسب نكهة الخليط.",
+        "أضف الطماطم والمرق، واتركه حتى يغلي، ثم اخفض النار وغطِّ القدر واتركه يغلي بهدوء 25 دقيقة.",
+        "أضف الكرنب والفاصوليا البيضاء، واتركه 10 دقائق أخرى حتى تنضج كل الخضار.",
+        "أضف المكرونة واتركها حتى تنضج مع بقاء قوامها متماسكًا (نحو 10 دقائق)، مع التقليب من حين لآخر. أضف قليلًا من الماء الساخن إذا ثقل قوام الشوربة كثيرًا.",
+        "أضف الريحان والبقدونس، وتبّل بالملح والفلفل. اتركها 5 دقائق ثم قدّمها مع البارميزان. يصبح طعم المينستروني ألذ في اليوم التالي."
+      ]
+    },
+    "videoSearch": {
+      "en": "minestrone soup recipe italian",
+      "ar": "طريقة عمل شوربة المينستروني"
+    },
+    "video": {
+      "en": {
+        "id": "eHk6NSLGAkc",
+        "channel": "Food Wishes"
+      },
+      "ar": {
+        "id": "wcaXL1elxeU",
+        "channel": "Roya Kitchen"
+      }
+    }
+  },
+  {
+    "id": "it-stracciatella-alla-romana",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Stracciatella alla Romana (Roman Egg & Parmesan Drop Soup)",
+      "ar": "ستراتشاتيلا ألا رومانا (شوربة البيض والبارميزان الرومانية)"
+    },
+    "servings": 4,
+    "minutes": 20,
+    "ingredients": [
+      {
+        "food": "chicken stock",
+        "grams": 1500,
+        "en": "1.5 litres good chicken stock (homemade if possible)",
+        "ar": "1.5 لتر مرق دجاج جيد (منزلي إن أمكن)"
+      },
+      {
+        "food": "egg",
+        "grams": 200,
+        "en": "4 eggs",
+        "ar": "4 بيضات"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "en": "60 g Parmesan, finely grated",
+        "ar": "60 غرامًا جبن بارميزان مبشور ناعمًا"
+      },
+      {
+        "food": "semolina",
+        "grams": 20,
+        "en": "2 tbsp fine semolina",
+        "ar": "ملعقتان كبيرتان سميد ناعم"
+      },
+      {
+        "food": "nutmeg",
+        "grams": 0.5,
+        "en": "A pinch of ground nutmeg",
+        "ar": "رشة جوزة الطيب المطحونة"
+      },
+      {
+        "food": "parsley",
+        "grams": 8,
+        "en": "2 tbsp finely chopped parsley",
+        "ar": "ملعقتان كبيرتان بقدونس مفروم ناعمًا"
+      },
+      {
+        "food": "salt",
+        "grams": 3,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Bring the stock to a simmer in a saucepan. Taste and season with salt if needed.",
+        "In a bowl, beat the eggs with the Parmesan, semolina, nutmeg, parsley, a pinch of salt and pepper and 3 tablespoons of the warm stock.",
+        "Pour the egg mixture into the simmering stock in a slow stream, whisking with a fork all the time so the eggs set into fine shreds (stracci).",
+        "Simmer for 2–3 minutes more, stirring gently, until the egg shreds are cooked and the soup is lightly thickened.",
+        "Serve straight away, with a little extra pepper."
+      ],
+      "ar": [
+        "سخّن المرق في قدر حتى يغلي بهدوء. تذوّقه وأضف الملح عند الحاجة.",
+        "في وعاء، اخفق البيض مع البارميزان والسميد وجوزة الطيب والبقدونس ورشة ملح وفلفل و3 ملاعق كبيرة من المرق الدافئ.",
+        "صبّ خليط البيض في المرق المغلي على شكل خيط بطيء، مع الخفق المستمر بالشوكة حتى يتماسك البيض على شكل خيوط رفيعة (ستراتشي).",
+        "اتركه يغلي بهدوء 2-3 دقائق أخرى مع التقليب الخفيف حتى تنضج خيوط البيض ويتكاثف قوام الشوربة قليلًا.",
+        "قدّمها فورًا مع قليل من الفلفل الأسود."
+      ]
+    },
+    "videoSearch": {
+      "en": "stracciatella alla romana soup recipe",
+      "ar": "طريقة عمل شوربة البيض الإيطالية ستراتشاتيلا"
+    },
+    "video": {
+      "en": {
+        "id": "tgzlWxCvig0",
+        "channel": "Online Culinary School"
+      }
+    }
+  },
+  {
+    "id": "it-pappa-al-pomodoro",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Pappa al Pomodoro (Tuscan Tomato & Bread Soup)",
+      "ar": "بابا آل بومودورو (شوربة الطماطم والخبز التوسكانية)"
+    },
+    "servings": 4,
+    "minutes": 50,
+    "ingredients": [
+      {
+        "food": "baguette",
+        "grams": 300,
+        "en": "300 g stale rustic bread (Tuscan or country loaf), crusts removed, torn",
+        "ar": "300 غرام خبز ريفي إيطالي أو فرنسي بائت، منزوع القشرة ومقطع باليد"
+      },
+      {
+        "food": "tomato",
+        "grams": 800,
+        "en": "800 g very ripe tomatoes, peeled and chopped (or 2 cans peeled tomatoes)",
+        "ar": "800 غرام طماطم ناضجة جدًا، مقشرة ومقطعة (أو علبتا طماطم مقشرة)"
+      },
+      {
+        "food": "olive oil",
+        "grams": 70,
+        "en": "5 tbsp extra-virgin olive oil (4 for cooking, 1 to drizzle)",
+        "ar": "5 ملاعق كبيرة زيت زيتون بكر ممتاز (4 للطهي وواحدة للتقديم)"
+      },
+      {
+        "food": "onion",
+        "grams": 80,
+        "en": "1 small onion, finely chopped",
+        "ar": "بصلة صغيرة، مفرومة ناعمًا"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, sliced",
+        "ar": "3 فصوص ثوم، مقطعة شرائح"
+      },
+      {
+        "food": "vegetable stock",
+        "grams": 750,
+        "en": "750 ml hot vegetable stock",
+        "ar": "750 مل مرق خضار ساخن"
+      },
+      {
+        "food": "basil",
+        "grams": 20,
+        "en": "A large bunch of basil (about 20 g)",
+        "ar": "حزمة كبيرة من الريحان (نحو 20 غرامًا)"
+      },
+      {
+        "food": "salt",
+        "grams": 5,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Warm 4 tbsp olive oil in a heavy pot over medium-low heat. Add the onion and garlic with a pinch of salt and cook for 6–8 minutes until soft and golden.",
+        "Add the tomatoes and half the basil, torn, and simmer for 15 minutes, crushing the tomatoes with a spoon, until they break down into a sauce.",
+        "Add the bread and the hot stock and stir. Simmer gently for 10–15 minutes, stirring often, until the bread has completely softened and the soup is thick, like porridge (pappa).",
+        "Whisk hard with a whisk or wooden spoon to break up the bread. Season with salt and pepper, take off the heat and rest, covered, for 15 minutes.",
+        "Serve warm or at room temperature, topped with the remaining basil and a drizzle of the remaining olive oil."
+      ],
+      "ar": [
+        "سخّن 4 ملاعق كبيرة من زيت الزيتون في قدر ثقيل على نار متوسطة إلى هادئة. أضف البصل والثوم مع رشة ملح، وقلّبهما 6-8 دقائق حتى يذبلا ويصبحا ذهبيين.",
+        "أضف الطماطم ونصف الريحان مقطعًا باليد، واتركها تغلي بهدوء 15 دقيقة مع هرس الطماطم بالملعقة حتى تتحول إلى صلصة.",
+        "أضف الخبز والمرق الساخن وقلّب. اتركه يغلي بهدوء 10-15 دقيقة مع التقليب المتكرر حتى يطرى الخبز تمامًا وتصبح الشوربة كثيفة كالعصيدة (بابا).",
+        "اخفقها بقوة بالمخفقة أو بملعقة خشبية لتفتيت الخبز. تبّلها بالملح والفلفل، وارفعها عن النار واتركها مغطاة 15 دقيقة.",
+        "قدّمها دافئة أو بحرارة الغرفة، مع باقي الريحان ورشّة من باقي زيت الزيتون على الوجه."
+      ]
+    },
+    "videoSearch": {
+      "en": "pappa al pomodoro recipe",
+      "ar": "طريقة عمل شوربة الطماطم بالخبز الإيطالية"
+    },
+    "video": {
+      "en": {
+        "id": "t-J1EEHPwhQ",
+        "channel": "Vincenzo's Plate"
+      }
+    }
+  },
+  {
+    "id": "it-pollo-alla-cacciatora",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Pollo alla Cacciatora (Chicken Cacciatore, Wine-Free)",
+      "ar": "دجاج كاتشياتوري (بولو ألا كاتشاتورا، بدون نبيذ)"
+    },
+    "servings": 4,
+    "minutes": 75,
+    "ingredients": [
+      {
+        "food": "chicken thigh",
+        "grams": 800,
+        "en": "8 bone-in chicken thighs or drumsticks, skin removed (about 1.2 kg; 800 g meat)",
+        "ar": "8 قطع أوراك أو سيقان دجاج (دبابيس) بالعظم، منزوعة الجلد (نحو 1.2 كيلوغرام؛ 800 غرام من اللحم)"
+      },
+      {
+        "food": "flour",
+        "grams": 16,
+        "en": "2 tbsp flour, for dusting",
+        "ar": "ملعقتان كبيرتان دقيق للتغليف"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "onion",
+        "grams": 110,
+        "en": "1 medium onion, sliced",
+        "ar": "بصلة متوسطة، مقطعة شرائح"
+      },
+      {
+        "food": "bell pepper",
+        "grams": 150,
+        "en": "1 red bell pepper, sliced",
+        "ar": "حبة فلفل رومي أحمر، مقطعة شرائح"
+      },
+      {
+        "food": "mushroom",
+        "grams": 200,
+        "en": "200 g button mushrooms, quartered",
+        "ar": "200 غرام مشروم أبيض، مقطع أرباعًا"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, sliced",
+        "ar": "3 فصوص ثوم، مقطعة شرائح"
+      },
+      {
+        "food": "red wine vinegar",
+        "grams": 15,
+        "en": "1 tbsp red wine vinegar",
+        "ar": "ملعقة كبيرة خل عنب أحمر"
+      },
+      {
+        "food": "tomato",
+        "grams": 400,
+        "en": "1 can (400 g) peeled tomatoes, crushed",
+        "ar": "علبة (400 غرام) طماطم مقشرة، مهروسة"
+      },
+      {
+        "food": "chicken stock",
+        "grams": 240,
+        "en": "240 ml chicken stock, in place of wine",
+        "ar": "240 مل مرق دجاج بدلًا من النبيذ"
+      },
+      {
+        "food": "rosemary",
+        "grams": 2,
+        "en": "1 sprig rosemary",
+        "ar": "عود إكليل الجبل (روزماري)"
+      },
+      {
+        "food": "bay leaf",
+        "grams": 0.5,
+        "en": "1 bay leaf",
+        "ar": "ورقة لورا واحدة"
+      },
+      {
+        "food": "black olive",
+        "grams": 60,
+        "en": "60 g black olives",
+        "ar": "60 غرامًا زيتون أسود"
+      },
+      {
+        "food": "parsley",
+        "grams": 10,
+        "en": "Small handful of parsley, chopped",
+        "ar": "حفنة صغيرة من البقدونس، مفرومة"
+      },
+      {
+        "food": "salt",
+        "grams": 6,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Season the chicken with salt and pepper and dust lightly with the flour.",
+        "Heat the olive oil in a large, deep frying pan or casserole over medium-high heat and brown the chicken for 4–5 minutes per side until golden. Set aside on a plate.",
+        "Lower the heat to medium, add the onion, pepper and mushrooms and cook for 6–8 minutes until softened and lightly browned. Add the garlic for 1 minute.",
+        "Pour in the vinegar and let it bubble for 30 seconds, scraping the bottom of the pan. Add the tomatoes, stock, rosemary and bay leaf.",
+        "Return the chicken with its juices, cover and simmer gently for 35–40 minutes, turning the pieces once, until the chicken is very tender and cooked through (75°C next to the bone).",
+        "Uncover, add the olives and simmer for 5–10 minutes more until the sauce thickens. Remove the rosemary and bay leaf, scatter with parsley and serve with bread or polenta."
+      ],
+      "ar": [
+        "تبّل الدجاج بالملح والفلفل، وغطِّه بطبقة خفيفة من الدقيق.",
+        "سخّن زيت الزيتون في مقلاة كبيرة عميقة أو قدر على نار متوسطة إلى عالية، وحمّر الدجاج 4-5 دقائق لكل جانب حتى يصبح ذهبيًا. ضعه جانبًا في طبق.",
+        "اخفض النار إلى متوسطة، وأضف البصل والفلفل الرومي والمشروم، وقلّبها 6-8 دقائق حتى تطرى وتتحمّر قليلًا. أضف الثوم لمدة دقيقة.",
+        "أضف الخل واتركه يفور 30 ثانية مع كشط قاع المقلاة. أضف الطماطم والمرق وإكليل الجبل وورقة اللورا.",
+        "أعد الدجاج مع عصارته، وغطِّ المقلاة واتركه يغلي بهدوء 35-40 دقيقة مع قلب القطع مرة واحدة، حتى يصبح الدجاج طريًا جدًا وينضج تمامًا (75 درجة مئوية بجوار العظم).",
+        "اكشف المقلاة، وأضف الزيتون واتركه 5-10 دقائق أخرى حتى تتكاثف الصلصة. أخرج إكليل الجبل وورقة اللورا، وانثر البقدونس، وقدّمه مع الخبز أو البولنتا."
+      ]
+    },
+    "videoSearch": {
+      "en": "chicken cacciatore recipe italian",
+      "ar": "طريقة عمل دجاج كاتشياتوري"
+    },
+    "video": {
+      "en": {
+        "id": "aiialbCU9_o",
+        "channel": "From Italy With Love"
+      },
+      "ar": {
+        "id": "tjJggZpz_2E",
+        "channel": "Peppers And Colors"
+      }
+    }
+  },
+  {
+    "id": "it-chicken-piccata",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Chicken Piccata (Lemon & Caper Chicken Escalopes, Wine-Free)",
+      "ar": "دجاج بيكاتا بالليمون والكبر (بدون نبيذ)"
+    },
+    "servings": 4,
+    "minutes": 30,
+    "ingredients": [
+      {
+        "food": "chicken breast",
+        "grams": 600,
+        "en": "2 large boneless, skinless chicken breasts (about 600 g)",
+        "ar": "صدرا دجاج كبيران منزوعا العظم والجلد (نحو 600 غرام)"
+      },
+      {
+        "food": "flour",
+        "grams": 30,
+        "en": "30 g plain flour, for dredging",
+        "ar": "30 غرامًا دقيق أبيض للتغليف"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "butter",
+        "grams": 50,
+        "en": "50 g butter, divided",
+        "ar": "50 غرامًا زبدة، مقسّمة"
+      },
+      {
+        "food": "garlic",
+        "grams": 3,
+        "en": "1 garlic clove, finely chopped",
+        "ar": "فص ثوم، مفروم ناعمًا"
+      },
+      {
+        "food": "chicken stock",
+        "grams": 240,
+        "en": "240 ml chicken stock, in place of white wine",
+        "ar": "240 مل مرق دجاج بدلًا من النبيذ الأبيض"
+      },
+      {
+        "food": "lemon",
+        "grams": 60,
+        "en": "Juice of 2 lemons (about 60 ml)",
+        "ar": "عصير ليمونتين (نحو 60 مل)"
+      },
+      {
+        "food": "caper",
+        "grams": 20,
+        "en": "2 tbsp capers, rinsed",
+        "ar": "ملعقتان كبيرتان كبر (قبار)، مغسول"
+      },
+      {
+        "food": "parsley",
+        "grams": 10,
+        "en": "Small handful of parsley, chopped",
+        "ar": "حفنة صغيرة من البقدونس، مفرومة"
+      },
+      {
+        "food": "salt",
+        "grams": 4,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Cut each chicken breast in half horizontally to make 4 thin escalopes, then pound them between two sheets of baking paper to an even 1 cm. Season with salt and pepper and dredge in the flour, shaking off the excess.",
+        "Heat the olive oil and 15 g of the butter in a large frying pan over medium-high heat. Cook the chicken for 3–4 minutes per side until golden and cooked through. Transfer to a warm plate.",
+        "Lower the heat to medium, add the garlic to the pan and stir for 30 seconds. Pour in the stock and lemon juice, scraping up the browned bits, and simmer for 4–5 minutes until reduced by about half.",
+        "Add the capers, then take the pan off the heat and swirl in the remaining butter a piece at a time, until the sauce is glossy and slightly thickened.",
+        "Return the chicken to the pan for 1 minute to warm through, spooning the sauce over it.",
+        "Scatter with parsley and serve with the sauce, alongside mashed potatoes, rice or green vegetables."
+      ],
+      "ar": [
+        "قطّع كل صدر دجاج أفقيًا إلى نصفين لتحصل على 4 شرائح رقيقة، ثم اطرقها بين ورقتين من ورق الخبز حتى يصبح سمكها متساويًا (1 سم). تبّلها بالملح والفلفل، وغلّفها بالدقيق مع نفض الزائد.",
+        "سخّن زيت الزيتون و15 غرامًا من الزبدة في مقلاة كبيرة على نار متوسطة إلى عالية. اطهُ الدجاج 3-4 دقائق لكل جانب حتى يصبح ذهبيًا وينضج تمامًا. انقله إلى طبق دافئ.",
+        "اخفض النار إلى متوسطة، وأضف الثوم إلى المقلاة وقلّب 30 ثانية. أضف المرق وعصير الليمون مع كشط البقايا المحمّرة من القاع، واتركه يغلي 4-5 دقائق حتى يقل إلى النصف تقريبًا.",
+        "أضف الكبر، ثم ارفع المقلاة عن النار وأضف باقي الزبدة قطعة قطعة مع تحريك المقلاة حتى تصبح الصلصة لامعة وكثيفة قليلًا.",
+        "أعد الدجاج إلى المقلاة لمدة دقيقة ليسخن، مع سكب الصلصة فوقه.",
+        "انثر البقدونس وقدّمه مع الصلصة، بجانب البطاطس المهروسة أو الأرز أو الخضار الخضراء."
+      ]
+    },
+    "videoSearch": {
+      "en": "chicken piccata recipe",
+      "ar": "طريقة عمل دجاج بيكاتا بالليمون"
+    },
+    "video": {
+      "en": {
+        "id": "e0CoVPJz2H8",
+        "channel": "Food Wishes"
+      },
+      "ar": {
+        "id": "kaPPHS8pUio",
+        "channel": "Dana Abu Shanab - دانا أبو شنب"
+      }
+    }
+  },
+  {
+    "id": "it-chicken-parmigiana",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Chicken Parmigiana (Breaded Chicken with Tomato Sauce & Melted Mozzarella)",
+      "ar": "دجاج بارميجانا (صدور دجاج مقرمشة بصلصة الطماطم والموتزاريلا)"
+    },
+    "servings": 4,
+    "minutes": 60,
+    "ingredients": [
+      {
+        "food": "chicken breast",
+        "grams": 600,
+        "en": "2 large boneless, skinless chicken breasts (about 600 g)",
+        "ar": "صدرا دجاج كبيران منزوعا العظم والجلد (نحو 600 غرام)"
+      },
+      {
+        "food": "flour",
+        "grams": 30,
+        "en": "30 g plain flour",
+        "ar": "30 غرامًا دقيق أبيض"
+      },
+      {
+        "food": "egg",
+        "grams": 100,
+        "en": "2 eggs, beaten",
+        "ar": "بيضتان، مخفوقتان"
+      },
+      {
+        "food": "breadcrumb",
+        "grams": 80,
+        "en": "80 g dry breadcrumbs",
+        "ar": "80 غرامًا بقسماط مطحون"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "en": "60 g Parmesan, grated (30 g for the crumbs, 30 g for the top)",
+        "ar": "60 غرامًا جبن بارميزان مبشور (30 غرامًا للبقسماط و30 غرامًا للوجه)"
+      },
+      {
+        "food": "vegetable oil",
+        "grams": 50,
+        "en": "Vegetable oil, for shallow-frying (about 50 g is absorbed)",
+        "ar": "زيت نباتي للقلي السطحي (يُمتص منه نحو 50 غرامًا)"
+      },
+      {
+        "food": "olive oil",
+        "grams": 14,
+        "en": "1 tbsp olive oil, for the sauce",
+        "ar": "ملعقة كبيرة زيت زيتون للصلصة"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, crushed",
+        "ar": "فصّا ثوم، مهروسان"
+      },
+      {
+        "food": "passata",
+        "grams": 500,
+        "en": "500 g tomato passata",
+        "ar": "500 غرام طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "en": "1 tsp dried oregano",
+        "ar": "ملعقة صغيرة أوريغانو مجفف"
+      },
+      {
+        "food": "basil",
+        "grams": 5,
+        "en": "A few basil leaves",
+        "ar": "بضع أوراق ريحان"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 160,
+        "en": "160 g mozzarella, sliced",
+        "ar": "160 غرامًا جبن موتزاريلا، مقطعة شرائح"
+      },
+      {
+        "food": "salt",
+        "grams": 4,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the sauce: warm the olive oil with the garlic in a saucepan over medium heat for 1 minute, add the passata, oregano and a pinch of salt and simmer for 15 minutes until slightly thickened. Stir in the basil.",
+        "Cut each chicken breast in half horizontally and pound the pieces between baking paper to 1 cm thick. Season with salt and pepper.",
+        "Set out three plates: the flour; the beaten eggs; the breadcrumbs mixed with 30 g Parmesan. Coat each escalope in flour, then egg, then crumbs, pressing them on well.",
+        "Heat 1 cm of oil in a large frying pan over medium-high heat (about 175°C). Fry the chicken for 3–4 minutes per side until deep golden and cooked through. Drain on kitchen paper.",
+        "Heat the oven to 220°C (or turn on the grill). Spread a little sauce in a baking dish, lay the chicken on top, spoon more sauce over the middle of each piece and cover with the mozzarella and the remaining Parmesan.",
+        "Bake for 8–10 minutes until the cheese is melted and bubbling. Serve hot with the rest of the sauce, with spaghetti or a green salad."
+      ],
+      "ar": [
+        "حضّر الصلصة: سخّن زيت الزيتون مع الثوم في قدر على نار متوسطة لمدة دقيقة، وأضف الباساتا والأوريغانو ورشة ملح، واتركها تغلي بهدوء 15 دقيقة حتى تتكاثف قليلًا. أضف الريحان.",
+        "قطّع كل صدر دجاج أفقيًا إلى نصفين، واطرق القطع بين ورقتين من ورق الخبز حتى يصبح سمكها 1 سم. تبّلها بالملح والفلفل.",
+        "جهّز ثلاثة أطباق: الدقيق، والبيض المخفوق، والبقسماط مخلوطًا مع 30 غرامًا من البارميزان. غلّف كل شريحة بالدقيق ثم البيض ثم البقسماط مع الضغط جيدًا.",
+        "سخّن الزيت بعمق 1 سم في مقلاة كبيرة على نار متوسطة إلى عالية (نحو 175 درجة مئوية). اقلِ الدجاج 3-4 دقائق لكل جانب حتى يصبح ذهبيًا داكنًا وينضج تمامًا. صفّه على مناديل المطبخ.",
+        "سخّن الفرن على 220 درجة مئوية (أو شغّل الشواية العلوية). وزّع قليلًا من الصلصة في طبق فرن، وضع الدجاج فوقها، ثم ضع ملعقة من الصلصة على وسط كل قطعة وغطِّها بالموتزاريلا وباقي البارميزان.",
+        "أدخلها الفرن لمدة 8-10 دقائق حتى يذوب الجبن ويفور. قدّمها ساخنة مع باقي الصلصة، بجانب السباغيتي أو سلطة خضراء."
+      ]
+    },
+    "videoSearch": {
+      "en": "chicken parmigiana recipe",
+      "ar": "طريقة عمل دجاج بارميجانا"
+    },
+    "video": {
+      "en": {
+        "id": "_-ZLmMrnr2s",
+        "channel": "FLC Renaissance"
+      },
+      "ar": {
+        "id": "uOH1vl6HvYQ",
+        "channel": "ChefMag"
+      }
+    }
+  },
+  {
+    "id": "it-saltimbocca-alla-romana",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Saltimbocca alla Romana (Veal with Beef Bresaola & Sage instead of Prosciutto, Wine-Free)",
+      "ar": "سالتيمبوكا ألا رومانا (بتلو بالبريزاولا البقري والمريمية بدلًا من البروشوتو، بدون نبيذ)"
+    },
+    "servings": 4,
+    "minutes": 25,
+    "ingredients": [
+      {
+        "food": "veal",
+        "grams": 500,
+        "en": "8 thin veal (or beef) escalopes, about 500 g",
+        "ar": "8 شرائح رقيقة من لحم البتلو (أو البقر)، نحو 500 غرام"
+      },
+      {
+        "food": "bresaola",
+        "grams": 80,
+        "en": "8 slices beef bresaola (about 80 g)",
+        "ar": "8 شرائح بريزاولا (لحم بقري مجفف)، نحو 80 غرامًا"
+      },
+      {
+        "food": null,
+        "grams": 2,
+        "en": "8 large fresh sage leaves",
+        "ar": "8 أوراق مريمية طازجة كبيرة"
+      },
+      {
+        "food": "flour",
+        "grams": 16,
+        "en": "2 tbsp flour, for dusting",
+        "ar": "ملعقتان كبيرتان دقيق للرش"
+      },
+      {
+        "food": "butter",
+        "grams": 50,
+        "en": "50 g butter, divided",
+        "ar": "50 غرامًا زبدة، مقسّمة"
+      },
+      {
+        "food": "olive oil",
+        "grams": 14,
+        "en": "1 tbsp olive oil",
+        "ar": "ملعقة كبيرة زيت زيتون"
+      },
+      {
+        "food": "chicken stock",
+        "grams": 120,
+        "en": "120 ml chicken or beef stock, in place of white wine",
+        "ar": "120 مل مرق دجاج أو لحم بدلًا من النبيذ الأبيض"
+      },
+      {
+        "food": "lemon",
+        "grams": 10,
+        "en": "2 tsp lemon juice",
+        "ar": "ملعقتان صغيرتان عصير ليمون"
+      },
+      {
+        "food": "salt",
+        "grams": 2,
+        "en": "A little salt and black pepper (the bresaola is salty)",
+        "ar": "قليل من الملح والفلفل الأسود (البريزاولا مالحة)"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Pound the escalopes between baking paper until thin and even (about 5 mm). Season lightly with pepper and very little salt.",
+        "Lay a slice of bresaola and a sage leaf on each escalope and pin them in place with a toothpick, threading it in and out like a stitch.",
+        "Dust only the underside (the side without bresaola) lightly with flour.",
+        "Heat the olive oil and 20 g of the butter in a large frying pan over medium-high heat. Cook the saltimbocca floured side down for 2 minutes until golden, then turn and cook the bresaola side for 30–60 seconds. Transfer to a warm plate (cook in batches).",
+        "Pour the stock and lemon juice into the pan and boil for 1–2 minutes, scraping the bottom, until reduced by half. Take off the heat and swirl in the remaining butter to make a glossy sauce.",
+        "Spoon the sauce over the saltimbocca, remove the toothpicks and serve straight away."
+      ],
+      "ar": [
+        "اطرق شرائح اللحم بين ورقتين من ورق الخبز حتى تصبح رقيقة ومتساوية (نحو 5 مم). تبّلها بقليل من الفلفل وقليل جدًا من الملح.",
+        "ضع شريحة بريزاولا وورقة مريمية على كل شريحة لحم، وثبّتها بعود أسنان تُدخله وتُخرجه كالغُرزة.",
+        "رشّ الجهة السفلية فقط (الخالية من البريزاولا) بطبقة خفيفة من الدقيق.",
+        "سخّن زيت الزيتون و20 غرامًا من الزبدة في مقلاة كبيرة على نار متوسطة إلى عالية. اطهُ السالتيمبوكا على الجهة المرشوشة بالدقيق لمدة دقيقتين حتى تصبح ذهبية، ثم اقلبها واطهُ جهة البريزاولا 30-60 ثانية. انقلها إلى طبق دافئ (اطهها على دفعات).",
+        "صبّ المرق وعصير الليمون في المقلاة واتركهما يغليان 1-2 دقيقة مع كشط القاع حتى يقل السائل إلى النصف. ارفع المقلاة عن النار وأضف باقي الزبدة مع تحريك المقلاة لتحصل على صلصة لامعة.",
+        "اسكب الصلصة فوق السالتيمبوكا، وانزع أعواد الأسنان، وقدّمها فورًا."
+      ]
+    },
+    "videoSearch": {
+      "en": "saltimbocca alla romana recipe",
+      "ar": "طريقة عمل سالتيمبوكا باللحم والمريمية"
+    },
+    "video": {
+      "en": {
+        "id": "4qZL54G7jgg",
+        "channel": "DW Food"
+      }
+    }
+  },
+  {
+    "id": "it-polpette-al-sugo",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Polpette al Sugo (Italian Beef Meatballs in Tomato Sauce)",
+      "ar": "بولبيتي آل سوغو (كرات اللحم الإيطالية بصلصة الطماطم)"
+    },
+    "servings": 4,
+    "minutes": 75,
+    "ingredients": [
+      {
+        "food": "ground beef",
+        "grams": 500,
+        "en": "500 g minced beef (not too lean)",
+        "ar": "500 غرام لحم بقري مفروم (غير قليل الدهن)"
+      },
+      {
+        "food": "bread",
+        "grams": 80,
+        "en": "80 g stale white bread, crusts removed",
+        "ar": "80 غرامًا خبز أبيض (توست) بائت، منزوع الحواف"
+      },
+      {
+        "food": "milk",
+        "grams": 100,
+        "en": "100 ml milk",
+        "ar": "100 مل حليب"
+      },
+      {
+        "food": "egg",
+        "grams": 100,
+        "en": "2 eggs",
+        "ar": "بيضتان"
+      },
+      {
+        "food": "parmesan",
+        "grams": 50,
+        "en": "50 g Parmesan, grated",
+        "ar": "50 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves (1 grated for the meatballs, 1 for the sauce)",
+        "ar": "فصّا ثوم (واحد مبشور لكرات اللحم وواحد للصلصة)"
+      },
+      {
+        "food": "parsley",
+        "grams": 10,
+        "en": "Small handful of parsley, finely chopped",
+        "ar": "حفنة صغيرة من البقدونس، مفرومة ناعمًا"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "onion",
+        "grams": 60,
+        "en": "½ onion, finely chopped",
+        "ar": "نصف بصلة، مفرومة ناعمًا"
+      },
+      {
+        "food": "passata",
+        "grams": 700,
+        "en": "700 g tomato passata",
+        "ar": "700 غرام طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "water",
+        "grams": 200,
+        "en": "1 glass (200 ml) water",
+        "ar": "كوب (200 مل) ماء"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of basil leaves",
+        "ar": "حفنة من أوراق الريحان"
+      },
+      {
+        "food": "salt",
+        "grams": 8,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Soak the bread in the milk for 5 minutes, then squeeze it out lightly and crumble it into a large bowl.",
+        "Add the beef, eggs, Parmesan, 1 grated garlic clove, the parsley, 1 tsp salt and some pepper. Mix gently with your hands until just combined; overworking makes the meatballs tough.",
+        "With wet hands, shape into about 20 balls the size of a walnut and put them on a plate.",
+        "Heat the olive oil in a wide, deep pan over medium-high heat and brown the meatballs in batches for 5–6 minutes, turning, until golden all over. Set aside.",
+        "Lower the heat, add the onion and the other garlic clove (crushed) to the same pan and cook for 5 minutes until soft. Add the passata, half the basil, the water and a pinch of salt and bring to a simmer.",
+        "Return the meatballs to the sauce, cover and simmer gently for 30 minutes, turning them once, until cooked through and the sauce is thick.",
+        "Scatter with the remaining basil. Serve with crusty bread to mop up the sauce, or use the sauce to dress a plate of pasta first, as they do in Naples."
+      ],
+      "ar": [
+        "انقع الخبز في الحليب 5 دقائق، ثم اعصره قليلًا وفتّته في وعاء كبير.",
+        "أضف اللحم والبيض والبارميزان وفص ثوم مبشور والبقدونس وملعقة صغيرة من الملح وقليلًا من الفلفل. اخلط برفق بيديك حتى تتجانس المكونات فقط، فالإفراط في العجن يجعل الكرات قاسية.",
+        "بيدين مبللتين، شكّل نحو 20 كرة بحجم حبة الجوز وضعها في طبق.",
+        "سخّن زيت الزيتون في قدر عريض عميق على نار متوسطة إلى عالية، وحمّر الكرات على دفعات لمدة 5-6 دقائق مع التقليب حتى تصبح ذهبية من كل الجهات. ضعها جانبًا.",
+        "اخفض النار، وأضف البصل وفص الثوم الآخر مهروسًا إلى القدر نفسه، وقلّبهما 5 دقائق حتى يذبلا. أضف الباساتا ونصف الريحان والماء ورشة ملح، واتركها حتى تغلي بهدوء.",
+        "أعد الكرات إلى الصلصة، وغطِّ القدر واتركها تغلي بهدوء 30 دقيقة مع تقليبها مرة واحدة، حتى تنضج تمامًا وتتكاثف الصلصة.",
+        "انثر باقي الريحان. قدّمها مع خبز مقرمش لغمسه في الصلصة، أو استخدم الصلصة أولًا لتتبيل طبق من المكرونة كما يفعل أهل نابولي."
+      ]
+    },
+    "videoSearch": {
+      "en": "polpette al sugo italian meatballs in tomato sauce recipe",
+      "ar": "طريقة عمل كرات اللحم الإيطالية بصلصة الطماطم"
+    },
+    "video": {
+      "en": {
+        "id": "YGsQOWqc8Kw",
+        "channel": "Giovanni Siracusa"
+      },
+      "ar": {
+        "id": "6Xd6o_JUMfE",
+        "channel": "Sama Elsadat"
+      }
+    }
+  },
+  {
+    "id": "it-stracotto-di-manzo",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Stracotto di Manzo (Italian Beef Pot Roast, Wine-Free)",
+      "ar": "ستراكوتو دي مانزو (لحم بقري مطهو ببطء على الطريقة الإيطالية، بدون نبيذ)"
+    },
+    "servings": 6,
+    "minutes": 210,
+    "ingredients": [
+      {
+        "food": "beef",
+        "grams": 1200,
+        "en": "1.2 kg beef chuck roast in one piece, tied with string",
+        "ar": "1.2 كيلوغرام لحم بقري (كتف) قطعة واحدة، مربوطة بخيط"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "onion",
+        "grams": 220,
+        "en": "2 onions, chopped",
+        "ar": "بصلتان، مفرومتان"
+      },
+      {
+        "food": "carrot",
+        "grams": 140,
+        "en": "2 carrots, chopped",
+        "ar": "جزرتان، مقطعتان"
+      },
+      {
+        "food": "celery",
+        "grams": 100,
+        "en": "2 celery stalks, chopped",
+        "ar": "عودا كرفس، مقطعان"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, crushed",
+        "ar": "3 فصوص ثوم، مهروسة"
+      },
+      {
+        "food": "tomato paste",
+        "grams": 32,
+        "en": "2 tbsp tomato paste",
+        "ar": "ملعقتان كبيرتان معجون طماطم"
+      },
+      {
+        "food": "grape juice",
+        "grams": 120,
+        "en": "120 ml red grape juice, in place of red wine",
+        "ar": "120 مل عصير عنب أحمر بدلًا من النبيذ الأحمر"
+      },
+      {
+        "food": "red wine vinegar",
+        "grams": 30,
+        "en": "2 tbsp red wine vinegar",
+        "ar": "ملعقتان كبيرتان خل عنب أحمر"
+      },
+      {
+        "food": "tomato",
+        "grams": 400,
+        "en": "1 can (400 g) peeled tomatoes",
+        "ar": "علبة (400 غرام) طماطم مقشرة"
+      },
+      {
+        "food": "beef stock",
+        "grams": 500,
+        "en": "500 ml beef stock",
+        "ar": "500 مل مرق لحم"
+      },
+      {
+        "food": "rosemary",
+        "grams": 3,
+        "en": "2 sprigs rosemary",
+        "ar": "عودا إكليل الجبل (روزماري)"
+      },
+      {
+        "food": "bay leaf",
+        "grams": 1,
+        "en": "2 bay leaves",
+        "ar": "ورقتا لورا"
+      },
+      {
+        "food": "salt",
+        "grams": 8,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Season the beef all over with salt and pepper. Heat the olive oil in a heavy casserole over medium-high heat and brown the beef well on every side, 10–12 minutes in all. Set aside.",
+        "Lower the heat to medium, add the onion, carrot and celery and cook for 8–10 minutes until soft and lightly golden. Add the garlic and tomato paste and stir for 2 minutes.",
+        "Pour in the grape juice and vinegar and let them bubble for 2 minutes, scraping up the browned bits from the bottom.",
+        "Add the tomatoes, stock, rosemary and bay leaves, then return the beef. The liquid should come about halfway up the meat.",
+        "Cover and cook over the lowest heat (or in the oven at 160°C) for 2½–3 hours, turning the beef every 45 minutes and adding a little hot water if the liquid drops too low, until it is tender enough to cut with a spoon.",
+        "Lift out the beef and rest it for 10 minutes. Remove the herbs and blend the vegetables and juices into a smooth sauce (or leave them chunky), then season.",
+        "Slice the beef thickly and serve with plenty of sauce, alongside mashed potatoes or polenta; leftover sauce makes an excellent pasta sauce."
+      ],
+      "ar": [
+        "تبّل اللحم من كل الجهات بالملح والفلفل. سخّن زيت الزيتون في قدر ثقيل على نار متوسطة إلى عالية، وحمّر اللحم جيدًا من كل الجهات لمدة 10-12 دقيقة إجمالًا. ضعه جانبًا.",
+        "اخفض النار إلى متوسطة، وأضف البصل والجزر والكرفس، وقلّبها 8-10 دقائق حتى تذبل وتتحمّر قليلًا. أضف الثوم ومعجون الطماطم وقلّب دقيقتين.",
+        "أضف عصير العنب والخل واتركهما يفوران دقيقتين مع كشط البقايا المحمّرة من القاع.",
+        "أضف الطماطم والمرق وإكليل الجبل وأوراق اللورا، ثم أعد اللحم. يجب أن يصل السائل إلى منتصف قطعة اللحم تقريبًا.",
+        "غطِّ القدر واتركه على أهدأ نار (أو في الفرن على 160 درجة مئوية) لمدة ساعتين ونصف إلى 3 ساعات، مع قلب اللحم كل 45 دقيقة وإضافة قليل من الماء الساخن إذا انخفض السائل كثيرًا، حتى يصبح طريًا يمكن تقطيعه بالملعقة.",
+        "أخرج اللحم واتركه يرتاح 10 دقائق. أخرج الأعشاب، واهرس الخضار مع العصارة في الخلاط لتحصل على صلصة ناعمة (أو اتركها قطعًا)، ثم تبّلها.",
+        "قطّع اللحم شرائح سميكة وقدّمه مع كمية وفيرة من الصلصة، بجانب البطاطس المهروسة أو البولنتا؛ وتصلح الصلصة المتبقية صلصةً رائعة للمكرونة."
+      ]
+    },
+    "videoSearch": {
+      "en": "stracotto di manzo italian pot roast recipe",
+      "ar": "طريقة عمل لحم بقري مطهو ببطء على الطريقة الإيطالية"
+    },
+    "video": {
+      "en": {
+        "id": "4nVy-LL7nPY",
+        "channel": "Tiong Bahru Kitchen"
+      }
+    }
+  },
+  {
+    "id": "it-branzino-al-forno",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Branzino al Forno con Patate (Whole Baked Sea Bass with Potatoes)",
+      "ar": "برانزينو آل فورنو (سمك قاروص كامل في الفرن بالبطاطس)"
+    },
+    "servings": 4,
+    "minutes": 60,
+    "ingredients": [
+      {
+        "food": "sea bass",
+        "grams": 700,
+        "en": "4 whole sea bass (branzino), about 400 g each, gutted and scaled (about 700 g edible fish)",
+        "ar": "4 سمكات قاروص كاملة (نحو 400 غرام لكل منها)، منظفة ومنزوعة القشور (نحو 700 غرام من اللحم الصالح للأكل)"
+      },
+      {
+        "food": "potato",
+        "grams": 600,
+        "en": "600 g potatoes, peeled and sliced 3 mm thick",
+        "ar": "600 غرام بطاطس، مقشرة ومقطعة شرائح بسمك 3 مم"
+      },
+      {
+        "food": "cherry tomato",
+        "grams": 250,
+        "en": "250 g cherry tomatoes, halved",
+        "ar": "250 غرامًا طماطم كرزية، مقطعة أنصافًا"
+      },
+      {
+        "food": "olive oil",
+        "grams": 70,
+        "en": "5 tbsp extra-virgin olive oil",
+        "ar": "5 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "garlic",
+        "grams": 12,
+        "en": "4 garlic cloves, sliced",
+        "ar": "4 فصوص ثوم، مقطعة شرائح"
+      },
+      {
+        "food": "lemon",
+        "grams": 90,
+        "en": "1 lemon, thinly sliced",
+        "ar": "ليمونة، مقطعة شرائح رفيعة"
+      },
+      {
+        "food": "black olive",
+        "grams": 60,
+        "en": "60 g black olives",
+        "ar": "60 غرامًا زيتون أسود"
+      },
+      {
+        "food": "caper",
+        "grams": 10,
+        "en": "1 tbsp capers, rinsed",
+        "ar": "ملعقة كبيرة كبر (قبار)، مغسول"
+      },
+      {
+        "food": "parsley",
+        "grams": 15,
+        "en": "Small bunch of parsley (stalks for the fish, leaves chopped)",
+        "ar": "حزمة صغيرة من البقدونس (السيقان لحشو السمك والأوراق مفرومة)"
+      },
+      {
+        "food": "rosemary",
+        "grams": 3,
+        "en": "2 sprigs rosemary",
+        "ar": "عودا إكليل الجبل (روزماري)"
+      },
+      {
+        "food": "salt",
+        "grams": 8,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Heat the oven to 200°C. Rinse the fish inside and out and pat dry. Make 2–3 shallow cuts on each side.",
+        "Toss the potato slices with 2 tbsp olive oil, half the garlic, salt and pepper and spread them in a large roasting tin. Roast for 20 minutes until they start to soften.",
+        "Meanwhile, season the fish inside and out with salt and pepper and fill each cavity with lemon slices, parsley stalks, a piece of rosemary and the remaining garlic.",
+        "Take out the tin, scatter the cherry tomatoes, olives and capers over the potatoes and lay the fish on top. Drizzle with the remaining olive oil.",
+        "Bake for 20–25 minutes, until the flesh is opaque and lifts easily off the bone at the thickest part and the eyes have turned white.",
+        "Sprinkle with the chopped parsley and serve one fish per person with the potatoes and pan juices, lifting the fillets off the bone at the table."
+      ],
+      "ar": [
+        "سخّن الفرن على 200 درجة مئوية. اغسل السمك من الداخل والخارج وجففه. اصنع 2-3 شقوق سطحية على كل جانب.",
+        "قلّب شرائح البطاطس مع ملعقتين كبيرتين من زيت الزيتون ونصف الثوم والملح والفلفل، ووزّعها في صينية فرن كبيرة. اخبزها 20 دقيقة حتى تبدأ في الطراوة.",
+        "في هذه الأثناء، تبّل السمك من الداخل والخارج بالملح والفلفل، واحشُ بطن كل سمكة بشرائح الليمون وسيقان البقدونس وقطعة من إكليل الجبل وباقي الثوم.",
+        "أخرج الصينية، ووزّع الطماطم الكرزية والزيتون والكبر فوق البطاطس، وضع السمك فوقها. رشّ باقي زيت الزيتون.",
+        "اخبزها 20-25 دقيقة حتى يصبح لحم السمك أبيض معتمًا وينفصل بسهولة عن العظم عند أسمك جزء، وتبيضّ عيون السمك.",
+        "انثر البقدونس المفروم، وقدّم سمكة لكل شخص مع البطاطس وعصارة الصينية، وافصل الشرائح عن العظم على المائدة."
+      ]
+    },
+    "videoSearch": {
+      "en": "branzino al forno con patate whole sea bass recipe",
+      "ar": "طريقة عمل سمك القاروص في الفرن بالبطاطس"
+    },
+    "video": {
+      "en": {
+        "id": "ZYIlIJlFEqY",
+        "channel": "Walid Bannour"
+      },
+      "ar": {
+        "id": "kDE8Y94FfR4",
+        "channel": "ELWASFA"
+      }
+    }
+  },
+  {
+    "id": "it-pesce-all-acqua-pazza",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Pesce all'Acqua Pazza (Fish Poached with Cherry Tomatoes, Garlic & Parsley)",
+      "ar": "سمك أكوا باتسا (سمك مطهو بالطماطم الكرزية والثوم والبقدونس)"
+    },
+    "servings": 4,
+    "minutes": 30,
+    "ingredients": [
+      {
+        "food": "sea bass",
+        "grams": 600,
+        "en": "4 sea bream or sea bass fillets, skin on (about 600 g)",
+        "ar": "4 شرائح سمك دنيس أو قاروص بالجلد (نحو 600 غرام)"
+      },
+      {
+        "food": "cherry tomato",
+        "grams": 400,
+        "en": "400 g cherry tomatoes, halved",
+        "ar": "400 غرام طماطم كرزية، مقطعة أنصافًا"
+      },
+      {
+        "food": "olive oil",
+        "grams": 56,
+        "en": "4 tbsp extra-virgin olive oil",
+        "ar": "4 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "en": "3 garlic cloves, sliced",
+        "ar": "3 فصوص ثوم، مقطعة شرائح"
+      },
+      {
+        "food": "chili",
+        "grams": 5,
+        "en": "1 small fresh red chilli, sliced",
+        "ar": "حبة فلفل أحمر حار صغيرة، مقطعة شرائح"
+      },
+      {
+        "food": "parsley",
+        "grams": 15,
+        "en": "A bunch of parsley (stalks and leaves chopped separately)",
+        "ar": "حزمة بقدونس (تُفرم السيقان والأوراق كلٌّ على حدة)"
+      },
+      {
+        "food": "water",
+        "grams": 250,
+        "en": "250 ml water",
+        "ar": "250 مل ماء"
+      },
+      {
+        "food": "salt",
+        "grams": 5,
+        "en": "Salt",
+        "ar": "ملح"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Pat the fish dry and season lightly with salt.",
+        "Warm the olive oil in a wide frying pan with a lid over medium heat. Add the garlic, chilli and parsley stalks and cook for 1 minute until fragrant.",
+        "Add the cherry tomatoes and a pinch of salt and cook for 3–4 minutes, pressing a few with a spoon, until they start to release their juice.",
+        "Pour in the water, bring to a simmer and cook for 5 minutes to make a light, flavourful broth.",
+        "Lay the fish in the broth skin side up, cover and simmer gently for 6–8 minutes, spooning the broth over now and then, until the fish is opaque and flakes easily.",
+        "Scatter with the chopped parsley leaves and serve in shallow bowls with plenty of the broth, with crusty bread to dip."
+      ],
+      "ar": [
+        "جفف السمك وتبّله بقليل من الملح.",
+        "سخّن زيت الزيتون في مقلاة عريضة لها غطاء على نار متوسطة. أضف الثوم والفلفل الحار وسيقان البقدونس، وقلّبها دقيقة حتى تفوح الرائحة.",
+        "أضف الطماطم الكرزية ورشة ملح، واطهها 3-4 دقائق مع الضغط على بعضها بالملعقة حتى تبدأ في إخراج عصارتها.",
+        "أضف الماء، واتركه حتى يغلي بهدوء، ثم اطهه 5 دقائق ليتكون مرق خفيف غني بالنكهة.",
+        "ضع السمك في المرق وجلده لأعلى، وغطِّ المقلاة واتركه يغلي بهدوء 6-8 دقائق مع سكب المرق فوقه من حين لآخر، حتى يصبح السمك أبيض معتمًا ويتفتت بسهولة.",
+        "انثر أوراق البقدونس المفرومة، وقدّمه في أطباق عميقة مع كمية وفيرة من المرق، مع خبز مقرمش للغمس."
+      ]
+    },
+    "videoSearch": {
+      "en": "pesce all'acqua pazza recipe",
+      "ar": "طريقة عمل سمك أكوا باتسا الإيطالي"
+    },
+    "video": {
+      "en": {
+        "id": "lFpdgF3EHFE",
+        "channel": "Chef Ramy’s Kitchen"
+      }
+    }
+  },
+  {
+    "id": "it-melanzane-alla-parmigiana",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Melanzane alla Parmigiana (Eggplant Parmigiana)",
+      "ar": "ميلانزاني ألا بارميجانا (باذنجان بارميجانا)"
+    },
+    "servings": 6,
+    "minutes": 120,
+    "ingredients": [
+      {
+        "food": "eggplant",
+        "grams": 1200,
+        "en": "3 large eggplants (about 1.2 kg), sliced lengthways 5 mm thick",
+        "ar": "3 حبات باذنجان كبيرة (نحو 1.2 كيلوغرام)، مقطعة طوليًا شرائح بسمك 5 مم"
+      },
+      {
+        "food": "salt",
+        "grams": 25,
+        "en": "Salt, for the eggplant and the sauce",
+        "ar": "ملح للباذنجان والصلصة"
+      },
+      {
+        "food": "vegetable oil",
+        "grams": 120,
+        "en": "Vegetable oil, for frying (about 120 g is absorbed)",
+        "ar": "زيت نباتي للقلي (يتشرب الباذنجان نحو 120 غرامًا منه)"
+      },
+      {
+        "food": "olive oil",
+        "grams": 28,
+        "en": "2 tbsp olive oil, for the sauce",
+        "ar": "ملعقتان كبيرتان زيت زيتون للصلصة"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, lightly crushed",
+        "ar": "فصّا ثوم، مهروسان قليلًا"
+      },
+      {
+        "food": "passata",
+        "grams": 1000,
+        "en": "1 litre (about 1 kg) tomato passata",
+        "ar": "1 لتر (نحو 1 كيلوغرام) طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "basil",
+        "grams": 15,
+        "en": "A large bunch of basil",
+        "ar": "حزمة كبيرة من الريحان"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 300,
+        "en": "300 g mozzarella (fior di latte), sliced and well drained",
+        "ar": "300 غرام جبن موتزاريلا (فيور دي لاتي)، مقطعة شرائح ومصفّاة جيدًا"
+      },
+      {
+        "food": "parmesan",
+        "grams": 120,
+        "en": "120 g Parmesan, grated",
+        "ar": "120 غرامًا جبن بارميزان مبشور"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Layer the eggplant slices in a colander, sprinkling each layer with salt. Put a weight on top and leave for 1 hour to draw out the bitter liquid. Rinse briefly and pat completely dry.",
+        "Make the sauce: warm the olive oil with the garlic in a saucepan for 2 minutes, add the passata, a pinch of salt and a few basil leaves and simmer for 20 minutes until slightly thickened. Remove the garlic.",
+        "Heat 2 cm of oil in a large frying pan to 175°C and fry the eggplant slices in batches for 2–3 minutes per side, until golden. Drain well on kitchen paper.",
+        "Heat the oven to 200°C. Spread a few spoonfuls of sauce in a 20 × 30 cm baking dish and cover with a layer of eggplant.",
+        "Spoon over more sauce, then scatter with mozzarella, Parmesan and torn basil. Repeat the layers 3–4 times, finishing with sauce and a generous layer of Parmesan.",
+        "Bake for 35–40 minutes until bubbling and golden on top.",
+        "Rest for at least 20 minutes (or serve at room temperature, as many Italians prefer) so the layers set and slice neatly."
+      ],
+      "ar": [
+        "رصّ شرائح الباذنجان في مصفاة على طبقات، مع رشّ كل طبقة بالملح. ضع فوقها ثقلًا واتركها ساعة لتخرج عصارتها المرّة. اشطفها سريعًا وجففها تمامًا.",
+        "حضّر الصلصة: سخّن زيت الزيتون مع الثوم في قدر لمدة دقيقتين، وأضف الباساتا ورشة ملح وبضع أوراق ريحان، واتركها تغلي بهدوء 20 دقيقة حتى تتكاثف قليلًا. أخرج الثوم.",
+        "سخّن الزيت بعمق 2 سم في مقلاة كبيرة إلى 175 درجة مئوية، واقلِ شرائح الباذنجان على دفعات 2-3 دقائق لكل جانب حتى تصبح ذهبية. صفّها جيدًا على مناديل المطبخ.",
+        "سخّن الفرن على 200 درجة مئوية. وزّع بضع ملاعق من الصلصة في طبق فرن مقاس 20 × 30 سم، وغطِّها بطبقة من الباذنجان.",
+        "أضف المزيد من الصلصة، ثم انثر الموتزاريلا والبارميزان والريحان المقطع. كرّر الطبقات 3-4 مرات، وانتهِ بالصلصة وطبقة وفيرة من البارميزان.",
+        "اخبزها 35-40 دقيقة حتى تفور ويصبح وجهها ذهبيًا.",
+        "اتركها 20 دقيقة على الأقل (أو قدّمها بحرارة الغرفة كما يفضّل كثير من الإيطاليين) حتى تتماسك الطبقات وتُقطّع بسهولة."
+      ]
+    },
+    "videoSearch": {
+      "en": "melanzane alla parmigiana recipe",
+      "ar": "طريقة عمل الباذنجان بارميجانا"
+    },
+    "video": {
+      "en": {
+        "id": "DB4FVAJ1Au4",
+        "channel": "J. Kenji López-Alt"
+      },
+      "ar": {
+        "id": "30bTGL0aJ4g",
+        "channel": "وصفات مريم | Recettes Meryem "
+      }
+    }
+  },
+  {
+    "id": "it-frittata-di-zucchine",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Frittata di Zucchine (Zucchini & Parmesan Frittata)",
+      "ar": "فريتاتا الكوسة بالبارميزان"
+    },
+    "servings": 4,
+    "minutes": 30,
+    "ingredients": [
+      {
+        "food": "egg",
+        "grams": 400,
+        "en": "8 eggs",
+        "ar": "8 بيضات"
+      },
+      {
+        "food": "zucchini",
+        "grams": 400,
+        "en": "2 medium zucchini, thinly sliced",
+        "ar": "حبتا كوسة متوسطتان، مقطعتان شرائح رفيعة"
+      },
+      {
+        "food": "onion",
+        "grams": 80,
+        "en": "1 small onion, thinly sliced",
+        "ar": "بصلة صغيرة، مقطعة شرائح رفيعة"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "parmesan",
+        "grams": 50,
+        "en": "50 g Parmesan, grated",
+        "ar": "50 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "basil",
+        "grams": 5,
+        "en": "A few basil or mint leaves, torn",
+        "ar": "بضع أوراق ريحان أو نعناع، مقطعة باليد"
+      },
+      {
+        "food": "salt",
+        "grams": 4,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Heat 2 tbsp olive oil in a 26 cm non-stick frying pan over medium heat. Cook the onion for 3 minutes, add the zucchini and a pinch of salt and cook for 8–10 minutes, stirring now and then, until soft and lightly golden. Let cool for a few minutes.",
+        "Beat the eggs in a large bowl with the Parmesan, basil, a pinch of salt and pepper. Stir in the zucchini and onion.",
+        "Wipe the pan, add the remaining olive oil and heat over medium-low heat. Pour in the egg mixture and spread the vegetables evenly.",
+        "Cook gently for 8–10 minutes without stirring, until the edges are set and the bottom is golden; the top will still be a little runny.",
+        "To turn it, slide the frittata onto a large plate, cover with the upturned pan and flip it back in, then cook for 2–3 minutes more. (Or finish it under a hot grill for 2–3 minutes if your pan is ovenproof.)",
+        "Slide onto a board and serve warm or at room temperature, cut into wedges."
+      ],
+      "ar": [
+        "سخّن ملعقتين كبيرتين من زيت الزيتون في مقلاة غير لاصقة قطرها 26 سم على نار متوسطة. قلّب البصل 3 دقائق، ثم أضف الكوسة ورشة ملح واطهها 8-10 دقائق مع التقليب من حين لآخر حتى تطرى وتتحمّر قليلًا. اتركها تبرد بضع دقائق.",
+        "اخفق البيض في وعاء كبير مع البارميزان والريحان ورشة ملح وفلفل. أضف الكوسة والبصل وقلّب.",
+        "امسح المقلاة، وأضف باقي زيت الزيتون وسخّنه على نار متوسطة إلى هادئة. صبّ خليط البيض ووزّع الخضار بالتساوي.",
+        "اطهها بهدوء 8-10 دقائق دون تقليب حتى تتماسك الأطراف ويصبح القاع ذهبيًا، مع بقاء الوجه سائلًا قليلًا.",
+        "لقلبها، انقل الفريتاتا بانزلاق إلى طبق كبير، وغطِّها بالمقلاة مقلوبة ثم اقلبها لتعود إلى المقلاة، واطهها 2-3 دقائق أخرى. (أو أكمل طهيها تحت الشواية الساخنة لمدة 2-3 دقائق إذا كانت مقلاتك تتحمل الفرن.)",
+        "انقلها إلى لوح التقطيع وقدّمها دافئة أو بحرارة الغرفة مقطعة إلى مثلثات."
+      ]
+    },
+    "videoSearch": {
+      "en": "frittata di zucchine italian zucchini frittata recipe",
+      "ar": "طريقة عمل فريتاتا الكوسة"
+    },
+    "video": {
+      "en": {
+        "id": "ZzM30fBMkZo",
+        "channel": "Buono Facile Veloce"
+      },
+      "ar": {
+        "id": "MfTJ_8RImZI",
+        "channel": "fatafeat"
+      }
+    }
+  },
+  {
+    "id": "it-bruschetta-al-pomodoro",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Bruschetta al Pomodoro (Toasted Bread with Fresh Tomato & Basil)",
+      "ar": "بروسكيتا بالطماطم والريحان"
+    },
+    "servings": 4,
+    "minutes": 25,
+    "ingredients": [
+      {
+        "food": "baguette",
+        "grams": 320,
+        "en": "8 slices rustic bread, about 1.5 cm thick (about 320 g)",
+        "ar": "8 شرائح خبز ريفي بسمك 1.5 سم (نحو 320 غرامًا)"
+      },
+      {
+        "food": "tomato",
+        "grams": 480,
+        "en": "4 ripe tomatoes, diced",
+        "ar": "4 حبات طماطم ناضجة، مقطعة مكعبات صغيرة"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "en": "2 garlic cloves, peeled and halved",
+        "ar": "فصّا ثوم، مقشران ومقطعان نصفين"
+      },
+      {
+        "food": "olive oil",
+        "grams": 56,
+        "en": "4 tbsp extra-virgin olive oil",
+        "ar": "4 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of basil leaves, torn",
+        "ar": "حفنة من أوراق الريحان، مقطعة باليد"
+      },
+      {
+        "food": "oregano",
+        "grams": 0.5,
+        "en": "A pinch of dried oregano",
+        "ar": "رشة أوريغانو مجفف"
+      },
+      {
+        "food": "salt",
+        "grams": 3,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Put the diced tomatoes in a sieve over a bowl, sprinkle with a pinch of salt and leave for 10 minutes so the excess juice drains away.",
+        "Tip the tomatoes into a bowl, add 3 tbsp olive oil, the basil, oregano and black pepper and mix gently. Leave for 5–10 minutes for the flavours to come together.",
+        "Toast the bread on a hot griddle pan, under the grill or in a toaster until golden and crisp on both sides, with a few charred marks.",
+        "While the toast is still hot, rub one side of each slice firmly with the cut garlic, then drizzle with the remaining olive oil.",
+        "Spoon the tomatoes onto the bread just before serving so it stays crisp, and serve straight away."
+      ],
+      "ar": [
+        "ضع مكعبات الطماطم في مصفاة فوق وعاء، ورشّ عليها رشة ملح، واتركها 10 دقائق ليتصفى العصير الزائد.",
+        "انقل الطماطم إلى وعاء، وأضف 3 ملاعق كبيرة من زيت الزيتون والريحان والأوريغانو والفلفل الأسود، وقلّب برفق. اتركها 5-10 دقائق لتتداخل النكهات.",
+        "حمّص الخبز في مقلاة شواء ساخنة أو تحت الشواية أو في المحمصة حتى يصبح ذهبيًا ومقرمشًا من الجانبين، مع بعض علامات الشواء.",
+        "والخبز ما زال ساخنًا، افرك جانبًا واحدًا من كل شريحة جيدًا بفص الثوم المقطوع، ثم رشّ عليها باقي زيت الزيتون.",
+        "ضع الطماطم على الخبز قبل التقديم مباشرة حتى يبقى مقرمشًا، وقدّمها فورًا."
+      ]
+    },
+    "videoSearch": {
+      "en": "bruschetta al pomodoro recipe",
+      "ar": "طريقة عمل البروسكيتا بالطماطم"
+    },
+    "video": {
+      "en": {
+        "id": "79Jq0lv3pAg",
+        "channel": "Shweta in the Kitchen"
+      },
+      "ar": {
+        "id": "kiGOkzHohqY",
+        "channel": "Sayidaty kitchen مطبخ سيدتي"
+      }
+    }
+  },
+  {
+    "id": "it-insalata-caprese",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Insalata Caprese (Tomato, Mozzarella & Basil Salad)",
+      "ar": "سلطة كابريزي (الطماطم والموتزاريلا والريحان)"
+    },
+    "servings": 4,
+    "minutes": 10,
+    "ingredients": [
+      {
+        "food": "tomato",
+        "grams": 500,
+        "en": "4 large ripe tomatoes (about 500 g)",
+        "ar": "4 حبات طماطم ناضجة كبيرة (نحو 500 غرام)"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 300,
+        "en": "300 g fresh mozzarella (buffalo or fior di latte)",
+        "ar": "300 غرام جبن موتزاريلا طازجة (موتزاريلا الجاموس أو فيور دي لاتي)"
+      },
+      {
+        "food": "basil",
+        "grams": 15,
+        "en": "A bunch of fresh basil",
+        "ar": "حزمة من الريحان الطازج"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp extra-virgin olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون بكر ممتاز"
+      },
+      {
+        "food": "oregano",
+        "grams": 0.5,
+        "en": "A pinch of dried oregano",
+        "ar": "رشة أوريغانو مجفف"
+      },
+      {
+        "food": "salt",
+        "grams": 3,
+        "en": "Flaky salt and black pepper",
+        "ar": "ملح خشن وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Take the mozzarella out of the fridge 30 minutes ahead so it is not cold. Drain it and pat dry.",
+        "Slice the tomatoes and mozzarella about 1 cm thick.",
+        "Arrange them on a platter, alternating and overlapping the slices of tomato and mozzarella and tucking a basil leaf between them.",
+        "Just before serving, season with salt, pepper and a pinch of oregano and drizzle with the olive oil. Serve with bread."
+      ],
+      "ar": [
+        "أخرج الموتزاريلا من الثلاجة قبل 30 دقيقة حتى لا تكون باردة. صفّها وجففها.",
+        "قطّع الطماطم والموتزاريلا شرائح بسمك 1 سم تقريبًا.",
+        "رتّبها في طبق تقديم بالتبادل بحيث تتداخل شرائح الطماطم والموتزاريلا، مع وضع ورقة ريحان بينها.",
+        "قبل التقديم مباشرة، تبّلها بالملح والفلفل ورشة أوريغانو، ورشّ عليها زيت الزيتون. قدّمها مع الخبز."
+      ]
+    },
+    "videoSearch": {
+      "en": "insalata caprese recipe",
+      "ar": "طريقة عمل سلطة الكابريزي"
+    },
+    "video": {
+      "en": {
+        "id": "gkIX1C_MJVo",
+        "channel": "theitaliancookingclass .com"
+      },
+      "ar": {
+        "id": "505QOo1xzeQ",
+        "channel": "Nabil MasterChef 4 Maroc 2018"
+      }
+    }
+  },
+  {
+    "id": "it-arancini-al-ragu",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Arancini al Ragù (Sicilian Fried Rice Balls with Beef Ragù & Peas)",
+      "ar": "أرانشيني بالراغو (كرات الأرز الصقلية المقلية باللحم والبازلاء)"
+    },
+    "servings": 8,
+    "minutes": 180,
+    "ingredients": [
+      {
+        "food": "paella rice",
+        "grams": 300,
+        "en": "300 g risotto rice (Arborio or Carnaroli)",
+        "ar": "300 غرام أرز ريزوتو (أربوريو أو كارنارولي)"
+      },
+      {
+        "food": "chicken stock",
+        "grams": 750,
+        "en": "750 ml hot chicken stock",
+        "ar": "750 مل مرق دجاج ساخن"
+      },
+      {
+        "food": "saffron",
+        "grams": 0.2,
+        "en": "A pinch of saffron (about 0.2 g)",
+        "ar": "رشة زعفران (نحو 0.2 غرام)"
+      },
+      {
+        "food": "butter",
+        "grams": 25,
+        "en": "25 g butter",
+        "ar": "25 غرامًا زبدة"
+      },
+      {
+        "food": "parmesan",
+        "grams": 50,
+        "en": "50 g Parmesan, grated",
+        "ar": "50 غرامًا جبن بارميزان مبشور"
+      },
+      {
+        "food": "olive oil",
+        "grams": 21,
+        "en": "1½ tbsp olive oil",
+        "ar": "ملعقة كبيرة ونصف زيت زيتون"
+      },
+      {
+        "food": "onion",
+        "grams": 50,
+        "en": "½ small onion, finely chopped",
+        "ar": "نصف بصلة صغيرة، مفرومة ناعمًا"
+      },
+      {
+        "food": "ground beef",
+        "grams": 200,
+        "en": "200 g minced beef",
+        "ar": "200 غرام لحم بقري مفروم"
+      },
+      {
+        "food": "tomato paste",
+        "grams": 16,
+        "en": "1 tbsp tomato paste",
+        "ar": "ملعقة كبيرة معجون طماطم"
+      },
+      {
+        "food": "passata",
+        "grams": 150,
+        "en": "150 g tomato passata",
+        "ar": "150 غرامًا طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "pea",
+        "grams": 80,
+        "en": "80 g frozen peas",
+        "ar": "80 غرامًا بازلاء (بسلة) مجمدة"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 100,
+        "en": "100 g mozzarella (or caciocavallo), finely diced",
+        "ar": "100 غرام جبن موتزاريلا (أو كاتشوكافالو)، مقطعة مكعبات صغيرة"
+      },
+      {
+        "food": "flour",
+        "grams": 80,
+        "en": "80 g plain flour, for the batter",
+        "ar": "80 غرامًا دقيق أبيض للخليط السائل"
+      },
+      {
+        "food": "water",
+        "grams": 150,
+        "en": "150 ml cold water (120 ml for the batter, a splash for the ragù)",
+        "ar": "150 مل ماء بارد (120 مل للخليط السائل ورشة للراغو)"
+      },
+      {
+        "food": "breadcrumb",
+        "grams": 120,
+        "en": "120 g fine dry breadcrumbs",
+        "ar": "120 غرامًا بقسماط مطحون ناعم"
+      },
+      {
+        "food": "vegetable oil",
+        "grams": 140,
+        "en": "Vegetable oil, for deep-frying (about 140 g is absorbed)",
+        "ar": "زيت نباتي للقلي الغزير (يُمتص منه نحو 140 غرامًا)"
+      },
+      {
+        "food": "salt",
+        "grams": 6,
+        "en": "Salt and black pepper",
+        "ar": "ملح وفلفل أسود"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the rice: dissolve the saffron in the hot stock. Put the rice in a pan with the stock and a pinch of salt, bring to the boil, then cover and cook over low heat for 15–18 minutes, stirring now and then, until the stock is absorbed and the rice is tender and sticky.",
+        "Stir in the butter and Parmesan, spread the rice on a large tray and leave to cool completely (at least 1 hour, or overnight in the fridge); cold rice is much easier to shape.",
+        "Make the ragù: cook the onion in the olive oil for 4 minutes, add the beef and brown it for 5 minutes, breaking it up. Add the tomato paste, passata, a splash of water, salt and pepper and simmer for 20 minutes, adding the peas for the last 5 minutes. The ragù should be thick; let it cool.",
+        "With wet hands, take a portion of rice the size of a small orange, flatten it in your palm and make a hollow. Fill with a spoonful of ragù and a few cubes of mozzarella, close the rice around it and shape into a ball or cone. Makes about 16.",
+        "Whisk the flour and 120 ml cold water into a smooth batter. Dip each arancino in the batter, then roll it in the breadcrumbs until fully coated.",
+        "Heat the oil in a deep pan to 175°C. Fry the arancini 3–4 at a time for 4–5 minutes, turning, until deep golden all over. Drain on kitchen paper.",
+        "Rest for 5 minutes before serving, two per person; the filling stays very hot."
+      ],
+      "ar": [
+        "حضّر الأرز: ذوّب الزعفران في المرق الساخن. ضع الأرز في قدر مع المرق ورشة ملح، واتركه حتى يغلي، ثم غطّه واتركه على نار هادئة 15-18 دقيقة مع التقليب من حين لآخر، حتى يتشرب المرق وينضج الأرز ويصبح لزجًا.",
+        "أضف الزبدة والبارميزان وقلّب، ثم افرد الأرز في صينية كبيرة واتركه حتى يبرد تمامًا (ساعة على الأقل، أو ليلة في الثلاجة)، فالأرز البارد أسهل كثيرًا في التشكيل.",
+        "حضّر الراغو: قلّب البصل في زيت الزيتون 4 دقائق، ثم أضف اللحم وحمّره مع تفتيته لمدة 5 دقائق. أضف معجون الطماطم والباساتا ورشة ماء والملح والفلفل، واتركه يغلي بهدوء 20 دقيقة، مع إضافة البازلاء في آخر 5 دقائق. يجب أن يكون الراغو كثيفًا؛ اتركه يبرد.",
+        "بيدين مبللتين، خذ كمية من الأرز بحجم برتقالة صغيرة، وافردها في كفك واصنع في وسطها تجويفًا. احشها بملعقة من الراغو وبضع مكعبات من الموتزاريلا، ثم أغلق الأرز حولها وشكّلها كرة أو مخروطًا. يكفي الخليط لنحو 16 قطعة.",
+        "اخفق الدقيق مع 120 مل من الماء البارد حتى تحصل على خليط سائل ناعم. اغمس كل قطعة في الخليط، ثم دحرجها في البقسماط حتى تتغطى تمامًا.",
+        "سخّن الزيت في قدر عميق إلى 175 درجة مئوية. اقلِ الأرانشيني 3-4 قطع في كل مرة لمدة 4-5 دقائق مع التقليب حتى يصبح لونها ذهبيًا داكنًا من كل الجهات. صفّها على مناديل المطبخ.",
+        "اتركها 5 دقائق قبل التقديم، بمعدل قطعتين لكل شخص، فالحشوة تبقى شديدة السخونة."
+      ]
+    },
+    "videoSearch": {
+      "en": "arancini al ragu sicilian rice balls recipe",
+      "ar": "طريقة عمل الأرانشيني كرات الأرز الإيطالية"
+    },
+    "video": {
+      "en": {
+        "id": "2ur_yYN2V-0",
+        "channel": "Mangia con Marco"
+      },
+      "ar": {
+        "id": "SDK2uQGEQNU",
+        "channel": "Chef Jalal شيف جلال  "
+      }
+    }
+  },
+  {
+    "id": "it-caponata-siciliana",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Caponata Siciliana (Sweet & Sour Sicilian Eggplant)",
+      "ar": "كابوناتا صقلية (باذنجان صقلي بصلصة حلوة حامضة)"
+    },
+    "servings": 6,
+    "minutes": 90,
+    "ingredients": [
+      {
+        "food": "eggplant",
+        "grams": 1000,
+        "en": "2 large eggplants (about 1 kg), cut into 2 cm cubes",
+        "ar": "حبتا باذنجان كبيرتان (نحو 1 كيلوغرام)، مقطعتان مكعبات بحجم 2 سم"
+      },
+      {
+        "food": "salt",
+        "grams": 15,
+        "en": "Salt",
+        "ar": "ملح"
+      },
+      {
+        "food": "vegetable oil",
+        "grams": 100,
+        "en": "Vegetable oil, for frying (about 100 g is absorbed)",
+        "ar": "زيت نباتي للقلي (يتشرب الباذنجان نحو 100 غرام منه)"
+      },
+      {
+        "food": "olive oil",
+        "grams": 42,
+        "en": "3 tbsp olive oil",
+        "ar": "3 ملاعق كبيرة زيت زيتون"
+      },
+      {
+        "food": "onion",
+        "grams": 150,
+        "en": "1 large onion, sliced",
+        "ar": "بصلة كبيرة، مقطعة شرائح"
+      },
+      {
+        "food": "celery",
+        "grams": 150,
+        "en": "3 celery stalks (the tender inner ones), cut into 1 cm pieces",
+        "ar": "3 أعواد كرفس (من الداخلية الطرية)، مقطعة قطعًا بطول 1 سم"
+      },
+      {
+        "food": "passata",
+        "grams": 250,
+        "en": "250 g tomato passata",
+        "ar": "250 غرامًا طماطم مهروسة مصفّاة (باساتا)"
+      },
+      {
+        "food": "tomato paste",
+        "grams": 16,
+        "en": "1 tbsp tomato paste",
+        "ar": "ملعقة كبيرة معجون طماطم"
+      },
+      {
+        "food": "green olive",
+        "grams": 100,
+        "en": "100 g pitted green olives, roughly chopped",
+        "ar": "100 غرام زيتون أخضر منزوع النوى، مقطع تقطيعًا خشنًا"
+      },
+      {
+        "food": "caper",
+        "grams": 30,
+        "en": "3 tbsp capers, rinsed",
+        "ar": "3 ملاعق كبيرة كبر (قبار)، مغسول"
+      },
+      {
+        "food": "red wine vinegar",
+        "grams": 70,
+        "en": "5 tbsp red wine vinegar",
+        "ar": "5 ملاعق كبيرة خل عنب أحمر"
+      },
+      {
+        "food": "sugar",
+        "grams": 25,
+        "en": "2 tbsp sugar",
+        "ar": "ملعقتان كبيرتان سكر"
+      },
+      {
+        "food": "pine nut",
+        "grams": 20,
+        "en": "2 tbsp pine nuts, toasted",
+        "ar": "ملعقتان كبيرتان صنوبر محمّص"
+      },
+      {
+        "food": "basil",
+        "grams": 10,
+        "en": "A handful of basil leaves",
+        "ar": "حفنة من أوراق الريحان"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Toss the eggplant cubes with salt in a colander and leave for 30 minutes. Rinse and dry very well.",
+        "Heat 2 cm of vegetable oil in a deep frying pan to 175°C and fry the eggplant in batches for 4–5 minutes until golden and tender. Drain on kitchen paper.",
+        "Blanch the celery in boiling water for 2 minutes and drain. Heat the olive oil in a large pan over medium heat and cook the onion and celery for 8–10 minutes until soft.",
+        "Add the passata and tomato paste and simmer for 5 minutes. Stir in the olives and capers and cook for 5 minutes more.",
+        "Add the vinegar and sugar, stir until the sugar dissolves and let it bubble for 2 minutes so the sharpness of the vinegar mellows.",
+        "Fold in the fried eggplant and simmer gently for 5 minutes. Taste and adjust the balance of sweet, sour and salt.",
+        "Leave to cool, then stir in the basil and scatter with the pine nuts. Serve at room temperature; caponata is best made a few hours or a day ahead."
+      ],
+      "ar": [
+        "قلّب مكعبات الباذنجان مع الملح في مصفاة واتركها 30 دقيقة. اشطفها وجففها جيدًا جدًا.",
+        "سخّن الزيت النباتي بعمق 2 سم في مقلاة عميقة إلى 175 درجة مئوية، واقلِ الباذنجان على دفعات 4-5 دقائق حتى يصبح ذهبيًا وطريًا. صفّه على مناديل المطبخ.",
+        "اسلق الكرفس في ماء مغلي لمدة دقيقتين وصفّه. سخّن زيت الزيتون في قدر كبير على نار متوسطة، وقلّب البصل والكرفس 8-10 دقائق حتى يذبلا.",
+        "أضف الباساتا ومعجون الطماطم واتركهما يغليان بهدوء 5 دقائق. أضف الزيتون والكبر واطهها 5 دقائق أخرى.",
+        "أضف الخل والسكر، وقلّب حتى يذوب السكر، واتركه يغلي دقيقتين لتخف حدة الخل.",
+        "أضف الباذنجان المقلي وقلّب برفق، واتركه يغلي بهدوء 5 دقائق. تذوّق واضبط التوازن بين الحلو والحامض والملح.",
+        "اتركها تبرد، ثم أضف الريحان وانثر الصنوبر. قدّمها بحرارة الغرفة، ويُفضّل تحضير الكابوناتا قبل التقديم ببضع ساعات أو بيوم."
+      ]
+    },
+    "videoSearch": {
+      "en": "caponata siciliana recipe",
+      "ar": "طريقة عمل الكابوناتا الصقلية بالباذنجان"
+    },
+    "video": {
+      "en": {
+        "id": "Ln0pb-Hor1I",
+        "channel": "Ricette Perfette"
+      },
+      "ar": {
+        "id": "5enzto_JNOw",
+        "channel": "fati italia"
+      }
+    }
+  },
+  {
+    "id": "it-tiramisu",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Tiramisù (Alcohol-Free)",
+      "ar": "تيراميسو (بدون كحول)"
+    },
+    "servings": 10,
+    "minutes": 390,
+    "ingredients": [
+      {
+        "food": "mascarpone",
+        "grams": 500,
+        "en": "500 g mascarpone, at room temperature",
+        "ar": "500 غرام جبن ماسكاربوني بحرارة الغرفة"
+      },
+      {
+        "food": "egg",
+        "grams": 200,
+        "en": "4 very fresh eggs (pasteurised if possible), separated",
+        "ar": "4 بيضات طازجة جدًا (مبسترة إن أمكن)، مع فصل الصفار عن البياض"
+      },
+      {
+        "food": "sugar",
+        "grams": 100,
+        "en": "100 g caster sugar",
+        "ar": "100 غرام سكر ناعم"
+      },
+      {
+        "food": "ladyfingers",
+        "grams": 300,
+        "en": "300 g savoiardi (ladyfingers), about 30 biscuits",
+        "ar": "300 غرام بسكويت أصابع (سافوياردي)، نحو 30 قطعة"
+      },
+      {
+        "food": "espresso",
+        "grams": 300,
+        "en": "300 ml strong espresso or coffee, cooled",
+        "ar": "300 مل قهوة إسبريسو أو قهوة قوية، باردة"
+      },
+      {
+        "food": "cocoa powder",
+        "grams": 12,
+        "en": "2 tbsp unsweetened cocoa powder, for dusting",
+        "ar": "ملعقتان كبيرتان كاكاو خام غير محلى للتزيين"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the coffee and let it cool completely in a shallow dish.",
+        "Beat the egg yolks with the sugar for 4–5 minutes with an electric whisk until pale, thick and fluffy.",
+        "Add the mascarpone and beat briefly on low speed just until smooth; do not overbeat or it can turn grainy.",
+        "In a clean bowl, whisk the egg whites to stiff peaks, then fold them into the mascarpone cream in three additions with a spatula, keeping in as much air as possible.",
+        "Dip the ladyfingers one at a time into the coffee for 1–2 seconds per side (they should be moist, not soggy) and arrange a layer in a 20 × 30 cm dish.",
+        "Spread half the cream over the biscuits, add a second layer of dipped ladyfingers and finish with the rest of the cream, smoothing the top.",
+        "Cover and chill for at least 6 hours, or overnight. Dust generously with cocoa powder through a sieve just before serving."
+      ],
+      "ar": [
+        "حضّر القهوة واتركها تبرد تمامًا في طبق مسطح.",
+        "اخفق صفار البيض مع السكر بالمضرب الكهربائي لمدة 4-5 دقائق حتى يصبح فاتح اللون وكثيفًا وهشًا.",
+        "أضف الماسكاربوني واخفق قليلًا على سرعة منخفضة حتى يصبح الخليط ناعمًا فقط؛ ولا تفرط في الخفق حتى لا يتحبب.",
+        "في وعاء نظيف، اخفق بياض البيض حتى يكوّن قممًا ثابتة، ثم أضفه إلى كريمة الماسكاربوني على ثلاث دفعات بالملعقة المطاطية بحركة لطيفة للحفاظ على أكبر قدر من الهواء.",
+        "اغمس أصابع البسكويت واحدًا تلو الآخر في القهوة لمدة 1-2 ثانية لكل جانب (يجب أن تكون رطبة لا مشبعة)، ورصّ طبقة منها في طبق مقاس 20 × 30 سم.",
+        "وزّع نصف الكريمة فوق البسكويت، ثم أضف طبقة ثانية من البسكويت المغموس، وانتهِ بباقي الكريمة مع تسوية الوجه.",
+        "غطِّه وضعه في الثلاجة 6 ساعات على الأقل أو ليلة كاملة. انخل فوقه الكاكاو بكمية وفيرة قبل التقديم مباشرة."
+      ]
+    },
+    "videoSearch": {
+      "en": "tiramisu recipe without alcohol",
+      "ar": "طريقة عمل التيراميسو الأصلي بدون كحول"
+    },
+    "video": {
+      "en": {
+        "id": "VntOHvTFR84",
+        "channel": "Cooking Basket"
+      },
+      "ar": {
+        "id": "SBwMQQ3ZZJ0",
+        "channel": "سفيرة الطبخ ام انوار"
+      }
+    }
+  },
+  {
+    "id": "it-panna-cotta",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Panna Cotta with Berry Sauce (Vanilla Cream Pudding)",
+      "ar": "بانا كوتا بصوص التوت (حلى الكريمة بالفانيليا)"
+    },
+    "servings": 6,
+    "minutes": 270,
+    "ingredients": [
+      {
+        "food": "heavy cream",
+        "grams": 500,
+        "en": "500 ml heavy (whipping) cream",
+        "ar": "500 مل كريمة خفق سائلة"
+      },
+      {
+        "food": "milk",
+        "grams": 120,
+        "en": "120 ml whole milk",
+        "ar": "120 مل حليب كامل الدسم"
+      },
+      {
+        "food": "sugar",
+        "grams": 110,
+        "en": "110 g sugar (70 g for the cream, 40 g for the sauce)",
+        "ar": "110 غرامات سكر (70 غرامًا للكريمة و40 غرامًا للصوص)"
+      },
+      {
+        "food": "gelatin",
+        "grams": 8,
+        "en": "8 g powdered halal gelatin (beef or fish), or 4 sheets",
+        "ar": "8 غرامات جيلاتين بودرة حلال (بقري أو سمكي)، أو 4 أوراق جيلاتين"
+      },
+      {
+        "food": "water",
+        "grams": 45,
+        "en": "3 tbsp cold water, for the gelatin",
+        "ar": "3 ملاعق كبيرة ماء بارد للجيلاتين"
+      },
+      {
+        "food": "vanilla extract",
+        "grams": 5,
+        "en": "1 tsp vanilla extract (or the seeds of 1 vanilla pod)",
+        "ar": "ملعقة صغيرة خلاصة فانيليا (أو بذور قرن فانيليا واحد)"
+      },
+      {
+        "food": "raspberry",
+        "grams": 150,
+        "en": "150 g raspberries (fresh or frozen)",
+        "ar": "150 غرامًا توت العليق (راسبيري) طازج أو مجمد"
+      },
+      {
+        "food": "strawberry",
+        "grams": 150,
+        "en": "150 g strawberries, hulled and chopped",
+        "ar": "150 غرامًا فراولة، منزوعة الأعناق ومقطعة"
+      },
+      {
+        "food": "lemon",
+        "grams": 10,
+        "en": "2 tsp lemon juice",
+        "ar": "ملعقتان صغيرتان عصير ليمون"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Sprinkle the gelatin over the cold water in a small bowl and leave for 5 minutes to soften (if using sheets, soak them in cold water for 5 minutes and squeeze them out).",
+        "Heat the cream, milk and 70 g sugar in a saucepan over medium heat, stirring, until the sugar dissolves and small bubbles appear at the edges; do not let it boil.",
+        "Take off the heat, add the softened gelatin and stir until completely dissolved. Stir in the vanilla.",
+        "Let it cool for 10 minutes, stirring now and then, then pour into 6 small glasses or moulds (about 110 ml each).",
+        "Chill for at least 4 hours, until set but still with a gentle wobble.",
+        "Make the sauce: cook the berries with 40 g sugar and the lemon juice over medium heat for 5–7 minutes until syrupy. Press through a sieve if you want it smooth, then cool.",
+        "Serve the panna cotta in the glasses, or dip each mould in hot water for 5 seconds and turn out onto a plate. Spoon the berry sauce over."
+      ],
+      "ar": [
+        "رشّ الجيلاتين فوق الماء البارد في وعاء صغير، واتركه 5 دقائق ليتشرب الماء (إذا استخدمت الأوراق، انقعها في ماء بارد 5 دقائق ثم اعصرها).",
+        "سخّن الكريمة والحليب و70 غرامًا من السكر في قدر على نار متوسطة مع التقليب حتى يذوب السكر وتظهر فقاعات صغيرة على الأطراف، ولا تتركه يغلي.",
+        "ارفعه عن النار، وأضف الجيلاتين وقلّب حتى يذوب تمامًا. أضف الفانيليا وقلّب.",
+        "اتركه 10 دقائق ليبرد قليلًا مع التقليب من حين لآخر، ثم صبّه في 6 أكواب أو قوالب صغيرة (نحو 110 مل لكل منها).",
+        "ضعها في الثلاجة 4 ساعات على الأقل حتى تتماسك مع بقاء اهتزازة خفيفة.",
+        "حضّر الصوص: اطهُ التوت مع 40 غرامًا من السكر وعصير الليمون على نار متوسطة لمدة 5-7 دقائق حتى يصبح كالشراب. صفّه بالمصفاة إذا أردته ناعمًا، ثم اتركه يبرد.",
+        "قدّم البانا كوتا في الأكواب، أو اغمس كل قالب في ماء ساخن 5 ثوانٍ واقلبه في طبق. اسكب فوقها صوص التوت."
+      ]
+    },
+    "videoSearch": {
+      "en": "panna cotta recipe with berry sauce",
+      "ar": "طريقة عمل البانا كوتا بصوص التوت"
+    },
+    "video": {
+      "en": {
+        "id": "hXs1XNCNSVo",
+        "channel": "Avery Raassen - Curious about Food"
+      },
+      "ar": {
+        "id": "hwun-lZmK-o",
+        "channel": "cbc Sofra"
+      }
+    }
+  },
+  {
+    "id": "it-cannoli-siciliani",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Cannoli Siciliani (Ricotta-Filled Pastry Tubes, Made without Marsala or Lard)",
+      "ar": "كانولي صقلية بحشوة الريكوتا (بدون مارسالا أو شحم خنزير)"
+    },
+    "servings": 8,
+    "minutes": 150,
+    "ingredients": [
+      {
+        "food": "flour",
+        "grams": 250,
+        "en": "250 g plain flour, for the shells",
+        "ar": "250 غرامًا دقيق أبيض للأصابع"
+      },
+      {
+        "food": "sugar",
+        "grams": 25,
+        "en": "25 g sugar",
+        "ar": "25 غرامًا سكر"
+      },
+      {
+        "food": "cocoa powder",
+        "grams": 5,
+        "en": "1 tsp unsweetened cocoa powder",
+        "ar": "ملعقة صغيرة كاكاو خام غير محلى"
+      },
+      {
+        "food": "butter",
+        "grams": 30,
+        "en": "30 g soft butter, in place of lard",
+        "ar": "30 غرامًا زبدة طرية بدلًا من الشحم"
+      },
+      {
+        "food": "egg",
+        "grams": 50,
+        "en": "1 egg",
+        "ar": "بيضة واحدة"
+      },
+      {
+        "food": "grape juice",
+        "grams": 60,
+        "en": "60 ml white grape juice, in place of Marsala",
+        "ar": "60 مل عصير عنب أبيض بدلًا من نبيذ المارسالا"
+      },
+      {
+        "food": "white wine vinegar",
+        "grams": 15,
+        "en": "1 tbsp white wine vinegar",
+        "ar": "ملعقة كبيرة خل عنب أبيض"
+      },
+      {
+        "food": "salt",
+        "grams": 1,
+        "en": "A pinch of salt",
+        "ar": "رشة ملح"
+      },
+      {
+        "food": "egg white",
+        "grams": 30,
+        "en": "1 egg white, for sealing",
+        "ar": "بياض بيضة واحدة للإغلاق"
+      },
+      {
+        "food": "vegetable oil",
+        "grams": 40,
+        "en": "Vegetable oil, for deep-frying (about 40 g is absorbed)",
+        "ar": "زيت نباتي للقلي الغزير (يُمتص منه نحو 40 غرامًا)"
+      },
+      {
+        "food": "ricotta",
+        "grams": 600,
+        "en": "600 g ricotta (sheep's milk if you can find it), drained overnight",
+        "ar": "600 غرام جبن ريكوتا (من حليب الغنم إن وُجد)، مصفّاة طوال الليل"
+      },
+      {
+        "food": "powdered sugar",
+        "grams": 130,
+        "en": "130 g icing sugar (120 g for the filling, 10 g for dusting)",
+        "ar": "130 غرامًا سكر بودرة (120 غرامًا للحشوة و10 غرامات للتزيين)"
+      },
+      {
+        "food": "cinnamon",
+        "grams": 0.5,
+        "en": "A pinch of ground cinnamon",
+        "ar": "رشة قرفة مطحونة"
+      },
+      {
+        "food": "dark chocolate",
+        "grams": 60,
+        "en": "60 g dark chocolate chips (or chopped dark chocolate)",
+        "ar": "60 غرامًا رقائق شوكولاتة داكنة (أو شوكولاتة داكنة مفرومة)"
+      },
+      {
+        "food": "pistachio",
+        "grams": 30,
+        "en": "30 g shelled pistachios, chopped",
+        "ar": "30 غرامًا فستق حلبي مقشر، مفروم"
+      }
+    ],
+    "steps": {
+      "en": [
+        "The night before, put the ricotta in a sieve lined with muslin over a bowl and leave it in the fridge to drain.",
+        "Make the dough: mix the flour, sugar, cocoa and salt, rub in the butter, then add the egg, grape juice and vinegar and knead for 5 minutes into a smooth, firm dough. Wrap and rest for 1 hour.",
+        "Roll the dough out very thinly (2 mm), cut into 10 cm rounds and stretch each into a slight oval. Wrap around greased cannoli tubes, brush the overlap with egg white and press to seal.",
+        "Heat the oil to 175°C and fry the shells 2–3 at a time for 1–2 minutes until golden and blistered. Drain, let cool for a minute, then carefully slide out the tubes. Repeat with the rest (makes about 16).",
+        "Make the filling: press the drained ricotta through a sieve for a silky texture, then fold in 120 g icing sugar, the cinnamon and most of the chocolate chips.",
+        "Fill the shells with a piping bag only just before serving, so they stay crisp. Dip the ends in the chopped pistachios and the remaining chocolate.",
+        "Dust with the remaining icing sugar and serve two per person."
+      ],
+      "ar": [
+        "في الليلة السابقة، ضع الريكوتا في مصفاة مبطنة بقماش الشاش فوق وعاء، واتركها في الثلاجة لتتصفى.",
+        "حضّر العجين: اخلط الدقيق والسكر والكاكاو والملح، وافرك الزبدة معها بأطراف أصابعك، ثم أضف البيضة وعصير العنب والخل واعجن 5 دقائق حتى تحصل على عجينة ناعمة متماسكة. لفّها واتركها ترتاح ساعة.",
+        "افرد العجين رقيقًا جدًا (2 مم)، وقطّعه دوائر قطرها 10 سم، ثم مدّ كل دائرة قليلًا لتصبح بيضاوية. لفّها حول أنابيب الكانولي المدهونة، وادهن موضع التداخل ببياض البيض واضغط لإغلاقه.",
+        "سخّن الزيت إلى 175 درجة مئوية، واقلِ الأصابع 2-3 في كل مرة لمدة 1-2 دقيقة حتى تصبح ذهبية وتظهر عليها فقاعات. صفّها واتركها دقيقة لتبرد، ثم اسحب الأنابيب بحذر. كرّر مع الباقي (يكفي لنحو 16 قطعة).",
+        "حضّر الحشوة: اضغط الريكوتا المصفّاة عبر المصفاة لقوام حريري، ثم أضف 120 غرامًا من السكر البودرة والقرفة ومعظم رقائق الشوكولاتة وقلّب برفق.",
+        "احشُ الأصابع بكيس الحلواني قبل التقديم مباشرة فقط حتى تبقى مقرمشة. اغمس الأطراف في الفستق المفروم وباقي الشوكولاتة.",
+        "انثر عليها باقي السكر البودرة، وقدّم قطعتين لكل شخص."
+      ]
+    },
+    "videoSearch": {
+      "en": "cannoli siciliani recipe homemade shells",
+      "ar": "طريقة عمل الكانولي الإيطالي بحشوة الريكوتا"
+    },
+    "video": {
+      "en": {
+        "id": "n4Glui1wRXg",
+        "channel": "Preppy Kitchen"
+      },
+      "ar": {
+        "id": "SYDi_5oPgJs",
+        "channel": "Tutta & Salamanka "
+      }
+    }
+  },
+  {
+    "id": "it-torta-della-nonna",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Torta della Nonna (Tuscan Custard & Pine Nut Tart)",
+      "ar": "تورتا ديلا نونا (تارت الجدة التوسكانية بالكاسترد والصنوبر)"
+    },
+    "servings": 10,
+    "minutes": 180,
+    "ingredients": [
+      {
+        "food": "flour",
+        "grams": 300,
+        "en": "300 g plain flour, for the pastry",
+        "ar": "300 غرام دقيق أبيض للعجينة"
+      },
+      {
+        "food": "butter",
+        "grams": 150,
+        "en": "150 g cold butter, diced",
+        "ar": "150 غرامًا زبدة باردة، مقطعة مكعبات"
+      },
+      {
+        "food": "sugar",
+        "grams": 220,
+        "en": "220 g sugar (120 g for the pastry, 100 g for the custard)",
+        "ar": "220 غرامًا سكر (120 غرامًا للعجينة و100 غرام للكاسترد)"
+      },
+      {
+        "food": "egg",
+        "grams": 50,
+        "en": "1 egg, for the pastry",
+        "ar": "بيضة واحدة للعجينة"
+      },
+      {
+        "food": "egg yolk",
+        "grams": 85,
+        "en": "5 egg yolks (1 for the pastry, 4 for the custard)",
+        "ar": "5 صفارات بيض (واحد للعجينة و4 للكاسترد)"
+      },
+      {
+        "food": "baking powder",
+        "grams": 4,
+        "en": "1 tsp baking powder",
+        "ar": "ملعقة صغيرة بيكنج بودر"
+      },
+      {
+        "food": "salt",
+        "grams": 1,
+        "en": "A pinch of salt",
+        "ar": "رشة ملح"
+      },
+      {
+        "food": null,
+        "grams": 3,
+        "en": "Grated zest of 1 lemon (for the pastry and the custard)",
+        "ar": "بشر ليمونة واحدة (للعجينة والكاسترد)"
+      },
+      {
+        "food": "milk",
+        "grams": 500,
+        "en": "500 ml whole milk",
+        "ar": "500 مل حليب كامل الدسم"
+      },
+      {
+        "food": "cornstarch",
+        "grams": 40,
+        "en": "40 g cornflour (cornstarch)",
+        "ar": "40 غرامًا نشا ذرة"
+      },
+      {
+        "food": "vanilla extract",
+        "grams": 5,
+        "en": "1 tsp vanilla extract",
+        "ar": "ملعقة صغيرة خلاصة فانيليا"
+      },
+      {
+        "food": "pine nut",
+        "grams": 40,
+        "en": "40 g pine nuts",
+        "ar": "40 غرامًا صنوبر"
+      },
+      {
+        "food": "powdered sugar",
+        "grams": 10,
+        "en": "1 tbsp icing sugar, for dusting",
+        "ar": "ملعقة كبيرة سكر بودرة للتزيين"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Make the pastry: rub the butter into the flour, 120 g sugar, baking powder and salt until it looks like breadcrumbs. Add the egg, 1 egg yolk and half the lemon zest and bring together quickly into a smooth dough without kneading. Wrap and chill for 30 minutes.",
+        "Make the custard: heat the milk with the rest of the lemon zest until steaming. In a bowl, whisk the 4 egg yolks with 100 g sugar and the cornflour until smooth, then pour in the hot milk while whisking.",
+        "Return to the pan and cook over medium-low heat, whisking constantly, for 3–5 minutes until thick and bubbling. Stir in the vanilla, cover the surface with cling film and cool.",
+        "Heat the oven to 180°C. Roll out two-thirds of the pastry and line a greased 24 cm tart tin. Prick the base with a fork and spread the cooled custard inside.",
+        "Roll out the remaining pastry into a 24 cm round, lay it over the custard and seal the edges. Brush the top with a little water and scatter over the pine nuts, pressing them in lightly.",
+        "Bake for 40–45 minutes until golden. Cool completely in the tin (at least 1 hour) so the custard sets, then dust with icing sugar and cut into 10 slices."
+      ],
+      "ar": [
+        "حضّر العجينة: افرك الزبدة مع الدقيق و120 غرامًا من السكر والبيكنج بودر والملح حتى يصبح الخليط مثل الفتات. أضف البيضة وصفار بيضة واحدة ونصف بشر الليمون، واجمع العجينة بسرعة حتى تصبح ناعمة دون عجن. لفّها وضعها في الثلاجة 30 دقيقة.",
+        "حضّر الكاسترد: سخّن الحليب مع باقي بشر الليمون حتى يتصاعد منه البخار. في وعاء، اخفق صفارات البيض الأربعة مع 100 غرام من السكر ونشا الذرة حتى يصبح الخليط ناعمًا، ثم صبّ عليه الحليب الساخن مع الخفق.",
+        "أعد الخليط إلى القدر واطهه على نار متوسطة إلى هادئة مع الخفق المستمر لمدة 3-5 دقائق حتى يتكاثف ويبدأ في الغليان. أضف الفانيليا، وغطِّ سطحه بغلاف بلاستيكي ملامس له، واتركه يبرد.",
+        "سخّن الفرن على 180 درجة مئوية. افرد ثلثي العجينة وبطّن بها قالب تارت مدهونًا قطره 24 سم. اثقب القاع بالشوكة، ووزّع فيه الكاسترد البارد.",
+        "افرد باقي العجينة على شكل دائرة قطرها 24 سم، وضعها فوق الكاسترد وأغلق الأطراف جيدًا. ادهن الوجه بقليل من الماء، وانثر الصنوبر فوقه مع الضغط عليه برفق.",
+        "اخبزها 40-45 دقيقة حتى يصبح لونها ذهبيًا. اتركها تبرد تمامًا في القالب (ساعة على الأقل) حتى يتماسك الكاسترد، ثم انخل فوقها السكر البودرة وقطّعها 10 شرائح."
+      ]
+    },
+    "videoSearch": {
+      "en": "torta della nonna recipe",
+      "ar": "طريقة عمل تورتا ديلا نونا الإيطالية"
+    },
+    "video": {
+      "en": {
+        "id": "9Z64w035HQ0",
+        "channel": "Simply Zai Diaries"
+      }
+    }
+  },
+  {
+    "id": "it-cantucci",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Cantucci (Tuscan Almond Biscotti)",
+      "ar": "كانتوتشي (بسكوتي اللوز التوسكاني)"
+    },
+    "servings": 12,
+    "minutes": 75,
+    "ingredients": [
+      {
+        "food": "flour",
+        "grams": 250,
+        "en": "250 g plain flour",
+        "ar": "250 غرامًا دقيق أبيض"
+      },
+      {
+        "food": "sugar",
+        "grams": 160,
+        "en": "160 g sugar",
+        "ar": "160 غرامًا سكر"
+      },
+      {
+        "food": "egg",
+        "grams": 100,
+        "en": "2 eggs",
+        "ar": "بيضتان"
+      },
+      {
+        "food": "egg yolk",
+        "grams": 17,
+        "en": "1 egg yolk, beaten, for glazing",
+        "ar": "صفار بيضة واحدة، مخفوق للدهن"
+      },
+      {
+        "food": "almond",
+        "grams": 150,
+        "en": "150 g whole almonds, skin on",
+        "ar": "150 غرامًا لوز كامل بقشره البني"
+      },
+      {
+        "food": "baking powder",
+        "grams": 4,
+        "en": "1 tsp baking powder",
+        "ar": "ملعقة صغيرة بيكنج بودر"
+      },
+      {
+        "food": null,
+        "grams": 3,
+        "en": "Grated zest of 1 orange",
+        "ar": "بشر برتقالة واحدة"
+      },
+      {
+        "food": "salt",
+        "grams": 1,
+        "en": "A pinch of salt",
+        "ar": "رشة ملح"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Heat the oven to 180°C and line a baking tray with baking paper.",
+        "Mix the flour, sugar, baking powder, salt and orange zest in a bowl. Add the eggs and mix into a firm, slightly sticky dough, then work in the almonds.",
+        "Divide the dough in two and, with lightly floured hands, shape into two logs about 4 cm wide and 2 cm high. Place them well apart on the tray and brush with the beaten egg yolk.",
+        "Bake for 20–25 minutes until golden and firm to the touch. Take out of the oven and cool for 10 minutes.",
+        "Lower the oven to 150°C. With a sharp serrated knife, cut the logs on the diagonal into 1.5 cm slices.",
+        "Lay the slices cut side down on the tray and bake for 10–15 minutes more, turning once, until dry and lightly golden.",
+        "Cool completely on a rack; they crisp up as they cool. Keep in an airtight tin for up to 3 weeks and serve three per person with coffee or tea."
+      ],
+      "ar": [
+        "سخّن الفرن على 180 درجة مئوية، وبطّن صينية بورق الخبز.",
+        "اخلط الدقيق والسكر والبيكنج بودر والملح وبشر البرتقال في وعاء. أضف البيض واخلط حتى تتكون عجينة متماسكة لزجة قليلًا، ثم أضف اللوز وادمجه فيها.",
+        "قسّم العجينة إلى قسمين، وبيدين مرشوشتين بقليل من الدقيق شكّل منهما أسطوانتين بعرض 4 سم وارتفاع 2 سم تقريبًا. ضعهما في الصينية مع ترك مسافة كافية بينهما، وادهنهما بصفار البيض المخفوق.",
+        "اخبزهما 20-25 دقيقة حتى يصبح لونهما ذهبيًا ويتماسكا عند اللمس. أخرجهما من الفرن واتركهما 10 دقائق ليبردا.",
+        "اخفض حرارة الفرن إلى 150 درجة مئوية. قطّع الأسطوانتين بسكين مسننة حادة بشكل مائل إلى شرائح بسمك 1.5 سم.",
+        "رصّ الشرائح على جانبها المقطوع في الصينية، واخبزها 10-15 دقيقة أخرى مع قلبها مرة واحدة، حتى تجف ويصبح لونها ذهبيًا فاتحًا.",
+        "اتركها تبرد تمامًا على شبكة، فهي تزداد قرمشة عندما تبرد. احفظها في علبة محكمة الإغلاق حتى 3 أسابيع، وقدّم 3 قطع لكل شخص مع القهوة أو الشاي."
+      ]
+    },
+    "videoSearch": {
+      "en": "cantucci toscani almond biscotti recipe",
+      "ar": "طريقة عمل البسكوتي الإيطالي باللوز"
+    },
+    "video": {
+      "en": {
+        "id": "UInLNt8Ip2g",
+        "channel": "Nonna Mia!"
+      },
+      "ar": {
+        "id": "0FhTjAkY1b8",
+        "channel": "Rihet Koujinetna"
+      }
+    }
+  },
+  {
+    "id": "it-torta-caprese",
+    "cuisine": "Italian",
+    "title": {
+      "en": "Torta Caprese (Flourless Chocolate & Almond Cake from Capri)",
+      "ar": "تورتا كابريزي (كيكة الشوكولاتة واللوز بدون دقيق من كابري)"
+    },
+    "servings": 12,
+    "minutes": 80,
+    "ingredients": [
+      {
+        "food": "dark chocolate",
+        "grams": 200,
+        "en": "200 g dark chocolate (60–70% cocoa), chopped",
+        "ar": "200 غرام شوكولاتة داكنة (60-70% كاكاو)، مقطعة"
+      },
+      {
+        "food": "butter",
+        "grams": 180,
+        "en": "180 g butter, diced",
+        "ar": "180 غرامًا زبدة، مقطعة مكعبات"
+      },
+      {
+        "food": "sugar",
+        "grams": 170,
+        "en": "170 g sugar",
+        "ar": "170 غرامًا سكر"
+      },
+      {
+        "food": "egg",
+        "grams": 250,
+        "en": "5 eggs, separated",
+        "ar": "5 بيضات، مع فصل الصفار عن البياض"
+      },
+      {
+        "food": "almond",
+        "grams": 200,
+        "en": "200 g ground almonds (almond flour)",
+        "ar": "200 غرام لوز مطحون (دقيق اللوز)"
+      },
+      {
+        "food": "salt",
+        "grams": 1,
+        "en": "A pinch of salt",
+        "ar": "رشة ملح"
+      },
+      {
+        "food": "powdered sugar",
+        "grams": 10,
+        "en": "1 tbsp icing sugar, for dusting",
+        "ar": "ملعقة كبيرة سكر بودرة للتزيين"
+      }
+    ],
+    "steps": {
+      "en": [
+        "Heat the oven to 170°C. Grease a 24 cm springform tin and line the base with baking paper.",
+        "Melt the chocolate and butter together in a bowl over a pan of barely simmering water (or in short bursts in the microwave), stir until smooth and let cool slightly.",
+        "Beat the egg yolks with half the sugar for 4–5 minutes until pale and thick. Stir in the melted chocolate, then the ground almonds.",
+        "In a clean bowl, whisk the egg whites with the salt to soft peaks, then add the remaining sugar gradually and whisk to firm, glossy peaks.",
+        "Fold the whites into the chocolate mixture in three additions with a spatula, gently, until no white streaks remain.",
+        "Pour into the tin, level the top and bake for 40–45 minutes, until the top is crisp and cracked and a skewer comes out with a few moist crumbs; the centre stays soft and fudgy.",
+        "Cool in the tin for 15 minutes, then unmould and cool completely. Dust with icing sugar and cut into 12 slices."
+      ],
+      "ar": [
+        "سخّن الفرن على 170 درجة مئوية. ادهن قالبًا دائريًا بقاع متحرك قطره 24 سم، وبطّن قاعه بورق الخبز.",
+        "ذوّب الشوكولاتة والزبدة معًا في وعاء فوق قدر به ماء يغلي بهدوء شديد (أو على فترات قصيرة في الميكروويف)، وقلّب حتى يصبح الخليط ناعمًا، واتركه يبرد قليلًا.",
+        "اخفق صفار البيض مع نصف السكر لمدة 4-5 دقائق حتى يصبح فاتح اللون وكثيفًا. أضف الشوكولاتة الذائبة وقلّب، ثم أضف اللوز المطحون.",
+        "في وعاء نظيف، اخفق بياض البيض مع الملح حتى يكوّن قممًا لينة، ثم أضف باقي السكر تدريجيًا واستمر في الخفق حتى يصبح متماسكًا ولامعًا.",
+        "أضف البياض إلى خليط الشوكولاتة على ثلاث دفعات بالملعقة المطاطية بحركة لطيفة، حتى تختفي الخطوط البيضاء.",
+        "صبّ الخليط في القالب، وسوِّ الوجه، واخبزه 40-45 دقيقة حتى يصبح الوجه مقرمشًا ومتشققًا ويخرج السيخ وعليه بعض الفتات الرطب؛ ويبقى الوسط طريًا.",
+        "اتركه في القالب 15 دقيقة، ثم أخرجه واتركه يبرد تمامًا. انخل فوقه السكر البودرة وقطّعه 12 شريحة."
+      ]
+    },
+    "videoSearch": {
+      "en": "torta caprese chocolate almond cake recipe",
+      "ar": "طريقة عمل تورتا كابريزي بالشوكولاتة واللوز"
+    },
+    "video": {
+      "en": {
+        "id": "11575r1B3Bo",
+        "channel": "Home Cooking Adventure"
+      },
+      "ar": {
+        "id": "LIFE7oshk2o",
+        "channel": "القاهرة والناس"
+      }
+    }
+  }
+]

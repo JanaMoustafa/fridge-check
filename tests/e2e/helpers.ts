@@ -10,7 +10,6 @@ export async function htmlAttrs(page: Page) {
   return page.evaluate(() => ({
     lang: document.documentElement.lang,
     dir: document.documentElement.dir,
-    theme: document.documentElement.getAttribute('data-theme'),
   }))
 }
 

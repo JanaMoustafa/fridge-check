@@ -334,6 +334,36 @@ tests/           e2e/ · msw/ · fixtures/
   got reviewed diet tags, Arabic ingredient names and USDA nutrition mappings (a few are nearest
   stand-ins, noted in the mapping). A native speaker should still read the new Arabic names.
 
+## Dark only, Cooking Companion's own recipes, a layout-aware InBody reader (owner request 2026-10-30)
+
+- **Dark only:** the light theme and the theme setting are gone; the device's preference is
+  ignored (print stays black on white). Tokens are the palette's dark steps (`docs/DESIGN.md`).
+- **Chef intro line:** "Stress-free meals, delivered by your personal chef."
+- **Cooking Companion's own recipes** (`data/chef/*.json`, separate from Find recipes): 266
+  dishes written for it in English and Arabic — Egyptian 56, Italian 44, Mexican 58, Moroccan 58,
+  Saudi 50 — so every focus cuisine has at least 60 with TheMealDB's (Asian already had 102).
+  Every ingredient is weighed in grams and mapped to a reviewed USDA food (57 foods added; the
+  stand-ins are noted in the mapping), so each dish shows calories, protein, carbohydrate, fat
+  and fibre per serving and for the whole dish, with a servings picker, and calories per line.
+  Halal throughout: no pork or alcohol (titles say "Wine-Free" or name the swap). Videos:
+  `scripts/find-recipe-videos.py` picked a real cook for 265 of 266 (an Arabic-language video
+  for 199, shown to Arabic readers), checked embeddable, never a pork-titled one; the review
+  list is `docs/chef-videos.md`. The build check (`pnpm validate:data`) covers these recipes.
+- **InBody reader rebuilt** (`src/lib/nutritionist/ocr-image.ts`, `inbody-sheet.ts`,
+  `ocr-run.ts`): the old reader parsed text line by line and took scale ticks for values
+  (a 20% hit rate on sample sheets). Now the photo is straightened (sheet corners → perspective
+  flattened to A4 at ~300 dpi), binarised locally (shadows, tinted cells), bars and rules erased;
+  Tesseract reads it twice (sparse + layout); figures are found by their labels' positions
+  (tables, bar charts under their ticks, the 570/770 column heads and segment rows, the 270's
+  body diagrams, the score, the header), the history table is ignored, and InBody's formulas
+  (weight = water + protein + minerals + fat, BMR = 370 + 21.6 × FFM, BMI, PBF, ECW ratio,
+  controls, SMI) check the figures, repair weak readings and work out missing ones (marked
+  "worked out"). Spots with a label but no figure get a second, enlarged digits-only look. 49
+  figures in all (18 new extras: soft lean mass, ECW ratio, phase angle, recommended calories,
+  segment lean %, segment fat kg and %), all shown in the form to check and edit. On the bench
+  (two English sample sheets × five photo conditions) 77% of all figures read right, 85–94% on
+  clean and good photos, with few wrong readings. Still English-printed sheets only.
+
 ## Phases (each ends with lint + typecheck + tests → commit → push → summary)
 
 1. Foundation — scaffold, tooling, CI, types + Zod, i18n EN/AR + RTL, theme (no flash), tokens, fonts, app shell.

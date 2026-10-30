@@ -25,6 +25,16 @@ describe('imageLoader', () => {
     expect(imageLoader({ src: SPOON, width })).toBe(expected)
   })
 
+  it.each([
+    [112, 'https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg'],
+    [320, 'https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg'],
+    [640, 'https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg'],
+  ])('YouTube thumbnail at %ipx → %s', (width, expected) => {
+    expect(imageLoader({ src: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg', width })).toBe(
+      expected,
+    )
+  })
+
   it('leaves other sources untouched', () => {
     expect(imageLoader({ src: '/icon.svg', width: 64 })).toBe('/icon.svg')
   })

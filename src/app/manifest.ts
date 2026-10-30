@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { THEME_COLOR } from '@/lib/theme/theme'
 
 /**
  * Lets the site be added to a phone's home screen, opening full-screen with its own name, icon
@@ -13,8 +14,8 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: '/',
     scope: '/',
     display: 'standalone',
-    background_color: '#ffe8d6',
-    theme_color: '#ffe8d6',
+    background_color: THEME_COLOR,
+    theme_color: THEME_COLOR,
     icons: [{ src: '/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
   }
 }

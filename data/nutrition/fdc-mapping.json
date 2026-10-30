@@ -1,6 +1,11 @@
 {
   "version": 1,
   "foods": {
+    "achiote paste": {
+      "fdcId": 1941120,
+      "description": "SPICED ANNATTO SEED PASTE, ACHIOTE",
+      "note": "Branded only in USDA."
+    },
     "allspice": {
       "fdcId": 171315,
       "description": "Spices, allspice, ground"
@@ -23,6 +28,10 @@
       "description": "Fish, anchovy, european, canned in oil, drained solids",
       "note": "Recipe line uses a rinsed anchovy fillet, i.e. the canned/jarred product."
     },
+    "anise seed": {
+      "fdcId": 171316,
+      "description": "Spices, anise seed"
+    },
     "apple": {
       "fdcId": 1750340,
       "description": "Apples, fuji, with skin, raw"
@@ -38,6 +47,15 @@
     "apricot jam": {
       "fdcId": 170645,
       "description": "Jams and preserves, apricot"
+    },
+    "apricot leather": {
+      "fdcId": 167540,
+      "description": "Snacks, fruit leather, pieces",
+      "note": "Qamar al-din; generic fruit leather stands in."
+    },
+    "artichoke": {
+      "fdcId": 169205,
+      "description": "Artichokes, (globe or french), raw"
     },
     "arugula": {
       "fdcId": 169387,
@@ -81,6 +99,10 @@
       "fdcId": 174523,
       "description": "Sauce, barbecue"
     },
+    "barley grits": {
+      "fdcId": 170283,
+      "description": "Barley, hulled"
+    },
     "barramundi": {
       "fdcId": 175142,
       "description": "Fish, sea bass, mixed species, raw",
@@ -95,6 +117,11 @@
       "fdcId": 169756,
       "description": "Rice, white, long-grain, regular, raw, unenriched",
       "note": "Basmati is uncooked long-grain white rice; imported basmati is typically unenriched."
+    },
+    "basterma": {
+      "fdcId": 170604,
+      "description": "Beef, cured, dried",
+      "note": "Basterma is cured dried beef; its spice coat (chaman) is not counted."
     },
     "bay leaf": {
       "fdcId": 170917,
@@ -114,6 +141,22 @@
       "fdcId": 174757,
       "description": "Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 0\" fat, all grades, raw",
       "note": "Unspecified beef (mostly stewing/braising lines) mapped to the all-cuts composite, lean and fat, 0\" trim."
+    },
+    "beef bacon": {
+      "fdcId": 170197,
+      "description": "Beef, cured, breakfast strips, raw or unheated"
+    },
+    "beef frankfurter": {
+      "fdcId": 323121,
+      "description": "Frankfurter, beef, unheated"
+    },
+    "beef liver": {
+      "fdcId": 169451,
+      "description": "Beef, variety meats and by-products, liver, raw"
+    },
+    "beef salami": {
+      "fdcId": 172935,
+      "description": "Salami, cooked, beef"
     },
     "beef stock": {
       "fdcId": 171538,
@@ -189,6 +232,11 @@
       "fdcId": 174928,
       "description": "Bread, crumbs, dry, grated, plain"
     },
+    "bresaola": {
+      "fdcId": 170604,
+      "description": "Beef, cured, dried",
+      "note": "Halal swap for prosciutto: cured dried beef."
+    },
     "brisket": {
       "fdcId": 168664,
       "description": "Beef, brisket, whole, separable lean and fat, trimmed to 1/8\" fat, all grades, raw"
@@ -222,6 +270,10 @@
     "butter": {
       "fdcId": 173410,
       "description": "Butter, salted"
+    },
+    "buttermilk": {
+      "fdcId": 170874,
+      "description": "Milk, buttermilk, fluid, cultured, lowfat"
     },
     "butternut squash": {
       "fdcId": 169295,
@@ -283,6 +335,10 @@
       "description": "Salt, table",
       "note": "No FDC celery salt; it is mostly table salt by weight and both are near-zero energy."
     },
+    "chard": {
+      "fdcId": 169991,
+      "description": "Chard, swiss, raw"
+    },
     "cheddar": {
       "fdcId": 173414,
       "description": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)"
@@ -329,6 +385,10 @@
       "fdcId": 173614,
       "description": "Chicken, broilers or fryers, dark meat, drumstick, meat only, raw",
       "note": "SR Legacy record: the Foundation one works out to a negative macro."
+    },
+    "chicken gizzard": {
+      "fdcId": 171456,
+      "description": "Chicken, gizzard, all classes, raw"
     },
     "chicken leg": {
       "fdcId": 172378,
@@ -386,6 +446,11 @@
       "fdcId": 170191,
       "description": "Seeds, sesame butter, paste",
       "note": "Chinese sesame sauce is Chinese sesame paste (ground roasted whole sesame seeds), equivalent to sesame butter paste."
+    },
+    "chipotle in adobo": {
+      "fdcId": 1855560,
+      "description": "CHIPOTLE PEPPERS IN ADOBO SAUCE",
+      "note": "Branded only in USDA."
     },
     "chive": {
       "fdcId": 169994,
@@ -478,6 +543,10 @@
       "description": "Cornstarch",
       "note": "UK 'corn flour' and the 'starch' lines are cornstarch."
     },
+    "cotija": {
+      "fdcId": 170898,
+      "description": "Cheese, mexican, queso cotija"
+    },
     "cottage cheese": {
       "fdcId": 328841,
       "description": "Cheese, cottage, lowfat, 2% milkfat"
@@ -522,6 +591,15 @@
       "fdcId": 168191,
       "description": "Dates, medjool"
     },
+    "date molasses": {
+      "fdcId": 1562420,
+      "description": "DATE SYRUP",
+      "note": "No generic USDA date syrup (dibs); a branded date syrup is used."
+    },
+    "desiccated coconut": {
+      "fdcId": 170170,
+      "description": "Nuts, coconut meat, dried (desiccated), not sweetened"
+    },
     "dill": {
       "fdcId": 172233,
       "description": "Dill weed, fresh",
@@ -535,9 +613,21 @@
       "fdcId": 173941,
       "description": "Apricots, dried, sulfured, uncooked"
     },
+    "dried fig": {
+      "fdcId": 746768,
+      "description": "Figs, dried, uncooked"
+    },
+    "dried pinto bean": {
+      "fdcId": 175199,
+      "description": "Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)"
+    },
     "dried shrimp": {
       "fdcId": null,
       "reason": "No FDC food for dried shrimp; raw or cooked shrimp is several times less energy-dense, so not equivalent."
+    },
+    "dried white bean": {
+      "fdcId": 175202,
+      "description": "Beans, white, mature seeds, raw"
     },
     "duck leg": {
       "fdcId": 171112,
@@ -591,6 +681,14 @@
       "description": "Mustard, prepared, yellow",
       "note": "No English mustard in FDC; prepared English mustard is hotter and somewhat higher in calories than yellow (60 kcal)."
     },
+    "espresso": {
+      "fdcId": 171891,
+      "description": "Beverages, coffee, brewed, espresso, restaurant-prepared"
+    },
+    "evaporated milk": {
+      "fdcId": 171276,
+      "description": "Milk, canned, evaporated, with added vitamin D and without added vitamin A"
+    },
     "fajita seasoning": {
       "fdcId": 172243,
       "description": "Seasoning mix, dry, taco, original",
@@ -617,6 +715,10 @@
     "fennel seed": {
       "fdcId": 171323,
       "description": "Spices, fennel seed"
+    },
+    "fenugreek seed": {
+      "fdcId": 171324,
+      "description": "Spices, fenugreek seed"
     },
     "fermented black bean": {
       "fdcId": null,
@@ -665,6 +767,11 @@
       "fdcId": null,
       "reason": "No FDC food for food colouring; it is used in negligible amounts with no meaningful nutrition."
     },
+    "fresh sardine": {
+      "fdcId": 175116,
+      "description": "Fish, herring, Atlantic, raw",
+      "note": "USDA has no raw sardine (sardine is canned); Atlantic herring, the same family with similar values, stands in."
+    },
     "fromage frais": {
       "fdcId": null,
       "reason": "No FDC fromage frais or quark; fat content varies too widely to substitute."
@@ -684,6 +791,10 @@
     "garlic powder": {
       "fdcId": 171325,
       "description": "Spices, garlic powder"
+    },
+    "gelatin": {
+      "fdcId": 169599,
+      "description": "Gelatins, dry powder, unsweetened"
     },
     "ghee": {
       "fdcId": 171314,
@@ -719,6 +830,10 @@
     "grape": {
       "fdcId": 2346412,
       "description": "Grapes, red, seedless, raw"
+    },
+    "grape juice": {
+      "fdcId": 173042,
+      "description": "Grape juice, canned or bottled, unsweetened, without added ascorbic acid"
     },
     "greek yogurt": {
       "fdcId": 171304,
@@ -780,6 +895,11 @@
       "fdcId": 171242,
       "description": "Cheese, gruyere"
     },
+    "guajillo chili": {
+      "fdcId": 168570,
+      "description": "Peppers, hot chile, sun-dried",
+      "note": "USDA has guajillo only as branded foods; the generic sun-dried hot chile stands in."
+    },
     "haddock": {
       "fdcId": 171964,
       "description": "Fish, haddock, raw"
@@ -802,9 +922,18 @@
       "description": "Cream, fluid, heavy whipping",
       "note": "Most lines say double cream, which is richer (~48% fat) than heavy whipping cream; this is the closest FDC cream."
     },
+    "hibiscus": {
+      "fdcId": 168170,
+      "description": "Roselle, raw",
+      "note": "Dried hibiscus is steeped and strained; the fresh calyx record stands in."
+    },
     "hoisin sauce": {
       "fdcId": 172886,
       "description": "Sauce, hoisin, ready-to-serve"
+    },
+    "hominy": {
+      "fdcId": 169701,
+      "description": "Hominy, canned, white"
     },
     "honey": {
       "fdcId": 169640,
@@ -872,6 +1001,10 @@
       "description": "Phyllo dough",
       "note": "In the recipe 'knafeh' is kataifi (shredded filo) pastry; phyllo dough is the nearest FDC equivalent."
     },
+    "ladyfingers": {
+      "fdcId": 174959,
+      "description": "Cookies, ladyfingers, with lemon juice and rind"
+    },
     "lamb": {
       "fdcId": 172545,
       "description": "Lamb, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8\" fat, choice, raw",
@@ -881,6 +1014,10 @@
       "fdcId": 174372,
       "description": "Lamb, leg, whole (shank and sirloin), separable lean and fat, trimmed to 1/8\" fat, choice, raw",
       "note": "Diced leg meat; 1/8 inch trim reflects typical retail leg."
+    },
+    "lamb liver": {
+      "fdcId": 172531,
+      "description": "Lamb, variety meats and by-products, liver, raw"
     },
     "lamb shank": {
       "fdcId": 172513,
@@ -968,6 +1105,15 @@
       "fdcId": 170928,
       "description": "Spices, marjoram, dried"
     },
+    "masa harina": {
+      "fdcId": 169694,
+      "description": "Corn flour, masa, enriched, white"
+    },
+    "mascarpone": {
+      "fdcId": 2595456,
+      "description": "MASCARPONE CHEESE",
+      "note": "USDA has mascarpone only as branded foods; a typical one (429 kcal per 100 g) is used."
+    },
     "massaman curry paste": {
       "fdcId": 170924,
       "description": "Spices, curry powder",
@@ -980,6 +1126,10 @@
     "mexican cheese": {
       "fdcId": 171288,
       "description": "Cheese, Mexican blend"
+    },
+    "mexican chocolate": {
+      "fdcId": 167999,
+      "description": "Baking chocolate, mexican, squares"
     },
     "milk": {
       "fdcId": 171265,
@@ -1073,6 +1223,10 @@
       "description": "Noodles, egg, dry, enriched",
       "note": "Generic noodles (lo mein, packet) mapped to dry egg noodles."
     },
+    "nopales": {
+      "fdcId": 168571,
+      "description": "Nopales, raw"
+    },
     "nutmeg": {
       "fdcId": 171326,
       "description": "Spices, nutmeg, ground"
@@ -1085,6 +1239,10 @@
       "fdcId": 171411,
       "description": "Oil, soybean, salad or cooking",
       "note": "Generic neutral vegetable cooking oil (soybean)."
+    },
+    "okra": {
+      "fdcId": 169260,
+      "description": "Okra, raw"
     },
     "olive": {
       "fdcId": 169094,
@@ -1107,9 +1265,18 @@
       "fdcId": 169097,
       "description": "Oranges, raw, all commercial varieties"
     },
+    "orange blossom water": {
+      "fdcId": 173647,
+      "description": "Beverages, water, tap, drinking",
+      "note": "No USDA entry; flower water has no meaningful energy, so drinking water stands in."
+    },
     "orange juice": {
       "fdcId": 169098,
       "description": "Orange juice, raw"
+    },
+    "orange peel": {
+      "fdcId": 169103,
+      "description": "Orange peel, raw"
     },
     "oregano": {
       "fdcId": 171328,
@@ -1163,6 +1330,10 @@
     "parsley": {
       "fdcId": 170416,
       "description": "Parsley, fresh"
+    },
+    "pasilla chili": {
+      "fdcId": 168579,
+      "description": "Peppers, pasilla, dried"
     },
     "passata": {
       "fdcId": 170460,
@@ -1236,6 +1407,10 @@
       "fdcId": 172879,
       "description": "Sauce, plum, ready-to-serve"
     },
+    "poblano pepper": {
+      "fdcId": 2747662,
+      "description": "Peppers, poblano, seeded, raw"
+    },
     "pomegranate molasses": {
       "fdcId": null,
       "reason": "No FDC entry for pomegranate molasses (reduced pomegranate juice); cane molasses is a different food."
@@ -1271,6 +1446,11 @@
       "fdcId": 169656,
       "description": "Sugars, powdered"
     },
+    "preserved lemon": {
+      "fdcId": 167749,
+      "description": "Lemon peel, raw",
+      "note": "Preserved lemon is eaten for its rind; the salt cure adds no energy."
+    },
     "pretzel": {
       "fdcId": 167555,
       "description": "Snacks, pretzels, hard, plain, salted"
@@ -1279,6 +1459,14 @@
       "fdcId": 168282,
       "description": "Pork, cured, ham, center slice, country-style, separable lean only, raw",
       "note": "No prosciutto entry; country-style ham is likewise dry-cured raw ham, though lean-only so slightly lower in fat."
+    },
+    "provolone": {
+      "fdcId": 170850,
+      "description": "Cheese, provolone"
+    },
+    "prune": {
+      "fdcId": 168162,
+      "description": "Plums, dried (prunes), uncooked"
     },
     "puff pastry": {
       "fdcId": 172790,
@@ -1296,6 +1484,14 @@
       "fdcId": 172420,
       "description": "Lentils, raw",
       "note": "Puy/French green lentils mapped to generic raw lentils."
+    },
+    "queso fresco": {
+      "fdcId": 172223,
+      "description": "Cheese, fresh, queso fresco"
+    },
+    "quince": {
+      "fdcId": 168163,
+      "description": "Quinces, raw"
     },
     "quinoa": {
       "fdcId": 168874,
@@ -1464,6 +1660,10 @@
       "fdcId": 169715,
       "description": "Semolina, enriched"
     },
+    "serrano pepper": {
+      "fdcId": 169395,
+      "description": "Peppers, serrano, raw"
+    },
     "sesame oil": {
       "fdcId": 171016,
       "description": "Oil, sesame, salad or cooking"
@@ -1564,6 +1764,11 @@
       "fdcId": 168462,
       "description": "Spinach, raw"
     },
+    "squab": {
+      "fdcId": 174475,
+      "description": "Squab, (pigeon), meat and skin, raw",
+      "note": "Pigeon (hamam), as bought for stuffing."
+    },
     "squash": {
       "fdcId": 169295,
       "description": "Squash, winter, butternut, raw",
@@ -1663,10 +1868,18 @@
       "description": "Thyme, fresh",
       "note": "Lines are mostly fresh sprigs; fresh thyme chosen."
     },
+    "tilapia": {
+      "fdcId": 175176,
+      "description": "Fish, tilapia, raw"
+    },
     "tofu": {
       "fdcId": 172476,
       "description": "Tofu, raw, regular, prepared with calcium sulfate",
       "note": "Regular (soft) tofu, as used in mapo tofu and hot and sour soup."
+    },
+    "tomatillo": {
+      "fdcId": 168566,
+      "description": "Tomatillos, raw"
     },
     "tomato": {
       "fdcId": 170457,
@@ -1715,9 +1928,17 @@
       "fdcId": 174516,
       "description": "Turkey, retail parts, breast, meat only, cooked, roasted"
     },
+    "turkey ham": {
+      "fdcId": 168092,
+      "description": "Ham, turkey, sliced, extra lean, prepackaged or deli"
+    },
     "turmeric": {
       "fdcId": 172231,
       "description": "Spices, turmeric, ground"
+    },
+    "turnip": {
+      "fdcId": 2747674,
+      "description": "Turnips, raw"
     },
     "udon": {
       "fdcId": 168905,
@@ -1749,6 +1970,10 @@
     "vegetable oil": {
       "fdcId": 171411,
       "description": "Oil, soybean, salad or cooking"
+    },
+    "vegetable shortening": {
+      "fdcId": 173584,
+      "description": "Shortening, vegetable, household, composite"
     },
     "vegetable stock": {
       "fdcId": 171583,
@@ -1788,6 +2013,15 @@
       "description": "Waterchestnuts, chinese, canned, solids and liquids",
       "note": "Water chestnuts in these stir-fries (Kung Pao) are almost always canned; raw is 97 vs 50 kcal/100 g."
     },
+    "wheat berry": {
+      "fdcId": 168890,
+      "description": "Wheat, hard red winter",
+      "note": "Whole wheat grain (for jareesh, harees and belila)."
+    },
+    "wheat bran": {
+      "fdcId": 169722,
+      "description": "Wheat bran, crude"
+    },
     "white chocolate": {
       "fdcId": 167571,
       "description": "Candies, white chocolate"
@@ -1805,6 +2039,14 @@
       "fdcId": 172240,
       "description": "Vinegar, red wine",
       "note": "No white wine vinegar in SR Legacy; red wine vinegar is nutritionally equivalent."
+    },
+    "whole wheat flour": {
+      "fdcId": 168893,
+      "description": "Wheat flour, whole-grain (Includes foods for USDA's Food Distribution Program)"
+    },
+    "whole wheat pita": {
+      "fdcId": 174916,
+      "description": "Bread, pita, whole-wheat"
     },
     "wild mushroom": {
       "fdcId": 168580,

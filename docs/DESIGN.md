@@ -11,27 +11,28 @@ Skills consulted: frontend-design, ui-ux-pro-max, design-system, ui-styling, rea
 ## Tokens
 
 BiteDoneRight palette (owner, 2026-10-30): **Olive** `#6B705C`, **Sage Grey** `#A5A58D`, **Terracotta** `#CB997E`,
-**Peach Cream** `#FFE8D6`, **Navy** `#3D405B`. Steps are derived from these five; every text pair ≥ 4.5:1 and every
-boundary ≥ 3:1 (computed in the palette script; see the comment in `src/app/globals.css`).
+**Peach Cream** `#FFE8D6`, **Navy** `#3D405B`. **Dark only** (owner, 2026-10-30): there is no light theme and no
+theme setting; the device's preference is ignored. Steps are derived from the five colours; every text pair ≥ 4.5:1
+and every boundary ≥ 3:1 (computed; see the comment in `src/app/globals.css`). Print stays black on white.
 
-| Token            | Light     | Dark      | Use                                              |
-| ---------------- | --------- | --------- | ------------------------------------------------ |
-| `bg`             | `#FFE8D6` | `#2A2C3F` | page canvas (Peach Cream), `theme-color`         |
-| `surface`        | `#FFF6EE` | `#3D405B` | cards (a lighter cream; Navy in the dark)        |
-| `surface-2`      | `#E2E1D0` | `#4A4D68` | wells, chips, tiles (a sage tint)                |
-| `fg`             | `#3D405B` | `#FFE8D6` | body text (Navy)                                 |
-| `fg-muted`       | `#5C5F6B` | `#D6CFC3` | secondary text                                   |
-| `heading`        | `#555A48` | `#CDCFB6` | h1–h3 (Olive, a step darker for text)            |
-| `primary`        | `#5E634F` | `#C8C8B0` | buttons, links, the selected tab (Olive)         |
-| `primary-soft`   | `#E7E6D9` | `#464A60` | selected backgrounds, nav pill                   |
-| `accent`         | `#8A4E33` | `#E3B89C` | BurnToReturn, chips with text (Terracotta, dark) |
-| `highlight-soft` | `#F2D4BE` | `#5B4A42` | highlights and progress fills                    |
-| `sage`           | `#A5A58D` | `#6E6F5E` | decorative Sage Grey (meters, bars)              |
-| `have`           | `#555A48` | `#C8CCAC` | success, "You have"                              |
-| `missing`        | `#8A4E33` | `#E8BFA4` | "You need"                                       |
-| `danger`         | `#A4403A` | `#FF9C8C` | destructive only                                 |
-| `line`           | `#D9CFC0` | `#4A4D68` | hairlines                                        |
-| `line-strong`    | `#7A7D8C` | `#A0A3B3` | input and toggle boundaries (≥ 3:1)              |
+| Token            | Value     | Use                                                |
+| ---------------- | --------- | -------------------------------------------------- |
+| `bg`             | `#2A2C3F` | page canvas (a deep Navy), `theme-color`           |
+| `surface`        | `#3D405B` | cards (Navy)                                       |
+| `surface-2`      | `#4A4D68` | wells, chips, tiles (a lighter Navy)               |
+| `fg`             | `#FFE8D6` | body text (Peach Cream)                            |
+| `fg-muted`       | `#D6CFC3` | secondary text                                     |
+| `heading`        | `#CDCFB6` | h1–h3 (Olive, lifted for dark)                     |
+| `primary`        | `#C8C8B0` | buttons, links, the selected tab (Olive)           |
+| `primary-soft`   | `#464A60` | selected backgrounds, nav pill                     |
+| `accent`         | `#E3B89C` | BurnToReturn, chips with text (Terracotta, lifted) |
+| `highlight-soft` | `#5B4A42` | highlights and progress fills                      |
+| `sage`           | `#6E6F5E` | decorative Sage Grey (meters, bars)                |
+| `have`           | `#C8CCAC` | success, "You have"                                |
+| `missing`        | `#E8BFA4` | "You need"                                         |
+| `danger`         | `#FF9C8C` | destructive only                                   |
+| `line`           | `#4A4D68` | hairlines                                          |
+| `line-strong`    | `#A0A3B3` | input and toggle boundaries (≥ 3:1)                |
 
 ## Type
 
@@ -66,7 +67,6 @@ only decorates it; every horizontal offset is `calc(var(--dir) * Npx)` with `--d
 | Count badges             | `key={count}` remount → spring-pop 1→1.2→1                                                         |
 | Skeleton shimmer         | sweeps in reading direction; skeletons only after 150 ms                                           |
 | Language switch          | root crossfade only (no slide — the layout itself mirrors)                                         |
-| Theme switch             | instant                                                                                            |
 
 **No view transitions for in-page updates.** React starts a document view transition for any
 transition that touches a `<ViewTransition>`; keystrokes typed while one is in flight can be lost
@@ -108,7 +108,7 @@ no horizontal scroll at 320 px or 200 % zoom.
 ## Components
 
 Radix (`radix-ui`): Direction, ToggleGroup (EN | AR, sort, saved sort, list mode; diet filters as `multiple`),
-RadioGroup (theme, units), Switch (staples), Dialog (settings: bottom sheet < md, inline-end panel ≥ md),
+RadioGroup (units), Switch (staples), Dialog (settings: bottom sheet < md, inline-end panel ≥ md),
 AlertDialog, Toast, Tooltip, Collapsible, DropdownMenu, VisuallyHidden, Slot.
 Not used: Tabs (navigation is routes), Popover/Select, Checkbox (native), Progress (pantry meter is custom).
 

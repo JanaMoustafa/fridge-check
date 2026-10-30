@@ -58,22 +58,10 @@ function run(env: Env) {
 }
 
 describe('pre-paint script', () => {
-  it('applies a stored explicit theme and its browser-chrome colour', () => {
-    const { attrs, head } = run({ local: { 'fc:theme': 'dark' } })
-    expect(attrs.get('data-theme')).toBe('dark')
-    expect(head[0]?.id).toBe('fc-theme-color')
-    expect(head[0]?.attrs.get('name')).toBe('theme-color')
-    expect(head[0]?.attrs.get('content')).toBe('#2a2c3f')
-  })
-
-  it('uses the light canvas colour for a forced light theme', () => {
-    expect(run({ local: { 'fc:theme': 'light' } }).head[0]?.attrs.get('content')).toBe('#ffe8d6')
-  })
-
-  it('ignores system or invalid stored themes', () => {
-    expect(run({ local: { 'fc:theme': 'system' } }).attrs.has('data-theme')).toBe(false)
-    expect(run({ local: { 'fc:theme': 'system' } }).head).toHaveLength(0)
-    expect(run({ local: { 'fc:theme': '<script>' } }).attrs.has('data-theme')).toBe(false)
+  it('leaves the page alone whatever theme an older version stored (dark only now)', () => {
+    const { attrs, head } = run({ local: { 'fc:theme': 'light' } })
+    expect(attrs.size).toBe(0)
+    expect(head).toHaveLength(0)
   })
 
   it('mirrors the locale cookie into empty storage', () => {

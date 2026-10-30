@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 /** How each of the sheet's other numbers is shown. */
 const EXTRA_UNITS: Record<
   ExtraField,
-  'kg' | 'litre' | 'percent' | 'cm' | 'cm2' | 'points' | 'plain' | 'years'
+  'kg' | 'litre' | 'percent' | 'cm' | 'cm2' | 'points' | 'plain' | 'years' | 'degree' | 'kcal'
 > = {
   heightCm: 'cm',
   age: 'years',
@@ -58,6 +58,25 @@ const EXTRA_UNITS: Record<
   leanTrunkKg: 'kg',
   leanRightLegKg: 'kg',
   leanLeftLegKg: 'kg',
+  slmKg: 'kg',
+  ecwRatio: 'plain',
+  phaseAngle: 'degree',
+  recommendedKcal: 'kcal',
+  leanRightArmPct: 'percent',
+  leanLeftArmPct: 'percent',
+  leanTrunkPct: 'percent',
+  leanRightLegPct: 'percent',
+  leanLeftLegPct: 'percent',
+  fatRightArmKg: 'kg',
+  fatLeftArmKg: 'kg',
+  fatTrunkKg: 'kg',
+  fatRightLegKg: 'kg',
+  fatLeftLegKg: 'kg',
+  fatRightArmPct: 'percent',
+  fatLeftArmPct: 'percent',
+  fatTrunkPct: 'percent',
+  fatRightLegPct: 'percent',
+  fatLeftLegPct: 'percent',
 }
 
 /** The bars' scale, as % of the typical value for the member's height and sex. */

@@ -1,20 +1,23 @@
 'use client'
 
-import { Search } from 'lucide-react'
+import { ChefHat, Search } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useId, useMemo, useState } from 'react'
+import { buttonClasses } from '@/components/ui/button'
+import { foldForSearch as fold } from '@/lib/chef/search'
 import { cx } from '@/lib/cx'
 
 export interface ChefDish {
-  /** TheMealDB id, the dish's address: /chef/<id>. */
+  /** The dish's address, /chef/<id>: a TheMealDB id or a Cooking Companion recipe id. */
   id: string
   title: string
+  /** Every name the dish answers to (English and Arabic), already folded for search. */
+  search: string
   cuisine: string
   cuisineLabel: string
-  imageUrl: string
-  hasVideo: boolean
+  imageUrl: string | null
 }
 
 /** Cuisines shown as quick filters, in the owner's order of focus; "asian" groups several. */
@@ -29,9 +32,8 @@ const FOCUS: { key: string; cuisines: string[] }[] = [
     cuisines: ['Chinese', 'Japanese', 'Thai', 'Vietnamese', 'Malaysian', 'Filipino', 'Indian'],
   },
 ]
-const MAX_RESULTS = 30
-
-const fold = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+/** Shown at first and added per "show more". */
+const PAGE = 30
 
 /** Search as you type over every built-in dish, with the focus cuisines one tap away. */
 export function ChefSearch({
@@ -45,15 +47,15 @@ export function ChefSearch({
   const id = useId()
   const [query, setQuery] = useState('')
   const [cuisine, setCuisine] = useState<string | null>(null)
-  const results = useMemo(() => {
+  const [shown, setShown] = useState(PAGE)
+  const matches = useMemo(() => {
     const q = fold(query.trim())
     const allowed = cuisine ? new Set(FOCUS.find((f) => f.key === cuisine)?.cuisines) : null
-    return dishes
-      .filter(
-        (dish) => (!allowed || allowed.has(dish.cuisine)) && (!q || fold(dish.title).includes(q)),
-      )
-      .slice(0, MAX_RESULTS)
+    return dishes.filter(
+      (dish) => (!allowed || allowed.has(dish.cuisine)) && (!q || dish.search.includes(q)),
+    )
   }, [dishes, query, cuisine])
+  const results = matches.slice(0, shown)
 
   return (
     <div className="space-y-5">
@@ -70,7 +72,10 @@ export function ChefSearch({
             id={id}
             type="search"
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => {
+              setQuery(event.target.value)
+              setShown(PAGE)
+            }}
             placeholder={t('searchPlaceholder')}
             autoComplete="off"
             className="min-h-12 w-full rounded-btn border border-line-strong bg-surface ps-10 pe-3 text-base transition-colors outline-none focus-visible:border-primary"
@@ -83,7 +88,10 @@ export function ChefSearch({
             <button
               type="button"
               aria-pressed={cuisine === key}
-              onClick={() => setCuisine(key)}
+              onClick={() => {
+                setCuisine(key)
+                setShown(PAGE)
+              }}
               className={cx(
                 'min-h-10 rounded-chip border px-3.5 text-sm font-semibold transition-colors',
                 cuisine === key
@@ -101,7 +109,7 @@ export function ChefSearch({
         ))}
       </ul>
       <p aria-live="polite" className="text-sm text-fg-muted">
-        {t('results', { count: results.length })}
+        {t('results', { count: matches.length })}
       </p>
       {results.length === 0 ? (
         <p className="rounded-btn bg-surface-2 px-4 py-3 text-sm">{t('noResults')}</p>
@@ -113,8 +121,12 @@ export function ChefSearch({
                 href={`/chef/${dish.id}`}
                 className="flex min-h-16 items-center gap-3 rounded-btn bg-surface p-2 pe-3 transition-[scale] duration-150 motion-safe:active:scale-[0.98]"
               >
-                <span className="relative size-14 shrink-0 overflow-hidden rounded-btn bg-surface-2">
-                  <Image src={dish.imageUrl} alt="" fill sizes="56px" className="object-cover" />
+                <span className="relative grid size-14 shrink-0 place-items-center overflow-hidden rounded-btn bg-surface-2">
+                  {dish.imageUrl ? (
+                    <Image src={dish.imageUrl} alt="" fill sizes="56px" className="object-cover" />
+                  ) : (
+                    <ChefHat aria-hidden="true" className="size-6 text-fg-muted" />
+                  )}
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block font-extrabold">{dish.title}</span>
@@ -124,6 +136,15 @@ export function ChefSearch({
             </li>
           ))}
         </ul>
+      )}
+      {matches.length > shown && (
+        <button
+          type="button"
+          onClick={() => setShown((count) => count + PAGE)}
+          className={buttonClasses({ variant: 'secondary' })}
+        >
+          {t('showMore')}
+        </button>
       )}
     </div>
   )
